@@ -13,6 +13,8 @@ namespace dw2_exp_multiplier
 {
     public partial class Main : Form
     {
+        List<Enemyset> EnemysetList = new List<Enemyset>();
+        
         public Main()
         {
             InitializeComponent();
@@ -114,18 +116,32 @@ namespace dw2_exp_multiplier
         {
             try
             {
-                byte[] buffer;
                 using (var br = new BinaryReader(File.OpenRead(enemysetTextBox.Text)))
                 {
-                    var ms = new MemoryStream();
+                    MemoryStream ms = new MemoryStream();
                     br.BaseStream.CopyTo(ms);
-                    buffer = ms.ToArray();
+                    var length = br.BaseStream.Length / Enemyset.LENGTH;
+                    byte[] buffer = ms.ToArray();
                     br.Dispose();
                     br.Close();
+
+                    byte[] temp = new byte[Enemyset.LENGTH];
+                    for (var i = 0; i < length; i++)
+                    {
+                        Buffer.BlockCopy(buffer, i * temp.Length, temp, 0, temp.Length);
+                        EnemysetList.Add(new Enemyset(temp));
+                    }
                 }
-                
+
+                this.MultiplyExpBits();
+
                 using (var bw = new BinaryWriter(File.Create(dw2TextBox.Text)))
                 {
+                    byte[] buffer = new byte[this.EnemysetList.Count * Enemyset.LENGTH];
+                    for (var i = 0; i < this.EnemysetList.Count; i++)
+                    {
+                        Buffer.BlockCopy(this.EnemysetList[i].ToArray(), 0, buffer, i * Enemyset.LENGTH, Enemyset.LENGTH);
+                    }
                     bw.Write(buffer);
                     bw.Dispose();
                     bw.Close();
@@ -144,6 +160,22 @@ namespace dw2_exp_multiplier
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "File Error");
+            }
+        }
+
+        private void MultiplyExpBits()
+        {
+            var multiplierValue = Convert.ToUInt16(multiplier.Value);
+
+            foreach (var enemyset in this.EnemysetList)
+            {
+                foreach (var enemy in enemyset.Enemy)
+                {
+                    var i = enemy.Exp * multiplierValue;
+                    enemy.Exp = ( i < enemy.Exp) ? UInt16.MaxValue : Convert.ToUInt16(i);   
+                    i = enemy.Bits * multiplierValue;
+                    enemy.Bits = ( i < enemy.Bits) ? UInt16.MaxValue : Convert.ToUInt16(i);   
+                }
             }
         }
         
