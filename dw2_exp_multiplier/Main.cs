@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -107,6 +108,43 @@ namespace dw2_exp_multiplier
                 return filename;
             }
             return "";
+        }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                byte[] buffer;
+                using (var br = new BinaryReader(File.OpenRead(enemysetTextBox.Text)))
+                {
+                    var ms = new MemoryStream();
+                    br.BaseStream.CopyTo(ms);
+                    buffer = ms.ToArray();
+                    br.Dispose();
+                    br.Close();
+                }
+                
+                using (var bw = new BinaryWriter(File.Create(dw2TextBox.Text)))
+                {
+                    bw.Write(buffer);
+                    bw.Dispose();
+                    bw.Close();
+                }
+
+                MessageBox.Show("The file has been Saved Successfully");
+            }
+            catch (System.IO.FileNotFoundException ex)
+            {
+                MessageBox.Show("The File \"" + dw2TextBox.Text + "\" is not found", "File Error");
+            }
+            catch (System.IO.IOException ex)
+            {
+                MessageBox.Show("The File \"" + dw2TextBox.Text + "\" is being used by anothe program", "File Error");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "File Error");
+            }
         }
         
     }
