@@ -16,6 +16,8 @@ namespace dw2_exp_multiplier
         public Main()
         {
             InitializeComponent();
+            enemysetTextBox.Text = "ENEMYSET.BIN";
+            dw2TextBox.Text = "J:\\games\\CD.bin";
         }
 
         private void about_Click(object sender, EventArgs e)
@@ -112,26 +114,16 @@ namespace dw2_exp_multiplier
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            try
-            {
-                EnemysetManager.ReadBin(enemysetTextBox.Text, ref this.EnemysetList);
-                // EnemysetManager.MultiplyExpBits(Convert.ToUInt16(multiplier.Value), ref this.EnemysetList);
-                EnemysetManager.WriteFile(dw2TextBox.Text, ref this.EnemysetList);
+            EnemysetManager.ReadFile(enemysetTextBox.Text, ref this.EnemysetList);
+            EnemysetManager.MultiplyExpBits(Convert.ToUInt16(multiplier.Value), ref this.EnemysetList);
+            EnemysetManager.WriteBin(dw2TextBox.Text, ref this.EnemysetList);
+            this.EnemysetList.Clear();
 
-                MessageBox.Show("The file has been Saved Successfully");
-            }
-            catch (FileNotFoundException ex)
-            {
-                MessageBox.Show("The File \"" + dw2TextBox.Text + "\" is not found", "File Error");
-            }
-            catch (IOException ex)
-            {
-                MessageBox.Show("The File \"" + dw2TextBox.Text + "\" is being used by anothe program", "File Error");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "File Error");
-            }
+            EnemysetManager.ReadBin(dw2TextBox.Text, ref this.EnemysetList);
+            EnemysetManager.WriteFile("z_ENEMYSET.BIN", ref this.EnemysetList);
+            this.EnemysetList.Clear();
+
+            MessageBox.Show("The file has been Saved Successfully");
         }
     }
     

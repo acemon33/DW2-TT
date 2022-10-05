@@ -27,7 +27,7 @@ namespace dw2_exp_multiplier
         
         public static void WriteSector(ref BinaryWriter bw, ref byte[] data, Int64 offset, int numberOfSector)
         {
-            bw.BaseStream.Position = offset;
+            bw.BaseStream.Position = offset * PsxSector.SECTOR;
             for (int i = 0; i < numberOfSector; i++)
             {
                 bw.BaseStream.Position += 24;
@@ -36,4 +36,5 @@ namespace dw2_exp_multiplier
             }
         }
     }
+    
 }
