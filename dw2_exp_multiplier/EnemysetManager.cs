@@ -17,7 +17,6 @@ namespace dw2_exp_multiplier
             {
                 byte[] buffer = File.ReadAllBytes(filename);
                 EnemysetManager.Read(ref buffer, ref enemysetList);
-                buffer = null;
             }
             catch (FileNotFoundException ex)
             {
@@ -35,12 +34,11 @@ namespace dw2_exp_multiplier
     
         public static void WriteFile(string filename, ref List<Enemyset> enemysetList)
         {
-            byte[] buffer = EnemysetManager.Write(ref enemysetList);
+            byte[] buffer = EnemysetManager.Write(enemysetList.Count * Enemyset.LENGTH, ref enemysetList);
 
             try
             {
                 File.WriteAllBytes(filename, buffer);
-                buffer = null;
             }
             catch (FileNotFoundException ex)
             {
@@ -58,23 +56,15 @@ namespace dw2_exp_multiplier
         
         public static void MultiplyExpBits(UInt16 multiplier, ref List<Enemyset> enemysetList)
         {
-            for (int k = 0; k < enemysetList.Count; k++)
+            foreach (var enemyset in enemysetList)
             {
-                Enemyset enemyset = enemysetList[k];
-                for (int j = 0; j < enemyset.Enemy.Length; j++)
+                foreach (var enemy in enemyset.Enemy)
                 {
-                    var i = enemyset.Enemy[j].Exp * multiplier;
-                    enemyset.Enemy[j].Exp = ( i < enemyset.Enemy[j].Exp) ? UInt16.MaxValue : Convert.ToUInt16(i);   
-                    i = enemyset.Enemy[j].Bits * multiplier;
-                    enemyset.Enemy[j].Bits = ( i < enemyset.Enemy[j].Bits) ? UInt16.MaxValue : Convert.ToUInt16(i); 
+                    var i = enemy.Exp * multiplier;
+                    enemy.Exp = ( i < enemy.Exp) ? UInt16.MaxValue : Convert.ToUInt16(i);   
+                    i = enemy.Bits * multiplier;
+                    enemy.Bits = ( i < enemy.Bits) ? UInt16.MaxValue : Convert.ToUInt16(i);   
                 }
-                // foreach (var enemy in enemyset.Enemy)
-                // {
-                //     var i = enemy.Exp * multiplier;
-                //     enemy.Exp = ( i < enemy.Exp) ? UInt16.MaxValue : Convert.ToUInt16(i);   
-                //     i = enemy.Bits * multiplier;
-                //     enemy.Bits = ( i < enemy.Bits) ? UInt16.MaxValue : Convert.ToUInt16(i);   
-                // }
             }
         }
         
@@ -86,7 +76,6 @@ namespace dw2_exp_multiplier
                 br = new BinaryReader(File.OpenRead(filename));
                 byte[] buffer = PsxSector.ReadSector(ref br, 146074, 10);
                 EnemysetManager.Read(ref buffer, ref enemysetList);
-                buffer = null;
             }
             catch (FileNotFoundException ex)
             {
@@ -112,14 +101,13 @@ namespace dw2_exp_multiplier
         
         public static void WriteBin(string filename, ref List<Enemyset> enemysetList)
         {
-            byte[] buffer = EnemysetManager.Write(ref enemysetList);
+            byte[] buffer = EnemysetManager.Write(PsxSector.SECTOR * 10, ref enemysetList);
 
             BinaryWriter br = null;
             try
             {
                 br = new BinaryWriter(File.OpenWrite(filename));   
                 PsxSector.WriteSector(ref br, ref buffer, 146074, 10);
-                buffer = null;
             }
             catch (FileNotFoundException ex)
             {
@@ -155,9 +143,9 @@ namespace dw2_exp_multiplier
             }
         }
 
-        private static byte[] Write(ref List<Enemyset> enemysetList)
+        private static byte[] Write(int size, ref List<Enemyset> enemysetList)
         {
-            byte[] buffer = new byte[enemysetList.Count * Enemyset.LENGTH];
+            byte[] buffer = new byte[size];
             for (var i = 0; i < enemysetList.Count; i++)
             {
                 Buffer.BlockCopy(enemysetList[i].ToArray(), 0, buffer, i * Enemyset.LENGTH, Enemyset.LENGTH);
