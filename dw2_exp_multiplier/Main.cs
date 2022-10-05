@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
+/*
+ * @author acemon33
+ */
 
 namespace dw2_exp_multiplier
 {
@@ -84,7 +82,7 @@ namespace dw2_exp_multiplier
 
         private void dw2TextBox_DragDrop(object sender, DragEventArgs e)
         {
-            dw2TextBox.Text = this.ValidateFilename(e);
+            dw2TextBox.Text = this.ValidateFilename(ref e);
         }
 
         private void dw2TextBox_DragOver(object sender, DragEventArgs e)
@@ -99,10 +97,10 @@ namespace dw2_exp_multiplier
 
         private void enemysetTextBox_DragDrop(object sender, DragEventArgs e)
         {
-            enemysetTextBox.Text = this.ValidateFilename(e);
+            enemysetTextBox.Text = this.ValidateFilename(ref e);
         }
 
-        private string ValidateFilename(DragEventArgs e)
+        private string ValidateFilename(ref DragEventArgs e)
         {
             string filename = (e.Data.GetData(DataFormats.FileDrop) as string[])[0];
             if (filename.Contains(".bin") || filename.Contains(".BIN"))
@@ -116,44 +114,17 @@ namespace dw2_exp_multiplier
         {
             try
             {
-                using (var br = new BinaryReader(File.OpenRead(enemysetTextBox.Text)))
-                {
-                    MemoryStream ms = new MemoryStream();
-                    br.BaseStream.CopyTo(ms);
-                    var length = br.BaseStream.Length / Enemyset.LENGTH;
-                    byte[] buffer = ms.ToArray();
-                    br.Dispose();
-                    br.Close();
-
-                    byte[] temp = new byte[Enemyset.LENGTH];
-                    for (var i = 0; i < length; i++)
-                    {
-                        Buffer.BlockCopy(buffer, i * temp.Length, temp, 0, temp.Length);
-                        EnemysetList.Add(new Enemyset(temp));
-                    }
-                }
-
-                this.MultiplyExpBits();
-
-                using (var bw = new BinaryWriter(File.Create(dw2TextBox.Text)))
-                {
-                    byte[] buffer = new byte[this.EnemysetList.Count * Enemyset.LENGTH];
-                    for (var i = 0; i < this.EnemysetList.Count; i++)
-                    {
-                        Buffer.BlockCopy(this.EnemysetList[i].ToArray(), 0, buffer, i * Enemyset.LENGTH, Enemyset.LENGTH);
-                    }
-                    bw.Write(buffer);
-                    bw.Dispose();
-                    bw.Close();
-                }
+                EnemysetManager.ReadBin(enemysetTextBox.Text, ref this.EnemysetList);
+                // EnemysetManager.MultiplyExpBits(Convert.ToUInt16(multiplier.Value), ref this.EnemysetList);
+                EnemysetManager.WriteFile(dw2TextBox.Text, ref this.EnemysetList);
 
                 MessageBox.Show("The file has been Saved Successfully");
             }
-            catch (System.IO.FileNotFoundException ex)
+            catch (FileNotFoundException ex)
             {
                 MessageBox.Show("The File \"" + dw2TextBox.Text + "\" is not found", "File Error");
             }
-            catch (System.IO.IOException ex)
+            catch (IOException ex)
             {
                 MessageBox.Show("The File \"" + dw2TextBox.Text + "\" is being used by anothe program", "File Error");
             }
@@ -162,23 +133,6 @@ namespace dw2_exp_multiplier
                 MessageBox.Show(ex.Message, "File Error");
             }
         }
-
-        private void MultiplyExpBits()
-        {
-            var multiplierValue = Convert.ToUInt16(multiplier.Value);
-
-            foreach (var enemyset in this.EnemysetList)
-            {
-                foreach (var enemy in enemyset.Enemy)
-                {
-                    var i = enemy.Exp * multiplierValue;
-                    enemy.Exp = ( i < enemy.Exp) ? UInt16.MaxValue : Convert.ToUInt16(i);   
-                    i = enemy.Bits * multiplierValue;
-                    enemy.Bits = ( i < enemy.Bits) ? UInt16.MaxValue : Convert.ToUInt16(i);   
-                }
-            }
-        }
-        
     }
-
+    
 }

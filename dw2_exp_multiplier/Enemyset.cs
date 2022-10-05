@@ -1,13 +1,16 @@
 using System;
-using System.IO;
-using System.Linq;
+
+/*
+ * @author acemon33
+ */
 
 namespace dw2_exp_multiplier
 {
     public class Enemyset
     {
-        public const int LENGTH = 100;
-        
+        public static readonly int INDEX = 3183;
+        public static readonly int LENGTH = 100;
+
         public byte Id;
         public byte Move;
         public ushort Model;

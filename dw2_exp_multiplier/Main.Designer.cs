@@ -119,11 +119,11 @@
             // multiplier
             // 
             this.multiplier.Location = new System.Drawing.Point(97, 147);
-            this.multiplier.Minimum = new decimal(new int[] {2, 0, 0, 0});
+            this.multiplier.Minimum = new decimal(new int[] {1, 0, 0, 0});
             this.multiplier.Name = "multiplier";
             this.multiplier.Size = new System.Drawing.Size(46, 20);
             this.multiplier.TabIndex = 8;
-            this.multiplier.Value = new decimal(new int[] {2, 0, 0, 0});
+            this.multiplier.Value = new decimal(new int[] {1, 0, 0, 0});
             // 
             // multiplierLabel
             // 
