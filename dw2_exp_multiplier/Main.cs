@@ -16,6 +16,9 @@ namespace dw2_exp_multiplier
         public Main()
         {
             InitializeComponent();
+            enemysetTextBox.Text = "test.bin";
+            dw2TextBox.Text = "J:\\games\\CD.bin";
+            this.stmapdatComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void about_Click(object sender, EventArgs e)
@@ -111,6 +114,13 @@ namespace dw2_exp_multiplier
         }
 
         private void saveButton_Click(object sender, EventArgs e)
+        {
+            if (stmapdatComboBox.SelectedIndex < 1) return;
+            DW2Slus.ValidImageFile(dw2TextBox.Text);
+            byte[] data = Stmapdat.Read(stmapdatComboBox.SelectedIndex);
+            MessageBox.Show((Stmapdat.WriteBin(dw2TextBox.Text, ref data)) ? "Success" : "Fail");
+        }
+        private void saveButton_Click2(object sender, EventArgs e)
         {
             this.EnemysetList.Clear();
             if (!DW2Slus.ValidImageFile(dw2TextBox.Text))

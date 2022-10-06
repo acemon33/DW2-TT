@@ -42,6 +42,8 @@
             this.importButton = new System.Windows.Forms.Button();
             this.exportButton = new System.Windows.Forms.Button();
             this.unHideAAA = new System.Windows.Forms.CheckBox();
+            this.stmapdatComboBox = new System.Windows.Forms.ComboBox();
+            this.stmapdatLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize) (this.multiplier)).BeginInit();
             this.menuBar.SuspendLayout();
             this.SuspendLayout();
@@ -178,18 +180,38 @@
             // 
             // unHideAAA
             // 
-            this.unHideAAA.Location = new System.Drawing.Point(238, 147);
+            this.unHideAAA.Location = new System.Drawing.Point(12, 177);
             this.unHideAAA.Name = "unHideAAA";
             this.unHideAAA.Size = new System.Drawing.Size(134, 24);
             this.unHideAAA.TabIndex = 14;
             this.unHideAAA.Text = "Unhide AAA Folder";
             this.unHideAAA.UseVisualStyleBackColor = true;
             // 
+            // stmapdatComboBox
+            // 
+            this.stmapdatComboBox.FormattingEnabled = true;
+            this.stmapdatComboBox.Items.AddRange(new object[] {"", "Vanilla", "Debug", "Exit"});
+            this.stmapdatComboBox.Location = new System.Drawing.Point(237, 146);
+            this.stmapdatComboBox.Name = "stmapdatComboBox";
+            this.stmapdatComboBox.Size = new System.Drawing.Size(135, 21);
+            this.stmapdatComboBox.TabIndex = 15;
+            // 
+            // stmapdatLabel
+            // 
+            this.stmapdatLabel.AutoSize = true;
+            this.stmapdatLabel.Location = new System.Drawing.Point(171, 149);
+            this.stmapdatLabel.Name = "stmapdatLabel";
+            this.stmapdatLabel.Size = new System.Drawing.Size(60, 13);
+            this.stmapdatLabel.TabIndex = 16;
+            this.stmapdatLabel.Text = "STMAPDAT";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(448, 182);
+            this.ClientSize = new System.Drawing.Size(448, 213);
+            this.Controls.Add(this.stmapdatLabel);
+            this.Controls.Add(this.stmapdatComboBox);
             this.Controls.Add(this.unHideAAA);
             this.Controls.Add(this.exportButton);
             this.Controls.Add(this.importButton);
@@ -214,6 +236,11 @@
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.ComboBox stmapdatComboBox;
+        private System.Windows.Forms.Label stmapdatLabel;
+
+        private System.Windows.Forms.ComboBox comboBox1;
 
         private System.Windows.Forms.CheckBox unHideAAA;
 
