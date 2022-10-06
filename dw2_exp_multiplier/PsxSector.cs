@@ -25,6 +25,18 @@ namespace dw2_exp_multiplier
             return data;
         }
         
+        public static byte[] ReadSector(ref BinaryReader br, int numberOfSector)
+        {
+            byte[] data = new byte[PsxSector.DATA_SECTOR * numberOfSector];
+            for (int i = 0; i < numberOfSector; i++)
+            {
+                br.BaseStream.Position += 24;
+                br.BaseStream.Read(data, i * PsxSector.DATA_SECTOR, PsxSector.DATA_SECTOR);
+                br.BaseStream.Position += 280;
+            }
+            return data;
+        }
+        
         public static void WriteSector(ref BinaryWriter bw, ref byte[] data, Int64 offset, int numberOfSector)
         {
             bw.BaseStream.Position = offset * PsxSector.SECTOR;

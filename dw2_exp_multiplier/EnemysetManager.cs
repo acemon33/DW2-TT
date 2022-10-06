@@ -11,12 +11,13 @@ namespace dw2_exp_multiplier
 {
     public class EnemysetManager
     {
-        public static void ReadFile(string filename, ref List<Enemyset> enemysetList)
+        public static bool ReadFile(string filename, ref List<Enemyset> enemysetList)
         {
             try
             {
                 byte[] buffer = File.ReadAllBytes(filename);
                 EnemysetManager.Read(ref buffer, ref enemysetList);
+                return true;
             }
             catch (FileNotFoundException ex)
             {
@@ -30,6 +31,7 @@ namespace dw2_exp_multiplier
             {
                 MessageBox.Show(ex.Message, "File Error");
             }
+            return false;
         }
     
         public static bool WriteFile(string filename, ref List<Enemyset> enemysetList)
@@ -70,14 +72,15 @@ namespace dw2_exp_multiplier
             }
         }
         
-        public static void ReadBin(string filename, ref List<Enemyset> enemysetList)
+        public static bool ReadBin(string filename, ref List<Enemyset> enemysetList)
         {
             BinaryReader br = null;
             try
             {
                 br = new BinaryReader(File.OpenRead(filename));
-                byte[] buffer = PsxSector.ReadSector(ref br, 146074, 10);
+                byte[] buffer = PsxSector.ReadSector(ref br, DW2Slus.GetLba( Enemyset.INDEX), DW2Slus.GetSize(Enemyset.INDEX));
                 EnemysetManager.Read(ref buffer, ref enemysetList);
+                return true;
             }
             catch (FileNotFoundException ex)
             {
@@ -99,17 +102,18 @@ namespace dw2_exp_multiplier
                     br.Dispose();
                 }
             }
+            return false;
         }
         
         public static bool WriteBin(string filename, ref List<Enemyset> enemysetList)
         {
-            byte[] buffer = EnemysetManager.Write(PsxSector.SECTOR * 10, ref enemysetList);
+            byte[] buffer = EnemysetManager.Write(PsxSector.SECTOR * DW2Slus.GetSize(Enemyset.INDEX), ref enemysetList);
 
             BinaryWriter br = null;
             try
             {
                 br = new BinaryWriter(File.OpenWrite(filename));   
-                PsxSector.WriteSector(ref br, ref buffer, 146074, 10);
+                PsxSector.WriteSector(ref br, ref buffer, DW2Slus.GetLba(Enemyset.INDEX), DW2Slus.GetSize(Enemyset.INDEX));
                 return true;
             }
             catch (FileNotFoundException ex)

@@ -117,7 +117,8 @@ namespace dw2_exp_multiplier
                 MessageBox.Show("The file: \"" + dw2TextBox.Text + "\" is not Digimon World 2 Image File!!", "DW2 invalid file");
                 return;
             }
-            EnemysetManager.ReadFile(enemysetTextBox.Text, ref this.EnemysetList);
+
+            if (!EnemysetManager.ReadFile(enemysetTextBox.Text, ref this.EnemysetList)) return;
             EnemysetManager.MultiplyExpBits(Convert.ToUInt16(multiplier.Value), ref this.EnemysetList);
             if (EnemysetManager.WriteBin(dw2TextBox.Text, ref this.EnemysetList))
             {
