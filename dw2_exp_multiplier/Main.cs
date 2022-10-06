@@ -120,7 +120,14 @@ namespace dw2_exp_multiplier
             }
             if (!EnemysetManager.ReadFile(enemysetTextBox.Text, ref this.EnemysetList)) return;
             EnemysetManager.MultiplyExpBits(Convert.ToUInt16(multiplier.Value), ref this.EnemysetList);
-            if (!EnemysetManager.WriteBin(dw2TextBox.Text, ref this.EnemysetList)) return;
+            if (Control.ModifierKeys == Keys.Control)
+            {
+                if (!EnemysetManager.WriteFile("ENEMYSET_TEST.BIN", ref this.EnemysetList)) return;
+            }
+            else
+            {
+                if (!EnemysetManager.WriteBin(dw2TextBox.Text, ref this.EnemysetList)) return;
+            }
             MessageBox.Show("The file has been Saved Successfully");
         }
 
