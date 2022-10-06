@@ -53,6 +53,7 @@
     <Compile Include="About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
+    <Compile Include="DW2Slus.cs" />
     <Compile Include="Enemyset.cs" />
     <Compile Include="EnemysetManager.cs" />
     <Compile Include="Main.cs">

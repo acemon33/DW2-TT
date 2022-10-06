@@ -112,12 +112,18 @@ namespace dw2_exp_multiplier
 
         private void saveButton_Click(object sender, EventArgs e)
         {
+            if (!DW2Slus.ValidImageFile(dw2TextBox.Text))
+            {
+                MessageBox.Show("The file: \"" + dw2TextBox.Text + "\" is not Digimon World 2 Image File!!", "DW2 invalid file");
+                return;
+            }
             EnemysetManager.ReadFile(enemysetTextBox.Text, ref this.EnemysetList);
             EnemysetManager.MultiplyExpBits(Convert.ToUInt16(multiplier.Value), ref this.EnemysetList);
-            EnemysetManager.WriteBin(dw2TextBox.Text, ref this.EnemysetList);
+            if (EnemysetManager.WriteBin(dw2TextBox.Text, ref this.EnemysetList))
+            {
+                MessageBox.Show("The file has been Saved Successfully");
+            }
             this.EnemysetList.Clear();
-
-            MessageBox.Show("The file has been Saved Successfully");
         }
     }
     

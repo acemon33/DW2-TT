@@ -32,13 +32,14 @@ namespace dw2_exp_multiplier
             }
         }
     
-        public static void WriteFile(string filename, ref List<Enemyset> enemysetList)
+        public static bool WriteFile(string filename, ref List<Enemyset> enemysetList)
         {
             byte[] buffer = EnemysetManager.Write(enemysetList.Count * Enemyset.LENGTH, ref enemysetList);
 
             try
             {
                 File.WriteAllBytes(filename, buffer);
+                return true;
             }
             catch (FileNotFoundException ex)
             {
@@ -52,6 +53,7 @@ namespace dw2_exp_multiplier
             {
                 MessageBox.Show(ex.Message, "File Error");
             }
+            return false;
         }
         
         public static void MultiplyExpBits(UInt16 multiplier, ref List<Enemyset> enemysetList)
@@ -99,7 +101,7 @@ namespace dw2_exp_multiplier
             }
         }
         
-        public static void WriteBin(string filename, ref List<Enemyset> enemysetList)
+        public static bool WriteBin(string filename, ref List<Enemyset> enemysetList)
         {
             byte[] buffer = EnemysetManager.Write(PsxSector.SECTOR * 10, ref enemysetList);
 
@@ -108,6 +110,7 @@ namespace dw2_exp_multiplier
             {
                 br = new BinaryWriter(File.OpenWrite(filename));   
                 PsxSector.WriteSector(ref br, ref buffer, 146074, 10);
+                return true;
             }
             catch (FileNotFoundException ex)
             {
@@ -129,6 +132,7 @@ namespace dw2_exp_multiplier
                     br.Dispose();
                 }
             }
+            return false;
         }
 
         private static void Read(ref byte[] buffer, ref List<Enemyset> enemysetList)
