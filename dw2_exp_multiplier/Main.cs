@@ -128,6 +128,11 @@ namespace dw2_exp_multiplier
             {
                 if (!EnemysetManager.WriteBin(dw2TextBox.Text, ref this.EnemysetList)) return;
             }
+            if (unHideAAA.Checked)
+            {
+                bool hide = (Control.ModifierKeys == Keys.Shift) ? true: false;
+                DW2Slus.UnhideAAAFolder(dw2TextBox.Text, hide);
+            }
             MessageBox.Show("The file has been Saved Successfully");
         }
 

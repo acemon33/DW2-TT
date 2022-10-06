@@ -41,6 +41,7 @@
             this.about = new System.Windows.Forms.ToolStripButton();
             this.importButton = new System.Windows.Forms.Button();
             this.exportButton = new System.Windows.Forms.Button();
+            this.unHideAAA = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize) (this.multiplier)).BeginInit();
             this.menuBar.SuspendLayout();
             this.SuspendLayout();
@@ -175,11 +176,21 @@
             this.exportButton.UseVisualStyleBackColor = true;
             this.exportButton.Click += new System.EventHandler(this.exportButton_Click);
             // 
+            // unHideAAA
+            // 
+            this.unHideAAA.Location = new System.Drawing.Point(238, 147);
+            this.unHideAAA.Name = "unHideAAA";
+            this.unHideAAA.Size = new System.Drawing.Size(134, 24);
+            this.unHideAAA.TabIndex = 14;
+            this.unHideAAA.Text = "Unhide AAA Folder";
+            this.unHideAAA.UseVisualStyleBackColor = true;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(448, 182);
+            this.Controls.Add(this.unHideAAA);
             this.Controls.Add(this.exportButton);
             this.Controls.Add(this.importButton);
             this.Controls.Add(this.menuBar);
@@ -203,6 +214,8 @@
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.CheckBox unHideAAA;
 
         private System.Windows.Forms.Button importButton;
         private System.Windows.Forms.Button exportButton;
