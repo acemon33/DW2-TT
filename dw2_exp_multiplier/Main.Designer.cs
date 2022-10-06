@@ -44,8 +44,14 @@
             this.unHideAAA = new System.Windows.Forms.CheckBox();
             this.stmapdatComboBox = new System.Windows.Forms.ComboBox();
             this.stmapdatLabel = new System.Windows.Forms.Label();
+            this.digibeetleLabel = new System.Windows.Forms.Label();
+            this.digibeetleComboBox = new System.Windows.Forms.ComboBox();
+            this.digibeetleGroupBox = new System.Windows.Forms.GroupBox();
+            this.digibeetlPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize) (this.multiplier)).BeginInit();
             this.menuBar.SuspendLayout();
+            this.digibeetleGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize) (this.digibeetlPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // dw2BrowseButton
@@ -191,7 +197,7 @@
             // 
             this.stmapdatComboBox.FormattingEnabled = true;
             this.stmapdatComboBox.Items.AddRange(new object[] {"", "Vanilla", "Debug", "Exit"});
-            this.stmapdatComboBox.Location = new System.Drawing.Point(237, 146);
+            this.stmapdatComboBox.Location = new System.Drawing.Point(100, 207);
             this.stmapdatComboBox.Name = "stmapdatComboBox";
             this.stmapdatComboBox.Size = new System.Drawing.Size(135, 21);
             this.stmapdatComboBox.TabIndex = 15;
@@ -199,17 +205,56 @@
             // stmapdatLabel
             // 
             this.stmapdatLabel.AutoSize = true;
-            this.stmapdatLabel.Location = new System.Drawing.Point(171, 149);
+            this.stmapdatLabel.Location = new System.Drawing.Point(11, 210);
             this.stmapdatLabel.Name = "stmapdatLabel";
             this.stmapdatLabel.Size = new System.Drawing.Size(60, 13);
             this.stmapdatLabel.TabIndex = 16;
             this.stmapdatLabel.Text = "STMAPDAT";
             // 
+            // digibeetleLabel
+            // 
+            this.digibeetleLabel.AutoSize = true;
+            this.digibeetleLabel.Location = new System.Drawing.Point(16, 22);
+            this.digibeetleLabel.Name = "digibeetleLabel";
+            this.digibeetleLabel.Size = new System.Drawing.Size(18, 13);
+            this.digibeetleLabel.TabIndex = 18;
+            this.digibeetleLabel.Text = "ID";
+            // 
+            // digibeetleComboBox
+            // 
+            this.digibeetleComboBox.FormattingEnabled = true;
+            this.digibeetleComboBox.Location = new System.Drawing.Point(40, 19);
+            this.digibeetleComboBox.Name = "digibeetleComboBox";
+            this.digibeetleComboBox.Size = new System.Drawing.Size(155, 21);
+            this.digibeetleComboBox.TabIndex = 17;
+            this.digibeetleComboBox.SelectedIndexChanged += new System.EventHandler(this.digibeetleComboBox_SelectedIndexChanged);
+            // 
+            // digibeetleGroupBox
+            // 
+            this.digibeetleGroupBox.Controls.Add(this.digibeetlPictureBox);
+            this.digibeetleGroupBox.Controls.Add(this.digibeetleLabel);
+            this.digibeetleGroupBox.Controls.Add(this.digibeetleComboBox);
+            this.digibeetleGroupBox.Location = new System.Drawing.Point(241, 147);
+            this.digibeetleGroupBox.Name = "digibeetleGroupBox";
+            this.digibeetleGroupBox.Size = new System.Drawing.Size(201, 140);
+            this.digibeetleGroupBox.TabIndex = 20;
+            this.digibeetleGroupBox.TabStop = false;
+            this.digibeetleGroupBox.Text = "Digi-Beetle Patcher";
+            // 
+            // digibeetlPictureBox
+            // 
+            this.digibeetlPictureBox.Location = new System.Drawing.Point(67, 44);
+            this.digibeetlPictureBox.Name = "digibeetlPictureBox";
+            this.digibeetlPictureBox.Size = new System.Drawing.Size(90, 90);
+            this.digibeetlPictureBox.TabIndex = 19;
+            this.digibeetlPictureBox.TabStop = false;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(448, 213);
+            this.ClientSize = new System.Drawing.Size(448, 291);
+            this.Controls.Add(this.digibeetleGroupBox);
             this.Controls.Add(this.stmapdatLabel);
             this.Controls.Add(this.stmapdatComboBox);
             this.Controls.Add(this.unHideAAA);
@@ -229,13 +274,25 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Main";
+            this.Tag = "";
             this.Text = "DW2 EXP MULTIPLIER";
             ((System.ComponentModel.ISupportInitialize) (this.multiplier)).EndInit();
             this.menuBar.ResumeLayout(false);
             this.menuBar.PerformLayout();
+            this.digibeetleGroupBox.ResumeLayout(false);
+            this.digibeetleGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize) (this.digibeetlPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.PictureBox digibeetlPictureBox;
+        private System.Windows.Forms.GroupBox digibeetleGroupBox;
+
+        private System.Windows.Forms.GroupBox groupBox1;
+
+        private System.Windows.Forms.Label digibeetleLabel;
+        private System.Windows.Forms.ComboBox digibeetleComboBox;
 
         private System.Windows.Forms.ComboBox stmapdatComboBox;
         private System.Windows.Forms.Label stmapdatLabel;

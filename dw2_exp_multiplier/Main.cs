@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
+using System.IO.Compression;
 using System.Windows.Forms;
 
 /*
@@ -12,13 +14,13 @@ namespace dw2_exp_multiplier
     public partial class Main : Form
     {
         List<Enemyset> EnemysetList = new List<Enemyset>();
+        Dictionary<string, Bitmap> imageList = new Dictionary<string, Bitmap>();
         
         public Main()
         {
             InitializeComponent();
-            enemysetTextBox.Text = "test.bin";
-            dw2TextBox.Text = "J:\\games\\CD.bin";
             this.stmapdatComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            this.digibeetleComboBox.Items.AddRange(DigiBeetlePatcher.getDigiBeetleIds(ref this.imageList, "digi-beetle.zip"));
         }
 
         private void about_Click(object sender, EventArgs e)
@@ -115,13 +117,6 @@ namespace dw2_exp_multiplier
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            if (stmapdatComboBox.SelectedIndex < 1) return;
-            DW2Slus.ValidImageFile(dw2TextBox.Text);
-            byte[] data = Stmapdat.Read(stmapdatComboBox.SelectedIndex);
-            MessageBox.Show((Stmapdat.WriteBin(dw2TextBox.Text, ref data)) ? "Success" : "Fail");
-        }
-        private void saveButton_Click2(object sender, EventArgs e)
-        {
             this.EnemysetList.Clear();
             if (!DW2Slus.ValidImageFile(dw2TextBox.Text))
             {
@@ -142,6 +137,17 @@ namespace dw2_exp_multiplier
             {
                 bool hide = (Control.ModifierKeys == Keys.Shift) ? true: false;
                 DW2Slus.UnhideAAAFolder(dw2TextBox.Text, hide);
+            }
+            if (stmapdatComboBox.SelectedIndex > 0)
+            {
+                byte[] data = Stmapdat.Read(stmapdatComboBox.SelectedIndex);
+                Stmapdat.WriteBin(dw2TextBox.Text, ref data);
+            }
+            if (digibeetleComboBox.SelectedIndex > 0)
+            {
+                string stringId = digibeetleComboBox.SelectedItem.ToString();
+                ushort id = Convert.ToUInt16(stringId.Substring(0, stringId.IndexOf("-")), 16);
+                DigiBeetlePatcher.patch(dw2TextBox.Text, id);
             }
             MessageBox.Show("The file has been Saved Successfully");
         }
@@ -170,6 +176,12 @@ namespace dw2_exp_multiplier
             if (!EnemysetManager.ReadFile(enemysetTextBox.Text, ref this.EnemysetList)) return;
             if (!EnemysetManager.WriteBin(dw2TextBox.Text, ref this.EnemysetList)) return;
             MessageBox.Show("ENEMYSET.BIN has been Imported Successfully");
+        }
+
+        private void digibeetleComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string id = digibeetleComboBox.SelectedItem.ToString();
+            if (imageList.ContainsKey(id)) this.digibeetlPictureBox.Image = imageList[id];
         }
     }
     
