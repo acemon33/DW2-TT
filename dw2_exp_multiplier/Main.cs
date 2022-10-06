@@ -112,19 +112,42 @@ namespace dw2_exp_multiplier
 
         private void saveButton_Click(object sender, EventArgs e)
         {
+            this.EnemysetList.Clear();
             if (!DW2Slus.ValidImageFile(dw2TextBox.Text))
             {
                 MessageBox.Show("The file: \"" + dw2TextBox.Text + "\" is not Digimon World 2 Image File!!", "DW2 invalid file");
                 return;
             }
-
             if (!EnemysetManager.ReadFile(enemysetTextBox.Text, ref this.EnemysetList)) return;
             EnemysetManager.MultiplyExpBits(Convert.ToUInt16(multiplier.Value), ref this.EnemysetList);
-            if (EnemysetManager.WriteBin(dw2TextBox.Text, ref this.EnemysetList))
-            {
-                MessageBox.Show("The file has been Saved Successfully");
-            }
+            if (!EnemysetManager.WriteBin(dw2TextBox.Text, ref this.EnemysetList)) return;
+            MessageBox.Show("The file has been Saved Successfully");
+        }
+
+        private void exportButton_Click(object sender, EventArgs e)
+        {
             this.EnemysetList.Clear();
+            if (!DW2Slus.ValidImageFile(dw2TextBox.Text))
+            {
+                MessageBox.Show("The file: \"" + dw2TextBox.Text + "\" is not Digimon World 2 Image File!!", "DW2 invalid file");
+                return;
+            }
+            if (!EnemysetManager.ReadBin(dw2TextBox.Text, ref this.EnemysetList)) return;
+            if (!EnemysetManager.WriteFile(enemysetTextBox.Text, ref this.EnemysetList)) return;
+            MessageBox.Show("ENEMYSET.BIN has been Exported Successfully");
+        }
+
+        private void importButton_Click(object sender, EventArgs e)
+        {
+            this.EnemysetList.Clear();
+            if (!DW2Slus.ValidImageFile(dw2TextBox.Text))
+            {
+                MessageBox.Show("The file: \"" + dw2TextBox.Text + "\" is not Digimon World 2 Image File!!", "DW2 invalid file");
+                return;
+            }
+            if (!EnemysetManager.ReadFile(enemysetTextBox.Text, ref this.EnemysetList)) return;
+            if (!EnemysetManager.WriteBin(dw2TextBox.Text, ref this.EnemysetList)) return;
+            MessageBox.Show("ENEMYSET.BIN has been Imported Successfully");
         }
     }
     
