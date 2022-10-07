@@ -20,7 +20,6 @@ namespace dw2_exp_multiplier
         {
             InitializeComponent();
             this.stmapdatComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            
             digibeetleComboBox.DisplayMember = "Value";
             digibeetleComboBox.ValueMember = "Key";
             digibeetleComboBox.DataSource = new BindingSource(DigiBeetlePatcher.getDigiBeetleIds(ref this.imageList, "digi-beetle.zip"), null);
@@ -62,11 +61,13 @@ namespace dw2_exp_multiplier
             {
                 saveButton.Enabled = true;
                 importButton.Enabled = true;
+                multiplier.Enabled = true;
             }
             else
             {
                 saveButton.Enabled = false;
                 importButton.Enabled = false;
+                multiplier.Enabled = false;
             }
         }
 
@@ -76,10 +77,16 @@ namespace dw2_exp_multiplier
             if (dw2TextBox.Text.Length > 0)
             {
                 exportButton.Enabled = true;
+                unHideAAA.Enabled = true;
+                stmapdatComboBox.Enabled = true;
+                digibeetleComboBox.Enabled = true;
             }
             else
             {
                 exportButton.Enabled = false;
+                unHideAAA.Enabled = false;
+                stmapdatComboBox.Enabled = false;
+                digibeetleComboBox.Enabled = false;
             }
         }
 
@@ -119,6 +126,11 @@ namespace dw2_exp_multiplier
         }
 
         private void saveButton_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void saveButton_Click2(object sender, EventArgs e)
         {
             this.EnemysetList.Clear();
             if (!DW2Slus.ValidImageFile(dw2TextBox.Text))
@@ -164,7 +176,9 @@ namespace dw2_exp_multiplier
                 return;
             }
             if (!EnemysetManager.ReadBin(dw2TextBox.Text, ref this.EnemysetList)) return;
-            if (!EnemysetManager.WriteFile(enemysetTextBox.Text, ref this.EnemysetList)) return;
+            string filename = Path.GetDirectoryName(dw2TextBox.Text)+ "\\ENEMYSET.BIN";
+            if (!EnemysetManager.WriteFile(filename, ref this.EnemysetList)) return;
+            enemysetTextBox.Text = filename;
             MessageBox.Show("ENEMYSET.BIN has been Exported Successfully");
         }
 

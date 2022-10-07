@@ -127,6 +127,7 @@
             // 
             // multiplier
             // 
+            this.multiplier.Enabled = false;
             this.multiplier.Location = new System.Drawing.Point(97, 147);
             this.multiplier.Minimum = new decimal(new int[] {1, 0, 0, 0});
             this.multiplier.Name = "multiplier";
@@ -186,6 +187,7 @@
             // 
             // unHideAAA
             // 
+            this.unHideAAA.Enabled = false;
             this.unHideAAA.Location = new System.Drawing.Point(12, 177);
             this.unHideAAA.Name = "unHideAAA";
             this.unHideAAA.Size = new System.Drawing.Size(134, 24);
@@ -195,6 +197,7 @@
             // 
             // stmapdatComboBox
             // 
+            this.stmapdatComboBox.Enabled = false;
             this.stmapdatComboBox.FormattingEnabled = true;
             this.stmapdatComboBox.Items.AddRange(new object[] {"", "Vanilla", "Debug", "Exit"});
             this.stmapdatComboBox.Location = new System.Drawing.Point(100, 207);
@@ -222,6 +225,7 @@
             // 
             // digibeetleComboBox
             // 
+            this.digibeetleComboBox.Enabled = false;
             this.digibeetleComboBox.FormattingEnabled = true;
             this.digibeetleComboBox.Location = new System.Drawing.Point(40, 19);
             this.digibeetleComboBox.Name = "digibeetleComboBox";
