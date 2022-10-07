@@ -15,13 +15,11 @@ namespace dw2_exp_multiplier
     {
         public static bool patch(string filename, UInt16 digibeetleId)
         {
-            BinaryWriter bw = null;
-            BinaryReader br = null;
+            FileStream fs = null;
             try
             {
-                br = new BinaryReader(File.OpenRead(filename));
-                byte[] data = PsxSector.ReadSector(ref br, DW2Slus.GetLba(FileIndex.STAG4000_PRO), DW2Slus.GetSize(FileIndex.STAG4000_PRO));
-                br.Close();
+                fs = new FileStream(filename, FileMode.Open, FileAccess.ReadWrite);
+                byte[] data = PsxSector.ReadSector(ref fs, DW2Slus.GetLba(FileIndex.STAG4000_PRO), DW2Slus.GetSize(FileIndex.STAG4000_PRO));
                 
                 byte[] patchedPattern = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xF8, 0x01, 0x10, 0x24 };
                 Buffer.BlockCopy(BitConverter.GetBytes(digibeetleId), 0, patchedPattern, 8, 2);
@@ -29,11 +27,11 @@ namespace dw2_exp_multiplier
                 byte[] currentPattern = (digibeetleId == 0) ? defaultPattern : patchedPattern;
                 
                 Buffer.BlockCopy(currentPattern, 0, data, 0x940, currentPattern.Length);
-                bw = new BinaryWriter(File.OpenWrite(filename));
                 byte[] temp = new byte[DW2Slus.GetSize(FileIndex.STAG4000_PRO) * PsxSector.SECTOR];
                 Buffer.BlockCopy(data, 0, temp, 0, data.Length);
-                PsxSector.WriteSector(ref bw, ref temp, DW2Slus.GetLba(FileIndex.STAG4000_PRO), DW2Slus.GetSize(FileIndex.STAG4000_PRO));
-                bw.Close();
+                PsxSector.WriteSector(ref fs, ref temp, DW2Slus.GetLba(FileIndex.STAG4000_PRO), DW2Slus.GetSize(FileIndex.STAG4000_PRO));
+                fs.Close();
+                fs.Dispose();
                 
                 return true;
             }
@@ -51,15 +49,10 @@ namespace dw2_exp_multiplier
             }
             finally
             {
-                if (br != null)
+                if (fs != null)
                 {
-                    br.Close();
-                    br.Dispose();
-                }
-                if (bw != null)
-                {
-                    bw.Close();
-                    bw.Dispose();
+                    fs.Close();
+                    fs.Dispose();
                 }
             }
             return false;

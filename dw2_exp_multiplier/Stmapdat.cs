@@ -34,12 +34,12 @@ namespace dw2_exp_multiplier
 
         public static bool WriteBin(string filename, ref byte[] buffer)
         {
-            BinaryWriter br = null;
+            FileStream br = null;
             try
             {
                 byte[] temp = new byte[DW2Slus.GetSize(FileIndex.STMAPDAT_BIN) * PsxSector.SECTOR];
                 Buffer.BlockCopy(buffer, 0, temp, 0, buffer.Length);
-                br = new BinaryWriter(File.OpenWrite(filename));   
+                br = new FileStream(filename, FileMode.Open, FileAccess.ReadWrite);
                 PsxSector.WriteSector(ref br, ref temp, DW2Slus.GetLba(FileIndex.STMAPDAT_BIN), DW2Slus.GetSize(FileIndex.STMAPDAT_BIN));
                 return true;
             }
