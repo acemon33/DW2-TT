@@ -22,8 +22,6 @@ namespace dw2_exp_multiplier
             digibeetleComboBox.DisplayMember = "Value";
             digibeetleComboBox.ValueMember = "Key";
             digibeetleComboBox.DataSource = new BindingSource(DigiBeetlePatcher.getDigiBeetleIds(ref this.imageList, "digi-beetle.zip"), null);
-            enemysetTextBox.Text = "J:\\games\\ENEMYSET.BIN";
-            dw2TextBox.Text = "J:\\games\\CD.bin";            
         }
 
         private void about_Click(object sender, EventArgs e)
@@ -54,13 +52,11 @@ namespace dw2_exp_multiplier
         {
             if (dw2TextBox.Text.Length > 0 && enemysetTextBox.Text.Length > 0)
             {
-                saveButton.Enabled = true;
                 importButton.Enabled = true;
                 multiplier.Enabled = true;
             }
             else
             {
-                saveButton.Enabled = false;
                 importButton.Enabled = false;
                 multiplier.Enabled = false;
             }
@@ -71,6 +67,7 @@ namespace dw2_exp_multiplier
             this.checkSaveButton();
             if (dw2TextBox.Text.Length > 0)
             {
+                saveButton.Enabled = true;
                 exportButton.Enabled = true;
                 unHideAAA.Enabled = true;
                 stmapdatComboBox.Enabled = true;
@@ -78,6 +75,7 @@ namespace dw2_exp_multiplier
             }
             else
             {
+                saveButton.Enabled = false;
                 exportButton.Enabled = false;
                 unHideAAA.Enabled = false;
                 stmapdatComboBox.Enabled = false;

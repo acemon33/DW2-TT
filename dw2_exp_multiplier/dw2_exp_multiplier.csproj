@@ -94,6 +94,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="STMAPDAT-VANILLA.BIN" />
+    <EmbeddedResource Include="STMAPDAT-DEBUG.BIN" />
+    <EmbeddedResource Include="STMAPDAT-EXIT.BIN" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

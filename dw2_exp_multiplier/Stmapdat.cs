@@ -1,6 +1,6 @@
 using System;
 using System.IO;
-using System.Windows.Forms;
+using System.Reflection;
 
 /*
  * @author acemon33
@@ -28,12 +28,14 @@ namespace dw2_exp_multiplier
             string filename;
             switch (index)
             {
-                case 1: filename = "STMAPDAT-VANILLA.BIN"; break;
-                case 2: filename = "STMAPDAT-DEBUG.BIN"; break;
-                case 3: filename = "STMAPDAT-EXIT.BIN"; break;
-                default: filename = "STMAPDAT-VANILLA.BIN"; break;
+                case 1: filename = "dw2_exp_multiplier.STMAPDAT-VANILLA.BIN"; break;
+                case 2: filename = "dw2_exp_multiplier.STMAPDAT-DEBUG.BIN"; break;
+                case 3: filename = "dw2_exp_multiplier.STMAPDAT-EXIT.BIN"; break;
+                default: filename = "dw2_exp_multiplier.STMAPDAT-VANILLA.BIN"; break;
             }
-            return Stmapdat.ReadFile(filename);
+            MemoryStream ms = new MemoryStream();
+            Assembly.GetExecutingAssembly().GetManifestResourceStream(filename).CopyTo(ms);            
+            return ms.ToArray();
         }
     }
 }
