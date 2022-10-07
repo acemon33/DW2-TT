@@ -20,7 +20,10 @@ namespace dw2_exp_multiplier
         {
             InitializeComponent();
             this.stmapdatComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            this.digibeetleComboBox.Items.AddRange(DigiBeetlePatcher.getDigiBeetleIds(ref this.imageList, "digi-beetle.zip"));
+            
+            digibeetleComboBox.DisplayMember = "Value";
+            digibeetleComboBox.ValueMember = "Key";
+            digibeetleComboBox.DataSource = new BindingSource(DigiBeetlePatcher.getDigiBeetleIds(ref this.imageList, "digi-beetle.zip"), null);
         }
 
         private void about_Click(object sender, EventArgs e)
@@ -180,8 +183,9 @@ namespace dw2_exp_multiplier
 
         private void digibeetleComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string id = digibeetleComboBox.SelectedItem.ToString();
+            string id = ((KeyValuePair<string, string>)digibeetleComboBox.SelectedItem).Key;
             if (imageList.ContainsKey(id)) this.digibeetlPictureBox.Image = imageList[id];
+            else this.digibeetlPictureBox.Image = null;
         }
     }
     

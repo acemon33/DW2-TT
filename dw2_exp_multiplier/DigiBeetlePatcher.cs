@@ -67,19 +67,25 @@ namespace dw2_exp_multiplier
             return false;
         }
 
-        public static string[] getDigiBeetleIds(ref Dictionary<string, Bitmap> imageList, string filename)
+        public static Dictionary<string, string> getDigiBeetleIds(ref Dictionary<string, Bitmap> imageList, string filename)
         {
-            List<string> list = new List<string>();
-            list.Add("00-Default");
+            Dictionary<string, string> list = new Dictionary<string, string>();
+            list.Add("-1", "");
+            list.Add("00", "Default");
             using (ZipArchive archive = ZipFile.OpenRead(filename))
             {
                 foreach (ZipArchiveEntry entry in archive.Entries)
                 {
-                    list.Add(entry.Name);
-                    imageList.Add(entry.Name, new Bitmap(entry.Open()));
+                    int tokenPosition = entry.Name.IndexOf("-");
+                    string id = entry.Name.Substring(0, tokenPosition);
+
+                    if (entry.Name.IndexOf(".") < 1) list.Add(id, entry.Name.Substring(tokenPosition + 1));
+                    else list.Add(id, entry.Name.Substring(tokenPosition + 1, entry.Name.IndexOf(".") - tokenPosition - 1));
+
+                    imageList.Add(id, new Bitmap(entry.Open()));
                 }
             }
-            return list.ToArray();
+            return list;
         }
     }
 }
