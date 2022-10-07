@@ -22,6 +22,8 @@ namespace dw2_exp_multiplier
             digibeetleComboBox.DisplayMember = "Value";
             digibeetleComboBox.ValueMember = "Key";
             digibeetleComboBox.DataSource = new BindingSource(DigiBeetlePatcher.getDigiBeetleIds(ref this.imageList, "digi-beetle.zip"), null);
+            enemysetTextBox.Text = "J:\\games\\ENEMYSET.BIN";
+            dw2TextBox.Text = "J:\\games\\CD.bin";            
         }
 
         private void about_Click(object sender, EventArgs e)
@@ -37,10 +39,7 @@ namespace dw2_exp_multiplier
             var ofd = new OpenFileDialog();
             ofd.Title = "Open DW2 Bin File";
             ofd.Filter = "Digimon World 2 File|*.bin";
-            if (ofd.ShowDialog() == DialogResult.OK)
-            {
-                dw2TextBox.Text = ofd.FileName;
-            }
+            if (ofd.ShowDialog() == DialogResult.OK) dw2TextBox.Text = ofd.FileName;
         }
 
         private void enemysetBrowseButton_Click(object sender, EventArgs e)
@@ -48,10 +47,7 @@ namespace dw2_exp_multiplier
             var ofd = new OpenFileDialog();
             ofd.Title = "Open ENEMYSET.BIN File";
             ofd.Filter = "ENEMYSET.BIN File|*.bin";
-            if (ofd.ShowDialog() == DialogResult.OK)
-            {
-                enemysetTextBox.Text = ofd.FileName;
-            }
+            if (ofd.ShowDialog() == DialogResult.OK) enemysetTextBox.Text = ofd.FileName;
         }
 
         private void checkSaveButton()
@@ -117,75 +113,142 @@ namespace dw2_exp_multiplier
         private string ValidateFilename(ref DragEventArgs e)
         {
             string filename = (e.Data.GetData(DataFormats.FileDrop) as string[])[0];
-            if (filename.Contains(".bin") || filename.Contains(".BIN"))
-            {
-                return filename;
-            }
+            if (filename.Contains(".bin") || filename.Contains(".BIN")) return filename;
             return "";
         }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
             this.EnemysetList.Clear();
-            if (!DW2Slus.ValidImageFile(dw2TextBox.Text))
+            string filename = dw2TextBox.Text;
+            FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.ReadWrite);
+            try
             {
-                MessageBox.Show("The file: \"" + dw2TextBox.Text + "\" is not Digimon World 2 Image File!!", "DW2 invalid file");
-                return;
+                DW2Slus.ValidImageFile(ref fs);
+
+                EnemysetManager.ReadFile(enemysetTextBox.Text, ref this.EnemysetList);
+                EnemysetManager.MultiplyExpBits(Convert.ToUInt16(multiplier.Value), ref this.EnemysetList);
+                if (Control.ModifierKeys == Keys.Control) EnemysetManager.WriteFile("ENEMYSET_TEST.BIN", ref this.EnemysetList);
+                else EnemysetManager.WriteBin(ref fs, ref this.EnemysetList);
+                
+                if (unHideAAA.Checked)
+                {
+                    bool hide = (Control.ModifierKeys == Keys.Shift) ? true: false;
+                    DW2Slus.UnhideAAAFolder(ref fs, hide);
+                }
+                
+                if (stmapdatComboBox.SelectedIndex > 0)
+                {
+                    byte[] data = Stmapdat.Read(stmapdatComboBox.SelectedIndex);
+                    Stmapdat.WriteBin(ref fs, ref data);
+                }
+                
+                if (digibeetleComboBox.SelectedIndex > 0)
+                {
+                    ushort id = Convert.ToUInt16(((KeyValuePair<string, string>)digibeetleComboBox.SelectedItem).Key, 16);
+                    DigiBeetlePatcher.patch(ref fs, id);
+                }
+                
+                MessageBox.Show("The file has been Saved Successfully");
             }
-            if (!EnemysetManager.ReadFile(enemysetTextBox.Text, ref this.EnemysetList)) return;
-            EnemysetManager.MultiplyExpBits(Convert.ToUInt16(multiplier.Value), ref this.EnemysetList);
-            if (Control.ModifierKeys == Keys.Control)
+            catch (FileLoadException ex)
             {
-                if (!EnemysetManager.WriteFile("ENEMYSET_TEST.BIN", ref this.EnemysetList)) return;
+                MessageBox.Show(ex.Message, "DW2 invalid file");
             }
-            else
+            catch (FileNotFoundException ex)
             {
-                if (!EnemysetManager.WriteBin(dw2TextBox.Text, ref this.EnemysetList)) return;
+                MessageBox.Show("The File \"" + filename + "\" is not found", "File Error");
             }
-            if (unHideAAA.Checked)
+            catch (IOException ex)
             {
-                bool hide = (Control.ModifierKeys == Keys.Shift) ? true: false;
-                DW2Slus.UnhideAAAFolder(dw2TextBox.Text, hide);
+                MessageBox.Show("The File \"" + filename + "\" is being used by anothe program", "File Error");
             }
-            if (stmapdatComboBox.SelectedIndex > 0)
+            catch (Exception ex)
             {
-                byte[] data = Stmapdat.Read(stmapdatComboBox.SelectedIndex);
-                Stmapdat.WriteBin(dw2TextBox.Text, ref data);
+                MessageBox.Show(ex.Message, "Error");
             }
-            if (digibeetleComboBox.SelectedIndex > 0)
+            finally
             {
-                ushort id = Convert.ToUInt16(((KeyValuePair<string, string>)digibeetleComboBox.SelectedItem).Key, 16);
-                DigiBeetlePatcher.patch(dw2TextBox.Text, id);
+                if (fs != null)
+                {
+                    fs.Close();
+                    fs.Dispose();
+                }
             }
-            MessageBox.Show("The file has been Saved Successfully");
         }
 
         private void exportButton_Click(object sender, EventArgs e)
         {
             this.EnemysetList.Clear();
-            if (!DW2Slus.ValidImageFile(dw2TextBox.Text))
+            string filename = dw2TextBox.Text;
+            FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.ReadWrite);
+            try
             {
-                MessageBox.Show("The file: \"" + dw2TextBox.Text + "\" is not Digimon World 2 Image File!!", "DW2 invalid file");
-                return;
+                DW2Slus.ValidImageFile(ref fs);
+
+                EnemysetManager.ReadBin(ref fs, ref this.EnemysetList);
+                filename = Path.GetDirectoryName(dw2TextBox.Text)+ "\\ENEMYSET.BIN";
+                EnemysetManager.WriteFile(filename, ref this.EnemysetList);
+                enemysetTextBox.Text = filename;
+                
+                MessageBox.Show("ENEMYSET.BIN has been Exported Successfully");
             }
-            if (!EnemysetManager.ReadBin(dw2TextBox.Text, ref this.EnemysetList)) return;
-            string filename = Path.GetDirectoryName(dw2TextBox.Text)+ "\\ENEMYSET.BIN";
-            if (!EnemysetManager.WriteFile(filename, ref this.EnemysetList)) return;
-            enemysetTextBox.Text = filename;
-            MessageBox.Show("ENEMYSET.BIN has been Exported Successfully");
+            catch (FileNotFoundException ex)
+            {
+                MessageBox.Show("The File \"" + filename + "\" is not found", "File Error");
+            }
+            catch (IOException ex)
+            {
+                MessageBox.Show("The File \"" + filename + "\" is being used by anothe program", "File Error");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
+            finally
+            {
+                if (fs != null)
+                {
+                    fs.Close();
+                    fs.Dispose();
+                }
+            }
         }
 
         private void importButton_Click(object sender, EventArgs e)
         {
             this.EnemysetList.Clear();
-            if (!DW2Slus.ValidImageFile(dw2TextBox.Text))
+            string filename = dw2TextBox.Text;
+            FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.ReadWrite);
+            try
             {
-                MessageBox.Show("The file: \"" + dw2TextBox.Text + "\" is not Digimon World 2 Image File!!", "DW2 invalid file");
-                return;
+                DW2Slus.ValidImageFile(ref fs);
+
+                EnemysetManager.ReadFile(filename, ref this.EnemysetList);
+                EnemysetManager.WriteBin(ref fs, ref this.EnemysetList);
+                
+                MessageBox.Show("ENEMYSET.BIN has been Imported Successfully");
             }
-            if (!EnemysetManager.ReadFile(enemysetTextBox.Text, ref this.EnemysetList)) return;
-            if (!EnemysetManager.WriteBin(dw2TextBox.Text, ref this.EnemysetList)) return;
-            MessageBox.Show("ENEMYSET.BIN has been Imported Successfully");
+            catch (FileNotFoundException ex)
+            {
+                MessageBox.Show("The File \"" + filename + "\" is not found", "File Error");
+            }
+            catch (IOException ex)
+            {
+                MessageBox.Show("The File \"" + filename + "\" is being used by anothe program", "File Error");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
+            finally
+            {
+                if (fs != null)
+                {
+                    fs.Close();
+                    fs.Dispose();
+                }
+            }
         }
 
         private void digibeetleComboBox_SelectedIndexChanged(object sender, EventArgs e)

@@ -13,49 +13,16 @@ namespace dw2_exp_multiplier
     {
         public static bool ReadFile(string filename, ref List<Enemyset> enemysetList)
         {
-            try
-            {
-                byte[] buffer = File.ReadAllBytes(filename);
-                EnemysetManager.Read(ref buffer, ref enemysetList);
-                return true;
-            }
-            catch (FileNotFoundException ex)
-            {
-                MessageBox.Show("The File \"" + filename + "\" is not found", "File Error");
-            }
-            catch (IOException ex)
-            {
-                MessageBox.Show("The File \"" + filename + "\" is being used by anothe program", "File Error");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "File Error");
-            }
-            return false;
+            byte[] buffer = File.ReadAllBytes(filename);
+            EnemysetManager.Read(ref buffer, ref enemysetList);
+            return true;
         }
     
         public static bool WriteFile(string filename, ref List<Enemyset> enemysetList)
         {
             byte[] buffer = EnemysetManager.Write(enemysetList.Count * Enemyset.LENGTH, ref enemysetList);
-
-            try
-            {
-                File.WriteAllBytes(filename, buffer);
-                return true;
-            }
-            catch (FileNotFoundException ex)
-            {
-                MessageBox.Show("The File \"" + filename + "\" is not found", "File Error");
-            }
-            catch (IOException ex)
-            {
-                MessageBox.Show("The File \"" + filename + "\" is being used by anothe program", "File Error");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "File Error");
-            }
-            return false;
+            File.WriteAllBytes(filename, buffer);
+            return true;
         }
         
         public static void MultiplyExpBits(UInt16 multiplier, ref List<Enemyset> enemysetList)
@@ -72,71 +39,22 @@ namespace dw2_exp_multiplier
             }
         }
         
-        public static bool ReadBin(string filename, ref List<Enemyset> enemysetList)
+        public static bool ReadBin(ref FileStream br, ref List<Enemyset> enemysetList)
         {
-            FileStream br = null;
-            try
-            {
-                br = new FileStream(filename, FileMode.Open, FileAccess.ReadWrite);
-                byte[] buffer = PsxSector.ReadSector(ref br, DW2Slus.GetLba(FileIndex.ENEMYSET_BIN), DW2Slus.GetSize(FileIndex.ENEMYSET_BIN));
-                EnemysetManager.Read(ref buffer, ref enemysetList);
-                return true;
-            }
-            catch (FileNotFoundException ex)
-            {
-                MessageBox.Show("The File \"" + filename + "\" is not found", "File Error");
-            }
-            catch (IOException ex)
-            {
-                MessageBox.Show("The File \"" + filename + "\" is being used by anothe program", "File Error");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "File Error");
-            }
-            finally
-            {
-                if (br != null)
-                {
-                    br.Close();
-                    br.Dispose();
-                }
-            }
-            return false;
+            byte[] buffer = PsxSector.ReadSector(ref br, DW2Slus.GetLba(FileIndex.ENEMYSET_BIN), DW2Slus.GetSize(FileIndex.ENEMYSET_BIN));
+            
+            EnemysetManager.Read(ref buffer, ref enemysetList);
+            
+            return true;
         }
         
-        public static bool WriteBin(string filename, ref List<Enemyset> enemysetList)
+        public static bool WriteBin(ref FileStream br, ref List<Enemyset> enemysetList)
         {
             byte[] buffer = EnemysetManager.Write(PsxSector.SECTOR * DW2Slus.GetSize(FileIndex.ENEMYSET_BIN), ref enemysetList);
 
-            FileStream br = null;
-            try
-            {
-                br = new FileStream(filename, FileMode.Open, FileAccess.ReadWrite);
-                PsxSector.WriteSector(ref br, ref buffer, DW2Slus.GetLba(FileIndex.ENEMYSET_BIN), DW2Slus.GetSize(FileIndex.ENEMYSET_BIN));
-                return true;
-            }
-            catch (FileNotFoundException ex)
-            {
-                MessageBox.Show("The File \"" + filename + "\" is not found", "File Error");
-            }
-            catch (IOException ex)
-            {
-                MessageBox.Show("The File \"" + filename + "\" is being used by anothe program", "File Error");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "File Error");
-            }
-            finally
-            {
-                if (br != null)
-                {
-                    br.Close();
-                    br.Dispose();
-                }
-            }
-            return false;
+            PsxSector.WriteSector(ref br, ref buffer, DW2Slus.GetLba(FileIndex.ENEMYSET_BIN), DW2Slus.GetSize(FileIndex.ENEMYSET_BIN));
+            
+            return true;
         }
 
         private static void Read(ref byte[] buffer, ref List<Enemyset> enemysetList)
