@@ -8,7 +8,6 @@ namespace dw2_exp_multiplier
 {
     public class Enemyset
     {
-        public static readonly int INDEX = 3183;
         public static readonly int LENGTH = 100;
 
         public byte Id;

@@ -78,7 +78,7 @@ namespace dw2_exp_multiplier
             try
             {
                 br = new BinaryReader(File.OpenRead(filename));
-                byte[] buffer = PsxSector.ReadSector(ref br, DW2Slus.GetLba( Enemyset.INDEX), DW2Slus.GetSize(Enemyset.INDEX));
+                byte[] buffer = PsxSector.ReadSector(ref br, DW2Slus.GetLba(FileIndex.ENEMYSET_BIN), DW2Slus.GetSize(FileIndex.ENEMYSET_BIN));
                 EnemysetManager.Read(ref buffer, ref enemysetList);
                 return true;
             }
@@ -107,13 +107,13 @@ namespace dw2_exp_multiplier
         
         public static bool WriteBin(string filename, ref List<Enemyset> enemysetList)
         {
-            byte[] buffer = EnemysetManager.Write(PsxSector.SECTOR * DW2Slus.GetSize(Enemyset.INDEX), ref enemysetList);
+            byte[] buffer = EnemysetManager.Write(PsxSector.SECTOR * DW2Slus.GetSize(FileIndex.ENEMYSET_BIN), ref enemysetList);
 
             BinaryWriter br = null;
             try
             {
                 br = new BinaryWriter(File.OpenWrite(filename));   
-                PsxSector.WriteSector(ref br, ref buffer, DW2Slus.GetLba(Enemyset.INDEX), DW2Slus.GetSize(Enemyset.INDEX));
+                PsxSector.WriteSector(ref br, ref buffer, DW2Slus.GetLba(FileIndex.ENEMYSET_BIN), DW2Slus.GetSize(FileIndex.ENEMYSET_BIN));
                 return true;
             }
             catch (FileNotFoundException ex)

@@ -10,7 +10,6 @@ namespace dw2_exp_multiplier
 {
     public class Stmapdat
     {
-        private const int INDEX = 3369;
         
         public static byte[] ReadFile(string filename)
         {
@@ -38,10 +37,10 @@ namespace dw2_exp_multiplier
             BinaryWriter br = null;
             try
             {
-                byte[] temp = new byte[DW2Slus.GetSize(Stmapdat.INDEX) * PsxSector.SECTOR];
+                byte[] temp = new byte[DW2Slus.GetSize(FileIndex.STMAPDAT_BIN) * PsxSector.SECTOR];
                 Buffer.BlockCopy(buffer, 0, temp, 0, buffer.Length);
                 br = new BinaryWriter(File.OpenWrite(filename));   
-                PsxSector.WriteSector(ref br, ref temp, DW2Slus.GetLba(Stmapdat.INDEX), DW2Slus.GetSize(Stmapdat.INDEX));
+                PsxSector.WriteSector(ref br, ref temp, DW2Slus.GetLba(FileIndex.STMAPDAT_BIN), DW2Slus.GetSize(FileIndex.STMAPDAT_BIN));
                 return true;
             }
             catch (FileNotFoundException ex)

@@ -13,8 +13,6 @@ namespace dw2_exp_multiplier
 {
     public class DigiBeetlePatcher
     {
-        private const int INDEX = 410;
-
         public static bool patch(string filename, UInt16 digibeetleId)
         {
             BinaryWriter bw = null;
@@ -22,7 +20,7 @@ namespace dw2_exp_multiplier
             try
             {
                 br = new BinaryReader(File.OpenRead(filename));
-                byte[] data = PsxSector.ReadSector(ref br, DW2Slus.GetLba(DigiBeetlePatcher.INDEX), DW2Slus.GetSize(DigiBeetlePatcher.INDEX));
+                byte[] data = PsxSector.ReadSector(ref br, DW2Slus.GetLba(FileIndex.STAG4000_PRO), DW2Slus.GetSize(FileIndex.STAG4000_PRO));
                 br.Close();
                 
                 byte[] patchedPattern = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xF8, 0x01, 0x10, 0x24 };
@@ -32,9 +30,9 @@ namespace dw2_exp_multiplier
                 
                 Buffer.BlockCopy(currentPattern, 0, data, 0x940, currentPattern.Length);
                 bw = new BinaryWriter(File.OpenWrite(filename));
-                byte[] temp = new byte[DW2Slus.GetSize(DigiBeetlePatcher.INDEX) * PsxSector.SECTOR];
+                byte[] temp = new byte[DW2Slus.GetSize(FileIndex.STAG4000_PRO) * PsxSector.SECTOR];
                 Buffer.BlockCopy(data, 0, temp, 0, data.Length);
-                PsxSector.WriteSector(ref bw, ref temp, DW2Slus.GetLba(DigiBeetlePatcher.INDEX), DW2Slus.GetSize(DigiBeetlePatcher.INDEX));
+                PsxSector.WriteSector(ref bw, ref temp, DW2Slus.GetLba(FileIndex.STAG4000_PRO), DW2Slus.GetSize(FileIndex.STAG4000_PRO));
                 bw.Close();
                 
                 return true;

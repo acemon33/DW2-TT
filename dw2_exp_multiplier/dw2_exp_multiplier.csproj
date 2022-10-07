@@ -59,6 +59,7 @@
     <Compile Include="DW2Slus.cs" />
     <Compile Include="Enemyset.cs" />
     <Compile Include="EnemysetManager.cs" />
+    <Compile Include="FileIndex.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>

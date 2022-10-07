@@ -127,11 +127,6 @@ namespace dw2_exp_multiplier
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            
-        }
-
-        private void saveButton_Click2(object sender, EventArgs e)
-        {
             this.EnemysetList.Clear();
             if (!DW2Slus.ValidImageFile(dw2TextBox.Text))
             {
@@ -160,8 +155,7 @@ namespace dw2_exp_multiplier
             }
             if (digibeetleComboBox.SelectedIndex > 0)
             {
-                string stringId = digibeetleComboBox.SelectedItem.ToString();
-                ushort id = Convert.ToUInt16(stringId.Substring(0, stringId.IndexOf("-")), 16);
+                ushort id = Convert.ToUInt16(((KeyValuePair<string, string>)digibeetleComboBox.SelectedItem).Key, 16);
                 DigiBeetlePatcher.patch(dw2TextBox.Text, id);
             }
             MessageBox.Show("The file has been Saved Successfully");
