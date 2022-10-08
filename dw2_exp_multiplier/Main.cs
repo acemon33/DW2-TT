@@ -27,8 +27,6 @@ namespace dw2_exp_multiplier
         private void about_Click(object sender, EventArgs e)
         {
             var aboutForm = new About();
-            aboutForm.Width = this.Width;
-            aboutForm.Height = this.Height;
             aboutForm.ShowDialog();
         }
 

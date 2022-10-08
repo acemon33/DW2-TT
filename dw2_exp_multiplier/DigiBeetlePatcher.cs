@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.IO.Compression;
-using System.Windows.Forms;
 
 /*
  * @author acemon33
@@ -23,9 +22,7 @@ namespace dw2_exp_multiplier
             byte[] currentPattern = (digibeetleId == 0) ? defaultPattern : patchedPattern;
             
             Buffer.BlockCopy(currentPattern, 0, data, 0x940, currentPattern.Length);
-            byte[] temp = new byte[DW2Slus.GetSize(FileIndex.STAG4000_PRO) * PsxSector.SECTOR];
-            Buffer.BlockCopy(data, 0, temp, 0, data.Length);
-            PsxSector.WriteSector(ref fs, ref temp, DW2Slus.GetLba(FileIndex.STAG4000_PRO), DW2Slus.GetSize(FileIndex.STAG4000_PRO));
+            PsxSector.WriteSector(ref fs, ref data, DW2Slus.GetLba(FileIndex.STAG4000_PRO), DW2Slus.GetSize(FileIndex.STAG4000_PRO));
             
             return true;
         }

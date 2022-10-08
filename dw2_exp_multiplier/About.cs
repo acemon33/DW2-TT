@@ -16,5 +16,12 @@ namespace dw2_exp_multiplier
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
     }
+
 }
