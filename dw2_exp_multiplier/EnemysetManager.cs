@@ -32,9 +32,9 @@ namespace dw2_exp_multiplier
                 foreach (var enemy in enemyset.Enemy)
                 {
                     var i = enemy.Exp * multiplier;
-                    enemy.Exp = ( i < enemy.Exp) ? UInt16.MaxValue : Convert.ToUInt16(i);   
+                    enemy.Exp = ( i > UInt16.MaxValue) ? UInt16.MaxValue : Convert.ToUInt16(i);   
                     i = enemy.Bits * multiplier;
-                    enemy.Bits = ( i < enemy.Bits) ? UInt16.MaxValue : Convert.ToUInt16(i);   
+                    enemy.Bits = ( i > UInt16.MaxValue) ? UInt16.MaxValue : Convert.ToUInt16(i);   
                 }
             }
         }
