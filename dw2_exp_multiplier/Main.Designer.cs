@@ -279,7 +279,7 @@
             this.MinimizeBox = false;
             this.Name = "Main";
             this.Tag = "";
-            this.Text = "DW2 EXP MULTIPLIER";
+            this.Text = "DW2-TT";
             ((System.ComponentModel.ISupportInitialize) (this.multiplier)).EndInit();
             this.menuBar.ResumeLayout(false);
             this.menuBar.PerformLayout();

@@ -49,9 +49,9 @@
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F);
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(232, 19);
+            this.label1.Size = new System.Drawing.Size(280, 19);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Digimon World 2 EXP Multiplier";
+            this.label1.Text = "DW2-TT (Digimon World 2 Tiny Tool)";
             // 
             // label2
             // 
@@ -61,7 +61,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 17);
             this.label2.TabIndex = 1;
-            this.label2.Text = "version: 0.1";
+            this.label2.Text = "version: 2.0";
             // 
             // button1
             // 
