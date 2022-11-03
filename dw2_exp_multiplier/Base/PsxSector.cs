@@ -5,7 +5,7 @@ using System.IO;
  * @author acemon33
  */
 
-namespace dw2_exp_multiplier
+namespace dw2_exp_multiplier.Base
 {
     public class PsxSector
     {

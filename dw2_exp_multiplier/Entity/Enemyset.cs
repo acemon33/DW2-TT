@@ -1,10 +1,11 @@
 using System;
+using dw2_exp_multiplier.Entity;
 
 /*
  * @author acemon33
  */
 
-namespace dw2_exp_multiplier
+namespace dw2_exp_multiplier.Entity
 {
     public class Enemyset
     {
@@ -28,7 +29,7 @@ namespace dw2_exp_multiplier
             this.EncType = data[5];
             this.GiftRate = BitConverter.ToUInt16(data, 6);
 
-            byte[] temp = new byte[dw2_exp_multiplier.Enemy.LENGTH];
+            byte[] temp = new byte[Entity.Enemy.LENGTH];
             for (int i = 0; i < this.Enemy.Length; i++)
             {
                 Buffer.BlockCopy(data, i * temp.Length + 8, temp, 0, temp.Length);
@@ -48,7 +49,7 @@ namespace dw2_exp_multiplier
 
             for (int i = 0; i < this.Enemy.Length; i++)
             {
-                Buffer.BlockCopy(this.Enemy[i].ToArray(), 0, data, i * dw2_exp_multiplier.Enemy.LENGTH + 8, dw2_exp_multiplier.Enemy.LENGTH);
+                Buffer.BlockCopy(this.Enemy[i].ToArray(), 0, data, i * Entity.Enemy.LENGTH + 8, Entity.Enemy.LENGTH);
             }
             return data;
         }

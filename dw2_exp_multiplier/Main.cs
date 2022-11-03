@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using dw2_exp_multiplier.Base;
+using dw2_exp_multiplier.Entity;
+using dw2_exp_multiplier.Manager;
 
 /*
  * @author acemon33

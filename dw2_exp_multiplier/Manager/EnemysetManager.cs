@@ -2,12 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
+using dw2_exp_multiplier.Base;
+using dw2_exp_multiplier.Entity;
 
 /*
  * @author acemon33
  */
 
-namespace dw2_exp_multiplier
+namespace dw2_exp_multiplier.Manager
 {
     public class EnemysetManager
     {
