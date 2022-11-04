@@ -18,7 +18,8 @@ namespace dw2_exp_multiplier.View
             this.LoadSaveFile();
         }
 
-        private void saveFileButton_Click(object sender, EventArgs e)
+        #region Buttons Region
+        private void openFileButton_Click(object sender, EventArgs e)
         {
             var ofd = new OpenFileDialog();
             ofd.Title = "Open DW2 Raw Save File";
@@ -31,6 +32,12 @@ namespace dw2_exp_multiplier.View
             }
         }
 
+        private void saveFileButton_Click(object sender, EventArgs e)
+        {
+            File.WriteAllBytes("test", this.saveFile.ToArray());
+        }
+        #endregion
+        
         private void LoadSaveFile()
         {
             var currentSlot = this.saveFile.saveSlot[this.slotComboBox.SelectedIndex];
@@ -49,11 +56,46 @@ namespace dw2_exp_multiplier.View
             this.LoadSaveFile();
         }
 
-        private void saveFileButton_Click_1(object sender, EventArgs e)
+        private void lastLocationTextBox_TextChanged(object sender, EventArgs e)
         {
-            File.WriteAllBytes("test", this.saveFile.ToArray());
+            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].locationId1 = Convert.ToByte(lastLocationTextBox.Text, 16);
         }
-        
+
+        private void heroNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].stringHeroName = heroNameTextBox.Text;
+        }
+
+        private void time1TextBox_TextChanged(object sender, EventArgs e)
+        {
+            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].time1 = Convert.ToByte(time1TextBox.Text, 16);
+        }
+
+        private void time2TextBox_TextChanged(object sender, EventArgs e)
+        {
+            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].time2 = Convert.ToByte(time2TextBox.Text, 16);
+        }
+
+        private void time3TextBox_TextChanged(object sender, EventArgs e)
+        {
+            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].time3 = Convert.ToByte(time3TextBox.Text, 16);
+        }
+
+        private void time4TextBox_TextChanged(object sender, EventArgs e)
+        {
+            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].time4 = Convert.ToByte(time4TextBox.Text, 16);
+        }
+
+        private void bitsTextBox_TextChanged(object sender, EventArgs e)
+        {
+            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].bits = Convert.ToInt32(bitsTextBox.Text);
+        }
+
+        private void rankTextBox_TextChanged(object sender, EventArgs e)
+        {
+            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].rank = Convert.ToByte(rankTextBox.Text, 16);
+        }
+
     }
     
 }

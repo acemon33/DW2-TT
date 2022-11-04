@@ -132,16 +132,20 @@
             // heroNameTextBox
             // 
             this.heroNameTextBox.Location = new System.Drawing.Point(140, 30);
+            this.heroNameTextBox.MaxLength = 5;
             this.heroNameTextBox.Name = "heroNameTextBox";
             this.heroNameTextBox.Size = new System.Drawing.Size(114, 20);
             this.heroNameTextBox.TabIndex = 12;
+            this.heroNameTextBox.TextChanged += new System.EventHandler(this.heroNameTextBox_TextChanged);
             // 
             // lastLocationTextBox
             // 
             this.lastLocationTextBox.Location = new System.Drawing.Point(140, 3);
+            this.lastLocationTextBox.MaxLength = 2;
             this.lastLocationTextBox.Name = "lastLocationTextBox";
             this.lastLocationTextBox.Size = new System.Drawing.Size(55, 20);
             this.lastLocationTextBox.TabIndex = 10;
+            this.lastLocationTextBox.TextChanged += new System.EventHandler(this.lastLocationTextBox_TextChanged);
             // 
             // label5
             // 
@@ -164,9 +168,11 @@
             // time1TextBox
             // 
             this.time1TextBox.Location = new System.Drawing.Point(140, 57);
+            this.time1TextBox.MaxLength = 2;
             this.time1TextBox.Name = "time1TextBox";
             this.time1TextBox.Size = new System.Drawing.Size(55, 20);
             this.time1TextBox.TabIndex = 14;
+            this.time1TextBox.TextChanged += new System.EventHandler(this.time1TextBox_TextChanged);
             // 
             // label7
             // 
@@ -180,9 +186,11 @@
             // time2TextBox
             // 
             this.time2TextBox.Location = new System.Drawing.Point(140, 84);
+            this.time2TextBox.MaxLength = 2;
             this.time2TextBox.Name = "time2TextBox";
             this.time2TextBox.Size = new System.Drawing.Size(55, 20);
             this.time2TextBox.TabIndex = 16;
+            this.time2TextBox.TextChanged += new System.EventHandler(this.time2TextBox_TextChanged);
             // 
             // label9
             // 
@@ -196,9 +204,11 @@
             // time3TextBox
             // 
             this.time3TextBox.Location = new System.Drawing.Point(140, 111);
+            this.time3TextBox.MaxLength = 2;
             this.time3TextBox.Name = "time3TextBox";
             this.time3TextBox.Size = new System.Drawing.Size(55, 20);
             this.time3TextBox.TabIndex = 18;
+            this.time3TextBox.TextChanged += new System.EventHandler(this.time3TextBox_TextChanged);
             // 
             // label8
             // 
@@ -212,9 +222,11 @@
             // time4TextBox
             // 
             this.time4TextBox.Location = new System.Drawing.Point(140, 138);
+            this.time4TextBox.MaxLength = 2;
             this.time4TextBox.Name = "time4TextBox";
             this.time4TextBox.Size = new System.Drawing.Size(55, 20);
             this.time4TextBox.TabIndex = 20;
+            this.time4TextBox.TextChanged += new System.EventHandler(this.time4TextBox_TextChanged);
             // 
             // label11
             // 
@@ -231,6 +243,7 @@
             this.bitsTextBox.Name = "bitsTextBox";
             this.bitsTextBox.Size = new System.Drawing.Size(114, 20);
             this.bitsTextBox.TabIndex = 22;
+            this.bitsTextBox.TextChanged += new System.EventHandler(this.bitsTextBox_TextChanged);
             // 
             // label4
             // 
@@ -244,9 +257,11 @@
             // rankTextBox
             // 
             this.rankTextBox.Location = new System.Drawing.Point(140, 192);
+            this.rankTextBox.MaxLength = 2;
             this.rankTextBox.Name = "rankTextBox";
             this.rankTextBox.Size = new System.Drawing.Size(55, 20);
             this.rankTextBox.TabIndex = 24;
+            this.rankTextBox.TextChanged += new System.EventHandler(this.rankTextBox_TextChanged);
             // 
             // label10
             // 
@@ -320,7 +335,7 @@
             this.openFileButton.TabIndex = 1;
             this.openFileButton.Text = "Open";
             this.openFileButton.UseVisualStyleBackColor = true;
-            this.openFileButton.Click += new System.EventHandler(this.saveFileButton_Click);
+            this.openFileButton.Click += new System.EventHandler(this.openFileButton_Click);
             // 
             // saveFileTextBox
             // 
@@ -384,7 +399,10 @@
             // slotComboBox
             // 
             this.slotComboBox.FormattingEnabled = true;
-            this.slotComboBox.Items.AddRange(new object[] {"Slot 1", "Slot 2", "Slot 3"});
+            this.slotComboBox.Items.AddRange(new object[] {
+            "Slot 1",
+            "Slot 2",
+            "Slot 3"});
             this.slotComboBox.Location = new System.Drawing.Point(68, 64);
             this.slotComboBox.Name = "slotComboBox";
             this.slotComboBox.Size = new System.Drawing.Size(172, 21);
@@ -399,7 +417,7 @@
             this.saveFileButton.TabIndex = 10;
             this.saveFileButton.Text = "Save";
             this.saveFileButton.UseVisualStyleBackColor = true;
-            this.saveFileButton.Click += new System.EventHandler(this.saveFileButton_Click_1);
+            this.saveFileButton.Click += new System.EventHandler(this.saveFileButton_Click);
             // 
             // SaveEditorView
             // 
@@ -424,6 +442,7 @@
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         private System.Windows.Forms.Button openFileButton;
