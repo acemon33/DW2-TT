@@ -15,7 +15,7 @@ namespace dw2_exp_multiplier.View
             saveFileTextBox.Text = "BASLUS-01193 DMW2";
             this.saveFile = new SaveFile(File.ReadAllBytes(saveFileTextBox.Text));
             this.slotComboBox.SelectedIndex = 0;
-            this.LoadSaveFile();
+            this.LoadCurrentSlot();
         }
 
         #region Buttons Region
@@ -28,17 +28,18 @@ namespace dw2_exp_multiplier.View
                 saveFileTextBox.Text = ofd.FileName;
                 this.saveFile = new SaveFile(File.ReadAllBytes(saveFileTextBox.Text));
                 this.slotComboBox.SelectedIndex = 0;
-                this.LoadSaveFile();
+                this.LoadCurrentSlot();
             }
         }
 
         private void saveFileButton_Click(object sender, EventArgs e)
         {
-            File.WriteAllBytes("test", this.saveFile.ToArray());
+            this.saveFile.CalculateChecksum();
+            File.WriteAllBytes(saveFileTextBox.Text, this.saveFile.ToArray());
         }
         #endregion
         
-        private void LoadSaveFile()
+        private void LoadCurrentSlot()
         {
             var currentSlot = this.saveFile.saveSlot[this.slotComboBox.SelectedIndex];
             lastLocationTextBox.Text = currentSlot.locationId1.ToString("X2");
@@ -53,9 +54,10 @@ namespace dw2_exp_multiplier.View
 
         private void slotComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.LoadSaveFile();
+            this.LoadCurrentSlot();
         }
 
+        #region Misc. Change Event Region
         private void lastLocationTextBox_TextChanged(object sender, EventArgs e)
         {
             this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].locationId1 = Convert.ToByte(lastLocationTextBox.Text, 16);
@@ -95,7 +97,8 @@ namespace dw2_exp_multiplier.View
         {
             this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].rank = Convert.ToByte(rankTextBox.Text, 16);
         }
-
+        #endregion
+        
     }
     
 }

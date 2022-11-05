@@ -1,5 +1,4 @@
 using System;
-using System.Windows.Forms.VisualStyles;
 using DigimonWorld2Tool.Utility;
 
 
@@ -195,7 +194,29 @@ namespace dw2_exp_multiplier.Entity
             
             return data;
         }
-        
+
+        public void CalculateChecksum()
+        {
+            var data = this.ToArray();
+            int data_1 = 0, calculated_value = 0, ptr = 0, data_2;
+
+            int counter = 0x1fff;
+            do
+            {
+                if (counter == 0) break;
+                counter -= 2;
+                data_1 = BitConverter.ToUInt16(data, ptr);
+                data_2 = ptr + 2;
+                if(counter == -1) break;
+                ptr += 4;
+                calculated_value = BitConverter.ToUInt16(data, data_2) + (calculated_value ^ data_1);
+            } while(true);
+            int result = calculated_value ^ data_1;
+            byte[] a = BitConverter.GetBytes(result);
+            ushort b = BitConverter.ToUInt16(a, 0);
+            this.checksum2 = b;
+        }
+
     }
 
 }
