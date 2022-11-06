@@ -58,7 +58,8 @@ namespace dw2_exp_multiplier.Entity
         public byte story_progress;
         public byte[] padding10 = new byte[19];
 
-        public string stringHeroName;
+        public string StringHeroName;
+        public string StringDigiBeetleName;
 
         public SaveSlot(byte[] data)
         {
@@ -101,7 +102,8 @@ namespace dw2_exp_multiplier.Entity
             this.story_progress = data[4164];
             Buffer.BlockCopy(data, 4165, this.padding10, 0, this.padding10.Length);
 
-            this.stringHeroName = TextConversion.DigiStringToASCII(this.heroName);
+            this.StringHeroName = TextConversion.DigiStringToASCII(this.heroName);
+            this.StringDigiBeetleName = TextConversion.DigiStringToASCII(this.digi_beetle_name);
         }
         
         public Byte[] ToArray()
@@ -120,8 +122,8 @@ namespace dw2_exp_multiplier.Entity
             data[18] = this.rank;
             data[19] = this.padding3;
             
-            this.heroName = new byte[] { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF };
-            var temp = TextConversion.ASCIIToDigiString(this.stringHeroName);
+            this.heroName = new byte[] { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF };
+            var temp = TextConversion.ASCIIToDigiString(this.StringHeroName);
             Buffer.BlockCopy(temp, 0, this.heroName, 0, temp.Length);
             Buffer.BlockCopy(this.heroName, 0, data, 20, this.heroName.Length);
             
@@ -132,7 +134,12 @@ namespace dw2_exp_multiplier.Entity
             Buffer.BlockCopy(this.items, 0, data, 102, this.items.Length * 2);
             Buffer.BlockCopy(this.may_game_flag1, 0, data, 198, this.may_game_flag1.Length);
             Buffer.BlockCopy(this.padding5, 0, data, 203, this.padding5.Length);
+            
+            this.digi_beetle_name = new byte[] { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF };
+            temp = TextConversion.ASCIIToDigiString(this.StringDigiBeetleName);
+            Buffer.BlockCopy(temp, 0, this.digi_beetle_name, 0, temp.Length);
             Buffer.BlockCopy(this.digi_beetle_name, 0, data, 209, this.digi_beetle_name.Length);
+            
             Buffer.BlockCopy(this.padding6, 0, data, 217, this.padding6.Length);
             for (int i = 0; i < this.digimon.Length; i++)
             {
@@ -190,14 +197,14 @@ namespace dw2_exp_multiplier.Entity
             
             Buffer.BlockCopy(this.padding, 0,data, 0x3314,  this.padding.Length);
             Buffer.BlockCopy(BitConverter.GetBytes(checksum1), 0, data, 0x3FFC, 2);
+            this.checksum2 = this.CalculateChecksum(data);
             Buffer.BlockCopy(BitConverter.GetBytes(checksum2), 0, data, 0x3FFE, 2);
-            
             return data;
         }
 
-        public void CalculateChecksum()
+        public ushort CalculateChecksum(byte[] data)
         {
-            var data = this.ToArray();
+            // var data = this.ToArray();
             int data_1 = 0, calculated_value = 0, ptr = 0, data_2;
 
             int counter = 0x1fff;
@@ -214,7 +221,7 @@ namespace dw2_exp_multiplier.Entity
             int result = calculated_value ^ data_1;
             byte[] a = BitConverter.GetBytes(result);
             ushort b = BitConverter.ToUInt16(a, 0);
-            this.checksum2 = b;
+            return b;
         }
 
     }

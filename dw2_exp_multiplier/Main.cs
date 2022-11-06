@@ -17,10 +17,12 @@ namespace dw2_exp_multiplier
     {
         List<Enemyset> EnemysetList = new List<Enemyset>();
         Dictionary<string, Bitmap> imageList = new Dictionary<string, Bitmap>();
+        public static string Title;
         
         public Main()
         {
             InitializeComponent();
+            Main.Title = this.Text;
             this.stmapdatComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             digibeetleComboBox.DisplayMember = "Value";
             digibeetleComboBox.ValueMember = "Key";
