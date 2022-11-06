@@ -467,7 +467,7 @@
             this.bodyFlagTextBox.Location = new System.Drawing.Point(191, 68);
             this.bodyFlagTextBox.Name = "bodyFlagTextBox";
             this.bodyFlagTextBox.Size = new System.Drawing.Size(44, 20);
-            this.bodyFlagTextBox.TabIndex = 49;
+            this.bodyFlagTextBox.TabIndex = 32;
             this.bodyFlagTextBox.TextChanged += new System.EventHandler(this.bodyFlagTextBox_TextChanged);
             // 
             // engineFlagTextBox
@@ -475,7 +475,7 @@
             this.engineFlagTextBox.Location = new System.Drawing.Point(191, 95);
             this.engineFlagTextBox.Name = "engineFlagTextBox";
             this.engineFlagTextBox.Size = new System.Drawing.Size(44, 20);
-            this.engineFlagTextBox.TabIndex = 43;
+            this.engineFlagTextBox.TabIndex = 33;
             this.engineFlagTextBox.TextChanged += new System.EventHandler(this.engineFlagTextBox_TextChanged);
             // 
             // batteryFlagTextBox
@@ -483,7 +483,7 @@
             this.batteryFlagTextBox.Location = new System.Drawing.Point(191, 149);
             this.batteryFlagTextBox.Name = "batteryFlagTextBox";
             this.batteryFlagTextBox.Size = new System.Drawing.Size(44, 20);
-            this.batteryFlagTextBox.TabIndex = 43;
+            this.batteryFlagTextBox.TabIndex = 35;
             this.batteryFlagTextBox.TextChanged += new System.EventHandler(this.batteryFlagTextBox_TextChanged);
             // 
             // memoryFlagTextBox
@@ -492,7 +492,7 @@
             this.memoryFlagTextBox.MaxLength = 2;
             this.memoryFlagTextBox.Name = "memoryFlagTextBox";
             this.memoryFlagTextBox.Size = new System.Drawing.Size(44, 20);
-            this.memoryFlagTextBox.TabIndex = 44;
+            this.memoryFlagTextBox.TabIndex = 34;
             this.memoryFlagTextBox.TextChanged += new System.EventHandler(this.memoryFlagTextBox_TextChanged);
             // 
             // legFlagTextBox
@@ -500,7 +500,7 @@
             this.legFlagTextBox.Location = new System.Drawing.Point(191, 203);
             this.legFlagTextBox.Name = "legFlagTextBox";
             this.legFlagTextBox.Size = new System.Drawing.Size(44, 20);
-            this.legFlagTextBox.TabIndex = 43;
+            this.legFlagTextBox.TabIndex = 37;
             this.legFlagTextBox.TextChanged += new System.EventHandler(this.legFlagTextBox_TextChanged);
             // 
             // toolBoxFlagTextBox
@@ -509,7 +509,7 @@
             this.toolBoxFlagTextBox.MaxLength = 2;
             this.toolBoxFlagTextBox.Name = "toolBoxFlagTextBox";
             this.toolBoxFlagTextBox.Size = new System.Drawing.Size(44, 20);
-            this.toolBoxFlagTextBox.TabIndex = 44;
+            this.toolBoxFlagTextBox.TabIndex = 36;
             this.toolBoxFlagTextBox.TextChanged += new System.EventHandler(this.toolBoxFlagTextBox_TextChanged);
             // 
             // handFlagTextBox
@@ -517,7 +517,7 @@
             this.handFlagTextBox.Location = new System.Drawing.Point(191, 257);
             this.handFlagTextBox.Name = "handFlagTextBox";
             this.handFlagTextBox.Size = new System.Drawing.Size(44, 20);
-            this.handFlagTextBox.TabIndex = 43;
+            this.handFlagTextBox.TabIndex = 39;
             this.handFlagTextBox.TextChanged += new System.EventHandler(this.handFlagTextBox_TextChanged);
             // 
             // armFlagTextBox
@@ -526,7 +526,7 @@
             this.armFlagTextBox.MaxLength = 2;
             this.armFlagTextBox.Name = "armFlagTextBox";
             this.armFlagTextBox.Size = new System.Drawing.Size(44, 20);
-            this.armFlagTextBox.TabIndex = 44;
+            this.armFlagTextBox.TabIndex = 38;
             this.armFlagTextBox.TextChanged += new System.EventHandler(this.armFlagTextBox_TextChanged);
             // 
             // cannon2FlagTextBox
@@ -534,7 +534,7 @@
             this.cannon2FlagTextBox.Location = new System.Drawing.Point(191, 311);
             this.cannon2FlagTextBox.Name = "cannon2FlagTextBox";
             this.cannon2FlagTextBox.Size = new System.Drawing.Size(44, 20);
-            this.cannon2FlagTextBox.TabIndex = 43;
+            this.cannon2FlagTextBox.TabIndex = 41;
             this.cannon2FlagTextBox.TextChanged += new System.EventHandler(this.cannon2FlagTextBox_TextChanged);
             // 
             // cannon1FlagTextBox
@@ -543,7 +543,7 @@
             this.cannon1FlagTextBox.MaxLength = 2;
             this.cannon1FlagTextBox.Name = "cannon1FlagTextBox";
             this.cannon1FlagTextBox.Size = new System.Drawing.Size(44, 20);
-            this.cannon1FlagTextBox.TabIndex = 44;
+            this.cannon1FlagTextBox.TabIndex = 40;
             this.cannon1FlagTextBox.TextChanged += new System.EventHandler(this.cannon1FlagTextBox_TextChanged);
             // 
             // cannon4FlagTextBox
@@ -552,7 +552,7 @@
             this.cannon4FlagTextBox.MaxLength = 2;
             this.cannon4FlagTextBox.Name = "cannon4FlagTextBox";
             this.cannon4FlagTextBox.Size = new System.Drawing.Size(44, 20);
-            this.cannon4FlagTextBox.TabIndex = 44;
+            this.cannon4FlagTextBox.TabIndex = 43;
             this.cannon4FlagTextBox.TextChanged += new System.EventHandler(this.cannon4FlagTextBox_TextChanged);
             // 
             // cannon3FlagTextBox
@@ -561,7 +561,7 @@
             this.cannon3FlagTextBox.MaxLength = 2;
             this.cannon3FlagTextBox.Name = "cannon3FlagTextBox";
             this.cannon3FlagTextBox.Size = new System.Drawing.Size(44, 20);
-            this.cannon3FlagTextBox.TabIndex = 44;
+            this.cannon3FlagTextBox.TabIndex = 42;
             this.cannon3FlagTextBox.TextChanged += new System.EventHandler(this.cannon3FlagTextBox_TextChanged);
             // 
             // cannon5FlagTextBox
@@ -569,7 +569,7 @@
             this.cannon5FlagTextBox.Location = new System.Drawing.Point(191, 392);
             this.cannon5FlagTextBox.Name = "cannon5FlagTextBox";
             this.cannon5FlagTextBox.Size = new System.Drawing.Size(44, 20);
-            this.cannon5FlagTextBox.TabIndex = 43;
+            this.cannon5FlagTextBox.TabIndex = 44;
             this.cannon5FlagTextBox.TextChanged += new System.EventHandler(this.cannon5FlagTextBox_TextChanged);
             // 
             // device1FlagTextBox
@@ -577,7 +577,7 @@
             this.device1FlagTextBox.Location = new System.Drawing.Point(191, 419);
             this.device1FlagTextBox.Name = "device1FlagTextBox";
             this.device1FlagTextBox.Size = new System.Drawing.Size(44, 20);
-            this.device1FlagTextBox.TabIndex = 43;
+            this.device1FlagTextBox.TabIndex = 45;
             this.device1FlagTextBox.TextChanged += new System.EventHandler(this.device1FlagTextBox_TextChanged);
             // 
             // device3FlagTextBox
@@ -585,7 +585,7 @@
             this.device3FlagTextBox.Location = new System.Drawing.Point(191, 473);
             this.device3FlagTextBox.Name = "device3FlagTextBox";
             this.device3FlagTextBox.Size = new System.Drawing.Size(44, 20);
-            this.device3FlagTextBox.TabIndex = 43;
+            this.device3FlagTextBox.TabIndex = 47;
             this.device3FlagTextBox.TextChanged += new System.EventHandler(this.device3FlagTextBox_TextChanged);
             // 
             // device2FlagTextBox
@@ -594,7 +594,7 @@
             this.device2FlagTextBox.MaxLength = 2;
             this.device2FlagTextBox.Name = "device2FlagTextBox";
             this.device2FlagTextBox.Size = new System.Drawing.Size(44, 20);
-            this.device2FlagTextBox.TabIndex = 44;
+            this.device2FlagTextBox.TabIndex = 46;
             this.device2FlagTextBox.TextChanged += new System.EventHandler(this.device2FlagTextBox_TextChanged);
             // 
             // device5FlagTextBox
@@ -602,7 +602,7 @@
             this.device5FlagTextBox.Location = new System.Drawing.Point(191, 527);
             this.device5FlagTextBox.Name = "device5FlagTextBox";
             this.device5FlagTextBox.Size = new System.Drawing.Size(44, 20);
-            this.device5FlagTextBox.TabIndex = 43;
+            this.device5FlagTextBox.TabIndex = 49;
             this.device5FlagTextBox.TextChanged += new System.EventHandler(this.device5FlagTextBox_TextChanged);
             // 
             // device4FlagTextBox
@@ -611,7 +611,7 @@
             this.device4FlagTextBox.MaxLength = 2;
             this.device4FlagTextBox.Name = "device4FlagTextBox";
             this.device4FlagTextBox.Size = new System.Drawing.Size(44, 20);
-            this.device4FlagTextBox.TabIndex = 44;
+            this.device4FlagTextBox.TabIndex = 48;
             this.device4FlagTextBox.TextChanged += new System.EventHandler(this.device4FlagTextBox_TextChanged);
             // 
             // cannon1NameTextBox
@@ -620,7 +620,7 @@
             this.cannon1NameTextBox.MaxLength = 4;
             this.cannon1NameTextBox.Name = "cannon1NameTextBox";
             this.cannon1NameTextBox.Size = new System.Drawing.Size(55, 20);
-            this.cannon1NameTextBox.TabIndex = 44;
+            this.cannon1NameTextBox.TabIndex = 21;
             this.cannon1NameTextBox.TextChanged += new System.EventHandler(this.cannon1NameTextBox_TextChanged);
             // 
             // device6FlagTextBox
@@ -629,7 +629,7 @@
             this.device6FlagTextBox.MaxLength = 2;
             this.device6FlagTextBox.Name = "device6FlagTextBox";
             this.device6FlagTextBox.Size = new System.Drawing.Size(44, 20);
-            this.device6FlagTextBox.TabIndex = 44;
+            this.device6FlagTextBox.TabIndex = 50;
             this.device6FlagTextBox.TextChanged += new System.EventHandler(this.device6FlagTextBox_TextChanged);
             // 
             // handNameTextBox
@@ -638,7 +638,7 @@
             this.handNameTextBox.MaxLength = 4;
             this.handNameTextBox.Name = "handNameTextBox";
             this.handNameTextBox.Size = new System.Drawing.Size(55, 20);
-            this.handNameTextBox.TabIndex = 43;
+            this.handNameTextBox.TabIndex = 20;
             this.handNameTextBox.TextChanged += new System.EventHandler(this.handNameTextBox_TextChanged);
             // 
             // cannon2NameTextBox
@@ -647,7 +647,7 @@
             this.cannon2NameTextBox.MaxLength = 4;
             this.cannon2NameTextBox.Name = "cannon2NameTextBox";
             this.cannon2NameTextBox.Size = new System.Drawing.Size(55, 20);
-            this.cannon2NameTextBox.TabIndex = 44;
+            this.cannon2NameTextBox.TabIndex = 22;
             this.cannon2NameTextBox.TextChanged += new System.EventHandler(this.cannon2NameTextBox_TextChanged);
             // 
             // cannon3NameTextBox
@@ -656,7 +656,7 @@
             this.cannon3NameTextBox.MaxLength = 4;
             this.cannon3NameTextBox.Name = "cannon3NameTextBox";
             this.cannon3NameTextBox.Size = new System.Drawing.Size(55, 20);
-            this.cannon3NameTextBox.TabIndex = 43;
+            this.cannon3NameTextBox.TabIndex = 23;
             this.cannon3NameTextBox.TextChanged += new System.EventHandler(this.cannon3NameTextBox_TextChanged);
             // 
             // cannon4NameTextBox
@@ -665,7 +665,7 @@
             this.cannon4NameTextBox.MaxLength = 4;
             this.cannon4NameTextBox.Name = "cannon4NameTextBox";
             this.cannon4NameTextBox.Size = new System.Drawing.Size(55, 20);
-            this.cannon4NameTextBox.TabIndex = 43;
+            this.cannon4NameTextBox.TabIndex = 24;
             this.cannon4NameTextBox.TextChanged += new System.EventHandler(this.cannon4NameTextBox_TextChanged);
             // 
             // label20
@@ -683,7 +683,7 @@
             this.device6NameTextBox.MaxLength = 4;
             this.device6NameTextBox.Name = "device6NameTextBox";
             this.device6NameTextBox.Size = new System.Drawing.Size(55, 20);
-            this.device6NameTextBox.TabIndex = 44;
+            this.device6NameTextBox.TabIndex = 31;
             this.device6NameTextBox.TextChanged += new System.EventHandler(this.device6NameTextBox_TextChanged);
             // 
             // bodyNameTextBox
@@ -692,7 +692,7 @@
             this.bodyNameTextBox.MaxLength = 4;
             this.bodyNameTextBox.Name = "bodyNameTextBox";
             this.bodyNameTextBox.Size = new System.Drawing.Size(55, 20);
-            this.bodyNameTextBox.TabIndex = 24;
+            this.bodyNameTextBox.TabIndex = 13;
             this.bodyNameTextBox.TextChanged += new System.EventHandler(this.bodyNameTextBox_TextChanged);
             // 
             // engineNameTextBox
@@ -719,7 +719,7 @@
             this.memoryNameTextBox.MaxLength = 4;
             this.memoryNameTextBox.Name = "memoryNameTextBox";
             this.memoryNameTextBox.Size = new System.Drawing.Size(55, 20);
-            this.memoryNameTextBox.TabIndex = 16;
+            this.memoryNameTextBox.TabIndex = 15;
             this.memoryNameTextBox.TextChanged += new System.EventHandler(this.memoryNameTextBox_TextChanged);
             // 
             // label15
@@ -737,7 +737,7 @@
             this.batteryNameTextBox.MaxLength = 4;
             this.batteryNameTextBox.Name = "batteryNameTextBox";
             this.batteryNameTextBox.Size = new System.Drawing.Size(55, 20);
-            this.batteryNameTextBox.TabIndex = 18;
+            this.batteryNameTextBox.TabIndex = 16;
             this.batteryNameTextBox.TextChanged += new System.EventHandler(this.batteryNameTextBox_TextChanged);
             // 
             // label16
@@ -755,7 +755,7 @@
             this.toolBoxNameTextBox.MaxLength = 4;
             this.toolBoxNameTextBox.Name = "toolBoxNameTextBox";
             this.toolBoxNameTextBox.Size = new System.Drawing.Size(55, 20);
-            this.toolBoxNameTextBox.TabIndex = 20;
+            this.toolBoxNameTextBox.TabIndex = 17;
             this.toolBoxNameTextBox.TextChanged += new System.EventHandler(this.toolBoxNameTextBox_TextChanged);
             // 
             // label17
@@ -773,7 +773,7 @@
             this.legNameTextBox.MaxLength = 4;
             this.legNameTextBox.Name = "legNameTextBox";
             this.legNameTextBox.Size = new System.Drawing.Size(55, 20);
-            this.legNameTextBox.TabIndex = 22;
+            this.legNameTextBox.TabIndex = 18;
             this.legNameTextBox.TextChanged += new System.EventHandler(this.legNameTextBox_TextChanged);
             // 
             // label19
@@ -926,7 +926,7 @@
             this.armNameTextBox.MaxLength = 4;
             this.armNameTextBox.Name = "armNameTextBox";
             this.armNameTextBox.Size = new System.Drawing.Size(55, 20);
-            this.armNameTextBox.TabIndex = 42;
+            this.armNameTextBox.TabIndex = 19;
             this.armNameTextBox.TextChanged += new System.EventHandler(this.armNameTextBox_TextChanged);
             // 
             // cannon5NameTextBox
@@ -935,7 +935,7 @@
             this.cannon5NameTextBox.MaxLength = 4;
             this.cannon5NameTextBox.Name = "cannon5NameTextBox";
             this.cannon5NameTextBox.Size = new System.Drawing.Size(55, 20);
-            this.cannon5NameTextBox.TabIndex = 43;
+            this.cannon5NameTextBox.TabIndex = 25;
             this.cannon5NameTextBox.TextChanged += new System.EventHandler(this.cannon5NameTextBox_TextChanged);
             // 
             // device1NameTextBox
@@ -944,7 +944,7 @@
             this.device1NameTextBox.MaxLength = 4;
             this.device1NameTextBox.Name = "device1NameTextBox";
             this.device1NameTextBox.Size = new System.Drawing.Size(55, 20);
-            this.device1NameTextBox.TabIndex = 44;
+            this.device1NameTextBox.TabIndex = 26;
             this.device1NameTextBox.TextChanged += new System.EventHandler(this.device1NameTextBox_TextChanged);
             // 
             // device2NameTextBox
@@ -953,7 +953,7 @@
             this.device2NameTextBox.MaxLength = 4;
             this.device2NameTextBox.Name = "device2NameTextBox";
             this.device2NameTextBox.Size = new System.Drawing.Size(55, 20);
-            this.device2NameTextBox.TabIndex = 45;
+            this.device2NameTextBox.TabIndex = 27;
             this.device2NameTextBox.TextChanged += new System.EventHandler(this.device2NameTextBox_TextChanged);
             // 
             // device3NameTextBox
@@ -962,7 +962,7 @@
             this.device3NameTextBox.MaxLength = 4;
             this.device3NameTextBox.Name = "device3NameTextBox";
             this.device3NameTextBox.Size = new System.Drawing.Size(55, 20);
-            this.device3NameTextBox.TabIndex = 46;
+            this.device3NameTextBox.TabIndex = 28;
             this.device3NameTextBox.TextChanged += new System.EventHandler(this.device3NameTextBox_TextChanged);
             // 
             // device4NameTextBox
@@ -971,7 +971,7 @@
             this.device4NameTextBox.MaxLength = 4;
             this.device4NameTextBox.Name = "device4NameTextBox";
             this.device4NameTextBox.Size = new System.Drawing.Size(55, 20);
-            this.device4NameTextBox.TabIndex = 47;
+            this.device4NameTextBox.TabIndex = 29;
             this.device4NameTextBox.TextChanged += new System.EventHandler(this.device4NameTextBox_TextChanged);
             // 
             // device5NameTextBox
@@ -980,7 +980,7 @@
             this.device5NameTextBox.MaxLength = 4;
             this.device5NameTextBox.Name = "device5NameTextBox";
             this.device5NameTextBox.Size = new System.Drawing.Size(55, 20);
-            this.device5NameTextBox.TabIndex = 48;
+            this.device5NameTextBox.TabIndex = 30;
             this.device5NameTextBox.TextChanged += new System.EventHandler(this.device5NameTextBox_TextChanged);
             // 
             // label32
