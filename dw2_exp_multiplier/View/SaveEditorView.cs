@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using dw2_exp_multiplier.Entity;
@@ -8,10 +10,97 @@ namespace dw2_exp_multiplier.View
 {
     public partial class SaveEditorView : UserControl
     {
+        #region Field Region
         private SaveFile saveFile;
+        
+        TableLayoutPanel itemTableLayoutPanel = new TableLayoutPanel();
+        TableLayoutPanel importantItemTableLayoutPanel = new TableLayoutPanel();
+        TableLayoutPanel serverItemTableLayoutPanel = new TableLayoutPanel();
+        
+        private List<TextBox> itemList = new List<TextBox>();
+        private List<TextBox> importantItemList = new List<TextBox>();
+        private List<TextBox> serverItemList = new List<TextBox>();
+        #endregion
+        
         public SaveEditorView()
         {
             InitializeComponent();
+            this.LoadForm();
+            saveFileTextBox.Text = "BASLUS-01193 DMW2";
+            this.saveFile = new SaveFile(File.ReadAllBytes(saveFileTextBox.Text));
+            this.slotComboBox.SelectedIndex = 0;
+            this.LoadCurrentSlot();
+        }
+
+        private void LoadForm()
+        {
+            int n = 48;
+            this.itemPanel.Controls.Add(itemTableLayoutPanel);
+            itemTableLayoutPanel.Location = new System.Drawing.Point(3, 3);
+            itemTableLayoutPanel.Name = "itemTableLayoutPanel";
+            itemTableLayoutPanel.Size = new System.Drawing.Size(239, 27 * n + 20);
+            itemTableLayoutPanel.ColumnCount = 2;
+            for (int i = 0; i < n; i++)
+            {
+                itemTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+                itemTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+                var l1 = new Label();
+                l1.Text = "Item slot #" + (i + 1);
+                var t1 = new TextBox();
+                itemTableLayoutPanel.Controls.Add(l1, 0, i);
+                itemTableLayoutPanel.Controls.Add(t1, 1, i);
+                t1.TextChanged += itemTextBox_TextChanged;
+                t1.Tag = i;
+                this.itemList.Add(t1);
+            }
+            itemTableLayoutPanel.RowCount = n;
+            for(int i = 0; i < n; i++) itemTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 27F));
+
+            n = 28;
+            this.importantItemPanel.Controls.Add(importantItemTableLayoutPanel);
+            importantItemTableLayoutPanel.Location = new System.Drawing.Point(3, 3);
+            importantItemTableLayoutPanel.Name = "importantItemTableLayoutPanel";
+            importantItemTableLayoutPanel.Size = new System.Drawing.Size(200, 27 * n + 20);
+            importantItemTableLayoutPanel.ColumnCount = 2;
+            for (int i = 0; i < n; i++)
+            {
+                importantItemTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70F));
+                importantItemTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
+                var l1 = new Label();
+                l1.Size = new Size(150, l1.Size.Height);
+                l1.Text = "Important Item #" + (i + 1);
+                var t1 = new TextBox();
+                importantItemTableLayoutPanel.Controls.Add(l1, 0, i);
+                importantItemTableLayoutPanel.Controls.Add(t1, 1, i);
+                t1.TextChanged += importantItemTextBox_TextChanged;
+                t1.Tag = i;
+                this.importantItemList.Add(t1);
+            }
+            importantItemTableLayoutPanel.RowCount = n;
+            for(int i = 0; i < n; i++) importantItemTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 27F));
+            
+            n = 236;
+            this.serverItemPanel.Controls.Add(serverItemTableLayoutPanel);
+            serverItemTableLayoutPanel.Location = new System.Drawing.Point(3, 3);
+            serverItemTableLayoutPanel.Name = "serverItemTableLayoutPanel";
+            serverItemTableLayoutPanel.Size = new System.Drawing.Size(200, 27 * n + 20);
+            serverItemTableLayoutPanel.ColumnCount = 2;
+            for (int i = 0; i < n; i++)
+            {
+                serverItemTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70F));
+                serverItemTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
+                var l1 = new Label();
+                l1.Size = new Size(150, l1.Size.Height);
+                l1.Text = "Server Item #" + (i + 1);
+                var t1 = new TextBox();
+                serverItemTableLayoutPanel.Controls.Add(l1, 0, i);
+                serverItemTableLayoutPanel.Controls.Add(t1, 1, i);
+                t1.TextChanged += serverItemTextBox_TextChanged;
+                t1.Tag = i;
+                this.serverItemList.Add(t1);
+            }
+            serverItemTableLayoutPanel.RowCount = n;
+            for(int i = 0; i < n; i++) serverItemTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 27F));
         }
 
         #region Buttons Region
@@ -96,6 +185,13 @@ namespace dw2_exp_multiplier.View
             device4FlagTextBox.Text = currentSlot.digi_beetle_part_flag[16].ToString("X2");
             device5FlagTextBox.Text = currentSlot.digi_beetle_part_flag[17].ToString("X2");
             device6FlagTextBox.Text = currentSlot.digi_beetle_part_flag[18].ToString("X2");
+
+            for (int i = 0; i < 48; i++)
+                this.itemList[i].Text = currentSlot.items[i].ToString("X4");
+            for (int i = 0; i < 28; i++)
+                this.importantItemList[i].Text = currentSlot.important_item[i].ToString("X4");
+            for (int i = 0; i < 236; i++)
+                this.serverItemList[i].Text = currentSlot.server_item[i].ToString("X4");
         }
 
         private void slotComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -343,7 +439,33 @@ namespace dw2_exp_multiplier.View
             this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part_flag[18] = Convert.ToByte(device6FlagTextBox.Text, 16);
         }
         #endregion
+
+        #region All Items Region
+        private void itemTextBox_TextChanged(object sender, EventArgs e)
+        {
+            var t = (sender as TextBox).Text;
+            if (t.Length < 1) return;
+            var i = (int) ((sender as TextBox).Tag);
+            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].items[i] = Convert.ToUInt16(t, 16);
+        }
         
+        private void importantItemTextBox_TextChanged(object sender, EventArgs e)
+        {
+            var t = (sender as TextBox).Text;
+            if (t.Length < 1) return;
+            var i = (int) ((sender as TextBox).Tag);
+            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].important_item[i] = Convert.ToUInt16(t, 16);
+        }
+        
+        private void serverItemTextBox_TextChanged(object sender, EventArgs e)
+        {
+            var t = (sender as TextBox).Text;
+            if (t.Length < 1) return;
+            var i = (int) ((sender as TextBox).Tag);
+            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].server_item[i] = Convert.ToUInt16(t, 16);
+        }
+        #endregion
+
     }
     
 }

@@ -112,8 +112,11 @@
             this.device5NameTextBox = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
             this.itemsTabPage = new System.Windows.Forms.TabPage();
+            this.itemPanel = new System.Windows.Forms.Panel();
             this.importantItemsTabPage = new System.Windows.Forms.TabPage();
+            this.importantItemPanel = new System.Windows.Forms.Panel();
             this.serverItemsTabPage = new System.Windows.Forms.TabPage();
+            this.serverItemPanel = new System.Windows.Forms.Panel();
             this.digimonsTabPage = new System.Windows.Forms.TabPage();
             this.gameStoryTabPage = new System.Windows.Forms.TabPage();
             this.openFileButton = new System.Windows.Forms.Button();
@@ -132,6 +135,9 @@
             this.digiBeetleTabPage.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.itemsTabPage.SuspendLayout();
+            this.importantItemsTabPage.SuspendLayout();
+            this.serverItemsTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -994,6 +1000,7 @@
             // 
             // itemsTabPage
             // 
+            this.itemsTabPage.Controls.Add(this.itemPanel);
             this.itemsTabPage.Location = new System.Drawing.Point(4, 22);
             this.itemsTabPage.Name = "itemsTabPage";
             this.itemsTabPage.Size = new System.Drawing.Size(434, 250);
@@ -1001,8 +1008,18 @@
             this.itemsTabPage.Text = "Items";
             this.itemsTabPage.UseVisualStyleBackColor = true;
             // 
+            // itemPanel
+            // 
+            this.itemPanel.AutoScroll = true;
+            this.itemPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.itemPanel.Location = new System.Drawing.Point(0, 0);
+            this.itemPanel.Name = "itemPanel";
+            this.itemPanel.Size = new System.Drawing.Size(434, 250);
+            this.itemPanel.TabIndex = 0;
+            // 
             // importantItemsTabPage
             // 
+            this.importantItemsTabPage.Controls.Add(this.importantItemPanel);
             this.importantItemsTabPage.Location = new System.Drawing.Point(4, 22);
             this.importantItemsTabPage.Name = "importantItemsTabPage";
             this.importantItemsTabPage.Size = new System.Drawing.Size(434, 250);
@@ -1010,14 +1027,34 @@
             this.importantItemsTabPage.Text = "Important Items";
             this.importantItemsTabPage.UseVisualStyleBackColor = true;
             // 
+            // importantItemPanel
+            // 
+            this.importantItemPanel.AutoScroll = true;
+            this.importantItemPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.importantItemPanel.Location = new System.Drawing.Point(0, 0);
+            this.importantItemPanel.Name = "importantItemPanel";
+            this.importantItemPanel.Size = new System.Drawing.Size(434, 250);
+            this.importantItemPanel.TabIndex = 0;
+            // 
             // serverItemsTabPage
             // 
+            this.serverItemsTabPage.Controls.Add(this.serverItemPanel);
             this.serverItemsTabPage.Location = new System.Drawing.Point(4, 22);
             this.serverItemsTabPage.Name = "serverItemsTabPage";
             this.serverItemsTabPage.Size = new System.Drawing.Size(434, 250);
             this.serverItemsTabPage.TabIndex = 4;
             this.serverItemsTabPage.Text = "Server Items";
             this.serverItemsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // serverItemPanel
+            // 
+            this.serverItemPanel.AutoScroll = true;
+            this.serverItemPanel.AutoSize = true;
+            this.serverItemPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.serverItemPanel.Location = new System.Drawing.Point(0, 0);
+            this.serverItemPanel.Name = "serverItemPanel";
+            this.serverItemPanel.Size = new System.Drawing.Size(434, 250);
+            this.serverItemPanel.TabIndex = 0;
             // 
             // digimonsTabPage
             // 
@@ -1151,9 +1188,15 @@
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.itemsTabPage.ResumeLayout(false);
+            this.importantItemsTabPage.ResumeLayout(false);
+            this.serverItemsTabPage.ResumeLayout(false);
+            this.serverItemsTabPage.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Panel itemPanel;
 
         private System.Windows.Forms.Button openFileButton;
 
@@ -1257,5 +1300,7 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Panel importantItemPanel;
+        private System.Windows.Forms.Panel serverItemPanel;
     }
 }
