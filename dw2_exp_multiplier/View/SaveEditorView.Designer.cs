@@ -118,14 +118,44 @@
             this.serverItemsTabPage = new System.Windows.Forms.TabPage();
             this.serverItemPanel = new System.Windows.Forms.Panel();
             this.digimonsTabPage = new System.Windows.Forms.TabPage();
+            this.digimonPanel = new System.Windows.Forms.Panel();
+            this.techGroupBox = new System.Windows.Forms.GroupBox();
+            this.digimonTechTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.label46 = new System.Windows.Forms.Label();
+            this.digimonAttackTextBox = new System.Windows.Forms.TextBox();
+            this.digimonMaxMpTextBox = new System.Windows.Forms.TextBox();
+            this.digimonMpTextBox = new System.Windows.Forms.TextBox();
+            this.digimonMapHpTextBox = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.digimonHpTextBox = new System.Windows.Forms.TextBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.digimonDefenseTextBox = new System.Windows.Forms.TextBox();
+            this.digimonSpeedTextBox = new System.Windows.Forms.TextBox();
+            this.digimonListBox = new System.Windows.Forms.ListBox();
+            this.infoGroupBox = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.digimonNameTextBox = new System.Windows.Forms.TextBox();
+            this.digimonMaxLevelTextBox = new System.Windows.Forms.TextBox();
+            this.digimonIdTextBox = new System.Windows.Forms.TextBox();
+            this.digimonLevelTextBox = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.digimonStatustextBox = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.digimonExpTextBox = new System.Windows.Forms.TextBox();
             this.gameStoryTabPage = new System.Windows.Forms.TabPage();
             this.openFileButton = new System.Windows.Forms.Button();
             this.saveFileTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dw2DataTextBox = new System.Windows.Forms.TextBox();
-            this.dw2DataFolderButton = new System.Windows.Forms.Button();
-            this.dw2DataBinButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.slotComboBox = new System.Windows.Forms.ComboBox();
             this.saveFileButton = new System.Windows.Forms.Button();
@@ -138,6 +168,13 @@
             this.itemsTabPage.SuspendLayout();
             this.importantItemsTabPage.SuspendLayout();
             this.serverItemsTabPage.SuspendLayout();
+            this.digimonsTabPage.SuspendLayout();
+            this.digimonPanel.SuspendLayout();
+            this.techGroupBox.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.infoGroupBox.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -149,10 +186,10 @@
             this.tabControl.Controls.Add(this.serverItemsTabPage);
             this.tabControl.Controls.Add(this.digimonsTabPage);
             this.tabControl.Controls.Add(this.gameStoryTabPage);
-            this.tabControl.Location = new System.Drawing.Point(0, 105);
+            this.tabControl.Location = new System.Drawing.Point(0, 66);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(442, 276);
+            this.tabControl.Size = new System.Drawing.Size(442, 315);
             this.tabControl.TabIndex = 0;
             // 
             // miscTabPage
@@ -161,7 +198,7 @@
             this.miscTabPage.Location = new System.Drawing.Point(4, 22);
             this.miscTabPage.Name = "miscTabPage";
             this.miscTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.miscTabPage.Size = new System.Drawing.Size(434, 250);
+            this.miscTabPage.Size = new System.Drawing.Size(434, 289);
             this.miscTabPage.TabIndex = 0;
             this.miscTabPage.Text = "Misc.";
             this.miscTabPage.UseVisualStyleBackColor = true;
@@ -350,7 +387,7 @@
             this.digiBeetleTabPage.Location = new System.Drawing.Point(4, 22);
             this.digiBeetleTabPage.Name = "digiBeetleTabPage";
             this.digiBeetleTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.digiBeetleTabPage.Size = new System.Drawing.Size(434, 250);
+            this.digiBeetleTabPage.Size = new System.Drawing.Size(434, 289);
             this.digiBeetleTabPage.TabIndex = 1;
             this.digiBeetleTabPage.Text = "Digi-Beetle";
             this.digiBeetleTabPage.UseVisualStyleBackColor = true;
@@ -362,7 +399,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(428, 244);
+            this.panel1.Size = new System.Drawing.Size(428, 283);
             this.panel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -1003,7 +1040,7 @@
             this.itemsTabPage.Controls.Add(this.itemPanel);
             this.itemsTabPage.Location = new System.Drawing.Point(4, 22);
             this.itemsTabPage.Name = "itemsTabPage";
-            this.itemsTabPage.Size = new System.Drawing.Size(434, 250);
+            this.itemsTabPage.Size = new System.Drawing.Size(434, 289);
             this.itemsTabPage.TabIndex = 2;
             this.itemsTabPage.Text = "Items";
             this.itemsTabPage.UseVisualStyleBackColor = true;
@@ -1014,7 +1051,7 @@
             this.itemPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.itemPanel.Location = new System.Drawing.Point(0, 0);
             this.itemPanel.Name = "itemPanel";
-            this.itemPanel.Size = new System.Drawing.Size(434, 250);
+            this.itemPanel.Size = new System.Drawing.Size(434, 289);
             this.itemPanel.TabIndex = 0;
             // 
             // importantItemsTabPage
@@ -1022,7 +1059,7 @@
             this.importantItemsTabPage.Controls.Add(this.importantItemPanel);
             this.importantItemsTabPage.Location = new System.Drawing.Point(4, 22);
             this.importantItemsTabPage.Name = "importantItemsTabPage";
-            this.importantItemsTabPage.Size = new System.Drawing.Size(434, 250);
+            this.importantItemsTabPage.Size = new System.Drawing.Size(434, 289);
             this.importantItemsTabPage.TabIndex = 3;
             this.importantItemsTabPage.Text = "Important Items";
             this.importantItemsTabPage.UseVisualStyleBackColor = true;
@@ -1033,7 +1070,7 @@
             this.importantItemPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.importantItemPanel.Location = new System.Drawing.Point(0, 0);
             this.importantItemPanel.Name = "importantItemPanel";
-            this.importantItemPanel.Size = new System.Drawing.Size(434, 250);
+            this.importantItemPanel.Size = new System.Drawing.Size(434, 289);
             this.importantItemPanel.TabIndex = 0;
             // 
             // serverItemsTabPage
@@ -1041,7 +1078,7 @@
             this.serverItemsTabPage.Controls.Add(this.serverItemPanel);
             this.serverItemsTabPage.Location = new System.Drawing.Point(4, 22);
             this.serverItemsTabPage.Name = "serverItemsTabPage";
-            this.serverItemsTabPage.Size = new System.Drawing.Size(434, 250);
+            this.serverItemsTabPage.Size = new System.Drawing.Size(434, 289);
             this.serverItemsTabPage.TabIndex = 4;
             this.serverItemsTabPage.Text = "Server Items";
             this.serverItemsTabPage.UseVisualStyleBackColor = true;
@@ -1053,23 +1090,381 @@
             this.serverItemPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.serverItemPanel.Location = new System.Drawing.Point(0, 0);
             this.serverItemPanel.Name = "serverItemPanel";
-            this.serverItemPanel.Size = new System.Drawing.Size(434, 250);
+            this.serverItemPanel.Size = new System.Drawing.Size(434, 289);
             this.serverItemPanel.TabIndex = 0;
             // 
             // digimonsTabPage
             // 
+            this.digimonsTabPage.Controls.Add(this.digimonPanel);
             this.digimonsTabPage.Location = new System.Drawing.Point(4, 22);
             this.digimonsTabPage.Name = "digimonsTabPage";
-            this.digimonsTabPage.Size = new System.Drawing.Size(434, 250);
+            this.digimonsTabPage.Size = new System.Drawing.Size(434, 289);
             this.digimonsTabPage.TabIndex = 5;
             this.digimonsTabPage.Text = "Digimons";
             this.digimonsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // digimonPanel
+            // 
+            this.digimonPanel.AutoScroll = true;
+            this.digimonPanel.Controls.Add(this.techGroupBox);
+            this.digimonPanel.Controls.Add(this.groupBox1);
+            this.digimonPanel.Controls.Add(this.digimonListBox);
+            this.digimonPanel.Controls.Add(this.infoGroupBox);
+            this.digimonPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.digimonPanel.Location = new System.Drawing.Point(0, 0);
+            this.digimonPanel.Name = "digimonPanel";
+            this.digimonPanel.Size = new System.Drawing.Size(434, 289);
+            this.digimonPanel.TabIndex = 2;
+            // 
+            // techGroupBox
+            // 
+            this.techGroupBox.AutoSize = true;
+            this.techGroupBox.Controls.Add(this.digimonTechTableLayoutPanel);
+            this.techGroupBox.Location = new System.Drawing.Point(120, 333);
+            this.techGroupBox.Name = "techGroupBox";
+            this.techGroupBox.Size = new System.Drawing.Size(294, 633);
+            this.techGroupBox.TabIndex = 3;
+            this.techGroupBox.TabStop = false;
+            this.techGroupBox.Text = "Tech";
+            // 
+            // digimonTechTableLayoutPanel
+            // 
+            this.digimonTechTableLayoutPanel.ColumnCount = 4;
+            this.digimonTechTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22F));
+            this.digimonTechTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22F));
+            this.digimonTechTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34F));
+            this.digimonTechTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22F));
+            this.digimonTechTableLayoutPanel.Location = new System.Drawing.Point(9, 16);
+            this.digimonTechTableLayoutPanel.Name = "digimonTechTableLayoutPanel";
+            this.digimonTechTableLayoutPanel.RowCount = 22;
+            this.digimonTechTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.digimonTechTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.digimonTechTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.digimonTechTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.digimonTechTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.digimonTechTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.digimonTechTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.digimonTechTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.digimonTechTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.digimonTechTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.digimonTechTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.digimonTechTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.digimonTechTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.digimonTechTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.digimonTechTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.digimonTechTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.digimonTechTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.digimonTechTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.digimonTechTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.digimonTechTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.digimonTechTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.digimonTechTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.digimonTechTableLayoutPanel.Size = new System.Drawing.Size(279, 598);
+            this.digimonTechTableLayoutPanel.TabIndex = 0;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.tableLayoutPanel4);
+            this.groupBox1.Location = new System.Drawing.Point(120, 159);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(288, 161);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "State";
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 4;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel4.Controls.Add(this.label46, 0, 4);
+            this.tableLayoutPanel4.Controls.Add(this.digimonAttackTextBox, 1, 2);
+            this.tableLayoutPanel4.Controls.Add(this.digimonMaxMpTextBox, 3, 1);
+            this.tableLayoutPanel4.Controls.Add(this.digimonMpTextBox, 1, 1);
+            this.tableLayoutPanel4.Controls.Add(this.digimonMapHpTextBox, 3, 0);
+            this.tableLayoutPanel4.Controls.Add(this.label40, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.label41, 2, 1);
+            this.tableLayoutPanel4.Controls.Add(this.label42, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.label43, 0, 2);
+            this.tableLayoutPanel4.Controls.Add(this.label44, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(this.digimonHpTextBox, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.label45, 0, 3);
+            this.tableLayoutPanel4.Controls.Add(this.digimonDefenseTextBox, 1, 3);
+            this.tableLayoutPanel4.Controls.Add(this.digimonSpeedTextBox, 1, 4);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(6, 19);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 5;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(282, 135);
+            this.tableLayoutPanel4.TabIndex = 0;
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(3, 108);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(37, 13);
+            this.label46.TabIndex = 14;
+            this.label46.Text = "Speed";
+            // 
+            // digimonAttackTextBox
+            // 
+            this.digimonAttackTextBox.Location = new System.Drawing.Point(73, 57);
+            this.digimonAttackTextBox.Name = "digimonAttackTextBox";
+            this.digimonAttackTextBox.Size = new System.Drawing.Size(64, 20);
+            this.digimonAttackTextBox.TabIndex = 12;
+            // 
+            // digimonMaxMpTextBox
+            // 
+            this.digimonMaxMpTextBox.Location = new System.Drawing.Point(213, 30);
+            this.digimonMaxMpTextBox.Name = "digimonMaxMpTextBox";
+            this.digimonMaxMpTextBox.Size = new System.Drawing.Size(63, 20);
+            this.digimonMaxMpTextBox.TabIndex = 11;
+            // 
+            // digimonMpTextBox
+            // 
+            this.digimonMpTextBox.Location = new System.Drawing.Point(73, 30);
+            this.digimonMpTextBox.Name = "digimonMpTextBox";
+            this.digimonMpTextBox.Size = new System.Drawing.Size(64, 20);
+            this.digimonMpTextBox.TabIndex = 10;
+            // 
+            // digimonMapHpTextBox
+            // 
+            this.digimonMapHpTextBox.Location = new System.Drawing.Point(213, 3);
+            this.digimonMapHpTextBox.Name = "digimonMapHpTextBox";
+            this.digimonMapHpTextBox.Size = new System.Drawing.Size(63, 20);
+            this.digimonMapHpTextBox.TabIndex = 9;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(3, 0);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(20, 13);
+            this.label40.TabIndex = 2;
+            this.label40.Text = "HP";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(143, 27);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(44, 13);
+            this.label41.TabIndex = 6;
+            this.label41.Text = "Max MP";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(3, 27);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(21, 13);
+            this.label42.TabIndex = 3;
+            this.label42.Text = "MP";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(3, 54);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(38, 13);
+            this.label43.TabIndex = 7;
+            this.label43.Text = "Attack";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(143, 0);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(43, 13);
+            this.label44.TabIndex = 5;
+            this.label44.Text = "Max Hp";
+            // 
+            // digimonHpTextBox
+            // 
+            this.digimonHpTextBox.Location = new System.Drawing.Point(73, 3);
+            this.digimonHpTextBox.Name = "digimonHpTextBox";
+            this.digimonHpTextBox.Size = new System.Drawing.Size(64, 20);
+            this.digimonHpTextBox.TabIndex = 8;
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(3, 81);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(47, 13);
+            this.label45.TabIndex = 4;
+            this.label45.Text = "Defense";
+            // 
+            // digimonDefenseTextBox
+            // 
+            this.digimonDefenseTextBox.Location = new System.Drawing.Point(73, 84);
+            this.digimonDefenseTextBox.Name = "digimonDefenseTextBox";
+            this.digimonDefenseTextBox.Size = new System.Drawing.Size(64, 20);
+            this.digimonDefenseTextBox.TabIndex = 13;
+            // 
+            // digimonSpeedTextBox
+            // 
+            this.digimonSpeedTextBox.Location = new System.Drawing.Point(73, 111);
+            this.digimonSpeedTextBox.Name = "digimonSpeedTextBox";
+            this.digimonSpeedTextBox.Size = new System.Drawing.Size(64, 20);
+            this.digimonSpeedTextBox.TabIndex = 13;
+            // 
+            // digimonListBox
+            // 
+            this.digimonListBox.FormattingEnabled = true;
+            this.digimonListBox.Location = new System.Drawing.Point(3, 3);
+            this.digimonListBox.Name = "digimonListBox";
+            this.digimonListBox.Size = new System.Drawing.Size(111, 277);
+            this.digimonListBox.TabIndex = 0;
+            this.digimonListBox.SelectedIndexChanged += new System.EventHandler(this.digimonListBox_SelectedIndexChanged);
+            // 
+            // infoGroupBox
+            // 
+            this.infoGroupBox.Controls.Add(this.tableLayoutPanel3);
+            this.infoGroupBox.Location = new System.Drawing.Point(120, 3);
+            this.infoGroupBox.Name = "infoGroupBox";
+            this.infoGroupBox.Size = new System.Drawing.Size(288, 140);
+            this.infoGroupBox.TabIndex = 1;
+            this.infoGroupBox.TabStop = false;
+            this.infoGroupBox.Text = "Info";
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 4;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.Controls.Add(this.digimonNameTextBox, 1, 2);
+            this.tableLayoutPanel3.Controls.Add(this.digimonMaxLevelTextBox, 3, 1);
+            this.tableLayoutPanel3.Controls.Add(this.digimonIdTextBox, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.digimonLevelTextBox, 3, 0);
+            this.tableLayoutPanel3.Controls.Add(this.label34, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.label38, 2, 1);
+            this.tableLayoutPanel3.Controls.Add(this.label35, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.label39, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.label37, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.digimonStatustextBox, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.label36, 0, 3);
+            this.tableLayoutPanel3.Controls.Add(this.digimonExpTextBox, 1, 3);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(6, 19);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 4;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(282, 111);
+            this.tableLayoutPanel3.TabIndex = 0;
+            // 
+            // digimonNameTextBox
+            // 
+            this.digimonNameTextBox.Location = new System.Drawing.Point(59, 57);
+            this.digimonNameTextBox.Name = "digimonNameTextBox";
+            this.digimonNameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.digimonNameTextBox.TabIndex = 12;
+            // 
+            // digimonMaxLevelTextBox
+            // 
+            this.digimonMaxLevelTextBox.Location = new System.Drawing.Point(228, 30);
+            this.digimonMaxLevelTextBox.Name = "digimonMaxLevelTextBox";
+            this.digimonMaxLevelTextBox.Size = new System.Drawing.Size(51, 20);
+            this.digimonMaxLevelTextBox.TabIndex = 11;
+            // 
+            // digimonIdTextBox
+            // 
+            this.digimonIdTextBox.Location = new System.Drawing.Point(59, 30);
+            this.digimonIdTextBox.Name = "digimonIdTextBox";
+            this.digimonIdTextBox.Size = new System.Drawing.Size(100, 20);
+            this.digimonIdTextBox.TabIndex = 10;
+            // 
+            // digimonLevelTextBox
+            // 
+            this.digimonLevelTextBox.Location = new System.Drawing.Point(228, 3);
+            this.digimonLevelTextBox.Name = "digimonLevelTextBox";
+            this.digimonLevelTextBox.Size = new System.Drawing.Size(51, 20);
+            this.digimonLevelTextBox.TabIndex = 9;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(3, 0);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(38, 13);
+            this.label34.TabIndex = 2;
+            this.label34.Text = "Status";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(166, 27);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(55, 13);
+            this.label38.TabIndex = 6;
+            this.label38.Text = "Max Level";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(3, 27);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(44, 13);
+            this.label35.TabIndex = 3;
+            this.label35.Text = "Digimon";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(3, 54);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(34, 13);
+            this.label39.TabIndex = 7;
+            this.label39.Text = "Name";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(166, 0);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(32, 13);
+            this.label37.TabIndex = 5;
+            this.label37.Text = "Level";
+            // 
+            // digimonStatustextBox
+            // 
+            this.digimonStatustextBox.Location = new System.Drawing.Point(59, 3);
+            this.digimonStatustextBox.Name = "digimonStatustextBox";
+            this.digimonStatustextBox.Size = new System.Drawing.Size(100, 20);
+            this.digimonStatustextBox.TabIndex = 8;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(3, 81);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(25, 13);
+            this.label36.TabIndex = 4;
+            this.label36.Text = "Exp";
+            // 
+            // digimonExpTextBox
+            // 
+            this.digimonExpTextBox.Location = new System.Drawing.Point(59, 84);
+            this.digimonExpTextBox.Name = "digimonExpTextBox";
+            this.digimonExpTextBox.Size = new System.Drawing.Size(100, 20);
+            this.digimonExpTextBox.TabIndex = 13;
             // 
             // gameStoryTabPage
             // 
             this.gameStoryTabPage.Location = new System.Drawing.Point(4, 22);
             this.gameStoryTabPage.Name = "gameStoryTabPage";
-            this.gameStoryTabPage.Size = new System.Drawing.Size(434, 250);
+            this.gameStoryTabPage.Size = new System.Drawing.Size(434, 289);
             this.gameStoryTabPage.TabIndex = 6;
             this.gameStoryTabPage.Text = "Game Story";
             this.gameStoryTabPage.UseVisualStyleBackColor = true;
@@ -1100,44 +1495,10 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Save File";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 34);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "DW2 Data";
-            // 
-            // dw2DataTextBox
-            // 
-            this.dw2DataTextBox.Location = new System.Drawing.Point(68, 31);
-            this.dw2DataTextBox.Name = "dw2DataTextBox";
-            this.dw2DataTextBox.Size = new System.Drawing.Size(172, 20);
-            this.dw2DataTextBox.TabIndex = 5;
-            // 
-            // dw2DataFolderButton
-            // 
-            this.dw2DataFolderButton.Location = new System.Drawing.Point(246, 31);
-            this.dw2DataFolderButton.Name = "dw2DataFolderButton";
-            this.dw2DataFolderButton.Size = new System.Drawing.Size(95, 20);
-            this.dw2DataFolderButton.TabIndex = 4;
-            this.dw2DataFolderButton.Text = "Open Folder";
-            this.dw2DataFolderButton.UseVisualStyleBackColor = true;
-            // 
-            // dw2DataBinButton
-            // 
-            this.dw2DataBinButton.Location = new System.Drawing.Point(347, 31);
-            this.dw2DataBinButton.Name = "dw2DataBinButton";
-            this.dw2DataBinButton.Size = new System.Drawing.Size(95, 20);
-            this.dw2DataBinButton.TabIndex = 7;
-            this.dw2DataBinButton.Text = "Open Bin";
-            this.dw2DataBinButton.UseVisualStyleBackColor = true;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 67);
+            this.label3.Location = new System.Drawing.Point(3, 42);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 13);
             this.label3.TabIndex = 8;
@@ -1147,7 +1508,7 @@
             // 
             this.slotComboBox.FormattingEnabled = true;
             this.slotComboBox.Items.AddRange(new object[] {"Slot 1", "Slot 2", "Slot 3"});
-            this.slotComboBox.Location = new System.Drawing.Point(68, 64);
+            this.slotComboBox.Location = new System.Drawing.Point(68, 39);
             this.slotComboBox.Name = "slotComboBox";
             this.slotComboBox.Size = new System.Drawing.Size(172, 21);
             this.slotComboBox.TabIndex = 9;
@@ -1170,10 +1531,6 @@
             this.Controls.Add(this.saveFileButton);
             this.Controls.Add(this.slotComboBox);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dw2DataBinButton);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.dw2DataTextBox);
-            this.Controls.Add(this.dw2DataFolderButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.saveFileTextBox);
             this.Controls.Add(this.openFileButton);
@@ -1192,9 +1549,21 @@
             this.importantItemsTabPage.ResumeLayout(false);
             this.serverItemsTabPage.ResumeLayout(false);
             this.serverItemsTabPage.PerformLayout();
+            this.digimonsTabPage.ResumeLayout(false);
+            this.digimonPanel.ResumeLayout(false);
+            this.digimonPanel.PerformLayout();
+            this.techGroupBox.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
+            this.infoGroupBox.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.TableLayoutPanel digimonTechTableLayoutPanel;
 
         private System.Windows.Forms.Panel itemPanel;
 
@@ -1214,10 +1583,6 @@
         private System.Windows.Forms.Button saveFileButton;
         private System.Windows.Forms.TextBox saveFileTextBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox dw2DataTextBox;
-        private System.Windows.Forms.Button dw2DataFolderButton;
-        private System.Windows.Forms.Button dw2DataBinButton;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox slotComboBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
@@ -1302,5 +1667,38 @@
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Panel importantItemPanel;
         private System.Windows.Forms.Panel serverItemPanel;
+        private System.Windows.Forms.GroupBox infoGroupBox;
+        private System.Windows.Forms.ListBox digimonListBox;
+        private System.Windows.Forms.Panel digimonPanel;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.TextBox digimonExpTextBox;
+        private System.Windows.Forms.TextBox digimonNameTextBox;
+        private System.Windows.Forms.TextBox digimonMaxLevelTextBox;
+        private System.Windows.Forms.TextBox digimonIdTextBox;
+        private System.Windows.Forms.TextBox digimonLevelTextBox;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.TextBox digimonStatustextBox;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.TextBox digimonDefenseTextBox;
+        private System.Windows.Forms.TextBox digimonAttackTextBox;
+        private System.Windows.Forms.TextBox digimonMaxMpTextBox;
+        private System.Windows.Forms.TextBox digimonMpTextBox;
+        private System.Windows.Forms.TextBox digimonMapHpTextBox;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.TextBox digimonHpTextBox;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.TextBox digimonSpeedTextBox;
+        private System.Windows.Forms.GroupBox techGroupBox;
     }
 }

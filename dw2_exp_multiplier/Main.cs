@@ -228,7 +228,7 @@ namespace dw2_exp_multiplier
             {
                 DW2Slus.ValidImageFile(ref fs);
 
-                EnemysetManager.ReadFile(filename, ref this.EnemysetList);
+                EnemysetManager.ReadFile(enemysetTextBox.Text, ref this.EnemysetList);
                 EnemysetManager.WriteBin(ref fs, ref this.EnemysetList);
                 
                 MessageBox.Show("ENEMYSET.BIN has been Imported Successfully");

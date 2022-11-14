@@ -6,25 +6,63 @@ namespace dw2_exp_multiplier.Entity
 {
     public class Digimon
     {
-        
         public static readonly int LENGTH = 0x5C;
-        
-        public byte[] info = new byte[0x5C];
+
+        public byte status;
+        public ushort id;
+        public byte padding0;
+        public byte[] padding1 = new byte[10];
+        public byte current_lvl;
+        public byte padding2;
+        public byte max_lvl;
+        public UInt32 exp;
+        public ushort max_hp;
+        public ushort hp;
+        public ushort max_mp;
+        public ushort mp;
+        public ushort attack;
+        public ushort defense;
+        public ushort speed;
+        public byte[] tech = new byte[12];
+        public byte[] inherit_tech = new byte[22];
+        public byte[] padding3 = new byte[8];
+        public byte[] name = new byte[14];
+        public ushort padding4;
 
         public Digimon(byte[] data)
         {
-            Buffer.BlockCopy(data, 0, this.info, 0, this.info.Length);
+            this.status = data[0];
+            this.id = data[1];
+            this.padding0 = data[2];
+            Buffer.BlockCopy(data, 3, this.padding1, 0, this.padding1.Length);
+            this.current_lvl = data[13];
+            this.padding2 = data[14];
+            this.max_lvl = data[15];
+            this.exp = BitConverter.ToUInt32(data, 16);
+            this.max_hp = BitConverter.ToUInt16(data, 20);
+            this.hp = BitConverter.ToUInt16(data, 22);
+            this.max_mp = BitConverter.ToUInt16(data, 24);
+            this.mp = BitConverter.ToUInt16(data, 26);
+            this.attack = BitConverter.ToUInt16(data, 28);
+            this.defense = BitConverter.ToUInt16(data, 30);
+            this.speed = BitConverter.ToUInt16(data, 32);
+            Buffer.BlockCopy(data, 34, this.tech, 0, this.tech.Length);
+            Buffer.BlockCopy(data, 46, this.inherit_tech, 0, this.inherit_tech.Length);
+            Buffer.BlockCopy(data, 68, this.padding3, 0, this.padding3.Length);
+            Buffer.BlockCopy(data, 76, this.name, 0, this.name.Length);
+            this.padding4 = BitConverter.ToUInt16(data, 90);
         }
         
         public Byte[] ToArray()
         {
-            return info;
+            return null;
         }
     }
     
     public class SaveSlot
     {
         public static readonly int LENGTH = 0x1058;
+        public static readonly int DIGIMON_COUNT = 36;
         
         public byte locationId1;
         public byte []padding1 = new byte[3];
@@ -47,7 +85,7 @@ namespace dw2_exp_multiplier.Entity
         public byte[] padding5 = new byte[6];
         public byte[] digi_beetle_name = new byte[8];
         public byte[] padding6 = new byte[11];
-        public Digimon[] digimon = new Digimon[36];
+        public Digimon[] digimon = new Digimon[DIGIMON_COUNT];
         public ushort padding7;
         public ushort[] server_item = new ushort[236];
         public ushort[] important_item = new ushort[28];

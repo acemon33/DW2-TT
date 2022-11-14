@@ -20,6 +20,8 @@ namespace dw2_exp_multiplier.View
         private List<TextBox> itemList = new List<TextBox>();
         private List<TextBox> importantItemList = new List<TextBox>();
         private List<TextBox> serverItemList = new List<TextBox>();
+        private List<TextBox> digimonTechList = new List<TextBox>();
+        private List<TextBox> digimonInheritedTechList = new List<TextBox>();
         #endregion
         
         public SaveEditorView()
@@ -101,6 +103,34 @@ namespace dw2_exp_multiplier.View
             }
             serverItemTableLayoutPanel.RowCount = n;
             for(int i = 0; i < n; i++) serverItemTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 27F));
+
+            n = 12;
+            for (int i = 0; i < n; i++)
+            {
+                var l1 = new Label();
+                l1.Size = new Size(150, l1.Size.Height);
+                l1.Text = "Tech #" + (i + 1);
+                var t1 = new TextBox();
+                digimonTechTableLayoutPanel.Controls.Add(l1, 0, i);
+                digimonTechTableLayoutPanel.Controls.Add(t1, 1, i);
+                // t1.TextChanged += serverItemTextBox_TextChanged;
+                t1.Tag = i;
+                this.digimonTechList.Add(t1);
+            }
+
+            n = 22;
+            for (int i = 0; i < n; i++)
+            {
+                var l1 = new Label();
+                l1.Size = new Size(150, l1.Size.Height);
+                l1.Text = "Inherit Tech #" + (i + 1);
+                var t1 = new TextBox();
+                digimonTechTableLayoutPanel.Controls.Add(l1, 2, i);
+                digimonTechTableLayoutPanel.Controls.Add(t1, 3, i);
+                // t1.TextChanged += serverItemTextBox_TextChanged;
+                t1.Tag = i;
+                this.digimonInheritedTechList.Add(t1);
+            }
         }
 
         #region Buttons Region
@@ -186,12 +216,20 @@ namespace dw2_exp_multiplier.View
             device5FlagTextBox.Text = currentSlot.digi_beetle_part_flag[17].ToString("X2");
             device6FlagTextBox.Text = currentSlot.digi_beetle_part_flag[18].ToString("X2");
 
+                    // All Items
             for (int i = 0; i < 48; i++)
                 this.itemList[i].Text = currentSlot.items[i].ToString("X4");
             for (int i = 0; i < 28; i++)
                 this.importantItemList[i].Text = currentSlot.important_item[i].ToString("X4");
             for (int i = 0; i < 236; i++)
                 this.serverItemList[i].Text = currentSlot.server_item[i].ToString("X4");
+
+            this.digimonListBox.DisplayMember = "Key";
+            this.digimonListBox.ValueMember = "Value";
+            for (int i = 0; i < Entity.SaveSlot.DIGIMON_COUNT; i++)
+            {
+                this.digimonListBox.Items.Add(new { Key = currentSlot.digimon[i].id.ToString("X2"), Value = currentSlot.digimon[i]});
+            }
         }
 
         private void slotComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -440,7 +478,7 @@ namespace dw2_exp_multiplier.View
         }
         #endregion
 
-        #region All Items Region
+        #region All Items Change Event Region
         private void itemTextBox_TextChanged(object sender, EventArgs e)
         {
             var t = (sender as TextBox).Text;
@@ -466,6 +504,34 @@ namespace dw2_exp_multiplier.View
         }
         #endregion
 
+        #region Digimon Change Event Region
+        private void digimonListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.digimonListBox.SelectedIndex > -1)
+            {
+                var currentSlot = this.saveFile.saveSlot[this.slotComboBox.SelectedIndex];
+                var i = this.digimonListBox.SelectedIndex;
+
+                this.digimonStatustextBox.Text = currentSlot.digimon[i].status.ToString("X2");
+                this.digimonIdTextBox.Text = currentSlot.digimon[i].id.ToString("X2");
+                this.digimonNameTextBox.Text = currentSlot.digimon[i].name[0].ToString("X2");
+                this.digimonExpTextBox.Text = currentSlot.digimon[i].exp.ToString();
+                this.digimonLevelTextBox.Text = currentSlot.digimon[i].current_lvl.ToString();
+                this.digimonMaxLevelTextBox.Text = currentSlot.digimon[i].max_lvl.ToString();
+                
+                this.digimonHpTextBox.Text = currentSlot.digimon[i].hp.ToString();
+                this.digimonMapHpTextBox.Text = currentSlot.digimon[i].max_hp.ToString();
+                this.digimonMpTextBox.Text = currentSlot.digimon[i].mp.ToString();
+                this.digimonMaxMpTextBox.Text = currentSlot.digimon[i].max_mp.ToString();
+                this.digimonAttackTextBox.Text = currentSlot.digimon[i].attack.ToString();
+                this.digimonDefenseTextBox.Text = currentSlot.digimon[i].defense.ToString();
+                this.digimonSpeedTextBox.Text = currentSlot.digimon[i].speed.ToString();
+                
+                
+            }
+        }
+        #endregion
+
     }
-    
+
 }
