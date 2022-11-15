@@ -28,10 +28,6 @@ namespace dw2_exp_multiplier.View
         {
             InitializeComponent();
             this.LoadForm();
-            saveFileTextBox.Text = "BASLUS-01193 DMW2";
-            this.saveFile = new SaveFile(File.ReadAllBytes(saveFileTextBox.Text));
-            this.slotComboBox.SelectedIndex = 0;
-            this.LoadCurrentSlot();
         }
 
         private void LoadForm()
@@ -131,6 +127,9 @@ namespace dw2_exp_multiplier.View
                 t1.Tag = i;
                 this.digimonInheritedTechList.Add(t1);
             }
+            
+            this.digimonListBox.DisplayMember = "Key";
+            this.digimonListBox.ValueMember = "Value";
         }
 
         #region Buttons Region
@@ -151,7 +150,7 @@ namespace dw2_exp_multiplier.View
         {
             try
             {
-                File.WriteAllBytes(saveFileTextBox.Text, this.saveFile.ToArray());
+                File.WriteAllBytes(saveFileTextBox.Text + "_", this.saveFile.ToArray());
                 MessageBox.Show("Saved Successfully", Main.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
@@ -223,12 +222,11 @@ namespace dw2_exp_multiplier.View
                 this.importantItemList[i].Text = currentSlot.important_item[i].ToString("X4");
             for (int i = 0; i < 236; i++)
                 this.serverItemList[i].Text = currentSlot.server_item[i].ToString("X4");
-
-            this.digimonListBox.DisplayMember = "Key";
-            this.digimonListBox.ValueMember = "Value";
+            
+            this.digimonListBox.Items.Clear();
             for (int i = 0; i < Entity.SaveSlot.DIGIMON_COUNT; i++)
             {
-                this.digimonListBox.Items.Add(new { Key = currentSlot.digimon[i].id.ToString("X2"), Value = currentSlot.digimon[i]});
+                this.digimonListBox.Items.Add(new { Key = i + " - " + currentSlot.digimon[i].StringName, Value = currentSlot.digimon[i]});
             }
         }
 
@@ -514,10 +512,11 @@ namespace dw2_exp_multiplier.View
 
                 this.digimonStatustextBox.Text = currentSlot.digimon[i].status.ToString("X2");
                 this.digimonIdTextBox.Text = currentSlot.digimon[i].id.ToString("X2");
-                this.digimonNameTextBox.Text = currentSlot.digimon[i].name[0].ToString("X2");
+                this.digimonNameTextBox.Text = currentSlot.digimon[i].StringName;
                 this.digimonExpTextBox.Text = currentSlot.digimon[i].exp.ToString();
                 this.digimonLevelTextBox.Text = currentSlot.digimon[i].current_lvl.ToString();
                 this.digimonMaxLevelTextBox.Text = currentSlot.digimon[i].max_lvl.ToString();
+                this.digimonOriginalNameTextBox.Text = "XXXXXXXX";
                 
                 this.digimonHpTextBox.Text = currentSlot.digimon[i].hp.ToString();
                 this.digimonMapHpTextBox.Text = currentSlot.digimon[i].max_hp.ToString();
@@ -526,8 +525,11 @@ namespace dw2_exp_multiplier.View
                 this.digimonAttackTextBox.Text = currentSlot.digimon[i].attack.ToString();
                 this.digimonDefenseTextBox.Text = currentSlot.digimon[i].defense.ToString();
                 this.digimonSpeedTextBox.Text = currentSlot.digimon[i].speed.ToString();
-                
-                
+
+                for (int j = 0; j < this.digimonTechList.Count; j++)
+                    this.digimonTechList[j].Text = currentSlot.digimon[i].tech[j].ToString("X2");
+                for (int j = 0; j < this.digimonInheritedTechList.Count; j++)
+                    this.digimonInheritedTechList[j].Text = currentSlot.digimon[i].inherit_tech[j].ToString("X2");
             }
         }
         #endregion

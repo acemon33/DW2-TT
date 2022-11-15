@@ -9,7 +9,7 @@ namespace dw2_exp_multiplier.Entity
         public static readonly int LENGTH = 0x5C;
 
         public byte status;
-        public ushort id;
+        public byte id;
         public byte padding0;
         public byte[] padding1 = new byte[10];
         public byte current_lvl;
@@ -28,6 +28,8 @@ namespace dw2_exp_multiplier.Entity
         public byte[] padding3 = new byte[8];
         public byte[] name = new byte[14];
         public ushort padding4;
+
+        public string StringName;
 
         public Digimon(byte[] data)
         {
@@ -51,11 +53,41 @@ namespace dw2_exp_multiplier.Entity
             Buffer.BlockCopy(data, 68, this.padding3, 0, this.padding3.Length);
             Buffer.BlockCopy(data, 76, this.name, 0, this.name.Length);
             this.padding4 = BitConverter.ToUInt16(data, 90);
+
+            this.StringName = TextConversion.DigiStringToASCII(this.name);
         }
         
         public Byte[] ToArray()
         {
-            return null;
+            byte[] data = new byte[Digimon.LENGTH];
+
+            data[0] = this.status;
+            data[1] = this.id;
+            data[2] = this.padding0;
+            Buffer.BlockCopy(this.padding1, 0, data, 3, this.padding1.Length);
+            data[13] = this.current_lvl;
+            data[14] = this.padding2;
+            data[15] = this.max_lvl;
+            Buffer.BlockCopy(BitConverter.GetBytes(this.exp), 0, data, 16, 4);
+            Buffer.BlockCopy(BitConverter.GetBytes(this.max_hp), 0, data, 20, 2);
+            Buffer.BlockCopy(BitConverter.GetBytes(this.hp), 0, data, 22, 2);
+            Buffer.BlockCopy(BitConverter.GetBytes(this.max_mp), 0, data, 24, 2);
+            Buffer.BlockCopy(BitConverter.GetBytes(this.mp), 0, data, 26, 2);
+            Buffer.BlockCopy(BitConverter.GetBytes(this.attack), 0, data, 28, 2);
+            Buffer.BlockCopy(BitConverter.GetBytes(this.defense), 0, data, 30, 2);
+            Buffer.BlockCopy(BitConverter.GetBytes(this.speed), 0, data, 32, 2);
+            Buffer.BlockCopy(this.tech, 0, data, 34, this.tech.Length);
+            Buffer.BlockCopy(this.inherit_tech, 0, data, 46, this.inherit_tech.Length);
+            Buffer.BlockCopy(this.padding3, 0, data, 68, this.padding3.Length);
+            
+            this.name = new byte[] { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF };
+            var temp = TextConversion.ASCIIToDigiString(this.StringName);
+            Buffer.BlockCopy(temp, 0, this.name, 0, temp.Length);
+            Buffer.BlockCopy(this.name, 0, data, 76, this.name.Length);
+            
+            Buffer.BlockCopy(BitConverter.GetBytes(this.padding4), 0, data, 90, 2);
+            
+            return data;
         }
     }
     

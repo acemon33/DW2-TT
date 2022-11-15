@@ -47,18 +47,18 @@
             this.digibeetleLabel = new System.Windows.Forms.Label();
             this.digibeetleComboBox = new System.Windows.Forms.ComboBox();
             this.digibeetleGroupBox = new System.Windows.Forms.GroupBox();
+            this.digibeetlPictureBox = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.digibeetlPictureBox = new System.Windows.Forms.PictureBox();
             this.saveEditorView1 = new dw2_exp_multiplier.View.SaveEditorView();
             ((System.ComponentModel.ISupportInitialize)(this.multiplier)).BeginInit();
             this.menuBar.SuspendLayout();
             this.digibeetleGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.digibeetlPictureBox)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.digibeetlPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // dw2BrowseButton
@@ -265,6 +265,14 @@
             this.digibeetleGroupBox.TabStop = false;
             this.digibeetleGroupBox.Text = "Digi-Beetle Patcher";
             // 
+            // digibeetlPictureBox
+            // 
+            this.digibeetlPictureBox.Location = new System.Drawing.Point(67, 44);
+            this.digibeetlPictureBox.Name = "digibeetlPictureBox";
+            this.digibeetlPictureBox.Size = new System.Drawing.Size(90, 90);
+            this.digibeetlPictureBox.TabIndex = 19;
+            this.digibeetlPictureBox.TabStop = false;
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -297,7 +305,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(453, 389);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "Misc.";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
@@ -308,16 +316,8 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(453, 389);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "Save Editor";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // digibeetlPictureBox
-            // 
-            this.digibeetlPictureBox.Location = new System.Drawing.Point(67, 44);
-            this.digibeetlPictureBox.Name = "digibeetlPictureBox";
-            this.digibeetlPictureBox.Size = new System.Drawing.Size(90, 90);
-            this.digibeetlPictureBox.TabIndex = 19;
-            this.digibeetlPictureBox.TabStop = false;
             // 
             // saveEditorView1
             // 
@@ -343,11 +343,11 @@
             this.menuBar.PerformLayout();
             this.digibeetleGroupBox.ResumeLayout(false);
             this.digibeetleGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.digibeetlPictureBox)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.digibeetlPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
