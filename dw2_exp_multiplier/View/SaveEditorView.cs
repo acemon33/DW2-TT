@@ -16,24 +16,29 @@ namespace dw2_exp_multiplier.View
         TableLayoutPanel itemTableLayoutPanel = new TableLayoutPanel();
         TableLayoutPanel importantItemTableLayoutPanel = new TableLayoutPanel();
         TableLayoutPanel serverItemTableLayoutPanel = new TableLayoutPanel();
+        TableLayoutPanel GameFlagsTableLayoutPanel = new TableLayoutPanel();
         
         private List<TextBox> itemList = new List<TextBox>();
         private List<TextBox> importantItemList = new List<TextBox>();
         private List<TextBox> serverItemList = new List<TextBox>();
         private List<TextBox> digimonTechList = new List<TextBox>();
         private List<TextBox> digimonInheritedTechList = new List<TextBox>();
+        private Dictionary<uint, TextBox> GameFlagsTextBoxList = new Dictionary<uint, TextBox>();
         #endregion
-        
+
+        #region Init Region
         public SaveEditorView()
         {
             InitializeComponent();
+            SaveSlot.load1();
             this.LoadForm();
+
             saveFileTextBox.Text = "BASLUS-01193 DMW2";
             this.saveFile = new SaveFile(File.ReadAllBytes(saveFileTextBox.Text));
             this.slotComboBox.SelectedIndex = 0;
             this.LoadCurrentSlot();
         }
-
+        
         private void LoadForm()
         {
             int n = 48;
@@ -134,35 +139,31 @@ namespace dw2_exp_multiplier.View
             
             this.digimonListBox.DisplayMember = "Key";
             this.digimonListBox.ValueMember = "Value";
-        }
-
-        #region Buttons Region
-        private void openFileButton_Click(object sender, EventArgs e)
-        {
-            var ofd = new OpenFileDialog();
-            ofd.Title = "Open DW2 Raw Save File";
-            if (ofd.ShowDialog() == DialogResult.OK)
+            
+            n = SaveSlot.GameFlagsLimiter.Count;
+            this.gameStoryPanel.Controls.Add(GameFlagsTableLayoutPanel);
+            GameFlagsTableLayoutPanel.Location = new System.Drawing.Point(3, 3);
+            GameFlagsTableLayoutPanel.Name = "gameStoryTableLayoutPanel";
+            GameFlagsTableLayoutPanel.Size = new System.Drawing.Size(239, 27 * n + 20);
+            GameFlagsTableLayoutPanel.ColumnCount = 2;
+            GameFlagsTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            GameFlagsTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            for (int i = 0; i < n; i++)
             {
-                saveFileTextBox.Text = ofd.FileName;
-                this.saveFile = new SaveFile(File.ReadAllBytes(saveFileTextBox.Text));
-                this.slotComboBox.SelectedIndex = 0;
-                this.LoadCurrentSlot();
+                uint address = SaveSlot.GameFlagsLimiter[i];
+                var l1 = new Label();
+                l1.Text = "Game Flag #" + address;
+                var t1 = new TextBox();
+                GameFlagsTableLayoutPanel.Controls.Add(l1, 0, i);
+                GameFlagsTableLayoutPanel.Controls.Add(t1, 1, i);
+                t1.TextChanged += gameFlagTextBox_TextChanged;
+                t1.Tag = address;
+                this.GameFlagsTextBoxList[address] = t1;
             }
+            GameFlagsTableLayoutPanel.RowCount = n;
+            for(int i = 0; i < n; i++)
+                GameFlagsTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 27F));
         }
-
-        private void saveFileButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                File.WriteAllBytes(saveFileTextBox.Text, this.saveFile.ToArray());
-                MessageBox.Show("Saved Successfully", Main.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, Main.Title, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-        #endregion
         
         private void LoadCurrentSlot()
         {
@@ -229,15 +230,45 @@ namespace dw2_exp_multiplier.View
             
             this.digimonListBox.Items.Clear();
             for (int i = 0; i < Entity.SaveSlot.DIGIMON_COUNT; i++)
-            {
                 this.digimonListBox.Items.Add(new { Key = "Slot #" + i, Value = currentSlot.digimon[i]});
-            }
-        }
 
+            foreach (var i in SaveSlot.GameFlagsLimiter)
+                this.GameFlagsTextBoxList[i].Text = currentSlot.GameFlags[i].ToString("X2");
+        }
+        
         private void slotComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.LoadCurrentSlot();
         }
+        #endregion
+
+        #region Buttons Region
+        private void openFileButton_Click(object sender, EventArgs e)
+        {
+            var ofd = new OpenFileDialog();
+            ofd.Title = "Open DW2 Raw Save File";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                saveFileTextBox.Text = ofd.FileName;
+                this.saveFile = new SaveFile(File.ReadAllBytes(saveFileTextBox.Text));
+                this.slotComboBox.SelectedIndex = 0;
+                this.LoadCurrentSlot();
+            }
+        }
+
+        private void saveFileButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                File.WriteAllBytes(saveFileTextBox.Text, this.saveFile.ToArray());
+                MessageBox.Show("Saved Successfully", Main.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, Main.Title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        #endregion
 
         #region Misc. Change Event Region
         private void lastLocationTextBox_TextChanged(object sender, EventArgs e)
@@ -648,6 +679,16 @@ namespace dw2_exp_multiplier.View
             var i = this.slotComboBox.SelectedIndex;
             var j = this.digimonListBox.SelectedIndex;
             this.saveFile.saveSlot[i].digimon[j].speed = Convert.ToUInt16(digimonSpeedTextBox.Text);
+        }
+        #endregion
+
+        #region Game Story Region
+        private void gameFlagTextBox_TextChanged(object sender, EventArgs e)
+        {
+            var t = (sender as TextBox).Text;
+            if (t.Length < 1) return;
+            var i = (uint) ((sender as TextBox).Tag);
+            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].GameFlags[i] = Convert.ToUInt16(t, 16);
         }
         #endregion
         

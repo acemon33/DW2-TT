@@ -161,6 +161,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.slotComboBox = new System.Windows.Forms.ComboBox();
             this.saveFileButton = new System.Windows.Forms.Button();
+            this.gameStoryPanel = new System.Windows.Forms.Panel();
             this.tabControl.SuspendLayout();
             this.miscTabPage.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -177,6 +178,7 @@
             this.tableLayoutPanel4.SuspendLayout();
             this.infoGroupBox.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.gameStoryTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -1496,6 +1498,7 @@
             // 
             // gameStoryTabPage
             // 
+            this.gameStoryTabPage.Controls.Add(this.gameStoryPanel);
             this.gameStoryTabPage.Location = new System.Drawing.Point(4, 22);
             this.gameStoryTabPage.Name = "gameStoryTabPage";
             this.gameStoryTabPage.Size = new System.Drawing.Size(434, 289);
@@ -1558,6 +1561,15 @@
             this.saveFileButton.UseVisualStyleBackColor = true;
             this.saveFileButton.Click += new System.EventHandler(this.saveFileButton_Click);
             // 
+            // gameStoryPanel
+            // 
+            this.gameStoryPanel.AutoScroll = true;
+            this.gameStoryPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gameStoryPanel.Location = new System.Drawing.Point(0, 0);
+            this.gameStoryPanel.Name = "gameStoryPanel";
+            this.gameStoryPanel.Size = new System.Drawing.Size(434, 289);
+            this.gameStoryPanel.TabIndex = 1;
+            // 
             // SaveEditorView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1593,9 +1605,12 @@
             this.infoGroupBox.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            this.gameStoryTabPage.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Panel gameStoryPanel;
 
         private System.Windows.Forms.TextBox digimonOriginalNameTextBox;
 

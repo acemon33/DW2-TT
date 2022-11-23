@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Xml;
 using DigimonWorld2Tool.Utility;
 
 
@@ -130,7 +132,10 @@ namespace dw2_exp_multiplier.Entity
 
         public string StringHeroName;
         public string StringDigiBeetleName;
-
+        public Dictionary<UInt32, UInt32> GameFlags = new Dictionary<UInt32, UInt32>();
+        public static List<UInt32> GameFlagsLimiter = new List<UInt32>();
+        public static Dictionary<string, List<GameFlag>> GameStoryProgress = new Dictionary<string, List<GameFlag>>();
+        
         public SaveSlot(byte[] data)
         {
             this.locationId1 = data[0];
@@ -174,6 +179,9 @@ namespace dw2_exp_multiplier.Entity
 
             this.StringHeroName = TextConversion.DigiStringToASCII(this.heroName);
             this.StringDigiBeetleName = TextConversion.DigiStringToASCII(this.digi_beetle_name);
+
+            foreach (var i in GameFlagsLimiter)
+                GameFlags[i] = data[i];
         }
         
         public Byte[] ToArray()
@@ -225,6 +233,33 @@ namespace dw2_exp_multiplier.Entity
             Buffer.BlockCopy(padding10, 0, data, 4165, padding10.Length);
 
             return data;
+        }
+
+        public static void load1()
+        {
+            XmlDocument xml = new XmlDocument();
+            xml.Load("aaa.xml");
+            foreach (XmlNode mission in xml.SelectNodes("dw2-utility/missions/mission"))
+            {
+                List<GameFlag> list = new List<GameFlag>();
+                string name = mission.SelectSingleNode("name").InnerText;
+                foreach (XmlNode flag in mission.SelectNodes("flags/flag"))
+                {
+                    int address = Convert.ToInt32(flag.SelectSingleNode("address").InnerText, 16);
+                    int value = Convert.ToInt32(flag.SelectSingleNode("value").InnerText, 16);
+                    list.Add(new GameFlag(address, value));
+                }
+                
+                GameStoryProgress[name] = list;
+            }
+            
+            foreach (XmlNode flag2 in xml.SelectNodes("dw2-utility/game-flags/flags/flag"))
+            {
+                UInt32 from = Convert.ToUInt32(flag2.SelectSingleNode("from").InnerText, 16);
+                UInt32 to = Convert.ToUInt32(flag2.SelectSingleNode("to").InnerText, 16);
+                for (uint i = from; i <= to; i++)
+                    SaveSlot.GameFlagsLimiter.Add(i);
+            }
         }
     }
     
