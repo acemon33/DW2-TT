@@ -1221,6 +1221,7 @@
             this.digimonAttackTextBox.Name = "digimonAttackTextBox";
             this.digimonAttackTextBox.Size = new System.Drawing.Size(64, 20);
             this.digimonAttackTextBox.TabIndex = 12;
+            this.digimonAttackTextBox.TextChanged += new System.EventHandler(this.digimonAttackTextBox_TextChanged);
             // 
             // digimonMaxMpTextBox
             // 
@@ -1228,6 +1229,7 @@
             this.digimonMaxMpTextBox.Name = "digimonMaxMpTextBox";
             this.digimonMaxMpTextBox.Size = new System.Drawing.Size(63, 20);
             this.digimonMaxMpTextBox.TabIndex = 11;
+            this.digimonMaxMpTextBox.TextChanged += new System.EventHandler(this.digimonMaxMpTextBox_TextChanged);
             // 
             // digimonMpTextBox
             // 
@@ -1235,6 +1237,7 @@
             this.digimonMpTextBox.Name = "digimonMpTextBox";
             this.digimonMpTextBox.Size = new System.Drawing.Size(64, 20);
             this.digimonMpTextBox.TabIndex = 10;
+            this.digimonMpTextBox.TextChanged += new System.EventHandler(this.digimonMpTextBox_TextChanged);
             // 
             // digimonMapHpTextBox
             // 
@@ -1242,6 +1245,7 @@
             this.digimonMapHpTextBox.Name = "digimonMapHpTextBox";
             this.digimonMapHpTextBox.Size = new System.Drawing.Size(63, 20);
             this.digimonMapHpTextBox.TabIndex = 9;
+            this.digimonMapHpTextBox.TextChanged += new System.EventHandler(this.digimonMapHpTextBox_TextChanged);
             // 
             // label40
             // 
@@ -1294,6 +1298,7 @@
             this.digimonHpTextBox.Name = "digimonHpTextBox";
             this.digimonHpTextBox.Size = new System.Drawing.Size(64, 20);
             this.digimonHpTextBox.TabIndex = 8;
+            this.digimonHpTextBox.TextChanged += new System.EventHandler(this.digimonHpTextBox_TextChanged);
             // 
             // label45
             // 
@@ -1310,6 +1315,7 @@
             this.digimonDefenseTextBox.Name = "digimonDefenseTextBox";
             this.digimonDefenseTextBox.Size = new System.Drawing.Size(64, 20);
             this.digimonDefenseTextBox.TabIndex = 13;
+            this.digimonDefenseTextBox.TextChanged += new System.EventHandler(this.digimonDefenseTextBox_TextChanged);
             // 
             // digimonSpeedTextBox
             // 
@@ -1317,6 +1323,7 @@
             this.digimonSpeedTextBox.Name = "digimonSpeedTextBox";
             this.digimonSpeedTextBox.Size = new System.Drawing.Size(64, 20);
             this.digimonSpeedTextBox.TabIndex = 13;
+            this.digimonSpeedTextBox.TextChanged += new System.EventHandler(this.digimonSpeedTextBox_TextChanged);
             // 
             // digimonListBox
             // 
@@ -1374,6 +1381,7 @@
             this.digimonMaxLevelTextBox.Name = "digimonMaxLevelTextBox";
             this.digimonMaxLevelTextBox.Size = new System.Drawing.Size(51, 20);
             this.digimonMaxLevelTextBox.TabIndex = 11;
+            this.digimonMaxLevelTextBox.TextChanged += new System.EventHandler(this.digimonMaxLevelTextBox_TextChanged);
             // 
             // digimonLevelTextBox
             // 
@@ -1381,6 +1389,7 @@
             this.digimonLevelTextBox.Name = "digimonLevelTextBox";
             this.digimonLevelTextBox.Size = new System.Drawing.Size(51, 20);
             this.digimonLevelTextBox.TabIndex = 9;
+            this.digimonLevelTextBox.TextChanged += new System.EventHandler(this.digimonLevelTextBox_TextChanged);
             // 
             // label34
             // 
@@ -1431,6 +1440,7 @@
             this.digimonExpTextBox.Name = "digimonExpTextBox";
             this.digimonExpTextBox.Size = new System.Drawing.Size(100, 20);
             this.digimonExpTextBox.TabIndex = 13;
+            this.digimonExpTextBox.TextChanged += new System.EventHandler(this.digimonExpTextBox_TextChanged);
             // 
             // label39
             // 
@@ -1448,6 +1458,7 @@
             this.digimonNameTextBox.Name = "digimonNameTextBox";
             this.digimonNameTextBox.Size = new System.Drawing.Size(100, 20);
             this.digimonNameTextBox.TabIndex = 12;
+            this.digimonNameTextBox.TextChanged += new System.EventHandler(this.digimonNameTextBox_TextChanged);
             // 
             // label35
             // 
@@ -1473,6 +1484,7 @@
             this.digimonIdTextBox.Name = "digimonIdTextBox";
             this.digimonIdTextBox.Size = new System.Drawing.Size(51, 20);
             this.digimonIdTextBox.TabIndex = 10;
+            this.digimonIdTextBox.TextChanged += new System.EventHandler(this.digimonIdTextBox_TextChanged);
             // 
             // digimonOriginalNameTextBox
             // 
@@ -1529,10 +1541,7 @@
             // slotComboBox
             // 
             this.slotComboBox.FormattingEnabled = true;
-            this.slotComboBox.Items.AddRange(new object[] {
-            "Slot 1",
-            "Slot 2",
-            "Slot 3"});
+            this.slotComboBox.Items.AddRange(new object[] {"Slot 1", "Slot 2", "Slot 3"});
             this.slotComboBox.Location = new System.Drawing.Point(68, 39);
             this.slotComboBox.Name = "slotComboBox";
             this.slotComboBox.Size = new System.Drawing.Size(172, 21);
@@ -1586,7 +1595,6 @@
             this.tableLayoutPanel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         private System.Windows.Forms.TextBox digimonOriginalNameTextBox;

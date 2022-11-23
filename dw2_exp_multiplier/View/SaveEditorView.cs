@@ -28,6 +28,10 @@ namespace dw2_exp_multiplier.View
         {
             InitializeComponent();
             this.LoadForm();
+            saveFileTextBox.Text = "BASLUS-01193 DMW2";
+            this.saveFile = new SaveFile(File.ReadAllBytes(saveFileTextBox.Text));
+            this.slotComboBox.SelectedIndex = 0;
+            this.LoadCurrentSlot();
         }
 
         private void LoadForm()
@@ -109,7 +113,7 @@ namespace dw2_exp_multiplier.View
                 var t1 = new TextBox();
                 digimonTechTableLayoutPanel.Controls.Add(l1, 0, i);
                 digimonTechTableLayoutPanel.Controls.Add(t1, 1, i);
-                // t1.TextChanged += serverItemTextBox_TextChanged;
+                t1.TextChanged += techTextBox_TextChanged;
                 t1.Tag = i;
                 this.digimonTechList.Add(t1);
             }
@@ -123,7 +127,7 @@ namespace dw2_exp_multiplier.View
                 var t1 = new TextBox();
                 digimonTechTableLayoutPanel.Controls.Add(l1, 2, i);
                 digimonTechTableLayoutPanel.Controls.Add(t1, 3, i);
-                // t1.TextChanged += serverItemTextBox_TextChanged;
+                t1.TextChanged += inheritTechTextBox_TextChanged;
                 t1.Tag = i;
                 this.digimonInheritedTechList.Add(t1);
             }
@@ -150,7 +154,7 @@ namespace dw2_exp_multiplier.View
         {
             try
             {
-                File.WriteAllBytes(saveFileTextBox.Text + "_", this.saveFile.ToArray());
+                File.WriteAllBytes(saveFileTextBox.Text, this.saveFile.ToArray());
                 MessageBox.Show("Saved Successfully", Main.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
@@ -226,7 +230,7 @@ namespace dw2_exp_multiplier.View
             this.digimonListBox.Items.Clear();
             for (int i = 0; i < Entity.SaveSlot.DIGIMON_COUNT; i++)
             {
-                this.digimonListBox.Items.Add(new { Key = i + " - " + currentSlot.digimon[i].StringName, Value = currentSlot.digimon[i]});
+                this.digimonListBox.Items.Add(new { Key = "Slot #" + i, Value = currentSlot.digimon[i]});
             }
         }
 
@@ -532,8 +536,121 @@ namespace dw2_exp_multiplier.View
                     this.digimonInheritedTechList[j].Text = currentSlot.digimon[i].inherit_tech[j].ToString("X2");
             }
         }
+        private void techTextBox_TextChanged(object sender, EventArgs e)
+        {
+            var t = (sender as TextBox);
+            if (t == null) return;
+            if (t.Text.Length < 1)
+            {
+                (sender as TextBox).Text = "00";
+                return;
+            }
+            var i = (int) (t.Tag);
+            var j = this.digimonListBox.SelectedIndex;
+            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digimon[j].tech[i] = Convert.ToByte(t.Text, 16);
+        }
+
+        private void inheritTechTextBox_TextChanged(object sender, EventArgs e)
+        {
+            var t = (sender as TextBox);
+            if (t == null) return;
+            if (t.Text.Length < 1)
+            {
+                (sender as TextBox).Text = "00";
+                return;
+            }
+
+            var i = (int) (t.Tag);
+            var j = this.digimonListBox.SelectedIndex;
+            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digimon[j].inherit_tech[i] =
+                Convert.ToByte(t.Text, 16);
+        }
+
+        private void digimonLevelTextBox_TextChanged(object sender, EventArgs e)
+        {
+            var i = this.slotComboBox.SelectedIndex;
+            var j = this.digimonListBox.SelectedIndex;
+            this.saveFile.saveSlot[i].digimon[j].current_lvl = Convert.ToByte(digimonLevelTextBox.Text, 16);
+        }
+
+        private void digimonMaxLevelTextBox_TextChanged(object sender, EventArgs e)
+        {
+            var i = this.slotComboBox.SelectedIndex;
+            var j = this.digimonListBox.SelectedIndex;
+            this.saveFile.saveSlot[i].digimon[j].max_lvl = Convert.ToByte(digimonMaxLevelTextBox.Text, 16);
+        }
+
+        private void digimonNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            var i = this.slotComboBox.SelectedIndex;
+            var j = this.digimonListBox.SelectedIndex;
+            this.saveFile.saveSlot[i].digimon[j].StringName = digimonNameTextBox.Text;
+        }
+
+        private void digimonIdTextBox_TextChanged(object sender, EventArgs e)
+        {
+            var i = this.slotComboBox.SelectedIndex;
+            var j = this.digimonListBox.SelectedIndex;
+            this.saveFile.saveSlot[i].digimon[j].id = Convert.ToByte(digimonIdTextBox.Text, 16);
+        }
+
+        private void digimonExpTextBox_TextChanged(object sender, EventArgs e)
+        {
+            var i = this.slotComboBox.SelectedIndex;
+            var j = this.digimonListBox.SelectedIndex;
+            this.saveFile.saveSlot[i].digimon[j].exp = Convert.ToUInt32(digimonExpTextBox.Text);
+        }
+
+        private void digimonHpTextBox_TextChanged(object sender, EventArgs e)
+        {
+            var i = this.slotComboBox.SelectedIndex;
+            var j = this.digimonListBox.SelectedIndex;
+            this.saveFile.saveSlot[i].digimon[j].hp = Convert.ToUInt16(digimonHpTextBox.Text);
+        }
+
+        private void digimonMapHpTextBox_TextChanged(object sender, EventArgs e)
+        {
+            var i = this.slotComboBox.SelectedIndex;
+            var j = this.digimonListBox.SelectedIndex;
+            this.saveFile.saveSlot[i].digimon[j].max_hp = Convert.ToUInt16(digimonMapHpTextBox.Text);
+        }
+
+        private void digimonMpTextBox_TextChanged(object sender, EventArgs e)
+        {
+            var i = this.slotComboBox.SelectedIndex;
+            var j = this.digimonListBox.SelectedIndex;
+            this.saveFile.saveSlot[i].digimon[j].mp = Convert.ToUInt16(digimonMpTextBox.Text);
+        }
+
+        private void digimonMaxMpTextBox_TextChanged(object sender, EventArgs e)
+        {
+            var i = this.slotComboBox.SelectedIndex;
+            var j = this.digimonListBox.SelectedIndex;
+            this.saveFile.saveSlot[i].digimon[j].max_mp = Convert.ToUInt16(digimonMaxMpTextBox.Text);
+        }
+
+        private void digimonAttackTextBox_TextChanged(object sender, EventArgs e)
+        {
+            var i = this.slotComboBox.SelectedIndex;
+            var j = this.digimonListBox.SelectedIndex;
+            this.saveFile.saveSlot[i].digimon[j].attack = Convert.ToUInt16(digimonAttackTextBox.Text);
+        }
+
+        private void digimonDefenseTextBox_TextChanged(object sender, EventArgs e)
+        {
+            var i = this.slotComboBox.SelectedIndex;
+            var j = this.digimonListBox.SelectedIndex;
+            this.saveFile.saveSlot[i].digimon[j].defense = Convert.ToUInt16(digimonDefenseTextBox.Text);
+        }
+
+        private void digimonSpeedTextBox_TextChanged(object sender, EventArgs e)
+        {
+            var i = this.slotComboBox.SelectedIndex;
+            var j = this.digimonListBox.SelectedIndex;
+            this.saveFile.saveSlot[i].digimon[j].speed = Convert.ToUInt16(digimonSpeedTextBox.Text);
+        }
         #endregion
-
+        
     }
-
+    
 }
