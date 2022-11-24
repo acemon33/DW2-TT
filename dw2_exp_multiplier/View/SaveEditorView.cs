@@ -688,7 +688,7 @@ namespace dw2_exp_multiplier.View
             var t = (sender as TextBox).Text;
             if (t.Length < 1) return;
             var i = (uint) ((sender as TextBox).Tag);
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].GameFlags[i] = Convert.ToUInt16(t, 16);
+            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].GameFlags[i] = Convert.ToByte(t, 16);
         }
         #endregion
         

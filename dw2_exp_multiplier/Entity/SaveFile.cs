@@ -132,7 +132,8 @@ namespace dw2_exp_multiplier.Entity
 
         public string StringHeroName;
         public string StringDigiBeetleName;
-        public Dictionary<UInt32, UInt32> GameFlags = new Dictionary<UInt32, UInt32>();
+        public Dictionary<UInt32, byte> GameFlags = new Dictionary<UInt32, byte>();
+        
         public static List<UInt32> GameFlagsLimiter = new List<UInt32>();
         public static Dictionary<string, List<GameFlag>> GameStoryProgress = new Dictionary<string, List<GameFlag>>();
         
@@ -232,6 +233,9 @@ namespace dw2_exp_multiplier.Entity
             data[4164] = this.story_progress;
             Buffer.BlockCopy(padding10, 0, data, 4165, padding10.Length);
 
+            foreach (var i in GameFlagsLimiter)
+                data[i] = GameFlags[i];
+            
             return data;
         }
 
