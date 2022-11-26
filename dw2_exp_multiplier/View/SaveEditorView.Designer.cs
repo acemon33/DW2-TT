@@ -32,7 +32,6 @@
             this.miscTabPage = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.heroNameTextBox = new System.Windows.Forms.TextBox();
-            this.lastLocationTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.time1TextBox = new System.Windows.Forms.TextBox();
@@ -45,8 +44,9 @@
             this.label11 = new System.Windows.Forms.Label();
             this.bitsTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.rankTextBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.lastLocationComboBox = new System.Windows.Forms.ComboBox();
+            this.rankComboBox = new System.Windows.Forms.ComboBox();
             this.digiBeetleTabPage = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -155,13 +155,13 @@
             this.digimonIdTextBox = new System.Windows.Forms.TextBox();
             this.digimonOriginalNameTextBox = new System.Windows.Forms.TextBox();
             this.gameStoryTabPage = new System.Windows.Forms.TabPage();
+            this.gameStoryPanel = new System.Windows.Forms.Panel();
             this.openFileButton = new System.Windows.Forms.Button();
             this.saveFileTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.slotComboBox = new System.Windows.Forms.ComboBox();
             this.saveFileButton = new System.Windows.Forms.Button();
-            this.gameStoryPanel = new System.Windows.Forms.Panel();
             this.tabControl.SuspendLayout();
             this.miscTabPage.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -213,7 +213,6 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.47148F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.52852F));
             this.tableLayoutPanel1.Controls.Add(this.heroNameTextBox, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lastLocationTextBox, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label6, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.time1TextBox, 1, 2);
@@ -226,8 +225,9 @@
             this.tableLayoutPanel1.Controls.Add(this.label11, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.bitsTextBox, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.rankTextBox, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.label10, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.lastLocationComboBox, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.rankComboBox, 1, 7);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 6);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 8;
@@ -250,15 +250,6 @@
             this.heroNameTextBox.Size = new System.Drawing.Size(114, 20);
             this.heroNameTextBox.TabIndex = 12;
             this.heroNameTextBox.TextChanged += new System.EventHandler(this.heroNameTextBox_TextChanged);
-            // 
-            // lastLocationTextBox
-            // 
-            this.lastLocationTextBox.Location = new System.Drawing.Point(140, 3);
-            this.lastLocationTextBox.MaxLength = 2;
-            this.lastLocationTextBox.Name = "lastLocationTextBox";
-            this.lastLocationTextBox.Size = new System.Drawing.Size(55, 20);
-            this.lastLocationTextBox.TabIndex = 10;
-            this.lastLocationTextBox.TextChanged += new System.EventHandler(this.lastLocationTextBox_TextChanged);
             // 
             // label5
             // 
@@ -367,15 +358,6 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "Last Location Save Point";
             // 
-            // rankTextBox
-            // 
-            this.rankTextBox.Location = new System.Drawing.Point(140, 192);
-            this.rankTextBox.MaxLength = 2;
-            this.rankTextBox.Name = "rankTextBox";
-            this.rankTextBox.Size = new System.Drawing.Size(55, 20);
-            this.rankTextBox.TabIndex = 24;
-            this.rankTextBox.TextChanged += new System.EventHandler(this.rankTextBox_TextChanged);
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -384,6 +366,24 @@
             this.label10.Size = new System.Drawing.Size(31, 13);
             this.label10.TabIndex = 21;
             this.label10.Text = "Rank";
+            // 
+            // lastLocationComboBox
+            // 
+            this.lastLocationComboBox.FormattingEnabled = true;
+            this.lastLocationComboBox.Location = new System.Drawing.Point(140, 3);
+            this.lastLocationComboBox.Name = "lastLocationComboBox";
+            this.lastLocationComboBox.Size = new System.Drawing.Size(114, 21);
+            this.lastLocationComboBox.TabIndex = 25;
+            this.lastLocationComboBox.SelectedIndexChanged += new System.EventHandler(this.lastLocationComboBox_SelectedIndexChanged);
+            // 
+            // rankComboBox
+            // 
+            this.rankComboBox.FormattingEnabled = true;
+            this.rankComboBox.Location = new System.Drawing.Point(140, 192);
+            this.rankComboBox.Name = "rankComboBox";
+            this.rankComboBox.Size = new System.Drawing.Size(114, 21);
+            this.rankComboBox.TabIndex = 26;
+            this.rankComboBox.SelectedIndexChanged += new System.EventHandler(this.rankComboBox_SelectedIndexChanged);
             // 
             // digiBeetleTabPage
             // 
@@ -1506,6 +1506,15 @@
             this.gameStoryTabPage.Text = "Game Story";
             this.gameStoryTabPage.UseVisualStyleBackColor = true;
             // 
+            // gameStoryPanel
+            // 
+            this.gameStoryPanel.AutoScroll = true;
+            this.gameStoryPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gameStoryPanel.Location = new System.Drawing.Point(0, 0);
+            this.gameStoryPanel.Name = "gameStoryPanel";
+            this.gameStoryPanel.Size = new System.Drawing.Size(434, 289);
+            this.gameStoryPanel.TabIndex = 1;
+            // 
             // openFileButton
             // 
             this.openFileButton.Location = new System.Drawing.Point(246, 5);
@@ -1560,15 +1569,6 @@
             this.saveFileButton.Text = "Save";
             this.saveFileButton.UseVisualStyleBackColor = true;
             this.saveFileButton.Click += new System.EventHandler(this.saveFileButton_Click);
-            // 
-            // gameStoryPanel
-            // 
-            this.gameStoryPanel.AutoScroll = true;
-            this.gameStoryPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gameStoryPanel.Location = new System.Drawing.Point(0, 0);
-            this.gameStoryPanel.Name = "gameStoryPanel";
-            this.gameStoryPanel.Size = new System.Drawing.Size(434, 289);
-            this.gameStoryPanel.TabIndex = 1;
             // 
             // SaveEditorView
             // 
@@ -1640,7 +1640,6 @@
         private System.Windows.Forms.ComboBox slotComboBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TextBox heroNameTextBox;
-        private System.Windows.Forms.TextBox lastLocationTextBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
@@ -1654,7 +1653,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox bitsTextBox;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox rankTextBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox engineNameTextBox;
@@ -1753,5 +1751,7 @@
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.TextBox digimonSpeedTextBox;
         private System.Windows.Forms.GroupBox techGroupBox;
+        private System.Windows.Forms.ComboBox lastLocationComboBox;
+        private System.Windows.Forms.ComboBox rankComboBox;
     }
 }

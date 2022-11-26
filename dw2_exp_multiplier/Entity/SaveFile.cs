@@ -128,7 +128,7 @@ namespace dw2_exp_multiplier.Entity
         public byte[] padding9 = new byte[13];
         public byte[] may_game_flag3 = new byte[32];
         public byte story_progress;
-        public byte[] padding10 = new byte[19];
+        public byte[] padding10 = new byte[7];
 
         public string StringHeroName;
         public string StringDigiBeetleName;
@@ -136,6 +136,10 @@ namespace dw2_exp_multiplier.Entity
         
         public static List<UInt32> GameFlagsLimiter = new List<UInt32>();
         public static Dictionary<string, List<GameFlag>> GameStoryProgress = new Dictionary<string, List<GameFlag>>();
+        public static Dictionary<string, byte> RankList = new Dictionary<string, byte>();
+
+        public static Dictionary<string, string> SavePointLocationList = new Dictionary<string, string>();
+        public string lastSavePoint;
         
         public SaveSlot(byte[] data)
         {
@@ -264,6 +268,21 @@ namespace dw2_exp_multiplier.Entity
                 for (uint i = from; i <= to; i++)
                     SaveSlot.GameFlagsLimiter.Add(i);
             }
+            
+            foreach (XmlNode rank in xml.SelectNodes("dw2-utility/ranks/rank"))
+            {
+                string title = rank.Attributes["title"].Value;
+                byte value = Convert.ToByte(rank.Attributes["value"].Value, 16);
+                RankList[title] = value;
+            }
+            
+            foreach (XmlNode point in xml.SelectNodes("dw2-utility/last-save-points/point"))
+            {
+                var name = point.Attributes["name"].Value;
+                var site = point.Attributes["area"].Value + " " + point.Attributes["location"].Value;
+                SavePointLocationList[name] = site;
+            }
+            
         }
     }
     

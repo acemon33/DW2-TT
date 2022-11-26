@@ -32,6 +32,11 @@ namespace dw2_exp_multiplier.View
             InitializeComponent();
             SaveSlot.load1();
             this.LoadForm();
+            
+            this.lastLocationComboBox.DisplayMember = "Key";
+            this.lastLocationComboBox.ValueMember = "Key";
+            this.rankComboBox.DisplayMember = "Key";
+            this.rankComboBox.ValueMember = "Value";
 
             saveFileTextBox.Text = "BASLUS-01193 DMW2";
             this.saveFile = new SaveFile(File.ReadAllBytes(saveFileTextBox.Text));
@@ -163,21 +168,24 @@ namespace dw2_exp_multiplier.View
             GameFlagsTableLayoutPanel.RowCount = n;
             for(int i = 0; i < n; i++)
                 GameFlagsTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 27F));
+            
+            this.lastLocationComboBox.DataSource = new BindingSource(SaveSlot.SavePointLocationList, null);
+            this.rankComboBox.DataSource = new BindingSource(SaveSlot.RankList, null);
         }
         
         private void LoadCurrentSlot()
         {
             var currentSlot = this.saveFile.saveSlot[this.slotComboBox.SelectedIndex];
-            
+
                     // Misc.
-            lastLocationTextBox.Text = currentSlot.locationId1.ToString("X2");
+            lastLocationComboBox.SelectedValue = currentSlot.locationId1;
             heroNameTextBox.Text = currentSlot.StringHeroName;
             time1TextBox.Text = currentSlot.time1.ToString("X2");
             time2TextBox.Text = currentSlot.time2.ToString("X2");
             time3TextBox.Text = currentSlot.time3.ToString("X2");
             time4TextBox.Text = currentSlot.time4.ToString("X2");
             bitsTextBox.Text = currentSlot.bits.ToString();
-            rankTextBox.Text = currentSlot.rank.ToString("X2");
+            rankComboBox.SelectedValue = currentSlot.rank;
 
                     // Digi-Beetle Parts
             DigiBeetleNameTextBox.Text = currentSlot.StringDigiBeetleName;
@@ -271,9 +279,9 @@ namespace dw2_exp_multiplier.View
         #endregion
 
         #region Misc. Change Event Region
-        private void lastLocationTextBox_TextChanged(object sender, EventArgs e)
+        private void lastLocationComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].locationId1 = Convert.ToByte(lastLocationTextBox.Text, 16);
+            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].lastSavePoint = (string) this.lastLocationComboBox.SelectedItem;
         }
 
         private void heroNameTextBox_TextChanged(object sender, EventArgs e)
@@ -306,12 +314,10 @@ namespace dw2_exp_multiplier.View
             this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].bits = Convert.ToInt32(bitsTextBox.Text);
         }
 
-        private void rankTextBox_TextChanged(object sender, EventArgs e)
+        private void rankComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].rank = Convert.ToByte(rankTextBox.Text, 16);
+            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].rank = (this.rankComboBox.SelectedItem as dynamic).Value;
         }
-
-
         #endregion
 
         #region Digi-Beetle Change Event Region
@@ -691,7 +697,7 @@ namespace dw2_exp_multiplier.View
             this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].GameFlags[i] = Convert.ToByte(t, 16);
         }
         #endregion
-        
+
     }
     
 }
