@@ -34,7 +34,7 @@ namespace dw2_exp_multiplier.View
             this.LoadForm();
             
             this.lastLocationComboBox.DisplayMember = "Key";
-            this.lastLocationComboBox.ValueMember = "Key";
+            this.lastLocationComboBox.ValueMember = "Value";
             this.rankComboBox.DisplayMember = "Key";
             this.rankComboBox.ValueMember = "Value";
 
@@ -169,6 +169,7 @@ namespace dw2_exp_multiplier.View
             for(int i = 0; i < n; i++)
                 GameFlagsTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 27F));
             
+            
             this.lastLocationComboBox.DataSource = new BindingSource(SaveSlot.SavePointLocationList, null);
             this.rankComboBox.DataSource = new BindingSource(SaveSlot.RankList, null);
         }
@@ -178,7 +179,7 @@ namespace dw2_exp_multiplier.View
             var currentSlot = this.saveFile.saveSlot[this.slotComboBox.SelectedIndex];
 
                     // Misc.
-            lastLocationComboBox.SelectedValue = currentSlot.locationId1;
+            lastLocationComboBox.SelectedValue = currentSlot.lastSavePoint;
             heroNameTextBox.Text = currentSlot.StringHeroName;
             time1TextBox.Text = currentSlot.time1.ToString("X2");
             time2TextBox.Text = currentSlot.time2.ToString("X2");
@@ -281,7 +282,7 @@ namespace dw2_exp_multiplier.View
         #region Misc. Change Event Region
         private void lastLocationComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].lastSavePoint = (string) this.lastLocationComboBox.SelectedItem;
+            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].lastSavePoint = (this.lastLocationComboBox.SelectedItem as dynamic).Value;
         }
 
         private void heroNameTextBox_TextChanged(object sender, EventArgs e)

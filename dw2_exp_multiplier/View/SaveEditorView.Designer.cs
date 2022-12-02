@@ -369,6 +369,7 @@
             // 
             // lastLocationComboBox
             // 
+            this.lastLocationComboBox.DropDownWidth = 200;
             this.lastLocationComboBox.FormattingEnabled = true;
             this.lastLocationComboBox.Location = new System.Drawing.Point(140, 3);
             this.lastLocationComboBox.Name = "lastLocationComboBox";
@@ -1553,7 +1554,10 @@
             // slotComboBox
             // 
             this.slotComboBox.FormattingEnabled = true;
-            this.slotComboBox.Items.AddRange(new object[] {"Slot 1", "Slot 2", "Slot 3"});
+            this.slotComboBox.Items.AddRange(new object[] {
+            "Slot 1",
+            "Slot 2",
+            "Slot 3"});
             this.slotComboBox.Location = new System.Drawing.Point(68, 39);
             this.slotComboBox.Name = "slotComboBox";
             this.slotComboBox.Size = new System.Drawing.Size(172, 21);
@@ -1608,6 +1612,7 @@
             this.gameStoryTabPage.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         private System.Windows.Forms.Panel gameStoryPanel;

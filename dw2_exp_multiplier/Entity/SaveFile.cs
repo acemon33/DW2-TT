@@ -99,14 +99,16 @@ namespace dw2_exp_multiplier.Entity
         public static readonly int DIGIMON_COUNT = 36;
         
         public byte locationId1;
-        public byte []padding1 = new byte[3];
+        public byte []padding1 = new byte[12];
+        public byte locationId2;
+        public ushort padding0;
         public byte time1;
         public byte time2;
         public byte time3;
         public byte time4;
         public Int32 bits;
         public byte[] padding2 = new byte[5];
-        public byte locationId2;
+        public byte unknown0;
         public byte rank;
         public byte padding3;
         public byte[] heroName = new byte[6];
@@ -143,99 +145,111 @@ namespace dw2_exp_multiplier.Entity
         
         public SaveSlot(byte[] data)
         {
-            this.locationId1 = data[0];
+            this.locationId1 = data[0x0];
             Buffer.BlockCopy(data, 1, this.padding1, 0, this.padding1.Length);
-            this.time1 = data[4];
-            this.time2 = data[5];
-            this.time3 = data[6];
-            this.time4 = data[7];
-            this.bits = BitConverter.ToInt32(data, 8);
-            Buffer.BlockCopy(data, 12, this.padding2, 0, this.padding2.Length);
-            this.locationId2 = data[17];
-            this.rank = data[18];
-            this.padding3 = data[19];
-            Buffer.BlockCopy(data, 20, this.heroName, 0, this.heroName.Length);
-            Buffer.BlockCopy(data, 26, this.padding4, 0, this.padding4.Length);
-            Buffer.BlockCopy(data, 36, this.unknown, 0, this.unknown.Length);
-            Buffer.BlockCopy(data, 44, this.digi_beetle_part, 0, this.digi_beetle_part.Length * 2);
-            Buffer.BlockCopy(data, 82, this.digi_beetle_part_flag, 0, this.digi_beetle_part_flag.Length);
-            Buffer.BlockCopy(data, 102, this.items, 0, this.items.Length * 2);
-            Buffer.BlockCopy(data, 198, this.may_game_flag1, 0, this.may_game_flag1.Length);
-            Buffer.BlockCopy(data, 203, this.padding5, 0, this.padding5.Length);
-            Buffer.BlockCopy(data, 209, this.digi_beetle_name, 0, this.digi_beetle_name.Length);
-            Buffer.BlockCopy(data, 217, this.padding6, 0, this.padding6.Length);
+            this.locationId2 = data[0xD];
+            this.padding0 = BitConverter.ToUInt16(data, 0xE);
+            this.time1 = data[0x10];
+            this.time2 = data[0x11];
+            this.time3 = data[0x12];
+            this.time4 = data[0x13];
+            this.bits = BitConverter.ToInt32(data, 0x14);
+            Buffer.BlockCopy(data, 0x18, this.padding2, 0, this.padding2.Length);
+            this.unknown0 = data[0x1D];
+            this.rank = data[0x1E];
+            this.padding3 = data[0x1F];
+            Buffer.BlockCopy(data, 0x20, this.heroName, 0, this.heroName.Length);
+            Buffer.BlockCopy(data, 0x26, this.padding4, 0, this.padding4.Length);
+            Buffer.BlockCopy(data, 0x30, this.unknown, 0, this.unknown.Length);
+            
+            Buffer.BlockCopy(data, 0x38, this.digi_beetle_part, 0, this.digi_beetle_part.Length * 2);
+            Buffer.BlockCopy(data, 0x5E, this.digi_beetle_part_flag, 0, this.digi_beetle_part_flag.Length);
+            Buffer.BlockCopy(data, 0x72, this.items, 0, this.items.Length * 2);
+            Buffer.BlockCopy(data, 0xD2, this.may_game_flag1, 0, this.may_game_flag1.Length);
+            Buffer.BlockCopy(data, 0xD7, this.padding5, 0, this.padding5.Length);
+            Buffer.BlockCopy(data, 0xDD, this.digi_beetle_name, 0, this.digi_beetle_name.Length);
+            Buffer.BlockCopy(data, 0xE5, this.padding6, 0, this.padding6.Length);
 
             byte[] temp = new byte[Digimon.LENGTH];
             for (int i = 0; i < this.digimon.Length; i++)
             {
-                Buffer.BlockCopy(data, i * Digimon.LENGTH + 228, temp, 0, temp.Length);
+                Buffer.BlockCopy(data, i * Digimon.LENGTH + 0xF0, temp, 0, temp.Length);
                 this.digimon[i] = new Digimon(temp);
             }
             
-            this.padding7 = BitConverter.ToUInt16(data, 3540);
-            Buffer.BlockCopy(data, 3542, this.server_item, 0, this.server_item.Length * 2);
-            Buffer.BlockCopy(data, 4014, this.important_item, 0, this.important_item.Length * 2);
-            Buffer.BlockCopy(data, 4070, this.padding8, 0, this.padding8.Length);
-            Buffer.BlockCopy(data, 4102, this.may_game_flag2, 0, this.may_game_flag2.Length);
-            Buffer.BlockCopy(data, 4119, this.padding9, 0, this.padding9.Length);
-            Buffer.BlockCopy(data, 4132, this.may_game_flag3, 0, this.may_game_flag3.Length);
-            this.story_progress = data[4164];
-            Buffer.BlockCopy(data, 4165, this.padding10, 0, this.padding10.Length);
+            this.padding7 = BitConverter.ToUInt16(data, 0xDE0);
+            Buffer.BlockCopy(data, 0xDE2, this.server_item, 0, this.server_item.Length * 2);
+            Buffer.BlockCopy(data, 0xFBA, this.important_item, 0, this.important_item.Length * 2);
+            Buffer.BlockCopy(data, 0xFF2, this.padding8, 0, this.padding8.Length);
+            Buffer.BlockCopy(data, 0x1012, this.may_game_flag2, 0, this.may_game_flag2.Length);
+            Buffer.BlockCopy(data, 0x1023, this.padding9, 0, this.padding9.Length);
+            Buffer.BlockCopy(data, 0x1030, this.may_game_flag3, 0, this.may_game_flag3.Length);
+            this.story_progress = data[0x1050];
+            Buffer.BlockCopy(data, 0x1051, this.padding10, 0, this.padding10.Length);
 
             this.StringHeroName = TextConversion.DigiStringToASCII(this.heroName);
             this.StringDigiBeetleName = TextConversion.DigiStringToASCII(this.digi_beetle_name);
 
             foreach (var i in GameFlagsLimiter)
                 GameFlags[i] = data[i];
+            
+            this.lastSavePoint = this.locationId1.ToString("X2") + " " + this.locationId2.ToString("X2");
         }
         
         public Byte[] ToArray()
         {
-            byte[] data = new byte[0x3FFF];
+            byte[] data = new byte[0x3FFF]; // todo: plus 1
 
+            string[] sl = this.lastSavePoint.Split(' ');
+            this.locationId1 = Convert.ToByte(sl[0], 16);
+            this.locationId2 = Convert.ToByte(sl[1], 16);
+            
             data[0] = this.locationId1;
             Buffer.BlockCopy(this.padding1, 0, data, 1, this.padding1.Length);
-            data[4] = this.time1;
-            data[5] = this.time2;
-            data[6] = this.time3;
-            data[7] = this.time4;
-            Buffer.BlockCopy(BitConverter.GetBytes(this.bits), 0, data, 8, 4);
-            Buffer.BlockCopy(this.padding2, 0, data, 12, this.padding2.Length);
-            data[17] = this.locationId2;
-            data[18] = this.rank;
-            data[19] = this.padding3;
+            data[0xD] = this.locationId2;
+            Buffer.BlockCopy(BitConverter.GetBytes(this.padding0), 0, data, 0xE, 2);
+            data[0x10] = this.time1;
+            data[0x11] = this.time2;
+            data[0x12] = this.time3;
+            data[0x13] = this.time4;
+            Buffer.BlockCopy(BitConverter.GetBytes(this.bits), 0, data, 0x14, 4);
+            Buffer.BlockCopy(this.padding2, 0, data, 0x18, this.padding2.Length);
+            data[0x1D] = this.unknown0;
+            data[0x1E] = this.rank;
+            data[0x1F] = this.padding3;
             
             this.heroName = new byte[] { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF };
             var temp = TextConversion.ASCIIToDigiString(this.StringHeroName);
             Buffer.BlockCopy(temp, 0, this.heroName, 0, temp.Length);
-            Buffer.BlockCopy(this.heroName, 0, data, 20, this.heroName.Length);
-            
-            Buffer.BlockCopy(this.padding4, 0, data, 26, this.padding4.Length);
-            Buffer.BlockCopy(this.unknown, 0, data, 36, this.unknown.Length);
-            Buffer.BlockCopy(this.digi_beetle_part, 0, data, 44, this.digi_beetle_part.Length * 2);
-            Buffer.BlockCopy(this.digi_beetle_part_flag, 0, data, 82, this.digi_beetle_part_flag.Length);
-            Buffer.BlockCopy(this.items, 0, data, 102, this.items.Length * 2);
-            Buffer.BlockCopy(this.may_game_flag1, 0, data, 198, this.may_game_flag1.Length);
-            Buffer.BlockCopy(this.padding5, 0, data, 203, this.padding5.Length);
+            Buffer.BlockCopy(this.heroName, 0, data, 0x20, this.heroName.Length);
+            Buffer.BlockCopy(this.padding4, 0, data, 0x26, this.padding4.Length);
+            Buffer.BlockCopy(this.unknown, 0, data, 0x30, this.unknown.Length);
+
+            Buffer.BlockCopy(this.digi_beetle_part, 0, data, 0x38, this.digi_beetle_part.Length * 2);
+            Buffer.BlockCopy(this.digi_beetle_part_flag, 0, data, 0x5E, this.digi_beetle_part_flag.Length);
+            Buffer.BlockCopy(this.items, 0, data, 0x72, this.items.Length * 2);
+            Buffer.BlockCopy(this.may_game_flag1, 0, data, 0xD2, this.may_game_flag1.Length);
+            Buffer.BlockCopy(this.padding5, 0, data, 0xD7, this.padding5.Length);
             
             this.digi_beetle_name = new byte[] { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF };
             temp = TextConversion.ASCIIToDigiString(this.StringDigiBeetleName);
             Buffer.BlockCopy(temp, 0, this.digi_beetle_name, 0, temp.Length);
-            Buffer.BlockCopy(this.digi_beetle_name, 0, data, 209, this.digi_beetle_name.Length);
+            Buffer.BlockCopy(this.digi_beetle_name, 0, data, 0xDD, this.digi_beetle_name.Length);
             
-            Buffer.BlockCopy(this.padding6, 0, data, 217, this.padding6.Length);
+            Buffer.BlockCopy(this.padding6, 0, data, 0xE5, this.padding6.Length);
             for (int i = 0; i < this.digimon.Length; i++)
             {
-                Buffer.BlockCopy(this.digimon[i].ToArray(), 0, data,  i * Digimon.LENGTH + 228, Digimon.LENGTH);
+                Buffer.BlockCopy(this.digimon[i].ToArray(), 0, data,  i * Digimon.LENGTH + 0xF0, Digimon.LENGTH);
             }
-            Buffer.BlockCopy(BitConverter.GetBytes(this.padding7), 0, data, 3540, 2);
-            Buffer.BlockCopy(this.server_item, 0, data, 3542, this.server_item.Length * 2);
-            Buffer.BlockCopy(this.important_item, 0, data, 4014, this.important_item.Length * 2);
-            Buffer.BlockCopy(this.padding8, 0, data, 4070, this.padding8.Length);
-            Buffer.BlockCopy(this.may_game_flag2, 0, data, 4102, this.may_game_flag2.Length);
-            Buffer.BlockCopy(this.may_game_flag3, 0, data, 4132, this.may_game_flag3.Length);
-            data[4164] = this.story_progress;
-            Buffer.BlockCopy(padding10, 0, data, 4165, padding10.Length);
+            Buffer.BlockCopy(BitConverter.GetBytes(this.padding7), 0, data, 0xDE0, 2);
+            Buffer.BlockCopy(this.server_item, 0, data, 0xDE2, this.server_item.Length * 2);
+            Buffer.BlockCopy(this.important_item, 0, data, 0xFBA, this.important_item.Length * 2);
+            Buffer.BlockCopy(this.padding8, 0, data, 0xFF2, this.padding8.Length);
+            Buffer.BlockCopy(this.may_game_flag2, 0, data, 0x1012, this.may_game_flag2.Length);
+            Buffer.BlockCopy(this.padding9, 0, data, 0x1023, this.padding9.Length);
+            Buffer.BlockCopy(this.may_game_flag3, 0, data, 0x1030, this.may_game_flag3.Length);
+            data[0x1050] = this.story_progress;
+            Buffer.BlockCopy(padding10, 0, data, 0x1051, padding10.Length);
 
             foreach (var i in GameFlagsLimiter)
                 data[i] = GameFlags[i];
@@ -290,9 +304,9 @@ namespace dw2_exp_multiplier.Entity
     {
         public static readonly int SAVE_SLOT_COUNT = 3;
         
-        public Int32[] header = new Int32[131];
+        public Int32[] header = new Int32[128];
         public SaveSlot[] saveSlot = new SaveSlot[SAVE_SLOT_COUNT];
-        public Int32[] padding = new Int32[826];
+        public Int32[] padding = new Int32[829];
         public ushort checksum1;
         public ushort checksum2;
 
@@ -332,7 +346,6 @@ namespace dw2_exp_multiplier.Entity
 
         public ushort CalculateChecksum(byte[] data)
         {
-            // var data = this.ToArray();
             int data_1 = 0, calculated_value = 0, ptr = 0, data_2;
 
             int counter = 0x1fff;
