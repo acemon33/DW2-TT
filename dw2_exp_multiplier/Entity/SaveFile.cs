@@ -142,7 +142,18 @@ namespace dw2_exp_multiplier.Entity
 
         public static Dictionary<string, string> SavePointLocationList = new Dictionary<string, string>();
         public string lastSavePoint;
-        
+
+        public static Dictionary<string, ushort> DigiBeetleBodyList = new Dictionary<string, ushort>();
+        public static Dictionary<string, ushort> DigiBeetleEngineList = new Dictionary<string, ushort>();
+        public static Dictionary<string, ushort> DigiBeetleBatteryList = new Dictionary<string, ushort>();
+        public static Dictionary<string, ushort> DigiBeetleMemoryList = new Dictionary<string, ushort>();
+        public static Dictionary<string, ushort> DigiBeetleToolBoxList = new Dictionary<string, ushort>();
+        public static Dictionary<string, ushort> DigiBeetleCannonList = new Dictionary<string, ushort>();
+        public static Dictionary<string, ushort> DigiBeetleLegList = new Dictionary<string, ushort>();
+        public static Dictionary<string, ushort> DigiBeetleHandList = new Dictionary<string, ushort>();
+        public static Dictionary<string, ushort> DigiBeetleArmList = new Dictionary<string, ushort>();
+        public static Dictionary<string, ushort> DigiBeetleDeviceList = new Dictionary<string, ushort>();
+
         public SaveSlot(byte[] data)
         {
             this.locationId1 = data[0x0];
@@ -271,33 +282,104 @@ namespace dw2_exp_multiplier.Entity
                     int value = Convert.ToInt32(flag.SelectSingleNode("value").InnerText, 16);
                     list.Add(new GameFlag(address, value));
                 }
-                
+
                 GameStoryProgress[name] = list;
             }
-            
-            foreach (XmlNode flag2 in xml.SelectNodes("dw2-utility/game-flags/flags/flag"))
+
+            foreach (XmlNode x in xml.SelectNodes("dw2-utility/game-flags/flags/flag"))
             {
-                UInt32 from = Convert.ToUInt32(flag2.SelectSingleNode("from").InnerText, 16);
-                UInt32 to = Convert.ToUInt32(flag2.SelectSingleNode("to").InnerText, 16);
+                UInt32 from = Convert.ToUInt32(x.SelectSingleNode("from").InnerText, 16);
+                UInt32 to = Convert.ToUInt32(x.SelectSingleNode("to").InnerText, 16);
                 for (uint i = from; i <= to; i++)
                     SaveSlot.GameFlagsLimiter.Add(i);
             }
-            
-            foreach (XmlNode rank in xml.SelectNodes("dw2-utility/ranks/rank"))
+
+            foreach (XmlNode x in xml.SelectNodes("dw2-utility/ranks/rank"))
             {
-                string title = rank.Attributes["title"].Value;
-                byte value = Convert.ToByte(rank.Attributes["value"].Value, 16);
+                string title = x.Attributes["title"].Value;
+                byte value = Convert.ToByte(x.Attributes["value"].Value, 16);
                 RankList[title] = value;
             }
-            
-            foreach (XmlNode point in xml.SelectNodes("dw2-utility/last-save-points/point"))
+
+            foreach (XmlNode x in xml.SelectNodes("dw2-utility/last-save-points/point"))
             {
-                var name = point.Attributes["name"].Value;
-                var site = point.Attributes["area"].Value + " " + point.Attributes["location"].Value;
+                var name = x.Attributes["name"].Value;
+                var site = x.Attributes["area"].Value + " " + x.Attributes["location"].Value;
                 SavePointLocationList[name] = site;
+            }
+
+            foreach (XmlNode x in xml.SelectNodes("dw2-utility/digi-beetle-parts/bodies/body"))
+            {
+                var name = x.Attributes["name"].Value;
+                var value = Convert.ToUInt16(x.Attributes["value"].Value, 16);
+                DigiBeetleBodyList[name] = value;
+            }
+
+            foreach (XmlNode x in xml.SelectNodes("dw2-utility/digi-beetle-parts/engines/engine"))
+            {
+                var name = x.Attributes["name"].Value;
+                var value = Convert.ToUInt16(x.Attributes["value"].Value, 16);
+                DigiBeetleEngineList[name] = value;
+            }
+            
+            foreach (XmlNode x in xml.SelectNodes("dw2-utility/digi-beetle-parts/batteries/battery"))
+            {
+                var name = x.Attributes["name"].Value;
+                var value = Convert.ToUInt16(x.Attributes["value"].Value, 16);
+                DigiBeetleBatteryList[name] = value;
+            }
+            
+            foreach (XmlNode x in xml.SelectNodes("dw2-utility/digi-beetle-parts/memories/memory"))
+            {
+                var name = x.Attributes["name"].Value;
+                var value = Convert.ToUInt16(x.Attributes["value"].Value, 16);
+                DigiBeetleMemoryList[name] = value;
+            }
+            
+            foreach (XmlNode x in xml.SelectNodes("dw2-utility/digi-beetle-parts/tool-boxes/tool-box"))
+            {
+                var name = x.Attributes["name"].Value;
+                var value = Convert.ToUInt16(x.Attributes["value"].Value, 16);
+                DigiBeetleToolBoxList[name] = value;
+            }
+            
+            foreach (XmlNode x in xml.SelectNodes("dw2-utility/digi-beetle-parts/cannons/cannon"))
+            {
+                var name = x.Attributes["name"].Value;
+                var value = Convert.ToUInt16(x.Attributes["value"].Value, 16);
+                DigiBeetleCannonList[name] = value;
+            }
+            
+            foreach (XmlNode x in xml.SelectNodes("dw2-utility/digi-beetle-parts/legs/leg"))
+            {
+                var name = x.Attributes["name"].Value;
+                var value = Convert.ToUInt16(x.Attributes["value"].Value, 16);
+                DigiBeetleLegList[name] = value;
+            }
+            
+            foreach (XmlNode x in xml.SelectNodes("dw2-utility/digi-beetle-parts/hands/hand"))
+            {
+                var name = x.Attributes["name"].Value;
+                var value = Convert.ToUInt16(x.Attributes["value"].Value, 16);
+                DigiBeetleHandList[name] = value;
+            }
+            
+            foreach (XmlNode x in xml.SelectNodes("dw2-utility/digi-beetle-parts/arms/arm"))
+            {
+                var name = x.Attributes["name"].Value;
+                var value = Convert.ToUInt16(x.Attributes["value"].Value, 16);
+                DigiBeetleArmList[name] = value;
+            }
+            
+            foreach (XmlNode x in xml.SelectNodes("dw2-utility/digi-beetle-parts/devices/device"))
+            {
+                var name = x.Attributes["name"].Value;
+                var value = Convert.ToUInt16(x.Attributes["value"].Value, 16);
+                DigiBeetleDeviceList[name] = value;
             }
             
         }
+
     }
     
     public class SaveFile

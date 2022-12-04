@@ -51,10 +51,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label33 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.batteryFlagTextBox = new System.Windows.Forms.TextBox();
             this.bodyFlagTextBox = new System.Windows.Forms.TextBox();
             this.engineFlagTextBox = new System.Windows.Forms.TextBox();
-            this.batteryFlagTextBox = new System.Windows.Forms.TextBox();
-            this.memoryFlagTextBox = new System.Windows.Forms.TextBox();
             this.legFlagTextBox = new System.Windows.Forms.TextBox();
             this.toolBoxFlagTextBox = new System.Windows.Forms.TextBox();
             this.handFlagTextBox = new System.Windows.Forms.TextBox();
@@ -69,24 +69,10 @@
             this.device2FlagTextBox = new System.Windows.Forms.TextBox();
             this.device5FlagTextBox = new System.Windows.Forms.TextBox();
             this.device4FlagTextBox = new System.Windows.Forms.TextBox();
-            this.cannon1NameTextBox = new System.Windows.Forms.TextBox();
             this.device6FlagTextBox = new System.Windows.Forms.TextBox();
-            this.handNameTextBox = new System.Windows.Forms.TextBox();
-            this.cannon2NameTextBox = new System.Windows.Forms.TextBox();
-            this.cannon3NameTextBox = new System.Windows.Forms.TextBox();
-            this.cannon4NameTextBox = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.device6NameTextBox = new System.Windows.Forms.TextBox();
-            this.bodyNameTextBox = new System.Windows.Forms.TextBox();
-            this.engineNameTextBox = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.memoryNameTextBox = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.batteryNameTextBox = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.toolBoxNameTextBox = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.legNameTextBox = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.DigiBeetleNameTextBox = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
@@ -103,14 +89,28 @@
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
-            this.armNameTextBox = new System.Windows.Forms.TextBox();
-            this.cannon5NameTextBox = new System.Windows.Forms.TextBox();
-            this.device1NameTextBox = new System.Windows.Forms.TextBox();
-            this.device2NameTextBox = new System.Windows.Forms.TextBox();
-            this.device3NameTextBox = new System.Windows.Forms.TextBox();
-            this.device4NameTextBox = new System.Windows.Forms.TextBox();
-            this.device5NameTextBox = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
+            this.bodyNameComboBox = new System.Windows.Forms.ComboBox();
+            this.engineNameComboBox = new System.Windows.Forms.ComboBox();
+            this.memoryFlagTextBox = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.batteryNameComboBox = new System.Windows.Forms.ComboBox();
+            this.memoryComboBox = new System.Windows.Forms.ComboBox();
+            this.toolBoxComboBox = new System.Windows.Forms.ComboBox();
+            this.legComboBox = new System.Windows.Forms.ComboBox();
+            this.armComboBox = new System.Windows.Forms.ComboBox();
+            this.handComboBox = new System.Windows.Forms.ComboBox();
+            this.cannon1ComboBox = new System.Windows.Forms.ComboBox();
+            this.cannon2ComboBox = new System.Windows.Forms.ComboBox();
+            this.cannon3ComboBox = new System.Windows.Forms.ComboBox();
+            this.cannon4ComboBox = new System.Windows.Forms.ComboBox();
+            this.cannon5ComboBox = new System.Windows.Forms.ComboBox();
+            this.device1ComboBox = new System.Windows.Forms.ComboBox();
+            this.device2ComboBox = new System.Windows.Forms.ComboBox();
+            this.device3ComboBox = new System.Windows.Forms.ComboBox();
+            this.device4ComboBox = new System.Windows.Forms.ComboBox();
+            this.device5ComboBox = new System.Windows.Forms.ComboBox();
+            this.device6ComboBox = new System.Windows.Forms.ComboBox();
             this.itemsTabPage = new System.Windows.Forms.TabPage();
             this.itemPanel = new System.Windows.Forms.Panel();
             this.importantItemsTabPage = new System.Windows.Forms.TabPage();
@@ -414,10 +414,10 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 51F));
             this.tableLayoutPanel2.Controls.Add(this.label33, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label14, 0, 5);
+            this.tableLayoutPanel2.Controls.Add(this.batteryFlagTextBox, 2, 4);
             this.tableLayoutPanel2.Controls.Add(this.bodyFlagTextBox, 2, 2);
             this.tableLayoutPanel2.Controls.Add(this.engineFlagTextBox, 2, 3);
-            this.tableLayoutPanel2.Controls.Add(this.batteryFlagTextBox, 2, 5);
-            this.tableLayoutPanel2.Controls.Add(this.memoryFlagTextBox, 2, 4);
             this.tableLayoutPanel2.Controls.Add(this.legFlagTextBox, 2, 7);
             this.tableLayoutPanel2.Controls.Add(this.toolBoxFlagTextBox, 2, 6);
             this.tableLayoutPanel2.Controls.Add(this.handFlagTextBox, 2, 9);
@@ -432,24 +432,10 @@
             this.tableLayoutPanel2.Controls.Add(this.device2FlagTextBox, 2, 16);
             this.tableLayoutPanel2.Controls.Add(this.device5FlagTextBox, 2, 19);
             this.tableLayoutPanel2.Controls.Add(this.device4FlagTextBox, 2, 18);
-            this.tableLayoutPanel2.Controls.Add(this.cannon1NameTextBox, 1, 10);
             this.tableLayoutPanel2.Controls.Add(this.device6FlagTextBox, 2, 20);
-            this.tableLayoutPanel2.Controls.Add(this.handNameTextBox, 1, 9);
-            this.tableLayoutPanel2.Controls.Add(this.cannon2NameTextBox, 1, 11);
-            this.tableLayoutPanel2.Controls.Add(this.cannon3NameTextBox, 1, 12);
-            this.tableLayoutPanel2.Controls.Add(this.cannon4NameTextBox, 1, 13);
             this.tableLayoutPanel2.Controls.Add(this.label20, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.device6NameTextBox, 1, 20);
-            this.tableLayoutPanel2.Controls.Add(this.bodyNameTextBox, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.engineNameTextBox, 1, 3);
-            this.tableLayoutPanel2.Controls.Add(this.label14, 0, 4);
-            this.tableLayoutPanel2.Controls.Add(this.memoryNameTextBox, 1, 4);
-            this.tableLayoutPanel2.Controls.Add(this.label15, 0, 5);
-            this.tableLayoutPanel2.Controls.Add(this.batteryNameTextBox, 1, 5);
             this.tableLayoutPanel2.Controls.Add(this.label16, 0, 6);
-            this.tableLayoutPanel2.Controls.Add(this.toolBoxNameTextBox, 1, 6);
             this.tableLayoutPanel2.Controls.Add(this.label17, 0, 7);
-            this.tableLayoutPanel2.Controls.Add(this.legNameTextBox, 1, 7);
             this.tableLayoutPanel2.Controls.Add(this.label19, 0, 8);
             this.tableLayoutPanel2.Controls.Add(this.DigiBeetleNameTextBox, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.label21, 0, 2);
@@ -466,14 +452,28 @@
             this.tableLayoutPanel2.Controls.Add(this.label29, 0, 18);
             this.tableLayoutPanel2.Controls.Add(this.label30, 0, 19);
             this.tableLayoutPanel2.Controls.Add(this.label31, 0, 20);
-            this.tableLayoutPanel2.Controls.Add(this.armNameTextBox, 1, 8);
-            this.tableLayoutPanel2.Controls.Add(this.cannon5NameTextBox, 1, 14);
-            this.tableLayoutPanel2.Controls.Add(this.device1NameTextBox, 1, 15);
-            this.tableLayoutPanel2.Controls.Add(this.device2NameTextBox, 1, 16);
-            this.tableLayoutPanel2.Controls.Add(this.device3NameTextBox, 1, 17);
-            this.tableLayoutPanel2.Controls.Add(this.device4NameTextBox, 1, 18);
-            this.tableLayoutPanel2.Controls.Add(this.device5NameTextBox, 1, 19);
             this.tableLayoutPanel2.Controls.Add(this.label32, 2, 1);
+            this.tableLayoutPanel2.Controls.Add(this.bodyNameComboBox, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.engineNameComboBox, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.memoryFlagTextBox, 2, 5);
+            this.tableLayoutPanel2.Controls.Add(this.label15, 0, 4);
+            this.tableLayoutPanel2.Controls.Add(this.batteryNameComboBox, 1, 4);
+            this.tableLayoutPanel2.Controls.Add(this.memoryComboBox, 1, 5);
+            this.tableLayoutPanel2.Controls.Add(this.toolBoxComboBox, 1, 6);
+            this.tableLayoutPanel2.Controls.Add(this.legComboBox, 1, 7);
+            this.tableLayoutPanel2.Controls.Add(this.armComboBox, 1, 8);
+            this.tableLayoutPanel2.Controls.Add(this.handComboBox, 1, 9);
+            this.tableLayoutPanel2.Controls.Add(this.cannon1ComboBox, 1, 10);
+            this.tableLayoutPanel2.Controls.Add(this.cannon2ComboBox, 1, 11);
+            this.tableLayoutPanel2.Controls.Add(this.cannon3ComboBox, 1, 12);
+            this.tableLayoutPanel2.Controls.Add(this.cannon4ComboBox, 1, 13);
+            this.tableLayoutPanel2.Controls.Add(this.cannon5ComboBox, 1, 14);
+            this.tableLayoutPanel2.Controls.Add(this.device1ComboBox, 1, 15);
+            this.tableLayoutPanel2.Controls.Add(this.device2ComboBox, 1, 16);
+            this.tableLayoutPanel2.Controls.Add(this.device3ComboBox, 1, 17);
+            this.tableLayoutPanel2.Controls.Add(this.device4ComboBox, 1, 18);
+            this.tableLayoutPanel2.Controls.Add(this.device5ComboBox, 1, 19);
+            this.tableLayoutPanel2.Controls.Add(this.device6ComboBox, 1, 20);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 21;
@@ -510,6 +510,23 @@
             this.label33.TabIndex = 50;
             this.label33.Text = "Part Name";
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(3, 146);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(45, 13);
+            this.label14.TabIndex = 15;
+            this.label14.Text = "Memory";
+            // 
+            // batteryFlagTextBox
+            // 
+            this.batteryFlagTextBox.Location = new System.Drawing.Point(191, 122);
+            this.batteryFlagTextBox.Name = "batteryFlagTextBox";
+            this.batteryFlagTextBox.Size = new System.Drawing.Size(44, 20);
+            this.batteryFlagTextBox.TabIndex = 35;
+            this.batteryFlagTextBox.TextChanged += new System.EventHandler(this.batteryFlagTextBox_TextChanged);
+            // 
             // bodyFlagTextBox
             // 
             this.bodyFlagTextBox.Location = new System.Drawing.Point(191, 68);
@@ -525,23 +542,6 @@
             this.engineFlagTextBox.Size = new System.Drawing.Size(44, 20);
             this.engineFlagTextBox.TabIndex = 33;
             this.engineFlagTextBox.TextChanged += new System.EventHandler(this.engineFlagTextBox_TextChanged);
-            // 
-            // batteryFlagTextBox
-            // 
-            this.batteryFlagTextBox.Location = new System.Drawing.Point(191, 149);
-            this.batteryFlagTextBox.Name = "batteryFlagTextBox";
-            this.batteryFlagTextBox.Size = new System.Drawing.Size(44, 20);
-            this.batteryFlagTextBox.TabIndex = 35;
-            this.batteryFlagTextBox.TextChanged += new System.EventHandler(this.batteryFlagTextBox_TextChanged);
-            // 
-            // memoryFlagTextBox
-            // 
-            this.memoryFlagTextBox.Location = new System.Drawing.Point(191, 122);
-            this.memoryFlagTextBox.MaxLength = 2;
-            this.memoryFlagTextBox.Name = "memoryFlagTextBox";
-            this.memoryFlagTextBox.Size = new System.Drawing.Size(44, 20);
-            this.memoryFlagTextBox.TabIndex = 34;
-            this.memoryFlagTextBox.TextChanged += new System.EventHandler(this.memoryFlagTextBox_TextChanged);
             // 
             // legFlagTextBox
             // 
@@ -662,15 +662,6 @@
             this.device4FlagTextBox.TabIndex = 48;
             this.device4FlagTextBox.TextChanged += new System.EventHandler(this.device4FlagTextBox_TextChanged);
             // 
-            // cannon1NameTextBox
-            // 
-            this.cannon1NameTextBox.Location = new System.Drawing.Point(97, 284);
-            this.cannon1NameTextBox.MaxLength = 4;
-            this.cannon1NameTextBox.Name = "cannon1NameTextBox";
-            this.cannon1NameTextBox.Size = new System.Drawing.Size(55, 20);
-            this.cannon1NameTextBox.TabIndex = 21;
-            this.cannon1NameTextBox.TextChanged += new System.EventHandler(this.cannon1NameTextBox_TextChanged);
-            // 
             // device6FlagTextBox
             // 
             this.device6FlagTextBox.Location = new System.Drawing.Point(191, 554);
@@ -679,42 +670,6 @@
             this.device6FlagTextBox.Size = new System.Drawing.Size(44, 20);
             this.device6FlagTextBox.TabIndex = 50;
             this.device6FlagTextBox.TextChanged += new System.EventHandler(this.device6FlagTextBox_TextChanged);
-            // 
-            // handNameTextBox
-            // 
-            this.handNameTextBox.Location = new System.Drawing.Point(97, 257);
-            this.handNameTextBox.MaxLength = 4;
-            this.handNameTextBox.Name = "handNameTextBox";
-            this.handNameTextBox.Size = new System.Drawing.Size(55, 20);
-            this.handNameTextBox.TabIndex = 20;
-            this.handNameTextBox.TextChanged += new System.EventHandler(this.handNameTextBox_TextChanged);
-            // 
-            // cannon2NameTextBox
-            // 
-            this.cannon2NameTextBox.Location = new System.Drawing.Point(97, 311);
-            this.cannon2NameTextBox.MaxLength = 4;
-            this.cannon2NameTextBox.Name = "cannon2NameTextBox";
-            this.cannon2NameTextBox.Size = new System.Drawing.Size(55, 20);
-            this.cannon2NameTextBox.TabIndex = 22;
-            this.cannon2NameTextBox.TextChanged += new System.EventHandler(this.cannon2NameTextBox_TextChanged);
-            // 
-            // cannon3NameTextBox
-            // 
-            this.cannon3NameTextBox.Location = new System.Drawing.Point(97, 338);
-            this.cannon3NameTextBox.MaxLength = 4;
-            this.cannon3NameTextBox.Name = "cannon3NameTextBox";
-            this.cannon3NameTextBox.Size = new System.Drawing.Size(55, 20);
-            this.cannon3NameTextBox.TabIndex = 23;
-            this.cannon3NameTextBox.TextChanged += new System.EventHandler(this.cannon3NameTextBox_TextChanged);
-            // 
-            // cannon4NameTextBox
-            // 
-            this.cannon4NameTextBox.Location = new System.Drawing.Point(97, 365);
-            this.cannon4NameTextBox.MaxLength = 4;
-            this.cannon4NameTextBox.Name = "cannon4NameTextBox";
-            this.cannon4NameTextBox.Size = new System.Drawing.Size(55, 20);
-            this.cannon4NameTextBox.TabIndex = 24;
-            this.cannon4NameTextBox.TextChanged += new System.EventHandler(this.cannon4NameTextBox_TextChanged);
             // 
             // label20
             // 
@@ -725,69 +680,6 @@
             this.label20.TabIndex = 26;
             this.label20.Text = "Engine";
             // 
-            // device6NameTextBox
-            // 
-            this.device6NameTextBox.Location = new System.Drawing.Point(97, 554);
-            this.device6NameTextBox.MaxLength = 4;
-            this.device6NameTextBox.Name = "device6NameTextBox";
-            this.device6NameTextBox.Size = new System.Drawing.Size(55, 20);
-            this.device6NameTextBox.TabIndex = 31;
-            this.device6NameTextBox.TextChanged += new System.EventHandler(this.device6NameTextBox_TextChanged);
-            // 
-            // bodyNameTextBox
-            // 
-            this.bodyNameTextBox.Location = new System.Drawing.Point(97, 68);
-            this.bodyNameTextBox.MaxLength = 4;
-            this.bodyNameTextBox.Name = "bodyNameTextBox";
-            this.bodyNameTextBox.Size = new System.Drawing.Size(55, 20);
-            this.bodyNameTextBox.TabIndex = 13;
-            this.bodyNameTextBox.TextChanged += new System.EventHandler(this.bodyNameTextBox_TextChanged);
-            // 
-            // engineNameTextBox
-            // 
-            this.engineNameTextBox.Location = new System.Drawing.Point(97, 95);
-            this.engineNameTextBox.MaxLength = 4;
-            this.engineNameTextBox.Name = "engineNameTextBox";
-            this.engineNameTextBox.Size = new System.Drawing.Size(55, 20);
-            this.engineNameTextBox.TabIndex = 14;
-            this.engineNameTextBox.TextChanged += new System.EventHandler(this.engineNameTextBox_TextChanged);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(3, 119);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(45, 13);
-            this.label14.TabIndex = 15;
-            this.label14.Text = "Memory";
-            // 
-            // memoryNameTextBox
-            // 
-            this.memoryNameTextBox.Location = new System.Drawing.Point(97, 122);
-            this.memoryNameTextBox.MaxLength = 4;
-            this.memoryNameTextBox.Name = "memoryNameTextBox";
-            this.memoryNameTextBox.Size = new System.Drawing.Size(55, 20);
-            this.memoryNameTextBox.TabIndex = 15;
-            this.memoryNameTextBox.TextChanged += new System.EventHandler(this.memoryNameTextBox_TextChanged);
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(3, 146);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(43, 13);
-            this.label15.TabIndex = 19;
-            this.label15.Text = "Battery";
-            // 
-            // batteryNameTextBox
-            // 
-            this.batteryNameTextBox.Location = new System.Drawing.Point(97, 149);
-            this.batteryNameTextBox.MaxLength = 4;
-            this.batteryNameTextBox.Name = "batteryNameTextBox";
-            this.batteryNameTextBox.Size = new System.Drawing.Size(55, 20);
-            this.batteryNameTextBox.TabIndex = 16;
-            this.batteryNameTextBox.TextChanged += new System.EventHandler(this.batteryNameTextBox_TextChanged);
-            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -797,15 +689,6 @@
             this.label16.TabIndex = 17;
             this.label16.Text = "Tool Box";
             // 
-            // toolBoxNameTextBox
-            // 
-            this.toolBoxNameTextBox.Location = new System.Drawing.Point(97, 176);
-            this.toolBoxNameTextBox.MaxLength = 4;
-            this.toolBoxNameTextBox.Name = "toolBoxNameTextBox";
-            this.toolBoxNameTextBox.Size = new System.Drawing.Size(55, 20);
-            this.toolBoxNameTextBox.TabIndex = 17;
-            this.toolBoxNameTextBox.TextChanged += new System.EventHandler(this.toolBoxNameTextBox_TextChanged);
-            // 
             // label17
             // 
             this.label17.AutoSize = true;
@@ -814,15 +697,6 @@
             this.label17.Size = new System.Drawing.Size(24, 13);
             this.label17.TabIndex = 23;
             this.label17.Text = "Leg";
-            // 
-            // legNameTextBox
-            // 
-            this.legNameTextBox.Location = new System.Drawing.Point(97, 203);
-            this.legNameTextBox.MaxLength = 4;
-            this.legNameTextBox.Name = "legNameTextBox";
-            this.legNameTextBox.Size = new System.Drawing.Size(55, 20);
-            this.legNameTextBox.TabIndex = 18;
-            this.legNameTextBox.TextChanged += new System.EventHandler(this.legNameTextBox_TextChanged);
             // 
             // label19
             // 
@@ -968,69 +842,6 @@
             this.label31.TabIndex = 40;
             this.label31.Text = "Device 6";
             // 
-            // armNameTextBox
-            // 
-            this.armNameTextBox.Location = new System.Drawing.Point(97, 230);
-            this.armNameTextBox.MaxLength = 4;
-            this.armNameTextBox.Name = "armNameTextBox";
-            this.armNameTextBox.Size = new System.Drawing.Size(55, 20);
-            this.armNameTextBox.TabIndex = 19;
-            this.armNameTextBox.TextChanged += new System.EventHandler(this.armNameTextBox_TextChanged);
-            // 
-            // cannon5NameTextBox
-            // 
-            this.cannon5NameTextBox.Location = new System.Drawing.Point(97, 392);
-            this.cannon5NameTextBox.MaxLength = 4;
-            this.cannon5NameTextBox.Name = "cannon5NameTextBox";
-            this.cannon5NameTextBox.Size = new System.Drawing.Size(55, 20);
-            this.cannon5NameTextBox.TabIndex = 25;
-            this.cannon5NameTextBox.TextChanged += new System.EventHandler(this.cannon5NameTextBox_TextChanged);
-            // 
-            // device1NameTextBox
-            // 
-            this.device1NameTextBox.Location = new System.Drawing.Point(97, 419);
-            this.device1NameTextBox.MaxLength = 4;
-            this.device1NameTextBox.Name = "device1NameTextBox";
-            this.device1NameTextBox.Size = new System.Drawing.Size(55, 20);
-            this.device1NameTextBox.TabIndex = 26;
-            this.device1NameTextBox.TextChanged += new System.EventHandler(this.device1NameTextBox_TextChanged);
-            // 
-            // device2NameTextBox
-            // 
-            this.device2NameTextBox.Location = new System.Drawing.Point(97, 446);
-            this.device2NameTextBox.MaxLength = 4;
-            this.device2NameTextBox.Name = "device2NameTextBox";
-            this.device2NameTextBox.Size = new System.Drawing.Size(55, 20);
-            this.device2NameTextBox.TabIndex = 27;
-            this.device2NameTextBox.TextChanged += new System.EventHandler(this.device2NameTextBox_TextChanged);
-            // 
-            // device3NameTextBox
-            // 
-            this.device3NameTextBox.Location = new System.Drawing.Point(97, 473);
-            this.device3NameTextBox.MaxLength = 4;
-            this.device3NameTextBox.Name = "device3NameTextBox";
-            this.device3NameTextBox.Size = new System.Drawing.Size(55, 20);
-            this.device3NameTextBox.TabIndex = 28;
-            this.device3NameTextBox.TextChanged += new System.EventHandler(this.device3NameTextBox_TextChanged);
-            // 
-            // device4NameTextBox
-            // 
-            this.device4NameTextBox.Location = new System.Drawing.Point(97, 500);
-            this.device4NameTextBox.MaxLength = 4;
-            this.device4NameTextBox.Name = "device4NameTextBox";
-            this.device4NameTextBox.Size = new System.Drawing.Size(55, 20);
-            this.device4NameTextBox.TabIndex = 29;
-            this.device4NameTextBox.TextChanged += new System.EventHandler(this.device4NameTextBox_TextChanged);
-            // 
-            // device5NameTextBox
-            // 
-            this.device5NameTextBox.Location = new System.Drawing.Point(97, 527);
-            this.device5NameTextBox.MaxLength = 4;
-            this.device5NameTextBox.Name = "device5NameTextBox";
-            this.device5NameTextBox.Size = new System.Drawing.Size(55, 20);
-            this.device5NameTextBox.TabIndex = 30;
-            this.device5NameTextBox.TextChanged += new System.EventHandler(this.device5NameTextBox_TextChanged);
-            // 
             // label32
             // 
             this.label32.AutoSize = true;
@@ -1039,6 +850,195 @@
             this.label32.Size = new System.Drawing.Size(43, 13);
             this.label32.TabIndex = 41;
             this.label32.Text = "Enable:";
+            // 
+            // bodyNameComboBox
+            // 
+            this.bodyNameComboBox.FormattingEnabled = true;
+            this.bodyNameComboBox.Location = new System.Drawing.Point(97, 68);
+            this.bodyNameComboBox.Name = "bodyNameComboBox";
+            this.bodyNameComboBox.Size = new System.Drawing.Size(88, 21);
+            this.bodyNameComboBox.TabIndex = 51;
+            this.bodyNameComboBox.SelectedIndexChanged += new System.EventHandler(this.bodyNameTextBox_TextChanged);
+            // 
+            // engineNameComboBox
+            // 
+            this.engineNameComboBox.FormattingEnabled = true;
+            this.engineNameComboBox.Location = new System.Drawing.Point(97, 95);
+            this.engineNameComboBox.Name = "engineNameComboBox";
+            this.engineNameComboBox.Size = new System.Drawing.Size(88, 21);
+            this.engineNameComboBox.TabIndex = 52;
+            this.engineNameComboBox.SelectedIndexChanged += new System.EventHandler(this.engineNameTextBox_TextChanged);
+            // 
+            // memoryFlagTextBox
+            // 
+            this.memoryFlagTextBox.Location = new System.Drawing.Point(191, 149);
+            this.memoryFlagTextBox.MaxLength = 2;
+            this.memoryFlagTextBox.Name = "memoryFlagTextBox";
+            this.memoryFlagTextBox.Size = new System.Drawing.Size(44, 20);
+            this.memoryFlagTextBox.TabIndex = 34;
+            this.memoryFlagTextBox.TextChanged += new System.EventHandler(this.memoryFlagTextBox_TextChanged);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(3, 119);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(43, 13);
+            this.label15.TabIndex = 19;
+            this.label15.Text = "Battery";
+            // 
+            // batteryNameComboBox
+            // 
+            this.batteryNameComboBox.FormattingEnabled = true;
+            this.batteryNameComboBox.Location = new System.Drawing.Point(97, 122);
+            this.batteryNameComboBox.Name = "batteryNameComboBox";
+            this.batteryNameComboBox.Size = new System.Drawing.Size(88, 21);
+            this.batteryNameComboBox.TabIndex = 52;
+            this.batteryNameComboBox.SelectedIndexChanged += new System.EventHandler(this.batteryComboBox_TextChanged);
+            // 
+            // memoryComboBox
+            // 
+            this.memoryComboBox.FormattingEnabled = true;
+            this.memoryComboBox.Location = new System.Drawing.Point(97, 149);
+            this.memoryComboBox.Name = "memoryComboBox";
+            this.memoryComboBox.Size = new System.Drawing.Size(88, 21);
+            this.memoryComboBox.TabIndex = 52;
+            this.memoryComboBox.SelectedIndexChanged += new System.EventHandler(this.memoryComboBox_TextChanged);
+            // 
+            // toolBoxComboBox
+            // 
+            this.toolBoxComboBox.FormattingEnabled = true;
+            this.toolBoxComboBox.Location = new System.Drawing.Point(97, 176);
+            this.toolBoxComboBox.Name = "toolBoxComboBox";
+            this.toolBoxComboBox.Size = new System.Drawing.Size(88, 21);
+            this.toolBoxComboBox.TabIndex = 52;
+            this.toolBoxComboBox.SelectedIndexChanged += new System.EventHandler(this.toolBoxComboBox_TextChanged);
+            // 
+            // legComboBox
+            // 
+            this.legComboBox.FormattingEnabled = true;
+            this.legComboBox.Location = new System.Drawing.Point(97, 203);
+            this.legComboBox.Name = "legComboBox";
+            this.legComboBox.Size = new System.Drawing.Size(88, 21);
+            this.legComboBox.TabIndex = 52;
+            this.legComboBox.SelectedIndexChanged += new System.EventHandler(this.legComboBox_TextChanged);
+            // 
+            // armComboBox
+            // 
+            this.armComboBox.FormattingEnabled = true;
+            this.armComboBox.Location = new System.Drawing.Point(97, 230);
+            this.armComboBox.Name = "armComboBox";
+            this.armComboBox.Size = new System.Drawing.Size(88, 21);
+            this.armComboBox.TabIndex = 52;
+            this.armComboBox.SelectedIndexChanged += new System.EventHandler(this.armComboBox_TextChanged);
+            // 
+            // handComboBox
+            // 
+            this.handComboBox.FormattingEnabled = true;
+            this.handComboBox.Location = new System.Drawing.Point(97, 257);
+            this.handComboBox.Name = "handComboBox";
+            this.handComboBox.Size = new System.Drawing.Size(88, 21);
+            this.handComboBox.TabIndex = 52;
+            this.handComboBox.SelectedIndexChanged += new System.EventHandler(this.handComboBox_TextChanged);
+            // 
+            // cannon1ComboBox
+            // 
+            this.cannon1ComboBox.FormattingEnabled = true;
+            this.cannon1ComboBox.Location = new System.Drawing.Point(97, 284);
+            this.cannon1ComboBox.Name = "cannon1ComboBox";
+            this.cannon1ComboBox.Size = new System.Drawing.Size(88, 21);
+            this.cannon1ComboBox.TabIndex = 52;
+            this.cannon1ComboBox.SelectedIndexChanged += new System.EventHandler(this.cannon1ComboBox_TextChanged);
+            // 
+            // cannon2ComboBox
+            // 
+            this.cannon2ComboBox.FormattingEnabled = true;
+            this.cannon2ComboBox.Location = new System.Drawing.Point(97, 311);
+            this.cannon2ComboBox.Name = "cannon2ComboBox";
+            this.cannon2ComboBox.Size = new System.Drawing.Size(88, 21);
+            this.cannon2ComboBox.TabIndex = 52;
+            this.cannon2ComboBox.SelectedIndexChanged += new System.EventHandler(this.cannon2ComboBox_TextChanged);
+            // 
+            // cannon3ComboBox
+            // 
+            this.cannon3ComboBox.FormattingEnabled = true;
+            this.cannon3ComboBox.Location = new System.Drawing.Point(97, 338);
+            this.cannon3ComboBox.Name = "cannon3ComboBox";
+            this.cannon3ComboBox.Size = new System.Drawing.Size(88, 21);
+            this.cannon3ComboBox.TabIndex = 52;
+            this.cannon3ComboBox.SelectedIndexChanged += new System.EventHandler(this.cannon3ComboBox_TextChanged);
+            // 
+            // cannon4ComboBox
+            // 
+            this.cannon4ComboBox.FormattingEnabled = true;
+            this.cannon4ComboBox.Location = new System.Drawing.Point(97, 365);
+            this.cannon4ComboBox.Name = "cannon4ComboBox";
+            this.cannon4ComboBox.Size = new System.Drawing.Size(88, 21);
+            this.cannon4ComboBox.TabIndex = 52;
+            this.cannon4ComboBox.SelectedIndexChanged += new System.EventHandler(this.cannon4ComboBox_TextChanged);
+            // 
+            // cannon5ComboBox
+            // 
+            this.cannon5ComboBox.FormattingEnabled = true;
+            this.cannon5ComboBox.Location = new System.Drawing.Point(97, 392);
+            this.cannon5ComboBox.Name = "cannon5ComboBox";
+            this.cannon5ComboBox.Size = new System.Drawing.Size(88, 21);
+            this.cannon5ComboBox.TabIndex = 52;
+            this.cannon5ComboBox.SelectedIndexChanged += new System.EventHandler(this.cannon5ComboBox_TextChanged);
+            // 
+            // device1ComboBox
+            // 
+            this.device1ComboBox.FormattingEnabled = true;
+            this.device1ComboBox.Location = new System.Drawing.Point(97, 419);
+            this.device1ComboBox.Name = "device1ComboBox";
+            this.device1ComboBox.Size = new System.Drawing.Size(88, 21);
+            this.device1ComboBox.TabIndex = 52;
+            this.device1ComboBox.SelectedIndexChanged += new System.EventHandler(this.device1ComboBox_TextChanged);
+            // 
+            // device2ComboBox
+            // 
+            this.device2ComboBox.FormattingEnabled = true;
+            this.device2ComboBox.Location = new System.Drawing.Point(97, 446);
+            this.device2ComboBox.Name = "device2ComboBox";
+            this.device2ComboBox.Size = new System.Drawing.Size(88, 21);
+            this.device2ComboBox.TabIndex = 52;
+            this.device2ComboBox.SelectedIndexChanged += new System.EventHandler(this.device2ComboBox_TextChanged);
+            // 
+            // device3ComboBox
+            // 
+            this.device3ComboBox.FormattingEnabled = true;
+            this.device3ComboBox.Location = new System.Drawing.Point(97, 473);
+            this.device3ComboBox.Name = "device3ComboBox";
+            this.device3ComboBox.Size = new System.Drawing.Size(88, 21);
+            this.device3ComboBox.TabIndex = 52;
+            this.device3ComboBox.SelectedIndexChanged += new System.EventHandler(this.device3ComboBox_TextChanged);
+            // 
+            // device4ComboBox
+            // 
+            this.device4ComboBox.FormattingEnabled = true;
+            this.device4ComboBox.Location = new System.Drawing.Point(97, 500);
+            this.device4ComboBox.Name = "device4ComboBox";
+            this.device4ComboBox.Size = new System.Drawing.Size(88, 21);
+            this.device4ComboBox.TabIndex = 52;
+            this.device4ComboBox.SelectedIndexChanged += new System.EventHandler(this.device4ComboBox_TextChanged);
+            // 
+            // device5ComboBox
+            // 
+            this.device5ComboBox.FormattingEnabled = true;
+            this.device5ComboBox.Location = new System.Drawing.Point(97, 527);
+            this.device5ComboBox.Name = "device5ComboBox";
+            this.device5ComboBox.Size = new System.Drawing.Size(88, 21);
+            this.device5ComboBox.TabIndex = 52;
+            this.device5ComboBox.SelectedIndexChanged += new System.EventHandler(this.device5ComboBox_TextChanged);
+            // 
+            // device6ComboBox
+            // 
+            this.device6ComboBox.FormattingEnabled = true;
+            this.device6ComboBox.Location = new System.Drawing.Point(97, 554);
+            this.device6ComboBox.Name = "device6ComboBox";
+            this.device6ComboBox.Size = new System.Drawing.Size(88, 21);
+            this.device6ComboBox.TabIndex = 52;
+            this.device6ComboBox.SelectedIndexChanged += new System.EventHandler(this.device6ComboBox_TextChanged);
             // 
             // itemsTabPage
             // 
@@ -1554,10 +1554,7 @@
             // slotComboBox
             // 
             this.slotComboBox.FormattingEnabled = true;
-            this.slotComboBox.Items.AddRange(new object[] {
-            "Slot 1",
-            "Slot 2",
-            "Slot 3"});
+            this.slotComboBox.Items.AddRange(new object[] {"Slot 1", "Slot 2", "Slot 3"});
             this.slotComboBox.Location = new System.Drawing.Point(68, 39);
             this.slotComboBox.Name = "slotComboBox";
             this.slotComboBox.Size = new System.Drawing.Size(172, 21);
@@ -1612,7 +1609,6 @@
             this.gameStoryTabPage.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         private System.Windows.Forms.Panel gameStoryPanel;
@@ -1660,16 +1656,10 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox engineNameTextBox;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox memoryNameTextBox;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox batteryNameTextBox;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox toolBoxNameTextBox;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox legNameTextBox;
-        private System.Windows.Forms.TextBox bodyNameTextBox;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox DigiBeetleNameTextBox;
@@ -1700,24 +1690,11 @@
         private System.Windows.Forms.TextBox device2FlagTextBox;
         private System.Windows.Forms.TextBox device5FlagTextBox;
         private System.Windows.Forms.TextBox device4FlagTextBox;
-        private System.Windows.Forms.TextBox cannon1NameTextBox;
         private System.Windows.Forms.TextBox device6FlagTextBox;
-        private System.Windows.Forms.TextBox handNameTextBox;
-        private System.Windows.Forms.TextBox cannon2NameTextBox;
-        private System.Windows.Forms.TextBox cannon3NameTextBox;
-        private System.Windows.Forms.TextBox cannon4NameTextBox;
-        private System.Windows.Forms.TextBox device6NameTextBox;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.TextBox armNameTextBox;
-        private System.Windows.Forms.TextBox cannon5NameTextBox;
-        private System.Windows.Forms.TextBox device1NameTextBox;
-        private System.Windows.Forms.TextBox device2NameTextBox;
-        private System.Windows.Forms.TextBox device3NameTextBox;
-        private System.Windows.Forms.TextBox device4NameTextBox;
-        private System.Windows.Forms.TextBox device5NameTextBox;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label33;
@@ -1758,5 +1735,24 @@
         private System.Windows.Forms.GroupBox techGroupBox;
         private System.Windows.Forms.ComboBox lastLocationComboBox;
         private System.Windows.Forms.ComboBox rankComboBox;
+        private System.Windows.Forms.ComboBox bodyNameComboBox;
+        private System.Windows.Forms.ComboBox engineNameComboBox;
+        private System.Windows.Forms.ComboBox batteryNameComboBox;
+        private System.Windows.Forms.ComboBox memoryComboBox;
+        private System.Windows.Forms.ComboBox toolBoxComboBox;
+        private System.Windows.Forms.ComboBox legComboBox;
+        private System.Windows.Forms.ComboBox armComboBox;
+        private System.Windows.Forms.ComboBox handComboBox;
+        private System.Windows.Forms.ComboBox cannon1ComboBox;
+        private System.Windows.Forms.ComboBox cannon2ComboBox;
+        private System.Windows.Forms.ComboBox cannon3ComboBox;
+        private System.Windows.Forms.ComboBox cannon4ComboBox;
+        private System.Windows.Forms.ComboBox cannon5ComboBox;
+        private System.Windows.Forms.ComboBox device1ComboBox;
+        private System.Windows.Forms.ComboBox device2ComboBox;
+        private System.Windows.Forms.ComboBox device3ComboBox;
+        private System.Windows.Forms.ComboBox device4ComboBox;
+        private System.Windows.Forms.ComboBox device5ComboBox;
+        private System.Windows.Forms.ComboBox device6ComboBox;
     }
 }

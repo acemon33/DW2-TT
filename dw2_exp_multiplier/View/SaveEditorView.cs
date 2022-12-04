@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -31,13 +32,53 @@ namespace dw2_exp_multiplier.View
         {
             InitializeComponent();
             SaveSlot.load1();
-            this.LoadForm();
-            
+
             this.lastLocationComboBox.DisplayMember = "Key";
             this.lastLocationComboBox.ValueMember = "Value";
             this.rankComboBox.DisplayMember = "Key";
             this.rankComboBox.ValueMember = "Value";
-
+            
+            this.bodyNameComboBox.DisplayMember = "Key";
+            this.bodyNameComboBox.ValueMember = "Value";
+            this.engineNameComboBox.DisplayMember = "Key";
+            this.engineNameComboBox.ValueMember = "Value";
+            this.batteryNameComboBox.DisplayMember = "Key";
+            this.batteryNameComboBox.ValueMember = "Value";
+            this.memoryComboBox.DisplayMember = "Key";
+            this.memoryComboBox.ValueMember = "Value";
+            this.toolBoxComboBox.DisplayMember = "Key";
+            this.toolBoxComboBox.ValueMember = "Value";
+            this.cannon1ComboBox.DisplayMember = "Key";
+            this.cannon1ComboBox.ValueMember = "Value";
+            this.cannon2ComboBox.DisplayMember = "Key";
+            this.cannon2ComboBox.ValueMember = "Value";
+            this.cannon3ComboBox.DisplayMember = "Key";
+            this.cannon3ComboBox.ValueMember = "Value";
+            this.cannon4ComboBox.DisplayMember = "Key";
+            this.cannon4ComboBox.ValueMember = "Value";
+            this.cannon5ComboBox.DisplayMember = "Key";
+            this.cannon5ComboBox.ValueMember = "Value";
+            this.legComboBox.DisplayMember = "Key";
+            this.legComboBox.ValueMember = "Value";
+            this.handComboBox.DisplayMember = "Key";
+            this.handComboBox.ValueMember = "Value";
+            this.armComboBox.DisplayMember = "Key";
+            this.armComboBox.ValueMember = "Value";
+            this.device1ComboBox.DisplayMember = "Key";
+            this.device1ComboBox.ValueMember = "Value";
+            this.device2ComboBox.DisplayMember = "Key";
+            this.device2ComboBox.ValueMember = "Value";
+            this.device3ComboBox.DisplayMember = "Key";
+            this.device3ComboBox.ValueMember = "Value";
+            this.device4ComboBox.DisplayMember = "Key";
+            this.device4ComboBox.ValueMember = "Value";
+            this.device5ComboBox.DisplayMember = "Key";
+            this.device5ComboBox.ValueMember = "Value";
+            this.device6ComboBox.DisplayMember = "Key";
+            this.device6ComboBox.ValueMember = "Value";
+            
+            this.LoadForm();
+            
             saveFileTextBox.Text = "BASLUS-01193 DMW2";
             this.saveFile = new SaveFile(File.ReadAllBytes(saveFileTextBox.Text));
             this.slotComboBox.SelectedIndex = 0;
@@ -172,6 +213,26 @@ namespace dw2_exp_multiplier.View
             
             this.lastLocationComboBox.DataSource = new BindingSource(SaveSlot.SavePointLocationList, null);
             this.rankComboBox.DataSource = new BindingSource(SaveSlot.RankList, null);
+            
+            this.bodyNameComboBox.DataSource = new BindingSource(SaveSlot.DigiBeetleBodyList, null);
+            this.engineNameComboBox.DataSource = new BindingSource(SaveSlot.DigiBeetleEngineList, null);
+            this.batteryNameComboBox.DataSource = new BindingSource(SaveSlot.DigiBeetleBatteryList, null);
+            this.memoryComboBox.DataSource = new BindingSource(SaveSlot.DigiBeetleMemoryList, null);
+            this.toolBoxComboBox.DataSource = new BindingSource(SaveSlot.DigiBeetleToolBoxList, null);
+            this.cannon1ComboBox.DataSource = new BindingSource(SaveSlot.DigiBeetleCannonList, null);
+            this.cannon2ComboBox.DataSource = new BindingSource(SaveSlot.DigiBeetleCannonList, null);
+            this.cannon3ComboBox.DataSource = new BindingSource(SaveSlot.DigiBeetleCannonList, null);
+            this.cannon4ComboBox.DataSource = new BindingSource(SaveSlot.DigiBeetleCannonList, null);
+            this.cannon5ComboBox.DataSource = new BindingSource(SaveSlot.DigiBeetleCannonList, null);
+            this.legComboBox.DataSource = new BindingSource(SaveSlot.DigiBeetleLegList, null);
+            this.handComboBox.DataSource = new BindingSource(SaveSlot.DigiBeetleHandList, null);
+            this.armComboBox.DataSource = new BindingSource(SaveSlot.DigiBeetleArmList, null);
+            this.device1ComboBox.DataSource = new BindingSource(SaveSlot.DigiBeetleDeviceList, null);
+            this.device2ComboBox.DataSource = new BindingSource(SaveSlot.DigiBeetleDeviceList, null);
+            this.device3ComboBox.DataSource = new BindingSource(SaveSlot.DigiBeetleDeviceList, null);
+            this.device4ComboBox.DataSource = new BindingSource(SaveSlot.DigiBeetleDeviceList, null);
+            this.device5ComboBox.DataSource = new BindingSource(SaveSlot.DigiBeetleDeviceList, null);
+            this.device6ComboBox.DataSource = new BindingSource(SaveSlot.DigiBeetleDeviceList, null);
         }
         
         private void LoadCurrentSlot()
@@ -190,25 +251,25 @@ namespace dw2_exp_multiplier.View
 
                     // Digi-Beetle Parts
             DigiBeetleNameTextBox.Text = currentSlot.StringDigiBeetleName;
-            bodyNameTextBox.Text = currentSlot.digi_beetle_part[0].ToString("X4");
-            engineNameTextBox.Text = currentSlot.digi_beetle_part[1].ToString("X4");
-            memoryNameTextBox.Text = currentSlot.digi_beetle_part[2].ToString("X4");
-            batteryNameTextBox.Text = currentSlot.digi_beetle_part[3].ToString("X4");
-            toolBoxNameTextBox.Text = currentSlot.digi_beetle_part[4].ToString("X4");
-            legNameTextBox.Text = currentSlot.digi_beetle_part[5].ToString("X4");
-            armNameTextBox.Text = currentSlot.digi_beetle_part[6].ToString("X4");
-            handNameTextBox.Text = currentSlot.digi_beetle_part[7].ToString("X4");
-            cannon1NameTextBox.Text = currentSlot.digi_beetle_part[8].ToString("X4");
-            cannon2NameTextBox.Text = currentSlot.digi_beetle_part[9].ToString("X4");
-            cannon3NameTextBox.Text = currentSlot.digi_beetle_part[10].ToString("X4");
-            cannon4NameTextBox.Text = currentSlot.digi_beetle_part[11].ToString("X4");
-            cannon5NameTextBox.Text = currentSlot.digi_beetle_part[12].ToString("X4");
-            device1NameTextBox.Text = currentSlot.digi_beetle_part[13].ToString("X4");
-            device2NameTextBox.Text = currentSlot.digi_beetle_part[14].ToString("X4");
-            device3NameTextBox.Text = currentSlot.digi_beetle_part[15].ToString("X4");
-            device4NameTextBox.Text = currentSlot.digi_beetle_part[16].ToString("X4");
-            device5NameTextBox.Text = currentSlot.digi_beetle_part[17].ToString("X4");
-            device6NameTextBox.Text = currentSlot.digi_beetle_part[18].ToString("X4");
+            bodyNameComboBox.SelectedValue = currentSlot.digi_beetle_part[0];
+            engineNameComboBox.SelectedValue = currentSlot.digi_beetle_part[1];
+            memoryComboBox.SelectedValue = currentSlot.digi_beetle_part[2];
+            batteryNameComboBox.SelectedValue = currentSlot.digi_beetle_part[3];
+            toolBoxComboBox.SelectedValue = currentSlot.digi_beetle_part[4];
+            legComboBox.SelectedValue = currentSlot.digi_beetle_part[5];
+            armComboBox.SelectedValue = currentSlot.digi_beetle_part[6];
+            handComboBox.SelectedValue = currentSlot.digi_beetle_part[7];
+            cannon1ComboBox.SelectedValue = currentSlot.digi_beetle_part[8];
+            cannon2ComboBox.SelectedValue = currentSlot.digi_beetle_part[9];
+            cannon3ComboBox.SelectedValue = currentSlot.digi_beetle_part[10];
+            cannon4ComboBox.SelectedValue = currentSlot.digi_beetle_part[11];
+            cannon5ComboBox.SelectedValue = currentSlot.digi_beetle_part[12];
+            device1ComboBox.SelectedValue = currentSlot.digi_beetle_part[13];
+            device2ComboBox.SelectedValue = currentSlot.digi_beetle_part[14];
+            device3ComboBox.SelectedValue = currentSlot.digi_beetle_part[15];
+            device4ComboBox.SelectedValue = currentSlot.digi_beetle_part[16];
+            device5ComboBox.SelectedValue = currentSlot.digi_beetle_part[17];
+            device6ComboBox.SelectedValue = currentSlot.digi_beetle_part[18];
             bodyFlagTextBox.Text = currentSlot.digi_beetle_part_flag[0].ToString("X2");
             engineFlagTextBox.Text = currentSlot.digi_beetle_part_flag[1].ToString("X2");
             memoryFlagTextBox.Text = currentSlot.digi_beetle_part_flag[2].ToString("X2");
@@ -247,6 +308,7 @@ namespace dw2_exp_multiplier.View
         
         private void slotComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (slotComboBox.SelectedIndex < 0) return;
             this.LoadCurrentSlot();
         }
         #endregion
@@ -282,41 +344,49 @@ namespace dw2_exp_multiplier.View
         #region Misc. Change Event Region
         private void lastLocationComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (slotComboBox.SelectedIndex < 0) return;
             this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].lastSavePoint = (this.lastLocationComboBox.SelectedItem as dynamic).Value;
         }
 
         private void heroNameTextBox_TextChanged(object sender, EventArgs e)
         {
+            if (slotComboBox.SelectedIndex < 0) return;
             this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].StringHeroName = heroNameTextBox.Text;
         }
 
         private void time1TextBox_TextChanged(object sender, EventArgs e)
         {
+            if (slotComboBox.SelectedIndex < 0) return;
             this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].time1 = Convert.ToByte(time1TextBox.Text, 16);
         }
 
         private void time2TextBox_TextChanged(object sender, EventArgs e)
         {
+            if (slotComboBox.SelectedIndex < 0) return;
             this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].time2 = Convert.ToByte(time2TextBox.Text, 16);
         }
 
         private void time3TextBox_TextChanged(object sender, EventArgs e)
         {
+            if (slotComboBox.SelectedIndex < 0) return;
             this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].time3 = Convert.ToByte(time3TextBox.Text, 16);
         }
 
         private void time4TextBox_TextChanged(object sender, EventArgs e)
         {
+            if (slotComboBox.SelectedIndex < 0) return;
             this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].time4 = Convert.ToByte(time4TextBox.Text, 16);
         }
 
         private void bitsTextBox_TextChanged(object sender, EventArgs e)
         {
+            if (slotComboBox.SelectedIndex < 0) return;
             this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].bits = Convert.ToInt32(bitsTextBox.Text);
         }
 
         private void rankComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (slotComboBox.SelectedIndex < 0) return;
             this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].rank = (this.rankComboBox.SelectedItem as dynamic).Value;
         }
         #endregion
@@ -324,102 +394,122 @@ namespace dw2_exp_multiplier.View
         #region Digi-Beetle Change Event Region
         private void DigiBeetleNameTextBox_TextChanged(object sender, EventArgs e)
         {
+            if (slotComboBox.SelectedIndex < 0) return;
             this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].StringDigiBeetleName = DigiBeetleNameTextBox.Text;
         }
 
         private void bodyNameTextBox_TextChanged(object sender, EventArgs e)
         {
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part[0] = Convert.ToUInt16(bodyNameTextBox.Text, 16);
+            if (slotComboBox.SelectedIndex < 0) return;
+            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part[0] = (this.bodyNameComboBox.SelectedItem as dynamic).Value;
         }
 
         private void engineNameTextBox_TextChanged(object sender, EventArgs e)
         {
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part[1] = Convert.ToUInt16(engineNameTextBox.Text, 16);
+            if (slotComboBox.SelectedIndex < 0) return;
+            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part[1] = (this.engineNameComboBox.SelectedItem as dynamic).Value;
         }
 
-        private void memoryNameTextBox_TextChanged(object sender, EventArgs e)
+        private void memoryComboBox_TextChanged(object sender, EventArgs e)
         {
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part[2] = Convert.ToUInt16(memoryNameTextBox.Text, 16);
+            if (slotComboBox.SelectedIndex < 0) return;
+            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part[2] = (this.memoryComboBox.SelectedItem as dynamic).Value;
         }
 
-        private void batteryNameTextBox_TextChanged(object sender, EventArgs e)
+        private void batteryComboBox_TextChanged(object sender, EventArgs e)
         {
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part[3] = Convert.ToUInt16(batteryNameTextBox.Text, 16);
+            if (slotComboBox.SelectedIndex < 0) return;
+            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part[3] = (this.batteryNameComboBox.SelectedItem as dynamic).Value;
         }
 
-        private void toolBoxNameTextBox_TextChanged(object sender, EventArgs e)
+        private void toolBoxComboBox_TextChanged(object sender, EventArgs e)
         {
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part[4] = Convert.ToUInt16(toolBoxNameTextBox.Text, 16);
+            if (slotComboBox.SelectedIndex < 0) return;
+            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part[4] = (this.toolBoxComboBox.SelectedItem as dynamic).Value;
         }
 
-        private void legNameTextBox_TextChanged(object sender, EventArgs e)
+        private void legComboBox_TextChanged(object sender, EventArgs e)
         {
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part[5] = Convert.ToUInt16(legNameTextBox.Text, 16);
+            if (slotComboBox.SelectedIndex < 0) return;
+            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part[5] = (this.legComboBox.SelectedItem as dynamic).Value;
         }
 
-        private void armNameTextBox_TextChanged(object sender, EventArgs e)
+        private void armComboBox_TextChanged(object sender, EventArgs e)
         {
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part[6] = Convert.ToUInt16(armNameTextBox.Text, 16);
+            if (slotComboBox.SelectedIndex < 0) return;
+            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part[6] = (this.armComboBox.SelectedItem as dynamic).Value;
         }
 
-        private void handNameTextBox_TextChanged(object sender, EventArgs e)
+        private void handComboBox_TextChanged(object sender, EventArgs e)
         {
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part[7] = Convert.ToUInt16(handNameTextBox.Text, 16);
+            if (slotComboBox.SelectedIndex < 0) return;
+            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part[7] = (this.handComboBox.SelectedItem as dynamic).Value;
         }
 
-        private void cannon1NameTextBox_TextChanged(object sender, EventArgs e)
+        private void cannon1ComboBox_TextChanged(object sender, EventArgs e)
         {
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part[8] = Convert.ToUInt16(cannon1NameTextBox.Text, 16);
+            if (slotComboBox.SelectedIndex < 0) return;
+            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part[8] = (this.cannon1ComboBox.SelectedItem as dynamic).Value;
         }
 
-        private void cannon2NameTextBox_TextChanged(object sender, EventArgs e)
+        private void cannon2ComboBox_TextChanged(object sender, EventArgs e)
         {
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part[9] = Convert.ToUInt16(cannon2NameTextBox.Text, 16);
+            if (slotComboBox.SelectedIndex < 0) return;
+            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part[9] = (this.cannon2ComboBox.SelectedItem as dynamic).Value;
         }
 
-        private void cannon3NameTextBox_TextChanged(object sender, EventArgs e)
+        private void cannon3ComboBox_TextChanged(object sender, EventArgs e)
         {
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part[10] = Convert.ToUInt16(cannon3NameTextBox.Text, 16);
+            if (slotComboBox.SelectedIndex < 0) return;
+            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part[10] = (this.cannon3ComboBox.SelectedItem as dynamic).Value;
         }
 
-        private void cannon4NameTextBox_TextChanged(object sender, EventArgs e)
+        private void cannon4ComboBox_TextChanged(object sender, EventArgs e)
         {
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part[11] = Convert.ToUInt16(cannon4NameTextBox.Text, 16);
+            if (slotComboBox.SelectedIndex < 0) return;
+            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part[11] = (this.cannon4ComboBox.SelectedItem as dynamic).Value;
         }
 
-        private void cannon5NameTextBox_TextChanged(object sender, EventArgs e)
+        private void cannon5ComboBox_TextChanged(object sender, EventArgs e)
         {
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part[12] = Convert.ToUInt16(cannon5NameTextBox.Text, 16);
+            if (slotComboBox.SelectedIndex < 0) return;
+            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part[12] = (this.cannon5ComboBox.SelectedItem as dynamic).Value;
         }
 
-        private void device1NameTextBox_TextChanged(object sender, EventArgs e)
+        private void device1ComboBox_TextChanged(object sender, EventArgs e)
         {
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part[13] = Convert.ToUInt16(device1NameTextBox.Text, 16);
+            if (slotComboBox.SelectedIndex < 0) return;
+            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part[13] = (this.device1ComboBox.SelectedItem as dynamic).Value;
         }
 
-        private void device2NameTextBox_TextChanged(object sender, EventArgs e)
+        private void device2ComboBox_TextChanged(object sender, EventArgs e)
         {
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part[14] = Convert.ToUInt16(device2NameTextBox.Text, 16);
+            if (slotComboBox.SelectedIndex < 0) return;
+            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part[14] = (this.device2ComboBox.SelectedItem as dynamic).Value;
         }
 
-        private void device3NameTextBox_TextChanged(object sender, EventArgs e)
+        private void device3ComboBox_TextChanged(object sender, EventArgs e)
         {
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part[15] = Convert.ToUInt16(device3NameTextBox.Text, 16);
+            if (slotComboBox.SelectedIndex < 0) return;
+            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part[15] = (this.device3ComboBox.SelectedItem as dynamic).Value;
         }
 
-        private void device4NameTextBox_TextChanged(object sender, EventArgs e)
+        private void device4ComboBox_TextChanged(object sender, EventArgs e)
         {
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part[16] = Convert.ToUInt16(device4NameTextBox.Text, 16);
+            if (slotComboBox.SelectedIndex < 0) return;
+            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part[16] = (this.device4ComboBox.SelectedItem as dynamic).Value;
         }
 
-        private void device5NameTextBox_TextChanged(object sender, EventArgs e)
+        private void device5ComboBox_TextChanged(object sender, EventArgs e)
         {
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part[17] = Convert.ToUInt16(device5NameTextBox.Text, 16);
+            if (slotComboBox.SelectedIndex < 0) return;
+            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part[17] = (this.device5ComboBox.SelectedItem as dynamic).Value;
         }
 
-        private void device6NameTextBox_TextChanged(object sender, EventArgs e)
+        private void device6ComboBox_TextChanged(object sender, EventArgs e)
         {
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part[18] = Convert.ToUInt16(device6NameTextBox.Text, 16);
+            if (slotComboBox.SelectedIndex < 0) return;
+            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part[18] = (this.device6ComboBox.SelectedItem as dynamic).Value;
         }
 
         private void bodyFlagTextBox_TextChanged(object sender, EventArgs e)
@@ -698,7 +788,7 @@ namespace dw2_exp_multiplier.View
             this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].GameFlags[i] = Convert.ToByte(t, 16);
         }
         #endregion
-
+        
     }
     
 }
