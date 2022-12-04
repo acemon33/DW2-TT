@@ -270,25 +270,25 @@ namespace dw2_exp_multiplier.View
             device4ComboBox.SelectedValue = currentSlot.digi_beetle_part[16];
             device5ComboBox.SelectedValue = currentSlot.digi_beetle_part[17];
             device6ComboBox.SelectedValue = currentSlot.digi_beetle_part[18];
-            bodyFlagTextBox.Text = currentSlot.digi_beetle_part_flag[0].ToString("X2");
-            engineFlagTextBox.Text = currentSlot.digi_beetle_part_flag[1].ToString("X2");
-            memoryFlagTextBox.Text = currentSlot.digi_beetle_part_flag[2].ToString("X2");
-            batteryFlagTextBox.Text = currentSlot.digi_beetle_part_flag[3].ToString("X2");
-            toolBoxFlagTextBox.Text = currentSlot.digi_beetle_part_flag[4].ToString("X2");
-            legFlagTextBox.Text = currentSlot.digi_beetle_part_flag[5].ToString("X2");
-            armFlagTextBox.Text = currentSlot.digi_beetle_part_flag[6].ToString("X2");
-            handFlagTextBox.Text = currentSlot.digi_beetle_part_flag[7].ToString("X2");
-            cannon1FlagTextBox.Text = currentSlot.digi_beetle_part_flag[8].ToString("X2");
-            cannon2FlagTextBox.Text = currentSlot.digi_beetle_part_flag[9].ToString("X2");
-            cannon3FlagTextBox.Text = currentSlot.digi_beetle_part_flag[10].ToString("X2");
-            cannon4FlagTextBox.Text = currentSlot.digi_beetle_part_flag[11].ToString("X2");
-            cannon5FlagTextBox.Text = currentSlot.digi_beetle_part_flag[12].ToString("X2");
-            device1FlagTextBox.Text = currentSlot.digi_beetle_part_flag[13].ToString("X2");
-            device2FlagTextBox.Text = currentSlot.digi_beetle_part_flag[14].ToString("X2");
-            device3FlagTextBox.Text = currentSlot.digi_beetle_part_flag[15].ToString("X2");
-            device4FlagTextBox.Text = currentSlot.digi_beetle_part_flag[16].ToString("X2");
-            device5FlagTextBox.Text = currentSlot.digi_beetle_part_flag[17].ToString("X2");
-            device6FlagTextBox.Text = currentSlot.digi_beetle_part_flag[18].ToString("X2");
+            bodyFlagTextBox.SelectedIndex = currentSlot.digi_beetle_part_flag[0];
+            engineFlagTextBox.SelectedIndex = currentSlot.digi_beetle_part_flag[1];
+            memoryFlagTextBox.SelectedIndex = currentSlot.digi_beetle_part_flag[2];
+            batteryFlagTextBox.SelectedIndex = currentSlot.digi_beetle_part_flag[3];
+            toolBoxFlagTextBox.SelectedIndex = currentSlot.digi_beetle_part_flag[4];
+            legFlagTextBox.SelectedIndex = currentSlot.digi_beetle_part_flag[5];
+            armFlagTextBox.SelectedIndex = currentSlot.digi_beetle_part_flag[6];
+            handFlagTextBox.SelectedIndex = currentSlot.digi_beetle_part_flag[7];
+            cannon1FlagTextBox.SelectedIndex = currentSlot.digi_beetle_part_flag[8];
+            cannon2FlagTextBox.SelectedIndex = currentSlot.digi_beetle_part_flag[9];
+            cannon3FlagTextBox.SelectedIndex = currentSlot.digi_beetle_part_flag[10];
+            cannon4FlagTextBox.SelectedIndex = currentSlot.digi_beetle_part_flag[11];
+            cannon5FlagTextBox.SelectedIndex = currentSlot.digi_beetle_part_flag[12];
+            device1FlagTextBox.SelectedIndex = currentSlot.digi_beetle_part_flag[13];
+            device2FlagTextBox.SelectedIndex = currentSlot.digi_beetle_part_flag[14];
+            device3FlagTextBox.SelectedIndex = currentSlot.digi_beetle_part_flag[15];
+            device4FlagTextBox.SelectedIndex = currentSlot.digi_beetle_part_flag[16];
+            device5FlagTextBox.SelectedIndex = currentSlot.digi_beetle_part_flag[17];
+            device6FlagTextBox.SelectedIndex = currentSlot.digi_beetle_part_flag[18];
 
                     // All Items
             for (int i = 0; i < 48; i++)
@@ -514,97 +514,10 @@ namespace dw2_exp_multiplier.View
 
         private void bodyFlagTextBox_TextChanged(object sender, EventArgs e)
         {
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part_flag[0] = Convert.ToByte(bodyFlagTextBox.Text, 16);
-        }
-
-        private void engineFlagTextBox_TextChanged(object sender, EventArgs e)
-        {
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part_flag[1] = Convert.ToByte(engineFlagTextBox.Text, 16);
-        }
-
-        private void batteryFlagTextBox_TextChanged(object sender, EventArgs e)
-        {
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part_flag[2] = Convert.ToByte(batteryFlagTextBox.Text, 16);
-        }
-
-        private void memoryFlagTextBox_TextChanged(object sender, EventArgs e)
-        {
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part_flag[3] = Convert.ToByte(memoryFlagTextBox.Text, 16);
-        }
-
-        private void toolBoxFlagTextBox_TextChanged(object sender, EventArgs e)
-        {
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part_flag[4] = Convert.ToByte(toolBoxFlagTextBox.Text, 16);
-        }
-
-        private void legFlagTextBox_TextChanged(object sender, EventArgs e)
-        {
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part_flag[5] = Convert.ToByte(legFlagTextBox.Text, 16);
-        }
-
-        private void armFlagTextBox_TextChanged(object sender, EventArgs e)
-        {
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part_flag[6] = Convert.ToByte(armFlagTextBox.Text, 16);
-        }
-
-        private void handFlagTextBox_TextChanged(object sender, EventArgs e)
-        {
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part_flag[7] = Convert.ToByte(handFlagTextBox.Text, 16);
-        }
-
-        private void cannon1FlagTextBox_TextChanged(object sender, EventArgs e)
-        {
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part_flag[8] = Convert.ToByte(cannon1FlagTextBox.Text, 16);
-        }
-
-        private void cannon2FlagTextBox_TextChanged(object sender, EventArgs e)
-        {
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part_flag[9] = Convert.ToByte(cannon2FlagTextBox.Text, 16);
-        }
-
-        private void cannon3FlagTextBox_TextChanged(object sender, EventArgs e)
-        {
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part_flag[10] = Convert.ToByte(cannon3FlagTextBox.Text, 16);
-        }
-
-        private void cannon4FlagTextBox_TextChanged(object sender, EventArgs e)
-        {
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part_flag[11] = Convert.ToByte(cannon4FlagTextBox.Text, 16);
-        }
-
-        private void cannon5FlagTextBox_TextChanged(object sender, EventArgs e)
-        {
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part_flag[12] = Convert.ToByte(cannon5FlagTextBox.Text, 16);
-        }
-
-        private void device1FlagTextBox_TextChanged(object sender, EventArgs e)
-        {
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part_flag[13] = Convert.ToByte(device1FlagTextBox.Text, 16);
-        }
-
-        private void device2FlagTextBox_TextChanged(object sender, EventArgs e)
-        {
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part_flag[14] = Convert.ToByte(device2FlagTextBox.Text, 16);
-        }
-
-        private void device3FlagTextBox_TextChanged(object sender, EventArgs e)
-        {
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part_flag[15] = Convert.ToByte(device3FlagTextBox.Text, 16);
-        }
-
-        private void device4FlagTextBox_TextChanged(object sender, EventArgs e)
-        {
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part_flag[16] = Convert.ToByte(device4FlagTextBox.Text, 16);
-        }
-
-        private void device5FlagTextBox_TextChanged(object sender, EventArgs e)
-        {
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part_flag[17] = Convert.ToByte(device5FlagTextBox.Text, 16);
-        }
-
-        private void device6FlagTextBox_TextChanged(object sender, EventArgs e)
-        {
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part_flag[18] = Convert.ToByte(device6FlagTextBox.Text, 16);
+            if (this.slotComboBox.SelectedIndex < 0) return;
+            var comboBox = sender as ComboBox;
+            var i = Convert.ToInt16(comboBox.Tag);
+            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digi_beetle_part_flag[i] = Convert.ToByte(comboBox.SelectedIndex);
         }
         #endregion
 

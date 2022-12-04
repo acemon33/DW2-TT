@@ -52,24 +52,6 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label33 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.batteryFlagTextBox = new System.Windows.Forms.TextBox();
-            this.bodyFlagTextBox = new System.Windows.Forms.TextBox();
-            this.engineFlagTextBox = new System.Windows.Forms.TextBox();
-            this.legFlagTextBox = new System.Windows.Forms.TextBox();
-            this.toolBoxFlagTextBox = new System.Windows.Forms.TextBox();
-            this.handFlagTextBox = new System.Windows.Forms.TextBox();
-            this.armFlagTextBox = new System.Windows.Forms.TextBox();
-            this.cannon2FlagTextBox = new System.Windows.Forms.TextBox();
-            this.cannon1FlagTextBox = new System.Windows.Forms.TextBox();
-            this.cannon4FlagTextBox = new System.Windows.Forms.TextBox();
-            this.cannon3FlagTextBox = new System.Windows.Forms.TextBox();
-            this.cannon5FlagTextBox = new System.Windows.Forms.TextBox();
-            this.device1FlagTextBox = new System.Windows.Forms.TextBox();
-            this.device3FlagTextBox = new System.Windows.Forms.TextBox();
-            this.device2FlagTextBox = new System.Windows.Forms.TextBox();
-            this.device5FlagTextBox = new System.Windows.Forms.TextBox();
-            this.device4FlagTextBox = new System.Windows.Forms.TextBox();
-            this.device6FlagTextBox = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -92,7 +74,6 @@
             this.label32 = new System.Windows.Forms.Label();
             this.bodyNameComboBox = new System.Windows.Forms.ComboBox();
             this.engineNameComboBox = new System.Windows.Forms.ComboBox();
-            this.memoryFlagTextBox = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.batteryNameComboBox = new System.Windows.Forms.ComboBox();
             this.memoryComboBox = new System.Windows.Forms.ComboBox();
@@ -162,6 +143,25 @@
             this.label3 = new System.Windows.Forms.Label();
             this.slotComboBox = new System.Windows.Forms.ComboBox();
             this.saveFileButton = new System.Windows.Forms.Button();
+            this.bodyFlagTextBox = new System.Windows.Forms.ComboBox();
+            this.engineFlagTextBox = new System.Windows.Forms.ComboBox();
+            this.batteryFlagTextBox = new System.Windows.Forms.ComboBox();
+            this.memoryFlagTextBox = new System.Windows.Forms.ComboBox();
+            this.toolBoxFlagTextBox = new System.Windows.Forms.ComboBox();
+            this.legFlagTextBox = new System.Windows.Forms.ComboBox();
+            this.armFlagTextBox = new System.Windows.Forms.ComboBox();
+            this.handFlagTextBox = new System.Windows.Forms.ComboBox();
+            this.cannon1FlagTextBox = new System.Windows.Forms.ComboBox();
+            this.cannon2FlagTextBox = new System.Windows.Forms.ComboBox();
+            this.cannon3FlagTextBox = new System.Windows.Forms.ComboBox();
+            this.cannon4FlagTextBox = new System.Windows.Forms.ComboBox();
+            this.cannon5FlagTextBox = new System.Windows.Forms.ComboBox();
+            this.device1FlagTextBox = new System.Windows.Forms.ComboBox();
+            this.device2FlagTextBox = new System.Windows.Forms.ComboBox();
+            this.device3FlagTextBox = new System.Windows.Forms.ComboBox();
+            this.device4FlagTextBox = new System.Windows.Forms.ComboBox();
+            this.device5FlagTextBox = new System.Windows.Forms.ComboBox();
+            this.device6FlagTextBox = new System.Windows.Forms.ComboBox();
             this.tabControl.SuspendLayout();
             this.miscTabPage.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -412,27 +412,9 @@
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 51F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 64F));
             this.tableLayoutPanel2.Controls.Add(this.label33, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.label14, 0, 5);
-            this.tableLayoutPanel2.Controls.Add(this.batteryFlagTextBox, 2, 4);
-            this.tableLayoutPanel2.Controls.Add(this.bodyFlagTextBox, 2, 2);
-            this.tableLayoutPanel2.Controls.Add(this.engineFlagTextBox, 2, 3);
-            this.tableLayoutPanel2.Controls.Add(this.legFlagTextBox, 2, 7);
-            this.tableLayoutPanel2.Controls.Add(this.toolBoxFlagTextBox, 2, 6);
-            this.tableLayoutPanel2.Controls.Add(this.handFlagTextBox, 2, 9);
-            this.tableLayoutPanel2.Controls.Add(this.armFlagTextBox, 2, 8);
-            this.tableLayoutPanel2.Controls.Add(this.cannon2FlagTextBox, 2, 11);
-            this.tableLayoutPanel2.Controls.Add(this.cannon1FlagTextBox, 2, 10);
-            this.tableLayoutPanel2.Controls.Add(this.cannon4FlagTextBox, 2, 13);
-            this.tableLayoutPanel2.Controls.Add(this.cannon3FlagTextBox, 2, 12);
-            this.tableLayoutPanel2.Controls.Add(this.cannon5FlagTextBox, 2, 14);
-            this.tableLayoutPanel2.Controls.Add(this.device1FlagTextBox, 2, 15);
-            this.tableLayoutPanel2.Controls.Add(this.device3FlagTextBox, 2, 17);
-            this.tableLayoutPanel2.Controls.Add(this.device2FlagTextBox, 2, 16);
-            this.tableLayoutPanel2.Controls.Add(this.device5FlagTextBox, 2, 19);
-            this.tableLayoutPanel2.Controls.Add(this.device4FlagTextBox, 2, 18);
-            this.tableLayoutPanel2.Controls.Add(this.device6FlagTextBox, 2, 20);
             this.tableLayoutPanel2.Controls.Add(this.label20, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.label16, 0, 6);
             this.tableLayoutPanel2.Controls.Add(this.label17, 0, 7);
@@ -455,7 +437,6 @@
             this.tableLayoutPanel2.Controls.Add(this.label32, 2, 1);
             this.tableLayoutPanel2.Controls.Add(this.bodyNameComboBox, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.engineNameComboBox, 1, 3);
-            this.tableLayoutPanel2.Controls.Add(this.memoryFlagTextBox, 2, 5);
             this.tableLayoutPanel2.Controls.Add(this.label15, 0, 4);
             this.tableLayoutPanel2.Controls.Add(this.batteryNameComboBox, 1, 4);
             this.tableLayoutPanel2.Controls.Add(this.memoryComboBox, 1, 5);
@@ -474,6 +455,25 @@
             this.tableLayoutPanel2.Controls.Add(this.device4ComboBox, 1, 18);
             this.tableLayoutPanel2.Controls.Add(this.device5ComboBox, 1, 19);
             this.tableLayoutPanel2.Controls.Add(this.device6ComboBox, 1, 20);
+            this.tableLayoutPanel2.Controls.Add(this.bodyFlagTextBox, 2, 2);
+            this.tableLayoutPanel2.Controls.Add(this.engineFlagTextBox, 2, 3);
+            this.tableLayoutPanel2.Controls.Add(this.batteryFlagTextBox, 2, 4);
+            this.tableLayoutPanel2.Controls.Add(this.memoryFlagTextBox, 2, 5);
+            this.tableLayoutPanel2.Controls.Add(this.toolBoxFlagTextBox, 2, 6);
+            this.tableLayoutPanel2.Controls.Add(this.legFlagTextBox, 2, 7);
+            this.tableLayoutPanel2.Controls.Add(this.armFlagTextBox, 2, 8);
+            this.tableLayoutPanel2.Controls.Add(this.handFlagTextBox, 2, 9);
+            this.tableLayoutPanel2.Controls.Add(this.cannon1FlagTextBox, 2, 10);
+            this.tableLayoutPanel2.Controls.Add(this.cannon2FlagTextBox, 2, 11);
+            this.tableLayoutPanel2.Controls.Add(this.cannon3FlagTextBox, 2, 12);
+            this.tableLayoutPanel2.Controls.Add(this.cannon4FlagTextBox, 2, 13);
+            this.tableLayoutPanel2.Controls.Add(this.cannon5FlagTextBox, 2, 14);
+            this.tableLayoutPanel2.Controls.Add(this.device1FlagTextBox, 2, 15);
+            this.tableLayoutPanel2.Controls.Add(this.device2FlagTextBox, 2, 16);
+            this.tableLayoutPanel2.Controls.Add(this.device3FlagTextBox, 2, 17);
+            this.tableLayoutPanel2.Controls.Add(this.device4FlagTextBox, 2, 18);
+            this.tableLayoutPanel2.Controls.Add(this.device5FlagTextBox, 2, 19);
+            this.tableLayoutPanel2.Controls.Add(this.device6FlagTextBox, 2, 20);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 21;
@@ -498,13 +498,13 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(239, 577);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(264, 577);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(97, 35);
+            this.label33.Location = new System.Drawing.Point(103, 35);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(57, 13);
             this.label33.TabIndex = 50;
@@ -518,158 +518,6 @@
             this.label14.Size = new System.Drawing.Size(45, 13);
             this.label14.TabIndex = 15;
             this.label14.Text = "Memory";
-            // 
-            // batteryFlagTextBox
-            // 
-            this.batteryFlagTextBox.Location = new System.Drawing.Point(191, 122);
-            this.batteryFlagTextBox.Name = "batteryFlagTextBox";
-            this.batteryFlagTextBox.Size = new System.Drawing.Size(44, 20);
-            this.batteryFlagTextBox.TabIndex = 35;
-            this.batteryFlagTextBox.TextChanged += new System.EventHandler(this.batteryFlagTextBox_TextChanged);
-            // 
-            // bodyFlagTextBox
-            // 
-            this.bodyFlagTextBox.Location = new System.Drawing.Point(191, 68);
-            this.bodyFlagTextBox.Name = "bodyFlagTextBox";
-            this.bodyFlagTextBox.Size = new System.Drawing.Size(44, 20);
-            this.bodyFlagTextBox.TabIndex = 32;
-            this.bodyFlagTextBox.TextChanged += new System.EventHandler(this.bodyFlagTextBox_TextChanged);
-            // 
-            // engineFlagTextBox
-            // 
-            this.engineFlagTextBox.Location = new System.Drawing.Point(191, 95);
-            this.engineFlagTextBox.Name = "engineFlagTextBox";
-            this.engineFlagTextBox.Size = new System.Drawing.Size(44, 20);
-            this.engineFlagTextBox.TabIndex = 33;
-            this.engineFlagTextBox.TextChanged += new System.EventHandler(this.engineFlagTextBox_TextChanged);
-            // 
-            // legFlagTextBox
-            // 
-            this.legFlagTextBox.Location = new System.Drawing.Point(191, 203);
-            this.legFlagTextBox.Name = "legFlagTextBox";
-            this.legFlagTextBox.Size = new System.Drawing.Size(44, 20);
-            this.legFlagTextBox.TabIndex = 37;
-            this.legFlagTextBox.TextChanged += new System.EventHandler(this.legFlagTextBox_TextChanged);
-            // 
-            // toolBoxFlagTextBox
-            // 
-            this.toolBoxFlagTextBox.Location = new System.Drawing.Point(191, 176);
-            this.toolBoxFlagTextBox.MaxLength = 2;
-            this.toolBoxFlagTextBox.Name = "toolBoxFlagTextBox";
-            this.toolBoxFlagTextBox.Size = new System.Drawing.Size(44, 20);
-            this.toolBoxFlagTextBox.TabIndex = 36;
-            this.toolBoxFlagTextBox.TextChanged += new System.EventHandler(this.toolBoxFlagTextBox_TextChanged);
-            // 
-            // handFlagTextBox
-            // 
-            this.handFlagTextBox.Location = new System.Drawing.Point(191, 257);
-            this.handFlagTextBox.Name = "handFlagTextBox";
-            this.handFlagTextBox.Size = new System.Drawing.Size(44, 20);
-            this.handFlagTextBox.TabIndex = 39;
-            this.handFlagTextBox.TextChanged += new System.EventHandler(this.handFlagTextBox_TextChanged);
-            // 
-            // armFlagTextBox
-            // 
-            this.armFlagTextBox.Location = new System.Drawing.Point(191, 230);
-            this.armFlagTextBox.MaxLength = 2;
-            this.armFlagTextBox.Name = "armFlagTextBox";
-            this.armFlagTextBox.Size = new System.Drawing.Size(44, 20);
-            this.armFlagTextBox.TabIndex = 38;
-            this.armFlagTextBox.TextChanged += new System.EventHandler(this.armFlagTextBox_TextChanged);
-            // 
-            // cannon2FlagTextBox
-            // 
-            this.cannon2FlagTextBox.Location = new System.Drawing.Point(191, 311);
-            this.cannon2FlagTextBox.Name = "cannon2FlagTextBox";
-            this.cannon2FlagTextBox.Size = new System.Drawing.Size(44, 20);
-            this.cannon2FlagTextBox.TabIndex = 41;
-            this.cannon2FlagTextBox.TextChanged += new System.EventHandler(this.cannon2FlagTextBox_TextChanged);
-            // 
-            // cannon1FlagTextBox
-            // 
-            this.cannon1FlagTextBox.Location = new System.Drawing.Point(191, 284);
-            this.cannon1FlagTextBox.MaxLength = 2;
-            this.cannon1FlagTextBox.Name = "cannon1FlagTextBox";
-            this.cannon1FlagTextBox.Size = new System.Drawing.Size(44, 20);
-            this.cannon1FlagTextBox.TabIndex = 40;
-            this.cannon1FlagTextBox.TextChanged += new System.EventHandler(this.cannon1FlagTextBox_TextChanged);
-            // 
-            // cannon4FlagTextBox
-            // 
-            this.cannon4FlagTextBox.Location = new System.Drawing.Point(191, 365);
-            this.cannon4FlagTextBox.MaxLength = 2;
-            this.cannon4FlagTextBox.Name = "cannon4FlagTextBox";
-            this.cannon4FlagTextBox.Size = new System.Drawing.Size(44, 20);
-            this.cannon4FlagTextBox.TabIndex = 43;
-            this.cannon4FlagTextBox.TextChanged += new System.EventHandler(this.cannon4FlagTextBox_TextChanged);
-            // 
-            // cannon3FlagTextBox
-            // 
-            this.cannon3FlagTextBox.Location = new System.Drawing.Point(191, 338);
-            this.cannon3FlagTextBox.MaxLength = 2;
-            this.cannon3FlagTextBox.Name = "cannon3FlagTextBox";
-            this.cannon3FlagTextBox.Size = new System.Drawing.Size(44, 20);
-            this.cannon3FlagTextBox.TabIndex = 42;
-            this.cannon3FlagTextBox.TextChanged += new System.EventHandler(this.cannon3FlagTextBox_TextChanged);
-            // 
-            // cannon5FlagTextBox
-            // 
-            this.cannon5FlagTextBox.Location = new System.Drawing.Point(191, 392);
-            this.cannon5FlagTextBox.Name = "cannon5FlagTextBox";
-            this.cannon5FlagTextBox.Size = new System.Drawing.Size(44, 20);
-            this.cannon5FlagTextBox.TabIndex = 44;
-            this.cannon5FlagTextBox.TextChanged += new System.EventHandler(this.cannon5FlagTextBox_TextChanged);
-            // 
-            // device1FlagTextBox
-            // 
-            this.device1FlagTextBox.Location = new System.Drawing.Point(191, 419);
-            this.device1FlagTextBox.Name = "device1FlagTextBox";
-            this.device1FlagTextBox.Size = new System.Drawing.Size(44, 20);
-            this.device1FlagTextBox.TabIndex = 45;
-            this.device1FlagTextBox.TextChanged += new System.EventHandler(this.device1FlagTextBox_TextChanged);
-            // 
-            // device3FlagTextBox
-            // 
-            this.device3FlagTextBox.Location = new System.Drawing.Point(191, 473);
-            this.device3FlagTextBox.Name = "device3FlagTextBox";
-            this.device3FlagTextBox.Size = new System.Drawing.Size(44, 20);
-            this.device3FlagTextBox.TabIndex = 47;
-            this.device3FlagTextBox.TextChanged += new System.EventHandler(this.device3FlagTextBox_TextChanged);
-            // 
-            // device2FlagTextBox
-            // 
-            this.device2FlagTextBox.Location = new System.Drawing.Point(191, 446);
-            this.device2FlagTextBox.MaxLength = 2;
-            this.device2FlagTextBox.Name = "device2FlagTextBox";
-            this.device2FlagTextBox.Size = new System.Drawing.Size(44, 20);
-            this.device2FlagTextBox.TabIndex = 46;
-            this.device2FlagTextBox.TextChanged += new System.EventHandler(this.device2FlagTextBox_TextChanged);
-            // 
-            // device5FlagTextBox
-            // 
-            this.device5FlagTextBox.Location = new System.Drawing.Point(191, 527);
-            this.device5FlagTextBox.Name = "device5FlagTextBox";
-            this.device5FlagTextBox.Size = new System.Drawing.Size(44, 20);
-            this.device5FlagTextBox.TabIndex = 49;
-            this.device5FlagTextBox.TextChanged += new System.EventHandler(this.device5FlagTextBox_TextChanged);
-            // 
-            // device4FlagTextBox
-            // 
-            this.device4FlagTextBox.Location = new System.Drawing.Point(191, 500);
-            this.device4FlagTextBox.MaxLength = 2;
-            this.device4FlagTextBox.Name = "device4FlagTextBox";
-            this.device4FlagTextBox.Size = new System.Drawing.Size(44, 20);
-            this.device4FlagTextBox.TabIndex = 48;
-            this.device4FlagTextBox.TextChanged += new System.EventHandler(this.device4FlagTextBox_TextChanged);
-            // 
-            // device6FlagTextBox
-            // 
-            this.device6FlagTextBox.Location = new System.Drawing.Point(191, 554);
-            this.device6FlagTextBox.MaxLength = 2;
-            this.device6FlagTextBox.Name = "device6FlagTextBox";
-            this.device6FlagTextBox.Size = new System.Drawing.Size(44, 20);
-            this.device6FlagTextBox.TabIndex = 50;
-            this.device6FlagTextBox.TextChanged += new System.EventHandler(this.device6FlagTextBox_TextChanged);
             // 
             // label20
             // 
@@ -709,7 +557,7 @@
             // 
             // DigiBeetleNameTextBox
             // 
-            this.DigiBeetleNameTextBox.Location = new System.Drawing.Point(97, 3);
+            this.DigiBeetleNameTextBox.Location = new System.Drawing.Point(103, 3);
             this.DigiBeetleNameTextBox.MaxLength = 7;
             this.DigiBeetleNameTextBox.Name = "DigiBeetleNameTextBox";
             this.DigiBeetleNameTextBox.Size = new System.Drawing.Size(88, 20);
@@ -845,16 +693,16 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(191, 35);
+            this.label32.Location = new System.Drawing.Point(203, 35);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(43, 13);
+            this.label32.Size = new System.Drawing.Size(42, 13);
             this.label32.TabIndex = 41;
-            this.label32.Text = "Enable:";
+            this.label32.Text = "Status:";
             // 
             // bodyNameComboBox
             // 
             this.bodyNameComboBox.FormattingEnabled = true;
-            this.bodyNameComboBox.Location = new System.Drawing.Point(97, 68);
+            this.bodyNameComboBox.Location = new System.Drawing.Point(103, 68);
             this.bodyNameComboBox.Name = "bodyNameComboBox";
             this.bodyNameComboBox.Size = new System.Drawing.Size(88, 21);
             this.bodyNameComboBox.TabIndex = 51;
@@ -863,20 +711,11 @@
             // engineNameComboBox
             // 
             this.engineNameComboBox.FormattingEnabled = true;
-            this.engineNameComboBox.Location = new System.Drawing.Point(97, 95);
+            this.engineNameComboBox.Location = new System.Drawing.Point(103, 95);
             this.engineNameComboBox.Name = "engineNameComboBox";
             this.engineNameComboBox.Size = new System.Drawing.Size(88, 21);
             this.engineNameComboBox.TabIndex = 52;
             this.engineNameComboBox.SelectedIndexChanged += new System.EventHandler(this.engineNameTextBox_TextChanged);
-            // 
-            // memoryFlagTextBox
-            // 
-            this.memoryFlagTextBox.Location = new System.Drawing.Point(191, 149);
-            this.memoryFlagTextBox.MaxLength = 2;
-            this.memoryFlagTextBox.Name = "memoryFlagTextBox";
-            this.memoryFlagTextBox.Size = new System.Drawing.Size(44, 20);
-            this.memoryFlagTextBox.TabIndex = 34;
-            this.memoryFlagTextBox.TextChanged += new System.EventHandler(this.memoryFlagTextBox_TextChanged);
             // 
             // label15
             // 
@@ -890,7 +729,7 @@
             // batteryNameComboBox
             // 
             this.batteryNameComboBox.FormattingEnabled = true;
-            this.batteryNameComboBox.Location = new System.Drawing.Point(97, 122);
+            this.batteryNameComboBox.Location = new System.Drawing.Point(103, 122);
             this.batteryNameComboBox.Name = "batteryNameComboBox";
             this.batteryNameComboBox.Size = new System.Drawing.Size(88, 21);
             this.batteryNameComboBox.TabIndex = 52;
@@ -899,7 +738,7 @@
             // memoryComboBox
             // 
             this.memoryComboBox.FormattingEnabled = true;
-            this.memoryComboBox.Location = new System.Drawing.Point(97, 149);
+            this.memoryComboBox.Location = new System.Drawing.Point(103, 149);
             this.memoryComboBox.Name = "memoryComboBox";
             this.memoryComboBox.Size = new System.Drawing.Size(88, 21);
             this.memoryComboBox.TabIndex = 52;
@@ -908,7 +747,7 @@
             // toolBoxComboBox
             // 
             this.toolBoxComboBox.FormattingEnabled = true;
-            this.toolBoxComboBox.Location = new System.Drawing.Point(97, 176);
+            this.toolBoxComboBox.Location = new System.Drawing.Point(103, 176);
             this.toolBoxComboBox.Name = "toolBoxComboBox";
             this.toolBoxComboBox.Size = new System.Drawing.Size(88, 21);
             this.toolBoxComboBox.TabIndex = 52;
@@ -917,7 +756,7 @@
             // legComboBox
             // 
             this.legComboBox.FormattingEnabled = true;
-            this.legComboBox.Location = new System.Drawing.Point(97, 203);
+            this.legComboBox.Location = new System.Drawing.Point(103, 203);
             this.legComboBox.Name = "legComboBox";
             this.legComboBox.Size = new System.Drawing.Size(88, 21);
             this.legComboBox.TabIndex = 52;
@@ -926,7 +765,7 @@
             // armComboBox
             // 
             this.armComboBox.FormattingEnabled = true;
-            this.armComboBox.Location = new System.Drawing.Point(97, 230);
+            this.armComboBox.Location = new System.Drawing.Point(103, 230);
             this.armComboBox.Name = "armComboBox";
             this.armComboBox.Size = new System.Drawing.Size(88, 21);
             this.armComboBox.TabIndex = 52;
@@ -935,7 +774,7 @@
             // handComboBox
             // 
             this.handComboBox.FormattingEnabled = true;
-            this.handComboBox.Location = new System.Drawing.Point(97, 257);
+            this.handComboBox.Location = new System.Drawing.Point(103, 257);
             this.handComboBox.Name = "handComboBox";
             this.handComboBox.Size = new System.Drawing.Size(88, 21);
             this.handComboBox.TabIndex = 52;
@@ -944,7 +783,7 @@
             // cannon1ComboBox
             // 
             this.cannon1ComboBox.FormattingEnabled = true;
-            this.cannon1ComboBox.Location = new System.Drawing.Point(97, 284);
+            this.cannon1ComboBox.Location = new System.Drawing.Point(103, 284);
             this.cannon1ComboBox.Name = "cannon1ComboBox";
             this.cannon1ComboBox.Size = new System.Drawing.Size(88, 21);
             this.cannon1ComboBox.TabIndex = 52;
@@ -953,7 +792,7 @@
             // cannon2ComboBox
             // 
             this.cannon2ComboBox.FormattingEnabled = true;
-            this.cannon2ComboBox.Location = new System.Drawing.Point(97, 311);
+            this.cannon2ComboBox.Location = new System.Drawing.Point(103, 311);
             this.cannon2ComboBox.Name = "cannon2ComboBox";
             this.cannon2ComboBox.Size = new System.Drawing.Size(88, 21);
             this.cannon2ComboBox.TabIndex = 52;
@@ -962,7 +801,7 @@
             // cannon3ComboBox
             // 
             this.cannon3ComboBox.FormattingEnabled = true;
-            this.cannon3ComboBox.Location = new System.Drawing.Point(97, 338);
+            this.cannon3ComboBox.Location = new System.Drawing.Point(103, 338);
             this.cannon3ComboBox.Name = "cannon3ComboBox";
             this.cannon3ComboBox.Size = new System.Drawing.Size(88, 21);
             this.cannon3ComboBox.TabIndex = 52;
@@ -971,7 +810,7 @@
             // cannon4ComboBox
             // 
             this.cannon4ComboBox.FormattingEnabled = true;
-            this.cannon4ComboBox.Location = new System.Drawing.Point(97, 365);
+            this.cannon4ComboBox.Location = new System.Drawing.Point(103, 365);
             this.cannon4ComboBox.Name = "cannon4ComboBox";
             this.cannon4ComboBox.Size = new System.Drawing.Size(88, 21);
             this.cannon4ComboBox.TabIndex = 52;
@@ -980,7 +819,7 @@
             // cannon5ComboBox
             // 
             this.cannon5ComboBox.FormattingEnabled = true;
-            this.cannon5ComboBox.Location = new System.Drawing.Point(97, 392);
+            this.cannon5ComboBox.Location = new System.Drawing.Point(103, 392);
             this.cannon5ComboBox.Name = "cannon5ComboBox";
             this.cannon5ComboBox.Size = new System.Drawing.Size(88, 21);
             this.cannon5ComboBox.TabIndex = 52;
@@ -989,7 +828,7 @@
             // device1ComboBox
             // 
             this.device1ComboBox.FormattingEnabled = true;
-            this.device1ComboBox.Location = new System.Drawing.Point(97, 419);
+            this.device1ComboBox.Location = new System.Drawing.Point(103, 419);
             this.device1ComboBox.Name = "device1ComboBox";
             this.device1ComboBox.Size = new System.Drawing.Size(88, 21);
             this.device1ComboBox.TabIndex = 52;
@@ -998,7 +837,7 @@
             // device2ComboBox
             // 
             this.device2ComboBox.FormattingEnabled = true;
-            this.device2ComboBox.Location = new System.Drawing.Point(97, 446);
+            this.device2ComboBox.Location = new System.Drawing.Point(103, 446);
             this.device2ComboBox.Name = "device2ComboBox";
             this.device2ComboBox.Size = new System.Drawing.Size(88, 21);
             this.device2ComboBox.TabIndex = 52;
@@ -1007,7 +846,7 @@
             // device3ComboBox
             // 
             this.device3ComboBox.FormattingEnabled = true;
-            this.device3ComboBox.Location = new System.Drawing.Point(97, 473);
+            this.device3ComboBox.Location = new System.Drawing.Point(103, 473);
             this.device3ComboBox.Name = "device3ComboBox";
             this.device3ComboBox.Size = new System.Drawing.Size(88, 21);
             this.device3ComboBox.TabIndex = 52;
@@ -1016,7 +855,7 @@
             // device4ComboBox
             // 
             this.device4ComboBox.FormattingEnabled = true;
-            this.device4ComboBox.Location = new System.Drawing.Point(97, 500);
+            this.device4ComboBox.Location = new System.Drawing.Point(103, 500);
             this.device4ComboBox.Name = "device4ComboBox";
             this.device4ComboBox.Size = new System.Drawing.Size(88, 21);
             this.device4ComboBox.TabIndex = 52;
@@ -1025,7 +864,7 @@
             // device5ComboBox
             // 
             this.device5ComboBox.FormattingEnabled = true;
-            this.device5ComboBox.Location = new System.Drawing.Point(97, 527);
+            this.device5ComboBox.Location = new System.Drawing.Point(103, 527);
             this.device5ComboBox.Name = "device5ComboBox";
             this.device5ComboBox.Size = new System.Drawing.Size(88, 21);
             this.device5ComboBox.TabIndex = 52;
@@ -1034,7 +873,7 @@
             // device6ComboBox
             // 
             this.device6ComboBox.FormattingEnabled = true;
-            this.device6ComboBox.Location = new System.Drawing.Point(97, 554);
+            this.device6ComboBox.Location = new System.Drawing.Point(103, 554);
             this.device6ComboBox.Name = "device6ComboBox";
             this.device6ComboBox.Size = new System.Drawing.Size(88, 21);
             this.device6ComboBox.TabIndex = 52;
@@ -1554,7 +1393,10 @@
             // slotComboBox
             // 
             this.slotComboBox.FormattingEnabled = true;
-            this.slotComboBox.Items.AddRange(new object[] {"Slot 1", "Slot 2", "Slot 3"});
+            this.slotComboBox.Items.AddRange(new object[] {
+            "Slot 1",
+            "Slot 2",
+            "Slot 3"});
             this.slotComboBox.Location = new System.Drawing.Point(68, 39);
             this.slotComboBox.Name = "slotComboBox";
             this.slotComboBox.Size = new System.Drawing.Size(172, 21);
@@ -1570,6 +1412,253 @@
             this.saveFileButton.Text = "Save";
             this.saveFileButton.UseVisualStyleBackColor = true;
             this.saveFileButton.Click += new System.EventHandler(this.saveFileButton_Click);
+            // 
+            // bodyFlagTextBox
+            // 
+            this.bodyFlagTextBox.FormattingEnabled = true;
+            this.bodyFlagTextBox.Items.AddRange(new object[] {
+            "Enable",
+            "Disable"});
+            this.bodyFlagTextBox.Location = new System.Drawing.Point(203, 68);
+            this.bodyFlagTextBox.Name = "bodyFlagTextBox";
+            this.bodyFlagTextBox.Size = new System.Drawing.Size(58, 21);
+            this.bodyFlagTextBox.TabIndex = 53;
+            this.bodyFlagTextBox.Tag = "0";
+            this.bodyFlagTextBox.SelectedIndexChanged += new System.EventHandler(this.bodyFlagTextBox_TextChanged);
+            // 
+            // engineFlagTextBox
+            // 
+            this.engineFlagTextBox.FormattingEnabled = true;
+            this.engineFlagTextBox.Items.AddRange(new object[] {
+            "Enable",
+            "Disable"});
+            this.engineFlagTextBox.Location = new System.Drawing.Point(203, 95);
+            this.engineFlagTextBox.Name = "engineFlagTextBox";
+            this.engineFlagTextBox.Size = new System.Drawing.Size(58, 21);
+            this.engineFlagTextBox.TabIndex = 53;
+            this.engineFlagTextBox.Tag = "1";
+            this.engineFlagTextBox.SelectedIndexChanged += new System.EventHandler(this.bodyFlagTextBox_TextChanged);
+            // 
+            // batteryFlagTextBox
+            // 
+            this.batteryFlagTextBox.FormattingEnabled = true;
+            this.batteryFlagTextBox.Items.AddRange(new object[] {
+            "Enable",
+            "Disable"});
+            this.batteryFlagTextBox.Location = new System.Drawing.Point(203, 122);
+            this.batteryFlagTextBox.Name = "batteryFlagTextBox";
+            this.batteryFlagTextBox.Size = new System.Drawing.Size(58, 21);
+            this.batteryFlagTextBox.TabIndex = 53;
+            this.batteryFlagTextBox.Tag = "2";
+            this.batteryFlagTextBox.SelectedIndexChanged += new System.EventHandler(this.bodyFlagTextBox_TextChanged);
+            // 
+            // memoryFlagTextBox
+            // 
+            this.memoryFlagTextBox.FormattingEnabled = true;
+            this.memoryFlagTextBox.Items.AddRange(new object[] {
+            "Enable",
+            "Disable"});
+            this.memoryFlagTextBox.Location = new System.Drawing.Point(203, 149);
+            this.memoryFlagTextBox.Name = "memoryFlagTextBox";
+            this.memoryFlagTextBox.Size = new System.Drawing.Size(58, 21);
+            this.memoryFlagTextBox.TabIndex = 53;
+            this.memoryFlagTextBox.Tag = "3";
+            this.memoryFlagTextBox.SelectedIndexChanged += new System.EventHandler(this.bodyFlagTextBox_TextChanged);
+            // 
+            // toolBoxFlagTextBox
+            // 
+            this.toolBoxFlagTextBox.FormattingEnabled = true;
+            this.toolBoxFlagTextBox.Items.AddRange(new object[] {
+            "Enable",
+            "Disable"});
+            this.toolBoxFlagTextBox.Location = new System.Drawing.Point(203, 176);
+            this.toolBoxFlagTextBox.Name = "toolBoxFlagTextBox";
+            this.toolBoxFlagTextBox.Size = new System.Drawing.Size(58, 21);
+            this.toolBoxFlagTextBox.TabIndex = 53;
+            this.toolBoxFlagTextBox.Tag = "4";
+            this.toolBoxFlagTextBox.SelectedIndexChanged += new System.EventHandler(this.bodyFlagTextBox_TextChanged);
+            // 
+            // legFlagTextBox
+            // 
+            this.legFlagTextBox.FormattingEnabled = true;
+            this.legFlagTextBox.Items.AddRange(new object[] {
+            "Enable",
+            "Disable"});
+            this.legFlagTextBox.Location = new System.Drawing.Point(203, 203);
+            this.legFlagTextBox.Name = "legFlagTextBox";
+            this.legFlagTextBox.Size = new System.Drawing.Size(58, 21);
+            this.legFlagTextBox.TabIndex = 53;
+            this.legFlagTextBox.Tag = "5";
+            this.legFlagTextBox.SelectedIndexChanged += new System.EventHandler(this.bodyFlagTextBox_TextChanged);
+            // 
+            // armFlagTextBox
+            // 
+            this.armFlagTextBox.FormattingEnabled = true;
+            this.armFlagTextBox.Items.AddRange(new object[] {
+            "Enable",
+            "Disable"});
+            this.armFlagTextBox.Location = new System.Drawing.Point(203, 230);
+            this.armFlagTextBox.Name = "armFlagTextBox";
+            this.armFlagTextBox.Size = new System.Drawing.Size(58, 21);
+            this.armFlagTextBox.TabIndex = 53;
+            this.armFlagTextBox.Tag = "6";
+            this.armFlagTextBox.SelectedIndexChanged += new System.EventHandler(this.bodyFlagTextBox_TextChanged);
+            // 
+            // handFlagTextBox
+            // 
+            this.handFlagTextBox.FormattingEnabled = true;
+            this.handFlagTextBox.Items.AddRange(new object[] {
+            "Enable",
+            "Disable"});
+            this.handFlagTextBox.Location = new System.Drawing.Point(203, 257);
+            this.handFlagTextBox.Name = "handFlagTextBox";
+            this.handFlagTextBox.Size = new System.Drawing.Size(58, 21);
+            this.handFlagTextBox.TabIndex = 53;
+            this.handFlagTextBox.Tag = "7";
+            this.handFlagTextBox.SelectedIndexChanged += new System.EventHandler(this.bodyFlagTextBox_TextChanged);
+            // 
+            // cannon1FlagTextBox
+            // 
+            this.cannon1FlagTextBox.FormattingEnabled = true;
+            this.cannon1FlagTextBox.Items.AddRange(new object[] {
+            "Enable",
+            "Disable"});
+            this.cannon1FlagTextBox.Location = new System.Drawing.Point(203, 284);
+            this.cannon1FlagTextBox.Name = "cannon1FlagTextBox";
+            this.cannon1FlagTextBox.Size = new System.Drawing.Size(58, 21);
+            this.cannon1FlagTextBox.TabIndex = 53;
+            this.cannon1FlagTextBox.Tag = "8";
+            this.cannon1FlagTextBox.SelectedIndexChanged += new System.EventHandler(this.bodyFlagTextBox_TextChanged);
+            // 
+            // cannon2FlagTextBox
+            // 
+            this.cannon2FlagTextBox.FormattingEnabled = true;
+            this.cannon2FlagTextBox.Items.AddRange(new object[] {
+            "Enable",
+            "Disable"});
+            this.cannon2FlagTextBox.Location = new System.Drawing.Point(203, 311);
+            this.cannon2FlagTextBox.Name = "cannon2FlagTextBox";
+            this.cannon2FlagTextBox.Size = new System.Drawing.Size(58, 21);
+            this.cannon2FlagTextBox.TabIndex = 53;
+            this.cannon2FlagTextBox.Tag = "9";
+            this.cannon2FlagTextBox.SelectedIndexChanged += new System.EventHandler(this.bodyFlagTextBox_TextChanged);
+            // 
+            // cannon3FlagTextBox
+            // 
+            this.cannon3FlagTextBox.FormattingEnabled = true;
+            this.cannon3FlagTextBox.Items.AddRange(new object[] {
+            "Enable",
+            "Disable"});
+            this.cannon3FlagTextBox.Location = new System.Drawing.Point(203, 338);
+            this.cannon3FlagTextBox.Name = "cannon3FlagTextBox";
+            this.cannon3FlagTextBox.Size = new System.Drawing.Size(58, 21);
+            this.cannon3FlagTextBox.TabIndex = 53;
+            this.cannon3FlagTextBox.Tag = "10";
+            this.cannon3FlagTextBox.SelectedIndexChanged += new System.EventHandler(this.bodyFlagTextBox_TextChanged);
+            // 
+            // cannon4FlagTextBox
+            // 
+            this.cannon4FlagTextBox.FormattingEnabled = true;
+            this.cannon4FlagTextBox.Items.AddRange(new object[] {
+            "Enable",
+            "Disable"});
+            this.cannon4FlagTextBox.Location = new System.Drawing.Point(203, 365);
+            this.cannon4FlagTextBox.Name = "cannon4FlagTextBox";
+            this.cannon4FlagTextBox.Size = new System.Drawing.Size(58, 21);
+            this.cannon4FlagTextBox.TabIndex = 53;
+            this.cannon4FlagTextBox.Tag = "11";
+            this.cannon4FlagTextBox.SelectedIndexChanged += new System.EventHandler(this.bodyFlagTextBox_TextChanged);
+            // 
+            // cannon5FlagTextBox
+            // 
+            this.cannon5FlagTextBox.FormattingEnabled = true;
+            this.cannon5FlagTextBox.Items.AddRange(new object[] {
+            "Enable",
+            "Disable"});
+            this.cannon5FlagTextBox.Location = new System.Drawing.Point(203, 392);
+            this.cannon5FlagTextBox.Name = "cannon5FlagTextBox";
+            this.cannon5FlagTextBox.Size = new System.Drawing.Size(58, 21);
+            this.cannon5FlagTextBox.TabIndex = 53;
+            this.cannon5FlagTextBox.Tag = "12";
+            this.cannon5FlagTextBox.SelectedIndexChanged += new System.EventHandler(this.bodyFlagTextBox_TextChanged);
+            // 
+            // device1FlagTextBox
+            // 
+            this.device1FlagTextBox.FormattingEnabled = true;
+            this.device1FlagTextBox.Items.AddRange(new object[] {
+            "Enable",
+            "Disable"});
+            this.device1FlagTextBox.Location = new System.Drawing.Point(203, 419);
+            this.device1FlagTextBox.Name = "device1FlagTextBox";
+            this.device1FlagTextBox.Size = new System.Drawing.Size(58, 21);
+            this.device1FlagTextBox.TabIndex = 53;
+            this.device1FlagTextBox.Tag = "13";
+            this.device1FlagTextBox.SelectedIndexChanged += new System.EventHandler(this.bodyFlagTextBox_TextChanged);
+            // 
+            // device2FlagTextBox
+            // 
+            this.device2FlagTextBox.FormattingEnabled = true;
+            this.device2FlagTextBox.Items.AddRange(new object[] {
+            "Enable",
+            "Disable"});
+            this.device2FlagTextBox.Location = new System.Drawing.Point(203, 446);
+            this.device2FlagTextBox.Name = "device2FlagTextBox";
+            this.device2FlagTextBox.Size = new System.Drawing.Size(58, 21);
+            this.device2FlagTextBox.TabIndex = 53;
+            this.device2FlagTextBox.Tag = "14";
+            this.device2FlagTextBox.SelectedIndexChanged += new System.EventHandler(this.bodyFlagTextBox_TextChanged);
+            // 
+            // device3FlagTextBox
+            // 
+            this.device3FlagTextBox.FormattingEnabled = true;
+            this.device3FlagTextBox.Items.AddRange(new object[] {
+            "Enable",
+            "Disable"});
+            this.device3FlagTextBox.Location = new System.Drawing.Point(203, 473);
+            this.device3FlagTextBox.Name = "device3FlagTextBox";
+            this.device3FlagTextBox.Size = new System.Drawing.Size(58, 21);
+            this.device3FlagTextBox.TabIndex = 53;
+            this.device3FlagTextBox.Tag = "15";
+            this.device3FlagTextBox.SelectedIndexChanged += new System.EventHandler(this.bodyFlagTextBox_TextChanged);
+            // 
+            // device4FlagTextBox
+            // 
+            this.device4FlagTextBox.FormattingEnabled = true;
+            this.device4FlagTextBox.Items.AddRange(new object[] {
+            "Enable",
+            "Disable"});
+            this.device4FlagTextBox.Location = new System.Drawing.Point(203, 500);
+            this.device4FlagTextBox.Name = "device4FlagTextBox";
+            this.device4FlagTextBox.Size = new System.Drawing.Size(58, 21);
+            this.device4FlagTextBox.TabIndex = 53;
+            this.device4FlagTextBox.Tag = "16";
+            this.device4FlagTextBox.SelectedIndexChanged += new System.EventHandler(this.bodyFlagTextBox_TextChanged);
+            // 
+            // device5FlagTextBox
+            // 
+            this.device5FlagTextBox.FormattingEnabled = true;
+            this.device5FlagTextBox.Items.AddRange(new object[] {
+            "Enable",
+            "Disable"});
+            this.device5FlagTextBox.Location = new System.Drawing.Point(203, 527);
+            this.device5FlagTextBox.Name = "device5FlagTextBox";
+            this.device5FlagTextBox.Size = new System.Drawing.Size(58, 21);
+            this.device5FlagTextBox.TabIndex = 53;
+            this.device5FlagTextBox.Tag = "17";
+            this.device5FlagTextBox.SelectedIndexChanged += new System.EventHandler(this.bodyFlagTextBox_TextChanged);
+            // 
+            // device6FlagTextBox
+            // 
+            this.device6FlagTextBox.FormattingEnabled = true;
+            this.device6FlagTextBox.Items.AddRange(new object[] {
+            "Enable",
+            "Disable"});
+            this.device6FlagTextBox.Location = new System.Drawing.Point(203, 554);
+            this.device6FlagTextBox.Name = "device6FlagTextBox";
+            this.device6FlagTextBox.Size = new System.Drawing.Size(58, 21);
+            this.device6FlagTextBox.TabIndex = 53;
+            this.device6FlagTextBox.Tag = "18";
+            this.device6FlagTextBox.SelectedIndexChanged += new System.EventHandler(this.bodyFlagTextBox_TextChanged);
             // 
             // SaveEditorView
             // 
@@ -1609,6 +1698,7 @@
             this.gameStoryTabPage.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         private System.Windows.Forms.Panel gameStoryPanel;
@@ -1672,25 +1762,6 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox bodyFlagTextBox;
-        private System.Windows.Forms.TextBox engineFlagTextBox;
-        private System.Windows.Forms.TextBox batteryFlagTextBox;
-        private System.Windows.Forms.TextBox memoryFlagTextBox;
-        private System.Windows.Forms.TextBox legFlagTextBox;
-        private System.Windows.Forms.TextBox toolBoxFlagTextBox;
-        private System.Windows.Forms.TextBox handFlagTextBox;
-        private System.Windows.Forms.TextBox armFlagTextBox;
-        private System.Windows.Forms.TextBox cannon2FlagTextBox;
-        private System.Windows.Forms.TextBox cannon1FlagTextBox;
-        private System.Windows.Forms.TextBox cannon4FlagTextBox;
-        private System.Windows.Forms.TextBox cannon3FlagTextBox;
-        private System.Windows.Forms.TextBox cannon5FlagTextBox;
-        private System.Windows.Forms.TextBox device1FlagTextBox;
-        private System.Windows.Forms.TextBox device3FlagTextBox;
-        private System.Windows.Forms.TextBox device2FlagTextBox;
-        private System.Windows.Forms.TextBox device5FlagTextBox;
-        private System.Windows.Forms.TextBox device4FlagTextBox;
-        private System.Windows.Forms.TextBox device6FlagTextBox;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
@@ -1754,5 +1825,24 @@
         private System.Windows.Forms.ComboBox device4ComboBox;
         private System.Windows.Forms.ComboBox device5ComboBox;
         private System.Windows.Forms.ComboBox device6ComboBox;
+        private System.Windows.Forms.ComboBox bodyFlagTextBox;
+        private System.Windows.Forms.ComboBox handFlagTextBox;
+        private System.Windows.Forms.ComboBox armFlagTextBox;
+        private System.Windows.Forms.ComboBox legFlagTextBox;
+        private System.Windows.Forms.ComboBox toolBoxFlagTextBox;
+        private System.Windows.Forms.ComboBox memoryFlagTextBox;
+        private System.Windows.Forms.ComboBox batteryFlagTextBox;
+        private System.Windows.Forms.ComboBox engineFlagTextBox;
+        private System.Windows.Forms.ComboBox device6FlagTextBox;
+        private System.Windows.Forms.ComboBox device5FlagTextBox;
+        private System.Windows.Forms.ComboBox device4FlagTextBox;
+        private System.Windows.Forms.ComboBox device3FlagTextBox;
+        private System.Windows.Forms.ComboBox device2FlagTextBox;
+        private System.Windows.Forms.ComboBox device1FlagTextBox;
+        private System.Windows.Forms.ComboBox cannon5FlagTextBox;
+        private System.Windows.Forms.ComboBox cannon4FlagTextBox;
+        private System.Windows.Forms.ComboBox cannon3FlagTextBox;
+        private System.Windows.Forms.ComboBox cannon2FlagTextBox;
+        private System.Windows.Forms.ComboBox cannon1FlagTextBox;
     }
 }
