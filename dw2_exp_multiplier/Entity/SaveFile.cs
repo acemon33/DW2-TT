@@ -154,8 +154,9 @@ namespace dw2_exp_multiplier.Entity
         public static Dictionary<string, ushort> DigiBeetleArmList = new Dictionary<string, ushort>();
         public static Dictionary<string, ushort> DigiBeetleDeviceList = new Dictionary<string, ushort>();
         
-        public static List<BinaryStruct> DigiBeetleItemList = new List<BinaryStruct>();
-
+        public static List<BinaryStruct> ItemList = new List<BinaryStruct>();
+        public static List<string> ImportantItemList = new List<string>();
+        
         public SaveSlot(byte[] data)
         {
             this.locationId1 = data[0x0];
@@ -384,7 +385,13 @@ namespace dw2_exp_multiplier.Entity
             {
                 var name = x.Attributes["name"].Value;
                 var value = Convert.ToUInt16(x.Attributes["value"].Value, 16);
-                DigiBeetleItemList.Add(new BinaryStruct(name, value));
+                ItemList.Add(new BinaryStruct(name, value));
+            }
+            
+            foreach (XmlNode x in xml.SelectNodes("dw2-utility/important-items/important-item"))
+            {
+                var name = x.Attributes["name"].Value;
+                ImportantItemList.Add(name);
             }
             
         }
