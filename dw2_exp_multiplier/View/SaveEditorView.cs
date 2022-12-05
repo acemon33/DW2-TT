@@ -20,7 +20,7 @@ namespace dw2_exp_multiplier.View
         
         private List<ComboBox> itemList = new List<ComboBox>();
         private List<ComboBox> importantItemList = new List<ComboBox>();
-        private List<TextBox> serverItemList = new List<TextBox>();
+        private List<NumericUpDown> serverItemList = new List<NumericUpDown>();
         private List<TextBox> digimonTechList = new List<TextBox>();
         private List<TextBox> digimonInheritedTechList = new List<TextBox>();
         private Dictionary<uint, TextBox> GameFlagsTextBoxList = new Dictionary<uint, TextBox>();
@@ -149,12 +149,13 @@ namespace dw2_exp_multiplier.View
                 serverItemTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
                 var l1 = new Label();
                 l1.Size = new Size(150, l1.Size.Height);
-                l1.Text = "Server Item #" + (i + 1);
-                var t1 = new TextBox();
+                l1.Text = SaveSlot.ItemList[i].Key;
+                var t1 = new NumericUpDown();
                 serverItemTableLayoutPanel.Controls.Add(l1, 0, i);
                 serverItemTableLayoutPanel.Controls.Add(t1, 1, i);
                 t1.TextChanged += serverItemTextBox_TextChanged;
                 t1.Tag = i;
+                t1.Maximum = 99;
                 this.serverItemList.Add(t1);
             }
             serverItemTableLayoutPanel.RowCount = n;
@@ -300,7 +301,7 @@ namespace dw2_exp_multiplier.View
             for (int i = 0; i < 28; i++)
                 this.importantItemList[i].SelectedIndex = currentSlot.important_item[i];
             for (int i = 0; i < 236; i++)
-                this.serverItemList[i].Text = currentSlot.server_item[i].ToString("X4");
+                this.serverItemList[i].Value = currentSlot.server_item[i];
             
             this.digimonListBox.Items.Clear();
             for (int i = 0; i < Entity.SaveSlot.DIGIMON_COUNT; i++)
@@ -544,10 +545,9 @@ namespace dw2_exp_multiplier.View
         
         private void serverItemTextBox_TextChanged(object sender, EventArgs e)
         {
-            var t = (sender as TextBox).Text;
-            if (t.Length < 1) return;
-            var i = (int) ((sender as TextBox).Tag);
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].server_item[i] = Convert.ToUInt16(t, 16);
+            var control = sender as NumericUpDown;
+            var i = (int) control.Tag;
+            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].server_item[i] = Convert.ToUInt16(control.Value);
         }
         #endregion
 

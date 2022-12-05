@@ -140,13 +140,7 @@ namespace dw2_exp_multiplier
                     bool hide = (Control.ModifierKeys == Keys.Shift) ? true: false;
                     DW2Slus.UnhideAAAFolder(ref fs, hide);
                 }
-                
-                if (stmapdatComboBox.SelectedIndex > 0)
-                {
-                    byte[] data = Stmapdat.Read(stmapdatComboBox.SelectedIndex);
-                    Stmapdat.WriteBin(ref fs, ref data);
-                }
-                
+
                 if (digibeetleComboBox.SelectedIndex > 0)
                 {
                     ushort id = Convert.ToUInt16(((KeyValuePair<string, string>)digibeetleComboBox.SelectedItem).Key, 16);

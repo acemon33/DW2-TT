@@ -77,7 +77,6 @@
     <Compile Include="Manager\EnemysetManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Stmapdat.cs" />
     <Compile Include="View\SaveEditorView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -111,9 +110,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="STMAPDAT-VANILLA.BIN" />
-    <EmbeddedResource Include="STMAPDAT-DEBUG.BIN" />
-    <EmbeddedResource Include="STMAPDAT-EXIT.BIN" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
