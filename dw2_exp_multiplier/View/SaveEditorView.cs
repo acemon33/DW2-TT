@@ -19,7 +19,7 @@ namespace dw2_exp_multiplier.View
         TableLayoutPanel serverItemTableLayoutPanel = new TableLayoutPanel();
         TableLayoutPanel GameFlagsTableLayoutPanel = new TableLayoutPanel();
         
-        private List<TextBox> itemList = new List<TextBox>();
+        private List<ComboBox> itemList = new List<ComboBox>();
         private List<TextBox> importantItemList = new List<TextBox>();
         private List<TextBox> serverItemList = new List<TextBox>();
         private List<TextBox> digimonTechList = new List<TextBox>();
@@ -99,11 +99,14 @@ namespace dw2_exp_multiplier.View
                 itemTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
                 var l1 = new Label();
                 l1.Text = "Item slot #" + (i + 1);
-                var t1 = new TextBox();
+                var t1 = new ComboBox();
+                t1.DisplayMember = "Key";
+                t1.ValueMember = "Value";
+                t1.DataSource = new BindingSource(SaveSlot.DigiBeetleItemList, null);
+                t1.SelectedIndexChanged += itemTextBox_TextChanged;
+                t1.Tag = i;
                 itemTableLayoutPanel.Controls.Add(l1, 0, i);
                 itemTableLayoutPanel.Controls.Add(t1, 1, i);
-                t1.TextChanged += itemTextBox_TextChanged;
-                t1.Tag = i;
                 this.itemList.Add(t1);
             }
             itemTableLayoutPanel.RowCount = n;
@@ -210,7 +213,6 @@ namespace dw2_exp_multiplier.View
             for(int i = 0; i < n; i++)
                 GameFlagsTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 27F));
             
-            
             this.lastLocationComboBox.DataSource = new BindingSource(SaveSlot.SavePointLocationList, null);
             this.rankComboBox.DataSource = new BindingSource(SaveSlot.RankList, null);
             
@@ -292,7 +294,7 @@ namespace dw2_exp_multiplier.View
 
                     // All Items
             for (int i = 0; i < 48; i++)
-                this.itemList[i].Text = currentSlot.items[i].ToString("X4");
+                this.itemList[i].SelectedValue = currentSlot.items[i];
             for (int i = 0; i < 28; i++)
                 this.importantItemList[i].Text = currentSlot.important_item[i].ToString("X4");
             for (int i = 0; i < 236; i++)
@@ -524,10 +526,10 @@ namespace dw2_exp_multiplier.View
         #region All Items Change Event Region
         private void itemTextBox_TextChanged(object sender, EventArgs e)
         {
-            var t = (sender as TextBox).Text;
-            if (t.Length < 1) return;
-            var i = (int) ((sender as TextBox).Tag);
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].items[i] = Convert.ToUInt16(t, 16);
+            var comboBox = sender as ComboBox;
+            if (comboBox.SelectedIndex < 0) return;
+            var i = (int) comboBox.Tag;
+            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].items[i] = (comboBox.SelectedItem as dynamic).Value;
         }
         
         private void importantItemTextBox_TextChanged(object sender, EventArgs e)

@@ -153,6 +153,8 @@ namespace dw2_exp_multiplier.Entity
         public static Dictionary<string, ushort> DigiBeetleHandList = new Dictionary<string, ushort>();
         public static Dictionary<string, ushort> DigiBeetleArmList = new Dictionary<string, ushort>();
         public static Dictionary<string, ushort> DigiBeetleDeviceList = new Dictionary<string, ushort>();
+        
+        public static List<BinaryStruct> DigiBeetleItemList = new List<BinaryStruct>();
 
         public SaveSlot(byte[] data)
         {
@@ -378,6 +380,13 @@ namespace dw2_exp_multiplier.Entity
                 DigiBeetleDeviceList[name] = value;
             }
             
+            foreach (XmlNode x in xml.SelectNodes("dw2-utility/items/item"))
+            {
+                var name = x.Attributes["name"].Value;
+                var value = Convert.ToUInt16(x.Attributes["value"].Value, 16);
+                DigiBeetleItemList.Add(new BinaryStruct(name, value));
+            }
+            
         }
 
     }
@@ -449,4 +458,16 @@ namespace dw2_exp_multiplier.Entity
 
     }
 
+    public struct BinaryStruct
+    {
+        public string Key { get; }
+        public ushort Value { get; }
+
+        public BinaryStruct(string key, ushort value)
+        {
+            Key = key;
+            Value = value;
+        }
+    }
+    
 }
