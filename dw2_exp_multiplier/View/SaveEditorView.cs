@@ -584,13 +584,13 @@ namespace dw2_exp_multiplier.View
                 this.digimonMaxLevelNumericUpDown.Value= currentSlot.digimon[i].max_lvl;
                 this.digimonOriginalNameComboBox.SelectedValue = (ushort) currentSlot.digimon[i].id;
                 
-                this.digimonHpTextBox.Text = currentSlot.digimon[i].hp.ToString();
-                this.digimonMapHpTextBox.Text = currentSlot.digimon[i].max_hp.ToString();
-                this.digimonMpTextBox.Text = currentSlot.digimon[i].mp.ToString();
-                this.digimonMaxMpTextBox.Text = currentSlot.digimon[i].max_mp.ToString();
-                this.digimonAttackTextBox.Text = currentSlot.digimon[i].attack.ToString();
-                this.digimonDefenseTextBox.Text = currentSlot.digimon[i].defense.ToString();
-                this.digimonSpeedTextBox.Text = currentSlot.digimon[i].speed.ToString();
+                this.digimonHpTextBoxNumericUpDown.Value = currentSlot.digimon[i].hp;
+                this.digimonMapHpNumericUpDown.Value = currentSlot.digimon[i].max_hp;
+                this.digimonMpNumericUpDown.Value = currentSlot.digimon[i].mp;
+                this.digimonMaxMpNumericUpDown.Value = currentSlot.digimon[i].max_mp;
+                this.digimonAttackNumericUpDown.Value = currentSlot.digimon[i].attack;
+                this.digimonDefenseNumericUpDown.Value = currentSlot.digimon[i].defense;
+                this.digimonSpeedNumericUpDown.Value = currentSlot.digimon[i].speed;
 
                 for (int j = 0; j < this.digimonTechList.Count; j++)
                     this.digimonTechList[j].SelectedValue = (ushort) currentSlot.digimon[i].tech[j];
@@ -598,6 +598,7 @@ namespace dw2_exp_multiplier.View
                     this.digimonInheritedTechList[j].SelectedValue = (ushort) currentSlot.digimon[i].inherit_tech[j];
             }
         }
+
         private void techTextBox_TextChanged(object sender, EventArgs e)
         {
             var t = (sender as ComboBox);
@@ -655,49 +656,49 @@ namespace dw2_exp_multiplier.View
         {
             var i = this.slotComboBox.SelectedIndex;
             var j = this.digimonListBox.SelectedIndex;
-            this.saveFile.saveSlot[i].digimon[j].hp = Convert.ToUInt16(digimonHpTextBox.Text);
+            this.saveFile.saveSlot[i].digimon[j].hp = Convert.ToUInt16(digimonHpTextBoxNumericUpDown.Value);
         }
 
         private void digimonMapHpTextBox_TextChanged(object sender, EventArgs e)
         {
             var i = this.slotComboBox.SelectedIndex;
             var j = this.digimonListBox.SelectedIndex;
-            this.saveFile.saveSlot[i].digimon[j].max_hp = Convert.ToUInt16(digimonMapHpTextBox.Text);
+            this.saveFile.saveSlot[i].digimon[j].max_hp = Convert.ToUInt16(digimonMapHpNumericUpDown.Value);
         }
 
         private void digimonMpTextBox_TextChanged(object sender, EventArgs e)
         {
             var i = this.slotComboBox.SelectedIndex;
             var j = this.digimonListBox.SelectedIndex;
-            this.saveFile.saveSlot[i].digimon[j].mp = Convert.ToUInt16(digimonMpTextBox.Text);
+            this.saveFile.saveSlot[i].digimon[j].mp = Convert.ToUInt16(digimonMpNumericUpDown.Value);
         }
 
         private void digimonMaxMpTextBox_TextChanged(object sender, EventArgs e)
         {
             var i = this.slotComboBox.SelectedIndex;
             var j = this.digimonListBox.SelectedIndex;
-            this.saveFile.saveSlot[i].digimon[j].max_mp = Convert.ToUInt16(digimonMaxMpTextBox.Text);
+            this.saveFile.saveSlot[i].digimon[j].max_mp = Convert.ToUInt16(digimonMaxMpNumericUpDown.Value);
         }
 
         private void digimonAttackTextBox_TextChanged(object sender, EventArgs e)
         {
             var i = this.slotComboBox.SelectedIndex;
             var j = this.digimonListBox.SelectedIndex;
-            this.saveFile.saveSlot[i].digimon[j].attack = Convert.ToUInt16(digimonAttackTextBox.Text);
+            this.saveFile.saveSlot[i].digimon[j].attack = Convert.ToUInt16(digimonAttackNumericUpDown.Value);
         }
 
         private void digimonDefenseTextBox_TextChanged(object sender, EventArgs e)
         {
             var i = this.slotComboBox.SelectedIndex;
             var j = this.digimonListBox.SelectedIndex;
-            this.saveFile.saveSlot[i].digimon[j].defense = Convert.ToUInt16(digimonDefenseTextBox.Text);
+            this.saveFile.saveSlot[i].digimon[j].defense = Convert.ToUInt16(digimonDefenseNumericUpDown.Value);
         }
 
         private void digimonSpeedTextBox_TextChanged(object sender, EventArgs e)
         {
             var i = this.slotComboBox.SelectedIndex;
             var j = this.digimonListBox.SelectedIndex;
-            this.saveFile.saveSlot[i].digimon[j].speed = Convert.ToUInt16(digimonSpeedTextBox.Text);
+            this.saveFile.saveSlot[i].digimon[j].speed = Convert.ToUInt16(digimonSpeedNumericUpDown.Value);
         }
         
         private void digimonOriginalNameComboBox_SelectedIndexChanged(object sender, EventArgs e)
