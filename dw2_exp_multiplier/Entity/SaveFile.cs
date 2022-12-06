@@ -494,5 +494,15 @@ namespace dw2_exp_multiplier.Entity
             Value = value;
         }
     }
+
+    public enum DIGI_LINE_STATUS
+    {
+        B1 = 0x3,
+        B2 = 0x4,
+        B3 = 0x5,
+        BENCH = 0x2,
+        SERVER = 0x1,
+        NONE = 0x0
+    }
     
 }

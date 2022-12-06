@@ -249,6 +249,12 @@ namespace dw2_exp_multiplier.View
             
             this.digimonOriginalNameComboBox.DataSource = new BindingSource(SaveSlot.DigimonList, null);
             this.digimonOriginalNameComboBox.SelectedIndex = -1;
+
+            this.digimonStatusComboBox.Items.Add(DIGI_LINE_STATUS.B1);
+            this.digimonStatusComboBox.Items.Add(DIGI_LINE_STATUS.B2);
+            this.digimonStatusComboBox.Items.Add(DIGI_LINE_STATUS.B3);
+            this.digimonStatusComboBox.Items.Add(DIGI_LINE_STATUS.BENCH);
+            this.digimonStatusComboBox.Items.Add(DIGI_LINE_STATUS.SERVER);
         }
         
         private void LoadCurrentSlot()
@@ -316,7 +322,7 @@ namespace dw2_exp_multiplier.View
             
             this.digimonListBox.Items.Clear();
             for (int i = 0; i < Entity.SaveSlot.DIGIMON_COUNT; i++)
-                this.digimonListBox.Items.Add(new { Key = "Slot #" + i, Value = currentSlot.digimon[i]});
+                this.digimonListBox.Items.Add(new { Key = "Slot #" + (i+1), Value = currentSlot.digimon[i]});
 
             foreach (var i in SaveSlot.GameFlagsLimiter)
                 this.GameFlagsTextBoxList[i].Text = currentSlot.GameFlags[i].ToString("X2");
@@ -570,12 +576,12 @@ namespace dw2_exp_multiplier.View
                 var currentSlot = this.saveFile.saveSlot[this.slotComboBox.SelectedIndex];
                 var i = this.digimonListBox.SelectedIndex;
 
-                this.digimonStatustextBox.Text = currentSlot.digimon[i].status.ToString("X2");
+                this.digimonStatusComboBox.SelectedItem = (DIGI_LINE_STATUS) currentSlot.digimon[i].status;
                 this.digimonIdTextBox.Text = currentSlot.digimon[i].id.ToString("X2");
                 this.digimonNameTextBox.Text = currentSlot.digimon[i].StringName;
-                this.digimonExpTextBox.Text = currentSlot.digimon[i].exp.ToString();
-                this.digimonLevelTextBox.Text = currentSlot.digimon[i].current_lvl.ToString();
-                this.digimonMaxLevelTextBox.Text = currentSlot.digimon[i].max_lvl.ToString();
+                this.digimonExpNumericUpDown.Value = currentSlot.digimon[i].exp;
+                this.digimonLevelNumericUpDown.Value = currentSlot.digimon[i].current_lvl;
+                this.digimonMaxLevelNumericUpDown.Value= currentSlot.digimon[i].max_lvl;
                 this.digimonOriginalNameComboBox.SelectedValue = (ushort) currentSlot.digimon[i].id;
                 
                 this.digimonHpTextBox.Text = currentSlot.digimon[i].hp.ToString();
@@ -610,18 +616,25 @@ namespace dw2_exp_multiplier.View
             this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digimon[j].inherit_tech[i] = Convert.ToByte((t.SelectedItem as dynamic).Value);
         }
 
+        private void digimonStatusComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var i = this.slotComboBox.SelectedIndex;
+            var j = this.digimonListBox.SelectedIndex;
+            this.saveFile.saveSlot[i].digimon[j].status = Convert.ToByte(digimonStatusComboBox.SelectedItem);
+        }
+
         private void digimonLevelTextBox_TextChanged(object sender, EventArgs e)
         {
             var i = this.slotComboBox.SelectedIndex;
             var j = this.digimonListBox.SelectedIndex;
-            this.saveFile.saveSlot[i].digimon[j].current_lvl = Convert.ToByte(digimonLevelTextBox.Text);
+            this.saveFile.saveSlot[i].digimon[j].current_lvl = Convert.ToByte(digimonLevelNumericUpDown.Value);
         }
 
         private void digimonMaxLevelTextBox_TextChanged(object sender, EventArgs e)
         {
             var i = this.slotComboBox.SelectedIndex;
             var j = this.digimonListBox.SelectedIndex;
-            this.saveFile.saveSlot[i].digimon[j].max_lvl = Convert.ToByte(digimonMaxLevelTextBox.Text);
+            this.saveFile.saveSlot[i].digimon[j].max_lvl = Convert.ToByte(digimonMaxLevelNumericUpDown.Value);
         }
 
         private void digimonNameTextBox_TextChanged(object sender, EventArgs e)
@@ -635,7 +648,7 @@ namespace dw2_exp_multiplier.View
         {
             var i = this.slotComboBox.SelectedIndex;
             var j = this.digimonListBox.SelectedIndex;
-            this.saveFile.saveSlot[i].digimon[j].exp = Convert.ToUInt32(digimonExpTextBox.Text);
+            this.saveFile.saveSlot[i].digimon[j].exp = Convert.ToUInt32(digimonExpNumericUpDown.Value);
         }
 
         private void digimonHpTextBox_TextChanged(object sender, EventArgs e)
@@ -707,7 +720,7 @@ namespace dw2_exp_multiplier.View
             this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].GameFlags[i] = Convert.ToByte(t, 16);
         }
         #endregion
-        
+
     }
     
 }
