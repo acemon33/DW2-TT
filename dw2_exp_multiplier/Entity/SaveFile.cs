@@ -156,6 +156,8 @@ namespace dw2_exp_multiplier.Entity
         
         public static List<BinaryStruct> ItemList = new List<BinaryStruct>();
         public static List<string> ImportantItemList = new List<string>();
+        public static List<BinaryStruct> DigimonList = new List<BinaryStruct>();
+        public static List<BinaryStruct> TechList = new List<BinaryStruct>();
         
         public SaveSlot(byte[] data)
         {
@@ -394,6 +396,22 @@ namespace dw2_exp_multiplier.Entity
                 ImportantItemList.Add(name);
             }
             
+            XmlDocument xml2 = new XmlDocument();
+            xml.Load("data.xml");
+            foreach (XmlNode x in xml.SelectNodes("dw2-utility/digimons/digimon"))
+            {
+                var name = x.Attributes["name"].Value;
+                var value = Convert.ToByte(x.Attributes["id"].Value, 16);
+                DigimonList.Add(new BinaryStruct(name, value));
+            }
+            
+            foreach (XmlNode x in xml.SelectNodes("dw2-utility/techs/tech"))
+            {
+                var name = x.Attributes["name"].Value;
+                var value = Convert.ToByte(x.Attributes["id"].Value, 16);
+                TechList.Add(new BinaryStruct(name, value));
+            }
+
         }
 
     }

@@ -42,8 +42,6 @@
             this.importButton = new System.Windows.Forms.Button();
             this.exportButton = new System.Windows.Forms.Button();
             this.unHideAAA = new System.Windows.Forms.CheckBox();
-            this.stmapdatComboBox = new System.Windows.Forms.ComboBox();
-            this.stmapdatLabel = new System.Windows.Forms.Label();
             this.digibeetleLabel = new System.Windows.Forms.Label();
             this.digibeetleComboBox = new System.Windows.Forms.ComboBox();
             this.digibeetleGroupBox = new System.Windows.Forms.GroupBox();
@@ -211,29 +209,6 @@
             this.unHideAAA.Text = "Unhide AAA Folder";
             this.unHideAAA.UseVisualStyleBackColor = true;
             // 
-            // stmapdatComboBox
-            // 
-            this.stmapdatComboBox.Enabled = false;
-            this.stmapdatComboBox.FormattingEnabled = true;
-            this.stmapdatComboBox.Items.AddRange(new object[] {
-            "",
-            "Vanilla",
-            "Debug",
-            "Exit"});
-            this.stmapdatComboBox.Location = new System.Drawing.Point(105, 150);
-            this.stmapdatComboBox.Name = "stmapdatComboBox";
-            this.stmapdatComboBox.Size = new System.Drawing.Size(135, 21);
-            this.stmapdatComboBox.TabIndex = 15;
-            // 
-            // stmapdatLabel
-            // 
-            this.stmapdatLabel.AutoSize = true;
-            this.stmapdatLabel.Location = new System.Drawing.Point(16, 153);
-            this.stmapdatLabel.Name = "stmapdatLabel";
-            this.stmapdatLabel.Size = new System.Drawing.Size(60, 13);
-            this.stmapdatLabel.TabIndex = 16;
-            this.stmapdatLabel.Text = "STMAPDAT";
-            // 
             // digibeetleLabel
             // 
             this.digibeetleLabel.AutoSize = true;
@@ -288,9 +263,7 @@
             this.tabPage1.Controls.Add(this.dw2Label);
             this.tabPage1.Controls.Add(this.digibeetleGroupBox);
             this.tabPage1.Controls.Add(this.dw2BrowseButton);
-            this.tabPage1.Controls.Add(this.stmapdatLabel);
             this.tabPage1.Controls.Add(this.dw2TextBox);
-            this.tabPage1.Controls.Add(this.stmapdatComboBox);
             this.tabPage1.Controls.Add(this.saveButton);
             this.tabPage1.Controls.Add(this.unHideAAA);
             this.tabPage1.Controls.Add(this.enemysetLabel);
@@ -360,9 +333,6 @@
 
         private System.Windows.Forms.Label digibeetleLabel;
         private System.Windows.Forms.ComboBox digibeetleComboBox;
-
-        private System.Windows.Forms.ComboBox stmapdatComboBox;
-        private System.Windows.Forms.Label stmapdatLabel;
 
         private System.Windows.Forms.ComboBox comboBox1;
 

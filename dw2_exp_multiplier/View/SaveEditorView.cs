@@ -21,8 +21,8 @@ namespace dw2_exp_multiplier.View
         private List<ComboBox> itemList = new List<ComboBox>();
         private List<ComboBox> importantItemList = new List<ComboBox>();
         private List<NumericUpDown> serverItemList = new List<NumericUpDown>();
-        private List<TextBox> digimonTechList = new List<TextBox>();
-        private List<TextBox> digimonInheritedTechList = new List<TextBox>();
+        private List<ComboBox> digimonTechList = new List<ComboBox>();
+        private List<ComboBox> digimonInheritedTechList = new List<ComboBox>();
         private Dictionary<uint, TextBox> GameFlagsTextBoxList = new Dictionary<uint, TextBox>();
         #endregion
 
@@ -76,6 +76,9 @@ namespace dw2_exp_multiplier.View
             this.device6ComboBox.DisplayMember = "Key";
             this.device6ComboBox.ValueMember = "Value";
             
+            this.digimonOriginalNameComboBox.DisplayMember = "Key";
+            this.digimonOriginalNameComboBox.ValueMember = "Value";
+            
             this.LoadForm();
             
             saveFileTextBox.Text = "BASLUS-01193 DMW2";
@@ -125,7 +128,6 @@ namespace dw2_exp_multiplier.View
                 var l1 = new Label();
                 l1.Size = new Size(150, l1.Size.Height);
                 l1.Text = SaveSlot.ImportantItemList[i];
-                // l1.Text = "Important Item #" + (i + 1);
                 var t1 = new ComboBox();
                 importantItemTableLayoutPanel.Controls.Add(l1, 0, i);
                 importantItemTableLayoutPanel.Controls.Add(t1, 1, i);
@@ -165,13 +167,16 @@ namespace dw2_exp_multiplier.View
             for (int i = 0; i < n; i++)
             {
                 var l1 = new Label();
-                l1.Size = new Size(150, l1.Size.Height);
                 l1.Text = "Tech #" + (i + 1);
-                var t1 = new TextBox();
+                var t1 = new ComboBox();
                 digimonTechTableLayoutPanel.Controls.Add(l1, 0, i);
                 digimonTechTableLayoutPanel.Controls.Add(t1, 1, i);
-                t1.TextChanged += techTextBox_TextChanged;
+                t1.SelectedIndexChanged += techTextBox_TextChanged;
                 t1.Tag = i;
+                t1.DisplayMember = "Key";
+                t1.ValueMember = "Value";
+                t1.DropDownWidth = 130;
+                t1.DataSource = new BindingSource(SaveSlot.TechList, null);
                 this.digimonTechList.Add(t1);
             }
 
@@ -179,13 +184,16 @@ namespace dw2_exp_multiplier.View
             for (int i = 0; i < n; i++)
             {
                 var l1 = new Label();
-                l1.Size = new Size(150, l1.Size.Height);
                 l1.Text = "Inherit Tech #" + (i + 1);
-                var t1 = new TextBox();
+                var t1 = new ComboBox();
                 digimonTechTableLayoutPanel.Controls.Add(l1, 2, i);
                 digimonTechTableLayoutPanel.Controls.Add(t1, 3, i);
-                t1.TextChanged += inheritTechTextBox_TextChanged;
+                t1.SelectedIndexChanged += inheritTechTextBox_TextChanged;
                 t1.Tag = i;
+                t1.DisplayMember = "Key";
+                t1.ValueMember = "Value";
+                t1.DropDownWidth = 130;
+                t1.DataSource = new BindingSource(SaveSlot.TechList, null);
                 this.digimonInheritedTechList.Add(t1);
             }
             
@@ -238,6 +246,9 @@ namespace dw2_exp_multiplier.View
             this.device4ComboBox.DataSource = new BindingSource(SaveSlot.DigiBeetleDeviceList, null);
             this.device5ComboBox.DataSource = new BindingSource(SaveSlot.DigiBeetleDeviceList, null);
             this.device6ComboBox.DataSource = new BindingSource(SaveSlot.DigiBeetleDeviceList, null);
+            
+            this.digimonOriginalNameComboBox.DataSource = new BindingSource(SaveSlot.DigimonList, null);
+            this.digimonOriginalNameComboBox.SelectedIndex = -1;
         }
         
         private void LoadCurrentSlot()
@@ -565,7 +576,7 @@ namespace dw2_exp_multiplier.View
                 this.digimonExpTextBox.Text = currentSlot.digimon[i].exp.ToString();
                 this.digimonLevelTextBox.Text = currentSlot.digimon[i].current_lvl.ToString();
                 this.digimonMaxLevelTextBox.Text = currentSlot.digimon[i].max_lvl.ToString();
-                this.digimonOriginalNameTextBox.Text = "XXXXXXXX";
+                this.digimonOriginalNameComboBox.SelectedValue = (ushort) currentSlot.digimon[i].id;
                 
                 this.digimonHpTextBox.Text = currentSlot.digimon[i].hp.ToString();
                 this.digimonMapHpTextBox.Text = currentSlot.digimon[i].max_hp.ToString();
@@ -576,53 +587,41 @@ namespace dw2_exp_multiplier.View
                 this.digimonSpeedTextBox.Text = currentSlot.digimon[i].speed.ToString();
 
                 for (int j = 0; j < this.digimonTechList.Count; j++)
-                    this.digimonTechList[j].Text = currentSlot.digimon[i].tech[j].ToString("X2");
+                    this.digimonTechList[j].SelectedValue = (ushort) currentSlot.digimon[i].tech[j];
                 for (int j = 0; j < this.digimonInheritedTechList.Count; j++)
-                    this.digimonInheritedTechList[j].Text = currentSlot.digimon[i].inherit_tech[j].ToString("X2");
+                    this.digimonInheritedTechList[j].SelectedValue = (ushort) currentSlot.digimon[i].inherit_tech[j];
             }
         }
         private void techTextBox_TextChanged(object sender, EventArgs e)
         {
-            var t = (sender as TextBox);
-            if (t == null) return;
-            if (t.Text.Length < 1)
-            {
-                (sender as TextBox).Text = "00";
-                return;
-            }
+            var t = (sender as ComboBox);
+            if (slotComboBox.SelectedIndex < 0|| t.SelectedItem == null) return;
             var i = (int) (t.Tag);
             var j = this.digimonListBox.SelectedIndex;
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digimon[j].tech[i] = Convert.ToByte(t.Text, 16);
+            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digimon[j].tech[i] = Convert.ToByte((t.SelectedItem as dynamic).Value);
         }
 
         private void inheritTechTextBox_TextChanged(object sender, EventArgs e)
         {
-            var t = (sender as TextBox);
-            if (t == null) return;
-            if (t.Text.Length < 1)
-            {
-                (sender as TextBox).Text = "00";
-                return;
-            }
-
+            var t = (sender as ComboBox);
+            if (slotComboBox.SelectedIndex < 0|| t.SelectedItem == null) return;
             var i = (int) (t.Tag);
             var j = this.digimonListBox.SelectedIndex;
-            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digimon[j].inherit_tech[i] =
-                Convert.ToByte(t.Text, 16);
+            this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digimon[j].inherit_tech[i] = Convert.ToByte((t.SelectedItem as dynamic).Value);
         }
 
         private void digimonLevelTextBox_TextChanged(object sender, EventArgs e)
         {
             var i = this.slotComboBox.SelectedIndex;
             var j = this.digimonListBox.SelectedIndex;
-            this.saveFile.saveSlot[i].digimon[j].current_lvl = Convert.ToByte(digimonLevelTextBox.Text, 16);
+            this.saveFile.saveSlot[i].digimon[j].current_lvl = Convert.ToByte(digimonLevelTextBox.Text);
         }
 
         private void digimonMaxLevelTextBox_TextChanged(object sender, EventArgs e)
         {
             var i = this.slotComboBox.SelectedIndex;
             var j = this.digimonListBox.SelectedIndex;
-            this.saveFile.saveSlot[i].digimon[j].max_lvl = Convert.ToByte(digimonMaxLevelTextBox.Text, 16);
+            this.saveFile.saveSlot[i].digimon[j].max_lvl = Convert.ToByte(digimonMaxLevelTextBox.Text);
         }
 
         private void digimonNameTextBox_TextChanged(object sender, EventArgs e)
@@ -630,13 +629,6 @@ namespace dw2_exp_multiplier.View
             var i = this.slotComboBox.SelectedIndex;
             var j = this.digimonListBox.SelectedIndex;
             this.saveFile.saveSlot[i].digimon[j].StringName = digimonNameTextBox.Text;
-        }
-
-        private void digimonIdTextBox_TextChanged(object sender, EventArgs e)
-        {
-            var i = this.slotComboBox.SelectedIndex;
-            var j = this.digimonListBox.SelectedIndex;
-            this.saveFile.saveSlot[i].digimon[j].id = Convert.ToByte(digimonIdTextBox.Text, 16);
         }
 
         private void digimonExpTextBox_TextChanged(object sender, EventArgs e)
@@ -693,6 +685,16 @@ namespace dw2_exp_multiplier.View
             var i = this.slotComboBox.SelectedIndex;
             var j = this.digimonListBox.SelectedIndex;
             this.saveFile.saveSlot[i].digimon[j].speed = Convert.ToUInt16(digimonSpeedTextBox.Text);
+        }
+        
+        private void digimonOriginalNameComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (slotComboBox.SelectedIndex < 0 || digimonOriginalNameComboBox.SelectedItem == null) return;
+            var i = this.slotComboBox.SelectedIndex;
+            var j = this.digimonListBox.SelectedIndex;
+            ushort id = (digimonOriginalNameComboBox.SelectedItem as dynamic).Value;
+            this.saveFile.saveSlot[i].digimon[j].id = Convert.ToByte(id);
+            this.digimonIdTextBox.Text = id.ToString("X2");
         }
         #endregion
 

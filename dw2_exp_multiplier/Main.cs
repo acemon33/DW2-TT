@@ -23,7 +23,6 @@ namespace dw2_exp_multiplier
         {
             InitializeComponent();
             Main.Title = this.Text;
-            this.stmapdatComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             digibeetleComboBox.DisplayMember = "Value";
             digibeetleComboBox.ValueMember = "Key";
             digibeetleComboBox.DataSource = new BindingSource(DigiBeetlePatcher.getDigiBeetleIds(ref this.imageList, "digi-beetle.zip"), null);
@@ -73,7 +72,6 @@ namespace dw2_exp_multiplier
                 saveButton.Enabled = true;
                 exportButton.Enabled = true;
                 unHideAAA.Enabled = true;
-                stmapdatComboBox.Enabled = true;
                 digibeetleComboBox.Enabled = true;
             }
             else
@@ -81,7 +79,6 @@ namespace dw2_exp_multiplier
                 saveButton.Enabled = false;
                 exportButton.Enabled = false;
                 unHideAAA.Enabled = false;
-                stmapdatComboBox.Enabled = false;
                 digibeetleComboBox.Enabled = false;
             }
         }
