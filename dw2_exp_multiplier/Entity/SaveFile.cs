@@ -283,8 +283,8 @@ namespace dw2_exp_multiplier.Entity
                 string name = mission.SelectSingleNode("name").InnerText;
                 foreach (XmlNode flag in mission.SelectNodes("flags/flag"))
                 {
-                    int address = Convert.ToInt32(flag.SelectSingleNode("address").InnerText, 16);
-                    int value = Convert.ToInt32(flag.SelectSingleNode("value").InnerText, 16);
+                    uint address = Convert.ToUInt32(flag.Attributes["address"].Value, 16);
+                    int value = Convert.ToInt32(flag.Attributes["value"].Value, 16);
                     list.Add(new GameFlag(address, value));
                 }
 

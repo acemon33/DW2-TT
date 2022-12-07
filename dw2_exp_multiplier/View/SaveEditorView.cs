@@ -212,7 +212,7 @@ namespace dw2_exp_multiplier.View
             {
                 uint address = SaveSlot.GameFlagsLimiter[i];
                 var l1 = new Label();
-                l1.Text = "Game Flag #" + address;
+                l1.Text = "Game Flag #" + address.ToString("X2");
                 var t1 = new TextBox();
                 GameFlagsTableLayoutPanel.Controls.Add(l1, 0, i);
                 GameFlagsTableLayoutPanel.Controls.Add(t1, 1, i);
@@ -255,6 +255,9 @@ namespace dw2_exp_multiplier.View
             this.digimonStatusComboBox.Items.Add(DIGI_LINE_STATUS.B3);
             this.digimonStatusComboBox.Items.Add(DIGI_LINE_STATUS.BENCH);
             this.digimonStatusComboBox.Items.Add(DIGI_LINE_STATUS.SERVER);
+
+            foreach (string e in SaveSlot.GameStoryProgress.Keys)
+                this.gameStoryComboBox.Items.Add(e);
         }
         
         private void LoadCurrentSlot()
@@ -721,6 +724,13 @@ namespace dw2_exp_multiplier.View
             this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].GameFlags[i] = Convert.ToByte(t, 16);
         }
         #endregion
+
+        private void gameStoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string mission = this.gameStoryComboBox.SelectedItem as string;
+            foreach (GameFlag gf in SaveSlot.GameStoryProgress[mission])
+                this.GameFlagsTextBoxList[gf.address].Text = gf.value.ToString("X2");
+        }
 
     }
     
