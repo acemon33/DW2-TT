@@ -155,6 +155,8 @@
             this.digimonExpNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.digimonStatusComboBox = new System.Windows.Forms.ComboBox();
             this.gameStoryTabPage = new System.Windows.Forms.TabPage();
+            this.gameStoryComboBox = new System.Windows.Forms.ComboBox();
+            this.gameStoryLabel = new System.Windows.Forms.Label();
             this.gameStoryPanel = new System.Windows.Forms.Panel();
             this.openFileButton = new System.Windows.Forms.Button();
             this.saveFileTextBox = new System.Windows.Forms.TextBox();
@@ -162,8 +164,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.slotComboBox = new System.Windows.Forms.ComboBox();
             this.saveFileButton = new System.Windows.Forms.Button();
-            this.gameStoryLabel = new System.Windows.Forms.Label();
-            this.gameStoryComboBox = new System.Windows.Forms.ComboBox();
             this.tabControl.SuspendLayout();
             this.miscTabPage.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -222,8 +222,8 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.47148F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.52852F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.87915F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.12085F));
             this.tableLayoutPanel1.Controls.Add(this.heroNameTextBox, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label6, 0, 2);
@@ -251,12 +251,12 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(263, 228);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(331, 228);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // heroNameTextBox
             // 
-            this.heroNameTextBox.Location = new System.Drawing.Point(140, 30);
+            this.heroNameTextBox.Location = new System.Drawing.Point(134, 30);
             this.heroNameTextBox.MaxLength = 5;
             this.heroNameTextBox.Name = "heroNameTextBox";
             this.heroNameTextBox.Size = new System.Drawing.Size(114, 20);
@@ -283,7 +283,7 @@
             // 
             // time1TextBox
             // 
-            this.time1TextBox.Location = new System.Drawing.Point(140, 57);
+            this.time1TextBox.Location = new System.Drawing.Point(134, 57);
             this.time1TextBox.MaxLength = 2;
             this.time1TextBox.Name = "time1TextBox";
             this.time1TextBox.Size = new System.Drawing.Size(55, 20);
@@ -301,7 +301,7 @@
             // 
             // time2TextBox
             // 
-            this.time2TextBox.Location = new System.Drawing.Point(140, 84);
+            this.time2TextBox.Location = new System.Drawing.Point(134, 84);
             this.time2TextBox.MaxLength = 2;
             this.time2TextBox.Name = "time2TextBox";
             this.time2TextBox.Size = new System.Drawing.Size(55, 20);
@@ -319,7 +319,7 @@
             // 
             // time3TextBox
             // 
-            this.time3TextBox.Location = new System.Drawing.Point(140, 111);
+            this.time3TextBox.Location = new System.Drawing.Point(134, 111);
             this.time3TextBox.MaxLength = 2;
             this.time3TextBox.Name = "time3TextBox";
             this.time3TextBox.Size = new System.Drawing.Size(55, 20);
@@ -337,7 +337,7 @@
             // 
             // time4TextBox
             // 
-            this.time4TextBox.Location = new System.Drawing.Point(140, 138);
+            this.time4TextBox.Location = new System.Drawing.Point(134, 138);
             this.time4TextBox.MaxLength = 2;
             this.time4TextBox.Name = "time4TextBox";
             this.time4TextBox.Size = new System.Drawing.Size(55, 20);
@@ -355,7 +355,7 @@
             // 
             // bitsTextBox
             // 
-            this.bitsTextBox.Location = new System.Drawing.Point(140, 165);
+            this.bitsTextBox.Location = new System.Drawing.Point(134, 165);
             this.bitsTextBox.Name = "bitsTextBox";
             this.bitsTextBox.Size = new System.Drawing.Size(114, 20);
             this.bitsTextBox.TabIndex = 22;
@@ -383,16 +383,16 @@
             // 
             this.lastLocationComboBox.DropDownWidth = 200;
             this.lastLocationComboBox.FormattingEnabled = true;
-            this.lastLocationComboBox.Location = new System.Drawing.Point(140, 3);
+            this.lastLocationComboBox.Location = new System.Drawing.Point(134, 3);
             this.lastLocationComboBox.Name = "lastLocationComboBox";
-            this.lastLocationComboBox.Size = new System.Drawing.Size(114, 21);
+            this.lastLocationComboBox.Size = new System.Drawing.Size(193, 21);
             this.lastLocationComboBox.TabIndex = 25;
             this.lastLocationComboBox.SelectedIndexChanged += new System.EventHandler(this.lastLocationComboBox_SelectedIndexChanged);
             // 
             // rankComboBox
             // 
             this.rankComboBox.FormattingEnabled = true;
-            this.rankComboBox.Location = new System.Drawing.Point(140, 192);
+            this.rankComboBox.Location = new System.Drawing.Point(134, 192);
             this.rankComboBox.Name = "rankComboBox";
             this.rankComboBox.Size = new System.Drawing.Size(114, 21);
             this.rankComboBox.TabIndex = 26;
@@ -1755,6 +1755,24 @@
             this.gameStoryTabPage.Text = "Game Story";
             this.gameStoryTabPage.UseVisualStyleBackColor = true;
             // 
+            // gameStoryComboBox
+            // 
+            this.gameStoryComboBox.FormattingEnabled = true;
+            this.gameStoryComboBox.Location = new System.Drawing.Point(194, 14);
+            this.gameStoryComboBox.Name = "gameStoryComboBox";
+            this.gameStoryComboBox.Size = new System.Drawing.Size(230, 21);
+            this.gameStoryComboBox.TabIndex = 3;
+            this.gameStoryComboBox.SelectedIndexChanged += new System.EventHandler(this.gameStoryComboBox_SelectedIndexChanged);
+            // 
+            // gameStoryLabel
+            // 
+            this.gameStoryLabel.AutoSize = true;
+            this.gameStoryLabel.Location = new System.Drawing.Point(150, 17);
+            this.gameStoryLabel.Name = "gameStoryLabel";
+            this.gameStoryLabel.Size = new System.Drawing.Size(38, 13);
+            this.gameStoryLabel.TabIndex = 2;
+            this.gameStoryLabel.Text = "Preset";
+            // 
             // gameStoryPanel
             // 
             this.gameStoryPanel.AutoScroll = true;
@@ -1820,24 +1838,6 @@
             this.saveFileButton.Text = "Save";
             this.saveFileButton.UseVisualStyleBackColor = true;
             this.saveFileButton.Click += new System.EventHandler(this.saveFileButton_Click);
-            // 
-            // gameStoryLabel
-            // 
-            this.gameStoryLabel.AutoSize = true;
-            this.gameStoryLabel.Location = new System.Drawing.Point(259, 17);
-            this.gameStoryLabel.Name = "gameStoryLabel";
-            this.gameStoryLabel.Size = new System.Drawing.Size(38, 13);
-            this.gameStoryLabel.TabIndex = 2;
-            this.gameStoryLabel.Text = "Preset";
-            // 
-            // gameStoryComboBox
-            // 
-            this.gameStoryComboBox.FormattingEnabled = true;
-            this.gameStoryComboBox.Location = new System.Drawing.Point(303, 14);
-            this.gameStoryComboBox.Name = "gameStoryComboBox";
-            this.gameStoryComboBox.Size = new System.Drawing.Size(121, 21);
-            this.gameStoryComboBox.TabIndex = 3;
-            this.gameStoryComboBox.SelectedIndexChanged += new System.EventHandler(this.gameStoryComboBox_SelectedIndexChanged);
             // 
             // SaveEditorView
             // 
