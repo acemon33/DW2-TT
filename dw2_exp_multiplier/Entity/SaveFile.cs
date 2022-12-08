@@ -134,10 +134,12 @@ namespace dw2_exp_multiplier.Entity
 
         public string StringHeroName;
         public string StringDigiBeetleName;
-        public Dictionary<UInt32, byte> GameFlags = new Dictionary<UInt32, byte>();
         
+        public Dictionary<UInt32, byte> GameFlags = new Dictionary<UInt32, byte>();
+        public static Dictionary<UInt32, string> GameFlagNameList = new Dictionary<UInt32, string>();
         public static List<UInt32> GameFlagsLimiter = new List<UInt32>();
         public static Dictionary<string, List<GameFlag>> GameStoryProgress = new Dictionary<string, List<GameFlag>>();
+
         public static Dictionary<string, byte> RankList = new Dictionary<string, byte>();
 
         public static Dictionary<string, string> SavePointLocationList = new Dictionary<string, string>();
@@ -394,6 +396,13 @@ namespace dw2_exp_multiplier.Entity
             {
                 var name = x.Attributes["name"].Value;
                 ImportantItemList.Add(name);
+            }
+            
+            foreach (XmlNode x in xml.SelectNodes("dw2-utility/game-flags/names/flag"))
+            {
+                var address = Convert.ToUInt32(x.Attributes["address"].Value, 16);
+                var name = x.Attributes["name"].Value;
+                GameFlagNameList[address] = name;
             }
             
             XmlDocument xml2 = new XmlDocument();

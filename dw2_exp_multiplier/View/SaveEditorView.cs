@@ -212,7 +212,10 @@ namespace dw2_exp_multiplier.View
             {
                 uint address = SaveSlot.GameFlagsLimiter[i];
                 var l1 = new Label();
-                l1.Text = "Game Flag #" + address.ToString("X2");
+                if (SaveSlot.GameFlagNameList.ContainsKey(address))
+                    l1.Text = SaveSlot.GameFlagNameList[address];
+                else
+                    l1.Text = "Game Flag #" + address.ToString("X2");
                 var t1 = new TextBox();
                 GameFlagsTableLayoutPanel.Controls.Add(l1, 0, i);
                 GameFlagsTableLayoutPanel.Controls.Add(t1, 1, i);
