@@ -127,7 +127,7 @@ namespace dw2_exp_multiplier
                 if (enemysetTextBox.Text.Length > 0)
                 {
                     EnemysetManager.ReadFile(enemysetTextBox.Text, ref this.EnemysetList);
-                    EnemysetManager.MultiplyExpBits(Convert.ToUInt16(multiplier.Value), ref this.EnemysetList);
+                    EnemysetManager.MultiplyExpBits(multiplier.Value, ref this.EnemysetList);
                     if (Control.ModifierKeys == Keys.Control) EnemysetManager.WriteFile("ENEMYSET_TEST.BIN", ref this.EnemysetList);
                     else EnemysetManager.WriteBin(ref fs, ref this.EnemysetList);
                 }
@@ -144,7 +144,7 @@ namespace dw2_exp_multiplier
                     DigiBeetlePatcher.patch(ref fs, id);
                 }
                 
-                MessageBox.Show("The file has been Saved Successfully");
+                MessageBox.Show("The file has been Saved Successfully", "Enjoy ^_^");
             }
             catch (FileLoadException ex)
             {

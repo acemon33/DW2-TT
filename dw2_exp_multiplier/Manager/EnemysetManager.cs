@@ -27,7 +27,7 @@ namespace dw2_exp_multiplier.Manager
             return true;
         }
         
-        public static void MultiplyExpBits(UInt16 multiplier, ref List<Enemyset> enemysetList)
+        public static void MultiplyExpBits(Decimal multiplier, ref List<Enemyset> enemysetList)
         {
             foreach (var enemyset in enemysetList)
             {
