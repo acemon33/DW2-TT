@@ -52,9 +52,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.multiplier)).BeginInit();
             this.menuBar.SuspendLayout();
             this.digibeetleGroupBox.SuspendLayout();
+            this.saveEditorView1 = new dw2_exp_multiplier.View.SaveEditorView();
             ((System.ComponentModel.ISupportInitialize)(this.digibeetlPictureBox)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dw2BrowseButton
@@ -282,6 +284,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.saveEditorView1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -289,6 +292,13 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Save Editor";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // saveEditorView1
+            // 
+            this.saveEditorView1.Location = new System.Drawing.Point(6, 6);
+            this.saveEditorView1.Name = "saveEditorView1";
+            this.saveEditorView1.Size = new System.Drawing.Size(444, 384);
+            this.saveEditorView1.TabIndex = 0;
             // 
             // Main
             // 
@@ -311,6 +321,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

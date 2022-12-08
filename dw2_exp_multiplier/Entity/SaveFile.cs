@@ -504,6 +504,18 @@ namespace dw2_exp_multiplier.Entity
         }
     }
 
+    public struct GameFlag
+    {
+        public uint address;
+        public int value;
+
+        public GameFlag(uint address, int value)
+        {
+            this.address = address;
+            this.value = value;
+        }
+    }
+
     public enum DIGI_LINE_STATUS
     {
         B1 = 0x3,
