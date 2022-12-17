@@ -79,6 +79,8 @@ namespace dw2_exp_multiplier.View
             this.digimonOriginalNameComboBox.DisplayMember = "Key";
             this.digimonOriginalNameComboBox.ValueMember = "Value";
 
+            this.slotComboBox.Enabled = false;
+
             this.LoadForm();
         }
         
@@ -348,6 +350,7 @@ namespace dw2_exp_multiplier.View
             {
                 saveFileTextBox.Text = ofd.FileName;
                 this.saveFile = new SaveFile(File.ReadAllBytes(saveFileTextBox.Text));
+                this.slotComboBox.Enabled = true;
                 this.slotComboBox.SelectedIndex = 0;
                 this.LoadCurrentSlot();
             }
