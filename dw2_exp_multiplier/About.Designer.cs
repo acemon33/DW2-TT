@@ -49,6 +49,9 @@
             this.label11 = new System.Windows.Forms.Label();
             this.linkLabel6 = new System.Windows.Forms.LinkLabel();
             this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.linkLabel9 = new System.Windows.Forms.LinkLabel();
+            this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,7 +77,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(372, 363);
+            this.button1.Location = new System.Drawing.Point(372, 382);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 38);
             this.button1.TabIndex = 2;
@@ -85,7 +88,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 330);
+            this.label3.Location = new System.Drawing.Point(15, 349);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(279, 26);
             this.label3.TabIndex = 3;
@@ -143,7 +146,7 @@
             // linkLabel3
             // 
             this.linkLabel3.AutoSize = true;
-            this.linkLabel3.Location = new System.Drawing.Point(291, 343);
+            this.linkLabel3.Location = new System.Drawing.Point(291, 362);
             this.linkLabel3.Name = "linkLabel3";
             this.linkLabel3.Size = new System.Drawing.Size(159, 13);
             this.linkLabel3.TabIndex = 11;
@@ -201,7 +204,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(179, 285);
+            this.label9.Location = new System.Drawing.Point(182, 317);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(232, 13);
             this.label9.TabIndex = 22;
@@ -210,7 +213,7 @@
             // linkLabel7
             // 
             this.linkLabel7.AutoSize = true;
-            this.linkLabel7.Location = new System.Drawing.Point(29, 285);
+            this.linkLabel7.Location = new System.Drawing.Point(29, 317);
             this.linkLabel7.Name = "linkLabel7";
             this.linkLabel7.Size = new System.Drawing.Size(144, 13);
             this.linkLabel7.TabIndex = 20;
@@ -220,7 +223,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(11, 272);
+            this.label10.Location = new System.Drawing.Point(11, 304);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(63, 13);
             this.label10.TabIndex = 19;
@@ -229,7 +232,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(180, 248);
+            this.label11.Location = new System.Drawing.Point(182, 280);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(271, 13);
             this.label11.TabIndex = 26;
@@ -238,7 +241,7 @@
             // linkLabel6
             // 
             this.linkLabel6.AutoSize = true;
-            this.linkLabel6.Location = new System.Drawing.Point(29, 248);
+            this.linkLabel6.Location = new System.Drawing.Point(29, 280);
             this.linkLabel6.Name = "linkLabel6";
             this.linkLabel6.Size = new System.Drawing.Size(143, 13);
             this.linkLabel6.TabIndex = 25;
@@ -248,17 +251,48 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(11, 235);
+            this.label12.Location = new System.Drawing.Point(11, 267);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(49, 13);
             this.label12.TabIndex = 23;
             this.label12.Text = "RemyRm";
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(182, 242);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(67, 13);
+            this.label13.TabIndex = 30;
+            this.label13.Text = "For App icon";
+            // 
+            // linkLabel9
+            // 
+            this.linkLabel9.AutoSize = true;
+            this.linkLabel9.Location = new System.Drawing.Point(29, 242);
+            this.linkLabel9.Name = "linkLabel9";
+            this.linkLabel9.Size = new System.Drawing.Size(115, 13);
+            this.linkLabel9.TabIndex = 28;
+            this.linkLabel9.TabStop = true;
+            this.linkLabel9.Text = "Discord: @Shen#6633";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(11, 229);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(31, 13);
+            this.label14.TabIndex = 27;
+            this.label14.Text = "Shen";
+            // 
             // About
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(478, 412);
+            this.ClientSize = new System.Drawing.Size(478, 431);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.linkLabel9);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.linkLabel6);
             this.Controls.Add(this.label12);
@@ -313,5 +347,8 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.LinkLabel linkLabel6;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.LinkLabel linkLabel9;
+        private System.Windows.Forms.Label label14;
     }
 }

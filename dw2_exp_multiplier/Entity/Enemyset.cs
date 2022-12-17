@@ -67,8 +67,7 @@ namespace dw2_exp_multiplier.Entity
         public ushort Bits;
         public byte Level;
         public byte Attack;
-        public byte Defence;
-        public byte Padding1;
+        public ushort Defence;
         public byte Speed;
         public byte[] SkillList = new byte[3];
         public EnemySkill[] EnemySkillList = new EnemySkill[4];
@@ -82,7 +81,7 @@ namespace dw2_exp_multiplier.Entity
             this.Bits = BitConverter.ToUInt16(data, 8);
             this.Level = data[10];
             this.Attack = data[11];
-            this.Defence = data[12];
+            this.Defence = BitConverter.ToUInt16(data, 12);
             this.Speed = data[14];
 
             for (int i = 0; i < this.SkillList.Length; i++) this.SkillList[i] = data[i + 15];
@@ -105,7 +104,7 @@ namespace dw2_exp_multiplier.Entity
             Buffer.BlockCopy(BitConverter.GetBytes(this.Bits), 0, data, 8, 2);
             data[10] = this.Level;
             data[11] = this.Attack;
-            data[12] = this.Defence;
+            Buffer.BlockCopy(BitConverter.GetBytes(this.Defence), 0, data, 12, 2);
             data[14] = this.Speed;
             for (int i = 0; i < this.SkillList.Length; i++) data[i + 15] = this.SkillList[i];
             for (int i = 0; i < this.EnemySkillList.Length; i++) 

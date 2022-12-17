@@ -50,6 +50,11 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.extremeModeCheckBox = new System.Windows.Forms.CheckBox();
+            this.bossMultiplier = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.EnemyBossGroupBox = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.multiplier)).BeginInit();
             this.menuBar.SuspendLayout();
             this.digibeetleGroupBox.SuspendLayout();
@@ -58,6 +63,9 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bossMultiplier)).BeginInit();
+            this.EnemyBossGroupBox.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dw2BrowseButton
@@ -135,7 +143,7 @@
             // 
             this.multiplier.DecimalPlaces = 1;
             this.multiplier.Enabled = false;
-            this.multiplier.Location = new System.Drawing.Point(102, 90);
+            this.multiplier.Location = new System.Drawing.Point(96, 25);
             this.multiplier.Minimum = new decimal(new int[] {
             1,
             0,
@@ -153,7 +161,7 @@
             // multiplierLabel
             // 
             this.multiplierLabel.AutoSize = true;
-            this.multiplierLabel.Location = new System.Drawing.Point(16, 92);
+            this.multiplierLabel.Location = new System.Drawing.Point(10, 27);
             this.multiplierLabel.Name = "multiplierLabel";
             this.multiplierLabel.Size = new System.Drawing.Size(85, 13);
             this.multiplierLabel.TabIndex = 10;
@@ -204,7 +212,7 @@
             // unHideAAA
             // 
             this.unHideAAA.Enabled = false;
-            this.unHideAAA.Location = new System.Drawing.Point(17, 120);
+            this.unHideAAA.Location = new System.Drawing.Point(14, 252);
             this.unHideAAA.Name = "unHideAAA";
             this.unHideAAA.Size = new System.Drawing.Size(134, 24);
             this.unHideAAA.TabIndex = 14;
@@ -262,6 +270,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.groupBox2);
+            this.tabPage1.Controls.Add(this.EnemyBossGroupBox);
             this.tabPage1.Controls.Add(this.dw2Label);
             this.tabPage1.Controls.Add(this.digibeetleGroupBox);
             this.tabPage1.Controls.Add(this.dw2BrowseButton);
@@ -273,8 +283,6 @@
             this.tabPage1.Controls.Add(this.enemysetTextBox);
             this.tabPage1.Controls.Add(this.importButton);
             this.tabPage1.Controls.Add(this.enemysetBrowseButton);
-            this.tabPage1.Controls.Add(this.multiplier);
-            this.tabPage1.Controls.Add(this.multiplierLabel);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -301,6 +309,67 @@
             this.saveEditorView1.Size = new System.Drawing.Size(444, 384);
             this.saveEditorView1.TabIndex = 0;
             // 
+            // extremeModeCheckBox
+            // 
+            this.extremeModeCheckBox.Enabled = false;
+            this.extremeModeCheckBox.Location = new System.Drawing.Point(13, 53);
+            this.extremeModeCheckBox.Name = "extremeModeCheckBox";
+            this.extremeModeCheckBox.Size = new System.Drawing.Size(134, 24);
+            this.extremeModeCheckBox.TabIndex = 23;
+            this.extremeModeCheckBox.Text = "Extreme Mode";
+            this.extremeModeCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // bossMultiplier
+            // 
+            this.bossMultiplier.DecimalPlaces = 1;
+            this.bossMultiplier.Enabled = false;
+            this.bossMultiplier.Location = new System.Drawing.Point(96, 27);
+            this.bossMultiplier.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.bossMultiplier.Name = "bossMultiplier";
+            this.bossMultiplier.Size = new System.Drawing.Size(46, 20);
+            this.bossMultiplier.TabIndex = 21;
+            this.bossMultiplier.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(10, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 13);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Multiply By       x";
+            // 
+            // EnemyBossGroupBox
+            // 
+            this.EnemyBossGroupBox.Controls.Add(this.label1);
+            this.EnemyBossGroupBox.Controls.Add(this.extremeModeCheckBox);
+            this.EnemyBossGroupBox.Controls.Add(this.bossMultiplier);
+            this.EnemyBossGroupBox.Location = new System.Drawing.Point(14, 151);
+            this.EnemyBossGroupBox.Name = "EnemyBossGroupBox";
+            this.EnemyBossGroupBox.Size = new System.Drawing.Size(200, 79);
+            this.EnemyBossGroupBox.TabIndex = 24;
+            this.EnemyBossGroupBox.TabStop = false;
+            this.EnemyBossGroupBox.Text = "Enemy Boss Stats Multiplier";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.multiplierLabel);
+            this.groupBox2.Controls.Add(this.multiplier);
+            this.groupBox2.Location = new System.Drawing.Point(14, 90);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(200, 55);
+            this.groupBox2.TabIndex = 25;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Exp / Bits Multiplier";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -324,6 +393,11 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bossMultiplier)).EndInit();
+            this.EnemyBossGroupBox.ResumeLayout(false);
+            this.EnemyBossGroupBox.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -361,6 +435,11 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private View.SaveEditorView saveEditorView1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox EnemyBossGroupBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox extremeModeCheckBox;
+        private System.Windows.Forms.NumericUpDown bossMultiplier;
     }
 }
 

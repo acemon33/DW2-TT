@@ -56,11 +56,15 @@ namespace dw2_exp_multiplier
             {
                 importButton.Enabled = true;
                 multiplier.Enabled = true;
+                bossMultiplier.Enabled = true;
+                extremeModeCheckBox.Enabled = true;
             }
             else
             {
                 importButton.Enabled = false;
                 multiplier.Enabled = false;
+                bossMultiplier.Enabled = false;
+                extremeModeCheckBox.Enabled = false;
             }
         }
 
@@ -127,7 +131,18 @@ namespace dw2_exp_multiplier
                 if (enemysetTextBox.Text.Length > 0)
                 {
                     EnemysetManager.ReadFile(enemysetTextBox.Text, ref this.EnemysetList);
-                    EnemysetManager.MultiplyExpBits(multiplier.Value, ref this.EnemysetList);
+                    
+                    if (multiplier.Value.CompareTo(Decimal.One) != 0)
+                        EnemysetManager.MultiplyExpBits(multiplier.Value, ref this.EnemysetList);
+
+                    if (bossMultiplier.Value.CompareTo(Decimal.One) != 0)
+                    {
+                        if (extremeModeCheckBox.Checked)
+                            EnemysetManager.MultiplyExtremeStats(bossMultiplier.Value, ref this.EnemysetList);
+                        else
+                            EnemysetManager.MultiplyBossStats(bossMultiplier.Value, ref this.EnemysetList);
+                    }
+                    
                     if (Control.ModifierKeys == Keys.Control) EnemysetManager.WriteFile("ENEMYSET_TEST.BIN", ref this.EnemysetList);
                     else EnemysetManager.WriteBin(ref fs, ref this.EnemysetList);
                 }
@@ -252,6 +267,7 @@ namespace dw2_exp_multiplier
             if (imageList.ContainsKey(id)) this.digibeetlPictureBox.Image = imageList[id];
             else this.digibeetlPictureBox.Image = null;
         }
+        
     }
     
 }
