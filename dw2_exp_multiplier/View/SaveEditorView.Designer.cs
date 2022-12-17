@@ -1785,7 +1785,7 @@
             // 
             this.openFileButton.Location = new System.Drawing.Point(246, 5);
             this.openFileButton.Name = "openFileButton";
-            this.openFileButton.Size = new System.Drawing.Size(95, 20);
+            this.openFileButton.Size = new System.Drawing.Size(95, 22);
             this.openFileButton.TabIndex = 1;
             this.openFileButton.Text = "Open";
             this.openFileButton.UseVisualStyleBackColor = true;
@@ -1833,7 +1833,7 @@
             // 
             this.saveFileButton.Location = new System.Drawing.Point(346, 5);
             this.saveFileButton.Name = "saveFileButton";
-            this.saveFileButton.Size = new System.Drawing.Size(95, 20);
+            this.saveFileButton.Size = new System.Drawing.Size(95, 22);
             this.saveFileButton.TabIndex = 10;
             this.saveFileButton.Text = "Save";
             this.saveFileButton.UseVisualStyleBackColor = true;

@@ -182,8 +182,8 @@ namespace dw2_exp_multiplier
                 DW2Slus.ValidImageFile(ref fs);
 
                 EnemysetManager.ReadBin(ref fs, ref this.EnemysetList);
-                filename = "\\ENEMYSET_" + Path.GetFileNameWithoutExtension(dw2TextBox.Text) + ".BIN";
-                EnemysetManager.WriteFile(Path.GetDirectoryName(dw2TextBox.Text) + filename, ref this.EnemysetList);
+                filename = Path.GetDirectoryName(dw2TextBox.Text) + "\\ENEMYSET_" + Path.GetFileNameWithoutExtension(dw2TextBox.Text) + ".BIN";
+                EnemysetManager.WriteFile(filename, ref this.EnemysetList);
                 enemysetTextBox.Text = filename;
                 
                 MessageBox.Show("ENEMYSET.BIN has been Exported Successfully");

@@ -78,13 +78,8 @@ namespace dw2_exp_multiplier.View
             
             this.digimonOriginalNameComboBox.DisplayMember = "Key";
             this.digimonOriginalNameComboBox.ValueMember = "Value";
-            
+
             this.LoadForm();
-            
-            saveFileTextBox.Text = "BASLUS-01193 DMW2";
-            this.saveFile = new SaveFile(File.ReadAllBytes(saveFileTextBox.Text));
-            this.slotComboBox.SelectedIndex = 0;
-            this.LoadCurrentSlot();
         }
         
         private void LoadForm()
