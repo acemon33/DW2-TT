@@ -278,7 +278,7 @@ namespace dw2_exp_multiplier.Entity
         public static void load1()
         {
             XmlDocument xml = new XmlDocument();
-            xml.Load("config.xml");
+            xml.Load("Resources\\config.xml");
             foreach (XmlNode mission in xml.SelectNodes("dw2-utility/missions/mission"))
             {
                 List<GameFlag> list = new List<GameFlag>();
@@ -406,7 +406,7 @@ namespace dw2_exp_multiplier.Entity
             }
             
             XmlDocument xml2 = new XmlDocument();
-            xml.Load("data.xml");
+            xml.Load("Resources\\data.xml");
             foreach (XmlNode x in xml.SelectNodes("dw2-utility/digimons/digimon"))
             {
                 var name = x.Attributes["name"].Value;

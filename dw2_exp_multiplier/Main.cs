@@ -25,7 +25,7 @@ namespace dw2_exp_multiplier
             Main.Title = this.Text;
             digibeetleComboBox.DisplayMember = "Value";
             digibeetleComboBox.ValueMember = "Key";
-            digibeetleComboBox.DataSource = new BindingSource(DigiBeetlePatcher.getDigiBeetleIds(ref this.imageList, "digi-beetle.zip"), null);
+            digibeetleComboBox.DataSource = new BindingSource(DigiBeetlePatcher.getDigiBeetleIds(ref this.imageList, "Resources\\digi-beetle.zip"), null);
         }
 
         private void about_Click(object sender, EventArgs e)

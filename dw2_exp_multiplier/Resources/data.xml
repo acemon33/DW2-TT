@@ -1,0 +1,417 @@
+<dw2-utility>
+	<digimons>
+		<digimon name="None" id="0" />
+		<digimon name="Agumon" id="3" />
+		<digimon name="Betamon" id="4" />
+		<digimon name="Greymon" id="5" />
+		<digimon name="Devimon" id="6" />
+		<digimon name="Airdramon" id="7" />
+		<digimon name="Tyrannomon" id="8" />
+		<digimon name="Meramon" id="9" />
+		<digimon name="Seadramon" id="0A" />
+		<digimon name="Numemon" id="0B" />
+		<digimon name="MetalGreymon" id="0C" />
+		<digimon name="Mamemon" id="0D" />
+		<digimon name="Monzaemon" id="0E" />
+		<digimon name="Gabumon" id="11" />
+		<digimon name="Elecmon" id="12" />
+		<digimon name="Kabuterimon" id="13" />
+		<digimon name="Angemon" id="14" />
+		<digimon name="Birdramon" id="15" />
+		<digimon name="Garurumon" id="16" />
+		<digimon name="Frigimon" id="17" />
+		<digimon name="Whamon" id="18" />
+		<digimon name="Vegiemon" id="19" />
+		<digimon name="SkullGreymon" id="1A" />
+		<digimon name="MetalMamemon" id="1B" />
+		<digimon name="Vademon" id="1C" />
+		<digimon name="Patamon" id="1F" />
+		<digimon name="Kunemon" id="20" />
+		<digimon name="Unimon" id="21" />
+		<digimon name="Ogremon" id="22" />
+		<digimon name="Shellmon" id="23" />
+		<digimon name="Centarumon" id="24" />
+		<digimon name="Bakemon" id="25" />
+		<digimon name="Drimogemon" id="26" />
+		<digimon name="Sukamon" id="27" />
+		<digimon name="Andromon" id="28" />
+		<digimon name="Giromon" id="29" />
+		<digimon name="Etemon" id="2A" />
+		<digimon name="Biyomon" id="2D" />
+		<digimon name="Palmon" id="2E" />
+		<digimon name="Monochromon" id="2F" />
+		<digimon name="Leomon" id="30" />
+		<digimon name="Coelamon" id="31" />
+		<digimon name="Kokatorimon" id="32" />
+		<digimon name="Kuwagamon" id="33" />
+		<digimon name="Mojyamon" id="34" />
+		<digimon name="Nanimon" id="35" />
+		<digimon name="Megadramon" id="36" />
+		<digimon name="Piximon" id="37" />
+		<digimon name="Digitamamon" id="38" />
+		<digimon name="Penguinmon" id="39" />
+		<digimon name="Ninjamon" id="3A" />
+		<digimon name="Phoenixmon" id="3B" />
+		<digimon name="H-Kabuterimon" id="3C" />
+		<digimon name="MegaSeadramon" id="3D" />
+		<digimon name="Panjyamon" id="3F" />
+		<digimon name="Gigadramon" id="40" />
+		<digimon name="MetalEtemon" id="41" />
+		<digimon name="Myotismon" id="42" />
+		<digimon name="Yanmamon" id="43" />
+		<digimon name="Gotsumon" id="44" />
+		<digimon name="Flarerizamon" id="45" />
+		<digimon name="WaruMonzaemon" id="46" />
+		<digimon name="SnowAgumon" id="47" />
+		<digimon name="Hyogamon" id="48" />
+		<digimon name="P-Sukamon" id="49" />
+		<digimon name="Dokunemmon" id="4A" />
+		<digimon name="ShimaUnimon" id="4B" />
+		<digimon name="Tankmon" id="4C" />
+		<digimon name="RedVegiemon" id="4D" />
+		<digimon name="J-Mojyamon" id="4E" />
+		<digimon name="N-Drimogemon" id="4F" />
+		<digimon name="Goburimon" id="50" />
+		<digimon name="MudFrigimon" id="51" />
+		<digimon name="ToyAgumon" id="54" />
+		<digimon name="Piddomon" id="55" />
+		<digimon name="Vermilimon" id="58" />
+		<digimon name="Tekkamon" id="5A" />
+		<digimon name="MoriShellmon" id="5B" />
+		<digimon name="Guardromon" id="5C" />
+		<digimon name="Icemon" id="5E" />
+		<digimon name="Akatorimon" id="5F" />
+		<digimon name="Tsukaimon" id="60" />
+		<digimon name="ClearAgumon" id="62" />
+		<digimon name="IceDevimon" id="64" />
+		<digimon name="Darkrizamon" id="65" />
+		<digimon name="SandYanmamon" id="66" />
+		<digimon name="SnowGoburimon" id="67" />
+		<digimon name="BlueMeramon" id="68" />
+		<digimon name="Gururumon" id="69" />
+		<digimon name="Saberdramon" id="6A" />
+		<digimon name="Soulmon" id="6B" />
+		<digimon name="Otamamon" id="6D" />
+		<digimon name="Gekomon" id="6E" />
+		<digimon name="Tentomon" id="6F" />
+		<digimon name="WaruSeadramon" id="70" />
+		<digimon name="Meteormon" id="71" />
+		<digimon name="Machinedramon" id="73" />
+		<digimon name="Jijimon" id="75" />
+		<digimon name="ShogunGekomon" id="77" />
+		<digimon name="Cherrymon" id="79" />
+		<digimon name="Hagurumon" id="7A" />
+		<digimon name="Tinmon" id="7B" />
+		<digimon name="M-Tyrannomon" id="7C" />
+		<digimon name="Veedramon" id="80" />
+		<digimon name="Gazimon" id="83" />
+		<digimon name="Gizamon" id="84" />
+		<digimon name="D-Tyrannomon" id="85" />
+		<digimon name="Cyclonemon" id="86" />
+		<digimon name="Devidramon" id="87" />
+		<digimon name="Tuskmon" id="88" />
+		<digimon name="Flymon" id="89" />
+		<digimon name="Deltamon" id="8A" />
+		<digimon name="Raremon" id="8B" />
+		<digimon name="M-Tyrannomon" id="8C" />
+		<digimon name="Datamon" id="8D" />
+		<digimon name="ExTyrannomon" id="8E" />
+		<digimon name="Clockmon" id="8F" />
+		<digimon name="Rosemon" id="90" />
+		<digimon name="Veemon" id="91" />
+		<digimon name="Flamedramon" id="92" />
+		<digimon name="Raidramon" id="93" />
+		<digimon name="I-dramon" id="94" />
+		<digimon name="Baihumon" id="95" />
+		<digimon name="Omnimon" id="96" />
+		<digimon name="Diaboromon" id="97" />
+		<digimon name="AeroVeedramon" id="B4" />
+		<digimon name="M-Kabuterimon" id="B5" />
+		<digimon name="Gomamon" id="B6" />
+		<digimon name="WereGarurumon" id="B7" />
+		<digimon name="Togemon" id="B8" />
+		<digimon name="Zudomon" id="B9" />
+		<digimon name="Lillymon" id="BA" />
+		<digimon name="Garudamon" id="BB" />
+		<digimon name="Candlemon" id="BC" />
+		<digimon name="SkullMeramon" id="BD" />
+		<digimon name="Boltmon" id="BE" />
+		<digimon name="Floramon" id="BF" />
+		<digimon name="Deramon" id="C0" />
+		<digimon name="Gryphonmon" id="C1" />
+		<digimon name="Wizardmon" id="C2" />
+		<digimon name="P-Mamemon" id="C3" />
+		<digimon name="M-Garurumon" id="C4" />
+		<digimon name="Crabmon" id="C5" />
+		<digimon name="Kiwimon" id="C6" />
+		<digimon name="Starmon" id="C7" />
+		<digimon name="Blossomon" id="C8" />
+		<digimon name="Pumpkinmon" id="C9" />
+		<digimon name="Scorpiomon" id="CA" />
+		<digimon name="Triceramon" id="CB" />
+		<digimon name="M-Seadramon" id="CC" />
+		<digimon name="SaberLeomon" id="CD" />
+		<digimon name="Tapirmon" id="CE" />
+		<digimon name="Apemon" id="CF" />
+		<digimon name="Tortomon" id="D0" />
+		<digimon name="Ikkakumon" id="D1" />
+		<digimon name="Dolphmon" id="D2" />
+		<digimon name="MagnaAngemon" id="D3" />
+		<digimon name="Mammothmon" id="D4" />
+		<digimon name="WarGreymon" id="D5" />
+		<digimon name="Seraphimon" id="D6" />
+		<digimon name="S-Mammothmon" id="D7" />
+		<digimon name="MarineAngemon" id="D8" />
+		<digimon name="DemiDevimon" id="D9" />
+		<digimon name="Syakomon" id="DA" />
+		<digimon name="Mushroomon" id="DB" />
+		<digimon name="Gesomon" id="DC" />
+		<digimon name="Octomon" id="DD" />
+		<digimon name="Woodmon" id="DE" />
+		<digimon name="Phantomon" id="DF" />
+		<digimon name="MarineDevimon" id="E0" />
+		<digimon name="Dragomon" id="E1" />
+		<digimon name="Okuwamon" id="E2" />
+		<digimon name="Garbagemon" id="E3" />
+		<digimon name="Pierrotmon" id="E4" />
+		<digimon name="Pukumon" id="E5" />
+		<digimon name="GranKuwagamon" id="E6" />
+		<digimon name="Puppetmon" id="E7" />
+		<digimon name="Preciomon" id="E8" />
+		<digimon name="Gatomon" id="E9" />
+		<digimon name="Angewomon" id="EA" />
+		<digimon name="Magnadramon" id="EB" />
+		<digimon name="V-Myotismon" id="EC" />
+		<digimon name="Kimeramon" id="ED" />
+		<digimon name="C-Pierrotmon" id="F4" />
+		<digimon name="C-Seadramon" id="F5" />
+		<digimon name="C-WarGreymon" id="F6" />
+		<digimon name="NeoCrimson" id="F7" />
+		<digimon name="ChaosLord" id="F8" />
+		<digimon name="?????" id="F9" />
+		<digimon name="?????" id="FA" />
+		<digimon name="?????" id="FB" />
+		<digimon name="?????" id="FC" />
+		<digimon name="?????" id="FD" />
+		<digimon name="?????" id="FE" />
+		<digimon name="?????" id="FF" />
+		<digimon name="Psychemon" id="52" />
+		<digimon name="ModokiBetamon" id="53" />
+		<digimon name="Aruraumon" id="56" />
+		<digimon name="Geremon" id="57" />
+		<digimon name="Fugamon" id="59" />
+		<digimon name="Muchomon" id="5D" />
+		<digimon name="Sharmamon" id="61" />
+		<digimon name="Zassomon" id="63" />
+	</digimons>
+	<techs>
+		<tech name="None" id="0" />
+		<tech name="Poison Ivy" id="1" />
+		<tech name="Rain of Pollen" id="2" />
+		<tech name="Boom Bubble" id="3" />
+		<tech name="Flame Bomber" id="4" />
+		<tech name="Scissor Magic" id="5" />
+		<tech name="Rock Fist" id="6" />
+		<tech name="S-Thunder Smack" id="7" />
+		<tech name="Blue Blaster" id="8" />
+		<tech name="Pummel Peck" id="9" />
+		<tech name="Fireball" id="0A" />
+		<tech name="Fossil Bite" id="0B" />
+		<tech name="Hydro Blaster" id="0C" />
+		<tech name="Volcanic Strike" id="0D" />
+		<tech name="Blaze Blast" id="0E" />
+		<tech name="Stun Flame Shot" id="0F" />
+		<tech name="Iron Drill Spin" id="10" />
+		<tech name="Solar Ray" id="11" />
+		<tech name="Flower Cannon" id="12" />
+		<tech name="Royal Smasher" id="13" />
+		<tech name="Ninja Flower" id="14" />
+		<tech name="Trick or Treat" id="15" />
+		<tech name="Metal Fireball" id="16" />
+		<tech name="Lightning Spear" id="17" />
+		<tech name="Tri-Horn Attack" id="18" />
+		<tech name="Magical Tail" id="19" />
+		<tech name="Tomahawk Crunch" id="1A" />
+		<tech name="Energy Blast" id="1B" />
+		<tech name="Howling Crusher" id="1C" />
+		<tech name="Legendary Blade" id="1D" />
+		<tech name="Freeze Breath" id="1E" />
+		<tech name="Pepper Breath" id="1F" />
+		<tech name="Spiral Twister" id="20" />
+		<tech name="Super Shocker" id="21" />
+		<tech name="Waking Dream" id="22" />
+		<tech name="Marching Fishes" id="23" />
+		<tech name="Nova Blast" id="24" />
+		<tech name="V-Nova Blast" id="25" />
+		<tech name="Spinning Needle" id="26" />
+		<tech name="Meteor Wing" id="27" />
+		<tech name="Fist of Fate" id="28" />
+		<tech name="Air Attack" id="29" />
+		<tech name="Howling Blaster" id="2A" />
+		<tech name="Wolf Claw" id="2B" />
+		<tech name="Icicle Shot" id="2C" />
+		<tech name="Strong Carapace" id="2D" />
+		<tech name="Harpoon Torpedo" id="2E" />
+		<tech name="Pulse Blast" id="2F" />
+		<tech name="Giga Blaster" id="30" />
+		<tech name="V-Wing Blade" id="31" />
+		<tech name="Lightning Blade" id="32" />
+		<tech name="Mega Bone Stick" id="33" />
+		<tech name="Tusk Crusher" id="34" />
+		<tech name="Vulcan's Hammer" id="35" />
+		<tech name="Tidal Wave" id="36" />
+		<tech name="Big Bang Boom" id="37" />
+		<tech name="Terra Force" id="38" />
+		<tech name="S-Bone Crusher" id="39" />
+		<tech name="Ocean Love" id="3A" />
+		<tech name="Electric Shock" id="3B" />
+		<tech name="Demi Dart" id="3C" />
+		<tech name="BlackPearl Shot" id="3D" />
+		<tech name="Stun Bubble" id="3E" />
+		<tech name="Electro Thread" id="3F" />
+		<tech name="Party Time" id="40" />
+		<tech name="Evil Touch" id="41" />
+		<tech name="Evil Charm" id="42" />
+		<tech name="Coral Crusher" id="43" />
+		<tech name="Spurting Ink" id="44" />
+		<tech name="Sonic Crusher" id="45" />
+		<tech name="Scissor Claw" id="46" />
+		<tech name="Twig Tap" id="47" />
+		<tech name="Alien Ray" id="48" />
+		<tech name="Concert Crush" id="49" />
+		<tech name="Dark Shot" id="4A" />
+		<tech name="Darkside Attack" id="4B" />
+		<tech name="Grisly Wing" id="4C" />
+		<tech name="Shadow Scythe" id="4D" />
+		<tech name="Evil Wind" id="4E" />
+		<tech name="Tentacle Claw" id="4F" />
+		<tech name="Musical Fist" id="50" />
+		<tech name="Duo ScissorClaw" id="51" />
+		<tech name="Pit Pelter" id="52" />
+		<tech name="Junk Chunker" id="53" />
+		<tech name="Trump Sword" id="54" />
+		<tech name="Needle Squall" id="55" />
+		<tech name="X-Scissor Claw" id="56" />
+		<tech name="Puppet Pummel" id="57" />
+		<tech name="Toy Flame" id="58" />
+		<tech name="Super Slap" id="59" />
+		<tech name="Hail Storm" id="5A" />
+		<tech name="Ice Blast" id="5B" />
+		<tech name="Hyper Cannon" id="5C" />
+		<tech name="Thunder Ray" id="5D" />
+		<tech name="Sad Water Blast" id="5E" />
+		<tech name="Rose Spear" id="5F" />
+		<tech name="SubzeroIcePunch" id="60" />
+		<tech name="Lightning Paw" id="61" />
+		<tech name="Heaven's Arrow" id="62" />
+		<tech name="Fire Tornado" id="63" />
+		<tech name="Darkness Gear" id="64" />
+		<tech name="Bolt Strike" id="65" />
+		<tech name="Protect Grenade" id="66" />
+		<tech name="Giga Byte Wing" id="67" />
+		<tech name="Giga Cannon" id="68" />
+		<tech name="E-Stun Blast" id="69" />
+		<tech name="Spiral Saw" id="6A" />
+		<tech name="Brown Stinger" id="6B" />
+		<tech name="Hyper Heat" id="6C" />
+		<tech name="Triple Forces" id="6D" />
+		<tech name="Slamming Tusk" id="6E" />
+		<tech name="Fire Blast" id="6F" />
+		<tech name="Crimson Claw" id="70" />
+		<tech name="Digital Bomb" id="71" />
+		<tech name="Fire Blast II" id="72" />
+		<tech name="Pretty Attack" id="73" />
+		<tech name="Needle Spray" id="82" />
+		<tech name="Meteor Stream" id="83" />
+		<tech name="Thunder Ball" id="84" />
+		<tech name="Tail Blade" id="85" />
+		<tech name="Smiley Bomb" id="86" />
+		<tech name="Energetic Bomb" id="87" />
+		<tech name="Smiley Warhead" id="88" />
+		<tech name="Pummel Whack" id="89" />
+		<tech name="NinjaKnifeThrow" id="8A" />
+		<tech name="Beast King Fist" id="8B" />
+		<tech name="Buffalo Breath" id="8C" />
+		<tech name="Electro-Shocker" id="A0" />
+		<tech name="Wing Blade" id="A1" />
+		<tech name="Horn Buster" id="A2" />
+		<tech name="GigaScissorClaw" id="A3" />
+		<tech name="Venom Infusion" id="A4" />
+		<tech name="Chrono Breaker" id="A5" />
+		<tech name="MP Magic" id="A6" />
+		<tech name="Life Shield" id="A7" />
+		<tech name="MP Destroyer" id="A8" />
+		<tech name="Hyper Flashing" id="B4" />
+		<tech name="HP Recovery" id="B5" />
+		<tech name="Virus Attack" id="B6" />
+		<tech name="Crimson Flame" id="B7" />
+		<tech name="Full HP Cure" id="B8" />
+		<tech name="Fungus Cruncher" id="B9" />
+		<tech name="RottenRainballs" id="BA" />
+		<tech name="Banana Slip" id="BB" />
+		<tech name="Small HP Cure" id="BC" />
+		<tech name="Defensive Ray" id="BD" />
+		<tech name="Parameter Patch" id="BE" />
+		<tech name="Zip Boom" id="BF" />
+		<tech name="Stun Ray" id="C0" />
+		<tech name="Armor Coating" id="C1" />
+		<tech name="Mech Ray" id="C2" />
+		<tech name="Blaze Buster" id="C3" />
+		<tech name="Nature Hit Ray" id="C4" />
+		<tech name="Invincibility" id="C5" />
+		<tech name="Re-Format" id="C6" />
+		<tech name="Recovery Power" id="C7" />
+		<tech name="Anti-Dote" id="C8" />
+		<tech name="Anti-Freeze" id="C9" />
+		<tech name="Anti-Confusion" id="CA" />
+		<tech name="Mega Heal" id="CB" />
+		<tech name="Zen Recovery" id="CC" />
+		<tech name="Full Recovery" id="CD" />
+		<tech name="Hung On Death" id="CE" />
+		<tech name="Friendly Fire" id="CF" />
+		<tech name="Invisibility" id="D0" />
+		<tech name="Water Ray" id="D1" />
+		<tech name="Necro Magic" id="D2" />
+		<tech name="Darkness Ray" id="D3" />
+		<tech name="Re-Initilize" id="D4" />
+		<tech name="Panic Wave" id="D5" />
+		<tech name="Heart Break Hit" id="D6" />
+		<tech name="Poison Wave" id="D7" />
+		<tech name="Vee Head Butt" id="D8" />
+		<tech name="Flaming Rocket" id="D9" />
+		<tech name="Lightning Blast" id="DA" />
+		<tech name="Mega Fire" id="DB" />
+		<tech name="Chaos Cannon" id="DC" />
+		<tech name="Blind Attack" id="DD" />
+		<tech name="Kongou" id="DE" />
+		<tech name="abc" id="DF" />
+		<tech name="abc" id="E0" />
+		<tech name="HP Zapper" id="E1" />
+		<tech name="Critical Blow" id="E2" />
+		<tech name="Reset Status" id="E3" />
+		<tech name="Transcend Sword" id="E4" />
+		<tech name="Garuru Cannon" id="E5" />
+		<tech name="abc" id="E6" />
+		<tech name="Safety Sphere" id="E7" />
+		<tech name="Karate Sweep" id="E8" />
+		<tech name="Energy Blast" id="E9" />
+		<tech name="Alias Fake" id="EA" />
+		<tech name="Inferno Missile" id="EB" />
+		<tech name="abc" id="EC" />
+		<tech name="Stun Punch" id="ED" />
+		<tech name="Rail Cannon" id="EE" />
+		<tech name="Armor Aid" id="EF" />
+		<tech name="Titan Laser" id="F0" />
+		<tech name="Fantasmic Bomb" id="F1" />
+		<tech name="GAIA Gear" id="F2" />
+		<tech name="Light Gun" id="F3" />
+		<tech name="Fantasmic Ray" id="F4" />
+		<tech name="Tubular Attack" id="F5" />
+		<tech name="Left Hand" id="F6" />
+		<tech name="Reduction Ray" id="F7" />
+		<tech name="Right Hand" id="F8" />
+		<tech name="Destablizer Ray" id="F9" />
+		<tech name="Shadow Scythe" id="FB" />
+		<tech name="Poison Wing" id="FC" />
+	</techs>
+</dw2-utility>
