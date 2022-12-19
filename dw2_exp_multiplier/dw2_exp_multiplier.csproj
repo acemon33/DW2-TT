@@ -34,7 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="dw2_exp_multiplier, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
@@ -116,6 +116,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -124,12 +125,15 @@
     <Folder Include="bin\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="aaaa.ico" />
-    <Content Include="bbbb.ico" />
-    <Content Include="digi-beetle.zip">
+    <Content Include="Resources\config.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="icon.ico" />
+    <Content Include="Resources\data.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\digi-beetle.zip">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\M_sharingan.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
