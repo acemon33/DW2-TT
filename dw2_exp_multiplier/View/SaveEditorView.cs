@@ -30,7 +30,7 @@ namespace dw2_exp_multiplier.View
         public SaveEditorView()
         {
             InitializeComponent();
-            SaveSlot.load1();
+            Configuration.load();
 
             this.lastLocationComboBox.DisplayMember = "Key";
             this.lastLocationComboBox.ValueMember = "Value";
@@ -81,7 +81,15 @@ namespace dw2_exp_multiplier.View
 
             this.slotComboBox.Enabled = false;
 
-            this.LoadForm();
+            try
+            {
+                this.LoadForm();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);    // Visual Studio detects error as index out of boundary 
+            }
+            
         }
         
         private void LoadForm()
@@ -101,7 +109,7 @@ namespace dw2_exp_multiplier.View
                 var t1 = new ComboBox();
                 t1.DisplayMember = "Key";
                 t1.ValueMember = "Value";
-                t1.DataSource = new BindingSource(SaveSlot.ItemList, null);
+                t1.DataSource = new BindingSource(Configuration.ItemList, null);
                 t1.SelectedIndexChanged += itemTextBox_TextChanged;
                 t1.Tag = i;
                 itemTableLayoutPanel.Controls.Add(l1, 0, i);
@@ -124,7 +132,7 @@ namespace dw2_exp_multiplier.View
                 importantItemTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40F));
                 var l1 = new Label();
                 l1.Size = new Size(150, l1.Size.Height);
-                l1.Text = SaveSlot.ImportantItemList[i];
+                l1.Text = Configuration.ImportantItemList[i];
                 var t1 = new ComboBox();
                 importantItemTableLayoutPanel.Controls.Add(l1, 0, i);
                 importantItemTableLayoutPanel.Controls.Add(t1, 1, i);
@@ -148,7 +156,7 @@ namespace dw2_exp_multiplier.View
                 serverItemTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
                 var l1 = new Label();
                 l1.Size = new Size(150, l1.Size.Height);
-                l1.Text = SaveSlot.ItemList[i + 1].Key;
+                l1.Text = Configuration.ItemList[i + 1].Key;
                 var t1 = new NumericUpDown();
                 serverItemTableLayoutPanel.Controls.Add(l1, 0, i);
                 serverItemTableLayoutPanel.Controls.Add(t1, 1, i);
@@ -173,7 +181,7 @@ namespace dw2_exp_multiplier.View
                 t1.DisplayMember = "Key";
                 t1.ValueMember = "Value";
                 t1.DropDownWidth = 130;
-                t1.DataSource = new BindingSource(SaveSlot.TechList, null);
+                t1.DataSource = new BindingSource(Configuration.TechList, null);
                 this.digimonTechList.Add(t1);
             }
 
@@ -190,14 +198,14 @@ namespace dw2_exp_multiplier.View
                 t1.DisplayMember = "Key";
                 t1.ValueMember = "Value";
                 t1.DropDownWidth = 130;
-                t1.DataSource = new BindingSource(SaveSlot.TechList, null);
+                t1.DataSource = new BindingSource(Configuration.TechList, null);
                 this.digimonInheritedTechList.Add(t1);
             }
             
             this.digimonListBox.DisplayMember = "Key";
             this.digimonListBox.ValueMember = "Value";
             
-            n = SaveSlot.GameFlagsLimiter.Count;
+            n = Configuration.GameFlagsLimiter.Count;
             this.gameStoryPanel.Controls.Add(GameFlagsTableLayoutPanel);
             GameFlagsTableLayoutPanel.Location = new System.Drawing.Point(3, 3);
             GameFlagsTableLayoutPanel.Name = "gameStoryTableLayoutPanel";
@@ -207,10 +215,10 @@ namespace dw2_exp_multiplier.View
             GameFlagsTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             for (int i = 0; i < n; i++)
             {
-                uint address = SaveSlot.GameFlagsLimiter[i];
+                uint address = Configuration.GameFlagsLimiter[i];
                 var l1 = new Label();
-                if (SaveSlot.GameFlagNameList.ContainsKey(address))
-                    l1.Text = SaveSlot.GameFlagNameList[address];
+                if (Configuration.GameFlagNameList.ContainsKey(address))
+                    l1.Text = Configuration.GameFlagNameList[address];
                 else
                     l1.Text = "Game Flag #" + address.ToString("X2");
                 var t1 = new TextBox();
@@ -224,30 +232,30 @@ namespace dw2_exp_multiplier.View
             for(int i = 0; i < n; i++)
                 GameFlagsTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 27F));
             
-            this.lastLocationComboBox.DataSource = new BindingSource(SaveSlot.SavePointLocationList, null);
-            this.rankComboBox.DataSource = new BindingSource(SaveSlot.RankList, null);
+            this.lastLocationComboBox.DataSource = new BindingSource(Configuration.SavePointLocationList, null);
+            this.rankComboBox.DataSource = new BindingSource(Configuration.RankList, null);
             
-            this.bodyNameComboBox.DataSource = new BindingSource(SaveSlot.DigiBeetleBodyList, null);
-            this.engineNameComboBox.DataSource = new BindingSource(SaveSlot.DigiBeetleEngineList, null);
-            this.batteryNameComboBox.DataSource = new BindingSource(SaveSlot.DigiBeetleBatteryList, null);
-            this.memoryComboBox.DataSource = new BindingSource(SaveSlot.DigiBeetleMemoryList, null);
-            this.toolBoxComboBox.DataSource = new BindingSource(SaveSlot.DigiBeetleToolBoxList, null);
-            this.cannon1ComboBox.DataSource = new BindingSource(SaveSlot.DigiBeetleCannonList, null);
-            this.cannon2ComboBox.DataSource = new BindingSource(SaveSlot.DigiBeetleCannonList, null);
-            this.cannon3ComboBox.DataSource = new BindingSource(SaveSlot.DigiBeetleCannonList, null);
-            this.cannon4ComboBox.DataSource = new BindingSource(SaveSlot.DigiBeetleCannonList, null);
-            this.cannon5ComboBox.DataSource = new BindingSource(SaveSlot.DigiBeetleCannonList, null);
-            this.legComboBox.DataSource = new BindingSource(SaveSlot.DigiBeetleLegList, null);
-            this.handComboBox.DataSource = new BindingSource(SaveSlot.DigiBeetleHandList, null);
-            this.armComboBox.DataSource = new BindingSource(SaveSlot.DigiBeetleArmList, null);
-            this.device1ComboBox.DataSource = new BindingSource(SaveSlot.DigiBeetleDeviceList, null);
-            this.device2ComboBox.DataSource = new BindingSource(SaveSlot.DigiBeetleDeviceList, null);
-            this.device3ComboBox.DataSource = new BindingSource(SaveSlot.DigiBeetleDeviceList, null);
-            this.device4ComboBox.DataSource = new BindingSource(SaveSlot.DigiBeetleDeviceList, null);
-            this.device5ComboBox.DataSource = new BindingSource(SaveSlot.DigiBeetleDeviceList, null);
-            this.device6ComboBox.DataSource = new BindingSource(SaveSlot.DigiBeetleDeviceList, null);
+            this.bodyNameComboBox.DataSource = new BindingSource(Configuration.DigiBeetleBodyList, null);
+            this.engineNameComboBox.DataSource = new BindingSource(Configuration.DigiBeetleEngineList, null);
+            this.batteryNameComboBox.DataSource = new BindingSource(Configuration.DigiBeetleBatteryList, null);
+            this.memoryComboBox.DataSource = new BindingSource(Configuration.DigiBeetleMemoryList, null);
+            this.toolBoxComboBox.DataSource = new BindingSource(Configuration.DigiBeetleToolBoxList, null);
+            this.cannon1ComboBox.DataSource = new BindingSource(Configuration.DigiBeetleCannonList, null);
+            this.cannon2ComboBox.DataSource = new BindingSource(Configuration.DigiBeetleCannonList, null);
+            this.cannon3ComboBox.DataSource = new BindingSource(Configuration.DigiBeetleCannonList, null);
+            this.cannon4ComboBox.DataSource = new BindingSource(Configuration.DigiBeetleCannonList, null);
+            this.cannon5ComboBox.DataSource = new BindingSource(Configuration.DigiBeetleCannonList, null);
+            this.legComboBox.DataSource = new BindingSource(Configuration.DigiBeetleLegList, null);
+            this.handComboBox.DataSource = new BindingSource(Configuration.DigiBeetleHandList, null);
+            this.armComboBox.DataSource = new BindingSource(Configuration.DigiBeetleArmList, null);
+            this.device1ComboBox.DataSource = new BindingSource(Configuration.DigiBeetleDeviceList, null);
+            this.device2ComboBox.DataSource = new BindingSource(Configuration.DigiBeetleDeviceList, null);
+            this.device3ComboBox.DataSource = new BindingSource(Configuration.DigiBeetleDeviceList, null);
+            this.device4ComboBox.DataSource = new BindingSource(Configuration.DigiBeetleDeviceList, null);
+            this.device5ComboBox.DataSource = new BindingSource(Configuration.DigiBeetleDeviceList, null);
+            this.device6ComboBox.DataSource = new BindingSource(Configuration.DigiBeetleDeviceList, null);
             
-            this.digimonOriginalNameComboBox.DataSource = new BindingSource(SaveSlot.DigimonList, null);
+            this.digimonOriginalNameComboBox.DataSource = new BindingSource(Configuration.DigimonList, null);
             this.digimonOriginalNameComboBox.SelectedIndex = -1;
 
             this.digimonStatusComboBox.Items.Add(DIGI_LINE_STATUS.B1);
@@ -256,7 +264,7 @@ namespace dw2_exp_multiplier.View
             this.digimonStatusComboBox.Items.Add(DIGI_LINE_STATUS.BENCH);
             this.digimonStatusComboBox.Items.Add(DIGI_LINE_STATUS.SERVER);
 
-            foreach (string e in SaveSlot.GameStoryProgress.Keys)
+            foreach (string e in Configuration.GameStoryProgress.Keys)
                 this.gameStoryComboBox.Items.Add(e);
         }
         
@@ -327,7 +335,7 @@ namespace dw2_exp_multiplier.View
             for (int i = 0; i < Entity.SaveSlot.DIGIMON_COUNT; i++)
                 this.digimonListBox.Items.Add(new { Key = "Slot #" + (i+1), Value = currentSlot.digimon[i]});
 
-            foreach (var i in SaveSlot.GameFlagsLimiter)
+            foreach (var i in Configuration.GameFlagsLimiter)
                 this.GameFlagsTextBoxList[i].Text = currentSlot.GameFlags[i].ToString("X2");
 
             this.gameStoryComboBox.SelectedIndex = -1;
@@ -736,7 +744,7 @@ namespace dw2_exp_multiplier.View
         {
             if (this.gameStoryComboBox.SelectedItem == null) return;
             string mission = this.gameStoryComboBox.SelectedItem as string;
-            foreach (GameFlag gf in SaveSlot.GameStoryProgress[mission])
+            foreach (GameFlag gf in Configuration.GameStoryProgress[mission])
                 this.GameFlagsTextBoxList[gf.address].Text = gf.value.ToString("X2");
         }
         #endregion

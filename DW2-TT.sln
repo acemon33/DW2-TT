@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31025.194
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dw2_exp_multiplier", "dw2_exp_multiplier\dw2_exp_multiplier.csproj", "{6FB535E5-2E5D-4E5A-B202-D008D9EBEF86}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DW2-TT", "dw2_exp_multiplier\DW2-TT.csproj", "{6FB535E5-2E5D-4E5A-B202-D008D9EBEF86}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +18,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FD6315D8-9782-472E-B1F6-B0521853FA8F}
 	EndGlobalSection
 EndGlobal

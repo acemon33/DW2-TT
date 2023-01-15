@@ -49,23 +49,23 @@
             this.digibeetlPictureBox = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.EnemyBossGroupBox = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.extremeModeCheckBox = new System.Windows.Forms.CheckBox();
             this.bossMultiplier = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
-            this.EnemyBossGroupBox = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.saveEditorView1 = new dw2_exp_multiplier.View.SaveEditorView();
             ((System.ComponentModel.ISupportInitialize)(this.multiplier)).BeginInit();
             this.menuBar.SuspendLayout();
             this.digibeetleGroupBox.SuspendLayout();
-            this.saveEditorView1 = new dw2_exp_multiplier.View.SaveEditorView();
             ((System.ComponentModel.ISupportInitialize)(this.digibeetlPictureBox)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bossMultiplier)).BeginInit();
-            this.EnemyBossGroupBox.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.EnemyBossGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bossMultiplier)).BeginInit();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dw2BrowseButton
@@ -291,23 +291,37 @@
             this.tabPage1.Text = "Misc.";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // groupBox2
             // 
-            this.tabPage2.Controls.Add(this.saveEditorView1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(453, 389);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Save Editor";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.groupBox2.Controls.Add(this.multiplierLabel);
+            this.groupBox2.Controls.Add(this.multiplier);
+            this.groupBox2.Location = new System.Drawing.Point(14, 90);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(200, 55);
+            this.groupBox2.TabIndex = 25;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Exp / Bits Multiplier";
             // 
-            // saveEditorView1
+            // EnemyBossGroupBox
             // 
-            this.saveEditorView1.Location = new System.Drawing.Point(6, 6);
-            this.saveEditorView1.Name = "saveEditorView1";
-            this.saveEditorView1.Size = new System.Drawing.Size(444, 384);
-            this.saveEditorView1.TabIndex = 0;
+            this.EnemyBossGroupBox.Controls.Add(this.label1);
+            this.EnemyBossGroupBox.Controls.Add(this.extremeModeCheckBox);
+            this.EnemyBossGroupBox.Controls.Add(this.bossMultiplier);
+            this.EnemyBossGroupBox.Location = new System.Drawing.Point(14, 151);
+            this.EnemyBossGroupBox.Name = "EnemyBossGroupBox";
+            this.EnemyBossGroupBox.Size = new System.Drawing.Size(200, 79);
+            this.EnemyBossGroupBox.TabIndex = 24;
+            this.EnemyBossGroupBox.TabStop = false;
+            this.EnemyBossGroupBox.Text = "Enemy Boss Stats Multiplier";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(10, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 13);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Multiply By       x";
             // 
             // extremeModeCheckBox
             // 
@@ -338,37 +352,23 @@
             0,
             0});
             // 
-            // label1
+            // tabPage2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 13);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "Multiply By       x";
+            this.tabPage2.Controls.Add(this.saveEditorView1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(453, 389);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Save Editor";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // EnemyBossGroupBox
+            // saveEditorView1
             // 
-            this.EnemyBossGroupBox.Controls.Add(this.label1);
-            this.EnemyBossGroupBox.Controls.Add(this.extremeModeCheckBox);
-            this.EnemyBossGroupBox.Controls.Add(this.bossMultiplier);
-            this.EnemyBossGroupBox.Location = new System.Drawing.Point(14, 151);
-            this.EnemyBossGroupBox.Name = "EnemyBossGroupBox";
-            this.EnemyBossGroupBox.Size = new System.Drawing.Size(200, 79);
-            this.EnemyBossGroupBox.TabIndex = 24;
-            this.EnemyBossGroupBox.TabStop = false;
-            this.EnemyBossGroupBox.Text = "Enemy Boss Stats Multiplier";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.multiplierLabel);
-            this.groupBox2.Controls.Add(this.multiplier);
-            this.groupBox2.Location = new System.Drawing.Point(14, 90);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 55);
-            this.groupBox2.TabIndex = 25;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Exp / Bits Multiplier";
+            this.saveEditorView1.Location = new System.Drawing.Point(7, 7);
+            this.saveEditorView1.Name = "saveEditorView1";
+            this.saveEditorView1.Size = new System.Drawing.Size(444, 384);
+            this.saveEditorView1.TabIndex = 0;
             // 
             // Main
             // 
@@ -392,12 +392,12 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bossMultiplier)).EndInit();
-            this.EnemyBossGroupBox.ResumeLayout(false);
-            this.EnemyBossGroupBox.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.EnemyBossGroupBox.ResumeLayout(false);
+            this.EnemyBossGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bossMultiplier)).EndInit();
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -434,12 +434,12 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private View.SaveEditorView saveEditorView1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox EnemyBossGroupBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox extremeModeCheckBox;
         private System.Windows.Forms.NumericUpDown bossMultiplier;
+        private View.SaveEditorView saveEditorView1;
     }
 }
 

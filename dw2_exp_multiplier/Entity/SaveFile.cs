@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Xml;
 using DigimonWorld2Tool.Utility;
 
 
@@ -136,30 +135,8 @@ namespace dw2_exp_multiplier.Entity
         public string StringDigiBeetleName;
         
         public Dictionary<UInt32, byte> GameFlags = new Dictionary<UInt32, byte>();
-        public static Dictionary<UInt32, string> GameFlagNameList = new Dictionary<UInt32, string>();
-        public static List<UInt32> GameFlagsLimiter = new List<UInt32>();
-        public static Dictionary<string, List<GameFlag>> GameStoryProgress = new Dictionary<string, List<GameFlag>>();
 
-        public static Dictionary<string, byte> RankList = new Dictionary<string, byte>();
-
-        public static Dictionary<string, string> SavePointLocationList = new Dictionary<string, string>();
         public string lastSavePoint;
-
-        public static Dictionary<string, ushort> DigiBeetleBodyList = new Dictionary<string, ushort>();
-        public static Dictionary<string, ushort> DigiBeetleEngineList = new Dictionary<string, ushort>();
-        public static Dictionary<string, ushort> DigiBeetleBatteryList = new Dictionary<string, ushort>();
-        public static Dictionary<string, ushort> DigiBeetleMemoryList = new Dictionary<string, ushort>();
-        public static Dictionary<string, ushort> DigiBeetleToolBoxList = new Dictionary<string, ushort>();
-        public static Dictionary<string, ushort> DigiBeetleCannonList = new Dictionary<string, ushort>();
-        public static Dictionary<string, ushort> DigiBeetleLegList = new Dictionary<string, ushort>();
-        public static Dictionary<string, ushort> DigiBeetleHandList = new Dictionary<string, ushort>();
-        public static Dictionary<string, ushort> DigiBeetleArmList = new Dictionary<string, ushort>();
-        public static Dictionary<string, ushort> DigiBeetleDeviceList = new Dictionary<string, ushort>();
-        
-        public static List<BinaryStruct> ItemList = new List<BinaryStruct>();
-        public static List<string> ImportantItemList = new List<string>();
-        public static List<BinaryStruct> DigimonList = new List<BinaryStruct>();
-        public static List<BinaryStruct> TechList = new List<BinaryStruct>();
         
         public SaveSlot(byte[] data)
         {
@@ -208,7 +185,7 @@ namespace dw2_exp_multiplier.Entity
             this.StringHeroName = TextConversion.DigiStringToASCII(this.heroName);
             this.StringDigiBeetleName = TextConversion.DigiStringToASCII(this.digi_beetle_name);
 
-            foreach (var i in GameFlagsLimiter)
+            foreach (var i in Configuration.GameFlagsLimiter)
                 GameFlags[i] = data[i];
             
             this.lastSavePoint = this.locationId1.ToString("X2") + " " + this.locationId2.ToString("X2");
@@ -269,160 +246,11 @@ namespace dw2_exp_multiplier.Entity
             data[0x1050] = this.story_progress;
             Buffer.BlockCopy(padding10, 0, data, 0x1051, padding10.Length);
 
-            foreach (var i in GameFlagsLimiter)
+            foreach (var i in Configuration.GameFlagsLimiter)
                 data[i] = GameFlags[i];
             
             return data;
         }
-
-        public static void load1()
-        {
-            XmlDocument xml = new XmlDocument();
-            xml.Load("Resources\\config.xml");
-            foreach (XmlNode mission in xml.SelectNodes("dw2-utility/missions/mission"))
-            {
-                List<GameFlag> list = new List<GameFlag>();
-                string name = mission.SelectSingleNode("name").InnerText;
-                foreach (XmlNode flag in mission.SelectNodes("flags/flag"))
-                {
-                    uint address = Convert.ToUInt32(flag.Attributes["address"].Value, 16);
-                    int value = Convert.ToInt32(flag.Attributes["value"].Value, 16);
-                    list.Add(new GameFlag(address, value));
-                }
-
-                GameStoryProgress[name] = list;
-            }
-
-            foreach (XmlNode x in xml.SelectNodes("dw2-utility/game-flags/flags/flag"))
-            {
-                UInt32 from = Convert.ToUInt32(x.SelectSingleNode("from").InnerText, 16);
-                UInt32 to = Convert.ToUInt32(x.SelectSingleNode("to").InnerText, 16);
-                for (uint i = from; i <= to; i++)
-                    SaveSlot.GameFlagsLimiter.Add(i);
-            }
-
-            foreach (XmlNode x in xml.SelectNodes("dw2-utility/ranks/rank"))
-            {
-                string title = x.Attributes["title"].Value;
-                byte value = Convert.ToByte(x.Attributes["value"].Value, 16);
-                RankList[title] = value;
-            }
-
-            foreach (XmlNode x in xml.SelectNodes("dw2-utility/last-save-points/point"))
-            {
-                var name = x.Attributes["name"].Value;
-                var site = x.Attributes["area"].Value + " " + x.Attributes["location"].Value;
-                SavePointLocationList[name] = site;
-            }
-
-            foreach (XmlNode x in xml.SelectNodes("dw2-utility/digi-beetle-parts/bodies/body"))
-            {
-                var name = x.Attributes["name"].Value;
-                var value = Convert.ToUInt16(x.Attributes["value"].Value, 16);
-                DigiBeetleBodyList[name] = value;
-            }
-
-            foreach (XmlNode x in xml.SelectNodes("dw2-utility/digi-beetle-parts/engines/engine"))
-            {
-                var name = x.Attributes["name"].Value;
-                var value = Convert.ToUInt16(x.Attributes["value"].Value, 16);
-                DigiBeetleEngineList[name] = value;
-            }
-            
-            foreach (XmlNode x in xml.SelectNodes("dw2-utility/digi-beetle-parts/batteries/battery"))
-            {
-                var name = x.Attributes["name"].Value;
-                var value = Convert.ToUInt16(x.Attributes["value"].Value, 16);
-                DigiBeetleBatteryList[name] = value;
-            }
-            
-            foreach (XmlNode x in xml.SelectNodes("dw2-utility/digi-beetle-parts/memories/memory"))
-            {
-                var name = x.Attributes["name"].Value;
-                var value = Convert.ToUInt16(x.Attributes["value"].Value, 16);
-                DigiBeetleMemoryList[name] = value;
-            }
-            
-            foreach (XmlNode x in xml.SelectNodes("dw2-utility/digi-beetle-parts/tool-boxes/tool-box"))
-            {
-                var name = x.Attributes["name"].Value;
-                var value = Convert.ToUInt16(x.Attributes["value"].Value, 16);
-                DigiBeetleToolBoxList[name] = value;
-            }
-            
-            foreach (XmlNode x in xml.SelectNodes("dw2-utility/digi-beetle-parts/cannons/cannon"))
-            {
-                var name = x.Attributes["name"].Value;
-                var value = Convert.ToUInt16(x.Attributes["value"].Value, 16);
-                DigiBeetleCannonList[name] = value;
-            }
-            
-            foreach (XmlNode x in xml.SelectNodes("dw2-utility/digi-beetle-parts/legs/leg"))
-            {
-                var name = x.Attributes["name"].Value;
-                var value = Convert.ToUInt16(x.Attributes["value"].Value, 16);
-                DigiBeetleLegList[name] = value;
-            }
-            
-            foreach (XmlNode x in xml.SelectNodes("dw2-utility/digi-beetle-parts/hands/hand"))
-            {
-                var name = x.Attributes["name"].Value;
-                var value = Convert.ToUInt16(x.Attributes["value"].Value, 16);
-                DigiBeetleHandList[name] = value;
-            }
-            
-            foreach (XmlNode x in xml.SelectNodes("dw2-utility/digi-beetle-parts/arms/arm"))
-            {
-                var name = x.Attributes["name"].Value;
-                var value = Convert.ToUInt16(x.Attributes["value"].Value, 16);
-                DigiBeetleArmList[name] = value;
-            }
-            
-            foreach (XmlNode x in xml.SelectNodes("dw2-utility/digi-beetle-parts/devices/device"))
-            {
-                var name = x.Attributes["name"].Value;
-                var value = Convert.ToUInt16(x.Attributes["value"].Value, 16);
-                DigiBeetleDeviceList[name] = value;
-            }
-            
-            foreach (XmlNode x in xml.SelectNodes("dw2-utility/items/item"))
-            {
-                var name = x.Attributes["name"].Value;
-                var value = Convert.ToUInt16(x.Attributes["value"].Value, 16);
-                ItemList.Add(new BinaryStruct(name, value));
-            }
-            
-            foreach (XmlNode x in xml.SelectNodes("dw2-utility/important-items/important-item"))
-            {
-                var name = x.Attributes["name"].Value;
-                ImportantItemList.Add(name);
-            }
-            
-            foreach (XmlNode x in xml.SelectNodes("dw2-utility/game-flags/names/flag"))
-            {
-                var address = Convert.ToUInt32(x.Attributes["address"].Value, 16);
-                var name = x.Attributes["name"].Value;
-                GameFlagNameList[address] = name;
-            }
-            
-            XmlDocument xml2 = new XmlDocument();
-            xml.Load("Resources\\data.xml");
-            foreach (XmlNode x in xml.SelectNodes("dw2-utility/digimons/digimon"))
-            {
-                var name = x.Attributes["name"].Value;
-                var value = Convert.ToByte(x.Attributes["id"].Value, 16);
-                DigimonList.Add(new BinaryStruct(name, value));
-            }
-            
-            foreach (XmlNode x in xml.SelectNodes("dw2-utility/techs/tech"))
-            {
-                var name = x.Attributes["name"].Value;
-                var value = Convert.ToByte(x.Attributes["id"].Value, 16);
-                TechList.Add(new BinaryStruct(name, value));
-            }
-
-        }
-
     }
     
     public class SaveFile
@@ -490,30 +318,6 @@ namespace dw2_exp_multiplier.Entity
             return b;
         }
 
-    }
-
-    public struct BinaryStruct
-    {
-        public string Key { get; }
-        public ushort Value { get; }
-
-        public BinaryStruct(string key, ushort value)
-        {
-            Key = key;
-            Value = value;
-        }
-    }
-
-    public struct GameFlag
-    {
-        public uint address;
-        public int value;
-
-        public GameFlag(uint address, int value)
-        {
-            this.address = address;
-            this.value = value;
-        }
     }
 
     public enum DIGI_LINE_STATUS
