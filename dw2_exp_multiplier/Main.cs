@@ -267,7 +267,6 @@ namespace dw2_exp_multiplier
             if (imageList.ContainsKey(id)) this.digibeetlPictureBox.Image = imageList[id];
             else this.digibeetlPictureBox.Image = null;
         }
-        
     }
     
 }

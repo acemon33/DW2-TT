@@ -56,16 +56,19 @@
             this.bossMultiplier = new System.Windows.Forms.NumericUpDown();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.saveEditorView1 = new dw2_exp_multiplier.View.SaveEditorView();
-            ((System.ComponentModel.ISupportInitialize)(this.multiplier)).BeginInit();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.fileManagerView1 = new dw2_exp_multiplier.View.FileManagerView();
+            ((System.ComponentModel.ISupportInitialize) (this.multiplier)).BeginInit();
             this.menuBar.SuspendLayout();
             this.digibeetleGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.digibeetlPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.digibeetlPictureBox)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.EnemyBossGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bossMultiplier)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.bossMultiplier)).BeginInit();
             this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // dw2BrowseButton
@@ -144,19 +147,11 @@
             this.multiplier.DecimalPlaces = 1;
             this.multiplier.Enabled = false;
             this.multiplier.Location = new System.Drawing.Point(96, 25);
-            this.multiplier.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.multiplier.Minimum = new decimal(new int[] {1, 0, 0, 0});
             this.multiplier.Name = "multiplier";
             this.multiplier.Size = new System.Drawing.Size(46, 20);
             this.multiplier.TabIndex = 8;
-            this.multiplier.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.multiplier.Value = new decimal(new int[] {1, 0, 0, 0});
             // 
             // multiplierLabel
             // 
@@ -169,8 +164,7 @@
             // 
             // menuBar
             // 
-            this.menuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.about});
+            this.menuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {this.about});
             this.menuBar.Location = new System.Drawing.Point(0, 0);
             this.menuBar.Name = "menuBar";
             this.menuBar.Size = new System.Drawing.Size(460, 25);
@@ -262,6 +256,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(0, 28);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -338,19 +333,11 @@
             this.bossMultiplier.DecimalPlaces = 1;
             this.bossMultiplier.Enabled = false;
             this.bossMultiplier.Location = new System.Drawing.Point(96, 27);
-            this.bossMultiplier.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.bossMultiplier.Minimum = new decimal(new int[] {1, 0, 0, 0});
             this.bossMultiplier.Name = "bossMultiplier";
             this.bossMultiplier.Size = new System.Drawing.Size(46, 20);
             this.bossMultiplier.TabIndex = 21;
-            this.bossMultiplier.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.bossMultiplier.Value = new decimal(new int[] {1, 0, 0, 0});
             // 
             // tabPage2
             // 
@@ -370,6 +357,24 @@
             this.saveEditorView1.Size = new System.Drawing.Size(444, 384);
             this.saveEditorView1.TabIndex = 0;
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.fileManagerView1);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(453, 389);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "File Manager";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // fileManagerView1
+            // 
+            this.fileManagerView1.Location = new System.Drawing.Point(6, 6);
+            this.fileManagerView1.Name = "fileManagerView1";
+            this.fileManagerView1.Size = new System.Drawing.Size(441, 380);
+            this.fileManagerView1.TabIndex = 0;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -378,17 +383,17 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Main";
             this.Tag = "";
             this.Text = "DW2-TT";
-            ((System.ComponentModel.ISupportInitialize)(this.multiplier)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.multiplier)).EndInit();
             this.menuBar.ResumeLayout(false);
             this.menuBar.PerformLayout();
             this.digibeetleGroupBox.ResumeLayout(false);
             this.digibeetleGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.digibeetlPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.digibeetlPictureBox)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -396,12 +401,16 @@
             this.groupBox2.PerformLayout();
             this.EnemyBossGroupBox.ResumeLayout(false);
             this.EnemyBossGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bossMultiplier)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.bossMultiplier)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
+
+        private dw2_exp_multiplier.View.FileManagerView fileManagerView1;
+
+        private System.Windows.Forms.TabPage tabPage3;
 
         private System.Windows.Forms.PictureBox digibeetlPictureBox;
         private System.Windows.Forms.GroupBox digibeetleGroupBox;
