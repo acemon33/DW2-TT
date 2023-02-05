@@ -83,16 +83,16 @@
             this.dw2Label.AutoSize = true;
             this.dw2Label.Location = new System.Drawing.Point(16, 17);
             this.dw2Label.Name = "dw2Label";
-            this.dw2Label.Size = new System.Drawing.Size(47, 13);
+            this.dw2Label.Size = new System.Drawing.Size(50, 13);
             this.dw2Label.TabIndex = 1;
             this.dw2Label.Text = "DW2 Bin";
             // 
             // dw2TextBox
             // 
             this.dw2TextBox.AllowDrop = true;
-            this.dw2TextBox.Location = new System.Drawing.Point(102, 14);
+            this.dw2TextBox.Location = new System.Drawing.Point(110, 14);
             this.dw2TextBox.Name = "dw2TextBox";
-            this.dw2TextBox.Size = new System.Drawing.Size(135, 20);
+            this.dw2TextBox.Size = new System.Drawing.Size(127, 20);
             this.dw2TextBox.TabIndex = 2;
             this.dw2TextBox.TextChanged += new System.EventHandler(this.dw2TextBox_TextChanged);
             this.dw2TextBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.dw2TextBox_DragDrop);
@@ -112,9 +112,9 @@
             // enemysetTextBox
             // 
             this.enemysetTextBox.AllowDrop = true;
-            this.enemysetTextBox.Location = new System.Drawing.Point(102, 43);
+            this.enemysetTextBox.Location = new System.Drawing.Point(109, 43);
             this.enemysetTextBox.Name = "enemysetTextBox";
-            this.enemysetTextBox.Size = new System.Drawing.Size(135, 20);
+            this.enemysetTextBox.Size = new System.Drawing.Size(128, 20);
             this.enemysetTextBox.TabIndex = 6;
             this.enemysetTextBox.TextChanged += new System.EventHandler(this.enemysetTextBox_TextChanged);
             this.enemysetTextBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.enemysetTextBox_DragDrop);
@@ -125,7 +125,7 @@
             this.enemysetLabel.AutoSize = true;
             this.enemysetLabel.Location = new System.Drawing.Point(16, 46);
             this.enemysetLabel.Name = "enemysetLabel";
-            this.enemysetLabel.Size = new System.Drawing.Size(78, 13);
+            this.enemysetLabel.Size = new System.Drawing.Size(87, 13);
             this.enemysetLabel.TabIndex = 5;
             this.enemysetLabel.Text = "ENEMYSET BIN";
             // 
@@ -144,33 +144,24 @@
             this.multiplier.DecimalPlaces = 1;
             this.multiplier.Enabled = false;
             this.multiplier.Location = new System.Drawing.Point(96, 25);
-            this.multiplier.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.multiplier.Minimum = new decimal(new int[] {1, 0, 0, 0});
             this.multiplier.Name = "multiplier";
             this.multiplier.Size = new System.Drawing.Size(46, 20);
             this.multiplier.TabIndex = 8;
-            this.multiplier.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.multiplier.Value = new decimal(new int[] {1, 0, 0, 0});
             // 
             // multiplierLabel
             // 
             this.multiplierLabel.AutoSize = true;
             this.multiplierLabel.Location = new System.Drawing.Point(10, 27);
             this.multiplierLabel.Name = "multiplierLabel";
-            this.multiplierLabel.Size = new System.Drawing.Size(85, 13);
+            this.multiplierLabel.Size = new System.Drawing.Size(83, 13);
             this.multiplierLabel.TabIndex = 10;
             this.multiplierLabel.Text = "Multiply By       x";
             // 
             // menuBar
             // 
-            this.menuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.about});
+            this.menuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {this.about});
             this.menuBar.Location = new System.Drawing.Point(0, 0);
             this.menuBar.Name = "menuBar";
             this.menuBar.Size = new System.Drawing.Size(460, 25);
@@ -319,7 +310,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(10, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 13);
+            this.label1.Size = new System.Drawing.Size(83, 13);
             this.label1.TabIndex = 22;
             this.label1.Text = "Multiply By       x";
             // 
@@ -338,19 +329,11 @@
             this.bossMultiplier.DecimalPlaces = 1;
             this.bossMultiplier.Enabled = false;
             this.bossMultiplier.Location = new System.Drawing.Point(96, 27);
-            this.bossMultiplier.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.bossMultiplier.Minimum = new decimal(new int[] {1, 0, 0, 0});
             this.bossMultiplier.Name = "bossMultiplier";
             this.bossMultiplier.Size = new System.Drawing.Size(46, 20);
             this.bossMultiplier.TabIndex = 21;
-            this.bossMultiplier.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.bossMultiplier.Value = new decimal(new int[] {1, 0, 0, 0});
             // 
             // tabPage2
             // 
@@ -378,17 +361,17 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Main";
             this.Tag = "";
             this.Text = "DW2-TT";
-            ((System.ComponentModel.ISupportInitialize)(this.multiplier)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.multiplier)).EndInit();
             this.menuBar.ResumeLayout(false);
             this.menuBar.PerformLayout();
             this.digibeetleGroupBox.ResumeLayout(false);
             this.digibeetleGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.digibeetlPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.digibeetlPictureBox)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -396,11 +379,10 @@
             this.groupBox2.PerformLayout();
             this.EnemyBossGroupBox.ResumeLayout(false);
             this.EnemyBossGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bossMultiplier)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.bossMultiplier)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         private System.Windows.Forms.PictureBox digibeetlPictureBox;
@@ -439,7 +421,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox extremeModeCheckBox;
         private System.Windows.Forms.NumericUpDown bossMultiplier;
-        private View.SaveEditorView saveEditorView1;
+        private dw2_exp_multiplier.View.SaveEditorView saveEditorView1;
     }
 }
 
