@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.IO;
 using System.Windows.Forms;
 using dw2_exp_multiplier.Entity;
 
@@ -12,6 +11,7 @@ namespace dw2_exp_multiplier.View
     {
         #region Field Region
         private SaveFile saveFile;
+        private ISaveFile saveFileLoader;
         
         TableLayoutPanel itemTableLayoutPanel = new TableLayoutPanel();
         TableLayoutPanel importantItemTableLayoutPanel = new TableLayoutPanel();
@@ -353,11 +353,13 @@ namespace dw2_exp_multiplier.View
         private void openFileButton_Click(object sender, EventArgs e)
         {
             var ofd = new OpenFileDialog();
-            ofd.Title = "Open DW2 Raw Save File";
+            ofd.Filter = ISaveFile.mcSupportedExtensions + "|" + ISaveFile.mcExtensions + "| All files|*.*";
+            ofd.Title = "Open Memory Card or DW2 Raw Save File";
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 saveFileTextBox.Text = ofd.FileName;
-                this.saveFile = new SaveFile(File.ReadAllBytes(saveFileTextBox.Text));
+                this.saveFileLoader = ISaveFile.GetSaveFileLoader(saveFileTextBox.Text);
+                this.saveFile = this.saveFileLoader.GetSaveFile();
                 this.slotComboBox.Enabled = true;
                 this.slotComboBox.SelectedIndex = 0;
                 this.LoadCurrentSlot();
@@ -368,7 +370,7 @@ namespace dw2_exp_multiplier.View
         {
             try
             {
-                File.WriteAllBytes(saveFileTextBox.Text, this.saveFile.ToArray());
+                this.saveFileLoader.Save(saveFileTextBox.Text);
                 MessageBox.Show("Saved Successfully", Main.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
