@@ -373,12 +373,12 @@ namespace dw2_exp_multiplier.View
                 try
                 {
                     Configuration.load();      // must load configuration before loading save-file & Form Data   
+                    this.LoadForm();
                     
                     saveFileTextBox.Text = ofd.FileName;
                     this.saveFileLoader = ISaveFile.GetSaveFileLoader(saveFileTextBox.Text);
                     this.saveFile = this.saveFileLoader.GetSaveFile();
                     
-                    this.LoadForm();
                     this.slotComboBox.Enabled = true;
                     this.slotComboBox.SelectedIndex = 0;
                 }
