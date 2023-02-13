@@ -39,6 +39,9 @@
             this.multiplier = new System.Windows.Forms.NumericUpDown();
             this.multiplierLabel = new System.Windows.Forms.Label();
             this.menuBar = new System.Windows.Forms.ToolStrip();
+            this.saveEditorModeMenu = new System.Windows.Forms.ToolStripDropDownButton();
+            this.vanillaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.alternativeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.about = new System.Windows.Forms.ToolStripButton();
             this.importButton = new System.Windows.Forms.Button();
             this.exportButton = new System.Windows.Forms.Button();
@@ -56,9 +59,9 @@
             this.bossMultiplier = new System.Windows.Forms.NumericUpDown();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.saveEditorView1 = new dw2_exp_multiplier.View.SaveEditorView();
-            this.saveEditorModeMenu = new System.Windows.Forms.ToolStripDropDownButton();
-            this.vanillaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.alternativeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.improvementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.resurrectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.faithfulToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.multiplier)).BeginInit();
             this.menuBar.SuspendLayout();
             this.digibeetleGroupBox.SuspendLayout();
@@ -180,6 +183,37 @@
             this.menuBar.Size = new System.Drawing.Size(460, 25);
             this.menuBar.TabIndex = 11;
             this.menuBar.Text = "MenuBar";
+            // 
+            // saveEditorModeMenu
+            // 
+            this.saveEditorModeMenu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.saveEditorModeMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.vanillaToolStripMenuItem,
+            this.improvementToolStripMenuItem,
+            this.alternativeToolStripMenuItem,
+            this.resurrectionToolStripMenuItem,
+            this.faithfulToolStripMenuItem});
+            this.saveEditorModeMenu.Image = ((System.Drawing.Image)(resources.GetObject("saveEditorModeMenu.Image")));
+            this.saveEditorModeMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.saveEditorModeMenu.Name = "saveEditorModeMenu";
+            this.saveEditorModeMenu.Size = new System.Drawing.Size(112, 22);
+            this.saveEditorModeMenu.Text = "Save Editor Mode";
+            // 
+            // vanillaToolStripMenuItem
+            // 
+            this.vanillaToolStripMenuItem.Checked = true;
+            this.vanillaToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.vanillaToolStripMenuItem.Name = "vanillaToolStripMenuItem";
+            this.vanillaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.vanillaToolStripMenuItem.Text = "Vanilla / Hard";
+            this.vanillaToolStripMenuItem.Click += new System.EventHandler(this.vanillaToolStripMenuItem_Click);
+            // 
+            // alternativeToolStripMenuItem
+            // 
+            this.alternativeToolStripMenuItem.Name = "alternativeToolStripMenuItem";
+            this.alternativeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.alternativeToolStripMenuItem.Text = "Alternative";
+            this.alternativeToolStripMenuItem.Click += new System.EventHandler(this.alternativeToolStripMenuItem_Click);
             // 
             // about
             // 
@@ -374,33 +408,26 @@
             this.saveEditorView1.Size = new System.Drawing.Size(444, 384);
             this.saveEditorView1.TabIndex = 0;
             // 
-            // saveEditorModeMenu
+            // improvementToolStripMenuItem
             // 
-            this.saveEditorModeMenu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.saveEditorModeMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.vanillaToolStripMenuItem,
-            this.alternativeToolStripMenuItem});
-            this.saveEditorModeMenu.Image = ((System.Drawing.Image)(resources.GetObject("saveEditorModeMenu.Image")));
-            this.saveEditorModeMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.saveEditorModeMenu.Name = "saveEditorModeMenu";
-            this.saveEditorModeMenu.Size = new System.Drawing.Size(112, 22);
-            this.saveEditorModeMenu.Text = "Save Editor Mode";
+            this.improvementToolStripMenuItem.Name = "improvementToolStripMenuItem";
+            this.improvementToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.improvementToolStripMenuItem.Text = "Improvement";
+            this.improvementToolStripMenuItem.Click += new System.EventHandler(this.improvementToolStripMenuItem_Click);
             // 
-            // vanillaToolStripMenuItem
+            // resurrectionToolStripMenuItem
             // 
-            this.vanillaToolStripMenuItem.Checked = true;
-            this.vanillaToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.vanillaToolStripMenuItem.Name = "vanillaToolStripMenuItem";
-            this.vanillaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.vanillaToolStripMenuItem.Text = "Vanilla";
-            this.vanillaToolStripMenuItem.Click += new System.EventHandler(this.vanillaToolStripMenuItem_Click);
+            this.resurrectionToolStripMenuItem.Name = "resurrectionToolStripMenuItem";
+            this.resurrectionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.resurrectionToolStripMenuItem.Text = "Resurrection";
+            this.resurrectionToolStripMenuItem.Click += new System.EventHandler(this.resurrectionToolStripMenuItem_Click);
             // 
-            // alternativeToolStripMenuItem
+            // faithfulToolStripMenuItem
             // 
-            this.alternativeToolStripMenuItem.Name = "alternativeToolStripMenuItem";
-            this.alternativeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.alternativeToolStripMenuItem.Text = "Alternative";
-            this.alternativeToolStripMenuItem.Click += new System.EventHandler(this.alternativeToolStripMenuItem_Click);
+            this.faithfulToolStripMenuItem.Name = "faithfulToolStripMenuItem";
+            this.faithfulToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.faithfulToolStripMenuItem.Text = "Faithful";
+            this.faithfulToolStripMenuItem.Click += new System.EventHandler(this.faithfulToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -475,6 +502,9 @@
         private System.Windows.Forms.ToolStripDropDownButton saveEditorModeMenu;
         private System.Windows.Forms.ToolStripMenuItem vanillaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem alternativeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem improvementToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem resurrectionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem faithfulToolStripMenuItem;
     }
 }
 

@@ -272,18 +272,53 @@ namespace dw2_exp_multiplier
         private void vanillaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             vanillaToolStripMenuItem.Checked = true;
+            improvementToolStripMenuItem.Checked = false;
+            resurrectionToolStripMenuItem.Checked = false;
             alternativeToolStripMenuItem.Checked = false;
+            faithfulToolStripMenuItem.Checked = false;
             Configuration.SetVanillaMode();
+        }
+
+        private void improvementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            vanillaToolStripMenuItem.Checked = false;
+            improvementToolStripMenuItem.Checked = true;
+            resurrectionToolStripMenuItem.Checked = false;
+            alternativeToolStripMenuItem.Checked = false;
+            faithfulToolStripMenuItem.Checked = false;
+            Configuration.SetImprovementMode();
+        }
+
+        private void resurrectionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            vanillaToolStripMenuItem.Checked = false;
+            improvementToolStripMenuItem.Checked = false;
+            resurrectionToolStripMenuItem.Checked = true;
+            alternativeToolStripMenuItem.Checked = false;
+            faithfulToolStripMenuItem.Checked = false;
+            Configuration.SetResurrectionMode();
         }
 
         private void alternativeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            vanillaToolStripMenuItem.Checked = false;
+            vanillaToolStripMenuItem.Checked = true;
+            improvementToolStripMenuItem.Checked = false;
+            resurrectionToolStripMenuItem.Checked = false;
             alternativeToolStripMenuItem.Checked = true;
+            faithfulToolStripMenuItem.Checked = false;
             Configuration.SetAlternativeMode();
         }
-        #endregion
         
+        private void faithfulToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            vanillaToolStripMenuItem.Checked = false;
+            improvementToolStripMenuItem.Checked = false;
+            resurrectionToolStripMenuItem.Checked = false;
+            alternativeToolStripMenuItem.Checked = false;
+            faithfulToolStripMenuItem.Checked = true;
+            Configuration.SetFaithfulMode();
+        }
+        #endregion
     }
     
 }

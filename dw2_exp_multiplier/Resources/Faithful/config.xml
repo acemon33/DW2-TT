@@ -1,0 +1,1447 @@
+<dw2-utility>
+	<game-flags>
+		<flags>
+			<flag><from>1012</from><to>1024</to></flag>
+		</flags>
+		<names>
+			<flag address="1050" name="Game Story" />
+		</names>
+	</game-flags>
+	<missions>
+		<mission>
+			<name>Mission 01: Boot Domain</name>
+			<flags>
+				<flag address="1012" value="00" />
+				<flag address="1014" value="00" />
+				<flag address="1016" value="00" />
+				<flag address="1017" value="00" />
+				<flag address="1018" value="00" />
+				<flag address="1019" value="00" />
+				<flag address="101A" value="00" />
+				<flag address="101B" value="00" />
+				<flag address="101C" value="80" />
+				<flag address="101D" value="01" />
+				<flag address="101E" value="10" />
+				<flag address="101F" value="00" />
+				<flag address="1020" value="00" />
+				<flag address="1021" value="00" />
+				<flag address="1030" value="00" />
+				<flag address="1031" value="00" />
+				<flag address="1032" value="00" />
+				<flag address="1033" value="20" />
+				<flag address="1034" value="00" />
+				<flag address="1035" value="00" />
+				<flag address="1036" value="00" />
+				<flag address="1038" value="00" />
+				<flag address="1039" value="00" />
+				<flag address="103A" value="00" />
+				<flag address="103B" value="00" />
+				<flag address="1040" value="01" />
+				<flag address="1041" value="00" />
+				<flag address="1042" value="00" />
+				<flag address="1043" value="00" />
+				<flag address="1044" value="00" />
+				<flag address="1045" value="00" />
+				<flag address="1046" value="00" />
+				<flag address="1047" value="00" />
+				<flag address="1048" value="00" />
+				<flag address="1049" value="00" />
+				<flag address="104A" value="00" />
+				<flag address="104B" value="00" />
+				<flag address="104C" value="00" />
+				<flag address="104D" value="00" />
+				<flag address="104E" value="00" />
+				<flag address="104F" value="00" />
+				<flag address="1050" value="00" />
+			</flags>
+		</mission>
+		<mission>
+			<name>Mission 02: SCSI Domain</name>
+			<flags>
+				<flag address="1012" value="04" />
+				<flag address="1014" value="00" />
+				<flag address="1016" value="00" />
+				<flag address="1017" value="00" />
+				<flag address="1018" value="00" />
+				<flag address="1019" value="00" />
+				<flag address="101A" value="00" />
+				<flag address="101B" value="00" />
+				<flag address="101C" value="08" />
+				<flag address="101D" value="00" />
+				<flag address="101E" value="10" />
+				<flag address="101F" value="00" />
+				<flag address="1020" value="00" />
+				<flag address="1021" value="00" />
+				<flag address="1030" value="01" />
+				<flag address="1031" value="00" />
+				<flag address="1032" value="00" />
+				<flag address="1033" value="20" />
+				<flag address="1034" value="00" />
+				<flag address="1035" value="00" />
+				<flag address="1036" value="00" />
+				<flag address="1038" value="00" />
+				<flag address="1039" value="00" />
+				<flag address="103A" value="00" />
+				<flag address="103B" value="20" />
+				<flag address="1040" value="5F" />
+				<flag address="1041" value="4A" />
+				<flag address="1042" value="00" />
+				<flag address="1043" value="00" />
+				<flag address="1044" value="00" />
+				<flag address="1045" value="00" />
+				<flag address="1046" value="00" />
+				<flag address="1047" value="00" />
+				<flag address="1048" value="00" />
+				<flag address="1049" value="00" />
+				<flag address="104A" value="00" />
+				<flag address="104B" value="00" />
+				<flag address="104C" value="00" />
+				<flag address="104D" value="00" />
+				<flag address="104E" value="00" />
+				<flag address="104F" value="00" />
+				<flag address="1050" value="01" />
+			</flags>
+		</mission>
+		<mission>
+			<name>Mission 03: Video, Disk Domains</name>
+			<flags>
+				<flag address="1012" value="04" />
+				<flag address="1014" value="00" />
+				<flag address="1016" value="00" />
+				<flag address="1017" value="00" />
+				<flag address="1018" value="40" />
+				<flag address="1019" value="00" />
+				<flag address="101A" value="00" />
+				<flag address="101B" value="00" />
+				<flag address="101C" value="08" />
+				<flag address="101D" value="00" />
+				<flag address="101E" value="10" />
+				<flag address="101F" value="00" />
+				<flag address="1020" value="00" />
+				<flag address="1021" value="00" />
+				<flag address="1030" value="07" />
+				<flag address="1031" value="00" />
+				<flag address="1032" value="00" />
+				<flag address="1033" value="20" />
+				<flag address="1034" value="00" />
+				<flag address="1035" value="00" />
+				<flag address="1036" value="00" />
+				<flag address="1038" value="01" />
+				<flag address="1039" value="00" />
+				<flag address="103A" value="00" />
+				<flag address="103B" value="20" />
+				<flag address="1040" value="5F" />
+				<flag address="1041" value="CA" />
+				<flag address="1042" value="02" />
+				<flag address="1043" value="00" />
+				<flag address="1044" value="00" />
+				<flag address="1045" value="00" />
+				<flag address="1046" value="00" />
+				<flag address="1047" value="00" />
+				<flag address="1048" value="00" />
+				<flag address="1049" value="00" />
+				<flag address="104A" value="00" />
+				<flag address="104B" value="00" />
+				<flag address="104C" value="00" />
+				<flag address="104D" value="00" />
+				<flag address="104E" value="00" />
+				<flag address="104F" value="00" />
+				<flag address="1050" value="02" />
+			</flags>
+		</mission>
+		<mission>
+			<name>Mission 04: BIOS Domain</name>
+			<flags>
+				<flag address="1012" value="14" />
+            <flag address="1014" value="08" />
+            <flag address="1016" value="04" />
+            <flag address="1017" value="01" />
+            <flag address="1018" value="C0" />
+            <flag address="1019" value="01" />
+            <flag address="101A" value="00" />
+            <flag address="101B" value="00" />
+            <flag address="101C" value="08" />
+            <flag address="101D" value="00" />
+            <flag address="101E" value="10" />
+            <flag address="101F" value="00" />
+            <flag address="1020" value="00" />
+            <flag address="1021" value="00" />
+            <flag address="1030" value="0F" />
+            <flag address="1031" value="00" />
+            <flag address="1032" value="00" />
+            <flag address="1033" value="20" />
+            <flag address="1034" value="08" />
+            <flag address="1035" value="00" />
+            <flag address="1036" value="00" />
+            <flag address="1038" value="07" />
+            <flag address="1039" value="00" />
+            <flag address="103A" value="00" />
+            <flag address="103B" value="20" />
+            <flag address="1040" value="5F" />
+            <flag address="1041" value="CA" />
+            <flag address="1042" value="1E" />
+            <flag address="1043" value="00" />
+            <flag address="1044" value="00" />
+            <flag address="1045" value="00" />
+            <flag address="1046" value="00" />
+            <flag address="1047" value="00" />
+            <flag address="1048" value="00" />
+            <flag address="1049" value="00" />
+            <flag address="104A" value="00" />
+            <flag address="104B" value="00" />
+            <flag address="104C" value="00" />
+            <flag address="104D" value="00" />
+            <flag address="104E" value="00" />
+            <flag address="104F" value="00" />
+            <flag address="1050" value="02" />
+			</flags>
+		</mission>
+		<mission>
+			<name>Mission 05: Drive, Web Domains</name>
+			<flags>
+				<flag address="1012" value="14" />
+				<flag address="1014" value="08" />
+				<flag address="1016" value="14" />
+				<flag address="1017" value="01" />
+				<flag address="1018" value="C0" />
+				<flag address="1019" value="03" />
+				<flag address="101A" value="00" />
+				<flag address="101B" value="00" />
+				<flag address="101C" value="08" />
+				<flag address="101D" value="00" />
+				<flag address="101E" value="10" />
+				<flag address="101F" value="00" />
+				<flag address="1020" value="00" />
+				<flag address="1021" value="00" />
+				<flag address="1030" value="3F" />
+				<flag address="1031" value="00" />
+				<flag address="1032" value="00" />
+				<flag address="1033" value="20" />
+				<flag address="1034" value="08" />
+				<flag address="1035" value="00" />
+				<flag address="1036" value="00" />
+				<flag address="1038" value="0F" />
+				<flag address="1039" value="00" />
+				<flag address="103A" value="00" />
+				<flag address="103B" value="20" />
+				<flag address="1040" value="5F" />
+				<flag address="1041" value="CA" />
+				<flag address="1042" value="5E" />
+				<flag address="1043" value="10" />
+				<flag address="1044" value="00" />
+				<flag address="1045" value="00" />
+				<flag address="1046" value="00" />
+				<flag address="1047" value="00" />
+				<flag address="1048" value="00" />
+				<flag address="1049" value="00" />
+				<flag address="104A" value="00" />
+				<flag address="104B" value="00" />
+				<flag address="104C" value="00" />
+				<flag address="104D" value="00" />
+				<flag address="104E" value="00" />
+				<flag address="104F" value="00" />
+				<flag address="1050" value="03" />
+			</flags>
+		</mission>
+		<mission>
+			<name>Mission 06: Modem Domain</name>
+			<flags>
+				<flag address="1012" value="14" />
+				<flag address="1014" value="08" />
+				<flag address="1016" value="14" />
+				<flag address="1017" value="31" />
+				<flag address="1018" value="C0" />
+				<flag address="1019" value="0F" />
+				<flag address="101A" value="00" />
+				<flag address="101B" value="00" />
+				<flag address="101C" value="08" />
+				<flag address="101D" value="00" />
+				<flag address="101E" value="10" />
+				<flag address="101F" value="00" />
+				<flag address="1020" value="00" />
+				<flag address="1021" value="00" />
+				<flag address="1030" value="7F" />
+				<flag address="1031" value="00" />
+				<flag address="1032" value="00" />
+				<flag address="1033" value="20" />
+				<flag address="1034" value="08" />
+				<flag address="1035" value="00" />
+				<flag address="1036" value="00" />
+				<flag address="1038" value="3F" />
+				<flag address="1039" value="00" />
+				<flag address="103A" value="00" />
+				<flag address="103B" value="20" />
+				<flag address="1040" value="5F" />
+				<flag address="1041" value="CA" />
+				<flag address="1042" value="5E" />
+				<flag address="1043" value="70" />
+				<flag address="1044" value="00" />
+				<flag address="1045" value="00" />
+				<flag address="1046" value="00" />
+				<flag address="1047" value="00" />
+				<flag address="1048" value="00" />
+				<flag address="1049" value="00" />
+				<flag address="104A" value="00" />
+				<flag address="104B" value="00" />
+				<flag address="104C" value="00" />
+				<flag address="104D" value="00" />
+				<flag address="104E" value="00" />
+				<flag address="104F" value="00" />
+				<flag address="1050" value="03" />
+			</flags>
+		</mission>
+		<mission>
+			<name>Mission 07: SCSI, Video, Disk Domains</name>
+			<flags>
+				<flag address="1012" value="14" />
+				<flag address="1014" value="08" />
+				<flag address="1016" value="14" />
+				<flag address="1017" value="3D" />
+				<flag address="1018" value="C0" />
+				<flag address="1019" value="1F" />
+				<flag address="101A" value="00" />
+				<flag address="101B" value="00" />
+				<flag address="101C" value="08" />
+				<flag address="101D" value="00" />
+				<flag address="101E" value="12" />
+				<flag address="101F" value="00" />
+				<flag address="1020" value="00" />
+				<flag address="1021" value="00" />
+				<flag address="1030" value="F8" />
+				<flag address="1031" value="03" />
+				<flag address="1032" value="00" />
+				<flag address="1033" value="20" />
+				<flag address="1034" value="0C" />
+				<flag address="1035" value="00" />
+				<flag address="1036" value="00" />
+				<flag address="1038" value="7F" />
+				<flag address="1039" value="00" />
+				<flag address="103A" value="00" />
+				<flag address="103B" value="20" />
+				<flag address="1040" value="5F" />
+				<flag address="1041" value="CA" />
+				<flag address="1042" value="5E" />
+				<flag address="1043" value="70" />
+				<flag address="1044" value="DA" />
+				<flag address="1045" value="00" />
+				<flag address="1046" value="00" />
+				<flag address="1047" value="00" />
+				<flag address="1048" value="00" />
+				<flag address="1049" value="00" />
+				<flag address="104A" value="00" />
+				<flag address="104B" value="00" />
+				<flag address="104C" value="00" />
+				<flag address="104D" value="00" />
+				<flag address="104E" value="00" />
+				<flag address="104F" value="00" />
+				<flag address="1050" value="04" />
+			</flags>
+		</mission>
+		<mission>
+			<name>Mission 08: Web, Drive, BIOS Domains</name>
+			<flags>
+				<flag address="1012" value="14" />
+				<flag address="1014" value="08" />
+				<flag address="1016" value="14" />
+				<flag address="1017" value="3D" />
+				<flag address="1018" value="C0" />
+				<flag address="1019" value="FF" />
+				<flag address="101A" value="00" />
+				<flag address="101B" value="00" />
+				<flag address="101C" value="08" />
+				<flag address="101D" value="00" />
+				<flag address="101E" value="16" />
+				<flag address="101F" value="00" />
+				<flag address="1020" value="00" />
+				<flag address="1021" value="00" />
+				<flag address="1030" value="C0" />
+				<flag address="1031" value="1F" />
+				<flag address="1032" value="00" />
+				<flag address="1033" value="20" />
+				<flag address="1034" value="0C" />
+				<flag address="1035" value="00" />
+				<flag address="1036" value="00" />
+				<flag address="1038" value="FF" />
+				<flag address="1039" value="03" />
+				<flag address="103A" value="00" />
+				<flag address="103B" value="20" />
+				<flag address="1040" value="5F" />
+				<flag address="1041" value="CA" />
+				<flag address="1042" value="5E" />
+				<flag address="1043" value="70" />
+				<flag address="1044" value="DA" />
+				<flag address="1045" value="FC" />
+				<flag address="1046" value="7F" />
+				<flag address="1047" value="00" />
+				<flag address="1048" value="00" />
+				<flag address="1049" value="00" />
+				<flag address="104A" value="00" />
+				<flag address="104B" value="00" />
+				<flag address="104C" value="00" />
+				<flag address="104D" value="00" />
+				<flag address="104E" value="00" />
+				<flag address="104F" value="00" />
+				<flag address="1050" value="05" />
+			</flags>
+		</mission>
+		<mission>
+			<name>Mission 09: Modem Domain</name>
+			<flags>
+				<flag address="1012" value="14" />
+				<flag address="1014" value="08" />
+				<flag address="1016" value="14" />
+				<flag address="1017" value="3D" />
+				<flag address="1018" value="C0" />
+				<flag address="1019" value="FF" />
+				<flag address="101A" value="07" />
+				<flag address="101B" value="00" />
+				<flag address="101C" value="08" />
+				<flag address="101D" value="00" />
+				<flag address="101E" value="16" />
+				<flag address="101F" value="00" />
+				<flag address="1020" value="00" />
+				<flag address="1021" value="00" />
+				<flag address="1030" value="80" />
+				<flag address="1031" value="3F" />
+				<flag address="1032" value="00" />
+				<flag address="1033" value="20" />
+				<flag address="1034" value="0C" />
+				<flag address="1035" value="00" />
+				<flag address="1036" value="00" />
+				<flag address="1038" value="FF" />
+				<flag address="1039" value="1F" />
+				<flag address="103A" value="00" />
+				<flag address="103B" value="20" />
+				<flag address="1040" value="5F" />
+				<flag address="1041" value="CA" />
+				<flag address="1042" value="5E" />
+				<flag address="1043" value="70" />
+				<flag address="1044" value="DA" />
+				<flag address="1045" value="FC" />
+				<flag address="1046" value="7F" />
+				<flag address="1047" value="79" />
+				<flag address="1048" value="00" />
+				<flag address="1049" value="00" />
+				<flag address="104A" value="00" />
+				<flag address="104B" value="00" />
+				<flag address="104C" value="00" />
+				<flag address="104D" value="00" />
+				<flag address="104E" value="00" />
+				<flag address="104F" value="00" />
+				<flag address="1050" value="05" />
+			</flags>
+		</mission>
+		<mission>
+			<name>Mission 10: DVD Domain</name>
+			<flags>
+				<flag address="1012" value="14" />
+				<flag address="1014" value="08" />
+				<flag address="1016" value="14" />
+				<flag address="1017" value="3D" />
+				<flag address="1018" value="C0" />
+				<flag address="1019" value="FF" />
+				<flag address="101A" value="0F" />
+				<flag address="101B" value="00" />
+				<flag address="101C" value="08" />
+				<flag address="101D" value="60" />
+				<flag address="101E" value="16" />
+				<flag address="101F" value="02" />
+				<flag address="1020" value="00" />
+				<flag address="1021" value="00" />
+				<flag address="1030" value="80" />
+				<flag address="1031" value="3F" />
+				<flag address="1032" value="00" />
+				<flag address="1033" value="60" />
+				<flag address="1034" value="1C" />
+				<flag address="1035" value="00" />
+				<flag address="1036" value="00" />
+				<flag address="1038" value="FF" />
+				<flag address="1039" value="3F" />
+				<flag address="103A" value="00" />
+				<flag address="103B" value="20" />
+				<flag address="1040" value="5F" />
+				<flag address="1041" value="CA" />
+				<flag address="1042" value="5E" />
+				<flag address="1043" value="70" />
+				<flag address="1044" value="DA" />
+				<flag address="1045" value="FC" />
+				<flag address="1046" value="7F" />
+				<flag address="1047" value="F9" />
+				<flag address="1048" value="0F" />
+				<flag address="1049" value="00" />
+				<flag address="104A" value="00" />
+				<flag address="104B" value="00" />
+				<flag address="104C" value="00" />
+				<flag address="104D" value="00" />
+				<flag address="104E" value="00" />
+				<flag address="104F" value="00" />
+				<flag address="1050" value="05" />
+			</flags>
+		</mission>
+		<mission>
+			<name>Mission 11: Code Domain</name>
+			<flags>
+				<flag address="1012" value="14" />
+				<flag address="1014" value="08" />
+				<flag address="1016" value="14" />
+				<flag address="1017" value="3D" />
+				<flag address="1018" value="C0" />
+				<flag address="1019" value="FF" />
+				<flag address="101A" value="0F" />
+				<flag address="101B" value="00" />
+				<flag address="101C" value="18" />
+				<flag address="101D" value="60" />
+				<flag address="101E" value="16" />
+				<flag address="101F" value="02" />
+				<flag address="1020" value="00" />
+				<flag address="1021" value="00" />
+				<flag address="1030" value="80" />
+				<flag address="1031" value="7F" />
+				<flag address="1032" value="00" />
+				<flag address="1033" value="60" />
+				<flag address="1034" value="1C" />
+				<flag address="1035" value="00" />
+				<flag address="1036" value="00" />
+				<flag address="1038" value="FF" />
+				<flag address="1039" value="3F" />
+				<flag address="103A" value="00" />
+				<flag address="103B" value="60" />
+				<flag address="1040" value="5F" />
+				<flag address="1041" value="CA" />
+				<flag address="1042" value="5E" />
+				<flag address="1043" value="70" />
+				<flag address="1044" value="DA" />
+				<flag address="1045" value="FC" />
+				<flag address="1046" value="7F" />
+				<flag address="1047" value="F9" />
+				<flag address="1048" value="7F" />
+				<flag address="1049" value="00" />
+				<flag address="104A" value="00" />
+				<flag address="104B" value="00" />
+				<flag address="104C" value="00" />
+				<flag address="104D" value="00" />
+				<flag address="104E" value="00" />
+				<flag address="104F" value="00" />
+				<flag address="1050" value="05" />
+			</flags>
+		</mission>
+		<mission>
+			<name>Mission 12: Laser Domain</name>
+			<flags>
+				<flag address="1012" value="14" />
+				<flag address="1014" value="08" />
+				<flag address="1016" value="14" />
+				<flag address="1017" value="3D" />
+				<flag address="1018" value="C0" />
+				<flag address="1019" value="FF" />
+				<flag address="101A" value="1F" />
+				<flag address="101B" value="00" />
+				<flag address="101C" value="18" />
+				<flag address="101D" value="64" />
+				<flag address="101E" value="16" />
+				<flag address="101F" value="03" />
+				<flag address="1020" value="00" />
+				<flag address="1021" value="00" />
+				<flag address="1030" value="80" />
+				<flag address="1031" value="FF" />
+				<flag address="1032" value="00" />
+				<flag address="1033" value="60" />
+				<flag address="1034" value="1C" />
+				<flag address="1035" value="00" />
+				<flag address="1036" value="00" />
+				<flag address="1038" value="FF" />
+				<flag address="1039" value="7F" />
+				<flag address="103A" value="00" />
+				<flag address="103B" value="60" />
+				<flag address="1040" value="5F" />
+				<flag address="1041" value="CA" />
+				<flag address="1042" value="5E" />
+				<flag address="1043" value="70" />
+				<flag address="1044" value="DA" />
+				<flag address="1045" value="FC" />
+				<flag address="1046" value="7F" />
+				<flag address="1047" value="F9" />
+				<flag address="1048" value="FF" />
+				<flag address="1049" value="01" />
+				<flag address="104A" value="00" />
+				<flag address="104B" value="00" />
+				<flag address="104C" value="00" />
+				<flag address="104D" value="00" />
+				<flag address="104E" value="00" />
+				<flag address="104F" value="00" />
+				<flag address="1050" value="06" />
+			</flags>
+		</mission>
+		<mission>
+			<name>Mission 13: Power Domain</name>
+			<flags>
+				<flag address="1012" value="14" />
+				<flag address="1014" value="08" />
+				<flag address="1016" value="14" />
+				<flag address="1017" value="3D" />
+				<flag address="1018" value="C0" />
+				<flag address="1019" value="FF" />
+				<flag address="101A" value="3F" />
+				<flag address="101B" value="00" />
+				<flag address="101C" value="18" />
+				<flag address="101D" value="6C" />
+				<flag address="101E" value="16" />
+				<flag address="101F" value="03" />
+				<flag address="1020" value="00" />
+				<flag address="1021" value="00" />
+				<flag address="1030" value="80" />
+				<flag address="1031" value="FF" />
+				<flag address="1032" value="00" />
+				<flag address="1033" value="E0" />
+				<flag address="1034" value="EC" />
+				<flag address="1035" value="00" />
+				<flag address="1036" value="00" />
+				<flag address="1038" value="FF" />
+				<flag address="1039" value="FF" />
+				<flag address="103A" value="00" />
+				<flag address="103B" value="60" />
+				<flag address="1040" value="5F" />
+				<flag address="1041" value="CA" />
+				<flag address="1042" value="5E" />
+				<flag address="1043" value="70" />
+				<flag address="1044" value="DA" />
+				<flag address="1045" value="FC" />
+				<flag address="1046" value="7F" />
+				<flag address="1047" value="F9" />
+				<flag address="1048" value="FF" />
+				<flag address="1049" value="CF" />
+				<flag address="104A" value="0F" />
+				<flag address="104B" value="00" />
+				<flag address="104C" value="00" />
+				<flag address="104D" value="00" />
+				<flag address="104E" value="00" />
+				<flag address="104F" value="00" />
+				<flag address="1050" value="06" />
+			</flags>
+		</mission>
+		<mission>
+			<name>Mission 14: Giga, Port, Scan, Diode</name>
+			<flags>
+				<flag address="1012" value="14" />
+				<flag address="1014" value="08" />
+				<flag address="1016" value="14" />
+				<flag address="1017" value="3D" />
+				<flag address="1018" value="C0" />
+				<flag address="1019" value="FF" />
+				<flag address="101A" value="3F" />
+				<flag address="101B" value="00" />
+				<flag address="101C" value="38" />
+				<flag address="101D" value="6C" />
+				<flag address="101E" value="16" />
+				<flag address="101F" value="03" />
+				<flag address="1020" value="02" />
+				<flag address="1021" value="00" />
+				<flag address="1030" value="80" />
+				<flag address="1031" value="FF" />
+				<flag address="1032" value="0F" />
+				<flag address="1033" value="E0" />
+				<flag address="1034" value="EC" />
+				<flag address="1035" value="00" />
+				<flag address="1036" value="00" />
+				<flag address="1038" value="FF" />
+				<flag address="1039" value="FF" />
+				<flag address="103A" value="00" />
+				<flag address="103B" value="E0" />
+				<flag address="1040" value="5F" />
+				<flag address="1041" value="CA" />
+				<flag address="1042" value="5E" />
+				<flag address="1043" value="70" />
+				<flag address="1044" value="DA" />
+				<flag address="1045" value="FC" />
+				<flag address="1046" value="7F" />
+				<flag address="1047" value="F9" />
+				<flag address="1048" value="FF" />
+				<flag address="1049" value="CF" />
+				<flag address="104A" value="3F" />
+				<flag address="104B" value="00" />
+				<flag address="104C" value="00" />
+				<flag address="104D" value="00" />
+				<flag address="104E" value="00" />
+				<flag address="104F" value="00" />
+				<flag address="1050" value="06" />
+			</flags>
+		</mission>
+		<mission>
+			<name>Mission 15: Patch, Mega, Data Domain</name>
+			<flags>
+				<flag address="1012" value="14" />
+				<flag address="1014" value="08" />
+				<flag address="1016" value="14" />
+				<flag address="1017" value="3D" />
+				<flag address="1018" value="C0" />
+				<flag address="1019" value="FF" />
+				<flag address="101A" value="FF" />
+				<flag address="101B" value="03" />
+				<flag address="101C" value="38" />
+				<flag address="101D" value="6C" />
+				<flag address="101E" value="F6" />
+				<flag address="101F" value="03" />
+				<flag address="1020" value="02" />
+				<flag address="1021" value="00" />
+				<flag address="1030" value="80" />
+				<flag address="1031" value="FF" />
+				<flag address="1032" value="7F" />
+				<flag address="1033" value="E0" />
+				<flag address="1034" value="EC" />
+				<flag address="1035" value="00" />
+				<flag address="1036" value="00" />
+				<flag address="1038" value="FF" />
+				<flag address="1039" value="FF" />
+				<flag address="103A" value="0F" />
+				<flag address="103B" value="E0" />
+				<flag address="1040" value="5F" />
+				<flag address="1041" value="CA" />
+				<flag address="1042" value="5E" />
+				<flag address="1043" value="70" />
+				<flag address="1044" value="DA" />
+				<flag address="1045" value="FC" />
+				<flag address="1046" value="7F" />
+				<flag address="1047" value="F9" />
+				<flag address="1048" value="FF" />
+				<flag address="1049" value="CF" />
+				<flag address="104A" value="BF" />
+				<flag address="104B" value="6A" />
+				<flag address="104C" value="00" />
+				<flag address="104D" value="00" />
+				<flag address="104E" value="00" />
+				<flag address="104F" value="00" />
+				<flag address="1050" value="07" />
+			</flags>
+		</mission>
+		<mission>
+			<name>Mission 16: Soft Domain</name>
+			<flags>
+				<flag address="1012" value="14" />
+				<flag address="1014" value="08" />
+				<flag address="1016" value="14" />
+				<flag address="1017" value="3D" />
+				<flag address="1018" value="C0" />
+				<flag address="1019" value="FF" />
+				<flag address="101A" value="FF" />
+				<flag address="101B" value="1F" />
+				<flag address="101C" value="38" />
+				<flag address="101D" value="6C" />
+				<flag address="101E" value="F6" />
+				<flag address="101F" value="FB" />
+				<flag address="1020" value="0A" />
+				<flag address="1021" value="00" />
+				<flag address="1030" value="80" />
+				<flag address="1031" value="FF" />
+				<flag address="1032" value="FF" />
+				<flag address="1033" value="E0" />
+				<flag address="1034" value="EC" />
+				<flag address="1035" value="00" />
+				<flag address="1036" value="00" />
+				<flag address="1038" value="FF" />
+				<flag address="1039" value="FF" />
+				<flag address="103A" value="7F" />
+				<flag address="103B" value="E0" />
+				<flag address="1040" value="5F" />
+				<flag address="1041" value="CA" />
+				<flag address="1042" value="5E" />
+				<flag address="1043" value="70" />
+				<flag address="1044" value="DA" />
+				<flag address="1045" value="FC" />
+				<flag address="1046" value="7F" />
+				<flag address="1047" value="F9" />
+				<flag address="1048" value="FF" />
+				<flag address="1049" value="CF" />
+				<flag address="104A" value="BF" />
+				<flag address="104B" value="EA" />
+				<flag address="104C" value="DF" />
+				<flag address="104D" value="01" />
+				<flag address="104E" value="00" />
+				<flag address="104F" value="00" />
+				<flag address="1050" value="07" />
+			</flags>
+		</mission>
+		<mission>
+			<name>Mission 17: Bug, RAM Domains</name>
+			<flags>
+				<flag address="1012" value="14" />
+				<flag address="1014" value="08" />
+				<flag address="1016" value="14" />
+				<flag address="1017" value="3D" />
+				<flag address="1018" value="C0" />
+				<flag address="1019" value="FF" />
+				<flag address="101A" value="FF" />
+				<flag address="101B" value="3F" />
+				<flag address="101C" value="38" />
+				<flag address="101D" value="6C" />
+				<flag address="101E" value="F6" />
+				<flag address="101F" value="FF" />
+				<flag address="1020" value="0B" />
+				<flag address="1021" value="00" />
+				<flag address="1030" value="80" />
+				<flag address="1031" value="FF" />
+				<flag address="1032" value="FF" />
+				<flag address="1033" value="E3" />
+				<flag address="1034" value="EC" />
+				<flag address="1035" value="00" />
+				<flag address="1036" value="00" />
+				<flag address="1038" value="FF" />
+				<flag address="1039" value="FF" />
+				<flag address="103A" value="FF" />
+				<flag address="103B" value="E0" />
+				<flag address="1040" value="5F" />
+				<flag address="1041" value="CA" />
+				<flag address="1042" value="5E" />
+				<flag address="1043" value="70" />
+				<flag address="1044" value="DA" />
+				<flag address="1045" value="FC" />
+				<flag address="1046" value="7F" />
+				<flag address="1047" value="F9" />
+				<flag address="1048" value="FF" />
+				<flag address="1049" value="CF" />
+				<flag address="104A" value="BF" />
+				<flag address="104B" value="EA" />
+				<flag address="104C" value="DF" />
+				<flag address="104D" value="61" />
+				<flag address="104E" value="00" />
+				<flag address="104F" value="00" />
+				<flag address="1050" value="08" />
+			</flags>
+		</mission>
+		<mission>
+			<name>Mission 18: ROM Domain</name>
+			<flags>
+				<flag address="1012" value="14" />
+				<flag address="1014" value="08" />
+				<flag address="1016" value="14" />
+				<flag address="1017" value="3D" />
+				<flag address="1018" value="C0" />
+				<flag address="1019" value="FF" />
+				<flag address="101A" value="FF" />
+				<flag address="101B" value="FF" />
+				<flag address="101C" value="38" />
+				<flag address="101D" value="6C" />
+				<flag address="101E" value="F6" />
+				<flag address="101F" value="FF" />
+				<flag address="1020" value="1B" />
+				<flag address="1021" value="00" />
+				<flag address="1030" value="80" />
+				<flag address="1031" value="FF" />
+				<flag address="1032" value="FF" />
+				<flag address="1033" value="E7" />
+				<flag address="1034" value="EC" />
+				<flag address="1035" value="40" />
+				<flag address="1036" value="00" />
+				<flag address="1038" value="FF" />
+				<flag address="1039" value="FF" />
+				<flag address="103A" value="FF" />
+				<flag address="103B" value="E3" />
+				<flag address="1040" value="5F" />
+				<flag address="1041" value="CA" />
+				<flag address="1042" value="5E" />
+				<flag address="1043" value="70" />
+				<flag address="1044" value="DA" />
+				<flag address="1045" value="FC" />
+				<flag address="1046" value="7F" />
+				<flag address="1047" value="F9" />
+				<flag address="1048" value="FF" />
+				<flag address="1049" value="CF" />
+				<flag address="104A" value="BF" />
+				<flag address="104B" value="EA" />
+				<flag address="104C" value="DF" />
+				<flag address="104D" value="61" />
+				<flag address="104E" value="CE" />
+				<flag address="104F" value="3D" />
+				<flag address="1050" value="08" />
+			</flags>
+		</mission>
+		<mission>
+			<name>Mission 19: Core Tower</name>
+			<flags>
+				<flag address="1012" value="14" />
+				<flag address="1014" value="08" />
+				<flag address="1016" value="94" />
+				<flag address="1017" value="3D" />
+				<flag address="1018" value="C0" />
+				<flag address="1019" value="FF" />
+				<flag address="101A" value="FF" />
+				<flag address="101B" value="FF" />
+				<flag address="101C" value="39" />
+				<flag address="101D" value="6C" />
+				<flag address="101E" value="F6" />
+				<flag address="101F" value="FF" />
+				<flag address="1020" value="FF" />
+				<flag address="1021" value="00" />
+				<flag address="1030" value="80" />
+				<flag address="1031" value="FF" />
+				<flag address="1032" value="FF" />
+				<flag address="1033" value="EF" />
+				<flag address="1034" value="EC" />
+				<flag address="1035" value="46" />
+				<flag address="1036" value="10" />
+				<flag address="1038" value="FF" />
+				<flag address="1039" value="FF" />
+				<flag address="103A" value="FF" />
+				<flag address="103B" value="E7" />
+				<flag address="1040" value="5F" />
+				<flag address="1041" value="CA" />
+				<flag address="1042" value="5E" />
+				<flag address="1043" value="70" />
+				<flag address="1044" value="DA" />
+				<flag address="1045" value="FC" />
+				<flag address="1046" value="7F" />
+				<flag address="1047" value="F9" />
+				<flag address="1048" value="FF" />
+				<flag address="1049" value="CF" />
+				<flag address="104A" value="BF" />
+				<flag address="104B" value="EA" />
+				<flag address="104C" value="DF" />
+				<flag address="104D" value="61" />
+				<flag address="104E" value="CE" />
+				<flag address="104F" value="3D" />
+				<flag address="1050" value="09" />
+			</flags>
+		</mission>
+		<mission>
+			<name>Mission 20: Chaos Tower</name>
+			<flags>
+				<flag address="1012" value="14" />
+				<flag address="1014" value="08" />
+				<flag address="1016" value="94" />
+				<flag address="1017" value="3D" />
+				<flag address="1018" value="C0" />
+				<flag address="1019" value="FF" />
+				<flag address="101A" value="FF" />
+				<flag address="101B" value="FF" />
+				<flag address="101C" value="3B" />
+				<flag address="101D" value="6C" />
+				<flag address="101E" value="F6" />
+				<flag address="101F" value="FF" />
+				<flag address="1020" value="FF" />
+				<flag address="1021" value="00" />
+				<flag address="1030" value="80" />
+				<flag address="1031" value="FF" />
+				<flag address="1032" value="FF" />
+				<flag address="1033" value="FF" />
+				<flag address="1034" value="EC" />
+				<flag address="1035" value="46" />
+				<flag address="1036" value="30" />
+				<flag address="1038" value="FF" />
+				<flag address="1039" value="FF" />
+				<flag address="103A" value="FF" />
+				<flag address="103B" value="EF" />
+				<flag address="1040" value="5F" />
+				<flag address="1041" value="CA" />
+				<flag address="1042" value="5E" />
+				<flag address="1043" value="70" />
+				<flag address="1044" value="DA" />
+				<flag address="1045" value="FC" />
+				<flag address="1046" value="7F" />
+				<flag address="1047" value="F9" />
+				<flag address="1048" value="FF" />
+				<flag address="1049" value="CF" />
+				<flag address="104A" value="BF" />
+				<flag address="104B" value="EA" />
+				<flag address="104C" value="DF" />
+				<flag address="104D" value="61" />
+				<flag address="104E" value="CE" />
+				<flag address="104F" value="3D" />
+				<flag address="1050" value="09" />
+			</flags>
+		</mission>
+		<mission>
+			<name>Post Game: Tera Domain</name>
+			<flags>
+				<flag address="1012" value="14" />
+				<flag address="1014" value="08" />
+				<flag address="1016" value="94" />
+				<flag address="1017" value="3D" />
+				<flag address="1018" value="C0" />
+				<flag address="1019" value="FF" />
+				<flag address="101A" value="FF" />
+				<flag address="101B" value="FF" />
+				<flag address="101C" value="3F" />
+				<flag address="101D" value="6C" />
+				<flag address="101E" value="F6" />
+				<flag address="101F" value="FF" />
+				<flag address="1020" value="FF" />
+				<flag address="1021" value="03" />
+				<flag address="1030" value="80" />
+				<flag address="1031" value="FF" />
+				<flag address="1032" value="FF" />
+				<flag address="1033" value="FF" />
+				<flag address="1034" value="ED" />
+				<flag address="1035" value="46" />
+				<flag address="1036" value="70" />
+				<flag address="1038" value="FF" />
+				<flag address="1039" value="FF" />
+				<flag address="103A" value="FF" />
+				<flag address="103B" value="FF" />
+				<flag address="1040" value="5F" />
+				<flag address="1041" value="CA" />
+				<flag address="1042" value="5E" />
+				<flag address="1043" value="70" />
+				<flag address="1044" value="DA" />
+				<flag address="1045" value="FC" />
+				<flag address="1046" value="7F" />
+				<flag address="1047" value="F9" />
+				<flag address="1048" value="FF" />
+				<flag address="1049" value="CF" />
+				<flag address="104A" value="BF" />
+				<flag address="104B" value="EA" />
+				<flag address="104C" value="DF" />
+				<flag address="104D" value="61" />
+				<flag address="104E" value="CE" />
+				<flag address="104F" value="3D" />
+				<flag address="1050" value="0A" />
+			</flags>
+		</mission>
+	</missions>
+	<ranks>
+		<rank title="Rank Master" value="0A" />
+		<rank title="Rank Chief" value="09" />
+		<rank title="Rank Commander" value="08" />
+		<rank title="Rank Elite" value="07" />
+		<rank title="Rank Expert" value="06" />
+		<rank title="Rank Pro" value="05" />
+		<rank title="Rank Normal" value="04" />
+		<rank title="Rank Rookie" value="03" />
+		<rank title="Rank Amateur" value="02" />
+		<rank title="Rank Beginner" value="01" />
+		<rank title="Rank Cadet" value="00" />
+	</ranks>
+	<last-save-points>
+		<point name="Digital City - Main Gate" area="2D" location="00" />
+		<point name="Digital City - Gold Hawk" area="2D" location="01" />
+		<point name="Digital City - Blue Falcon" area="2D" location="02" />
+		<point name="Digital City - Black Sword" area="2D" location="03" />
+		<point name="Digital City - Tamer Club" area="2D" location="04" />
+		<point name="Digital City - Digimon Center" area="2D" location="05" />
+		<point name="Digital City - Coliseum" area="2D" location="06" />
+		<point name="Directory Continent - Digital City" area="2A" location="00" />
+		<point name="Directory Continent - Mediation Dome" area="2A" location="05" />
+		<point name="Directory Continent - Device Dome" area="2A" location="0A" />
+		<point name="Directory Continent - Archive Port" area="2A" location="13" />
+		<point name="Directory Continent - Shuttle Prot" area="2A" location="1B" />
+		<point name="File Island - Archive port" area="2B" location="00" />
+		<point name="File Island - File City" area="2B" location="01" />
+		<point name="File City - Master Gate" area="2E" location="00" />
+		<point name="File City - Digi-Beetle Factory" area="2E" location="01" />
+		<point name="File City - Item Shop" area="2E" location="02" />
+		<point name="File City - Jijimon's House" area="2E" location="03" />
+		<point name="Kernal Zone - Shuttle Port" area="2C" location="00" />
+	</last-save-points>
+	<digi-beetle-parts>
+		<bodies>
+			<body name="Steel Body" value="EA" />
+			<body name="Titan Body" value="EB" />
+			<body name="AdmantBody" value="EC" />
+		</bodies>
+		<engines>
+			<engine name="Wolf EG-1" value="1" />	
+			<engine name="Wolf EG-2" value="2" />	
+			<engine name="Wolf EG-3" value="3" />	
+			<engine name="Wolf EG-4" value="4" />	
+			<engine name="Wolf EG-5" value="5" />	
+			<engine name="Lion EG-1" value="6" />	
+			<engine name="Lion EG-2" value="7" />	
+			<engine name="Lion EG-3" value="8" />	
+			<engine name="Lion EG-4" value="9" />
+			<engine name="Tiger EG-4" value="0E" />
+			<engine name="Tiger EG-5" value="0F" />
+			<engine name="PegasusEG1" value="10" />
+			<engine name="PegasusEG2" value="11" />
+			<engine name="PegasusEG3" value="12" />
+			<engine name="PegasusEG4" value="13" />
+			<engine name="PegasusEG5" value="14" />
+			<engine name="GriffinEG1" value="15" />
+			<engine name="GriffinEG2" value="16" />
+			<engine name="GriffinEG3" value="17" />
+			<engine name="GriffinEG4" value="18" />
+			<engine name="GriffinEG5" value="19" />
+			<engine name="WyvernEG-1" value="1A" />
+			<engine name="WyvernEG-2" value="1B" />
+			<engine name="WyvernEG-3" value="1C" />
+			<engine name="WyvernEG-4" value="1D" />
+			<engine name="WyvernEG-5" value="1E" />
+			<engine name="DragonEG-1" value="1F" />
+			<engine name="DragonEG-2" value="20" />
+			<engine name="DragonEG-3" value="21" />
+			<engine name="DragonEG-4" value="22" />
+			<engine name="DragonEG-5" value="23" />
+			<engine name="Giant EG-1" value="24" />
+			<engine name="Giant EG-2" value="25" />
+			<engine name="Giant EG-3" value="26" />
+			<engine name="Giant EG-4" value="27" />
+			<engine name="Giant EG-5" value="28" />
+			<engine name="MammothEG1" value="29" />
+			<engine name="MammothEG2" value="2A" />
+			<engine name="MammothEG3" value="2B" />
+			<engine name="MammothEG4" value="2C" />
+			<engine name="MammothEG5" value="2D" />
+			<engine name="Maximus EG" value="2E" />
+		</engines>
+		<batteries>
+			<battery name="Crab BAT-1" value="35" />
+			<battery name="Crab BAT-2" value="36" />
+			<battery name="Crab BAT-3" value="37" />
+			<battery name="Crab BAT-4" value="38" />
+			<battery name="Crab BAT-5" value="39" />
+			<battery name="TurtleBAT1" value="3A" />
+			<battery name="TurtleBAT2" value="3B" />
+			<battery name="TurtleBAT3" value="3C" />
+			<battery name="TurtleBAT4" value="3D" />
+			<battery name="TurtleBAT5" value="3E" />
+			<battery name="SharkBAT-1" value="3F" />
+			<battery name="SharkBAT-2" value="40" />
+			<battery name="SharkBAT-3" value="41" />
+			<battery name="SharkBAT-4" value="42" />
+			<battery name="SharkBAT-5" value="43" />
+			<battery name="Orca BAT-1" value="44" />
+			<battery name="Orca BAT-2" value="45" />
+			<battery name="Orca BAT-3" value="46" />
+			<battery name="Orca BAT-4" value="47" />
+			<battery name="Orca BAT-5" value="48" />
+			<battery name="Whale BAT" value="49" />
+		</batteries>
+		<memories>
+			<memory name="Ant RAM" value="2F" />
+			<memory name="Wasp RAM" value="30" />
+			<memory name="Spider RAM" value="31" />
+			<memory name="Mantis RAM" value="32" />
+			<memory name="Hornet RAM" value="33" />
+			<memory name="Beetle RAM" value="34" />
+		</memories>
+		<tool-boxes>
+			<tool-box name="Dodo BOX" value="4A" />
+			<tool-box name="Crow BOX" value="4B" />
+			<tool-box name="Crane BOX" value="4C" />
+			<tool-box name="Stork BOX" value="4D" />
+			<tool-box name="Hawk BOX" value="4E" />
+			<tool-box name="Eagle BOX" value="4F" />
+		</tool-boxes>
+		<cannons>
+			<cannon name="None" value="00" />
+			<cannon name="ShooterGun" value="5F" />
+			<cannon name="ZCannon-1" value="60" />
+			<cannon name="ZCannon-2" value="61" />
+			<cannon name="ZCannon-3" value="62" />
+			<cannon name="RCannon-1" value="63" />
+			<cannon name="RCannon-2" value="64" />
+			<cannon name="RCannon-3" value="65" />
+			<cannon name="MissileGun" value="66" />
+			<cannon name="Bug Zapper" value="67" />
+		</cannons>
+		<legs>
+			<leg name="None" value="00" />
+			<leg name="Ring TIRES" value="50" />
+			<leg name="ChainTIRES" value="51" />
+			<leg name="PlateTIRES" value="52" />
+			<leg name="Aero TIRES" value="53" />
+			<leg name="GraviTIRES" value="54" />
+		</legs>
+		<hands>
+			<hand name="None" value="00" />
+			<hand name="Mech HAND" value="5A" />
+			<hand name="MagnetHAND" value="5B" />
+			<hand name="FantomHAND" value="5C" />
+			<hand name="Super HAND" value="5D" />
+			<hand name="Ultra HAND" value="5E" />
+		</hands>
+		<arms>
+			<arm name="None" value="00" />
+			<arm name="Shovel ARM" value="55" />
+			<arm name="Drill ARM" value="56" />
+			<arm name="Jet ARM" value="57" />
+			<arm name="Laser ARM" value="58" />
+			<arm name="Magnum ARM" value="59" />
+		</arms>
+		<devices>
+			<device name="None" value="00" />
+			<device name="MineSWEEP1" value="68" />
+			<device name="MineSWEEP2" value="69" />
+			<device name="MineSWEEP3" value="6A" />
+			<device name="MineSWEEP4" value="6B" />
+			<device name="MineSWEEP5" value="6C" />
+			<device name="BugSWEEP-1" value="6D" />
+			<device name="BugSWEEP-2" value="6E" />
+			<device name="BugSWEEP-3" value="6F" />
+			<device name="BugSWP-4" value="70" />
+			<device name="BugSWP-5" value="71" />
+			<device name="DMTransfer" value="72" />
+			<device name="Auto Pilot" value="73" />
+			<device name="PowerPilot" value="74" />
+			<device name="Radar" value="75" />
+			<device name="PowerRadar" value="76" />
+			<device name="Map Radar" value="77" />
+		</devices>
+	</digi-beetle-parts>
+	<items>
+		<item name="None" value="00" />
+		<item name="Junk Parts" value="D1" />
+		<item name="HP Disk-1" value="78" />
+		<item name="HP Disk-2" value="79" />
+		<item name="HP Disk-3" value="7A" />
+		<item name="MP Disk-1" value="7B" />
+		<item name="MP Disk-2" value="7C" />
+		<item name="MP Disk-3" value="7D" />
+		<item name="Anti-Dote" value="7E" />
+		<item name="AntiFreeze" value="7F" />
+		<item name="Anti-Mixup" value="80" />
+		<item name="Power Disk" value="81" />
+		<item name="HPDriver-1" value="D9" />
+		<item name="HPDriver-2" value="DA" />
+		<item name="HPDriver-3" value="DB" />
+		<item name="MPDriver-1" value="DC" />
+		<item name="MPDriver-2" value="DD" />
+		<item name="MPDriver-3" value="DE" />
+		<item name="EX Driver" value="DF" />
+		<item name="Max Driver" value="E0" />
+		<item name="DATA-HPROM" value="E1" />
+		<item name="DATA-MPROM" value="E2" />
+		<item name="DATA-RVROM" value="E3" />
+		<item name="VAC-HP-ROM" value="E4" />
+		<item name="VAC-MP-ROM" value="E5" />
+		<item name="VAC-RV-ROM" value="E6" />
+		<item name="VIR-HP-ROM" value="E7" />
+		<item name="VIR-MP-ROM" value="E8" />
+		<item name="VIR-RV-ROM" value="E9" />
+		<item name="EP Pack-1" value="85" />
+		<item name="EP Pack-2" value="86" />
+		<item name="EP Pack-3" value="87" />
+		<item name="Mech Fix" value="82" />
+		<item name="MechFix-EX" value="83" />
+		<item name="Parts Fix" value="84" />
+		<item name="HP Chip" value="D0" />
+		<item name="MP Chip" value="D2" />
+		<item name="Power Chip" value="D3" />
+		<item name="Armor Chip" value="D4" />
+		<item name="Speed Chip" value="D5" />
+		<item name="DNA-UpChip" value="D6" />
+		<item name="DNA-DnChip" value="D7" />
+		<item name="EXP Chip" value="D8" />
+		<item name="Toy Car" value="BC" />
+		<item name="Toy Truck" value="BD" />
+		<item name="Toy Tank" value="BE" />
+		<item name="Toy Boat" value="BF" />
+		<item name="Toy Plane" value="C0" />
+		<item name="Card Game" value="C1" />
+		<item name="Digivice" value="C2" />
+		<item name="CD Game" value="C3" />
+		<item name="DVD Game" value="C4" />
+		<item name="Laptop PC" value="C5" />
+		<item name="WristWatch" value="C6" />
+		<item name="CD Player" value="C7" />
+		<item name="Cell Phone" value="C8" />
+		<item name="DigiCamera" value="C9" />
+		<item name="DVD Player" value="CA" />
+		<item name="Kickboard" value="CB" />
+		<item name="Skateboard" value="CC" />
+		<item name="Skis" value="CD" />
+		<item name="Snowboard" value="CE" />
+		<item name="Surfboard" value="CF" />
+		<item name="DATA Steel" value="B0" />
+		<item name="DATA Candy" value="B1" />
+		<item name="DATA Macho" value="B2" />
+		<item name="DATA Weak" value="B3" />
+		<item name="VAC. Steel" value="B4" />
+		<item name="VAC. Candy" value="B5" />
+		<item name="VAC. Macho" value="B6" />
+		<item name="VAC. Weak" value="B7" />
+		<item name="VIR. Steel" value="B8" />
+		<item name="VIR. Candy" value="B9" />
+		<item name="VIR. Macho" value="BA" />
+		<item name="VIR. Weak" value="BB" />
+		<item name="Fire Blast" value="A6" />
+		<item name="WaterArrow" value="A7" />
+		<item name="Flash Bolt" value="A8" />
+		<item name="Iron Fist" value="A9" />
+		<item name="Dark Fear" value="AA" />
+		<item name="Inferno" value="AB" />
+		<item name="Blizzard" value="AC" />
+		<item name="Hurricane" value="AD" />
+		<item name="RustStorm" value="AE" />
+		<item name="Black Hole" value="AF" />
+		<item name="BitBugZap1" value="97" />
+		<item name="BitBugZap2" value="98" />
+		<item name="BitBugZap3" value="99" />
+		<item name="EP-BugZap1" value="9A" />
+		<item name="EP-BugZap2" value="9B" />
+		<item name="EP-BugZap3" value="9C" />
+		<item name="RetBugZap1" value="9D" />
+		<item name="RetBugZap2" value="9E" />
+		<item name="RetBugZap3" value="9F" />
+		<item name="MemBugZap1" value="A0" />
+		<item name="MemBugZap2" value="A1" />
+		<item name="MemBugZap3" value="A2" />
+		<item name="SupBugZap1" value="A3" />
+		<item name="SupBugZap2" value="A4" />
+		<item name="SupBugZap3" value="A5" />
+		<item name="Mag.Miss-1" value="88" />
+		<item name="Mag.Miss-2" value="89" />
+		<item name="Mag.Miss-3" value="8A" />
+		<item name="Mag.Miss-4" value="8B" />
+		<item name="Mag.Miss-5" value="8C" />
+		<item name="DrillMiss1" value="8D" />
+		<item name="DrillMiss2" value="8E" />
+		<item name="DrillMiss3" value="8F" />
+		<item name="DrillMiss4" value="90" />
+		<item name="DrillMiss5" value="91" />
+		<item name="WaveMiss-1" value="92" />
+		<item name="WaveMiss-2" value="93" />
+		<item name="WaveMiss-3" value="94" />
+		<item name="WaveMiss-4" value="95" />
+		<item name="WaveMiss-5" value="96" />
+		<item name="Wolf EG-1" value="1" />
+		<item name="Wolf EG-2" value="2" />
+		<item name="Wolf EG-3" value="3" />
+		<item name="Wolf EG-4" value="4" />
+		<item name="Wolf EG-5" value="5" />
+		<item name="Lion EG-1" value="6" />
+		<item name="Lion EG-2" value="7" />
+		<item name="Lion EG-3" value="8" />
+		<item name="Lion EG-4" value="9" />
+		<item name="Lion EG-5" value="0A" />
+		<item name="Tiger EG-1" value="0B" />
+		<item name="Tiger EG-2" value="0C" />
+		<item name="Tiger EG-3" value="0D" />
+		<item name="Tiger EG-4" value="0E" />
+		<item name="Tiger EG-5" value="0F" />
+		<item name="PegasusEG1" value="10" />
+		<item name="PegasusEG2" value="11" />
+		<item name="PegasusEG3" value="12" />
+		<item name="PegasusEG4" value="13" />
+		<item name="PegasusEG5" value="14" />
+		<item name="GriffinEG1" value="15" />
+		<item name="GriffinEG2" value="16" />
+		<item name="GriffinEG3" value="17" />
+		<item name="GriffinEG4" value="18" />
+		<item name="GriffinEG5" value="19" />
+		<item name="WyvernEG-1" value="1A" />
+		<item name="WyvernEG-2" value="1B" />
+		<item name="WyvernEG-3" value="1C" />
+		<item name="WyvernEG-4" value="1D" />
+		<item name="WyvernEG-5" value="1E" />
+		<item name="DragonEG-1" value="1F" />
+		<item name="DragonEG-2" value="20" />
+		<item name="DragonEG-3" value="21" />
+		<item name="DragonEG-4" value="22" />
+		<item name="DragonEG-5" value="23" />
+		<item name="Giant EG-1" value="24" />
+		<item name="Giant EG-2" value="25" />
+		<item name="Giant EG-3" value="26" />
+		<item name="Giant EG-4" value="27" />
+		<item name="Giant EG-5" value="28" />
+		<item name="MammothEG1" value="29" />
+		<item name="MammothEG2" value="2A" />
+		<item name="MammothEG3" value="2B" />
+		<item name="MammothEG4" value="2C" />
+		<item name="MammothEG5" value="2D" />
+		<item name="Maximus EG" value="2E" />
+		<item name="Crab BAT-1" value="35" />
+		<item name="Crab BAT-2" value="36" />
+		<item name="Crab BAT-3" value="37" />
+		<item name="Crab BAT-4" value="38" />
+		<item name="Crab BAT-5" value="39" />
+		<item name="TurtleBAT1" value="3A" />
+		<item name="TurtleBAT2" value="3B" />
+		<item name="TurtleBAT3" value="3C" />
+		<item name="TurtleBAT4" value="3D" />
+		<item name="TurtleBAT5" value="3E" />
+		<item name="SharkBAT-1" value="3F" />
+		<item name="SharkBAT-2" value="40" />
+		<item name="SharkBAT-3" value="41" />
+		<item name="SharkBAT-4" value="42" />
+		<item name="SharkBAT-5" value="43" />
+		<item name="Orca BAT-1" value="44" />
+		<item name="Orca BAT-2" value="45" />
+		<item name="Orca BAT-3" value="46" />
+		<item name="Orca BAT-4" value="47" />
+		<item name="Orca BAT-5" value="48" />
+		<item name="Whale BAT" value="49" />
+		<item name="Ant RAM" value="2F" />
+		<item name="Wasp RAM" value="30" />
+		<item name="Spider RAM" value="31" />
+		<item name="Mantis RAM" value="32" />
+		<item name="Hornet RAM" value="33" />
+		<item name="Beetle RAM" value="34" />
+		<item name="Dodo BOX" value="4A" />
+		<item name="Crow BOX" value="4B" />
+		<item name="Crane BOX" value="4C" />
+		<item name="Stork BOX" value="4D" />
+		<item name="Hawk BOX" value="4E" />
+		<item name="Eagle BOX" value="4F" />
+		<item name="Ring TIRES" value="50" />
+		<item name="ChainTIRES" value="51" />
+		<item name="PlateTIRES" value="52" />
+		<item name="Aero TIRES" value="53" />
+		<item name="GraviTIRES" value="54" />
+		<item name="Shovel ARM" value="55" />
+		<item name="Drill ARM" value="56" />
+		<item name="Jet ARM" value="57" />
+		<item name="Laser ARM" value="58" />
+		<item name="Magnum ARM" value="59" />
+		<item name="Mech HAND" value="5A" />
+		<item name="MagnetHAND" value="5B" />
+		<item name="FantomHAND" value="5C" />
+		<item name="Super HAND" value="5D" />
+		<item name="Ultra HAND" value="5E" />
+		<item name="ShooterGun" value="5F" />
+		<item name="Bug Zapper" value="67" />
+		<item name="MissileGun" value="66" />
+		<item name="RCannon-1" value="63" />
+		<item name="RCannon-2" value="64" />
+		<item name="RCannon-3" value="65" />
+		<item name="ZCannon-1" value="60" />
+		<item name="ZCannon-2" value="61" />
+		<item name="ZCannon-3" value="62" />
+		<item name="MineSWEEP1" value="68" />
+		<item name="MineSWEEP2" value="69" />
+		<item name="MineSWEEP3" value="6A" />
+		<item name="MineSWEEP4" value="6B" />
+		<item name="MineSWEEP5" value="6C" />
+		<item name="BugSWEEP-1" value="6D" />
+		<item name="BugSWEEP-2" value="6E" />
+		<item name="BugSWEEP-3" value="6F" />
+		<item name="BugSWP-4" value="70" />
+		<item name="BugSWP-5" value="71" />
+		<item name="DMTransfer" value="72" />
+		<item name="Steel Body" value="EA" />
+		<item name="Titan Body" value="EB" />
+		<item name="AdmantBody" value="EC" />
+		<item name="Radar" value="75" />
+		<item name="PowerRadar" value="76" />
+		<item name="Map Radar" value="77" />
+		<item name="Auto Pilot" value="73" />
+		<item name="PowerPilot" value="74" />
+	</items>
+	<important-items>
+		<important-item name ="Tamer-Lic." value="ED" />
+		<important-item name ="DB-Browser" value="EE" />
+		<important-item name ="GoldH-Mark" value="EF" />
+		<important-item name ="BlueF-Mark" value="F0" />
+		<important-item name ="BlackSMark" value="F1" />
+		<important-item name ="DynamoPart" value="F2" />
+		<important-item name ="Entry Pass" value="F3" />
+		<important-item name ="Converter" value="F4" />
+		<important-item name ="Titan Core" value="F5" />
+		<important-item name ="Red Orders" value="F6" />
+		<important-item name ="Message-1" value="F7" />
+		<important-item name ="VAC. Patch" value="F8" />
+		<important-item name ="DATA Patch" value="F9" />
+		<important-item name ="VIRUSPatch" value="FA" />
+		<important-item name ="Wild Code" value="FB" />
+		<important-item name ="Gyro Radar" value="FC" />
+		<important-item name ="Message-3" value="FD" />
+		<important-item name ="X-MechPart" value="FE" />
+		<important-item name ="Message-2" value="FF" />
+		<important-item name ="Old Map" value="100" />
+		<important-item name ="Navi-Disk" value="101" />
+		<important-item name ="Ship Key" value="102" />
+		<important-item name ="Message-3" value="103" />
+		<important-item name ="Electroder" value="104" />
+		<important-item name ="AdmantCore" value="105" />
+		<important-item name ="PiedRing" value="106" />
+		<important-item name ="W.GreyRing" value="107" />
+		<important-item name ="SeadraRing" value="108" />
+	</important-items>
+</dw2-utility>

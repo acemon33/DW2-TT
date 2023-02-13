@@ -1,7 +1,6 @@
-﻿
-
-using System;
+﻿using System;
 using System.IO;
+
 
 namespace dw2_exp_multiplier.Entity
 {

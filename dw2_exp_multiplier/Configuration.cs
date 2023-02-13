@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 
+
 namespace dw2_exp_multiplier
 {
     class Configuration
@@ -36,7 +37,10 @@ namespace dw2_exp_multiplier
         public static String mode = "Vanilla";
 
         public static void SetVanillaMode() { mode = "Vanilla"; }
+        public static void SetImprovementMode() { mode = "Improvement"; }
+        public static void SetResurrectionMode() { mode = "Resurrection"; }
         public static void SetAlternativeMode() { mode = "Alternative"; }
+        public static void SetFaithfulMode() { mode = "Faithful"; }
         public static void load()
         {
             try
