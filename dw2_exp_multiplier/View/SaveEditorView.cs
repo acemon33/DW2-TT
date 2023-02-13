@@ -776,7 +776,6 @@ namespace dw2_exp_multiplier.View
                 this.GameFlagsTextBoxList[gf.address].Text = gf.value.ToString("X2");
         }
         #endregion
-
     }
     
 }

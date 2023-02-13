@@ -273,12 +273,14 @@ namespace dw2_exp_multiplier
         {
             vanillaToolStripMenuItem.Checked = true;
             alternativeToolStripMenuItem.Checked = false;
+            Configuration.SetVanillaMode();
         }
 
         private void alternativeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             vanillaToolStripMenuItem.Checked = false;
             alternativeToolStripMenuItem.Checked = true;
+            Configuration.SetAlternativeMode();
         }
         #endregion
         

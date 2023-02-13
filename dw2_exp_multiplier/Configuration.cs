@@ -33,12 +33,16 @@ namespace dw2_exp_multiplier
 
         public static Dictionary<string, string> SavePointLocationList = new Dictionary<string, string>();
 
+        public static String mode = "Vanilla";
+
+        public static void SetVanillaMode() { mode = "Vanilla"; }
+        public static void SetAlternativeMode() { mode = "Alternative"; }
         public static void load()
         {
             try
             {
                 XmlDocument xml = new XmlDocument();
-                xml.Load("Resources\\config.xml");
+                xml.Load("Resources\\" + mode + "\\config.xml");
                 foreach (XmlNode mission in xml.SelectNodes("dw2-utility/missions/mission"))
                 {
                     List<GameFlag> list = new List<GameFlag>();
@@ -166,7 +170,7 @@ namespace dw2_exp_multiplier
                 }
 
                 XmlDocument xml2 = new XmlDocument();
-                xml.Load("Resources\\data.xml");
+                xml.Load("Resources\\" + mode + "\\data.xml");
                 foreach (XmlNode x in xml.SelectNodes("dw2-utility/digimons/digimon"))
                 {
                     var name = x.Attributes["name"].Value;
