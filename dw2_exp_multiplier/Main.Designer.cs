@@ -56,6 +56,9 @@
             this.bossMultiplier = new System.Windows.Forms.NumericUpDown();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.saveEditorView1 = new dw2_exp_multiplier.View.SaveEditorView();
+            this.saveEditorModeMenu = new System.Windows.Forms.ToolStripDropDownButton();
+            this.vanillaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.alternativeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.multiplier)).BeginInit();
             this.menuBar.SuspendLayout();
             this.digibeetleGroupBox.SuspendLayout();
@@ -83,7 +86,7 @@
             this.dw2Label.AutoSize = true;
             this.dw2Label.Location = new System.Drawing.Point(16, 17);
             this.dw2Label.Name = "dw2Label";
-            this.dw2Label.Size = new System.Drawing.Size(50, 13);
+            this.dw2Label.Size = new System.Drawing.Size(47, 13);
             this.dw2Label.TabIndex = 1;
             this.dw2Label.Text = "DW2 Bin";
             // 
@@ -125,7 +128,7 @@
             this.enemysetLabel.AutoSize = true;
             this.enemysetLabel.Location = new System.Drawing.Point(16, 46);
             this.enemysetLabel.Name = "enemysetLabel";
-            this.enemysetLabel.Size = new System.Drawing.Size(87, 13);
+            this.enemysetLabel.Size = new System.Drawing.Size(78, 13);
             this.enemysetLabel.TabIndex = 5;
             this.enemysetLabel.Text = "ENEMYSET BIN";
             // 
@@ -144,24 +147,34 @@
             this.multiplier.DecimalPlaces = 1;
             this.multiplier.Enabled = false;
             this.multiplier.Location = new System.Drawing.Point(96, 25);
-            this.multiplier.Minimum = new decimal(new int[] {1, 0, 0, 0});
+            this.multiplier.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.multiplier.Name = "multiplier";
             this.multiplier.Size = new System.Drawing.Size(46, 20);
             this.multiplier.TabIndex = 8;
-            this.multiplier.Value = new decimal(new int[] {1, 0, 0, 0});
+            this.multiplier.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // multiplierLabel
             // 
             this.multiplierLabel.AutoSize = true;
             this.multiplierLabel.Location = new System.Drawing.Point(10, 27);
             this.multiplierLabel.Name = "multiplierLabel";
-            this.multiplierLabel.Size = new System.Drawing.Size(83, 13);
+            this.multiplierLabel.Size = new System.Drawing.Size(85, 13);
             this.multiplierLabel.TabIndex = 10;
             this.multiplierLabel.Text = "Multiply By       x";
             // 
             // menuBar
             // 
-            this.menuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {this.about});
+            this.menuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveEditorModeMenu,
+            this.about});
             this.menuBar.Location = new System.Drawing.Point(0, 0);
             this.menuBar.Name = "menuBar";
             this.menuBar.Size = new System.Drawing.Size(460, 25);
@@ -310,7 +323,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(10, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 13);
+            this.label1.Size = new System.Drawing.Size(85, 13);
             this.label1.TabIndex = 22;
             this.label1.Text = "Multiply By       x";
             // 
@@ -329,11 +342,19 @@
             this.bossMultiplier.DecimalPlaces = 1;
             this.bossMultiplier.Enabled = false;
             this.bossMultiplier.Location = new System.Drawing.Point(96, 27);
-            this.bossMultiplier.Minimum = new decimal(new int[] {1, 0, 0, 0});
+            this.bossMultiplier.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.bossMultiplier.Name = "bossMultiplier";
             this.bossMultiplier.Size = new System.Drawing.Size(46, 20);
             this.bossMultiplier.TabIndex = 21;
-            this.bossMultiplier.Value = new decimal(new int[] {1, 0, 0, 0});
+            this.bossMultiplier.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // tabPage2
             // 
@@ -353,6 +374,34 @@
             this.saveEditorView1.Size = new System.Drawing.Size(444, 384);
             this.saveEditorView1.TabIndex = 0;
             // 
+            // saveEditorModeMenu
+            // 
+            this.saveEditorModeMenu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.saveEditorModeMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.vanillaToolStripMenuItem,
+            this.alternativeToolStripMenuItem});
+            this.saveEditorModeMenu.Image = ((System.Drawing.Image)(resources.GetObject("saveEditorModeMenu.Image")));
+            this.saveEditorModeMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.saveEditorModeMenu.Name = "saveEditorModeMenu";
+            this.saveEditorModeMenu.Size = new System.Drawing.Size(112, 22);
+            this.saveEditorModeMenu.Text = "Save Editor Mode";
+            // 
+            // vanillaToolStripMenuItem
+            // 
+            this.vanillaToolStripMenuItem.Checked = true;
+            this.vanillaToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.vanillaToolStripMenuItem.Name = "vanillaToolStripMenuItem";
+            this.vanillaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.vanillaToolStripMenuItem.Text = "Vanilla";
+            this.vanillaToolStripMenuItem.Click += new System.EventHandler(this.vanillaToolStripMenuItem_Click);
+            // 
+            // alternativeToolStripMenuItem
+            // 
+            this.alternativeToolStripMenuItem.Name = "alternativeToolStripMenuItem";
+            this.alternativeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.alternativeToolStripMenuItem.Text = "Alternative";
+            this.alternativeToolStripMenuItem.Click += new System.EventHandler(this.alternativeToolStripMenuItem_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -361,17 +410,17 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Main";
             this.Tag = "";
             this.Text = "DW2-TT";
-            ((System.ComponentModel.ISupportInitialize) (this.multiplier)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.multiplier)).EndInit();
             this.menuBar.ResumeLayout(false);
             this.menuBar.PerformLayout();
             this.digibeetleGroupBox.ResumeLayout(false);
             this.digibeetleGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.digibeetlPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.digibeetlPictureBox)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -379,10 +428,11 @@
             this.groupBox2.PerformLayout();
             this.EnemyBossGroupBox.ResumeLayout(false);
             this.EnemyBossGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.bossMultiplier)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bossMultiplier)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         private System.Windows.Forms.PictureBox digibeetlPictureBox;
@@ -422,6 +472,9 @@
         private System.Windows.Forms.CheckBox extremeModeCheckBox;
         private System.Windows.Forms.NumericUpDown bossMultiplier;
         private dw2_exp_multiplier.View.SaveEditorView saveEditorView1;
+        private System.Windows.Forms.ToolStripDropDownButton saveEditorModeMenu;
+        private System.Windows.Forms.ToolStripMenuItem vanillaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem alternativeToolStripMenuItem;
     }
 }
 

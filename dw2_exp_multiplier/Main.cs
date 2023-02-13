@@ -267,6 +267,20 @@ namespace dw2_exp_multiplier
             if (imageList.ContainsKey(id)) this.digibeetlPictureBox.Image = imageList[id];
             else this.digibeetlPictureBox.Image = null;
         }
+
+        #region SaveEditorMenuItem Region
+        private void vanillaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            vanillaToolStripMenuItem.Checked = true;
+            alternativeToolStripMenuItem.Checked = false;
+        }
+
+        private void alternativeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            vanillaToolStripMenuItem.Checked = false;
+            alternativeToolStripMenuItem.Checked = true;
+        }
+        #endregion
         
     }
     

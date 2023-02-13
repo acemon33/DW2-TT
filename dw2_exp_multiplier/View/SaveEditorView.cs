@@ -82,7 +82,7 @@ namespace dw2_exp_multiplier.View
         }
         
         private void LoadForm()
-        {
+        {      // need refactoring
             int n = 48;
             this.itemPanel.Controls.Clear();
             itemTableLayoutPanel.RowStyles.Clear();
@@ -94,10 +94,10 @@ namespace dw2_exp_multiplier.View
             itemTableLayoutPanel.Size = new System.Drawing.Size(239, 27 * n + 20);
             itemTableLayoutPanel.ColumnCount = 2;
             this.itemList.Clear();
+            itemTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            itemTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             for (int i = 0; i < n; i++)
             {
-                itemTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-                itemTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
                 var l1 = new Label();
                 l1.Text = "Item slot #" + (i + 1);
                 var t1 = new ComboBox();
@@ -125,10 +125,10 @@ namespace dw2_exp_multiplier.View
             importantItemTableLayoutPanel.Name = "importantItemTableLayoutPanel";
             importantItemTableLayoutPanel.Size = new System.Drawing.Size(200, 27 * n + 20);
             importantItemTableLayoutPanel.ColumnCount = 2;
+            importantItemTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60F));
+            importantItemTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40F));
             for (int i = 0; i < n; i++)
             {
-                importantItemTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60F));
-                importantItemTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40F));
                 var l1 = new Label();
                 l1.Size = new Size(150, l1.Size.Height);
                 l1.Text = Configuration.ImportantItemList[i];
@@ -152,10 +152,10 @@ namespace dw2_exp_multiplier.View
             serverItemTableLayoutPanel.Name = "serverItemTableLayoutPanel";
             serverItemTableLayoutPanel.Size = new System.Drawing.Size(200, 27 * n + 20);
             serverItemTableLayoutPanel.ColumnCount = 2;
+            serverItemTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70F));
+            serverItemTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
             for (int i = 0; i < n; i++)
             {
-                serverItemTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70F));
-                serverItemTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
                 var l1 = new Label();
                 l1.Size = new Size(150, l1.Size.Height);
                 l1.Text = Configuration.ItemList[i + 1].Key;
@@ -372,7 +372,7 @@ namespace dw2_exp_multiplier.View
             {
                 try
                 {
-                    Configuration.load();      // must load configuration before loading save-file      
+                    Configuration.load();      // must load configuration before loading save-file & Form Data   
                     
                     saveFileTextBox.Text = ofd.FileName;
                     this.saveFileLoader = ISaveFile.GetSaveFileLoader(saveFileTextBox.Text);
