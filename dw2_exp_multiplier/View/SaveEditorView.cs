@@ -30,7 +30,6 @@ namespace dw2_exp_multiplier.View
         public SaveEditorView()
         {
             InitializeComponent();
-            Configuration.load();
 
             this.lastLocationComboBox.DisplayMember = "Key";
             this.lastLocationComboBox.ValueMember = "Value";
@@ -80,26 +79,21 @@ namespace dw2_exp_multiplier.View
             this.digimonOriginalNameComboBox.ValueMember = "Value";
 
             this.slotComboBox.Enabled = false;
-
-            try
-            {
-                this.LoadForm();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);    // Visual Studio detects error as index out of boundary 
-            }
-            
         }
         
         private void LoadForm()
         {
             int n = 48;
+            this.itemPanel.Controls.Clear();
+            itemTableLayoutPanel.RowStyles.Clear();
+            itemTableLayoutPanel.ColumnStyles.Clear();
+            itemTableLayoutPanel.Controls.Clear();
             this.itemPanel.Controls.Add(itemTableLayoutPanel);
             itemTableLayoutPanel.Location = new System.Drawing.Point(3, 3);
             itemTableLayoutPanel.Name = "itemTableLayoutPanel";
             itemTableLayoutPanel.Size = new System.Drawing.Size(239, 27 * n + 20);
             itemTableLayoutPanel.ColumnCount = 2;
+            this.itemList.Clear();
             for (int i = 0; i < n; i++)
             {
                 itemTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
@@ -121,6 +115,11 @@ namespace dw2_exp_multiplier.View
 
             string[] haveNotHaveList = new string[] {"Not Have", "Have"};
             n = 28;
+            this.importantItemPanel.Controls.Clear();
+            importantItemTableLayoutPanel.ColumnStyles.Clear();
+            importantItemTableLayoutPanel.RowStyles.Clear();
+            importantItemTableLayoutPanel.Controls.Clear();
+            this.importantItemList.Clear();
             this.importantItemPanel.Controls.Add(importantItemTableLayoutPanel);
             importantItemTableLayoutPanel.Location = new System.Drawing.Point(3, 3);
             importantItemTableLayoutPanel.Name = "importantItemTableLayoutPanel";
@@ -145,6 +144,9 @@ namespace dw2_exp_multiplier.View
             for(int i = 0; i < n; i++) importantItemTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 27F));
             
             n = 236;
+            this.serverItemList.Clear();
+            this.serverItemPanel.Controls.Clear();
+            serverItemTableLayoutPanel.Controls.Clear();
             this.serverItemPanel.Controls.Add(serverItemTableLayoutPanel);
             serverItemTableLayoutPanel.Location = new System.Drawing.Point(3, 3);
             serverItemTableLayoutPanel.Name = "serverItemTableLayoutPanel";
@@ -169,6 +171,8 @@ namespace dw2_exp_multiplier.View
             for(int i = 0; i < n; i++) serverItemTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 27F));
 
             n = 12;
+            digimonTechTableLayoutPanel.Controls.Clear();
+            this.digimonTechList.Clear();
             for (int i = 0; i < n; i++)
             {
                 var l1 = new Label();
@@ -186,6 +190,8 @@ namespace dw2_exp_multiplier.View
             }
 
             n = 22;
+            digimonTechTableLayoutPanel.Controls.Clear();
+            this.digimonInheritedTechList.Clear();
             for (int i = 0; i < n; i++)
             {
                 var l1 = new Label();
@@ -206,6 +212,10 @@ namespace dw2_exp_multiplier.View
             this.digimonListBox.ValueMember = "Value";
             
             n = Configuration.GameFlagsLimiter.Count;
+            this.gameStoryPanel.Controls.Clear();
+            GameFlagsTableLayoutPanel.ColumnStyles.Clear();
+            GameFlagsTableLayoutPanel.RowStyles.Clear();
+            GameFlagsTableLayoutPanel.Controls.Clear();
             this.gameStoryPanel.Controls.Add(GameFlagsTableLayoutPanel);
             GameFlagsTableLayoutPanel.Location = new System.Drawing.Point(3, 3);
             GameFlagsTableLayoutPanel.Name = "gameStoryTableLayoutPanel";
@@ -258,18 +268,21 @@ namespace dw2_exp_multiplier.View
             this.digimonOriginalNameComboBox.DataSource = new BindingSource(Configuration.DigimonList, null);
             this.digimonOriginalNameComboBox.SelectedIndex = -1;
 
+            this.digimonStatusComboBox.Items.Clear();
             this.digimonStatusComboBox.Items.Add(DIGI_LINE_STATUS.B1);
             this.digimonStatusComboBox.Items.Add(DIGI_LINE_STATUS.B2);
             this.digimonStatusComboBox.Items.Add(DIGI_LINE_STATUS.B3);
             this.digimonStatusComboBox.Items.Add(DIGI_LINE_STATUS.BENCH);
             this.digimonStatusComboBox.Items.Add(DIGI_LINE_STATUS.SERVER);
 
+            this.gameStoryComboBox.Items.Clear();
             foreach (string e in Configuration.GameStoryProgress.Keys)
                 this.gameStoryComboBox.Items.Add(e);
         }
         
         private void LoadCurrentSlot()
-        {
+        {   
+            if (this.slotComboBox.SelectedIndex < 0) return;
             var currentSlot = this.saveFile.saveSlot[this.slotComboBox.SelectedIndex];
 
                     // Misc.
@@ -357,12 +370,22 @@ namespace dw2_exp_multiplier.View
             ofd.Title = "Open Memory Card or DW2 Raw Save File";
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-                saveFileTextBox.Text = ofd.FileName;
-                this.saveFileLoader = ISaveFile.GetSaveFileLoader(saveFileTextBox.Text);
-                this.saveFile = this.saveFileLoader.GetSaveFile();
-                this.slotComboBox.Enabled = true;
-                this.slotComboBox.SelectedIndex = 0;
-                this.LoadCurrentSlot();
+                try
+                {
+                    Configuration.load();      // must load configuration before loading save-file      
+                    
+                    saveFileTextBox.Text = ofd.FileName;
+                    this.saveFileLoader = ISaveFile.GetSaveFileLoader(saveFileTextBox.Text);
+                    this.saveFile = this.saveFileLoader.GetSaveFile();
+                    
+                    this.LoadForm();
+                    this.slotComboBox.Enabled = true;
+                    this.slotComboBox.SelectedIndex = 0;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);    // Visual Studio detects error as index out of boundary 
+                }
             }
         }
 
@@ -626,6 +649,7 @@ namespace dw2_exp_multiplier.View
             if (slotComboBox.SelectedIndex < 0|| t.SelectedItem == null) return;
             var i = (int) (t.Tag);
             var j = this.digimonListBox.SelectedIndex;
+            if (j < 0) return;
             this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digimon[j].tech[i] = Convert.ToByte((t.SelectedItem as dynamic).Value);
         }
 
@@ -635,6 +659,7 @@ namespace dw2_exp_multiplier.View
             if (slotComboBox.SelectedIndex < 0|| t.SelectedItem == null) return;
             var i = (int) (t.Tag);
             var j = this.digimonListBox.SelectedIndex;
+            if (j < 0) return;
             this.saveFile.saveSlot[this.slotComboBox.SelectedIndex].digimon[j].inherit_tech[i] = Convert.ToByte((t.SelectedItem as dynamic).Value);
         }
 
@@ -727,6 +752,7 @@ namespace dw2_exp_multiplier.View
             if (slotComboBox.SelectedIndex < 0 || digimonOriginalNameComboBox.SelectedItem == null) return;
             var i = this.slotComboBox.SelectedIndex;
             var j = this.digimonListBox.SelectedIndex;
+            if (j < 0) return;
             ushort id = (digimonOriginalNameComboBox.SelectedItem as dynamic).Value;
             this.saveFile.saveSlot[i].digimon[j].id = Convert.ToByte(id);
             this.digimonIdTextBox.Text = id.ToString("X2");
