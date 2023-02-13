@@ -190,7 +190,6 @@ namespace dw2_exp_multiplier.View
             }
 
             n = 22;
-            digimonTechTableLayoutPanel.Controls.Clear();
             this.digimonInheritedTechList.Clear();
             for (int i = 0; i < n; i++)
             {
