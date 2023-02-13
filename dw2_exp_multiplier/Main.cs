@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using dw2_exp_multiplier.Base;
 using dw2_exp_multiplier.Entity;
 using dw2_exp_multiplier.Manager;
+using dw2_exp_multiplier.Mapper;
 
 /*
  * @author acemon33
@@ -130,7 +131,7 @@ namespace dw2_exp_multiplier
 
                 if (enemysetTextBox.Text.Length > 0)
                 {
-                    EnemysetManager.ReadFile(enemysetTextBox.Text, ref this.EnemysetList);
+                    EnemysetMapper.ReadFile(enemysetTextBox.Text, ref this.EnemysetList);
                     
                     if (multiplier.Value.CompareTo(Decimal.One) != 0)
                         EnemysetManager.MultiplyExpBits(multiplier.Value, ref this.EnemysetList);
@@ -143,8 +144,8 @@ namespace dw2_exp_multiplier
                             EnemysetManager.MultiplyBossStats(bossMultiplier.Value, ref this.EnemysetList);
                     }
                     
-                    if (Control.ModifierKeys == Keys.Control) EnemysetManager.WriteFile("ENEMYSET_TEST.BIN", ref this.EnemysetList);
-                    else EnemysetManager.WriteBin(ref fs, ref this.EnemysetList);
+                    if (Control.ModifierKeys == Keys.Control) EnemysetMapper.WriteFile("ENEMYSET_TEST.BIN", ref this.EnemysetList);
+                    else EnemysetMapper.WriteBin(ref fs, ref this.EnemysetList);
                 }
                 
                 if (unHideAAA.Checked)
@@ -196,9 +197,9 @@ namespace dw2_exp_multiplier
             {
                 DW2Slus.ValidImageFile(ref fs);
 
-                EnemysetManager.ReadBin(ref fs, ref this.EnemysetList);
+                EnemysetMapper.ReadBin(ref fs, ref this.EnemysetList);
                 filename = Path.GetDirectoryName(dw2TextBox.Text) + "\\ENEMYSET_" + Path.GetFileNameWithoutExtension(dw2TextBox.Text) + ".BIN";
-                EnemysetManager.WriteFile(filename, ref this.EnemysetList);
+                EnemysetMapper.WriteFile(filename, ref this.EnemysetList);
                 enemysetTextBox.Text = filename;
                 
                 MessageBox.Show("ENEMYSET.BIN has been Exported Successfully");
@@ -234,8 +235,8 @@ namespace dw2_exp_multiplier
             {
                 DW2Slus.ValidImageFile(ref fs);
 
-                EnemysetManager.ReadFile(enemysetTextBox.Text, ref this.EnemysetList);
-                EnemysetManager.WriteBin(ref fs, ref this.EnemysetList);
+                EnemysetMapper.ReadFile(enemysetTextBox.Text, ref this.EnemysetList);
+                EnemysetMapper.WriteBin(ref fs, ref this.EnemysetList);
                 
                 MessageBox.Show("ENEMYSET.BIN has been Imported Successfully");
             }

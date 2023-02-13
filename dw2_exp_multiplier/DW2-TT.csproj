@@ -67,8 +67,6 @@
     <Compile Include="DigimonWorld2Tool\TextConversion.cs" />
     <Compile Include="Entity\Enemyset.cs" />
     <Compile Include="Entity\ISaveFile.cs" />
-    <Compile Include="Entity\MemoryCardFile.cs" />
-    <Compile Include="Entity\RawSaveFile.cs" />
     <Compile Include="Entity\SaveFile.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -83,6 +81,9 @@
       <DependentUpon>Main2.cs</DependentUpon>
     </Compile>
     <Compile Include="Manager\EnemysetManager.cs" />
+    <Compile Include="Mapper\EnemysetManager.cs" />
+    <Compile Include="Mapper\MemoryCardFile.cs" />
+    <Compile Include="Mapper\RawSaveFile.cs" />
     <Compile Include="MemcardRex\ps1card.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
