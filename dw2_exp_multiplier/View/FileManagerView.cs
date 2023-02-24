@@ -30,7 +30,7 @@ namespace dw2_exp_multiplier.View
 
         private void exportButton_Click(object sender, EventArgs e)
         {
-            var ofd = new OpenFileDialog();
+            var ofd = new SaveFileDialog();
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 string filename = dw2TextBox.Text;

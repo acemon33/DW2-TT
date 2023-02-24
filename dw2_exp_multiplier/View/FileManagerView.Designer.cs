@@ -37,6 +37,7 @@ namespace dw2_exp_multiplier.View
             this.relocateButton = new System.Windows.Forms.Button();
             this.dw2TextBox = new System.Windows.Forms.TextBox();
             this.dw2BrowseButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // importButton
@@ -94,10 +95,20 @@ namespace dw2_exp_multiplier.View
             this.dw2BrowseButton.UseVisualStyleBackColor = true;
             this.dw2BrowseButton.Click += new System.EventHandler(this.dw2BrowseButton_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(149, 60);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Index: ";
+            // 
             // FileManagerView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dw2BrowseButton);
             this.Controls.Add(this.dw2TextBox);
             this.Controls.Add(this.relocateButton);
@@ -108,6 +119,7 @@ namespace dw2_exp_multiplier.View
             this.Size = new System.Drawing.Size(392, 309);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         private System.Windows.Forms.Button dw2BrowseButton;
@@ -119,5 +131,7 @@ namespace dw2_exp_multiplier.View
         private System.Windows.Forms.TextBox dw2TextBox;
 
         #endregion
+
+        private System.Windows.Forms.Label label1;
     }
 }
