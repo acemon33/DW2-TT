@@ -14,7 +14,7 @@ Features:
 v2.3:
  - Save Editor:
     - Support PSX Memory Card formats (mcr, gme, bin, mcd, vmc...) loading and saving (Thanks to MemcardRex Project).
-	- Load data according to the selected Mod.
+	- Load data according to the selected Mod (select appropriate Mod before loading).
 
 v2.0:
  - Exp Multiplier support decimal number.
@@ -44,6 +44,9 @@ Note:
  - For Save Editor:
     - Save the filename to "BASLUS-01193 DMW2" or rename it before importing to Memory Card File (.mcd / .mcr),
       because MemcardRex cannot import properly with different name (in case of Raw Save File).
+
+The latest version can be downloaded [here](https://www.romhacking.net/utilities/1723/)
+The source code is availabe [here](https://github.com/acemon33/dw2-tt/)
 
 Special Thanks
 - ShendoXT
