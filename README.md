@@ -11,19 +11,24 @@ It Will probably work with vanilla and other mods.
     <br>3.1 (Optional) Import "ENEMYSET.BIN" to restore to its original state.
 
 Features:
+v2.3:
+ - Save Editor:
+    - Support PSX Memory Card formats (mcr, gme, bin, mcd, vmc...) loading and saving (Thanks to MemcardRex Project).
+	- Load data according to the selected Mod.
+
 v2.0:
  - Exp Multiplier support decimal number.
  - Validation on DW2 image file.
  - Unhide AAA Folder.
  - Digi-Beetle Patcher (set a Digi-Beetle for entire Game Walkthrough, can be restored to default).
  - Save Editor:
-	- Open and Save Raw save file (BASLUS-01193 DMW2).
+    - Open and Save Raw save file (BASLUS-01193 DMW2).
     - Edit last save point, rank, bits, name.
-	- Edit Digi-Beetle data.
-	- Edit Items, Important Items and Server Items.
-	- Edit Digimon data.
-	- Edit Game Flags.
-	- Set Game story progress.
+    - Edit Digi-Beetle data.
+    - Edit Items, Important Items and Server Items.
+    - Edit Digimon data.
+    - Edit Game Flags.
+    - Set Game story progress.
  - Enemy Boss Stats Multiplier (HP, MP, Attack, Defense, Speed) (only speed will be half x multiplier).
  - Extreme Mode Multiplier will double x multiply only for **Defence** stat.
 
@@ -35,12 +40,13 @@ v1.0:
 
 Note:
  - For Digi-Beetle Patcher:
-    - Setting the same NPC Digi-Beetle that will appear during the dialog will cause Softlock.
+    - Setting the same NPC Digi-Beetle that will appear during the dialog will cause **Softlock**.
  - For Save Editor:
     - Save the filename to "BASLUS-01193 DMW2" or rename it before importing to Memory Card File (.mcd / .mcr),
-	  because MemcardRex cannot import properly with different name.
+      because MemcardRex cannot import properly with different name (in case of Raw Save File).
 
 Special Thanks
+- ShendoXT
 - Luminaires
 - Gledson999
 
