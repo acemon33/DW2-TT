@@ -13,7 +13,6 @@ namespace dw2_exp_multiplier
 {
     public partial class Main : Form
     {
-        List<Enemyset> EnemysetList = new List<Enemyset>();
         Dictionary<string, Bitmap> imageList = new Dictionary<string, Bitmap>();
         public static string Title;
         
@@ -121,7 +120,6 @@ namespace dw2_exp_multiplier
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            this.EnemysetList.Clear();
             string filename = dw2TextBox.Text;
             FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.ReadWrite);
             try
@@ -193,16 +191,15 @@ namespace dw2_exp_multiplier
 
         private void exportButton_Click(object sender, EventArgs e)
         {
-            this.EnemysetList.Clear();
             string filename = dw2TextBox.Text;
             FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.ReadWrite);
             try
             {
                 DW2Slus.ValidImageFile(ref fs);
 
-                EnemysetMapper.ReadBin(ref fs, ref this.EnemysetList);
+                EnemysetManager enemysetManager = new EnemysetManager(ref fs);
                 filename = Path.GetDirectoryName(dw2TextBox.Text) + "\\ENEMYSET_" + Path.GetFileNameWithoutExtension(dw2TextBox.Text) + ".BIN";
-                EnemysetMapper.WriteFile(filename, ref this.EnemysetList);
+                enemysetManager.WrtieToFile(filename);
                 enemysetTextBox.Text = filename;
                 
                 MessageBox.Show("ENEMYSET.BIN has been Exported Successfully");
@@ -231,15 +228,14 @@ namespace dw2_exp_multiplier
 
         private void importButton_Click(object sender, EventArgs e)
         {
-            this.EnemysetList.Clear();
             string filename = dw2TextBox.Text;
             FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.ReadWrite);
             try
             {
                 DW2Slus.ValidImageFile(ref fs);
 
-                EnemysetMapper.ReadFile(enemysetTextBox.Text, ref this.EnemysetList);
-                EnemysetMapper.WriteBin(ref fs, ref this.EnemysetList);
+                EnemysetManager enemysetManager = new EnemysetManager(enemysetTextBox.Text);
+                enemysetManager.WriteToBin(ref fs);
                 
                 MessageBox.Show("ENEMYSET.BIN has been Imported Successfully");
             }

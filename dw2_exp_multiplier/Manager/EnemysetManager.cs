@@ -16,6 +16,11 @@ namespace dw2_exp_multiplier.Manager
             EnemysetMapper.ReadFile(filepath, ref this.EnemysetList);
         }
 
+        public EnemysetManager(ref FileStream br)
+        {
+            EnemysetMapper.ReadBin(ref br, ref this.EnemysetList);
+        }
+
         public void AddModifier(IEnemysetModifier enemysetModifier)
         {
             this.ModifierList.Add(enemysetModifier);
