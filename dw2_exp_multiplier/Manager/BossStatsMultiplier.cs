@@ -18,7 +18,7 @@ namespace dw2_exp_multiplier.Manager
         {
             foreach (var enemyset in enemysetList)
             {
-                if (enemyset.Move == 0x37 || enemyset.Move == 0x1A)
+                if (IEnemysetModifier.IsBossSet(enemyset))
                 {
                     foreach (var enemy in enemyset.Enemy)
                     {

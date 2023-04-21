@@ -74,6 +74,7 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manager\UnmoveableEnemy.cs" />
     <Compile Include="Manager\ExtremeStatsMultiplier.cs" />
     <Compile Include="Manager\EnemysetManager.cs" />
     <Compile Include="Manager\BossStatsMultiplier.cs" />
