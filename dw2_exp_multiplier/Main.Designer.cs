@@ -41,7 +41,10 @@
             this.menuBar = new System.Windows.Forms.ToolStrip();
             this.saveEditorModeMenu = new System.Windows.Forms.ToolStripDropDownButton();
             this.vanillaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.improvementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alternativeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.resurrectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.faithfulToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.about = new System.Windows.Forms.ToolStripButton();
             this.importButton = new System.Windows.Forms.Button();
             this.exportButton = new System.Windows.Forms.Button();
@@ -59,9 +62,6 @@
             this.bossMultiplier = new System.Windows.Forms.NumericUpDown();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.saveEditorView1 = new dw2_exp_multiplier.View.SaveEditorView();
-            this.improvementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.resurrectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.faithfulToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.multiplier)).BeginInit();
             this.menuBar.SuspendLayout();
             this.digibeetleGroupBox.SuspendLayout();
@@ -149,6 +149,11 @@
             // 
             this.multiplier.DecimalPlaces = 1;
             this.multiplier.Enabled = false;
+            this.multiplier.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
             this.multiplier.Location = new System.Drawing.Point(96, 25);
             this.multiplier.Minimum = new decimal(new int[] {
             1,
@@ -204,16 +209,37 @@
             this.vanillaToolStripMenuItem.Checked = true;
             this.vanillaToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.vanillaToolStripMenuItem.Name = "vanillaToolStripMenuItem";
-            this.vanillaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.vanillaToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.vanillaToolStripMenuItem.Text = "Vanilla / Hard";
             this.vanillaToolStripMenuItem.Click += new System.EventHandler(this.vanillaToolStripMenuItem_Click);
+            // 
+            // improvementToolStripMenuItem
+            // 
+            this.improvementToolStripMenuItem.Name = "improvementToolStripMenuItem";
+            this.improvementToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.improvementToolStripMenuItem.Text = "Improvement";
+            this.improvementToolStripMenuItem.Click += new System.EventHandler(this.improvementToolStripMenuItem_Click);
             // 
             // alternativeToolStripMenuItem
             // 
             this.alternativeToolStripMenuItem.Name = "alternativeToolStripMenuItem";
-            this.alternativeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.alternativeToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.alternativeToolStripMenuItem.Text = "Alternative";
             this.alternativeToolStripMenuItem.Click += new System.EventHandler(this.alternativeToolStripMenuItem_Click);
+            // 
+            // resurrectionToolStripMenuItem
+            // 
+            this.resurrectionToolStripMenuItem.Name = "resurrectionToolStripMenuItem";
+            this.resurrectionToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.resurrectionToolStripMenuItem.Text = "Resurrection";
+            this.resurrectionToolStripMenuItem.Click += new System.EventHandler(this.resurrectionToolStripMenuItem_Click);
+            // 
+            // faithfulToolStripMenuItem
+            // 
+            this.faithfulToolStripMenuItem.Name = "faithfulToolStripMenuItem";
+            this.faithfulToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.faithfulToolStripMenuItem.Text = "Faithful";
+            this.faithfulToolStripMenuItem.Click += new System.EventHandler(this.faithfulToolStripMenuItem_Click);
             // 
             // about
             // 
@@ -375,6 +401,11 @@
             // 
             this.bossMultiplier.DecimalPlaces = 1;
             this.bossMultiplier.Enabled = false;
+            this.bossMultiplier.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
             this.bossMultiplier.Location = new System.Drawing.Point(96, 27);
             this.bossMultiplier.Minimum = new decimal(new int[] {
             1,
@@ -407,27 +438,6 @@
             this.saveEditorView1.Name = "saveEditorView1";
             this.saveEditorView1.Size = new System.Drawing.Size(444, 384);
             this.saveEditorView1.TabIndex = 0;
-            // 
-            // improvementToolStripMenuItem
-            // 
-            this.improvementToolStripMenuItem.Name = "improvementToolStripMenuItem";
-            this.improvementToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.improvementToolStripMenuItem.Text = "Improvement";
-            this.improvementToolStripMenuItem.Click += new System.EventHandler(this.improvementToolStripMenuItem_Click);
-            // 
-            // resurrectionToolStripMenuItem
-            // 
-            this.resurrectionToolStripMenuItem.Name = "resurrectionToolStripMenuItem";
-            this.resurrectionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.resurrectionToolStripMenuItem.Text = "Resurrection";
-            this.resurrectionToolStripMenuItem.Click += new System.EventHandler(this.resurrectionToolStripMenuItem_Click);
-            // 
-            // faithfulToolStripMenuItem
-            // 
-            this.faithfulToolStripMenuItem.Name = "faithfulToolStripMenuItem";
-            this.faithfulToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.faithfulToolStripMenuItem.Text = "Faithful";
-            this.faithfulToolStripMenuItem.Click += new System.EventHandler(this.faithfulToolStripMenuItem_Click);
             // 
             // Main
             // 

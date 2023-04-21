@@ -74,7 +74,11 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manager\ExtremeStatsMultiplier.cs" />
     <Compile Include="Manager\EnemysetManager.cs" />
+    <Compile Include="Manager\BossStatsMultiplier.cs" />
+    <Compile Include="Manager\ExpBitsMultiplier.cs" />
+    <Compile Include="Manager\IEnemysetModifier.cs" />
     <Compile Include="Mapper\EnemysetManager.cs" />
     <Compile Include="Mapper\MemoryCardFile.cs" />
     <Compile Include="Mapper\RawSaveFile.cs" />

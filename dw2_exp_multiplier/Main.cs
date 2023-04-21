@@ -8,9 +8,6 @@ using dw2_exp_multiplier.Entity;
 using dw2_exp_multiplier.Manager;
 using dw2_exp_multiplier.Mapper;
 
-/*
- * @author acemon33
- */
 
 namespace dw2_exp_multiplier
 {
@@ -131,21 +128,25 @@ namespace dw2_exp_multiplier
 
                 if (enemysetTextBox.Text.Length > 0)
                 {
-                    EnemysetMapper.ReadFile(enemysetTextBox.Text, ref this.EnemysetList);
+                    EnemysetManager enemysetManager = new EnemysetManager(enemysetTextBox.Text);
                     
                     if (multiplier.Value.CompareTo(Decimal.One) != 0)
-                        EnemysetManager.MultiplyExpBits(multiplier.Value, ref this.EnemysetList);
+                        enemysetManager.AddModifier(new ExpBitsMultiplier(multiplier.Value));
 
                     if (bossMultiplier.Value.CompareTo(Decimal.One) != 0)
                     {
                         if (extremeModeCheckBox.Checked)
-                            EnemysetManager.MultiplyExtremeStats(bossMultiplier.Value, ref this.EnemysetList);
+                            enemysetManager.AddModifier(new ExtremeStatsMultiplier(multiplier.Value));
                         else
-                            EnemysetManager.MultiplyBossStats(bossMultiplier.Value, ref this.EnemysetList);
+                            enemysetManager.AddModifier(new BossStatsMultiplier(multiplier.Value));
                     }
-                    
-                    if (Control.ModifierKeys == Keys.Control) EnemysetMapper.WriteFile("ENEMYSET_TEST.BIN", ref this.EnemysetList);
-                    else EnemysetMapper.WriteBin(ref fs, ref this.EnemysetList);
+
+                    enemysetManager.ApplyModifiers();
+
+                    if (Control.ModifierKeys == Keys.Control)
+                        enemysetManager.WrtieToFile("ENEMYSET_TEST.BIN");
+                    else
+                        enemysetManager.WriteToBin(ref fs);
                 }
                 
                 if (unHideAAA.Checked)

@@ -1,81 +1,40 @@
-using System;
 using System.Collections.Generic;
+using System.IO;
 using dw2_exp_multiplier.Entity;
+using dw2_exp_multiplier.Mapper;
 
-/*
- * @author acemon33
- */
 
 namespace dw2_exp_multiplier.Manager
 {
     public class EnemysetManager
     {
-        public static void MultiplyExpBits(Decimal multiplier, ref List<Enemyset> enemysetList)
+        private List<IEnemysetModifier> ModifierList = new List<IEnemysetModifier>();
+        private List<Enemyset> EnemysetList = new List<Enemyset>();
+
+        public EnemysetManager(string filepath)
         {
-            foreach (var enemyset in enemysetList)
-            {
-                foreach (var enemy in enemyset.Enemy)
-                {
-                    var i = enemy.Exp * multiplier;
-                    enemy.Exp = ( i > UInt16.MaxValue) ? UInt16.MaxValue : Convert.ToUInt16(i);   
-                    i = enemy.Bits * multiplier;
-                    enemy.Bits = ( i > UInt16.MaxValue) ? UInt16.MaxValue : Convert.ToUInt16(i);   
-                }
-            }
+            EnemysetMapper.ReadFile(filepath, ref this.EnemysetList);
         }
-        
-        public static void MultiplyBossStats(Decimal multiplier, ref List<Enemyset> enemysetList)
+
+        public void AddModifier(IEnemysetModifier enemysetModifier)
         {
-            foreach (var enemyset in enemysetList)
-            {
-                if (enemyset.Move == 0x37 || enemyset.Move == 0x1A)
-                {
-                    foreach (var enemy in enemyset.Enemy)
-                    {
-                        var i = enemy.Hp * multiplier;
-                        enemy.Hp = (i > UInt16.MaxValue) ? UInt16.MaxValue : Convert.ToUInt16(i);
-
-                        i = enemy.Mp * multiplier;
-                        enemy.Mp = (i > UInt16.MaxValue) ? UInt16.MaxValue : Convert.ToUInt16(i);
-
-                        i = enemy.Attack * multiplier;
-                        enemy.Attack = (i > byte.MaxValue) ? byte.MaxValue : Convert.ToByte(i);
-
-                        i = enemy.Defence * multiplier;
-                        enemy.Defence = (i > UInt16.MaxValue) ? UInt16.MaxValue : Convert.ToUInt16(i);
-
-                        i = enemy.Speed * (multiplier / 2);
-                        enemy.Speed = (i > byte.MaxValue) ? byte.MaxValue : Convert.ToByte(i);
-                    }
-                }
-            }
+            this.ModifierList.Add(enemysetModifier);
         }
-        
-        public static void MultiplyExtremeStats(Decimal multiplier, ref List<Enemyset> enemysetList)
+
+        public void ApplyModifiers()
         {
-            foreach (var enemyset in enemysetList)
-            {
-                if (enemyset.Move == 0x37 || enemyset.Move == 0x1A)
-                {
-                    foreach (var enemy in enemyset.Enemy)
-                    {
-                        var i = enemy.Hp * multiplier;
-                        enemy.Hp = (i > UInt16.MaxValue) ? UInt16.MaxValue : Convert.ToUInt16(i);
+            foreach (var modifier in this.ModifierList)
+                modifier.Patch(ref this.EnemysetList);
+        }
 
-                        i = enemy.Mp * multiplier;
-                        enemy.Mp = (i > UInt16.MaxValue) ? UInt16.MaxValue : Convert.ToUInt16(i);
+        public void WrtieToFile(string filepath)
+        {
+            EnemysetMapper.WriteFile(filepath, ref this.EnemysetList);
+        }
 
-                        i = enemy.Attack * multiplier;
-                        enemy.Attack = (i > byte.MaxValue) ? byte.MaxValue : Convert.ToByte(i);
-
-                        i = enemy.Defence * (multiplier * 2);
-                        enemy.Defence = (i > UInt16.MaxValue) ? UInt16.MaxValue : Convert.ToUInt16(i);
-
-                        i = enemy.Speed * (multiplier / 2);
-                        enemy.Speed = (i > byte.MaxValue) ? byte.MaxValue : Convert.ToByte(i);
-                    }
-                }
-            }
+        public void WriteToBin(ref FileStream br)
+        {
+            EnemysetMapper.WriteBin(ref br, ref this.EnemysetList);
         }
     }
     
