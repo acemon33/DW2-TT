@@ -24,6 +24,8 @@ namespace dw2_exp_multiplier
             digibeetleComboBox.DisplayMember = "Value";
             digibeetleComboBox.ValueMember = "Key";
             digibeetleComboBox.DataSource = new BindingSource(DigiBeetlePatcher.getDigiBeetleIds(ref this.imageList, "Resources\\digi-beetle.zip"), null);
+            if (!(Control.ModifierKeys == Keys.Shift))
+                tabControl1.TabPages.RemoveByKey("tabPage3");
         }
 
         private void about_Click(object sender, EventArgs e)
