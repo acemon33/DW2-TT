@@ -42,7 +42,7 @@ namespace dw2_exp_multiplier.View
             // 
             // importButton
             // 
-            this.importButton.Location = new System.Drawing.Point(96, 79);
+            this.importButton.Location = new System.Drawing.Point(96, 53);
             this.importButton.Name = "importButton";
             this.importButton.Size = new System.Drawing.Size(75, 23);
             this.importButton.TabIndex = 5;
@@ -52,7 +52,7 @@ namespace dw2_exp_multiplier.View
             // 
             // exportButton
             // 
-            this.exportButton.Location = new System.Drawing.Point(15, 79);
+            this.exportButton.Location = new System.Drawing.Point(15, 53);
             this.exportButton.Name = "exportButton";
             this.exportButton.Size = new System.Drawing.Size(75, 23);
             this.exportButton.TabIndex = 4;
@@ -62,15 +62,16 @@ namespace dw2_exp_multiplier.View
             // 
             // indexTextBox
             // 
-            this.indexTextBox.Location = new System.Drawing.Point(197, 53);
+            this.indexTextBox.Location = new System.Drawing.Point(260, 43);
+            this.indexTextBox.Multiline = true;
             this.indexTextBox.Name = "indexTextBox";
-            this.indexTextBox.Size = new System.Drawing.Size(55, 20);
+            this.indexTextBox.Size = new System.Drawing.Size(55, 158);
             this.indexTextBox.TabIndex = 3;
             // 
             // relocateButton
             // 
             this.relocateButton.Enabled = false;
-            this.relocateButton.Location = new System.Drawing.Point(177, 79);
+            this.relocateButton.Location = new System.Drawing.Point(177, 53);
             this.relocateButton.Name = "relocateButton";
             this.relocateButton.Size = new System.Drawing.Size(75, 23);
             this.relocateButton.TabIndex = 6;
@@ -98,11 +99,11 @@ namespace dw2_exp_multiplier.View
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(149, 60);
+            this.label1.Location = new System.Drawing.Point(260, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 13);
+            this.label1.Size = new System.Drawing.Size(52, 13);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Index: ";
+            this.label1.Text = "Indexes: ";
             // 
             // FileManagerView
             // 
@@ -119,7 +120,6 @@ namespace dw2_exp_multiplier.View
             this.Size = new System.Drawing.Size(392, 309);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         private System.Windows.Forms.Button dw2BrowseButton;
