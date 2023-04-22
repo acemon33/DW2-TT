@@ -111,7 +111,16 @@ namespace dw2_exp_multiplier
                     else
                         digimonGiftPatcher.UnPatch(ref fs);
                 }
-                
+
+                if (digiLinePatcherCheckBox.Checked)
+                {
+                    DigiLinePatcher digiLinePatcher = new DigiLinePatcher(ref fs);
+                    if (digiLinePatchRadioButton.Checked)
+                        digiLinePatcher.Patch(ref fs);
+                    else
+                        digiLinePatcher.UnPatch(ref fs);
+                }
+                                
                 MessageBox.Show("The file has been Saved Successfully", "Enjoy ^_^");
             }
             catch (FileLoadException ex)
@@ -225,6 +234,7 @@ namespace dw2_exp_multiplier
                 digibeetleComboBox.Enabled = true;
                 groupBox3.Enabled = true;
                 groupBox4.Enabled = true;
+                groupBox5.Enabled = true;
             }
             else
             {
@@ -234,6 +244,7 @@ namespace dw2_exp_multiplier
                 digibeetleComboBox.Enabled = false;
                 groupBox3.Enabled = false;
                 groupBox4.Enabled = false;
+                groupBox5.Enabled = false;
             }
         }
 
@@ -325,8 +336,22 @@ namespace dw2_exp_multiplier
                 digimonGiftUnpatchRadioButton.Enabled = false;
             }
         }
+
+        private void digiLinePatcherCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (digiLinePatcherCheckBox.Checked)
+            {
+                digiLinePatchRadioButton.Enabled = true;
+                digiLineUnpatchRadioButton.Enabled = true;
+            }
+            else
+            {
+                digiLinePatchRadioButton.Enabled = false;
+                digiLineUnpatchRadioButton.Enabled = false;
+            }
+        }
         #endregion
-        
+
         #region SaveEditorMenuItem Region
         private void vanillaToolStripMenuItem_Click(object sender, EventArgs e)
         {

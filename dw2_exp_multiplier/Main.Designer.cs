@@ -55,6 +55,10 @@
             this.digibeetlPictureBox = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.digiLineUnpatchRadioButton = new System.Windows.Forms.RadioButton();
+            this.digiLinePatchRadioButton = new System.Windows.Forms.RadioButton();
+            this.digiLinePatcherCheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.digimonGiftUnpatchRadioButton = new System.Windows.Forms.RadioButton();
             this.digimonGiftPatchRadioButton = new System.Windows.Forms.RadioButton();
@@ -69,20 +73,21 @@
             this.extremeModeCheckBox = new System.Windows.Forms.CheckBox();
             this.bossMultiplier = new System.Windows.Forms.NumericUpDown();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.saveEditorView1 = new dw2_exp_multiplier.View.SaveEditorView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.fileManagerView1 = new dw2_exp_multiplier.View.FileManagerView();
-            ((System.ComponentModel.ISupportInitialize) (this.multiplier)).BeginInit();
+            this.saveEditorView2 = new dw2_exp_multiplier.View.SaveEditorView();
+            this.fileManagerView2 = new dw2_exp_multiplier.View.FileManagerView();
+            ((System.ComponentModel.ISupportInitialize)(this.multiplier)).BeginInit();
             this.menuBar.SuspendLayout();
             this.digibeetleGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.digibeetlPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.digibeetlPictureBox)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.EnemyBossGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.bossMultiplier)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bossMultiplier)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.SuspendLayout();
@@ -162,13 +167,25 @@
             // 
             this.multiplier.DecimalPlaces = 1;
             this.multiplier.Enabled = false;
-            this.multiplier.Increment = new decimal(new int[] {5, 0, 0, 65536});
+            this.multiplier.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
             this.multiplier.Location = new System.Drawing.Point(96, 25);
-            this.multiplier.Minimum = new decimal(new int[] {1, 0, 0, 0});
+            this.multiplier.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.multiplier.Name = "multiplier";
             this.multiplier.Size = new System.Drawing.Size(46, 20);
             this.multiplier.TabIndex = 8;
-            this.multiplier.Value = new decimal(new int[] {1, 0, 0, 0});
+            this.multiplier.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // multiplierLabel
             // 
@@ -181,7 +198,9 @@
             // 
             // menuBar
             // 
-            this.menuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {this.saveEditorModeMenu, this.about});
+            this.menuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveEditorModeMenu,
+            this.about});
             this.menuBar.Location = new System.Drawing.Point(0, 0);
             this.menuBar.Name = "menuBar";
             this.menuBar.Size = new System.Drawing.Size(460, 25);
@@ -191,8 +210,13 @@
             // saveEditorModeMenu
             // 
             this.saveEditorModeMenu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.saveEditorModeMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {this.vanillaToolStripMenuItem, this.improvementToolStripMenuItem, this.alternativeToolStripMenuItem, this.resurrectionToolStripMenuItem, this.faithfulToolStripMenuItem});
-            this.saveEditorModeMenu.Image = ((System.Drawing.Image) (resources.GetObject("saveEditorModeMenu.Image")));
+            this.saveEditorModeMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.vanillaToolStripMenuItem,
+            this.improvementToolStripMenuItem,
+            this.alternativeToolStripMenuItem,
+            this.resurrectionToolStripMenuItem,
+            this.faithfulToolStripMenuItem});
+            this.saveEditorModeMenu.Image = ((System.Drawing.Image)(resources.GetObject("saveEditorModeMenu.Image")));
             this.saveEditorModeMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveEditorModeMenu.Name = "saveEditorModeMenu";
             this.saveEditorModeMenu.Size = new System.Drawing.Size(112, 22);
@@ -329,6 +353,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.groupBox5);
             this.tabPage1.Controls.Add(this.groupBox4);
             this.tabPage1.Controls.Add(this.groupBox3);
             this.tabPage1.Controls.Add(this.groupBox2);
@@ -351,6 +376,53 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Misc.";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.digiLineUnpatchRadioButton);
+            this.groupBox5.Controls.Add(this.digiLinePatchRadioButton);
+            this.groupBox5.Controls.Add(this.digiLinePatcherCheckBox);
+            this.groupBox5.Enabled = false;
+            this.groupBox5.Location = new System.Drawing.Point(246, 236);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(200, 52);
+            this.groupBox5.TabIndex = 27;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Digi-Line Patcher";
+            // 
+            // digiLineUnpatchRadioButton
+            // 
+            this.digiLineUnpatchRadioButton.AutoSize = true;
+            this.digiLineUnpatchRadioButton.Enabled = false;
+            this.digiLineUnpatchRadioButton.Location = new System.Drawing.Point(135, 22);
+            this.digiLineUnpatchRadioButton.Name = "digiLineUnpatchRadioButton";
+            this.digiLineUnpatchRadioButton.Size = new System.Drawing.Size(65, 17);
+            this.digiLineUnpatchRadioButton.TabIndex = 25;
+            this.digiLineUnpatchRadioButton.Text = "Unpatch";
+            this.digiLineUnpatchRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // digiLinePatchRadioButton
+            // 
+            this.digiLinePatchRadioButton.AutoSize = true;
+            this.digiLinePatchRadioButton.Checked = true;
+            this.digiLinePatchRadioButton.Enabled = false;
+            this.digiLinePatchRadioButton.Location = new System.Drawing.Point(77, 22);
+            this.digiLinePatchRadioButton.Name = "digiLinePatchRadioButton";
+            this.digiLinePatchRadioButton.Size = new System.Drawing.Size(52, 17);
+            this.digiLinePatchRadioButton.TabIndex = 24;
+            this.digiLinePatchRadioButton.TabStop = true;
+            this.digiLinePatchRadioButton.Text = "Patch";
+            this.digiLinePatchRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // digiLinePatcherCheckBox
+            // 
+            this.digiLinePatcherCheckBox.Location = new System.Drawing.Point(8, 19);
+            this.digiLinePatcherCheckBox.Name = "digiLinePatcherCheckBox";
+            this.digiLinePatcherCheckBox.Size = new System.Drawing.Size(72, 24);
+            this.digiLinePatcherCheckBox.TabIndex = 23;
+            this.digiLinePatcherCheckBox.Text = "Enable:";
+            this.digiLinePatcherCheckBox.UseVisualStyleBackColor = true;
+            this.digiLinePatcherCheckBox.CheckedChanged += new System.EventHandler(this.digiLinePatcherCheckBox_CheckedChanged);
             // 
             // groupBox4
             // 
@@ -492,17 +564,29 @@
             // 
             this.bossMultiplier.DecimalPlaces = 1;
             this.bossMultiplier.Enabled = false;
-            this.bossMultiplier.Increment = new decimal(new int[] {5, 0, 0, 65536});
+            this.bossMultiplier.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
             this.bossMultiplier.Location = new System.Drawing.Point(96, 27);
-            this.bossMultiplier.Minimum = new decimal(new int[] {1, 0, 0, 0});
+            this.bossMultiplier.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.bossMultiplier.Name = "bossMultiplier";
             this.bossMultiplier.Size = new System.Drawing.Size(46, 20);
             this.bossMultiplier.TabIndex = 21;
-            this.bossMultiplier.Value = new decimal(new int[] {1, 0, 0, 0});
+            this.bossMultiplier.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.saveEditorView1);
+            this.tabPage2.Controls.Add(this.saveEditorView2);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -511,16 +595,9 @@
             this.tabPage2.Text = "Save Editor";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // saveEditorView1
-            // 
-            this.saveEditorView1.Location = new System.Drawing.Point(7, 7);
-            this.saveEditorView1.Name = "saveEditorView1";
-            this.saveEditorView1.Size = new System.Drawing.Size(444, 384);
-            this.saveEditorView1.TabIndex = 0;
-            // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.fileManagerView1);
+            this.tabPage3.Controls.Add(this.fileManagerView2);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -529,12 +606,19 @@
             this.tabPage3.Text = "File Manager";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // fileManagerView1
+            // saveEditorView2
             // 
-            this.fileManagerView1.Location = new System.Drawing.Point(6, 6);
-            this.fileManagerView1.Name = "fileManagerView1";
-            this.fileManagerView1.Size = new System.Drawing.Size(441, 380);
-            this.fileManagerView1.TabIndex = 0;
+            this.saveEditorView2.Location = new System.Drawing.Point(3, 5);
+            this.saveEditorView2.Name = "saveEditorView2";
+            this.saveEditorView2.Size = new System.Drawing.Size(444, 384);
+            this.saveEditorView2.TabIndex = 0;
+            // 
+            // fileManagerView2
+            // 
+            this.fileManagerView2.Location = new System.Drawing.Point(6, 6);
+            this.fileManagerView2.Name = "fileManagerView2";
+            this.fileManagerView2.Size = new System.Drawing.Size(392, 309);
+            this.fileManagerView2.TabIndex = 0;
             // 
             // Main
             // 
@@ -544,20 +628,22 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Main";
             this.Tag = "";
             this.Text = "DW2-TT";
-            ((System.ComponentModel.ISupportInitialize) (this.multiplier)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.multiplier)).EndInit();
             this.menuBar.ResumeLayout(false);
             this.menuBar.PerformLayout();
             this.digibeetleGroupBox.ResumeLayout(false);
             this.digibeetleGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.digibeetlPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.digibeetlPictureBox)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -566,11 +652,12 @@
             this.groupBox2.PerformLayout();
             this.EnemyBossGroupBox.ResumeLayout(false);
             this.EnemyBossGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.bossMultiplier)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bossMultiplier)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         private dw2_exp_multiplier.View.FileManagerView fileManagerView1;
@@ -613,7 +700,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox extremeModeCheckBox;
         private System.Windows.Forms.NumericUpDown bossMultiplier;
-        private dw2_exp_multiplier.View.SaveEditorView saveEditorView1;
         private System.Windows.Forms.ToolStripDropDownButton saveEditorModeMenu;
         private System.Windows.Forms.ToolStripMenuItem vanillaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem alternativeToolStripMenuItem;
@@ -628,6 +714,12 @@
         private System.Windows.Forms.RadioButton digimonGiftUnpatchRadioButton;
         private System.Windows.Forms.RadioButton digimonGiftPatchRadioButton;
         private System.Windows.Forms.CheckBox digimonGiftPatcherCheckBox;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.RadioButton digiLineUnpatchRadioButton;
+        private System.Windows.Forms.RadioButton digiLinePatchRadioButton;
+        private System.Windows.Forms.CheckBox digiLinePatcherCheckBox;
+        private View.SaveEditorView saveEditorView2;
+        private View.FileManagerView fileManagerView2;
     }
 }
 

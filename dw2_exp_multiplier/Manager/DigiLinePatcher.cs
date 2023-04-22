@@ -1,0 +1,78 @@
+using System;
+using System.IO;
+using dw2_exp_multiplier.Base;
+
+
+namespace dw2_exp_multiplier.Manager
+{
+    public class DigiLinePatcher
+    {
+        private byte[] data;
+        
+        public DigiLinePatcher(ref FileStream fs)
+        {
+            data = PsxSector.ReadSector(ref fs, FileIndex.SLUS_011_93_INDEX, FileIndex.SLUS_011_93_SIZE);
+        }
+
+        public void Patch(ref FileStream fs)
+        {
+            byte[] patchedPattern =
+            {
+                0xbc, 0x26, 0x01, 0x08,
+                0x00, 0x00, 0x00, 0x00
+            };
+            Buffer.BlockCopy(patchedPattern, 0, data, 0x7DCC, patchedPattern.Length);    // ram: 800175cc
+            
+            patchedPattern = new byte[]
+            {
+                0x08, 0xF7, 0x63, 0x8C,
+                0x00, 0x00, 0x00, 0x00,
+                0x09, 0x00, 0x60, 0x18,
+                0x00, 0x00, 0x00, 0x00,
+                0x9E, 0x01, 0x02, 0x86,
+                0x00, 0x00, 0x00, 0x00,
+                0x01, 0x00, 0x43, 0x28,
+                0x04, 0x00, 0x60, 0x14,
+                0x00, 0x00, 0x00, 0x00,
+                0x9C, 0x01, 0x02, 0xA6,
+                0x7F, 0x5D, 0x00, 0x08,
+                0x00, 0x00, 0x00, 0x00,
+                0x06, 0x80, 0x03, 0x3C,
+                0x04, 0xF7, 0x63, 0x8C,
+                0x75, 0x5D, 0x00, 0x08
+            };
+            Buffer.BlockCopy(patchedPattern, 0, data, 0x3A2F0, patchedPattern.Length);    // ram: 80049Af0
+            
+            PsxSector.WriteSector(ref fs, ref data, FileIndex.SLUS_011_93_INDEX, FileIndex.SLUS_011_93_SIZE);
+        }
+        
+        public void UnPatch(ref FileStream fs)
+        {
+            byte[] patchedPattern = { 0x04, 0xF7, 0x63, 0x8C, 0x00, 0x00, 0x00, 0x00 };
+            Buffer.BlockCopy(patchedPattern, 0, data, 0x7DCC, patchedPattern.Length);    // ram: 800175cc
+            
+            patchedPattern = new byte[]
+            {
+                0x00, 0x00, 0x00, 0x00,
+                0x00, 0x00, 0x00, 0x00,
+                0x00, 0x00, 0x00, 0x00,
+                0x00, 0x00, 0x00, 0x00,
+                0x00, 0x00, 0x00, 0x00,
+                0x00, 0x00, 0x00, 0x00,
+                0x00, 0x00, 0x00, 0x00,
+                0x00, 0x00, 0x00, 0x00,
+                0x00, 0x00, 0x00, 0x00,
+                0x00, 0x00, 0x00, 0x00,
+                0x00, 0x00, 0x00, 0x00,
+                0x00, 0x00, 0x00, 0x00,
+                0x00, 0x00, 0x00, 0x00,
+                0x00, 0x00, 0x00, 0x00,
+                0x00, 0x00, 0x00, 0x00
+            };
+            Buffer.BlockCopy(patchedPattern, 0, data, 0x3A2F0, patchedPattern.Length);    // ram: 80049Af0
+            
+            PsxSector.WriteSector(ref fs, ref data, FileIndex.SLUS_011_93_INDEX, FileIndex.SLUS_011_93_SIZE);
+        }
+    }
+    
+}
