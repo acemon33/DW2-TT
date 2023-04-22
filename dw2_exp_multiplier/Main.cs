@@ -103,6 +103,15 @@ namespace dw2_exp_multiplier
                         dnaLabsPatcher.UnPatch(ref fs);
                 }
                 
+                if (digimonGiftPatcherCheckBox.Checked)
+                {
+                    DigimonGiftPatcher digimonGiftPatcher = new DigimonGiftPatcher(ref fs);
+                    if (digimonGiftPatchRadioButton.Checked)
+                        digimonGiftPatcher.Patch(ref fs);
+                    else
+                        digimonGiftPatcher.UnPatch(ref fs);
+                }
+                
                 MessageBox.Show("The file has been Saved Successfully", "Enjoy ^_^");
             }
             catch (FileLoadException ex)
@@ -296,6 +305,20 @@ namespace dw2_exp_multiplier
             {
                 dnaLabsPatchRadioButton.Enabled = false;
                 dnaLabsUnpatchRadioButton.Enabled = false;
+            }
+        }
+        
+        private void digimonGiftPatcherCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (digimonGiftPatcherCheckBox.Checked)
+            {
+                digimonGiftPatchRadioButton.Enabled = true;
+                digimonGiftUnpatchRadioButton.Enabled = true;
+            }
+            else
+            {
+                digimonGiftPatchRadioButton.Enabled = false;
+                digimonGiftUnpatchRadioButton.Enabled = false;
             }
         }
         #endregion

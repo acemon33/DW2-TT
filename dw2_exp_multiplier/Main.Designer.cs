@@ -564,6 +564,7 @@
             this.digimonGiftPatcherCheckBox.TabIndex = 23;
             this.digimonGiftPatcherCheckBox.Text = "Enable:";
             this.digimonGiftPatcherCheckBox.UseVisualStyleBackColor = true;
+            this.digimonGiftPatcherCheckBox.CheckedChanged += new System.EventHandler(this.digimonGiftPatcherCheckBox_CheckedChanged);
             // 
             // Main
             // 
