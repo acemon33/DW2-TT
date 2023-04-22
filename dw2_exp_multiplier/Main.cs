@@ -5,6 +5,7 @@ using System.IO;
 using System.Windows.Forms;
 using dw2_exp_multiplier.Base;
 using dw2_exp_multiplier.Manager;
+using dw2_exp_multiplier.View;
 
 
 namespace dw2_exp_multiplier

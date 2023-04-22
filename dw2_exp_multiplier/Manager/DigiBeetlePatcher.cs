@@ -5,11 +5,8 @@ using System.IO;
 using System.IO.Compression;
 using dw2_exp_multiplier.Base;
 
-/*
- * @author acemon33
- */
 
-namespace dw2_exp_multiplier
+namespace dw2_exp_multiplier.Manager
 {
     public class DigiBeetlePatcher
     {

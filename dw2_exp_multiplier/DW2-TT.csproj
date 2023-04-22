@@ -56,17 +56,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="About.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="About.Designer.cs">
-      <DependentUpon>About.cs</DependentUpon>
-    </Compile>
     <Compile Include="Base\DW2Slus.cs" />
     <Compile Include="Base\FileIndex.cs" />
     <Compile Include="Base\PsxSector.cs" />
     <Compile Include="Configuration.cs" />
-    <Compile Include="DigiBeetlePatcher.cs" />
     <Compile Include="DigimonWorld2Tool\TextConversion.cs" />
     <Compile Include="Entity\Enemyset.cs" />
     <Compile Include="Entity\ISaveFile.cs" />
@@ -77,6 +70,7 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manager\DigiBeetlePatcher.cs" />
     <Compile Include="Manager\UnmoveableEnemy.cs" />
     <Compile Include="Manager\ExtremeStatsMultiplier.cs" />
     <Compile Include="Manager\EnemysetManager.cs" />
@@ -89,6 +83,12 @@
     <Compile Include="MemcardRex\ps1card.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FileManagerView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -101,9 +101,6 @@
     <Compile Include="View\SaveEditorView.Designer.cs">
       <DependentUpon>SaveEditorView.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="About.resx">
-      <DependentUpon>About.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -117,6 +114,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FileManagerView.resx">
       <DependentUpon>FileManagerView.cs</DependentUpon>
     </EmbeddedResource>

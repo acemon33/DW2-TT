@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace dw2_exp_multiplier
+
+namespace dw2_exp_multiplier.View
 {
     public partial class About : Form
     {
@@ -21,7 +15,6 @@ namespace dw2_exp_multiplier
         {
             this.Dispose();
         }
-
     }
 
 }

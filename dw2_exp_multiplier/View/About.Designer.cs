@@ -1,4 +1,4 @@
-﻿namespace dw2_exp_multiplier
+﻿namespace dw2_exp_multiplier.View
 {
     partial class About
     {
