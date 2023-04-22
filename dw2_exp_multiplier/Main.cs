@@ -223,6 +223,8 @@ namespace dw2_exp_multiplier
                 exportButton.Enabled = true;
                 unHideAAA.Enabled = true;
                 digibeetleComboBox.Enabled = true;
+                groupBox3.Enabled = true;
+                groupBox4.Enabled = true;
             }
             else
             {
@@ -230,6 +232,8 @@ namespace dw2_exp_multiplier
                 exportButton.Enabled = false;
                 unHideAAA.Enabled = false;
                 digibeetleComboBox.Enabled = false;
+                groupBox3.Enabled = false;
+                groupBox4.Enabled = false;
             }
         }
 
