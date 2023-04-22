@@ -81,10 +81,13 @@ namespace dw2_exp_multiplier.View
             // 
             // dw2TextBox
             // 
+            this.dw2TextBox.AllowDrop = true;
             this.dw2TextBox.Location = new System.Drawing.Point(15, 24);
             this.dw2TextBox.Name = "dw2TextBox";
             this.dw2TextBox.Size = new System.Drawing.Size(176, 20);
             this.dw2TextBox.TabIndex = 7;
+            this.dw2TextBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.dw2TextBox_DragDrop);
+            this.dw2TextBox.DragOver += new System.Windows.Forms.DragEventHandler(this.dw2TextBox_DragOver);
             // 
             // dw2BrowseButton
             // 
@@ -101,7 +104,7 @@ namespace dw2_exp_multiplier.View
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(260, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 13);
+            this.label1.Size = new System.Drawing.Size(53, 13);
             this.label1.TabIndex = 9;
             this.label1.Text = "Indexes: ";
             // 
@@ -120,6 +123,7 @@ namespace dw2_exp_multiplier.View
             this.Size = new System.Drawing.Size(392, 309);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         private System.Windows.Forms.Button dw2BrowseButton;

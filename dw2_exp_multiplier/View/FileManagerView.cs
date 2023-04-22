@@ -14,6 +14,7 @@ namespace dw2_exp_multiplier.View
             InitializeComponent();
         }
 
+        #region Control Events Region
         private void importButton_Click(object sender, EventArgs e)
         {
             var fbd = new FolderBrowserDialog();
@@ -93,6 +94,18 @@ namespace dw2_exp_multiplier.View
             if (ofd.ShowDialog() == DialogResult.OK) dw2TextBox.Text = ofd.FileName;
         }
 
+        private void dw2TextBox_DragDrop(object sender, DragEventArgs e)
+        {
+            dw2TextBox.Text = this.ValidateFilename(ref e);
+        }
+
+        private void dw2TextBox_DragOver(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.All;
+        }
+        #endregion
+
+        #region Helper Methods Region
         private Dictionary<int, string> ParseIndex(string folder)
         {
             Dictionary<int, string> fileIndexes = new Dictionary<int, string>();
@@ -104,6 +117,14 @@ namespace dw2_exp_multiplier.View
             }
             return fileIndexes;
         }
+        
+        private string ValidateFilename(ref DragEventArgs e)
+        {
+            string filename = (e.Data.GetData(DataFormats.FileDrop) as string[])[0];
+            if (filename.Contains(".bin") || filename.Contains(".BIN")) return filename;
+            return "";
+        }
+        #endregion
     }
 
 }

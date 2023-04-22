@@ -1793,10 +1793,13 @@
             // 
             // saveFileTextBox
             // 
+            this.saveFileTextBox.AllowDrop = true;
             this.saveFileTextBox.Location = new System.Drawing.Point(68, 5);
             this.saveFileTextBox.Name = "saveFileTextBox";
             this.saveFileTextBox.Size = new System.Drawing.Size(172, 20);
             this.saveFileTextBox.TabIndex = 2;
+            this.saveFileTextBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.saveFileTextBox_DragDrop);
+            this.saveFileTextBox.DragOver += new System.Windows.Forms.DragEventHandler(this.saveFileTextBox_DragOver);
             // 
             // label1
             // 

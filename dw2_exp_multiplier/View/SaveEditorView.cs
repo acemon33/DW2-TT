@@ -361,31 +361,14 @@ namespace dw2_exp_multiplier.View
         }
         #endregion
 
-        #region Buttons Region
+        #region Control Events Region
         private void openFileButton_Click(object sender, EventArgs e)
         {
             var ofd = new OpenFileDialog();
             ofd.Filter = ISaveFile.mcSupportedExtensions + "|" + ISaveFile.mcExtensions + "| All files|*.*";
             ofd.Title = "Open Memory Card or DW2 Raw Save File";
             if (ofd.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-                    Configuration.load();      // must load configuration before loading save-file & Form Data   
-                    this.LoadForm();
-                    
-                    saveFileTextBox.Text = ofd.FileName;
-                    this.saveFileLoader = ISaveFile.GetSaveFileLoader(saveFileTextBox.Text);
-                    this.saveFile = this.saveFileLoader.GetSaveFile();
-                    
-                    this.slotComboBox.Enabled = true;
-                    this.slotComboBox.SelectedIndex = 0;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);    // Visual Studio detects error as index out of boundary 
-                }
-            }
+                this.OpenSaveFile(ofd.FileName);
         }
 
         private void saveFileButton_Click(object sender, EventArgs e)
@@ -398,6 +381,39 @@ namespace dw2_exp_multiplier.View
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, Main.Title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        
+        private void saveFileTextBox_DragDrop(object sender, DragEventArgs e)
+        {
+            string filename = (e.Data.GetData(DataFormats.FileDrop) as string[])[0];
+            this.OpenSaveFile(filename);
+        }
+
+        private void saveFileTextBox_DragOver(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.All;
+        }
+        #endregion
+
+        #region Other Methods Region
+        private void OpenSaveFile(string filepath)
+        {
+            try
+            {
+                Configuration.load();      // must load configuration before loading save-file & Form Data   
+                this.LoadForm();
+                    
+                saveFileTextBox.Text = filepath;
+                this.saveFileLoader = ISaveFile.GetSaveFileLoader(saveFileTextBox.Text);
+                this.saveFile = this.saveFileLoader.GetSaveFile();
+                    
+                this.slotComboBox.Enabled = true;
+                this.slotComboBox.SelectedIndex = 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);    // Visual Studio detects error as index out of boundary 
             }
         }
         #endregion

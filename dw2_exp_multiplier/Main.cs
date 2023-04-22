@@ -4,9 +4,7 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using dw2_exp_multiplier.Base;
-using dw2_exp_multiplier.Entity;
 using dw2_exp_multiplier.Manager;
-using dw2_exp_multiplier.Mapper;
 
 
 namespace dw2_exp_multiplier
@@ -27,6 +25,7 @@ namespace dw2_exp_multiplier
                 tabControl1.TabPages.RemoveByKey("tabPage3");
         }
 
+        #region Button Events Region
         private void about_Click(object sender, EventArgs e)
         {
             var aboutForm = new About();
@@ -47,75 +46,6 @@ namespace dw2_exp_multiplier
             ofd.Title = "Open ENEMYSET.BIN File";
             ofd.Filter = "ENEMYSET.BIN File|*.bin";
             if (ofd.ShowDialog() == DialogResult.OK) enemysetTextBox.Text = ofd.FileName;
-        }
-
-        private void checkSaveButton()
-        {
-            if (dw2TextBox.Text.Length > 0 && enemysetTextBox.Text.Length > 0)
-            {
-                importButton.Enabled = true;
-                multiplier.Enabled = true;
-                bossMultiplier.Enabled = true;
-                extremeModeCheckBox.Enabled = true;
-            }
-            else
-            {
-                importButton.Enabled = false;
-                multiplier.Enabled = false;
-                bossMultiplier.Enabled = false;
-                extremeModeCheckBox.Enabled = false;
-            }
-        }
-
-        private void dw2TextBox_TextChanged(object sender, EventArgs e)
-        {
-            this.checkSaveButton();
-            if (dw2TextBox.Text.Length > 0)
-            {
-                saveButton.Enabled = true;
-                exportButton.Enabled = true;
-                unHideAAA.Enabled = true;
-                digibeetleComboBox.Enabled = true;
-            }
-            else
-            {
-                saveButton.Enabled = false;
-                exportButton.Enabled = false;
-                unHideAAA.Enabled = false;
-                digibeetleComboBox.Enabled = false;
-            }
-        }
-
-        private void enemysetTextBox_TextChanged(object sender, EventArgs e)
-        {
-            this.checkSaveButton();
-        }
-
-        private void dw2TextBox_DragDrop(object sender, DragEventArgs e)
-        {
-            dw2TextBox.Text = this.ValidateFilename(ref e);
-        }
-
-        private void dw2TextBox_DragOver(object sender, DragEventArgs e)
-        {
-            e.Effect = DragDropEffects.All;
-        }
-
-        private void enemysetTextBox_DragOver(object sender, DragEventArgs e)
-        {
-            e.Effect = DragDropEffects.All;
-        }
-
-        private void enemysetTextBox_DragDrop(object sender, DragEventArgs e)
-        {
-            enemysetTextBox.Text = this.ValidateFilename(ref e);
-        }
-
-        private string ValidateFilename(ref DragEventArgs e)
-        {
-            string filename = (e.Data.GetData(DataFormats.FileDrop) as string[])[0];
-            if (filename.Contains(".bin") || filename.Contains(".BIN")) return filename;
-            return "";
         }
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -260,14 +190,90 @@ namespace dw2_exp_multiplier
                 }
             }
         }
+        #endregion
 
+        #region Other Events Region
+        private void dw2TextBox_TextChanged(object sender, EventArgs e)
+        {
+            this.checkSaveButton();
+            if (dw2TextBox.Text.Length > 0)
+            {
+                saveButton.Enabled = true;
+                exportButton.Enabled = true;
+                unHideAAA.Enabled = true;
+                digibeetleComboBox.Enabled = true;
+            }
+            else
+            {
+                saveButton.Enabled = false;
+                exportButton.Enabled = false;
+                unHideAAA.Enabled = false;
+                digibeetleComboBox.Enabled = false;
+            }
+        }
+
+        private void enemysetTextBox_TextChanged(object sender, EventArgs e)
+        {
+            this.checkSaveButton();
+        }
+
+        private void dw2TextBox_DragDrop(object sender, DragEventArgs e)
+        {
+            dw2TextBox.Text = this.ValidateFilename(ref e);
+        }
+
+        private void dw2TextBox_DragOver(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.All;
+        }
+
+        private void enemysetTextBox_DragOver(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.All;
+        }
+
+        private void enemysetTextBox_DragDrop(object sender, DragEventArgs e)
+        {
+            enemysetTextBox.Text = this.ValidateFilename(ref e);
+        }
+        #endregion
+
+        #region Helper Methods Region
+        private void checkSaveButton()
+        {
+            if (dw2TextBox.Text.Length > 0 && enemysetTextBox.Text.Length > 0)
+            {
+                importButton.Enabled = true;
+                multiplier.Enabled = true;
+                bossMultiplier.Enabled = true;
+                extremeModeCheckBox.Enabled = true;
+            }
+            else
+            {
+                importButton.Enabled = false;
+                multiplier.Enabled = false;
+                bossMultiplier.Enabled = false;
+                extremeModeCheckBox.Enabled = false;
+            }
+        }
+
+        private string ValidateFilename(ref DragEventArgs e)
+        {
+            string filename = (e.Data.GetData(DataFormats.FileDrop) as string[])[0];
+            if (filename.Contains(".bin") || filename.Contains(".BIN")) return filename;
+            return "";
+        }
+        #endregion
+
+        #region Other Methods Region
         private void digibeetleComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             string id = ((KeyValuePair<string, string>)digibeetleComboBox.SelectedItem).Key;
             if (imageList.ContainsKey(id)) this.digibeetlPictureBox.Image = imageList[id];
             else this.digibeetlPictureBox.Image = null;
         }
-
+        #endregion
+        
         #region SaveEditorMenuItem Region
         private void vanillaToolStripMenuItem_Click(object sender, EventArgs e)
         {
