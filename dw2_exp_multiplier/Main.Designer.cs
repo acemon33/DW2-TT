@@ -65,6 +65,15 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.fileManagerView1 = new dw2_exp_multiplier.View.FileManagerView();
             ((System.ComponentModel.ISupportInitialize) (this.multiplier)).BeginInit();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dnaLabsPatcherCheckBox = new System.Windows.Forms.CheckBox();
+            this.dnaLabsPatchRadioButton = new System.Windows.Forms.RadioButton();
+            this.dnaLabsUnpatchRadioButton = new System.Windows.Forms.RadioButton();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.digimonGiftUnpatchRadioButton = new System.Windows.Forms.RadioButton();
+            this.digimonGiftPatchRadioButton = new System.Windows.Forms.RadioButton();
+            this.digimonGiftPatcherCheckBox = new System.Windows.Forms.CheckBox();
+            ((System.ComponentModel.ISupportInitialize)(this.multiplier)).BeginInit();
             this.menuBar.SuspendLayout();
             this.digibeetleGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.digibeetlPictureBox)).BeginInit();
@@ -73,6 +82,8 @@
             this.groupBox2.SuspendLayout();
             this.EnemyBossGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.bossMultiplier)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.SuspendLayout();
@@ -158,11 +169,19 @@
             0,
             65536});
             this.multiplier.Location = new System.Drawing.Point(96, 25);
-            this.multiplier.Minimum = new decimal(new int[] {1, 0, 0, 0});
+            this.multiplier.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.multiplier.Name = "multiplier";
             this.multiplier.Size = new System.Drawing.Size(46, 20);
             this.multiplier.TabIndex = 8;
-            this.multiplier.Value = new decimal(new int[] {1, 0, 0, 0});
+            this.multiplier.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // multiplierLabel
             // 
@@ -271,7 +290,7 @@
             // unHideAAA
             // 
             this.unHideAAA.Enabled = false;
-            this.unHideAAA.Location = new System.Drawing.Point(14, 252);
+            this.unHideAAA.Location = new System.Drawing.Point(14, 357);
             this.unHideAAA.Name = "unHideAAA";
             this.unHideAAA.Size = new System.Drawing.Size(134, 24);
             this.unHideAAA.TabIndex = 14;
@@ -330,6 +349,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.groupBox4);
+            this.tabPage1.Controls.Add(this.groupBox3);
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.EnemyBossGroupBox);
             this.tabPage1.Controls.Add(this.dw2Label);
@@ -403,11 +424,19 @@
             0,
             65536});
             this.bossMultiplier.Location = new System.Drawing.Point(96, 27);
-            this.bossMultiplier.Minimum = new decimal(new int[] {1, 0, 0, 0});
+            this.bossMultiplier.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.bossMultiplier.Name = "bossMultiplier";
             this.bossMultiplier.Size = new System.Drawing.Size(46, 20);
             this.bossMultiplier.TabIndex = 21;
-            this.bossMultiplier.Value = new decimal(new int[] {1, 0, 0, 0});
+            this.bossMultiplier.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // tabPage2
             // 
@@ -445,6 +474,97 @@
             this.fileManagerView1.Size = new System.Drawing.Size(441, 380);
             this.fileManagerView1.TabIndex = 0;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.dnaLabsUnpatchRadioButton);
+            this.groupBox3.Controls.Add(this.dnaLabsPatchRadioButton);
+            this.groupBox3.Controls.Add(this.dnaLabsPatcherCheckBox);
+            this.groupBox3.Location = new System.Drawing.Point(14, 236);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(200, 52);
+            this.groupBox3.TabIndex = 25;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "DNA Labs Patcher";
+            // 
+            // dnaLabsPatcherCheckBox
+            // 
+            this.dnaLabsPatcherCheckBox.Location = new System.Drawing.Point(8, 19);
+            this.dnaLabsPatcherCheckBox.Name = "dnaLabsPatcherCheckBox";
+            this.dnaLabsPatcherCheckBox.Size = new System.Drawing.Size(72, 24);
+            this.dnaLabsPatcherCheckBox.TabIndex = 23;
+            this.dnaLabsPatcherCheckBox.Text = "Enable:";
+            this.dnaLabsPatcherCheckBox.UseVisualStyleBackColor = true;
+            this.dnaLabsPatcherCheckBox.CheckedChanged += new System.EventHandler(this.dnaLabsPatcherCheckBox_CheckedChanged);
+            // 
+            // dnaLabsPatchRadioButton
+            // 
+            this.dnaLabsPatchRadioButton.AutoSize = true;
+            this.dnaLabsPatchRadioButton.Checked = true;
+            this.dnaLabsPatchRadioButton.Enabled = false;
+            this.dnaLabsPatchRadioButton.Location = new System.Drawing.Point(77, 22);
+            this.dnaLabsPatchRadioButton.Name = "dnaLabsPatchRadioButton";
+            this.dnaLabsPatchRadioButton.Size = new System.Drawing.Size(52, 17);
+            this.dnaLabsPatchRadioButton.TabIndex = 24;
+            this.dnaLabsPatchRadioButton.TabStop = true;
+            this.dnaLabsPatchRadioButton.Text = "Patch";
+            this.dnaLabsPatchRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // dnaLabsUnpatchRadioButton
+            // 
+            this.dnaLabsUnpatchRadioButton.AutoSize = true;
+            this.dnaLabsUnpatchRadioButton.Enabled = false;
+            this.dnaLabsUnpatchRadioButton.Location = new System.Drawing.Point(135, 22);
+            this.dnaLabsUnpatchRadioButton.Name = "dnaLabsUnpatchRadioButton";
+            this.dnaLabsUnpatchRadioButton.Size = new System.Drawing.Size(65, 17);
+            this.dnaLabsUnpatchRadioButton.TabIndex = 25;
+            this.dnaLabsUnpatchRadioButton.Text = "Unpatch";
+            this.dnaLabsUnpatchRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.digimonGiftUnpatchRadioButton);
+            this.groupBox4.Controls.Add(this.digimonGiftPatchRadioButton);
+            this.groupBox4.Controls.Add(this.digimonGiftPatcherCheckBox);
+            this.groupBox4.Location = new System.Drawing.Point(14, 294);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(200, 52);
+            this.groupBox4.TabIndex = 26;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Digimon Gift Patcher";
+            // 
+            // digimonGiftUnpatchRadioButton
+            // 
+            this.digimonGiftUnpatchRadioButton.AutoSize = true;
+            this.digimonGiftUnpatchRadioButton.Enabled = false;
+            this.digimonGiftUnpatchRadioButton.Location = new System.Drawing.Point(135, 22);
+            this.digimonGiftUnpatchRadioButton.Name = "digimonGiftUnpatchRadioButton";
+            this.digimonGiftUnpatchRadioButton.Size = new System.Drawing.Size(65, 17);
+            this.digimonGiftUnpatchRadioButton.TabIndex = 25;
+            this.digimonGiftUnpatchRadioButton.Text = "Unpatch";
+            this.digimonGiftUnpatchRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // digimonGiftPatchRadioButton
+            // 
+            this.digimonGiftPatchRadioButton.AutoSize = true;
+            this.digimonGiftPatchRadioButton.Checked = true;
+            this.digimonGiftPatchRadioButton.Enabled = false;
+            this.digimonGiftPatchRadioButton.Location = new System.Drawing.Point(77, 22);
+            this.digimonGiftPatchRadioButton.Name = "digimonGiftPatchRadioButton";
+            this.digimonGiftPatchRadioButton.Size = new System.Drawing.Size(52, 17);
+            this.digimonGiftPatchRadioButton.TabIndex = 24;
+            this.digimonGiftPatchRadioButton.TabStop = true;
+            this.digimonGiftPatchRadioButton.Text = "Patch";
+            this.digimonGiftPatchRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // digimonGiftPatcherCheckBox
+            // 
+            this.digimonGiftPatcherCheckBox.Location = new System.Drawing.Point(8, 19);
+            this.digimonGiftPatcherCheckBox.Name = "digimonGiftPatcherCheckBox";
+            this.digimonGiftPatcherCheckBox.Size = new System.Drawing.Size(72, 24);
+            this.digimonGiftPatcherCheckBox.TabIndex = 23;
+            this.digimonGiftPatcherCheckBox.Text = "Enable:";
+            this.digimonGiftPatcherCheckBox.UseVisualStyleBackColor = true;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -472,6 +592,10 @@
             this.EnemyBossGroupBox.ResumeLayout(false);
             this.EnemyBossGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize) (this.bossMultiplier)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -525,6 +649,14 @@
         private System.Windows.Forms.ToolStripMenuItem improvementToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem resurrectionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem faithfulToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.RadioButton dnaLabsPatchRadioButton;
+        private System.Windows.Forms.CheckBox dnaLabsPatcherCheckBox;
+        private System.Windows.Forms.RadioButton dnaLabsUnpatchRadioButton;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.RadioButton digimonGiftUnpatchRadioButton;
+        private System.Windows.Forms.RadioButton digimonGiftPatchRadioButton;
+        private System.Windows.Forms.CheckBox digimonGiftPatcherCheckBox;
     }
 }
 

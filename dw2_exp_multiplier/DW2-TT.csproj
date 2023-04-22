@@ -71,6 +71,7 @@
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Manager\DigiBeetlePatcher.cs" />
+    <Compile Include="Manager\DNALabsPatcher.cs" />
     <Compile Include="Manager\UnmoveableEnemy.cs" />
     <Compile Include="Manager\ExtremeStatsMultiplier.cs" />
     <Compile Include="Manager\EnemysetManager.cs" />

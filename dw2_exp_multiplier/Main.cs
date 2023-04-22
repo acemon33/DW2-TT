@@ -12,9 +12,11 @@ namespace dw2_exp_multiplier
 {
     public partial class Main : Form
     {
+        #region Fields Region
         Dictionary<string, Bitmap> imageList = new Dictionary<string, Bitmap>();
         public static string Title;
-        
+        #endregion
+
         public Main()
         {
             InitializeComponent();
@@ -90,6 +92,15 @@ namespace dw2_exp_multiplier
                 {
                     ushort id = Convert.ToUInt16(((KeyValuePair<string, string>)digibeetleComboBox.SelectedItem).Key, 16);
                     DigiBeetlePatcher.patch(ref fs, id);
+                }
+
+                if (dnaLabsPatcherCheckBox.Checked)
+                {
+                    DnaLabsPatcher dnaLabsPatcher = new DnaLabsPatcher(ref fs);
+                    if (dnaLabsPatchRadioButton.Checked)
+                        dnaLabsPatcher.Patch(ref fs);
+                    else
+                        dnaLabsPatcher.UnPatch(ref fs);
                 }
                 
                 MessageBox.Show("The file has been Saved Successfully", "Enjoy ^_^");
@@ -193,7 +204,7 @@ namespace dw2_exp_multiplier
         }
         #endregion
 
-        #region Other Events Region
+        #region TextBox Events Region
         private void dw2TextBox_TextChanged(object sender, EventArgs e)
         {
             this.checkSaveButton();
@@ -272,6 +283,20 @@ namespace dw2_exp_multiplier
             string id = ((KeyValuePair<string, string>)digibeetleComboBox.SelectedItem).Key;
             if (imageList.ContainsKey(id)) this.digibeetlPictureBox.Image = imageList[id];
             else this.digibeetlPictureBox.Image = null;
+        }
+        
+        private void dnaLabsPatcherCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (dnaLabsPatcherCheckBox.Checked)
+            {
+                dnaLabsPatchRadioButton.Enabled = true;
+                dnaLabsUnpatchRadioButton.Enabled = true;
+            }
+            else
+            {
+                dnaLabsPatchRadioButton.Enabled = false;
+                dnaLabsUnpatchRadioButton.Enabled = false;
+            }
         }
         #endregion
         
