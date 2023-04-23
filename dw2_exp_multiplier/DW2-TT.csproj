@@ -75,6 +75,7 @@
     <Compile Include="Manager\DigiLinePatcher.cs" />
     <Compile Include="Manager\DigimonGiftPatcher.cs" />
     <Compile Include="Manager\DNALabsPatcher.cs" />
+    <Compile Include="Manager\MpOnGuardPatcher.cs" />
     <Compile Include="Manager\UnmoveableEnemy.cs" />
     <Compile Include="Manager\ExtremeStatsMultiplier.cs" />
     <Compile Include="Manager\EnemysetManager.cs" />
