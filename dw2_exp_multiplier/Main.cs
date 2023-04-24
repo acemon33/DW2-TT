@@ -74,6 +74,9 @@ namespace dw2_exp_multiplier
                             enemysetManager.AddModifier(new BossStatsMultiplier(multiplier.Value));
                     }
 
+                    if (noEncounterPatcherCheckBox.Checked)
+                        enemysetManager.AddModifier(new UnmoveableEnemy());
+
                     enemysetManager.ApplyModifiers();
 
                     if (Control.ModifierKeys == Keys.Control)
@@ -294,6 +297,7 @@ namespace dw2_exp_multiplier
                 multiplier.Enabled = true;
                 bossMultiplier.Enabled = true;
                 extremeModeCheckBox.Enabled = true;
+                noEncounterPatcherCheckBox.Enabled = true;
             }
             else
             {
@@ -301,6 +305,7 @@ namespace dw2_exp_multiplier
                 multiplier.Enabled = false;
                 bossMultiplier.Enabled = false;
                 extremeModeCheckBox.Enabled = false;
+                noEncounterPatcherCheckBox.Enabled = false;
             }
         }
 

@@ -55,6 +55,10 @@
             this.digibeetlPictureBox = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.mpOnGuardUnpatchRadioButton = new System.Windows.Forms.RadioButton();
+            this.mpOnGuardPatchRadioButton = new System.Windows.Forms.RadioButton();
+            this.mpOnGuardPatcherCheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.digiLineUnpatchRadioButton = new System.Windows.Forms.RadioButton();
             this.digiLinePatchRadioButton = new System.Windows.Forms.RadioButton();
@@ -76,16 +80,14 @@
             this.saveEditorView2 = new dw2_exp_multiplier.View.SaveEditorView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.fileManagerView2 = new dw2_exp_multiplier.View.FileManagerView();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.mpOnGuardUnpatchRadioButton = new System.Windows.Forms.RadioButton();
-            this.mpOnGuardPatchRadioButton = new System.Windows.Forms.RadioButton();
-            this.mpOnGuardPatcherCheckBox = new System.Windows.Forms.CheckBox();
+            this.noEncounterPatcherCheckBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.multiplier)).BeginInit();
             this.menuBar.SuspendLayout();
             this.digibeetleGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.digibeetlPictureBox)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -94,7 +96,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bossMultiplier)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // dw2BrowseButton
@@ -299,7 +300,7 @@
             // unHideAAA
             // 
             this.unHideAAA.Enabled = false;
-            this.unHideAAA.Location = new System.Drawing.Point(14, 357);
+            this.unHideAAA.Location = new System.Drawing.Point(22, 357);
             this.unHideAAA.Name = "unHideAAA";
             this.unHideAAA.Size = new System.Drawing.Size(134, 24);
             this.unHideAAA.TabIndex = 14;
@@ -335,7 +336,7 @@
             this.digibeetleGroupBox.Size = new System.Drawing.Size(201, 140);
             this.digibeetleGroupBox.TabIndex = 20;
             this.digibeetleGroupBox.TabStop = false;
-            this.digibeetleGroupBox.Text = "Digi-Beetle Patcher";
+            this.digibeetleGroupBox.Text = "Digi-Beetle";
             // 
             // digibeetlPictureBox
             // 
@@ -358,6 +359,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.noEncounterPatcherCheckBox);
             this.tabPage1.Controls.Add(this.groupBox6);
             this.tabPage1.Controls.Add(this.groupBox5);
             this.tabPage1.Controls.Add(this.groupBox4);
@@ -383,6 +385,53 @@
             this.tabPage1.Text = "Misc.";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.mpOnGuardUnpatchRadioButton);
+            this.groupBox6.Controls.Add(this.mpOnGuardPatchRadioButton);
+            this.groupBox6.Controls.Add(this.mpOnGuardPatcherCheckBox);
+            this.groupBox6.Enabled = false;
+            this.groupBox6.Location = new System.Drawing.Point(247, 294);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(200, 52);
+            this.groupBox6.TabIndex = 28;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "MP on Guard";
+            // 
+            // mpOnGuardUnpatchRadioButton
+            // 
+            this.mpOnGuardUnpatchRadioButton.AutoSize = true;
+            this.mpOnGuardUnpatchRadioButton.Enabled = false;
+            this.mpOnGuardUnpatchRadioButton.Location = new System.Drawing.Point(135, 22);
+            this.mpOnGuardUnpatchRadioButton.Name = "mpOnGuardUnpatchRadioButton";
+            this.mpOnGuardUnpatchRadioButton.Size = new System.Drawing.Size(65, 17);
+            this.mpOnGuardUnpatchRadioButton.TabIndex = 25;
+            this.mpOnGuardUnpatchRadioButton.Text = "Unpatch";
+            this.mpOnGuardUnpatchRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // mpOnGuardPatchRadioButton
+            // 
+            this.mpOnGuardPatchRadioButton.AutoSize = true;
+            this.mpOnGuardPatchRadioButton.Checked = true;
+            this.mpOnGuardPatchRadioButton.Enabled = false;
+            this.mpOnGuardPatchRadioButton.Location = new System.Drawing.Point(77, 22);
+            this.mpOnGuardPatchRadioButton.Name = "mpOnGuardPatchRadioButton";
+            this.mpOnGuardPatchRadioButton.Size = new System.Drawing.Size(52, 17);
+            this.mpOnGuardPatchRadioButton.TabIndex = 24;
+            this.mpOnGuardPatchRadioButton.TabStop = true;
+            this.mpOnGuardPatchRadioButton.Text = "Patch";
+            this.mpOnGuardPatchRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // mpOnGuardPatcherCheckBox
+            // 
+            this.mpOnGuardPatcherCheckBox.Location = new System.Drawing.Point(8, 19);
+            this.mpOnGuardPatcherCheckBox.Name = "mpOnGuardPatcherCheckBox";
+            this.mpOnGuardPatcherCheckBox.Size = new System.Drawing.Size(72, 24);
+            this.mpOnGuardPatcherCheckBox.TabIndex = 23;
+            this.mpOnGuardPatcherCheckBox.Text = "Enable:";
+            this.mpOnGuardPatcherCheckBox.UseVisualStyleBackColor = true;
+            this.mpOnGuardPatcherCheckBox.CheckedChanged += new System.EventHandler(this.mpOnGuardPatcherCheckBox_CheckedChanged);
+            // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.digiLineUnpatchRadioButton);
@@ -394,7 +443,7 @@
             this.groupBox5.Size = new System.Drawing.Size(200, 52);
             this.groupBox5.TabIndex = 27;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Digi-Line Patcher";
+            this.groupBox5.Text = "Digi-Line";
             // 
             // digiLineUnpatchRadioButton
             // 
@@ -441,7 +490,7 @@
             this.groupBox4.Size = new System.Drawing.Size(200, 52);
             this.groupBox4.TabIndex = 26;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Digimon Gift Patcher";
+            this.groupBox4.Text = "Digimon Gift";
             // 
             // digimonGiftUnpatchRadioButton
             // 
@@ -488,7 +537,7 @@
             this.groupBox3.Size = new System.Drawing.Size(200, 52);
             this.groupBox3.TabIndex = 25;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "DNA Labs Patcher";
+            this.groupBox3.Text = "DNA Labs";
             // 
             // dnaLabsUnpatchRadioButton
             // 
@@ -626,52 +675,15 @@
             this.fileManagerView2.Size = new System.Drawing.Size(392, 309);
             this.fileManagerView2.TabIndex = 0;
             // 
-            // groupBox6
+            // noEncounterPatcherCheckBox
             // 
-            this.groupBox6.Controls.Add(this.mpOnGuardUnpatchRadioButton);
-            this.groupBox6.Controls.Add(this.mpOnGuardPatchRadioButton);
-            this.groupBox6.Controls.Add(this.mpOnGuardPatcherCheckBox);
-            this.groupBox6.Enabled = false;
-            this.groupBox6.Location = new System.Drawing.Point(247, 294);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(200, 52);
-            this.groupBox6.TabIndex = 28;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "MP on Guard Patcher";
-            // 
-            // mpOnGuardUnpatchRadioButton
-            // 
-            this.mpOnGuardUnpatchRadioButton.AutoSize = true;
-            this.mpOnGuardUnpatchRadioButton.Enabled = false;
-            this.mpOnGuardUnpatchRadioButton.Location = new System.Drawing.Point(135, 22);
-            this.mpOnGuardUnpatchRadioButton.Name = "mpOnGuardUnpatchRadioButton";
-            this.mpOnGuardUnpatchRadioButton.Size = new System.Drawing.Size(65, 17);
-            this.mpOnGuardUnpatchRadioButton.TabIndex = 25;
-            this.mpOnGuardUnpatchRadioButton.Text = "Unpatch";
-            this.mpOnGuardUnpatchRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // mpOnGuardPatchRadioButton
-            // 
-            this.mpOnGuardPatchRadioButton.AutoSize = true;
-            this.mpOnGuardPatchRadioButton.Checked = true;
-            this.mpOnGuardPatchRadioButton.Enabled = false;
-            this.mpOnGuardPatchRadioButton.Location = new System.Drawing.Point(77, 22);
-            this.mpOnGuardPatchRadioButton.Name = "mpOnGuardPatchRadioButton";
-            this.mpOnGuardPatchRadioButton.Size = new System.Drawing.Size(52, 17);
-            this.mpOnGuardPatchRadioButton.TabIndex = 24;
-            this.mpOnGuardPatchRadioButton.TabStop = true;
-            this.mpOnGuardPatchRadioButton.Text = "Patch";
-            this.mpOnGuardPatchRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // mpOnGuardPatcherCheckBox
-            // 
-            this.mpOnGuardPatcherCheckBox.Location = new System.Drawing.Point(8, 19);
-            this.mpOnGuardPatcherCheckBox.Name = "mpOnGuardPatcherCheckBox";
-            this.mpOnGuardPatcherCheckBox.Size = new System.Drawing.Size(72, 24);
-            this.mpOnGuardPatcherCheckBox.TabIndex = 23;
-            this.mpOnGuardPatcherCheckBox.Text = "Enable:";
-            this.mpOnGuardPatcherCheckBox.UseVisualStyleBackColor = true;
-            this.mpOnGuardPatcherCheckBox.CheckedChanged += new System.EventHandler(this.mpOnGuardPatcherCheckBox_CheckedChanged);
+            this.noEncounterPatcherCheckBox.Enabled = false;
+            this.noEncounterPatcherCheckBox.Location = new System.Drawing.Point(254, 357);
+            this.noEncounterPatcherCheckBox.Name = "noEncounterPatcherCheckBox";
+            this.noEncounterPatcherCheckBox.Size = new System.Drawing.Size(187, 24);
+            this.noEncounterPatcherCheckBox.TabIndex = 29;
+            this.noEncounterPatcherCheckBox.Text = "No Enemy Encounter";
+            this.noEncounterPatcherCheckBox.UseVisualStyleBackColor = true;
             // 
             // Main
             // 
@@ -695,6 +707,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -708,8 +722,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bossMultiplier)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -779,6 +791,7 @@
         private System.Windows.Forms.RadioButton mpOnGuardUnpatchRadioButton;
         private System.Windows.Forms.RadioButton mpOnGuardPatchRadioButton;
         private System.Windows.Forms.CheckBox mpOnGuardPatcherCheckBox;
+        private System.Windows.Forms.CheckBox noEncounterPatcherCheckBox;
     }
 }
 
