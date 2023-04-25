@@ -7,11 +7,13 @@ namespace dw2_exp_multiplier.Manager
 {
     public class DigiLinePatcher
     {
-        private byte[] data;
+        private byte[] slusData;
+        private byte[] Stag4000Data;
         
         public DigiLinePatcher(ref FileStream fs)
         {
-            data = PsxSector.ReadSector(ref fs, FileIndex.SLUS_011_93_INDEX, FileIndex.SLUS_011_93_SIZE);
+            slusData = PsxSector.ReadSector(ref fs, FileIndex.SLUS_011_93_INDEX, FileIndex.SLUS_011_93_SIZE);
+            Stag4000Data = PsxSector.ReadSector(ref fs, DW2Slus.GetLba(FileIndex.STAG4000_PRO), DW2Slus.GetSize(FileIndex.STAG4000_PRO));
         }
 
         public void Patch(ref FileStream fs)
@@ -21,7 +23,7 @@ namespace dw2_exp_multiplier.Manager
                 0xbc, 0x26, 0x01, 0x08,
                 0x00, 0x00, 0x00, 0x00
             };
-            Buffer.BlockCopy(patchedPattern, 0, data, 0x7DCC, patchedPattern.Length);    // ram: 800175cc
+            Buffer.BlockCopy(patchedPattern, 0, slusData, 0x7DCC, patchedPattern.Length);    // ram: 800175cc
             
             patchedPattern = new byte[]
             {
@@ -41,15 +43,19 @@ namespace dw2_exp_multiplier.Manager
                 0x04, 0xF7, 0x63, 0x8C,
                 0x75, 0x5D, 0x00, 0x08
             };
-            Buffer.BlockCopy(patchedPattern, 0, data, 0x3A2F0, patchedPattern.Length);    // ram: 80049Af0
-            
-            PsxSector.WriteSector(ref fs, ref data, FileIndex.SLUS_011_93_INDEX, FileIndex.SLUS_011_93_SIZE);
+            Buffer.BlockCopy(patchedPattern, 0, slusData, 0x3A2F0, patchedPattern.Length);    // ram: 80049Af0
+
+            patchedPattern = new byte[] { 0x00, 0x00, 0x00, 0x00 };
+            Buffer.BlockCopy(patchedPattern, 0, Stag4000Data, 0x678, patchedPattern.Length);    // ram: 800639d8
+
+            PsxSector.WriteSector(ref fs, ref slusData, FileIndex.SLUS_011_93_INDEX, FileIndex.SLUS_011_93_SIZE);
+            PsxSector.WriteSector(ref fs, ref Stag4000Data, DW2Slus.GetLba(FileIndex.STAG4000_PRO), DW2Slus.GetSize(FileIndex.STAG4000_PRO));
         }
         
         public void UnPatch(ref FileStream fs)
         {
             byte[] patchedPattern = { 0x04, 0xF7, 0x63, 0x8C, 0x00, 0x00, 0x00, 0x00 };
-            Buffer.BlockCopy(patchedPattern, 0, data, 0x7DCC, patchedPattern.Length);    // ram: 800175cc
+            Buffer.BlockCopy(patchedPattern, 0, slusData, 0x7DCC, patchedPattern.Length);    // ram: 800175cc
             
             patchedPattern = new byte[]
             {
@@ -69,9 +75,13 @@ namespace dw2_exp_multiplier.Manager
                 0x00, 0x00, 0x00, 0x00,
                 0x00, 0x00, 0x00, 0x00
             };
-            Buffer.BlockCopy(patchedPattern, 0, data, 0x3A2F0, patchedPattern.Length);    // ram: 80049Af0
+            Buffer.BlockCopy(patchedPattern, 0, slusData, 0x3A2F0, patchedPattern.Length);    // ram: 80049Af0
             
-            PsxSector.WriteSector(ref fs, ref data, FileIndex.SLUS_011_93_INDEX, FileIndex.SLUS_011_93_SIZE);
+            patchedPattern = new byte[] { 0xE4, 0x00, 0x62, 0xA0 };
+            Buffer.BlockCopy(patchedPattern, 0, Stag4000Data, 0x678, patchedPattern.Length);    // ram: 800639d8
+
+            PsxSector.WriteSector(ref fs, ref slusData, FileIndex.SLUS_011_93_INDEX, FileIndex.SLUS_011_93_SIZE);
+            PsxSector.WriteSector(ref fs, ref Stag4000Data, DW2Slus.GetLba(FileIndex.STAG4000_PRO), DW2Slus.GetSize(FileIndex.STAG4000_PRO));
         }
     }
     
