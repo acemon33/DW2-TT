@@ -17,6 +17,7 @@ namespace dw2_exp_multiplier.Base
         public static readonly int ENEMYSET_BIN = 3183;
         public static readonly int MODELDT0_BIN = 3257;
         public static readonly int STMAPDAT_BIN = 3369;
+        public static readonly int DATA4000_BIN = 3616;
     }
 
 }
