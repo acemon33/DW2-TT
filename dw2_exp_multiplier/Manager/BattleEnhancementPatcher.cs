@@ -5,11 +5,13 @@ using dw2_exp_multiplier.Base;
 
 namespace dw2_exp_multiplier.Manager
 {
-    public class MpOnGuardPatcher
+    public class BattleEnhancementPatcher
     {
+        public static readonly string VERSION = "0.1";
+        
         private byte[] data;
         
-        public MpOnGuardPatcher(ref FileStream fs)
+        public BattleEnhancementPatcher(ref FileStream fs)
         {
             data = PsxSector.ReadSector(ref fs, DW2Slus.GetLba(FileIndex.STAG3000_PRO), DW2Slus.GetSize(FileIndex.STAG3000_PRO));
         }

@@ -55,10 +55,15 @@
             this.digibeetlPictureBox = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.mpOnGuardUnpatchRadioButton = new System.Windows.Forms.RadioButton();
-            this.mpOnGuardPatchRadioButton = new System.Windows.Forms.RadioButton();
-            this.mpOnGuardPatcherCheckBox = new System.Windows.Forms.CheckBox();
+            this.battleFixGroupBox = new System.Windows.Forms.GroupBox();
+            this.battleFixPatchRadioButton = new System.Windows.Forms.RadioButton();
+            this.battleFixUnpatchRadioButton = new System.Windows.Forms.RadioButton();
+            this.battleFixPatcherCheckBox = new System.Windows.Forms.CheckBox();
+            this.noEncounterPatcherCheckBox = new System.Windows.Forms.CheckBox();
+            this.battleEnhancementGroupBox = new System.Windows.Forms.GroupBox();
+            this.battleEnhancementUnpatchRadioButton = new System.Windows.Forms.RadioButton();
+            this.battleEnhancementPatchRadioButton = new System.Windows.Forms.RadioButton();
+            this.battleEnhancementPatcherCheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.digiLineUnpatchRadioButton = new System.Windows.Forms.RadioButton();
             this.digiLinePatchRadioButton = new System.Windows.Forms.RadioButton();
@@ -77,23 +82,23 @@
             this.extremeModeCheckBox = new System.Windows.Forms.CheckBox();
             this.bossMultiplier = new System.Windows.Forms.NumericUpDown();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.saveEditorView2 = new dw2_exp_multiplier.View.SaveEditorView();
+            this.saveEditorView = new dw2_exp_multiplier.View.SaveEditorView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.fileManagerView2 = new dw2_exp_multiplier.View.FileManagerView();
-            this.noEncounterPatcherCheckBox = new System.Windows.Forms.CheckBox();
-            ((System.ComponentModel.ISupportInitialize)(this.multiplier)).BeginInit();
+            this.fileManagerView = new dw2_exp_multiplier.View.FileManagerView();
+            ((System.ComponentModel.ISupportInitialize) (this.multiplier)).BeginInit();
             this.menuBar.SuspendLayout();
             this.digibeetleGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.digibeetlPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.digibeetlPictureBox)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.groupBox6.SuspendLayout();
+            this.battleFixGroupBox.SuspendLayout();
+            this.battleEnhancementGroupBox.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.EnemyBossGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bossMultiplier)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.bossMultiplier)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.SuspendLayout();
@@ -173,25 +178,13 @@
             // 
             this.multiplier.DecimalPlaces = 1;
             this.multiplier.Enabled = false;
-            this.multiplier.Increment = new decimal(new int[] {
-            5,
-            0,
-            0,
-            65536});
+            this.multiplier.Increment = new decimal(new int[] {5, 0, 0, 65536});
             this.multiplier.Location = new System.Drawing.Point(96, 25);
-            this.multiplier.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.multiplier.Minimum = new decimal(new int[] {1, 0, 0, 0});
             this.multiplier.Name = "multiplier";
             this.multiplier.Size = new System.Drawing.Size(46, 20);
             this.multiplier.TabIndex = 8;
-            this.multiplier.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.multiplier.Value = new decimal(new int[] {1, 0, 0, 0});
             // 
             // multiplierLabel
             // 
@@ -204,9 +197,7 @@
             // 
             // menuBar
             // 
-            this.menuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.saveEditorModeMenu,
-            this.about});
+            this.menuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {this.saveEditorModeMenu, this.about});
             this.menuBar.Location = new System.Drawing.Point(0, 0);
             this.menuBar.Name = "menuBar";
             this.menuBar.Size = new System.Drawing.Size(460, 25);
@@ -216,13 +207,8 @@
             // saveEditorModeMenu
             // 
             this.saveEditorModeMenu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.saveEditorModeMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.vanillaToolStripMenuItem,
-            this.improvementToolStripMenuItem,
-            this.alternativeToolStripMenuItem,
-            this.resurrectionToolStripMenuItem,
-            this.faithfulToolStripMenuItem});
-            this.saveEditorModeMenu.Image = ((System.Drawing.Image)(resources.GetObject("saveEditorModeMenu.Image")));
+            this.saveEditorModeMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {this.vanillaToolStripMenuItem, this.improvementToolStripMenuItem, this.alternativeToolStripMenuItem, this.resurrectionToolStripMenuItem, this.faithfulToolStripMenuItem});
+            this.saveEditorModeMenu.Image = ((System.Drawing.Image) (resources.GetObject("saveEditorModeMenu.Image")));
             this.saveEditorModeMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveEditorModeMenu.Name = "saveEditorModeMenu";
             this.saveEditorModeMenu.Size = new System.Drawing.Size(112, 22);
@@ -300,7 +286,7 @@
             // unHideAAA
             // 
             this.unHideAAA.Enabled = false;
-            this.unHideAAA.Location = new System.Drawing.Point(22, 357);
+            this.unHideAAA.Location = new System.Drawing.Point(22, 384);
             this.unHideAAA.Name = "unHideAAA";
             this.unHideAAA.Size = new System.Drawing.Size(134, 24);
             this.unHideAAA.TabIndex = 14;
@@ -354,13 +340,14 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 28);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(461, 415);
+            this.tabControl1.Size = new System.Drawing.Size(461, 439);
             this.tabControl1.TabIndex = 21;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.battleFixGroupBox);
             this.tabPage1.Controls.Add(this.noEncounterPatcherCheckBox);
-            this.tabPage1.Controls.Add(this.groupBox6);
+            this.tabPage1.Controls.Add(this.battleEnhancementGroupBox);
             this.tabPage1.Controls.Add(this.groupBox5);
             this.tabPage1.Controls.Add(this.groupBox4);
             this.tabPage1.Controls.Add(this.groupBox3);
@@ -380,57 +367,114 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(453, 389);
+            this.tabPage1.Size = new System.Drawing.Size(453, 413);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Misc.";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // groupBox6
+            // battleFixGroupBox
             // 
-            this.groupBox6.Controls.Add(this.mpOnGuardUnpatchRadioButton);
-            this.groupBox6.Controls.Add(this.mpOnGuardPatchRadioButton);
-            this.groupBox6.Controls.Add(this.mpOnGuardPatcherCheckBox);
-            this.groupBox6.Enabled = false;
-            this.groupBox6.Location = new System.Drawing.Point(247, 294);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(200, 52);
-            this.groupBox6.TabIndex = 28;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "MP on Guard";
+            this.battleFixGroupBox.Controls.Add(this.battleFixPatchRadioButton);
+            this.battleFixGroupBox.Controls.Add(this.battleFixUnpatchRadioButton);
+            this.battleFixGroupBox.Controls.Add(this.battleFixPatcherCheckBox);
+            this.battleFixGroupBox.Enabled = false;
+            this.battleFixGroupBox.Location = new System.Drawing.Point(247, 351);
+            this.battleFixGroupBox.Name = "battleFixGroupBox";
+            this.battleFixGroupBox.Size = new System.Drawing.Size(200, 52);
+            this.battleFixGroupBox.TabIndex = 29;
+            this.battleFixGroupBox.TabStop = false;
+            this.battleFixGroupBox.Text = "Battle Fix v";
             // 
-            // mpOnGuardUnpatchRadioButton
+            // battleFixPatchRadioButton
             // 
-            this.mpOnGuardUnpatchRadioButton.AutoSize = true;
-            this.mpOnGuardUnpatchRadioButton.Enabled = false;
-            this.mpOnGuardUnpatchRadioButton.Location = new System.Drawing.Point(135, 22);
-            this.mpOnGuardUnpatchRadioButton.Name = "mpOnGuardUnpatchRadioButton";
-            this.mpOnGuardUnpatchRadioButton.Size = new System.Drawing.Size(65, 17);
-            this.mpOnGuardUnpatchRadioButton.TabIndex = 25;
-            this.mpOnGuardUnpatchRadioButton.Text = "Unpatch";
-            this.mpOnGuardUnpatchRadioButton.UseVisualStyleBackColor = true;
+            this.battleFixPatchRadioButton.AutoSize = true;
+            this.battleFixPatchRadioButton.Enabled = false;
+            this.battleFixPatchRadioButton.Location = new System.Drawing.Point(135, 22);
+            this.battleFixPatchRadioButton.Name = "battleFixPatchRadioButton";
+            this.battleFixPatchRadioButton.Size = new System.Drawing.Size(65, 17);
+            this.battleFixPatchRadioButton.TabIndex = 25;
+            this.battleFixPatchRadioButton.Text = "Unpatch";
+            this.battleFixPatchRadioButton.UseVisualStyleBackColor = true;
             // 
-            // mpOnGuardPatchRadioButton
+            // battleFixUnpatchRadioButton
             // 
-            this.mpOnGuardPatchRadioButton.AutoSize = true;
-            this.mpOnGuardPatchRadioButton.Checked = true;
-            this.mpOnGuardPatchRadioButton.Enabled = false;
-            this.mpOnGuardPatchRadioButton.Location = new System.Drawing.Point(77, 22);
-            this.mpOnGuardPatchRadioButton.Name = "mpOnGuardPatchRadioButton";
-            this.mpOnGuardPatchRadioButton.Size = new System.Drawing.Size(52, 17);
-            this.mpOnGuardPatchRadioButton.TabIndex = 24;
-            this.mpOnGuardPatchRadioButton.TabStop = true;
-            this.mpOnGuardPatchRadioButton.Text = "Patch";
-            this.mpOnGuardPatchRadioButton.UseVisualStyleBackColor = true;
+            this.battleFixUnpatchRadioButton.AutoSize = true;
+            this.battleFixUnpatchRadioButton.Checked = true;
+            this.battleFixUnpatchRadioButton.Enabled = false;
+            this.battleFixUnpatchRadioButton.Location = new System.Drawing.Point(77, 22);
+            this.battleFixUnpatchRadioButton.Name = "battleFixUnpatchRadioButton";
+            this.battleFixUnpatchRadioButton.Size = new System.Drawing.Size(52, 17);
+            this.battleFixUnpatchRadioButton.TabIndex = 24;
+            this.battleFixUnpatchRadioButton.TabStop = true;
+            this.battleFixUnpatchRadioButton.Text = "Patch";
+            this.battleFixUnpatchRadioButton.UseVisualStyleBackColor = true;
             // 
-            // mpOnGuardPatcherCheckBox
+            // battleFixPatcherCheckBox
             // 
-            this.mpOnGuardPatcherCheckBox.Location = new System.Drawing.Point(8, 19);
-            this.mpOnGuardPatcherCheckBox.Name = "mpOnGuardPatcherCheckBox";
-            this.mpOnGuardPatcherCheckBox.Size = new System.Drawing.Size(72, 24);
-            this.mpOnGuardPatcherCheckBox.TabIndex = 23;
-            this.mpOnGuardPatcherCheckBox.Text = "Enable:";
-            this.mpOnGuardPatcherCheckBox.UseVisualStyleBackColor = true;
-            this.mpOnGuardPatcherCheckBox.CheckedChanged += new System.EventHandler(this.mpOnGuardPatcherCheckBox_CheckedChanged);
+            this.battleFixPatcherCheckBox.Location = new System.Drawing.Point(8, 19);
+            this.battleFixPatcherCheckBox.Name = "battleFixPatcherCheckBox";
+            this.battleFixPatcherCheckBox.Size = new System.Drawing.Size(72, 24);
+            this.battleFixPatcherCheckBox.TabIndex = 23;
+            this.battleFixPatcherCheckBox.Text = "Enable:";
+            this.battleFixPatcherCheckBox.UseVisualStyleBackColor = true;
+            this.battleFixPatcherCheckBox.CheckedChanged += new System.EventHandler(this.battleFixPatcherCheckBox_CheckedChanged);
+            // 
+            // noEncounterPatcherCheckBox
+            // 
+            this.noEncounterPatcherCheckBox.Enabled = false;
+            this.noEncounterPatcherCheckBox.Location = new System.Drawing.Point(22, 354);
+            this.noEncounterPatcherCheckBox.Name = "noEncounterPatcherCheckBox";
+            this.noEncounterPatcherCheckBox.Size = new System.Drawing.Size(187, 24);
+            this.noEncounterPatcherCheckBox.TabIndex = 29;
+            this.noEncounterPatcherCheckBox.Text = "No Enemy Encounter";
+            this.noEncounterPatcherCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // battleEnhancementGroupBox
+            // 
+            this.battleEnhancementGroupBox.Controls.Add(this.battleEnhancementUnpatchRadioButton);
+            this.battleEnhancementGroupBox.Controls.Add(this.battleEnhancementPatchRadioButton);
+            this.battleEnhancementGroupBox.Controls.Add(this.battleEnhancementPatcherCheckBox);
+            this.battleEnhancementGroupBox.Enabled = false;
+            this.battleEnhancementGroupBox.Location = new System.Drawing.Point(247, 294);
+            this.battleEnhancementGroupBox.Name = "battleEnhancementGroupBox";
+            this.battleEnhancementGroupBox.Size = new System.Drawing.Size(200, 52);
+            this.battleEnhancementGroupBox.TabIndex = 28;
+            this.battleEnhancementGroupBox.TabStop = false;
+            this.battleEnhancementGroupBox.Text = "Battle Enhancement v";
+            // 
+            // battleEnhancementUnpatchRadioButton
+            // 
+            this.battleEnhancementUnpatchRadioButton.AutoSize = true;
+            this.battleEnhancementUnpatchRadioButton.Enabled = false;
+            this.battleEnhancementUnpatchRadioButton.Location = new System.Drawing.Point(135, 22);
+            this.battleEnhancementUnpatchRadioButton.Name = "battleEnhancementUnpatchRadioButton";
+            this.battleEnhancementUnpatchRadioButton.Size = new System.Drawing.Size(65, 17);
+            this.battleEnhancementUnpatchRadioButton.TabIndex = 25;
+            this.battleEnhancementUnpatchRadioButton.Text = "Unpatch";
+            this.battleEnhancementUnpatchRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // battleEnhancementPatchRadioButton
+            // 
+            this.battleEnhancementPatchRadioButton.AutoSize = true;
+            this.battleEnhancementPatchRadioButton.Checked = true;
+            this.battleEnhancementPatchRadioButton.Enabled = false;
+            this.battleEnhancementPatchRadioButton.Location = new System.Drawing.Point(77, 22);
+            this.battleEnhancementPatchRadioButton.Name = "battleEnhancementPatchRadioButton";
+            this.battleEnhancementPatchRadioButton.Size = new System.Drawing.Size(52, 17);
+            this.battleEnhancementPatchRadioButton.TabIndex = 24;
+            this.battleEnhancementPatchRadioButton.TabStop = true;
+            this.battleEnhancementPatchRadioButton.Text = "Patch";
+            this.battleEnhancementPatchRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // battleEnhancementPatcherCheckBox
+            // 
+            this.battleEnhancementPatcherCheckBox.Location = new System.Drawing.Point(8, 19);
+            this.battleEnhancementPatcherCheckBox.Name = "battleEnhancementPatcherCheckBox";
+            this.battleEnhancementPatcherCheckBox.Size = new System.Drawing.Size(72, 24);
+            this.battleEnhancementPatcherCheckBox.TabIndex = 23;
+            this.battleEnhancementPatcherCheckBox.Text = "Enable:";
+            this.battleEnhancementPatcherCheckBox.UseVisualStyleBackColor = true;
+            this.battleEnhancementPatcherCheckBox.CheckedChanged += new System.EventHandler(this.battleEnhancementPatcherCheckBox_CheckedChanged);
             // 
             // groupBox5
             // 
@@ -619,96 +663,76 @@
             // 
             this.bossMultiplier.DecimalPlaces = 1;
             this.bossMultiplier.Enabled = false;
-            this.bossMultiplier.Increment = new decimal(new int[] {
-            5,
-            0,
-            0,
-            65536});
+            this.bossMultiplier.Increment = new decimal(new int[] {5, 0, 0, 65536});
             this.bossMultiplier.Location = new System.Drawing.Point(96, 27);
-            this.bossMultiplier.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.bossMultiplier.Minimum = new decimal(new int[] {1, 0, 0, 0});
             this.bossMultiplier.Name = "bossMultiplier";
             this.bossMultiplier.Size = new System.Drawing.Size(46, 20);
             this.bossMultiplier.TabIndex = 21;
-            this.bossMultiplier.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.bossMultiplier.Value = new decimal(new int[] {1, 0, 0, 0});
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.saveEditorView2);
+            this.tabPage2.Controls.Add(this.saveEditorView);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(453, 389);
+            this.tabPage2.Size = new System.Drawing.Size(453, 413);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Save Editor";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // saveEditorView2
+            // saveEditorView
             // 
-            this.saveEditorView2.Location = new System.Drawing.Point(3, 5);
-            this.saveEditorView2.Name = "saveEditorView2";
-            this.saveEditorView2.Size = new System.Drawing.Size(444, 384);
-            this.saveEditorView2.TabIndex = 0;
+            this.saveEditorView.Location = new System.Drawing.Point(3, 5);
+            this.saveEditorView.Name = "saveEditorView";
+            this.saveEditorView.Size = new System.Drawing.Size(444, 402);
+            this.saveEditorView.TabIndex = 0;
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.fileManagerView2);
+            this.tabPage3.Controls.Add(this.fileManagerView);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(453, 389);
+            this.tabPage3.Size = new System.Drawing.Size(453, 413);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "File Manager";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // fileManagerView2
+            // fileManagerView
             // 
-            this.fileManagerView2.Location = new System.Drawing.Point(6, 6);
-            this.fileManagerView2.Name = "fileManagerView2";
-            this.fileManagerView2.Size = new System.Drawing.Size(392, 309);
-            this.fileManagerView2.TabIndex = 0;
-            // 
-            // noEncounterPatcherCheckBox
-            // 
-            this.noEncounterPatcherCheckBox.Enabled = false;
-            this.noEncounterPatcherCheckBox.Location = new System.Drawing.Point(254, 357);
-            this.noEncounterPatcherCheckBox.Name = "noEncounterPatcherCheckBox";
-            this.noEncounterPatcherCheckBox.Size = new System.Drawing.Size(187, 24);
-            this.noEncounterPatcherCheckBox.TabIndex = 29;
-            this.noEncounterPatcherCheckBox.Text = "No Enemy Encounter";
-            this.noEncounterPatcherCheckBox.UseVisualStyleBackColor = true;
+            this.fileManagerView.Location = new System.Drawing.Point(6, 6);
+            this.fileManagerView.Name = "fileManagerView";
+            this.fileManagerView.Size = new System.Drawing.Size(441, 401);
+            this.fileManagerView.TabIndex = 0;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(460, 443);
+            this.ClientSize = new System.Drawing.Size(460, 470);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Main";
             this.Tag = "";
             this.Text = "DW2-TT";
-            ((System.ComponentModel.ISupportInitialize)(this.multiplier)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.multiplier)).EndInit();
             this.menuBar.ResumeLayout(false);
             this.menuBar.PerformLayout();
             this.digibeetleGroupBox.ResumeLayout(false);
             this.digibeetleGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.digibeetlPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.digibeetlPictureBox)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
+            this.battleFixGroupBox.ResumeLayout(false);
+            this.battleFixGroupBox.PerformLayout();
+            this.battleEnhancementGroupBox.ResumeLayout(false);
+            this.battleEnhancementGroupBox.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -719,35 +743,27 @@
             this.groupBox2.PerformLayout();
             this.EnemyBossGroupBox.ResumeLayout(false);
             this.EnemyBossGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bossMultiplier)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.bossMultiplier)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
-
-        private dw2_exp_multiplier.View.FileManagerView fileManagerView1;
-
+        
+        #endregion
+        
+        private System.Windows.Forms.RadioButton battleFixPatchRadioButton;
+        private System.Windows.Forms.RadioButton battleFixUnpatchRadioButton;
+        private System.Windows.Forms.CheckBox battleFixPatcherCheckBox;
         private System.Windows.Forms.TabPage tabPage3;
-
         private System.Windows.Forms.PictureBox digibeetlPictureBox;
         private System.Windows.Forms.GroupBox digibeetleGroupBox;
-
-        private System.Windows.Forms.GroupBox groupBox1;
-
+        private System.Windows.Forms.GroupBox battleFixGroupBox;
         private System.Windows.Forms.Label digibeetleLabel;
         private System.Windows.Forms.ComboBox digibeetleComboBox;
-
-        private System.Windows.Forms.ComboBox comboBox1;
-
         private System.Windows.Forms.CheckBox unHideAAA;
-
         private System.Windows.Forms.Button importButton;
         private System.Windows.Forms.Button exportButton;
-
-        #endregion
-
         private System.Windows.Forms.Button dw2BrowseButton;
         private System.Windows.Forms.Label dw2Label;
         private System.Windows.Forms.TextBox dw2TextBox;
@@ -785,12 +801,12 @@
         private System.Windows.Forms.RadioButton digiLineUnpatchRadioButton;
         private System.Windows.Forms.RadioButton digiLinePatchRadioButton;
         private System.Windows.Forms.CheckBox digiLinePatcherCheckBox;
-        private View.SaveEditorView saveEditorView2;
-        private View.FileManagerView fileManagerView2;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.RadioButton mpOnGuardUnpatchRadioButton;
-        private System.Windows.Forms.RadioButton mpOnGuardPatchRadioButton;
-        private System.Windows.Forms.CheckBox mpOnGuardPatcherCheckBox;
+        private dw2_exp_multiplier.View.SaveEditorView saveEditorView;
+        private dw2_exp_multiplier.View.FileManagerView fileManagerView;
+        private System.Windows.Forms.GroupBox battleEnhancementGroupBox;
+        private System.Windows.Forms.RadioButton battleEnhancementUnpatchRadioButton;
+        private System.Windows.Forms.RadioButton battleEnhancementPatchRadioButton;
+        private System.Windows.Forms.CheckBox battleEnhancementPatcherCheckBox;
         private System.Windows.Forms.CheckBox noEncounterPatcherCheckBox;
     }
 }

@@ -26,6 +26,8 @@ namespace dw2_exp_multiplier
             digibeetleComboBox.DataSource = new BindingSource(DigiBeetlePatcher.getDigiBeetleIds(ref this.imageList, "Resources\\digi-beetle.zip"), null);
             if (!(Control.ModifierKeys == Keys.Shift))
                 tabControl1.TabPages.RemoveByKey("tabPage3");
+            battleEnhancementGroupBox.Text += BattleEnhancementPatcher.VERSION;
+            battleFixGroupBox.Text += BattleFixPatcher.VERSION;
         }
 
         #region Button Events Region
@@ -124,13 +126,22 @@ namespace dw2_exp_multiplier
                         digiLinePatcher.UnPatch(ref fs);
                 }
                                 
-                if (mpOnGuardPatcherCheckBox.Checked)
+                if (battleEnhancementPatcherCheckBox.Checked)
                 {
-                    MpOnGuardPatcher mpOnGuardPatcher = new MpOnGuardPatcher(ref fs);
-                    if (mpOnGuardPatchRadioButton.Checked)
-                        mpOnGuardPatcher.Patch(ref fs);
+                    BattleEnhancementPatcher battleEnhancementPatcher = new BattleEnhancementPatcher(ref fs);
+                    if (battleEnhancementPatchRadioButton.Checked)
+                        battleEnhancementPatcher.Patch(ref fs);
                     else
-                        mpOnGuardPatcher.UnPatch(ref fs);
+                        battleEnhancementPatcher.UnPatch(ref fs);
+                }
+                                
+                if (battleFixPatcherCheckBox.Checked)
+                {
+                    BattleFixPatcher battleFixPatcher = new BattleFixPatcher(ref fs);
+                    if (battleFixPatchRadioButton.Checked)
+                        battleFixPatcher.Patch(ref fs);
+                    else
+                        battleFixPatcher.UnPatch(ref fs);
                 }
                                 
                 MessageBox.Show("The file has been Saved Successfully", "Enjoy ^_^");
@@ -247,7 +258,8 @@ namespace dw2_exp_multiplier
                 groupBox3.Enabled = true;
                 groupBox4.Enabled = true;
                 groupBox5.Enabled = true;
-                groupBox6.Enabled = true;
+                battleEnhancementGroupBox.Enabled = true;
+                battleFixGroupBox.Enabled = true;
             }
             else
             {
@@ -258,7 +270,8 @@ namespace dw2_exp_multiplier
                 groupBox3.Enabled = false;
                 groupBox4.Enabled = false;
                 groupBox5.Enabled = false;
-                groupBox6.Enabled = false;
+                battleEnhancementGroupBox.Enabled = false;
+                battleFixGroupBox.Enabled = false;
             }
         }
 
@@ -367,17 +380,31 @@ namespace dw2_exp_multiplier
             }
         }
         
-        private void mpOnGuardPatcherCheckBox_CheckedChanged(object sender, EventArgs e)
+        private void battleEnhancementPatcherCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (mpOnGuardPatcherCheckBox.Checked)
+            if (battleEnhancementPatcherCheckBox.Checked)
             {
-                mpOnGuardPatchRadioButton.Enabled = true;
-                mpOnGuardUnpatchRadioButton.Enabled = true;
+                battleEnhancementPatchRadioButton.Enabled = true;
+                battleEnhancementUnpatchRadioButton.Enabled = true;
             }
             else
             {
-                mpOnGuardPatchRadioButton.Enabled = false;
-                mpOnGuardUnpatchRadioButton.Enabled = false;
+                battleEnhancementPatchRadioButton.Enabled = false;
+                battleEnhancementUnpatchRadioButton.Enabled = false;
+            }
+        }
+        
+        private void battleFixPatcherCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (battleFixPatcherCheckBox.Checked)
+            {
+                battleFixPatchRadioButton.Enabled = true;
+                battleFixUnpatchRadioButton.Enabled = true;
+            }
+            else
+            {
+                battleFixPatchRadioButton.Enabled = false;
+                battleFixUnpatchRadioButton.Enabled = false;
             }
         }
         #endregion
