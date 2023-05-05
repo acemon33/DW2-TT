@@ -178,18 +178,18 @@
             this.techGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.digimonHpTextBoxNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.digimonMapHpNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.digimonMpNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.digimonMaxMpNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.digimonAttackNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.digimonDefenseNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.digimonSpeedNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.digimonHpTextBoxNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.digimonMapHpNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.digimonMpNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.digimonMaxMpNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.digimonAttackNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.digimonDefenseNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.digimonSpeedNumericUpDown)).BeginInit();
             this.infoGroupBox.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.digimonLevelNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.digimonMaxLevelNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.digimonExpNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.digimonLevelNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.digimonMaxLevelNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.digimonExpNumericUpDown)).BeginInit();
             this.gameStoryTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -205,7 +205,7 @@
             this.tabControl.Location = new System.Drawing.Point(0, 66);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(442, 315);
+            this.tabControl.Size = new System.Drawing.Size(452, 315);
             this.tabControl.TabIndex = 0;
             // 
             // miscTabPage
@@ -214,7 +214,7 @@
             this.miscTabPage.Location = new System.Drawing.Point(4, 22);
             this.miscTabPage.Name = "miscTabPage";
             this.miscTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.miscTabPage.Size = new System.Drawing.Size(434, 289);
+            this.miscTabPage.Size = new System.Drawing.Size(444, 289);
             this.miscTabPage.TabIndex = 0;
             this.miscTabPage.Text = "Misc.";
             this.miscTabPage.UseVisualStyleBackColor = true;
@@ -404,7 +404,7 @@
             this.digiBeetleTabPage.Location = new System.Drawing.Point(4, 22);
             this.digiBeetleTabPage.Name = "digiBeetleTabPage";
             this.digiBeetleTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.digiBeetleTabPage.Size = new System.Drawing.Size(434, 289);
+            this.digiBeetleTabPage.Size = new System.Drawing.Size(444, 289);
             this.digiBeetleTabPage.TabIndex = 1;
             this.digiBeetleTabPage.Text = "Digi-Beetle";
             this.digiBeetleTabPage.UseVisualStyleBackColor = true;
@@ -416,7 +416,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(428, 283);
+            this.panel1.Size = new System.Drawing.Size(438, 283);
             this.panel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -894,9 +894,7 @@
             // bodyFlagTextBox
             // 
             this.bodyFlagTextBox.FormattingEnabled = true;
-            this.bodyFlagTextBox.Items.AddRange(new object[] {
-            "Enable",
-            "Disable"});
+            this.bodyFlagTextBox.Items.AddRange(new object[] {"Enable", "Disable"});
             this.bodyFlagTextBox.Location = new System.Drawing.Point(203, 68);
             this.bodyFlagTextBox.Name = "bodyFlagTextBox";
             this.bodyFlagTextBox.Size = new System.Drawing.Size(58, 21);
@@ -907,9 +905,7 @@
             // engineFlagTextBox
             // 
             this.engineFlagTextBox.FormattingEnabled = true;
-            this.engineFlagTextBox.Items.AddRange(new object[] {
-            "Enable",
-            "Disable"});
+            this.engineFlagTextBox.Items.AddRange(new object[] {"Enable", "Disable"});
             this.engineFlagTextBox.Location = new System.Drawing.Point(203, 95);
             this.engineFlagTextBox.Name = "engineFlagTextBox";
             this.engineFlagTextBox.Size = new System.Drawing.Size(58, 21);
@@ -920,9 +916,7 @@
             // batteryFlagTextBox
             // 
             this.batteryFlagTextBox.FormattingEnabled = true;
-            this.batteryFlagTextBox.Items.AddRange(new object[] {
-            "Enable",
-            "Disable"});
+            this.batteryFlagTextBox.Items.AddRange(new object[] {"Enable", "Disable"});
             this.batteryFlagTextBox.Location = new System.Drawing.Point(203, 122);
             this.batteryFlagTextBox.Name = "batteryFlagTextBox";
             this.batteryFlagTextBox.Size = new System.Drawing.Size(58, 21);
@@ -933,9 +927,7 @@
             // memoryFlagTextBox
             // 
             this.memoryFlagTextBox.FormattingEnabled = true;
-            this.memoryFlagTextBox.Items.AddRange(new object[] {
-            "Enable",
-            "Disable"});
+            this.memoryFlagTextBox.Items.AddRange(new object[] {"Enable", "Disable"});
             this.memoryFlagTextBox.Location = new System.Drawing.Point(203, 149);
             this.memoryFlagTextBox.Name = "memoryFlagTextBox";
             this.memoryFlagTextBox.Size = new System.Drawing.Size(58, 21);
@@ -946,9 +938,7 @@
             // toolBoxFlagTextBox
             // 
             this.toolBoxFlagTextBox.FormattingEnabled = true;
-            this.toolBoxFlagTextBox.Items.AddRange(new object[] {
-            "Enable",
-            "Disable"});
+            this.toolBoxFlagTextBox.Items.AddRange(new object[] {"Enable", "Disable"});
             this.toolBoxFlagTextBox.Location = new System.Drawing.Point(203, 176);
             this.toolBoxFlagTextBox.Name = "toolBoxFlagTextBox";
             this.toolBoxFlagTextBox.Size = new System.Drawing.Size(58, 21);
@@ -959,9 +949,7 @@
             // legFlagTextBox
             // 
             this.legFlagTextBox.FormattingEnabled = true;
-            this.legFlagTextBox.Items.AddRange(new object[] {
-            "Enable",
-            "Disable"});
+            this.legFlagTextBox.Items.AddRange(new object[] {"Enable", "Disable"});
             this.legFlagTextBox.Location = new System.Drawing.Point(203, 203);
             this.legFlagTextBox.Name = "legFlagTextBox";
             this.legFlagTextBox.Size = new System.Drawing.Size(58, 21);
@@ -972,9 +960,7 @@
             // armFlagTextBox
             // 
             this.armFlagTextBox.FormattingEnabled = true;
-            this.armFlagTextBox.Items.AddRange(new object[] {
-            "Enable",
-            "Disable"});
+            this.armFlagTextBox.Items.AddRange(new object[] {"Enable", "Disable"});
             this.armFlagTextBox.Location = new System.Drawing.Point(203, 230);
             this.armFlagTextBox.Name = "armFlagTextBox";
             this.armFlagTextBox.Size = new System.Drawing.Size(58, 21);
@@ -985,9 +971,7 @@
             // handFlagTextBox
             // 
             this.handFlagTextBox.FormattingEnabled = true;
-            this.handFlagTextBox.Items.AddRange(new object[] {
-            "Enable",
-            "Disable"});
+            this.handFlagTextBox.Items.AddRange(new object[] {"Enable", "Disable"});
             this.handFlagTextBox.Location = new System.Drawing.Point(203, 257);
             this.handFlagTextBox.Name = "handFlagTextBox";
             this.handFlagTextBox.Size = new System.Drawing.Size(58, 21);
@@ -998,9 +982,7 @@
             // cannon1FlagTextBox
             // 
             this.cannon1FlagTextBox.FormattingEnabled = true;
-            this.cannon1FlagTextBox.Items.AddRange(new object[] {
-            "Enable",
-            "Disable"});
+            this.cannon1FlagTextBox.Items.AddRange(new object[] {"Enable", "Disable"});
             this.cannon1FlagTextBox.Location = new System.Drawing.Point(203, 284);
             this.cannon1FlagTextBox.Name = "cannon1FlagTextBox";
             this.cannon1FlagTextBox.Size = new System.Drawing.Size(58, 21);
@@ -1011,9 +993,7 @@
             // cannon2FlagTextBox
             // 
             this.cannon2FlagTextBox.FormattingEnabled = true;
-            this.cannon2FlagTextBox.Items.AddRange(new object[] {
-            "Enable",
-            "Disable"});
+            this.cannon2FlagTextBox.Items.AddRange(new object[] {"Enable", "Disable"});
             this.cannon2FlagTextBox.Location = new System.Drawing.Point(203, 311);
             this.cannon2FlagTextBox.Name = "cannon2FlagTextBox";
             this.cannon2FlagTextBox.Size = new System.Drawing.Size(58, 21);
@@ -1024,9 +1004,7 @@
             // cannon3FlagTextBox
             // 
             this.cannon3FlagTextBox.FormattingEnabled = true;
-            this.cannon3FlagTextBox.Items.AddRange(new object[] {
-            "Enable",
-            "Disable"});
+            this.cannon3FlagTextBox.Items.AddRange(new object[] {"Enable", "Disable"});
             this.cannon3FlagTextBox.Location = new System.Drawing.Point(203, 338);
             this.cannon3FlagTextBox.Name = "cannon3FlagTextBox";
             this.cannon3FlagTextBox.Size = new System.Drawing.Size(58, 21);
@@ -1037,9 +1015,7 @@
             // cannon4FlagTextBox
             // 
             this.cannon4FlagTextBox.FormattingEnabled = true;
-            this.cannon4FlagTextBox.Items.AddRange(new object[] {
-            "Enable",
-            "Disable"});
+            this.cannon4FlagTextBox.Items.AddRange(new object[] {"Enable", "Disable"});
             this.cannon4FlagTextBox.Location = new System.Drawing.Point(203, 365);
             this.cannon4FlagTextBox.Name = "cannon4FlagTextBox";
             this.cannon4FlagTextBox.Size = new System.Drawing.Size(58, 21);
@@ -1050,9 +1026,7 @@
             // cannon5FlagTextBox
             // 
             this.cannon5FlagTextBox.FormattingEnabled = true;
-            this.cannon5FlagTextBox.Items.AddRange(new object[] {
-            "Enable",
-            "Disable"});
+            this.cannon5FlagTextBox.Items.AddRange(new object[] {"Enable", "Disable"});
             this.cannon5FlagTextBox.Location = new System.Drawing.Point(203, 392);
             this.cannon5FlagTextBox.Name = "cannon5FlagTextBox";
             this.cannon5FlagTextBox.Size = new System.Drawing.Size(58, 21);
@@ -1063,9 +1037,7 @@
             // device1FlagTextBox
             // 
             this.device1FlagTextBox.FormattingEnabled = true;
-            this.device1FlagTextBox.Items.AddRange(new object[] {
-            "Enable",
-            "Disable"});
+            this.device1FlagTextBox.Items.AddRange(new object[] {"Enable", "Disable"});
             this.device1FlagTextBox.Location = new System.Drawing.Point(203, 419);
             this.device1FlagTextBox.Name = "device1FlagTextBox";
             this.device1FlagTextBox.Size = new System.Drawing.Size(58, 21);
@@ -1076,9 +1048,7 @@
             // device2FlagTextBox
             // 
             this.device2FlagTextBox.FormattingEnabled = true;
-            this.device2FlagTextBox.Items.AddRange(new object[] {
-            "Enable",
-            "Disable"});
+            this.device2FlagTextBox.Items.AddRange(new object[] {"Enable", "Disable"});
             this.device2FlagTextBox.Location = new System.Drawing.Point(203, 446);
             this.device2FlagTextBox.Name = "device2FlagTextBox";
             this.device2FlagTextBox.Size = new System.Drawing.Size(58, 21);
@@ -1089,9 +1059,7 @@
             // device3FlagTextBox
             // 
             this.device3FlagTextBox.FormattingEnabled = true;
-            this.device3FlagTextBox.Items.AddRange(new object[] {
-            "Enable",
-            "Disable"});
+            this.device3FlagTextBox.Items.AddRange(new object[] {"Enable", "Disable"});
             this.device3FlagTextBox.Location = new System.Drawing.Point(203, 473);
             this.device3FlagTextBox.Name = "device3FlagTextBox";
             this.device3FlagTextBox.Size = new System.Drawing.Size(58, 21);
@@ -1102,9 +1070,7 @@
             // device4FlagTextBox
             // 
             this.device4FlagTextBox.FormattingEnabled = true;
-            this.device4FlagTextBox.Items.AddRange(new object[] {
-            "Enable",
-            "Disable"});
+            this.device4FlagTextBox.Items.AddRange(new object[] {"Enable", "Disable"});
             this.device4FlagTextBox.Location = new System.Drawing.Point(203, 500);
             this.device4FlagTextBox.Name = "device4FlagTextBox";
             this.device4FlagTextBox.Size = new System.Drawing.Size(58, 21);
@@ -1115,9 +1081,7 @@
             // device5FlagTextBox
             // 
             this.device5FlagTextBox.FormattingEnabled = true;
-            this.device5FlagTextBox.Items.AddRange(new object[] {
-            "Enable",
-            "Disable"});
+            this.device5FlagTextBox.Items.AddRange(new object[] {"Enable", "Disable"});
             this.device5FlagTextBox.Location = new System.Drawing.Point(203, 527);
             this.device5FlagTextBox.Name = "device5FlagTextBox";
             this.device5FlagTextBox.Size = new System.Drawing.Size(58, 21);
@@ -1128,9 +1092,7 @@
             // device6FlagTextBox
             // 
             this.device6FlagTextBox.FormattingEnabled = true;
-            this.device6FlagTextBox.Items.AddRange(new object[] {
-            "Enable",
-            "Disable"});
+            this.device6FlagTextBox.Items.AddRange(new object[] {"Enable", "Disable"});
             this.device6FlagTextBox.Location = new System.Drawing.Point(203, 554);
             this.device6FlagTextBox.Name = "device6FlagTextBox";
             this.device6FlagTextBox.Size = new System.Drawing.Size(58, 21);
@@ -1143,7 +1105,7 @@
             this.itemsTabPage.Controls.Add(this.itemPanel);
             this.itemsTabPage.Location = new System.Drawing.Point(4, 22);
             this.itemsTabPage.Name = "itemsTabPage";
-            this.itemsTabPage.Size = new System.Drawing.Size(434, 289);
+            this.itemsTabPage.Size = new System.Drawing.Size(444, 289);
             this.itemsTabPage.TabIndex = 2;
             this.itemsTabPage.Text = "Items";
             this.itemsTabPage.UseVisualStyleBackColor = true;
@@ -1154,7 +1116,7 @@
             this.itemPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.itemPanel.Location = new System.Drawing.Point(0, 0);
             this.itemPanel.Name = "itemPanel";
-            this.itemPanel.Size = new System.Drawing.Size(434, 289);
+            this.itemPanel.Size = new System.Drawing.Size(444, 289);
             this.itemPanel.TabIndex = 0;
             // 
             // importantItemsTabPage
@@ -1162,7 +1124,7 @@
             this.importantItemsTabPage.Controls.Add(this.importantItemPanel);
             this.importantItemsTabPage.Location = new System.Drawing.Point(4, 22);
             this.importantItemsTabPage.Name = "importantItemsTabPage";
-            this.importantItemsTabPage.Size = new System.Drawing.Size(434, 289);
+            this.importantItemsTabPage.Size = new System.Drawing.Size(444, 289);
             this.importantItemsTabPage.TabIndex = 3;
             this.importantItemsTabPage.Text = "Important Items";
             this.importantItemsTabPage.UseVisualStyleBackColor = true;
@@ -1173,7 +1135,7 @@
             this.importantItemPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.importantItemPanel.Location = new System.Drawing.Point(0, 0);
             this.importantItemPanel.Name = "importantItemPanel";
-            this.importantItemPanel.Size = new System.Drawing.Size(434, 289);
+            this.importantItemPanel.Size = new System.Drawing.Size(444, 289);
             this.importantItemPanel.TabIndex = 0;
             // 
             // serverItemsTabPage
@@ -1181,7 +1143,7 @@
             this.serverItemsTabPage.Controls.Add(this.serverItemPanel);
             this.serverItemsTabPage.Location = new System.Drawing.Point(4, 22);
             this.serverItemsTabPage.Name = "serverItemsTabPage";
-            this.serverItemsTabPage.Size = new System.Drawing.Size(434, 289);
+            this.serverItemsTabPage.Size = new System.Drawing.Size(444, 289);
             this.serverItemsTabPage.TabIndex = 4;
             this.serverItemsTabPage.Text = "Server Items";
             this.serverItemsTabPage.UseVisualStyleBackColor = true;
@@ -1193,7 +1155,7 @@
             this.serverItemPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.serverItemPanel.Location = new System.Drawing.Point(0, 0);
             this.serverItemPanel.Name = "serverItemPanel";
-            this.serverItemPanel.Size = new System.Drawing.Size(434, 289);
+            this.serverItemPanel.Size = new System.Drawing.Size(444, 289);
             this.serverItemPanel.TabIndex = 0;
             // 
             // digimonsTabPage
@@ -1201,7 +1163,7 @@
             this.digimonsTabPage.Controls.Add(this.digimonPanel);
             this.digimonsTabPage.Location = new System.Drawing.Point(4, 22);
             this.digimonsTabPage.Name = "digimonsTabPage";
-            this.digimonsTabPage.Size = new System.Drawing.Size(434, 289);
+            this.digimonsTabPage.Size = new System.Drawing.Size(444, 289);
             this.digimonsTabPage.TabIndex = 5;
             this.digimonsTabPage.Text = "Digimons";
             this.digimonsTabPage.UseVisualStyleBackColor = true;
@@ -1216,7 +1178,7 @@
             this.digimonPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.digimonPanel.Location = new System.Drawing.Point(0, 0);
             this.digimonPanel.Name = "digimonPanel";
-            this.digimonPanel.Size = new System.Drawing.Size(434, 289);
+            this.digimonPanel.Size = new System.Drawing.Size(444, 289);
             this.digimonPanel.TabIndex = 2;
             // 
             // techGroupBox
@@ -1373,162 +1335,78 @@
             // digimonHpTextBoxNumericUpDown
             // 
             this.digimonHpTextBoxNumericUpDown.Location = new System.Drawing.Point(73, 3);
-            this.digimonHpTextBoxNumericUpDown.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.digimonHpTextBoxNumericUpDown.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.digimonHpTextBoxNumericUpDown.Maximum = new decimal(new int[] {65535, 0, 0, 0});
+            this.digimonHpTextBoxNumericUpDown.Minimum = new decimal(new int[] {1, 0, 0, 0});
             this.digimonHpTextBoxNumericUpDown.Name = "digimonHpTextBoxNumericUpDown";
             this.digimonHpTextBoxNumericUpDown.Size = new System.Drawing.Size(64, 20);
             this.digimonHpTextBoxNumericUpDown.TabIndex = 15;
-            this.digimonHpTextBoxNumericUpDown.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.digimonHpTextBoxNumericUpDown.Value = new decimal(new int[] {1, 0, 0, 0});
             this.digimonHpTextBoxNumericUpDown.ValueChanged += new System.EventHandler(this.digimonHpTextBox_TextChanged);
             // 
             // digimonMapHpNumericUpDown
             // 
             this.digimonMapHpNumericUpDown.Location = new System.Drawing.Point(213, 3);
-            this.digimonMapHpNumericUpDown.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.digimonMapHpNumericUpDown.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.digimonMapHpNumericUpDown.Maximum = new decimal(new int[] {65535, 0, 0, 0});
+            this.digimonMapHpNumericUpDown.Minimum = new decimal(new int[] {1, 0, 0, 0});
             this.digimonMapHpNumericUpDown.Name = "digimonMapHpNumericUpDown";
             this.digimonMapHpNumericUpDown.Size = new System.Drawing.Size(64, 20);
             this.digimonMapHpNumericUpDown.TabIndex = 15;
-            this.digimonMapHpNumericUpDown.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.digimonMapHpNumericUpDown.Value = new decimal(new int[] {1, 0, 0, 0});
             this.digimonMapHpNumericUpDown.ValueChanged += new System.EventHandler(this.digimonMapHpTextBox_TextChanged);
             // 
             // digimonMpNumericUpDown
             // 
             this.digimonMpNumericUpDown.Location = new System.Drawing.Point(73, 30);
-            this.digimonMpNumericUpDown.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.digimonMpNumericUpDown.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.digimonMpNumericUpDown.Maximum = new decimal(new int[] {65535, 0, 0, 0});
+            this.digimonMpNumericUpDown.Minimum = new decimal(new int[] {1, 0, 0, 0});
             this.digimonMpNumericUpDown.Name = "digimonMpNumericUpDown";
             this.digimonMpNumericUpDown.Size = new System.Drawing.Size(64, 20);
             this.digimonMpNumericUpDown.TabIndex = 15;
-            this.digimonMpNumericUpDown.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.digimonMpNumericUpDown.Value = new decimal(new int[] {1, 0, 0, 0});
             this.digimonMpNumericUpDown.ValueChanged += new System.EventHandler(this.digimonMpTextBox_TextChanged);
             // 
             // digimonMaxMpNumericUpDown
             // 
             this.digimonMaxMpNumericUpDown.Location = new System.Drawing.Point(213, 30);
-            this.digimonMaxMpNumericUpDown.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.digimonMaxMpNumericUpDown.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.digimonMaxMpNumericUpDown.Maximum = new decimal(new int[] {65535, 0, 0, 0});
+            this.digimonMaxMpNumericUpDown.Minimum = new decimal(new int[] {1, 0, 0, 0});
             this.digimonMaxMpNumericUpDown.Name = "digimonMaxMpNumericUpDown";
             this.digimonMaxMpNumericUpDown.Size = new System.Drawing.Size(64, 20);
             this.digimonMaxMpNumericUpDown.TabIndex = 15;
-            this.digimonMaxMpNumericUpDown.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.digimonMaxMpNumericUpDown.Value = new decimal(new int[] {1, 0, 0, 0});
             this.digimonMaxMpNumericUpDown.ValueChanged += new System.EventHandler(this.digimonMaxMpTextBox_TextChanged);
             // 
             // digimonAttackNumericUpDown
             // 
             this.digimonAttackNumericUpDown.Location = new System.Drawing.Point(73, 57);
-            this.digimonAttackNumericUpDown.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.digimonAttackNumericUpDown.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.digimonAttackNumericUpDown.Maximum = new decimal(new int[] {65535, 0, 0, 0});
+            this.digimonAttackNumericUpDown.Minimum = new decimal(new int[] {1, 0, 0, 0});
             this.digimonAttackNumericUpDown.Name = "digimonAttackNumericUpDown";
             this.digimonAttackNumericUpDown.Size = new System.Drawing.Size(64, 20);
             this.digimonAttackNumericUpDown.TabIndex = 15;
-            this.digimonAttackNumericUpDown.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.digimonAttackNumericUpDown.Value = new decimal(new int[] {1, 0, 0, 0});
             this.digimonAttackNumericUpDown.ValueChanged += new System.EventHandler(this.digimonAttackTextBox_TextChanged);
             // 
             // digimonDefenseNumericUpDown
             // 
             this.digimonDefenseNumericUpDown.Location = new System.Drawing.Point(73, 84);
-            this.digimonDefenseNumericUpDown.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.digimonDefenseNumericUpDown.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.digimonDefenseNumericUpDown.Maximum = new decimal(new int[] {65535, 0, 0, 0});
+            this.digimonDefenseNumericUpDown.Minimum = new decimal(new int[] {1, 0, 0, 0});
             this.digimonDefenseNumericUpDown.Name = "digimonDefenseNumericUpDown";
             this.digimonDefenseNumericUpDown.Size = new System.Drawing.Size(64, 20);
             this.digimonDefenseNumericUpDown.TabIndex = 15;
-            this.digimonDefenseNumericUpDown.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.digimonDefenseNumericUpDown.Value = new decimal(new int[] {1, 0, 0, 0});
             this.digimonDefenseNumericUpDown.ValueChanged += new System.EventHandler(this.digimonDefenseTextBox_TextChanged);
             // 
             // digimonSpeedNumericUpDown
             // 
             this.digimonSpeedNumericUpDown.Location = new System.Drawing.Point(73, 111);
-            this.digimonSpeedNumericUpDown.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.digimonSpeedNumericUpDown.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.digimonSpeedNumericUpDown.Maximum = new decimal(new int[] {65535, 0, 0, 0});
+            this.digimonSpeedNumericUpDown.Minimum = new decimal(new int[] {1, 0, 0, 0});
             this.digimonSpeedNumericUpDown.Name = "digimonSpeedNumericUpDown";
             this.digimonSpeedNumericUpDown.Size = new System.Drawing.Size(64, 20);
             this.digimonSpeedNumericUpDown.TabIndex = 15;
-            this.digimonSpeedNumericUpDown.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.digimonSpeedNumericUpDown.Value = new decimal(new int[] {1, 0, 0, 0});
             this.digimonSpeedNumericUpDown.ValueChanged += new System.EventHandler(this.digimonSpeedTextBox_TextChanged);
             // 
             // digimonListBox
@@ -1673,62 +1551,30 @@
             // digimonLevelNumericUpDown
             // 
             this.digimonLevelNumericUpDown.Location = new System.Drawing.Point(228, 3);
-            this.digimonLevelNumericUpDown.Maximum = new decimal(new int[] {
-            99,
-            0,
-            0,
-            0});
-            this.digimonLevelNumericUpDown.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.digimonLevelNumericUpDown.Maximum = new decimal(new int[] {99, 0, 0, 0});
+            this.digimonLevelNumericUpDown.Minimum = new decimal(new int[] {1, 0, 0, 0});
             this.digimonLevelNumericUpDown.Name = "digimonLevelNumericUpDown";
             this.digimonLevelNumericUpDown.Size = new System.Drawing.Size(51, 20);
             this.digimonLevelNumericUpDown.TabIndex = 16;
-            this.digimonLevelNumericUpDown.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.digimonLevelNumericUpDown.Value = new decimal(new int[] {1, 0, 0, 0});
             this.digimonLevelNumericUpDown.ValueChanged += new System.EventHandler(this.digimonLevelTextBox_TextChanged);
             // 
             // digimonMaxLevelNumericUpDown
             // 
             this.digimonMaxLevelNumericUpDown.Location = new System.Drawing.Point(228, 30);
-            this.digimonMaxLevelNumericUpDown.Maximum = new decimal(new int[] {
-            99,
-            0,
-            0,
-            0});
-            this.digimonMaxLevelNumericUpDown.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.digimonMaxLevelNumericUpDown.Maximum = new decimal(new int[] {99, 0, 0, 0});
+            this.digimonMaxLevelNumericUpDown.Minimum = new decimal(new int[] {1, 0, 0, 0});
             this.digimonMaxLevelNumericUpDown.Name = "digimonMaxLevelNumericUpDown";
             this.digimonMaxLevelNumericUpDown.Size = new System.Drawing.Size(51, 20);
             this.digimonMaxLevelNumericUpDown.TabIndex = 16;
-            this.digimonMaxLevelNumericUpDown.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.digimonMaxLevelNumericUpDown.Value = new decimal(new int[] {1, 0, 0, 0});
             this.digimonMaxLevelNumericUpDown.ValueChanged += new System.EventHandler(this.digimonMaxLevelTextBox_TextChanged);
             // 
             // digimonExpNumericUpDown
             // 
-            this.digimonExpNumericUpDown.Increment = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
+            this.digimonExpNumericUpDown.Increment = new decimal(new int[] {10, 0, 0, 0});
             this.digimonExpNumericUpDown.Location = new System.Drawing.Point(59, 84);
-            this.digimonExpNumericUpDown.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
+            this.digimonExpNumericUpDown.Maximum = new decimal(new int[] {-1, 0, 0, 0});
             this.digimonExpNumericUpDown.Name = "digimonExpNumericUpDown";
             this.digimonExpNumericUpDown.Size = new System.Drawing.Size(100, 20);
             this.digimonExpNumericUpDown.TabIndex = 16;
@@ -1750,7 +1596,7 @@
             this.gameStoryTabPage.Controls.Add(this.gameStoryPanel);
             this.gameStoryTabPage.Location = new System.Drawing.Point(4, 22);
             this.gameStoryTabPage.Name = "gameStoryTabPage";
-            this.gameStoryTabPage.Size = new System.Drawing.Size(434, 289);
+            this.gameStoryTabPage.Size = new System.Drawing.Size(444, 289);
             this.gameStoryTabPage.TabIndex = 6;
             this.gameStoryTabPage.Text = "Game Story";
             this.gameStoryTabPage.UseVisualStyleBackColor = true;
@@ -1822,10 +1668,7 @@
             // slotComboBox
             // 
             this.slotComboBox.FormattingEnabled = true;
-            this.slotComboBox.Items.AddRange(new object[] {
-            "Slot 1",
-            "Slot 2",
-            "Slot 3"});
+            this.slotComboBox.Items.AddRange(new object[] {"Slot 1", "Slot 2", "Slot 3"});
             this.slotComboBox.Location = new System.Drawing.Point(68, 39);
             this.slotComboBox.Name = "slotComboBox";
             this.slotComboBox.Size = new System.Drawing.Size(172, 21);
@@ -1854,7 +1697,7 @@
             this.Controls.Add(this.openFileButton);
             this.Controls.Add(this.tabControl);
             this.Name = "SaveEditorView";
-            this.Size = new System.Drawing.Size(444, 384);
+            this.Size = new System.Drawing.Size(453, 384);
             this.tabControl.ResumeLayout(false);
             this.miscTabPage.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -1874,24 +1717,23 @@
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.digimonHpTextBoxNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.digimonMapHpNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.digimonMpNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.digimonMaxMpNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.digimonAttackNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.digimonDefenseNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.digimonSpeedNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.digimonHpTextBoxNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.digimonMapHpNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.digimonMpNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.digimonMaxMpNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.digimonAttackNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.digimonDefenseNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.digimonSpeedNumericUpDown)).EndInit();
             this.infoGroupBox.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.digimonLevelNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.digimonMaxLevelNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.digimonExpNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.digimonLevelNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.digimonMaxLevelNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.digimonExpNumericUpDown)).EndInit();
             this.gameStoryTabPage.ResumeLayout(false);
             this.gameStoryTabPage.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         private System.Windows.Forms.Panel gameStoryPanel;

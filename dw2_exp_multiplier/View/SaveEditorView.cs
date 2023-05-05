@@ -267,13 +267,6 @@ namespace dw2_exp_multiplier.View
             this.digimonOriginalNameComboBox.DataSource = new BindingSource(Configuration.DigimonList, null);
             this.digimonOriginalNameComboBox.SelectedIndex = -1;
 
-            this.digimonStatusComboBox.Items.Clear();
-            this.digimonStatusComboBox.Items.Add(DIGI_LINE_STATUS.B1);
-            this.digimonStatusComboBox.Items.Add(DIGI_LINE_STATUS.B2);
-            this.digimonStatusComboBox.Items.Add(DIGI_LINE_STATUS.B3);
-            this.digimonStatusComboBox.Items.Add(DIGI_LINE_STATUS.BENCH);
-            this.digimonStatusComboBox.Items.Add(DIGI_LINE_STATUS.SERVER);
-
             this.gameStoryComboBox.Items.Clear();
             foreach (string e in Configuration.GameStoryProgress.Keys)
                 this.gameStoryComboBox.Items.Add(e);
@@ -351,7 +344,7 @@ namespace dw2_exp_multiplier.View
                 this.GameFlagsTextBoxList[i].Text = currentSlot.GameFlags[i].ToString("X2");
 
             this.gameStoryComboBox.SelectedIndex = -1;
-            this.digimonListBox.SelectedIndex = -1;
+            this.digimonListBox.SelectedIndex = 0;
         }
         
         private void slotComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -683,6 +676,30 @@ namespace dw2_exp_multiplier.View
             var i = this.slotComboBox.SelectedIndex;
             var j = this.digimonListBox.SelectedIndex;
             this.saveFile.saveSlot[i].digimon[j].status = Convert.ToByte(digimonStatusComboBox.SelectedItem);
+            if ((DIGI_LINE_STATUS) digimonStatusComboBox.SelectedItem == DIGI_LINE_STATUS.NONE)
+            {
+                this.digimonLevelNumericUpDown.Minimum = 0;
+                this.digimonMaxLevelNumericUpDown.Minimum = 0;
+                this.digimonHpTextBoxNumericUpDown.Minimum = 0;
+                this.digimonMapHpNumericUpDown.Minimum = 0;
+                this.digimonMpNumericUpDown.Minimum = 0;
+                this.digimonMaxMpNumericUpDown.Minimum = 0;
+                this.digimonAttackNumericUpDown.Minimum = 0;
+                this.digimonDefenseNumericUpDown.Minimum = 0;
+                this.digimonSpeedNumericUpDown.Minimum = 0;
+            }
+            else
+            {
+                this.digimonLevelNumericUpDown.Minimum = 1;
+                this.digimonMaxLevelNumericUpDown.Minimum = 1;
+                this.digimonHpTextBoxNumericUpDown.Minimum = 1;
+                this.digimonMapHpNumericUpDown.Minimum = 1;
+                this.digimonMpNumericUpDown.Minimum = 1;
+                this.digimonMaxMpNumericUpDown.Minimum = 1;
+                this.digimonAttackNumericUpDown.Minimum = 1;
+                this.digimonDefenseNumericUpDown.Minimum = 1;
+                this.digimonSpeedNumericUpDown.Minimum = 1;
+            }
         }
 
         private void digimonLevelTextBox_TextChanged(object sender, EventArgs e)
