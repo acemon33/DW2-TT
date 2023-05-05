@@ -30,7 +30,7 @@ namespace dw2_exp_multiplier.Manager
 
         private void FixVenomInfusion()
         {
-            byte[] patchedPattern = { 0x00, 0x00, 0x00, 0x00} ;
+            byte[] patchedPattern = { 0x00, 0x00, 0x00, 0x00 } ;
             Buffer.BlockCopy(patchedPattern, 0, data, 0x8D38, patchedPattern.Length);    // ram: 8006c098
         }
 
