@@ -1697,7 +1697,7 @@
             this.Controls.Add(this.openFileButton);
             this.Controls.Add(this.tabControl);
             this.Name = "SaveEditorView";
-            this.Size = new System.Drawing.Size(453, 384);
+            this.Size = new System.Drawing.Size(453, 437);
             this.tabControl.ResumeLayout(false);
             this.miscTabPage.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);

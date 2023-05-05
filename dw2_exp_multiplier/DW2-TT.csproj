@@ -101,6 +101,12 @@
     <Compile Include="View\FileManagerView.Designer.cs">
       <DependentUpon>FileManagerView.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\MiscView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\MiscView.Designer.cs">
+      <DependentUpon>MiscView.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\SaveEditorView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FileManagerView.resx">
       <DependentUpon>FileManagerView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MiscView.resx">
+      <DependentUpon>MiscView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\SaveEditorView.resx">
       <DependentUpon>SaveEditorView.cs</DependentUpon>
