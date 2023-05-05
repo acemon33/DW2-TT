@@ -199,7 +199,7 @@ namespace DigimonWorld2Tool.Utility
             string converted = "";
             for (int i = 0; i < input.Length; i++)
             {
-                if (input[i] == 0xFF) continue;
+                if (input[i] == 0xFF) break;
                 if (input[i] == 0xF0)
                 {
                     string s1 = input[i++].ToString("X2");

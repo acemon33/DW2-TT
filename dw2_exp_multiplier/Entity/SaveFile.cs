@@ -297,7 +297,7 @@ namespace dw2_exp_multiplier.Entity
             return data;
         }
 
-        public ushort CalculateChecksum(byte[] data)
+        private ushort CalculateChecksum(byte[] data)
         {
             int data_1 = 0, calculated_value = 0, ptr = 0, data_2;
 
