@@ -164,7 +164,7 @@ namespace dw2_exp_multiplier.View
         private void exportButton_Click(object sender, EventArgs e)
         {
             string filename = dw2TextBox.Text;
-            FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.ReadWrite);
+            FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
             try
             {
                 DW2Slus.ValidImageFile(ref fs);
