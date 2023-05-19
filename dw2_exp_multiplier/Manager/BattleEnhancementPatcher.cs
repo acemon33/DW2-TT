@@ -7,7 +7,7 @@ namespace dw2_exp_multiplier.Manager
 {
     public class BattleEnhancementPatcher
     {
-        public static readonly string VERSION = "0.2";
+        public static readonly string VERSION = "0.3";
         
         private byte[] data;
         
@@ -20,6 +20,7 @@ namespace dw2_exp_multiplier.Manager
         {
             this.ApplyMpOnGuard();
             this.ApplyBeastKingFist();
+            this.ApplySubzeroIcePunch();
             PsxSector.WriteSector(ref fs, ref data, DW2Slus.GetLba(FileIndex.STAG3000_PRO), DW2Slus.GetSize(FileIndex.STAG3000_PRO));
         }
         
@@ -27,6 +28,7 @@ namespace dw2_exp_multiplier.Manager
         {
             this.UndoMpOnGuard();
             this.UndoBeastKingFist();
+            this.UndoSubzeroIcePunch();
             PsxSector.WriteSector(ref fs, ref data, DW2Slus.GetLba(FileIndex.STAG3000_PRO), DW2Slus.GetSize(FileIndex.STAG3000_PRO));
         }
 
@@ -88,6 +90,18 @@ namespace dw2_exp_multiplier.Manager
                 0x43, 0x10, 0x02, 0x00
             };
             Buffer.BlockCopy(patchedPattern, 0, data, 0x7CC0, patchedPattern.Length);    // ram: 8006b020
+        }
+        
+        private void ApplySubzeroIcePunch()
+        {
+            byte[] patchedPattern = { 0x07, 0x00, 0x62, 0x24 };
+            Buffer.BlockCopy(patchedPattern, 0, data, 0x7E48, patchedPattern.Length);    // ram: 8006b1a8
+        }
+        
+        private void UndoSubzeroIcePunch()
+        {
+            byte[] patchedPattern = { 0x05, 0x00, 0x62, 0x24 };
+            Buffer.BlockCopy(patchedPattern, 0, data, 0x7E48, patchedPattern.Length);    // ram: 8006b1a8
         }
     }
     
