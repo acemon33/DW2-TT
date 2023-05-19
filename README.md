@@ -22,10 +22,12 @@ v2.4:
  - Digi-Line Patcher: allow to 1 or 2 Digimons to be in digi-line (instead of always to be 3).
  - No Enemy Encounter Patcher: the wild Digimons will not move from their places.
  - Battle Enhancement:
-   - MP on Guard: ratio of increasing MP during Guard is 25%.
-   - Beast King Fist Tech: the damage is 2.1 on counter attack.
+   - MP-on-Guard: ratio of increasing MP during Guard is 25%.
+   - Beast King Fist Tech: the damage is 2.1 on Counter-Attack.
+   - Subzero Ice Punch: every hit increases 7 AP.
  - Battle Fix:
    - Venom Infusion Tech: guarantee to disable target's turn (no more crash or soft-lock).
+   - Zen Recovery Tech: reset all state changes permanently.
 
 v2.3:
  - Save Editor:
@@ -61,7 +63,7 @@ v1.0:
     - Save the filename to "BASLUS-01193 DMW2" or rename it before importing to Memory Card File (.mcd / .mcr),
       because MemcardRex cannot import properly with different name (in case of Raw Save File).
  - For Digi-Line Patcher:
-    - After selecting the 1st or 2nd Digimon, press square to finish the setting.
+    - After selecting the 1st or 2nd Digimon, press [] square to finish the setting.
 
 The latest version can be downloaded [here](https://www.romhacking.net/utilities/1723/)
 
