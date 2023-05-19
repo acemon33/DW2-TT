@@ -7,6 +7,8 @@ namespace dw2_exp_multiplier.Manager
 {
     public class DigimonGiftPatcher
     {
+        public static readonly string TOOLTIP = "Make a wild Digimon stop moving when it accepts a gift.\n";
+
         private byte[] data;
         
         public DigimonGiftPatcher(ref FileStream fs)

@@ -8,7 +8,10 @@ namespace dw2_exp_multiplier.Manager
     public class BattleFixPatcher
     {
         public static readonly string VERSION = "0.2";
-        
+        public static readonly string TOOLTIP =
+            "1. Venom Infusion Tech: guarantee to disable target's turn\n" +
+            "2. Zen Recovery Tech: reset all state changes permanently\n";
+
         private byte[] data;
         
         public BattleFixPatcher(ref FileStream fs)

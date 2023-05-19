@@ -7,6 +7,10 @@ namespace dw2_exp_multiplier.Manager
 {
     public class DnaLabsPatcher
     {
+        public static readonly string TOOLTIP =
+            "Remove restriction on 3 Guard team labs which will allow dna of any type\n" +
+            "and Device Dome's lab will sum-up the DP(s) instead of adding 1.\n";
+
         private byte[] data;
         
         public DnaLabsPatcher(ref FileStream fs)

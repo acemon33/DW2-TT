@@ -98,6 +98,7 @@ namespace dw2_exp_multiplier.View
             this.battleFixGroupBox.TabIndex = 47;
             this.battleFixGroupBox.TabStop = false;
             this.battleFixGroupBox.Text = "Battle Fix v";
+            this.battleFixGroupBox.MouseHover += new System.EventHandler(this.battleFixGroupBox_MouseHover);
             // 
             // battleFixPatchRadioButton
             // 
@@ -142,6 +143,7 @@ namespace dw2_exp_multiplier.View
             this.noEncounterPatcherCheckBox.TabIndex = 48;
             this.noEncounterPatcherCheckBox.Text = "No Enemy Encounter";
             this.noEncounterPatcherCheckBox.UseVisualStyleBackColor = true;
+            this.noEncounterPatcherCheckBox.MouseHover += new System.EventHandler(this.noEncounterPatcherCheckBox_MouseHover);
             // 
             // battleEnhancementGroupBox
             // 
@@ -155,6 +157,7 @@ namespace dw2_exp_multiplier.View
             this.battleEnhancementGroupBox.TabIndex = 46;
             this.battleEnhancementGroupBox.TabStop = false;
             this.battleEnhancementGroupBox.Text = "Battle Enhancement v";
+            this.battleEnhancementGroupBox.MouseHover += new System.EventHandler(this.battleEnhancementGroupBox_MouseHover);
             // 
             // battleEnhancementUnpatchRadioButton
             // 
@@ -202,6 +205,7 @@ namespace dw2_exp_multiplier.View
             this.groupBox5.TabIndex = 45;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Digi-Line";
+            this.groupBox5.MouseHover += new System.EventHandler(this.groupBox5_MouseHover);
             // 
             // digiLineUnpatchRadioButton
             // 
@@ -249,6 +253,7 @@ namespace dw2_exp_multiplier.View
             this.groupBox4.TabIndex = 44;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Digimon Gift";
+            this.groupBox4.MouseHover += new System.EventHandler(this.groupBox4_MouseHover);
             // 
             // digimonGiftUnpatchRadioButton
             // 
@@ -296,6 +301,7 @@ namespace dw2_exp_multiplier.View
             this.groupBox3.TabIndex = 42;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "DNA Labs";
+            this.groupBox3.MouseHover += new System.EventHandler(this.groupBox3_MouseHover);
             // 
             // dnaLabsUnpatchRadioButton
             // 

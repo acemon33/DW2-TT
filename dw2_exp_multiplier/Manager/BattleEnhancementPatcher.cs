@@ -8,7 +8,11 @@ namespace dw2_exp_multiplier.Manager
     public class BattleEnhancementPatcher
     {
         public static readonly string VERSION = "0.3";
-        
+        public static readonly string TOOLTIP =
+            "1. MP-on-Guard: ratio of increasing MP during Guard is 25%\n" +
+            "2. Beast King Fist Tech: the damage is 2.1 on Counter-Attack\n" +
+            "3. Subzero Ice Punch: every hit increases 7 AP\n";
+
         private byte[] data;
         
         public BattleEnhancementPatcher(ref FileStream fs)

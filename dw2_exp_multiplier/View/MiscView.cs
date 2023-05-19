@@ -319,7 +319,7 @@ namespace dw2_exp_multiplier.View
         }
         #endregion
 
-        #region Other Methods Region
+        #region Changed Events Region
         private void digibeetleComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             string id = ((KeyValuePair<string, string>)digibeetleComboBox.SelectedItem).Key;
@@ -395,6 +395,38 @@ namespace dw2_exp_multiplier.View
                 battleFixPatchRadioButton.Enabled = false;
                 battleFixUnpatchRadioButton.Enabled = false;
             }
+        }
+        #endregion
+
+        #region MouseHover Events Region
+        private void battleEnhancementGroupBox_MouseHover(object sender, EventArgs e)
+        {
+            Main.HintToolTip.Show(BattleEnhancementPatcher.TOOLTIP, battleEnhancementGroupBox,-35, -35, 5000);
+        }
+
+        private void battleFixGroupBox_MouseHover(object sender, EventArgs e)
+        {
+            Main.HintToolTip.Show(BattleFixPatcher.TOOLTIP, battleFixGroupBox,-35, -35, 5000);
+        }
+
+        private void groupBox5_MouseHover(object sender, EventArgs e)
+        {
+            Main.HintToolTip.Show(DigiLinePatcher.TOOLTIP, groupBox5,-25, -25, 5000);
+        }
+
+        private void noEncounterPatcherCheckBox_MouseHover(object sender, EventArgs e)
+        {
+            Main.HintToolTip.Show(UnmoveableEnemy.TOOLTIP, noEncounterPatcherCheckBox,-25, -25, 5000);
+        }
+
+        private void groupBox4_MouseHover(object sender, EventArgs e)
+        {
+            Main.HintToolTip.Show(DigimonGiftPatcher.TOOLTIP, groupBox4,-25, -25, 5000);
+        }
+
+        private void groupBox3_MouseHover(object sender, EventArgs e)
+        {
+            Main.HintToolTip.Show(DnaLabsPatcher.TOOLTIP, groupBox3,-25, -25, 5000);
         }
         #endregion
     }

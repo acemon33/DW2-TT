@@ -9,12 +9,14 @@ namespace dw2_exp_multiplier
     {
         #region Fields Region
         public static string Title;
+        public static ToolTip HintToolTip;
         #endregion
 
         public Main()
         {
             InitializeComponent();
             Main.Title = this.Text;
+            HintToolTip = new ToolTip();
             if (!(Control.ModifierKeys == Keys.Shift))
                 tabControl1.TabPages.RemoveByKey("tabPage3");
         }

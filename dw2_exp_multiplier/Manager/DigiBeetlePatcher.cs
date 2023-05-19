@@ -10,6 +10,8 @@ namespace dw2_exp_multiplier.Manager
 {
     public class DigiBeetlePatcher
     {
+        public static readonly string TOOLTIP = "Play with a Digi-Beetle for entire Game Walkthrough, can be restored to default.\n";
+
         public static bool patch(ref FileStream fs, UInt16 digibeetleId)
         {
             byte[] data = PsxSector.ReadSector(ref fs, DW2Slus.GetLba(FileIndex.STAG4000_PRO), DW2Slus.GetSize(FileIndex.STAG4000_PRO));

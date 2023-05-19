@@ -7,6 +7,8 @@ namespace dw2_exp_multiplier.Manager
 {
     public class DigiLinePatcher
     {
+        public static readonly string TOOLTIP = "Allow to 1 or 2 Digimons to be in Digi-line (instead of always to be 3).\n";
+
         private byte[] slusData;
         private byte[] Stag4000Data;
         
