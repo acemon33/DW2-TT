@@ -32,8 +32,8 @@ namespace dw2_exp_multiplier.View
         private void InitializeComponent()
         {
             this.battleFixGroupBox = new System.Windows.Forms.GroupBox();
-            this.battleFixPatchRadioButton = new System.Windows.Forms.RadioButton();
             this.battleFixUnpatchRadioButton = new System.Windows.Forms.RadioButton();
+            this.battleFixPatchRadioButton = new System.Windows.Forms.RadioButton();
             this.battleFixPatcherCheckBox = new System.Windows.Forms.CheckBox();
             this.noEncounterPatcherCheckBox = new System.Windows.Forms.CheckBox();
             this.battleEnhancementGroupBox = new System.Windows.Forms.GroupBox();
@@ -79,17 +79,17 @@ namespace dw2_exp_multiplier.View
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.multiplier)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.multiplier)).BeginInit();
             this.EnemyBossGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.bossMultiplier)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bossMultiplier)).BeginInit();
             this.digibeetleGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.digibeetlPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.digibeetlPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // battleFixGroupBox
             // 
-            this.battleFixGroupBox.Controls.Add(this.battleFixPatchRadioButton);
             this.battleFixGroupBox.Controls.Add(this.battleFixUnpatchRadioButton);
+            this.battleFixGroupBox.Controls.Add(this.battleFixPatchRadioButton);
             this.battleFixGroupBox.Controls.Add(this.battleFixPatcherCheckBox);
             this.battleFixGroupBox.Enabled = false;
             this.battleFixGroupBox.Location = new System.Drawing.Point(234, 343);
@@ -100,29 +100,29 @@ namespace dw2_exp_multiplier.View
             this.battleFixGroupBox.Text = "Battle Fix v";
             this.battleFixGroupBox.MouseHover += new System.EventHandler(this.battleFixGroupBox_MouseHover);
             // 
-            // battleFixPatchRadioButton
-            // 
-            this.battleFixPatchRadioButton.AutoSize = true;
-            this.battleFixPatchRadioButton.Enabled = false;
-            this.battleFixPatchRadioButton.Location = new System.Drawing.Point(135, 22);
-            this.battleFixPatchRadioButton.Name = "battleFixPatchRadioButton";
-            this.battleFixPatchRadioButton.Size = new System.Drawing.Size(65, 17);
-            this.battleFixPatchRadioButton.TabIndex = 25;
-            this.battleFixPatchRadioButton.Text = "Unpatch";
-            this.battleFixPatchRadioButton.UseVisualStyleBackColor = true;
-            // 
             // battleFixUnpatchRadioButton
             // 
             this.battleFixUnpatchRadioButton.AutoSize = true;
-            this.battleFixUnpatchRadioButton.Checked = true;
             this.battleFixUnpatchRadioButton.Enabled = false;
-            this.battleFixUnpatchRadioButton.Location = new System.Drawing.Point(77, 22);
+            this.battleFixUnpatchRadioButton.Location = new System.Drawing.Point(135, 22);
             this.battleFixUnpatchRadioButton.Name = "battleFixUnpatchRadioButton";
-            this.battleFixUnpatchRadioButton.Size = new System.Drawing.Size(52, 17);
-            this.battleFixUnpatchRadioButton.TabIndex = 24;
-            this.battleFixUnpatchRadioButton.TabStop = true;
-            this.battleFixUnpatchRadioButton.Text = "Patch";
+            this.battleFixUnpatchRadioButton.Size = new System.Drawing.Size(65, 17);
+            this.battleFixUnpatchRadioButton.TabIndex = 25;
+            this.battleFixUnpatchRadioButton.Text = "Unpatch";
             this.battleFixUnpatchRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // battleFixPatchRadioButton
+            // 
+            this.battleFixPatchRadioButton.AutoSize = true;
+            this.battleFixPatchRadioButton.Checked = true;
+            this.battleFixPatchRadioButton.Enabled = false;
+            this.battleFixPatchRadioButton.Location = new System.Drawing.Point(77, 22);
+            this.battleFixPatchRadioButton.Name = "battleFixPatchRadioButton";
+            this.battleFixPatchRadioButton.Size = new System.Drawing.Size(52, 17);
+            this.battleFixPatchRadioButton.TabIndex = 24;
+            this.battleFixPatchRadioButton.TabStop = true;
+            this.battleFixPatchRadioButton.Text = "Patch";
+            this.battleFixPatchRadioButton.UseVisualStyleBackColor = true;
             // 
             // battleFixPatcherCheckBox
             // 
@@ -361,13 +361,25 @@ namespace dw2_exp_multiplier.View
             // 
             this.multiplier.DecimalPlaces = 1;
             this.multiplier.Enabled = false;
-            this.multiplier.Increment = new decimal(new int[] {5, 0, 0, 65536});
+            this.multiplier.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
             this.multiplier.Location = new System.Drawing.Point(96, 25);
-            this.multiplier.Minimum = new decimal(new int[] {1, 0, 0, 0});
+            this.multiplier.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.multiplier.Name = "multiplier";
             this.multiplier.Size = new System.Drawing.Size(46, 20);
             this.multiplier.TabIndex = 8;
-            this.multiplier.Value = new decimal(new int[] {1, 0, 0, 0});
+            this.multiplier.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // EnemyBossGroupBox
             // 
@@ -404,13 +416,25 @@ namespace dw2_exp_multiplier.View
             // 
             this.bossMultiplier.DecimalPlaces = 1;
             this.bossMultiplier.Enabled = false;
-            this.bossMultiplier.Increment = new decimal(new int[] {5, 0, 0, 65536});
+            this.bossMultiplier.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
             this.bossMultiplier.Location = new System.Drawing.Point(96, 27);
-            this.bossMultiplier.Minimum = new decimal(new int[] {1, 0, 0, 0});
+            this.bossMultiplier.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.bossMultiplier.Name = "bossMultiplier";
             this.bossMultiplier.Size = new System.Drawing.Size(46, 20);
             this.bossMultiplier.TabIndex = 21;
-            this.bossMultiplier.Value = new decimal(new int[] {1, 0, 0, 0});
+            this.bossMultiplier.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // dw2Label
             // 
@@ -591,20 +615,21 @@ namespace dw2_exp_multiplier.View
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.multiplier)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.multiplier)).EndInit();
             this.EnemyBossGroupBox.ResumeLayout(false);
             this.EnemyBossGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.bossMultiplier)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bossMultiplier)).EndInit();
             this.digibeetleGroupBox.ResumeLayout(false);
             this.digibeetleGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.digibeetlPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.digibeetlPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         private System.Windows.Forms.GroupBox battleFixGroupBox;
-        private System.Windows.Forms.RadioButton battleFixPatchRadioButton;
         private System.Windows.Forms.RadioButton battleFixUnpatchRadioButton;
+        private System.Windows.Forms.RadioButton battleFixPatchRadioButton;
         private System.Windows.Forms.CheckBox battleFixPatcherCheckBox;
         private System.Windows.Forms.CheckBox noEncounterPatcherCheckBox;
         private System.Windows.Forms.GroupBox battleEnhancementGroupBox;
