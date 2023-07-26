@@ -20,7 +20,11 @@ namespace dw2_exp_multiplier.View
             InitializeComponent();
             digibeetleComboBox.DisplayMember = "Value";
             digibeetleComboBox.ValueMember = "Key";
-            digibeetleComboBox.DataSource = new BindingSource(DigiBeetlePatcher.getDigiBeetleIds(ref this.imageList, "Resources\\digi-beetle.zip"), null);
+            try
+            {
+                digibeetleComboBox.DataSource = new BindingSource(DigiBeetlePatcher.getDigiBeetleIds(ref this.imageList, "Resources\\digi-beetle.zip"), null);
+            }
+            catch (Exception e) { }
             battleEnhancementGroupBox.Text += BattleEnhancementPatcher.VERSION;
             battleFixGroupBox.Text += BattleFixPatcher.VERSION;
         }

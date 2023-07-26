@@ -35,7 +35,7 @@ namespace dw2_exp_multiplier.View
                         byte[] buffer = File.ReadAllBytes(file.Value);
                         PsxSector.WriteSector(ref fs, ref buffer, DW2Slus.GetLba(file.Key), DW2Slus.GetSize(file.Key));
                     }
-                    MessageBox.Show("Success");
+                    MessageBox.Show("File(s) Inserted Successfully");
                 }
                 catch (Exception ex)
                 {
@@ -57,7 +57,7 @@ namespace dw2_exp_multiplier.View
                 FileStream fs = null;
                 try
                 {
-                    fs = new FileStream(filename, FileMode.Open, FileAccess.ReadWrite);
+                    fs = new FileStream(filename, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
                     DW2Slus.ValidImageFile(ref fs);
      
                     Dictionary<int, string> fileIndexes = this.ParseIndex(fbd.SelectedPath);
@@ -68,7 +68,7 @@ namespace dw2_exp_multiplier.View
                         File.WriteAllBytes(file.Value, buffer);
                     }
                     
-                    MessageBox.Show("Success");
+                    MessageBox.Show("File(s) Extracted Successfully");
                 }
                 catch (Exception ex)
                 {
