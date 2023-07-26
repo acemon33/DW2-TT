@@ -33,16 +33,20 @@
             this.saveEditorModeMenu = new System.Windows.Forms.ToolStripDropDownButton();
             this.vanillaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.improvementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.alternativeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resurrectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.alternativeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.faithfulToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.optionsToolStripDropDownButton = new System.Windows.Forms.ToolStripDropDownButton();
+            this.backupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.restoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.about = new System.Windows.Forms.ToolStripButton();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.miscView = new dw2_exp_multiplier.View.MiscView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.saveEditorView = new dw2_exp_multiplier.View.SaveEditorView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.fileManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.miscView = new dw2_exp_multiplier.View.MiscView();
+            this.saveEditorView = new dw2_exp_multiplier.View.SaveEditorView();
             this.fileManagerView = new dw2_exp_multiplier.View.FileManagerView();
             this.menuBar.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -53,7 +57,10 @@
             // 
             // menuBar
             // 
-            this.menuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {this.saveEditorModeMenu, this.about});
+            this.menuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveEditorModeMenu,
+            this.optionsToolStripDropDownButton,
+            this.about});
             this.menuBar.Location = new System.Drawing.Point(0, 0);
             this.menuBar.Name = "menuBar";
             this.menuBar.Size = new System.Drawing.Size(460, 25);
@@ -63,8 +70,13 @@
             // saveEditorModeMenu
             // 
             this.saveEditorModeMenu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.saveEditorModeMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {this.vanillaToolStripMenuItem, this.improvementToolStripMenuItem, this.resurrectionToolStripMenuItem, this.alternativeToolStripMenuItem, this.faithfulToolStripMenuItem});
-            this.saveEditorModeMenu.Image = ((System.Drawing.Image) (resources.GetObject("saveEditorModeMenu.Image")));
+            this.saveEditorModeMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.vanillaToolStripMenuItem,
+            this.improvementToolStripMenuItem,
+            this.resurrectionToolStripMenuItem,
+            this.alternativeToolStripMenuItem,
+            this.faithfulToolStripMenuItem});
+            this.saveEditorModeMenu.Image = ((System.Drawing.Image)(resources.GetObject("saveEditorModeMenu.Image")));
             this.saveEditorModeMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveEditorModeMenu.Name = "saveEditorModeMenu";
             this.saveEditorModeMenu.Size = new System.Drawing.Size(112, 22);
@@ -86,13 +98,6 @@
             this.improvementToolStripMenuItem.Text = "Improvement";
             this.improvementToolStripMenuItem.Click += new System.EventHandler(this.improvementToolStripMenuItem_Click);
             // 
-            // alternativeToolStripMenuItem
-            // 
-            this.alternativeToolStripMenuItem.Name = "alternativeToolStripMenuItem";
-            this.alternativeToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
-            this.alternativeToolStripMenuItem.Text = "Alternative";
-            this.alternativeToolStripMenuItem.Click += new System.EventHandler(this.alternativeToolStripMenuItem_Click);
-            // 
             // resurrectionToolStripMenuItem
             // 
             this.resurrectionToolStripMenuItem.Name = "resurrectionToolStripMenuItem";
@@ -100,12 +105,47 @@
             this.resurrectionToolStripMenuItem.Text = "Resurrection";
             this.resurrectionToolStripMenuItem.Click += new System.EventHandler(this.resurrectionToolStripMenuItem_Click);
             // 
+            // alternativeToolStripMenuItem
+            // 
+            this.alternativeToolStripMenuItem.Name = "alternativeToolStripMenuItem";
+            this.alternativeToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.alternativeToolStripMenuItem.Text = "Alternative";
+            this.alternativeToolStripMenuItem.Click += new System.EventHandler(this.alternativeToolStripMenuItem_Click);
+            // 
             // faithfulToolStripMenuItem
             // 
             this.faithfulToolStripMenuItem.Name = "faithfulToolStripMenuItem";
             this.faithfulToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.faithfulToolStripMenuItem.Text = "Faithful";
             this.faithfulToolStripMenuItem.Click += new System.EventHandler(this.faithfulToolStripMenuItem_Click);
+            // 
+            // optionsToolStripDropDownButton
+            // 
+            this.optionsToolStripDropDownButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.optionsToolStripDropDownButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.backupToolStripMenuItem,
+            this.restoreToolStripMenuItem,
+            this.fileManagerToolStripMenuItem});
+            this.optionsToolStripDropDownButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.optionsToolStripDropDownButton.Name = "optionsToolStripDropDownButton";
+            this.optionsToolStripDropDownButton.Size = new System.Drawing.Size(62, 22);
+            this.optionsToolStripDropDownButton.Text = "Options";
+            // 
+            // backupToolStripMenuItem
+            // 
+            this.backupToolStripMenuItem.Enabled = false;
+            this.backupToolStripMenuItem.Name = "backupToolStripMenuItem";
+            this.backupToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.backupToolStripMenuItem.Text = "Backup";
+            this.backupToolStripMenuItem.Click += new System.EventHandler(this.backupToolStripMenuItem_Click);
+            // 
+            // restoreToolStripMenuItem
+            // 
+            this.restoreToolStripMenuItem.Enabled = false;
+            this.restoreToolStripMenuItem.Name = "restoreToolStripMenuItem";
+            this.restoreToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.restoreToolStripMenuItem.Text = "Restore";
+            this.restoreToolStripMenuItem.Click += new System.EventHandler(this.restoreToolStripMenuItem_Click);
             // 
             // about
             // 
@@ -139,13 +179,6 @@
             this.tabPage1.Text = "Misc.";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // miscView
-            // 
-            this.miscView.Location = new System.Drawing.Point(3, 3);
-            this.miscView.Name = "miscView";
-            this.miscView.Size = new System.Drawing.Size(447, 410);
-            this.miscView.TabIndex = 0;
-            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.saveEditorView);
@@ -157,13 +190,6 @@
             this.tabPage2.Text = "Save Editor";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // saveEditorView
-            // 
-            this.saveEditorView.Location = new System.Drawing.Point(3, 5);
-            this.saveEditorView.Name = "saveEditorView";
-            this.saveEditorView.Size = new System.Drawing.Size(444, 402);
-            this.saveEditorView.TabIndex = 0;
-            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.fileManagerView);
@@ -174,6 +200,28 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "File Manager";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // fileManagerToolStripMenuItem
+            // 
+            this.fileManagerToolStripMenuItem.CheckOnClick = true;
+            this.fileManagerToolStripMenuItem.Name = "fileManagerToolStripMenuItem";
+            this.fileManagerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fileManagerToolStripMenuItem.Text = "File Manager";
+            this.fileManagerToolStripMenuItem.Click += new System.EventHandler(this.fileManagerToolStripMenuItem_Click);
+            // 
+            // miscView
+            // 
+            this.miscView.Location = new System.Drawing.Point(3, 3);
+            this.miscView.Name = "miscView";
+            this.miscView.Size = new System.Drawing.Size(447, 410);
+            this.miscView.TabIndex = 0;
+            // 
+            // saveEditorView
+            // 
+            this.saveEditorView.Location = new System.Drawing.Point(3, 5);
+            this.saveEditorView.Name = "saveEditorView";
+            this.saveEditorView.Size = new System.Drawing.Size(444, 402);
+            this.saveEditorView.TabIndex = 0;
             // 
             // fileManagerView
             // 
@@ -190,7 +238,7 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Main";
             this.Tag = "";
@@ -203,6 +251,7 @@
             this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion
@@ -222,6 +271,10 @@
         private dw2_exp_multiplier.View.SaveEditorView saveEditorView;
         private dw2_exp_multiplier.View.FileManagerView fileManagerView;
         private dw2_exp_multiplier.View.MiscView miscView;
+        private System.Windows.Forms.ToolStripDropDownButton optionsToolStripDropDownButton;
+        private System.Windows.Forms.ToolStripMenuItem backupToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem restoreToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fileManagerToolStripMenuItem;
     }
 }
 

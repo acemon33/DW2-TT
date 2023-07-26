@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using dw2_exp_multiplier.Base;
 
 
 namespace dw2_exp_multiplier
@@ -35,7 +36,16 @@ namespace dw2_exp_multiplier
         public static Dictionary<string, string> SavePointLocationList = new Dictionary<string, string>();
 
         public static String mode = "Vanilla";
-
+        
+        public static List<int> backupRestoreFileIndexes = new List<int>()
+        {
+            FileIndex.STAG2000_PRO,
+            FileIndex.STAG3000_PRO,
+            FileIndex.STAG4000_PRO,
+            FileIndex.ENEMYSET_BIN,
+            FileIndex.DATA4000_BIN,
+        };
+        
         public static void SetVanillaMode() { mode = "Vanilla"; }
         public static void SetImprovementMode() { mode = "Improvement"; }
         public static void SetResurrectionMode() { mode = "Resurrection"; }

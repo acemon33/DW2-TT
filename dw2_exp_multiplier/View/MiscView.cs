@@ -253,6 +253,7 @@ namespace dw2_exp_multiplier.View
                 groupBox5.Enabled = true;
                 battleEnhancementGroupBox.Enabled = true;
                 battleFixGroupBox.Enabled = true;
+                Main.GetMain().UnHideOptions();
             }
             else
             {
@@ -265,6 +266,7 @@ namespace dw2_exp_multiplier.View
                 groupBox5.Enabled = false;
                 battleEnhancementGroupBox.Enabled = false;
                 battleFixGroupBox.Enabled = false;
+                Main.GetMain().HideOptions();
             }
         }
 
@@ -320,6 +322,11 @@ namespace dw2_exp_multiplier.View
             string filename = (e.Data.GetData(DataFormats.FileDrop) as string[])[0];
             if (filename.Contains(".bin") || filename.Contains(".BIN")) return filename;
             return "";
+        }
+
+        public string GetDw2BinPath()
+        {
+            return this.dw2TextBox.Text;
         }
         #endregion
 
