@@ -25,8 +25,6 @@ namespace dw2_exp_multiplier.View
                 digibeetleComboBox.DataSource = new BindingSource(DigiBeetlePatcher.getDigiBeetleIds(ref this.imageList, "Resources\\digi-beetle.zip"), null);
             }
             catch (Exception e) { }
-            battleEnhancementGroupBox.Text += BattleEnhancementPatcher.VERSION;
-            battleFixGroupBox.Text += BattleFixPatcher.VERSION;
         }
 
         #region Button Events Region
@@ -95,46 +93,31 @@ namespace dw2_exp_multiplier.View
                 if (dnaLabsPatcherCheckBox.Checked)
                 {
                     DnaLabsPatcher dnaLabsPatcher = new DnaLabsPatcher(ref fs);
-                    if (dnaLabsPatchRadioButton.Checked)
-                        dnaLabsPatcher.Patch(ref fs);
-                    else
-                        dnaLabsPatcher.UnPatch(ref fs);
+                    dnaLabsPatcher.Patch(ref fs);
                 }
                 
                 if (digimonGiftPatcherCheckBox.Checked)
                 {
                     DigimonGiftPatcher digimonGiftPatcher = new DigimonGiftPatcher(ref fs);
-                    if (digimonGiftPatchRadioButton.Checked)
-                        digimonGiftPatcher.Patch(ref fs);
-                    else
-                        digimonGiftPatcher.UnPatch(ref fs);
+                    digimonGiftPatcher.Patch(ref fs);
                 }
 
                 if (digiLinePatcherCheckBox.Checked)
                 {
                     DigiLinePatcher digiLinePatcher = new DigiLinePatcher(ref fs);
-                    if (digiLinePatchRadioButton.Checked)
-                        digiLinePatcher.Patch(ref fs);
-                    else
-                        digiLinePatcher.UnPatch(ref fs);
+                    digiLinePatcher.Patch(ref fs);
                 }
                                 
                 if (battleEnhancementPatcherCheckBox.Checked)
                 {
                     BattleEnhancementPatcher battleEnhancementPatcher = new BattleEnhancementPatcher(ref fs);
-                    if (battleEnhancementPatchRadioButton.Checked)
-                        battleEnhancementPatcher.Patch(ref fs);
-                    else
-                        battleEnhancementPatcher.UnPatch(ref fs);
+                    battleEnhancementPatcher.Patch(ref fs);
                 }
                                 
                 if (battleFixPatcherCheckBox.Checked)
                 {
                     BattleFixPatcher battleFixPatcher = new BattleFixPatcher(ref fs);
-                    if (battleFixPatchRadioButton.Checked)
-                        battleFixPatcher.Patch(ref fs);
-                    else
-                        battleFixPatcher.UnPatch(ref fs);
+                    battleFixPatcher.Patch(ref fs);
                 }
                                 
                 MessageBox.Show("The file has been Saved Successfully", "Enjoy ^_^");
@@ -248,11 +231,8 @@ namespace dw2_exp_multiplier.View
                 exportButton.Enabled = true;
                 unHideAAA.Enabled = true;
                 digibeetleComboBox.Enabled = true;
-                groupBox3.Enabled = true;
-                groupBox4.Enabled = true;
                 groupBox5.Enabled = true;
-                battleEnhancementGroupBox.Enabled = true;
-                battleFixGroupBox.Enabled = true;
+                battlePatchesGroupBox.Enabled = true;
                 Main.GetMain().UnHideOptions();
             }
             else
@@ -261,11 +241,8 @@ namespace dw2_exp_multiplier.View
                 exportButton.Enabled = false;
                 unHideAAA.Enabled = false;
                 digibeetleComboBox.Enabled = false;
-                groupBox3.Enabled = false;
-                groupBox4.Enabled = false;
                 groupBox5.Enabled = false;
-                battleEnhancementGroupBox.Enabled = false;
-                battleFixGroupBox.Enabled = false;
+                battlePatchesGroupBox.Enabled = false;
                 Main.GetMain().HideOptions();
             }
         }
@@ -330,116 +307,37 @@ namespace dw2_exp_multiplier.View
         }
         #endregion
 
-        #region Changed Events Region
-        private void digibeetleComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string id = ((KeyValuePair<string, string>)digibeetleComboBox.SelectedItem).Key;
-            if (imageList.ContainsKey(id)) this.digibeetlPictureBox.Image = imageList[id];
-            else this.digibeetlPictureBox.Image = null;
-        }
-        
-        private void dnaLabsPatcherCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (dnaLabsPatcherCheckBox.Checked)
-            {
-                dnaLabsPatchRadioButton.Enabled = true;
-                dnaLabsUnpatchRadioButton.Enabled = true;
-            }
-            else
-            {
-                dnaLabsPatchRadioButton.Enabled = false;
-                dnaLabsUnpatchRadioButton.Enabled = false;
-            }
-        }
-        
-        private void digimonGiftPatcherCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (digimonGiftPatcherCheckBox.Checked)
-            {
-                digimonGiftPatchRadioButton.Enabled = true;
-                digimonGiftUnpatchRadioButton.Enabled = true;
-            }
-            else
-            {
-                digimonGiftPatchRadioButton.Enabled = false;
-                digimonGiftUnpatchRadioButton.Enabled = false;
-            }
-        }
-
-        private void digiLinePatcherCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (digiLinePatcherCheckBox.Checked)
-            {
-                digiLinePatchRadioButton.Enabled = true;
-                digiLineUnpatchRadioButton.Enabled = true;
-            }
-            else
-            {
-                digiLinePatchRadioButton.Enabled = false;
-                digiLineUnpatchRadioButton.Enabled = false;
-            }
-        }
-        
-        private void battleEnhancementPatcherCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (battleEnhancementPatcherCheckBox.Checked)
-            {
-                battleEnhancementPatchRadioButton.Enabled = true;
-                battleEnhancementUnpatchRadioButton.Enabled = true;
-            }
-            else
-            {
-                battleEnhancementPatchRadioButton.Enabled = false;
-                battleEnhancementUnpatchRadioButton.Enabled = false;
-            }
-        }
-        
-        private void battleFixPatcherCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (battleFixPatcherCheckBox.Checked)
-            {
-                battleFixPatchRadioButton.Enabled = true;
-                battleFixUnpatchRadioButton.Enabled = true;
-            }
-            else
-            {
-                battleFixPatchRadioButton.Enabled = false;
-                battleFixUnpatchRadioButton.Enabled = false;
-            }
-        }
-        #endregion
-
         #region MouseHover Events Region
-        private void battleEnhancementGroupBox_MouseHover(object sender, EventArgs e)
-        {
-            Main.HintToolTip.Show(BattleEnhancementPatcher.TOOLTIP, battleEnhancementGroupBox,-35, -35, 5000);
-        }
-
-        private void battleFixGroupBox_MouseHover(object sender, EventArgs e)
-        {
-            Main.HintToolTip.Show(BattleFixPatcher.TOOLTIP, battleFixGroupBox,-35, -35, 5000);
-        }
-
-        private void groupBox5_MouseHover(object sender, EventArgs e)
-        {
-            Main.HintToolTip.Show(DigiLinePatcher.TOOLTIP, groupBox5,-25, -25, 5000);
-        }
-
         private void noEncounterPatcherCheckBox_MouseHover(object sender, EventArgs e)
         {
             Main.HintToolTip.Show(UnmoveableEnemy.TOOLTIP, noEncounterPatcherCheckBox,-25, -25, 5000);
         }
 
-        private void groupBox4_MouseHover(object sender, EventArgs e)
+        private void battleEnhancementPatcherCheckBox_MouseHover(object sender, EventArgs e)
         {
-            Main.HintToolTip.Show(DigimonGiftPatcher.TOOLTIP, groupBox4,-25, -25, 5000);
+            Main.HintToolTip.Show(BattleEnhancementPatcher.TOOLTIP, battleEnhancementPatcherCheckBox, 0, -25, 5000);
         }
 
-        private void groupBox3_MouseHover(object sender, EventArgs e)
+        private void battleFixPatcherCheckBox_MouseHover(object sender, EventArgs e)
         {
-            Main.HintToolTip.Show(DnaLabsPatcher.TOOLTIP, groupBox3,-25, -25, 5000);
+            Main.HintToolTip.Show(BattleFixPatcher.TOOLTIP, battleFixPatcherCheckBox, 0, -25, 5000);
+        }
+
+        private void dnaLabsPatcherCheckBox_MouseHover(object sender, EventArgs e)
+        {
+            Main.HintToolTip.Show(DnaLabsPatcher.TOOLTIP, dnaLabsPatcherCheckBox, 0, -25, 5000);
+        }
+
+        private void digiLinePatcherCheckBox_MouseHover(object sender, EventArgs e)
+        {
+            Main.HintToolTip.Show(DigiLinePatcher.TOOLTIP, digiLinePatcherCheckBox, 0, -25, 5000);
+        }
+
+        private void digimonGiftPatcherCheckBox_MouseHover(object sender, EventArgs e)
+        {
+            Main.HintToolTip.Show(DigimonGiftPatcher.TOOLTIP, digimonGiftPatcherCheckBox, 0, -25, 5000);
         }
         #endregion
     }
-    
+
 }

@@ -31,27 +31,14 @@ namespace dw2_exp_multiplier.View
         /// </summary>
         private void InitializeComponent()
         {
-            this.battleFixGroupBox = new System.Windows.Forms.GroupBox();
-            this.battleFixUnpatchRadioButton = new System.Windows.Forms.RadioButton();
-            this.battleFixPatchRadioButton = new System.Windows.Forms.RadioButton();
+            this.battlePatchesGroupBox = new System.Windows.Forms.GroupBox();
             this.battleFixPatcherCheckBox = new System.Windows.Forms.CheckBox();
-            this.noEncounterPatcherCheckBox = new System.Windows.Forms.CheckBox();
-            this.battleEnhancementGroupBox = new System.Windows.Forms.GroupBox();
-            this.battleEnhancementUnpatchRadioButton = new System.Windows.Forms.RadioButton();
-            this.battleEnhancementPatchRadioButton = new System.Windows.Forms.RadioButton();
             this.battleEnhancementPatcherCheckBox = new System.Windows.Forms.CheckBox();
+            this.noEncounterPatcherCheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.digiLineUnpatchRadioButton = new System.Windows.Forms.RadioButton();
-            this.digiLinePatchRadioButton = new System.Windows.Forms.RadioButton();
             this.digiLinePatcherCheckBox = new System.Windows.Forms.CheckBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.digimonGiftUnpatchRadioButton = new System.Windows.Forms.RadioButton();
-            this.digimonGiftPatchRadioButton = new System.Windows.Forms.RadioButton();
-            this.digimonGiftPatcherCheckBox = new System.Windows.Forms.CheckBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dnaLabsUnpatchRadioButton = new System.Windows.Forms.RadioButton();
-            this.dnaLabsPatchRadioButton = new System.Windows.Forms.RadioButton();
             this.dnaLabsPatcherCheckBox = new System.Windows.Forms.CheckBox();
+            this.digimonGiftPatcherCheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.multiplierLabel = new System.Windows.Forms.Label();
             this.multiplier = new System.Windows.Forms.NumericUpDown();
@@ -73,11 +60,8 @@ namespace dw2_exp_multiplier.View
             this.enemysetTextBox = new System.Windows.Forms.TextBox();
             this.importButton = new System.Windows.Forms.Button();
             this.enemysetBrowseButton = new System.Windows.Forms.Button();
-            this.battleFixGroupBox.SuspendLayout();
-            this.battleEnhancementGroupBox.SuspendLayout();
+            this.battlePatchesGroupBox.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.multiplier)).BeginInit();
             this.EnemyBossGroupBox.SuspendLayout();
@@ -86,58 +70,42 @@ namespace dw2_exp_multiplier.View
             ((System.ComponentModel.ISupportInitialize)(this.digibeetlPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // battleFixGroupBox
+            // battlePatchesGroupBox
             // 
-            this.battleFixGroupBox.Controls.Add(this.battleFixUnpatchRadioButton);
-            this.battleFixGroupBox.Controls.Add(this.battleFixPatchRadioButton);
-            this.battleFixGroupBox.Controls.Add(this.battleFixPatcherCheckBox);
-            this.battleFixGroupBox.Enabled = false;
-            this.battleFixGroupBox.Location = new System.Drawing.Point(234, 343);
-            this.battleFixGroupBox.Name = "battleFixGroupBox";
-            this.battleFixGroupBox.Size = new System.Drawing.Size(200, 52);
-            this.battleFixGroupBox.TabIndex = 47;
-            this.battleFixGroupBox.TabStop = false;
-            this.battleFixGroupBox.Text = "Battle Fix v";
-            this.battleFixGroupBox.MouseHover += new System.EventHandler(this.battleFixGroupBox_MouseHover);
-            // 
-            // battleFixUnpatchRadioButton
-            // 
-            this.battleFixUnpatchRadioButton.AutoSize = true;
-            this.battleFixUnpatchRadioButton.Enabled = false;
-            this.battleFixUnpatchRadioButton.Location = new System.Drawing.Point(135, 22);
-            this.battleFixUnpatchRadioButton.Name = "battleFixUnpatchRadioButton";
-            this.battleFixUnpatchRadioButton.Size = new System.Drawing.Size(65, 17);
-            this.battleFixUnpatchRadioButton.TabIndex = 25;
-            this.battleFixUnpatchRadioButton.Text = "Unpatch";
-            this.battleFixUnpatchRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // battleFixPatchRadioButton
-            // 
-            this.battleFixPatchRadioButton.AutoSize = true;
-            this.battleFixPatchRadioButton.Checked = true;
-            this.battleFixPatchRadioButton.Enabled = false;
-            this.battleFixPatchRadioButton.Location = new System.Drawing.Point(77, 22);
-            this.battleFixPatchRadioButton.Name = "battleFixPatchRadioButton";
-            this.battleFixPatchRadioButton.Size = new System.Drawing.Size(52, 17);
-            this.battleFixPatchRadioButton.TabIndex = 24;
-            this.battleFixPatchRadioButton.TabStop = true;
-            this.battleFixPatchRadioButton.Text = "Patch";
-            this.battleFixPatchRadioButton.UseVisualStyleBackColor = true;
+            this.battlePatchesGroupBox.Controls.Add(this.battleFixPatcherCheckBox);
+            this.battlePatchesGroupBox.Controls.Add(this.battleEnhancementPatcherCheckBox);
+            this.battlePatchesGroupBox.Enabled = false;
+            this.battlePatchesGroupBox.Location = new System.Drawing.Point(0, 228);
+            this.battlePatchesGroupBox.Name = "battlePatchesGroupBox";
+            this.battlePatchesGroupBox.Size = new System.Drawing.Size(200, 121);
+            this.battlePatchesGroupBox.TabIndex = 47;
+            this.battlePatchesGroupBox.TabStop = false;
+            this.battlePatchesGroupBox.Text = "Battle Patches";
             // 
             // battleFixPatcherCheckBox
             // 
-            this.battleFixPatcherCheckBox.Location = new System.Drawing.Point(8, 19);
+            this.battleFixPatcherCheckBox.Location = new System.Drawing.Point(9, 24);
             this.battleFixPatcherCheckBox.Name = "battleFixPatcherCheckBox";
-            this.battleFixPatcherCheckBox.Size = new System.Drawing.Size(72, 24);
+            this.battleFixPatcherCheckBox.Size = new System.Drawing.Size(105, 24);
             this.battleFixPatcherCheckBox.TabIndex = 23;
-            this.battleFixPatcherCheckBox.Text = "Enable:";
+            this.battleFixPatcherCheckBox.Text = "Fix";
             this.battleFixPatcherCheckBox.UseVisualStyleBackColor = true;
-            this.battleFixPatcherCheckBox.CheckedChanged += new System.EventHandler(this.battleFixPatcherCheckBox_CheckedChanged);
+            this.battleFixPatcherCheckBox.MouseHover += new System.EventHandler(this.battleFixPatcherCheckBox_MouseHover);
+            // 
+            // battleEnhancementPatcherCheckBox
+            // 
+            this.battleEnhancementPatcherCheckBox.Location = new System.Drawing.Point(9, 54);
+            this.battleEnhancementPatcherCheckBox.Name = "battleEnhancementPatcherCheckBox";
+            this.battleEnhancementPatcherCheckBox.Size = new System.Drawing.Size(105, 24);
+            this.battleEnhancementPatcherCheckBox.TabIndex = 23;
+            this.battleEnhancementPatcherCheckBox.Text = "Enhancement";
+            this.battleEnhancementPatcherCheckBox.UseVisualStyleBackColor = true;
+            this.battleEnhancementPatcherCheckBox.MouseHover += new System.EventHandler(this.battleEnhancementPatcherCheckBox_MouseHover);
             // 
             // noEncounterPatcherCheckBox
             // 
             this.noEncounterPatcherCheckBox.Enabled = false;
-            this.noEncounterPatcherCheckBox.Location = new System.Drawing.Point(9, 346);
+            this.noEncounterPatcherCheckBox.Location = new System.Drawing.Point(239, 355);
             this.noEncounterPatcherCheckBox.Name = "noEncounterPatcherCheckBox";
             this.noEncounterPatcherCheckBox.Size = new System.Drawing.Size(187, 24);
             this.noEncounterPatcherCheckBox.TabIndex = 48;
@@ -145,197 +113,48 @@ namespace dw2_exp_multiplier.View
             this.noEncounterPatcherCheckBox.UseVisualStyleBackColor = true;
             this.noEncounterPatcherCheckBox.MouseHover += new System.EventHandler(this.noEncounterPatcherCheckBox_MouseHover);
             // 
-            // battleEnhancementGroupBox
-            // 
-            this.battleEnhancementGroupBox.Controls.Add(this.battleEnhancementUnpatchRadioButton);
-            this.battleEnhancementGroupBox.Controls.Add(this.battleEnhancementPatchRadioButton);
-            this.battleEnhancementGroupBox.Controls.Add(this.battleEnhancementPatcherCheckBox);
-            this.battleEnhancementGroupBox.Enabled = false;
-            this.battleEnhancementGroupBox.Location = new System.Drawing.Point(234, 286);
-            this.battleEnhancementGroupBox.Name = "battleEnhancementGroupBox";
-            this.battleEnhancementGroupBox.Size = new System.Drawing.Size(200, 52);
-            this.battleEnhancementGroupBox.TabIndex = 46;
-            this.battleEnhancementGroupBox.TabStop = false;
-            this.battleEnhancementGroupBox.Text = "Battle Enhancement v";
-            this.battleEnhancementGroupBox.MouseHover += new System.EventHandler(this.battleEnhancementGroupBox_MouseHover);
-            // 
-            // battleEnhancementUnpatchRadioButton
-            // 
-            this.battleEnhancementUnpatchRadioButton.AutoSize = true;
-            this.battleEnhancementUnpatchRadioButton.Enabled = false;
-            this.battleEnhancementUnpatchRadioButton.Location = new System.Drawing.Point(135, 22);
-            this.battleEnhancementUnpatchRadioButton.Name = "battleEnhancementUnpatchRadioButton";
-            this.battleEnhancementUnpatchRadioButton.Size = new System.Drawing.Size(65, 17);
-            this.battleEnhancementUnpatchRadioButton.TabIndex = 25;
-            this.battleEnhancementUnpatchRadioButton.Text = "Unpatch";
-            this.battleEnhancementUnpatchRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // battleEnhancementPatchRadioButton
-            // 
-            this.battleEnhancementPatchRadioButton.AutoSize = true;
-            this.battleEnhancementPatchRadioButton.Checked = true;
-            this.battleEnhancementPatchRadioButton.Enabled = false;
-            this.battleEnhancementPatchRadioButton.Location = new System.Drawing.Point(77, 22);
-            this.battleEnhancementPatchRadioButton.Name = "battleEnhancementPatchRadioButton";
-            this.battleEnhancementPatchRadioButton.Size = new System.Drawing.Size(52, 17);
-            this.battleEnhancementPatchRadioButton.TabIndex = 24;
-            this.battleEnhancementPatchRadioButton.TabStop = true;
-            this.battleEnhancementPatchRadioButton.Text = "Patch";
-            this.battleEnhancementPatchRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // battleEnhancementPatcherCheckBox
-            // 
-            this.battleEnhancementPatcherCheckBox.Location = new System.Drawing.Point(8, 19);
-            this.battleEnhancementPatcherCheckBox.Name = "battleEnhancementPatcherCheckBox";
-            this.battleEnhancementPatcherCheckBox.Size = new System.Drawing.Size(72, 24);
-            this.battleEnhancementPatcherCheckBox.TabIndex = 23;
-            this.battleEnhancementPatcherCheckBox.Text = "Enable:";
-            this.battleEnhancementPatcherCheckBox.UseVisualStyleBackColor = true;
-            this.battleEnhancementPatcherCheckBox.CheckedChanged += new System.EventHandler(this.battleEnhancementPatcherCheckBox_CheckedChanged);
-            // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.digiLineUnpatchRadioButton);
-            this.groupBox5.Controls.Add(this.digiLinePatchRadioButton);
             this.groupBox5.Controls.Add(this.digiLinePatcherCheckBox);
+            this.groupBox5.Controls.Add(this.dnaLabsPatcherCheckBox);
+            this.groupBox5.Controls.Add(this.digimonGiftPatcherCheckBox);
             this.groupBox5.Enabled = false;
             this.groupBox5.Location = new System.Drawing.Point(233, 228);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(200, 52);
+            this.groupBox5.Size = new System.Drawing.Size(200, 121);
             this.groupBox5.TabIndex = 45;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Digi-Line";
-            this.groupBox5.MouseHover += new System.EventHandler(this.groupBox5_MouseHover);
-            // 
-            // digiLineUnpatchRadioButton
-            // 
-            this.digiLineUnpatchRadioButton.AutoSize = true;
-            this.digiLineUnpatchRadioButton.Enabled = false;
-            this.digiLineUnpatchRadioButton.Location = new System.Drawing.Point(135, 22);
-            this.digiLineUnpatchRadioButton.Name = "digiLineUnpatchRadioButton";
-            this.digiLineUnpatchRadioButton.Size = new System.Drawing.Size(65, 17);
-            this.digiLineUnpatchRadioButton.TabIndex = 25;
-            this.digiLineUnpatchRadioButton.Text = "Unpatch";
-            this.digiLineUnpatchRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // digiLinePatchRadioButton
-            // 
-            this.digiLinePatchRadioButton.AutoSize = true;
-            this.digiLinePatchRadioButton.Checked = true;
-            this.digiLinePatchRadioButton.Enabled = false;
-            this.digiLinePatchRadioButton.Location = new System.Drawing.Point(77, 22);
-            this.digiLinePatchRadioButton.Name = "digiLinePatchRadioButton";
-            this.digiLinePatchRadioButton.Size = new System.Drawing.Size(52, 17);
-            this.digiLinePatchRadioButton.TabIndex = 24;
-            this.digiLinePatchRadioButton.TabStop = true;
-            this.digiLinePatchRadioButton.Text = "Patch";
-            this.digiLinePatchRadioButton.UseVisualStyleBackColor = true;
+            this.groupBox5.Text = "Misc. Patches";
             // 
             // digiLinePatcherCheckBox
             // 
-            this.digiLinePatcherCheckBox.Location = new System.Drawing.Point(8, 19);
+            this.digiLinePatcherCheckBox.Location = new System.Drawing.Point(15, 44);
             this.digiLinePatcherCheckBox.Name = "digiLinePatcherCheckBox";
-            this.digiLinePatcherCheckBox.Size = new System.Drawing.Size(72, 24);
+            this.digiLinePatcherCheckBox.Size = new System.Drawing.Size(125, 24);
             this.digiLinePatcherCheckBox.TabIndex = 23;
-            this.digiLinePatcherCheckBox.Text = "Enable:";
+            this.digiLinePatcherCheckBox.Text = "Digi-Line";
             this.digiLinePatcherCheckBox.UseVisualStyleBackColor = true;
-            this.digiLinePatcherCheckBox.CheckedChanged += new System.EventHandler(this.digiLinePatcherCheckBox_CheckedChanged);
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.digimonGiftUnpatchRadioButton);
-            this.groupBox4.Controls.Add(this.digimonGiftPatchRadioButton);
-            this.groupBox4.Controls.Add(this.digimonGiftPatcherCheckBox);
-            this.groupBox4.Enabled = false;
-            this.groupBox4.Location = new System.Drawing.Point(1, 286);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(200, 52);
-            this.groupBox4.TabIndex = 44;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Digimon Gift";
-            this.groupBox4.MouseHover += new System.EventHandler(this.groupBox4_MouseHover);
-            // 
-            // digimonGiftUnpatchRadioButton
-            // 
-            this.digimonGiftUnpatchRadioButton.AutoSize = true;
-            this.digimonGiftUnpatchRadioButton.Enabled = false;
-            this.digimonGiftUnpatchRadioButton.Location = new System.Drawing.Point(135, 22);
-            this.digimonGiftUnpatchRadioButton.Name = "digimonGiftUnpatchRadioButton";
-            this.digimonGiftUnpatchRadioButton.Size = new System.Drawing.Size(65, 17);
-            this.digimonGiftUnpatchRadioButton.TabIndex = 25;
-            this.digimonGiftUnpatchRadioButton.Text = "Unpatch";
-            this.digimonGiftUnpatchRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // digimonGiftPatchRadioButton
-            // 
-            this.digimonGiftPatchRadioButton.AutoSize = true;
-            this.digimonGiftPatchRadioButton.Checked = true;
-            this.digimonGiftPatchRadioButton.Enabled = false;
-            this.digimonGiftPatchRadioButton.Location = new System.Drawing.Point(77, 22);
-            this.digimonGiftPatchRadioButton.Name = "digimonGiftPatchRadioButton";
-            this.digimonGiftPatchRadioButton.Size = new System.Drawing.Size(52, 17);
-            this.digimonGiftPatchRadioButton.TabIndex = 24;
-            this.digimonGiftPatchRadioButton.TabStop = true;
-            this.digimonGiftPatchRadioButton.Text = "Patch";
-            this.digimonGiftPatchRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // digimonGiftPatcherCheckBox
-            // 
-            this.digimonGiftPatcherCheckBox.Location = new System.Drawing.Point(8, 19);
-            this.digimonGiftPatcherCheckBox.Name = "digimonGiftPatcherCheckBox";
-            this.digimonGiftPatcherCheckBox.Size = new System.Drawing.Size(72, 24);
-            this.digimonGiftPatcherCheckBox.TabIndex = 23;
-            this.digimonGiftPatcherCheckBox.Text = "Enable:";
-            this.digimonGiftPatcherCheckBox.UseVisualStyleBackColor = true;
-            this.digimonGiftPatcherCheckBox.CheckedChanged += new System.EventHandler(this.digimonGiftPatcherCheckBox_CheckedChanged);
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.dnaLabsUnpatchRadioButton);
-            this.groupBox3.Controls.Add(this.dnaLabsPatchRadioButton);
-            this.groupBox3.Controls.Add(this.dnaLabsPatcherCheckBox);
-            this.groupBox3.Enabled = false;
-            this.groupBox3.Location = new System.Drawing.Point(1, 228);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(200, 52);
-            this.groupBox3.TabIndex = 42;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "DNA Labs";
-            this.groupBox3.MouseHover += new System.EventHandler(this.groupBox3_MouseHover);
-            // 
-            // dnaLabsUnpatchRadioButton
-            // 
-            this.dnaLabsUnpatchRadioButton.AutoSize = true;
-            this.dnaLabsUnpatchRadioButton.Enabled = false;
-            this.dnaLabsUnpatchRadioButton.Location = new System.Drawing.Point(135, 22);
-            this.dnaLabsUnpatchRadioButton.Name = "dnaLabsUnpatchRadioButton";
-            this.dnaLabsUnpatchRadioButton.Size = new System.Drawing.Size(65, 17);
-            this.dnaLabsUnpatchRadioButton.TabIndex = 25;
-            this.dnaLabsUnpatchRadioButton.Text = "Unpatch";
-            this.dnaLabsUnpatchRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // dnaLabsPatchRadioButton
-            // 
-            this.dnaLabsPatchRadioButton.AutoSize = true;
-            this.dnaLabsPatchRadioButton.Checked = true;
-            this.dnaLabsPatchRadioButton.Enabled = false;
-            this.dnaLabsPatchRadioButton.Location = new System.Drawing.Point(77, 22);
-            this.dnaLabsPatchRadioButton.Name = "dnaLabsPatchRadioButton";
-            this.dnaLabsPatchRadioButton.Size = new System.Drawing.Size(52, 17);
-            this.dnaLabsPatchRadioButton.TabIndex = 24;
-            this.dnaLabsPatchRadioButton.TabStop = true;
-            this.dnaLabsPatchRadioButton.Text = "Patch";
-            this.dnaLabsPatchRadioButton.UseVisualStyleBackColor = true;
+            this.digiLinePatcherCheckBox.MouseHover += new System.EventHandler(this.digiLinePatcherCheckBox_MouseHover);
             // 
             // dnaLabsPatcherCheckBox
             // 
-            this.dnaLabsPatcherCheckBox.Location = new System.Drawing.Point(8, 19);
+            this.dnaLabsPatcherCheckBox.Location = new System.Drawing.Point(15, 16);
             this.dnaLabsPatcherCheckBox.Name = "dnaLabsPatcherCheckBox";
-            this.dnaLabsPatcherCheckBox.Size = new System.Drawing.Size(72, 24);
+            this.dnaLabsPatcherCheckBox.Size = new System.Drawing.Size(125, 24);
             this.dnaLabsPatcherCheckBox.TabIndex = 23;
-            this.dnaLabsPatcherCheckBox.Text = "Enable:";
+            this.dnaLabsPatcherCheckBox.Text = "DNA Labs";
             this.dnaLabsPatcherCheckBox.UseVisualStyleBackColor = true;
-            this.dnaLabsPatcherCheckBox.CheckedChanged += new System.EventHandler(this.dnaLabsPatcherCheckBox_CheckedChanged);
+            this.dnaLabsPatcherCheckBox.MouseHover += new System.EventHandler(this.dnaLabsPatcherCheckBox_MouseHover);
+            // 
+            // digimonGiftPatcherCheckBox
+            // 
+            this.digimonGiftPatcherCheckBox.Location = new System.Drawing.Point(15, 74);
+            this.digimonGiftPatcherCheckBox.Name = "digimonGiftPatcherCheckBox";
+            this.digimonGiftPatcherCheckBox.Size = new System.Drawing.Size(125, 24);
+            this.digimonGiftPatcherCheckBox.TabIndex = 23;
+            this.digimonGiftPatcherCheckBox.Text = "Digimon Gift";
+            this.digimonGiftPatcherCheckBox.UseVisualStyleBackColor = true;
+            this.digimonGiftPatcherCheckBox.MouseHover += new System.EventHandler(this.digimonGiftPatcherCheckBox_MouseHover);
             // 
             // groupBox2
             // 
@@ -482,7 +301,6 @@ namespace dw2_exp_multiplier.View
             this.digibeetleComboBox.Name = "digibeetleComboBox";
             this.digibeetleComboBox.Size = new System.Drawing.Size(155, 21);
             this.digibeetleComboBox.TabIndex = 17;
-            this.digibeetleComboBox.SelectedIndexChanged += new System.EventHandler(this.digibeetleComboBox_SelectedIndexChanged);
             // 
             // dw2BrowseButton
             // 
@@ -519,7 +337,7 @@ namespace dw2_exp_multiplier.View
             // unHideAAA
             // 
             this.unHideAAA.Enabled = false;
-            this.unHideAAA.Location = new System.Drawing.Point(9, 376);
+            this.unHideAAA.Location = new System.Drawing.Point(239, 385);
             this.unHideAAA.Name = "unHideAAA";
             this.unHideAAA.Size = new System.Drawing.Size(134, 24);
             this.unHideAAA.TabIndex = 39;
@@ -582,12 +400,9 @@ namespace dw2_exp_multiplier.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.battleFixGroupBox);
+            this.Controls.Add(this.battlePatchesGroupBox);
             this.Controls.Add(this.noEncounterPatcherCheckBox);
-            this.Controls.Add(this.battleEnhancementGroupBox);
             this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.EnemyBossGroupBox);
             this.Controls.Add(this.dw2Label);
@@ -603,16 +418,8 @@ namespace dw2_exp_multiplier.View
             this.Controls.Add(this.enemysetBrowseButton);
             this.Name = "MiscView";
             this.Size = new System.Drawing.Size(600, 468);
-            this.battleFixGroupBox.ResumeLayout(false);
-            this.battleFixGroupBox.PerformLayout();
-            this.battleEnhancementGroupBox.ResumeLayout(false);
-            this.battleEnhancementGroupBox.PerformLayout();
+            this.battlePatchesGroupBox.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.multiplier)).EndInit();
@@ -627,26 +434,13 @@ namespace dw2_exp_multiplier.View
 
         }
 
-        private System.Windows.Forms.GroupBox battleFixGroupBox;
-        private System.Windows.Forms.RadioButton battleFixUnpatchRadioButton;
-        private System.Windows.Forms.RadioButton battleFixPatchRadioButton;
+        private System.Windows.Forms.GroupBox battlePatchesGroupBox;
         private System.Windows.Forms.CheckBox battleFixPatcherCheckBox;
         private System.Windows.Forms.CheckBox noEncounterPatcherCheckBox;
-        private System.Windows.Forms.GroupBox battleEnhancementGroupBox;
-        private System.Windows.Forms.RadioButton battleEnhancementUnpatchRadioButton;
-        private System.Windows.Forms.RadioButton battleEnhancementPatchRadioButton;
         private System.Windows.Forms.CheckBox battleEnhancementPatcherCheckBox;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.RadioButton digiLineUnpatchRadioButton;
-        private System.Windows.Forms.RadioButton digiLinePatchRadioButton;
         private System.Windows.Forms.CheckBox digiLinePatcherCheckBox;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.RadioButton digimonGiftUnpatchRadioButton;
-        private System.Windows.Forms.RadioButton digimonGiftPatchRadioButton;
         private System.Windows.Forms.CheckBox digimonGiftPatcherCheckBox;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.RadioButton dnaLabsUnpatchRadioButton;
-        private System.Windows.Forms.RadioButton dnaLabsPatchRadioButton;
         private System.Windows.Forms.CheckBox dnaLabsPatcherCheckBox;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label multiplierLabel;
