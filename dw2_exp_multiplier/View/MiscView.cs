@@ -119,6 +119,12 @@ namespace dw2_exp_multiplier.View
                     BattleFixPatcher battleFixPatcher = new BattleFixPatcher(ref fs);
                     battleFixPatcher.Patch(ref fs);
                 }
+
+                if (nameExpansionPatcherCheckBox.Checked)
+                {
+                    NameExpansionPatcher nameExpansionPatcher = new NameExpansionPatcher(ref fs);
+                    nameExpansionPatcher.Patch(ref fs);
+                }
                                 
                 MessageBox.Show("The file has been Saved Successfully", "Enjoy ^_^");
             }
@@ -336,6 +342,11 @@ namespace dw2_exp_multiplier.View
         private void digimonGiftPatcherCheckBox_MouseHover(object sender, EventArgs e)
         {
             Main.HintToolTip.Show(DigimonGiftPatcher.TOOLTIP, digimonGiftPatcherCheckBox, 0, -25, 5000);
+        }
+        
+        private void nameExpansionPatcherCheckBox_MouseHover(object sender, EventArgs e)
+        {
+            Main.HintToolTip.Show(NameExpansionPatcher.TOOLTIP, nameExpansionPatcherCheckBox, 0, -25, 5000);
         }
         #endregion
     }

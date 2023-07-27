@@ -60,6 +60,7 @@ namespace dw2_exp_multiplier.View
             this.enemysetTextBox = new System.Windows.Forms.TextBox();
             this.importButton = new System.Windows.Forms.Button();
             this.enemysetBrowseButton = new System.Windows.Forms.Button();
+            this.nameExpansionPatcherCheckBox = new System.Windows.Forms.CheckBox();
             this.battlePatchesGroupBox.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -84,7 +85,7 @@ namespace dw2_exp_multiplier.View
             // 
             // battleFixPatcherCheckBox
             // 
-            this.battleFixPatcherCheckBox.Location = new System.Drawing.Point(9, 24);
+            this.battleFixPatcherCheckBox.Location = new System.Drawing.Point(20, 20);
             this.battleFixPatcherCheckBox.Name = "battleFixPatcherCheckBox";
             this.battleFixPatcherCheckBox.Size = new System.Drawing.Size(105, 24);
             this.battleFixPatcherCheckBox.TabIndex = 23;
@@ -94,7 +95,7 @@ namespace dw2_exp_multiplier.View
             // 
             // battleEnhancementPatcherCheckBox
             // 
-            this.battleEnhancementPatcherCheckBox.Location = new System.Drawing.Point(9, 54);
+            this.battleEnhancementPatcherCheckBox.Location = new System.Drawing.Point(20, 45);
             this.battleEnhancementPatcherCheckBox.Name = "battleEnhancementPatcherCheckBox";
             this.battleEnhancementPatcherCheckBox.Size = new System.Drawing.Size(105, 24);
             this.battleEnhancementPatcherCheckBox.TabIndex = 23;
@@ -115,6 +116,7 @@ namespace dw2_exp_multiplier.View
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.nameExpansionPatcherCheckBox);
             this.groupBox5.Controls.Add(this.digiLinePatcherCheckBox);
             this.groupBox5.Controls.Add(this.dnaLabsPatcherCheckBox);
             this.groupBox5.Controls.Add(this.digimonGiftPatcherCheckBox);
@@ -128,7 +130,7 @@ namespace dw2_exp_multiplier.View
             // 
             // digiLinePatcherCheckBox
             // 
-            this.digiLinePatcherCheckBox.Location = new System.Drawing.Point(15, 44);
+            this.digiLinePatcherCheckBox.Location = new System.Drawing.Point(15, 45);
             this.digiLinePatcherCheckBox.Name = "digiLinePatcherCheckBox";
             this.digiLinePatcherCheckBox.Size = new System.Drawing.Size(125, 24);
             this.digiLinePatcherCheckBox.TabIndex = 23;
@@ -138,7 +140,7 @@ namespace dw2_exp_multiplier.View
             // 
             // dnaLabsPatcherCheckBox
             // 
-            this.dnaLabsPatcherCheckBox.Location = new System.Drawing.Point(15, 16);
+            this.dnaLabsPatcherCheckBox.Location = new System.Drawing.Point(15, 20);
             this.dnaLabsPatcherCheckBox.Name = "dnaLabsPatcherCheckBox";
             this.dnaLabsPatcherCheckBox.Size = new System.Drawing.Size(125, 24);
             this.dnaLabsPatcherCheckBox.TabIndex = 23;
@@ -148,7 +150,7 @@ namespace dw2_exp_multiplier.View
             // 
             // digimonGiftPatcherCheckBox
             // 
-            this.digimonGiftPatcherCheckBox.Location = new System.Drawing.Point(15, 74);
+            this.digimonGiftPatcherCheckBox.Location = new System.Drawing.Point(15, 70);
             this.digimonGiftPatcherCheckBox.Name = "digimonGiftPatcherCheckBox";
             this.digimonGiftPatcherCheckBox.Size = new System.Drawing.Size(125, 24);
             this.digimonGiftPatcherCheckBox.TabIndex = 23;
@@ -396,6 +398,16 @@ namespace dw2_exp_multiplier.View
             this.enemysetBrowseButton.UseVisualStyleBackColor = true;
             this.enemysetBrowseButton.Click += new System.EventHandler(this.enemysetBrowseButton_Click);
             // 
+            // nameExpansionPatcherCheckBox
+            // 
+            this.nameExpansionPatcherCheckBox.Location = new System.Drawing.Point(15, 95);
+            this.nameExpansionPatcherCheckBox.Name = "nameExpansionPatcherCheckBox";
+            this.nameExpansionPatcherCheckBox.Size = new System.Drawing.Size(125, 24);
+            this.nameExpansionPatcherCheckBox.TabIndex = 24;
+            this.nameExpansionPatcherCheckBox.Text = "Name Expansion";
+            this.nameExpansionPatcherCheckBox.UseVisualStyleBackColor = true;
+            this.nameExpansionPatcherCheckBox.MouseHover += new System.EventHandler(this.nameExpansionPatcherCheckBox_MouseHover);
+            // 
             // MiscView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -442,6 +454,7 @@ namespace dw2_exp_multiplier.View
         private System.Windows.Forms.CheckBox digiLinePatcherCheckBox;
         private System.Windows.Forms.CheckBox digimonGiftPatcherCheckBox;
         private System.Windows.Forms.CheckBox dnaLabsPatcherCheckBox;
+        private System.Windows.Forms.CheckBox nameExpansionPatcherCheckBox;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label multiplierLabel;
         private System.Windows.Forms.NumericUpDown multiplier;

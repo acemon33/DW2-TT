@@ -39,6 +39,7 @@ namespace dw2_exp_multiplier
         
         public static List<int> backupRestoreFileIndexes = new List<int>()
         {
+            FileIndex.STAG1100_PRO,
             FileIndex.STAG2000_PRO,
             FileIndex.STAG3000_PRO,
             FileIndex.STAG4000_PRO,

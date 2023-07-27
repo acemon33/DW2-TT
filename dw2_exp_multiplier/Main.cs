@@ -99,9 +99,12 @@ namespace dw2_exp_multiplier
                 fbd.SelectedPath = Directory.GetCurrentDirectory();
                 if (fbd.ShowDialog() == DialogResult.OK)
                 {
+                    byte[] buffer = PsxSector.ReadSector(ref fs, FileIndex.SLUS_011_93_INDEX, FileIndex.SLUS_011_93_SIZE);
+                    File.WriteAllBytes(fbd.SelectedPath + "\\slus.bin", buffer);
+
                     foreach (var fileIndex in Configuration.backupRestoreFileIndexes)
                     {
-                        byte[] buffer = PsxSector.ReadSector(ref fs, DW2Slus.GetLba(fileIndex), DW2Slus.GetSize(fileIndex));
+                        buffer = PsxSector.ReadSector(ref fs, DW2Slus.GetLba(fileIndex), DW2Slus.GetSize(fileIndex));
                         File.WriteAllBytes(fbd.SelectedPath + "\\" + fileIndex + ".bin", buffer);
                     }
                 }
@@ -132,11 +135,16 @@ namespace dw2_exp_multiplier
                 fbd.SelectedPath = Directory.GetCurrentDirectory();
                 if (fbd.ShowDialog() == DialogResult.OK)
                 {
+                    string file = fbd.SelectedPath + "\\slus.bin";
+                    if (!File.Exists(file)) throw new FileNotFoundException("File: slus.bin Not Found");
+                    byte[] buffer = File.ReadAllBytes(file);
+                    PsxSector.WriteSector(ref fs, ref buffer, FileIndex.SLUS_011_93_INDEX, FileIndex.SLUS_011_93_SIZE);
+
                     foreach (var fileIndex in Configuration.backupRestoreFileIndexes)
                     {
-                        string file = fbd.SelectedPath + "\\" + fileIndex + ".bin";
+                        file = fbd.SelectedPath + "\\" + fileIndex + ".bin";
                         if (!File.Exists(file)) throw new FileNotFoundException("File: " + file + " Not Found");
-                        byte[] buffer = File.ReadAllBytes(file);
+                        buffer = File.ReadAllBytes(file);
                         PsxSector.WriteSector(ref fs, ref buffer, DW2Slus.GetLba(fileIndex), DW2Slus.GetSize(fileIndex));
                     }
                 }
