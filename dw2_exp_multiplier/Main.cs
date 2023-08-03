@@ -100,12 +100,12 @@ namespace dw2_exp_multiplier
                 if (fbd.ShowDialog() == DialogResult.OK)
                 {
                     byte[] buffer = PsxSector.ReadSector(ref fs, FileIndex.SLUS_011_93_INDEX, FileIndex.SLUS_011_93_SIZE);
-                    File.WriteAllBytes(fbd.SelectedPath + "\\slus.bin", buffer);
+                    File.WriteAllBytes($"{fbd.SelectedPath}\\{FileManagerView.SLUS_NAME}.BIN", buffer);
 
                     foreach (var fileIndex in Configuration.backupRestoreFileIndexes)
                     {
                         buffer = PsxSector.ReadSector(ref fs, DW2Slus.GetLba(fileIndex), DW2Slus.GetSize(fileIndex));
-                        File.WriteAllBytes(fbd.SelectedPath + "\\" + fileIndex + ".bin", buffer);
+                        File.WriteAllBytes($"{fbd.SelectedPath}\\{fileIndex}.BIN", buffer);
                     }
                 }
                 MessageBox.Show("Files have been Exported Successfully", "Success", MessageBoxButtons.OK);
@@ -135,15 +135,15 @@ namespace dw2_exp_multiplier
                 fbd.SelectedPath = Directory.GetCurrentDirectory();
                 if (fbd.ShowDialog() == DialogResult.OK)
                 {
-                    string file = fbd.SelectedPath + "\\slus.bin";
-                    if (!File.Exists(file)) throw new FileNotFoundException("File: slus.bin Not Found");
+                    string file = $"{fbd.SelectedPath}\\{FileManagerView.SLUS_NAME}.BIN";
+                    if (!File.Exists(file)) throw new FileNotFoundException($"File: {file} Not Found");
                     byte[] buffer = File.ReadAllBytes(file);
                     PsxSector.WriteSector(ref fs, ref buffer, FileIndex.SLUS_011_93_INDEX, FileIndex.SLUS_011_93_SIZE);
 
                     foreach (var fileIndex in Configuration.backupRestoreFileIndexes)
                     {
-                        file = fbd.SelectedPath + "\\" + fileIndex + ".bin";
-                        if (!File.Exists(file)) throw new FileNotFoundException("File: " + file + " Not Found");
+                        file = $"{fbd.SelectedPath}\\{fileIndex}.BIN";
+                        if (!File.Exists(file)) throw new FileNotFoundException($"File: {file} Not Found");
                         buffer = File.ReadAllBytes(file);
                         PsxSector.WriteSector(ref fs, ref buffer, DW2Slus.GetLba(fileIndex), DW2Slus.GetSize(fileIndex));
                     }

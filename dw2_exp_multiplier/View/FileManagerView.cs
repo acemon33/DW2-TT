@@ -9,6 +9,9 @@ namespace dw2_exp_multiplier.View
 {
     public partial class FileManagerView : UserControl
     {
+        private static readonly int SLUS_INDEX = -1;
+        public static readonly string SLUS_NAME = "SLUS";
+
         public FileManagerView()
         {
             InitializeComponent();
@@ -34,7 +37,10 @@ namespace dw2_exp_multiplier.View
                     {
                         if (!File.Exists(file.Value)) throw new FileNotFoundException("File: " + file.Value + " Not Found");
                         byte[] buffer = File.ReadAllBytes(file.Value);
-                        PsxSector.WriteSector(ref fs, ref buffer, DW2Slus.GetLba(file.Key), DW2Slus.GetSize(file.Key));
+                        if (file.Key == SLUS_INDEX)
+                            PsxSector.WriteSector(ref fs, ref buffer, FileIndex.SLUS_011_93_INDEX, FileIndex.SLUS_011_93_SIZE);
+                        else
+                            PsxSector.WriteSector(ref fs, ref buffer, DW2Slus.GetLba(file.Key), DW2Slus.GetSize(file.Key));
                     }
                     MessageBox.Show("File(s) Inserted Successfully");
                 }
@@ -66,7 +72,11 @@ namespace dw2_exp_multiplier.View
      
                     foreach (var file in fileIndexes)
                     {
-                        byte[] buffer = PsxSector.ReadSector(ref fs, DW2Slus.GetLba(file.Key), DW2Slus.GetSize(file.Key));
+                        byte[] buffer = null;
+                        if (file.Key == SLUS_INDEX)
+                            buffer = PsxSector.ReadSector(ref fs, FileIndex.SLUS_011_93_INDEX, FileIndex.SLUS_011_93_SIZE);
+                        else
+                            buffer = PsxSector.ReadSector(ref fs, DW2Slus.GetLba(file.Key), DW2Slus.GetSize(file.Key));
                         File.WriteAllBytes(file.Value, buffer);
                     }
                     
@@ -83,11 +93,6 @@ namespace dw2_exp_multiplier.View
             }
         }
         
-        private void relocateButton_Click(object sender, EventArgs e)
-        {
-            throw new System.NotImplementedException();
-        }
-
         private void dw2BrowseButton_Click(object sender, EventArgs e)
         {
             var ofd = new OpenFileDialog();
@@ -114,8 +119,15 @@ namespace dw2_exp_multiplier.View
             foreach (var i in indexTextBox.Text.Split('\r'))
             {
                 var index = i.Trim('\n');
-                if (index.Length < 1) continue;
-                fileIndexes.Add(Int32.Parse(index), folder + "\\" + index + ".BIN");
+                if (index.ToUpper().Equals(SLUS_NAME))
+                {
+                    fileIndexes.Add(SLUS_INDEX, folder + "\\" + SLUS_NAME + ".BIN");
+                }
+                else
+                {
+                    if (index.Length < 1) continue;
+                    fileIndexes.Add(Int32.Parse(index), folder + "\\" + index + ".BIN");
+                }
             }
             return fileIndexes;
         }
