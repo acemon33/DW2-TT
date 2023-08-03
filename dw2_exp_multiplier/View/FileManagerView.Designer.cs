@@ -34,7 +34,6 @@ namespace dw2_exp_multiplier.View
             this.importButton = new System.Windows.Forms.Button();
             this.exportButton = new System.Windows.Forms.Button();
             this.indexTextBox = new System.Windows.Forms.TextBox();
-            this.relocateButton = new System.Windows.Forms.Button();
             this.dw2TextBox = new System.Windows.Forms.TextBox();
             this.dw2BrowseButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,9 +41,9 @@ namespace dw2_exp_multiplier.View
             // 
             // importButton
             // 
-            this.importButton.Location = new System.Drawing.Point(96, 53);
+            this.importButton.Location = new System.Drawing.Point(113, 53);
             this.importButton.Name = "importButton";
-            this.importButton.Size = new System.Drawing.Size(75, 23);
+            this.importButton.Size = new System.Drawing.Size(88, 23);
             this.importButton.TabIndex = 5;
             this.importButton.Text = "Import";
             this.importButton.UseVisualStyleBackColor = true;
@@ -54,7 +53,7 @@ namespace dw2_exp_multiplier.View
             // 
             this.exportButton.Location = new System.Drawing.Point(15, 53);
             this.exportButton.Name = "exportButton";
-            this.exportButton.Size = new System.Drawing.Size(75, 23);
+            this.exportButton.Size = new System.Drawing.Size(88, 23);
             this.exportButton.TabIndex = 4;
             this.exportButton.Text = "Export";
             this.exportButton.UseVisualStyleBackColor = true;
@@ -62,38 +61,27 @@ namespace dw2_exp_multiplier.View
             // 
             // indexTextBox
             // 
-            this.indexTextBox.Location = new System.Drawing.Point(260, 43);
+            this.indexTextBox.Location = new System.Drawing.Point(207, 79);
             this.indexTextBox.Multiline = true;
             this.indexTextBox.Name = "indexTextBox";
-            this.indexTextBox.Size = new System.Drawing.Size(55, 158);
+            this.indexTextBox.Size = new System.Drawing.Size(88, 158);
             this.indexTextBox.TabIndex = 3;
-            // 
-            // relocateButton
-            // 
-            this.relocateButton.Enabled = false;
-            this.relocateButton.Location = new System.Drawing.Point(177, 53);
-            this.relocateButton.Name = "relocateButton";
-            this.relocateButton.Size = new System.Drawing.Size(75, 23);
-            this.relocateButton.TabIndex = 6;
-            this.relocateButton.Text = "Relocate";
-            this.relocateButton.UseVisualStyleBackColor = true;
-            this.relocateButton.Click += new System.EventHandler(this.relocateButton_Click);
             // 
             // dw2TextBox
             // 
             this.dw2TextBox.AllowDrop = true;
             this.dw2TextBox.Location = new System.Drawing.Point(15, 24);
             this.dw2TextBox.Name = "dw2TextBox";
-            this.dw2TextBox.Size = new System.Drawing.Size(176, 20);
+            this.dw2TextBox.Size = new System.Drawing.Size(186, 20);
             this.dw2TextBox.TabIndex = 7;
             this.dw2TextBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.dw2TextBox_DragDrop);
             this.dw2TextBox.DragOver += new System.Windows.Forms.DragEventHandler(this.dw2TextBox_DragOver);
             // 
             // dw2BrowseButton
             // 
-            this.dw2BrowseButton.Location = new System.Drawing.Point(197, 24);
+            this.dw2BrowseButton.Location = new System.Drawing.Point(207, 24);
             this.dw2BrowseButton.Name = "dw2BrowseButton";
-            this.dw2BrowseButton.Size = new System.Drawing.Size(55, 23);
+            this.dw2BrowseButton.Size = new System.Drawing.Size(88, 23);
             this.dw2BrowseButton.TabIndex = 8;
             this.dw2BrowseButton.Text = "Browse";
             this.dw2BrowseButton.UseVisualStyleBackColor = true;
@@ -102,7 +90,7 @@ namespace dw2_exp_multiplier.View
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(260, 27);
+            this.label1.Location = new System.Drawing.Point(207, 63);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 13);
             this.label1.TabIndex = 9;
@@ -115,7 +103,6 @@ namespace dw2_exp_multiplier.View
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dw2BrowseButton);
             this.Controls.Add(this.dw2TextBox);
-            this.Controls.Add(this.relocateButton);
             this.Controls.Add(this.importButton);
             this.Controls.Add(this.exportButton);
             this.Controls.Add(this.indexTextBox);
@@ -129,7 +116,6 @@ namespace dw2_exp_multiplier.View
         private System.Windows.Forms.Button dw2BrowseButton;
 
         private System.Windows.Forms.Button exportButton;
-        private System.Windows.Forms.Button relocateButton;
         private System.Windows.Forms.Button importButton;
         private System.Windows.Forms.TextBox indexTextBox;
         private System.Windows.Forms.TextBox dw2TextBox;

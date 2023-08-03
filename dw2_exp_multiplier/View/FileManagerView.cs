@@ -18,6 +18,7 @@ namespace dw2_exp_multiplier.View
         private void importButton_Click(object sender, EventArgs e)
         {
             var fbd = new FolderBrowserDialog();
+            fbd.SelectedPath = Directory.GetCurrentDirectory();
             if (fbd.ShowDialog() == DialogResult.OK)
             {
                 string filename = dw2TextBox.Text;
@@ -51,6 +52,7 @@ namespace dw2_exp_multiplier.View
         private void exportButton_Click(object sender, EventArgs e)
         {
             var fbd = new FolderBrowserDialog();
+            fbd.SelectedPath = Directory.GetCurrentDirectory();
             if (fbd.ShowDialog() == DialogResult.OK)
             {
                 string filename = dw2TextBox.Text;

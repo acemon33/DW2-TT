@@ -316,37 +316,37 @@ namespace dw2_exp_multiplier.View
         #region MouseHover Events Region
         private void noEncounterPatcherCheckBox_MouseHover(object sender, EventArgs e)
         {
-            Main.HintToolTip.Show(UnmoveableEnemy.TOOLTIP, noEncounterPatcherCheckBox,-25, -25, 5000);
+            Main.HintToolTip.Show(UnmoveableEnemy.TOOLTIP, noEncounterPatcherCheckBox, 30, 0, 5000);
         }
 
         private void battleEnhancementPatcherCheckBox_MouseHover(object sender, EventArgs e)
         {
-            Main.HintToolTip.Show(BattleEnhancementPatcher.TOOLTIP, battleEnhancementPatcherCheckBox, 0, -25, 5000);
+            Main.HintToolTip.Show(BattleEnhancementPatcher.TOOLTIP, battleEnhancementPatcherCheckBox, 30, 0, 5000);
         }
 
         private void battleFixPatcherCheckBox_MouseHover(object sender, EventArgs e)
         {
-            Main.HintToolTip.Show(BattleFixPatcher.TOOLTIP, battleFixPatcherCheckBox, 0, -25, 5000);
+            Main.HintToolTip.Show(BattleFixPatcher.TOOLTIP, battleFixPatcherCheckBox, 30, 0, 5000);
         }
 
         private void dnaLabsPatcherCheckBox_MouseHover(object sender, EventArgs e)
         {
-            Main.HintToolTip.Show(DnaLabsPatcher.TOOLTIP, dnaLabsPatcherCheckBox, 0, -25, 5000);
+            Main.HintToolTip.Show(DnaLabsPatcher.TOOLTIP, dnaLabsPatcherCheckBox, 30, 0, 5000);
         }
 
         private void digiLinePatcherCheckBox_MouseHover(object sender, EventArgs e)
         {
-            Main.HintToolTip.Show(DigiLinePatcher.TOOLTIP, digiLinePatcherCheckBox, 0, -25, 5000);
+            Main.HintToolTip.Show(DigiLinePatcher.TOOLTIP, digiLinePatcherCheckBox, 30, 0, 5000);
         }
 
         private void digimonGiftPatcherCheckBox_MouseHover(object sender, EventArgs e)
         {
-            Main.HintToolTip.Show(DigimonGiftPatcher.TOOLTIP, digimonGiftPatcherCheckBox, 0, -25, 5000);
+            Main.HintToolTip.Show(DigimonGiftPatcher.TOOLTIP, digimonGiftPatcherCheckBox, 30, 0, 5000);
         }
         
         private void nameExpansionPatcherCheckBox_MouseHover(object sender, EventArgs e)
         {
-            Main.HintToolTip.Show(NameExpansionPatcher.TOOLTIP, nameExpansionPatcherCheckBox, 0, -25, 5000);
+            Main.HintToolTip.Show(NameExpansionPatcher.TOOLTIP, nameExpansionPatcherCheckBox, 30, 0, 5000);
         }
         #endregion
     }
