@@ -7,10 +7,12 @@ namespace dw2_exp_multiplier.Manager
 {
     public class BattleFixPatcher
     {
-        public static readonly string VERSION = "0.2";
+        public static readonly string VERSION = "0.4";
         public static readonly string TOOLTIP =
             "1. Venom Infusion Tech: guarantee to disable target's turn\n" +
-            "2. Zen Recovery Tech: reset all state changes permanently\n";
+            "2. Zen Recovery Tech: reset all state changes permanently\n" +
+            "3. Shadow Scythe Tech: correct the behavior when being Interrupted\n" +
+            "4. Invincibility Tech: correct the behavior when being Attacked\n";
 
         private byte[] data;
         
@@ -23,6 +25,8 @@ namespace dw2_exp_multiplier.Manager
         {
             this.FixVenomInfusion();
             this.FixZenRecovery();
+            this.FixShadowScythe();
+            this.FixInvincibility();
             PsxSector.WriteSector(ref fs, ref data, DW2Slus.GetLba(FileIndex.STAG3000_PRO), DW2Slus.GetSize(FileIndex.STAG3000_PRO));
         }
         
@@ -97,6 +101,36 @@ namespace dw2_exp_multiplier.Manager
                 0x00, 0x00, 0x00, 0x00
             };
             Buffer.BlockCopy(patchedPattern, 0, data, 0x10D80, patchedPattern.Length);    // ram: 800740E0
+        }
+
+        private void FixShadowScythe()
+        {
+            byte[] patchedPattern = { 0x21, 0x30, 0x03, 0x00 };
+            Buffer.BlockCopy(patchedPattern, 0, data, 0x9524, patchedPattern.Length);    // ram: 8006c884
+        }
+
+        private void FixInvincibility()
+        {
+            byte[] patchedPattern = { 0x3E, 0xD0, 0x01, 0x08, 0x00, 0x00, 0x00, 0x00 };
+            Buffer.BlockCopy(patchedPattern, 0, data, 0x7CB8, patchedPattern.Length);    // ram: 8006b018
+
+            patchedPattern = new byte[]
+            {
+                0x07, 0x80, 0x02, 0x3C,
+                0xC0, 0x3C, 0x43, 0x24,
+                0x21, 0x10, 0xC3, 0x02,
+                0x4F, 0x03, 0x43, 0x90,
+                0x00, 0x00, 0x00, 0x00,
+                0x08, 0x00, 0x62, 0x30,
+                0x05, 0x00, 0x40, 0x14,
+                0x00, 0x00, 0x00, 0x00,
+                0xB8, 0x02, 0x82, 0x94,
+                0x16, 0x00, 0x83, 0x86,
+                0x08, 0xAC, 0x01, 0x08,
+                0x00, 0x00, 0x00, 0x00,
+                0x14, 0xAC, 0x01, 0x08
+            };
+            Buffer.BlockCopy(patchedPattern, 0, data, 0x10D98, patchedPattern.Length);    // ram: 800740F8
         }
     }
     
