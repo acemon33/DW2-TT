@@ -12,9 +12,9 @@ namespace dw2_exp_multiplier.Manager
             "1. MP-on-Guard: ratio of increasing MP during Guard is 25%\n" +
             "2. Beast King Fist: the damage is 2.1 on Counter-Attack\n" +
             "3. Subzero Ice Punch: every hit increases 7 AP\n" +
-            "4. Demi Dart and Evil Touch: Lowering MP increased\n" +
-            "5. Poison Effect Damage: Poison Damage increased\n" +
-            "6. Debuff Defence Effect: Reduce Defence after the damage\n";
+            "4. Demi Dart and Evil Touch Techs: lowering MP increased\n" +
+            "5. Poison Effect Damage: poison damage increased\n" +
+            "6. Debuff Defence Effect: reduce the defence state after the damage\n";
 
         private byte[] data;
         

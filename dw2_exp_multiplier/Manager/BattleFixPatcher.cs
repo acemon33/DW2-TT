@@ -12,7 +12,7 @@ namespace dw2_exp_multiplier.Manager
             "1. Venom Infusion Tech: guarantee to disable target's turn\n" +
             "2. Zen Recovery Tech: reset all state changes permanently\n" +
             "3. Shadow Scythe Tech: correct the behavior when being Interrupted\n" +
-            "4. Invincibility Tech: correct the behavior when being Attacked\n";
+            "4. Invincibility Tech: correct the behavior when being Attacked by Beast King Fist Tech\n";
 
         private byte[] data;
         
