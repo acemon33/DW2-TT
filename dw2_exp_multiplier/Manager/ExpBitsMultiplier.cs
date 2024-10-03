@@ -21,9 +21,9 @@ namespace dw2_exp_multiplier.Manager
                 foreach (var enemy in enemyset.Enemy)
                 {
                     var i = enemy.Exp * this.Multiplier;
-                    enemy.Exp = (i > UInt16.MaxValue) ? UInt16.MaxValue : Convert.ToUInt16(i);
+                    enemy.Exp = (ushort)((i > Int16.MaxValue) ? Int16.MaxValue : Convert.ToInt16(i));
                     i = enemy.Bits * this.Multiplier;
-                    enemy.Bits = (i > UInt16.MaxValue) ? UInt16.MaxValue : Convert.ToUInt16(i);
+                    enemy.Bits = (ushort)((i > Int16.MaxValue) ? Int16.MaxValue : Convert.ToInt16(i));
                 }
             }
         }
