@@ -55,7 +55,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.linkLabel8 = new System.Windows.Forms.LinkLabel();
             this.label16 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -76,7 +76,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 17);
             this.label2.TabIndex = 1;
-            this.label2.Text = "version: 2.4";
+            this.label2.Text = "version: 3.0";
             // 
             // button1
             // 
@@ -93,7 +93,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(17, 379);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(279, 26);
+            this.label3.Size = new System.Drawing.Size(275, 26);
             this.label3.TabIndex = 3;
             this.label3.Text = "Thanks to DW2 Community\r\nJoin DW2 Discord Server for more Digimon World 2 stuff:";
             // 
@@ -122,7 +122,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(71, 91);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 13);
+            this.label6.Size = new System.Drawing.Size(57, 13);
             this.label6.TabIndex = 7;
             this.label6.Text = "acemon33";
             // 
@@ -151,7 +151,7 @@
             this.linkLabel3.AutoSize = true;
             this.linkLabel3.Location = new System.Drawing.Point(293, 392);
             this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(159, 13);
+            this.linkLabel3.Size = new System.Drawing.Size(158, 13);
             this.linkLabel3.TabIndex = 11;
             this.linkLabel3.TabStop = true;
             this.linkLabel3.Text = "https://discord.gg/appJ8mrwBd";
@@ -200,7 +200,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(184, 227);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(112, 13);
+            this.label8.Size = new System.Drawing.Size(111, 13);
             this.label8.TabIndex = 18;
             this.label8.Text = "For Exp / Bits Modifier";
             // 
@@ -209,7 +209,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(184, 347);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(232, 13);
+            this.label9.Size = new System.Drawing.Size(228, 13);
             this.label9.TabIndex = 22;
             this.label9.Text = "For Discovering a method of unhide AAA folder";
             // 
@@ -218,7 +218,7 @@
             this.linkLabel7.AutoSize = true;
             this.linkLabel7.Location = new System.Drawing.Point(31, 347);
             this.linkLabel7.Name = "linkLabel7";
-            this.linkLabel7.Size = new System.Drawing.Size(144, 13);
+            this.linkLabel7.Size = new System.Drawing.Size(137, 13);
             this.linkLabel7.TabIndex = 20;
             this.linkLabel7.TabStop = true;
             this.linkLabel7.Text = "http://www.retro-jogos.com";
@@ -228,7 +228,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(13, 334);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(63, 13);
+            this.label10.Size = new System.Drawing.Size(64, 13);
             this.label10.TabIndex = 19;
             this.label10.Text = "Gledson999";
             // 
@@ -237,7 +237,7 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(184, 310);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(271, 13);
+            this.label11.Size = new System.Drawing.Size(273, 13);
             this.label11.TabIndex = 26;
             this.label11.Text = "For \" DigimonWorld2Tool TextConversion \" source code";
             // 
@@ -246,7 +246,7 @@
             this.linkLabel6.AutoSize = true;
             this.linkLabel6.Location = new System.Drawing.Point(31, 310);
             this.linkLabel6.Name = "linkLabel6";
-            this.linkLabel6.Size = new System.Drawing.Size(143, 13);
+            this.linkLabel6.Size = new System.Drawing.Size(144, 13);
             this.linkLabel6.TabIndex = 25;
             this.linkLabel6.TabStop = true;
             this.linkLabel6.Text = "https://github.com/RemyRM";
@@ -256,7 +256,7 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(13, 297);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(49, 13);
+            this.label12.Size = new System.Drawing.Size(50, 13);
             this.label12.TabIndex = 23;
             this.label12.Text = "RemyRm";
             // 
@@ -274,7 +274,7 @@
             this.linkLabel9.AutoSize = true;
             this.linkLabel9.Location = new System.Drawing.Point(31, 272);
             this.linkLabel9.Name = "linkLabel9";
-            this.linkLabel9.Size = new System.Drawing.Size(115, 13);
+            this.linkLabel9.Size = new System.Drawing.Size(116, 13);
             this.linkLabel9.TabIndex = 28;
             this.linkLabel9.TabStop = true;
             this.linkLabel9.Text = "Discord: @Shen#6633";
@@ -284,7 +284,7 @@
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(13, 259);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(31, 13);
+            this.label14.Size = new System.Drawing.Size(32, 13);
             this.label14.TabIndex = 27;
             this.label14.Text = "Shen";
             // 
@@ -302,7 +302,7 @@
             this.linkLabel8.AutoSize = true;
             this.linkLabel8.Location = new System.Drawing.Point(31, 194);
             this.linkLabel8.Name = "linkLabel8";
-            this.linkLabel8.Size = new System.Drawing.Size(149, 13);
+            this.linkLabel8.Size = new System.Drawing.Size(151, 13);
             this.linkLabel8.TabIndex = 32;
             this.linkLabel8.TabStop = true;
             this.linkLabel8.Text = "https://github.com/ShendoXT";
@@ -312,7 +312,7 @@
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(13, 181);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(55, 13);
+            this.label16.Size = new System.Drawing.Size(58, 13);
             this.label16.TabIndex = 31;
             this.label16.Text = "ShendoXT";
             // 
@@ -351,9 +351,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "About";
             this.Text = "About";
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         private System.Windows.Forms.Label label15;

@@ -10,12 +10,12 @@ v3.0:
  - File-Manager
    - Export File by its index based on the Game Look-Up Table (multi files also supported).
    - Import File by its index based on the Game Look-Up Table (multi files also supported).
-   - Exporting / Importing by Sectors.
- - Name-Expansion Patcher: expand the Hero's Name upto 8 characters and Digi-Beetle upto 10 characters.
+   - Exporting / Importing by complete Sectors (a data sector is 2024 bytes).
+ - Name-Extension Patcher: expand the Hero's Name upto 8 characters and Digi-Beetle upto 10 characters.
  - Battle Enhancement:
    - Demi Dart and Evil Touch Techs: lowering MP increased.
    - Poison Effect Damage: poison damage increased.
-   - Debuff Defence Effect: reduce the defence state after the damage.
+   - Debuff Defence Effect: the defense reduction is applied after it actually deals damage.
  - Battle Fix:
    - Shadow Scythe Tech: correct the behavior when being Interrupted
    - Invincibility Tech: correct the behavior when being Attacked by Beast King Fist Tech.
