@@ -13,7 +13,7 @@ v3.0:
    - Exporting / Importing by complete Sectors (a data sector is 2024 bytes).
  - Name-Extension Patcher: expand the Hero's Name upto 8 characters and Digi-Beetle upto 10 characters.
  - Battle Enhancement:
-   - Demi Dart and Evil Touch Techs: lowering MP increased.
+   - Demi Dart and Evil Touch Techs: increasing lowering MP effect.
    - Poison Effect Damage: poison damage increased.
    - Debuff Defence Effect: the defense reduction is applied after it actually deals damage.
  - Battle Fix:
