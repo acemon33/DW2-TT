@@ -5,28 +5,22 @@ using dw2_exp_multiplier.Base;
 
 namespace dw2_exp_multiplier.Manager
 {
-    public class DigimonGiftPatcher
+    public class DigimonGiftPatcher : IPatcher
     {
         public static readonly string TOOLTIP = "Make a wild Digimon stop moving when it accepts a gift.\n";
 
         private byte[] data;
-        
-        public DigimonGiftPatcher(ref FileStream fs)
+
+        public override void Patch(ref FileStream fs)
         {
             data = PsxSector.ReadSector(ref fs, DW2Slus.GetLba(FileIndex.STAG4000_PRO), DW2Slus.GetSize(FileIndex.STAG4000_PRO));
-        }
 
-        public void Patch(ref FileStream fs)
-        {
-            byte[] patchedPattern = { 0x05, 0x00, 0x19, 0xa2 };    // sb $t9,0x5($s0)    # Change target gifted enemy movement on delay slot
-            Buffer.BlockCopy(patchedPattern, 0, data, 0x7060, patchedPattern.Length);    // ram: 8006a3c0
-            PsxSector.WriteSector(ref fs, ref data, DW2Slus.GetLba(FileIndex.STAG4000_PRO), DW2Slus.GetSize(FileIndex.STAG4000_PRO));
-        }
-        
-        public void UnPatch(ref FileStream fs)
-        {
-            byte[] patchedPattern = { 0x00, 0x00, 0x00, 0x00 };
-            Buffer.BlockCopy(patchedPattern, 0, data, 0x7060, patchedPattern.Length);    // ram: 8006a3c0
+            byte[] patchedPattern = { 0x03, 0x00, 0x06, 0x24 };
+            Buffer.BlockCopy(patchedPattern, 0, data, 0x7060, patchedPattern.Length);
+            
+            patchedPattern = new byte[] { 0x05, 0x00, 0x06, 0xA2 };
+            Buffer.BlockCopy(patchedPattern, 0, data, 0x706C, patchedPattern.Length);
+            
             PsxSector.WriteSector(ref fs, ref data, DW2Slus.GetLba(FileIndex.STAG4000_PRO), DW2Slus.GetSize(FileIndex.STAG4000_PRO));
         }
     }

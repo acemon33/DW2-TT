@@ -5,7 +5,7 @@ using dw2_exp_multiplier.Base;
 
 namespace dw2_exp_multiplier.Manager
 {
-    public class BattleEnhancementPatcher
+    public class BattleEnhancementPatcher : IPatcher
     {
         public static readonly string VERSION = "0.6";
         public static readonly string TOOLTIP =
@@ -17,14 +17,11 @@ namespace dw2_exp_multiplier.Manager
             "6. Debuff Defence Effect: reduce the defence state after the damage\n";
 
         private byte[] data;
-        
-        public BattleEnhancementPatcher(ref FileStream fs)
+
+        public override void Patch(ref FileStream fs)
         {
             data = PsxSector.ReadSector(ref fs, DW2Slus.GetLba(FileIndex.STAG3000_PRO), DW2Slus.GetSize(FileIndex.STAG3000_PRO));
-        }
 
-        public void Patch(ref FileStream fs)
-        {
             this.ApplyMpOnGuard();
             this.ApplyBeastKingFist();
             this.ApplySubzeroIcePunch();

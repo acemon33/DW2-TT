@@ -90,29 +90,22 @@ namespace dw2_exp_multiplier.View
                     DigiBeetlePatcher.patch(ref fs, id);
                 }
 
+                List<IPatcher> patcherList = new List<IPatcher>();
+
                 if (dnaLabsPatcherCheckBox.Checked)
-                {
-                    DnaLabsPatcher dnaLabsPatcher = new DnaLabsPatcher(ref fs);
-                    dnaLabsPatcher.Patch(ref fs);
-                }
-                
+                    patcherList.Add(new DnaLabsPatcher());
+
+                if (DnaDpCheckBox.Checked)
+                    patcherList.Add(new DnaDpPatcher());
+
                 if (digimonGiftPatcherCheckBox.Checked)
-                {
-                    DigimonGiftPatcher digimonGiftPatcher = new DigimonGiftPatcher(ref fs);
-                    digimonGiftPatcher.Patch(ref fs);
-                }
+                    patcherList.Add(new DigimonGiftPatcher());
 
                 if (digiLinePatcherCheckBox.Checked)
-                {
-                    DigiLinePatcher digiLinePatcher = new DigiLinePatcher(ref fs);
-                    digiLinePatcher.Patch(ref fs);
-                }
-                                
-                if (battleEnhancementPatcherCheckBox.Checked)
-                {
-                    BattleEnhancementPatcher battleEnhancementPatcher = new BattleEnhancementPatcher(ref fs);
-                    battleEnhancementPatcher.Patch(ref fs);
-                }
+                    patcherList.Add(new DigiLinePatcher());
+
+                if (beastKingFistEnhanceCheckBox.Checked)
+                    patcherList.Add(new BattleEnhancementPatcher());
                                 
                 if (battleFixPatcherCheckBox.Checked)
                 {

@@ -5,7 +5,7 @@ using dw2_exp_multiplier.Base;
 
 namespace dw2_exp_multiplier.Manager
 {
-    public class BattleFixPatcher
+    public class BattleFixPatcher : IPatcher
     {
         public static readonly string VERSION = "0.4";
         public static readonly string TOOLTIP =
@@ -15,14 +15,11 @@ namespace dw2_exp_multiplier.Manager
             "4. Invincibility Tech: correct the behavior when being Attacked by Beast King Fist Tech\n";
 
         private byte[] data;
-        
-        public BattleFixPatcher(ref FileStream fs)
+
+        public override void Patch(ref FileStream fs)
         {
             data = PsxSector.ReadSector(ref fs, DW2Slus.GetLba(FileIndex.STAG3000_PRO), DW2Slus.GetSize(FileIndex.STAG3000_PRO));
-        }
 
-        public void Patch(ref FileStream fs)
-        {
             this.FixVenomInfusion();
             this.FixZenRecovery();
             this.FixShadowScythe();
