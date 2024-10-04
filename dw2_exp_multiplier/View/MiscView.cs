@@ -25,6 +25,18 @@ namespace dw2_exp_multiplier.View
                 digibeetleComboBox.DataSource = new BindingSource(DigiBeetlePatcher.getDigiBeetleIds(ref this.imageList, "Resources\\digi-beetle.zip"), null);
             }
             catch (Exception e) { }
+
+            miscTabPage.Enabled = false;
+            battleFixTabPage.Enabled = false;
+            battleEnhancementTabPage.Enabled = false;
+            battleFeatureTabPage.Enabled = false;
+        }
+
+        private void digibeetleComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string id = ((KeyValuePair<string, string>)digibeetleComboBox.SelectedItem).Key;
+            if (imageList.ContainsKey(id)) this.digibeetlPictureBox.Image = imageList[id];
+            else this.digibeetlPictureBox.Image = null;
         }
 
         #region Button Events Region
@@ -107,18 +119,42 @@ namespace dw2_exp_multiplier.View
                 if (beastKingFistEnhanceCheckBox.Checked)
                     patcherList.Add(new BattleEnhancementPatcher());
                                 
-                if (battleFixPatcherCheckBox.Checked)
-                {
-                    BattleFixPatcher battleFixPatcher = new BattleFixPatcher(ref fs);
-                    battleFixPatcher.Patch(ref fs);
-                }
+                if (chronoBreakerFixCheckBox.Checked)
+                    patcherList.Add(new BattleFixPatcher());
 
                 if (nameExpansionPatcherCheckBox.Checked)
-                {
-                    NameExpansionPatcher nameExpansionPatcher = new NameExpansionPatcher(ref fs);
-                    nameExpansionPatcher.Patch(ref fs);
-                }
-                                
+                    patcherList.Add(new NameExpansionPatcher());
+                
+                if (maxLevelPatcherCheckBox.Checked)
+                    patcherList.Add(new MaxLevelLimitPatcher());
+
+                if (dialogFastForwardPatchercheckBox.Checked)
+                    patcherList.Add(new DialogFastForwardPatcher());
+
+                if (zudokornMonsPatcherCheckBox.Checked)
+                    patcherList.Add(new ZudokornMonsPatchers());
+
+                if (domainFreeObstaclesCheckBox.Checked)
+                    patcherList.Add(new DomainFreeObstaclesPatcher());
+
+                if (floorSkippingCheckBox.Checked)
+                    patcherList.Add(new FloorSkippingPatcher());
+
+                if (RBugRemovalCheckBox.Checked)
+                    patcherList.Add(new RBugRemovalPatcher());
+
+                if (turnSkippingCheckBox.Checked)
+                    patcherList.Add(new TurnSkippingPatcher());
+
+                if (techOrderingCheckBox.Checked)
+                    patcherList.Add(new TechOrderingPatcher());
+
+                if (nextLevelLimitCheckBox.Checked)
+                    patcherList.Add(new NextLevelLimitPatcher());
+
+                foreach (IPatcher patcher in patcherList)
+                    patcher.Patch(ref fs);
+
                 MessageBox.Show("The file has been Saved Successfully", "Enjoy ^_^");
             }
             catch (FileLoadException ex)
@@ -230,8 +266,10 @@ namespace dw2_exp_multiplier.View
                 exportButton.Enabled = true;
                 unHideAAA.Enabled = true;
                 digibeetleComboBox.Enabled = true;
-                groupBox5.Enabled = true;
-                battlePatchesGroupBox.Enabled = true;
+                miscTabPage.Enabled = true;
+                battleFixTabPage.Enabled = true;
+                battleEnhancementTabPage.Enabled = true;
+                battleFeatureTabPage.Enabled = true;
                 Main.GetMain().UnHideOptions();
             }
             else
@@ -240,8 +278,10 @@ namespace dw2_exp_multiplier.View
                 exportButton.Enabled = false;
                 unHideAAA.Enabled = false;
                 digibeetleComboBox.Enabled = false;
-                groupBox5.Enabled = false;
-                battlePatchesGroupBox.Enabled = false;
+                miscTabPage.Enabled = false;
+                battleFixTabPage.Enabled = false;
+                battleEnhancementTabPage.Enabled = false;
+                battleFeatureTabPage.Enabled = false;
                 Main.GetMain().HideOptions();
             }
         }
@@ -312,14 +352,14 @@ namespace dw2_exp_multiplier.View
             Main.HintToolTip.Show(UnmoveableEnemy.TOOLTIP, noEncounterPatcherCheckBox, 30, 0, 5000);
         }
 
-        private void battleEnhancementPatcherCheckBox_MouseHover(object sender, EventArgs e)
+        private void beastKingFistEnhanceCheckBox_MouseHover(object sender, EventArgs e)
         {
-            Main.HintToolTip.Show(BattleEnhancementPatcher.TOOLTIP, battleEnhancementPatcherCheckBox, 30, 0, 5000);
+            Main.HintToolTip.Show(BattleEnhancementPatcher.TOOLTIP, beastKingFistEnhanceCheckBox, 30, 0, 5000);
         }
 
-        private void battleFixPatcherCheckBox_MouseHover(object sender, EventArgs e)
+        private void chronoBreakerFixCheckBox_MouseHover(object sender, EventArgs e)
         {
-            Main.HintToolTip.Show(BattleFixPatcher.TOOLTIP, battleFixPatcherCheckBox, 30, 0, 5000);
+            Main.HintToolTip.Show(BattleFixPatcher.TOOLTIP, chronoBreakerFixCheckBox, 30, 0, 5000);
         }
 
         private void dnaLabsPatcherCheckBox_MouseHover(object sender, EventArgs e)
@@ -341,7 +381,131 @@ namespace dw2_exp_multiplier.View
         {
             Main.HintToolTip.Show(NameExpansionPatcher.TOOLTIP, nameExpansionPatcherCheckBox, 30, 0, 5000);
         }
+
+        private void maxLevelPatcherCheckBox_MouseHover(object sender, EventArgs e)
+        {
+            Main.HintToolTip.Show(MaxLevelLimitPatcher.TOOLTIP, maxLevelPatcherCheckBox, 30, 0, 5000);
+        }
+
+        private void dialogFastForwardPatchercheckBox_MouseHover(object sender, EventArgs e)
+        {
+            Main.HintToolTip.Show(DialogFastForwardPatcher.TOOLTIP, dialogFastForwardPatchercheckBox, 30, 0, 5000);
+        }
+
+        private void ZudokornMonsPatcherCheckBox_MouseHover(object sender, EventArgs e)
+        {
+            Main.HintToolTip.Show(ZudokornMonsPatchers.TOOLTIP, zudokornMonsPatcherCheckBox, 30, 0, 5000);
+        }
+
+        private void DnaDpCheckBox_MouseHover(object sender, EventArgs e)
+        {
+            Main.HintToolTip.Show(DnaDpPatcher.TOOLTIP, DnaDpCheckBox, 30, 0, 5000);
+        }
+
+        private void domainFreeObstaclesCheckBox_MouseHover(object sender, EventArgs e)
+        {
+            Main.HintToolTip.Show(DomainFreeObstaclesPatcher.TOOLTIP, domainFreeObstaclesCheckBox, 30, 0, 5000);
+        }
+
+        private void floorSkippingCheckBox_MouseHover(object sender, EventArgs e)
+        {
+            Main.HintToolTip.Show(FloorSkippingPatcher.TOOLTIP, floorSkippingCheckBox, 30, 0, 10000);
+        }
+
+        private void RBugRemovalCheckBox_MouseHover(object sender, EventArgs e)
+        {
+            Main.HintToolTip.Show(RBugRemovalPatcher.TOOLTIP, RBugRemovalCheckBox, 30, 0, 5000);
+        }
+
+        private void turnSkippingCheckBox_MouseHover(object sender, EventArgs e)
+        {
+            Main.HintToolTip.Show(TurnSkippingPatcher.TOOLTIP, turnSkippingCheckBox, 30, 0, 5000);
+        }
+
+        private void techOrderingCheckBox_MouseHover(object sender, EventArgs e)
+        {
+            Main.HintToolTip.Show(TechOrderingPatcher.TOOLTIP, techOrderingCheckBox, 30, 0, 5000);
+        }
+
+        private void nextLevelLimitCheckBox_MouseHover(object sender, EventArgs e)
+        {
+            Main.HintToolTip.Show(NextLevelLimitPatcher.TOOLTIP, nextLevelLimitCheckBox, 30, 0, 5000);
+        }
+
+        private void darkSideAttackFixCheckBox_MouseHover(object sender, EventArgs e)
+        {
+            Main.HintToolTip.Show(DarkSideAttackPatcher.TOOLTIP, darkSideAttackFixCheckBox, 30, 0, 5000);
+        }
+
+        private void gigaByteWingFixCheckBox_MouseHover(object sender, EventArgs e)
+        {
+            Main.HintToolTip.Show(GigaByteWingPatcher.TOOLTIP, gigaByteWingFixCheckBox, 30, 0, 5000);
+        }
+
+        private void invincibilityFixCheckBox_MouseHover(object sender, EventArgs e)
+        {
+            Main.HintToolTip.Show(InvincibilityPatcher.TOOLTIP, invincibilityFixCheckBox, 30, 0, 5000);
+        }
+
+        private void shadowScytheFixCheckBox_MouseHover(object sender, EventArgs e)
+        {
+            Main.HintToolTip.Show(ShadowScythePatcher.TOOLTIP, shadowScytheFixCheckBox, 30, 0, 5000);
+        }
+
+        private void venomInfusionFixCheckBox_MouseHover(object sender, EventArgs e)
+        {
+            Main.HintToolTip.Show(VenomInfusionPatcher.TOOLTIP, venomInfusionFixCheckBox, 30, 0, 5000);
+        }
+
+        private void ZenRecoveryReInitilizeFixCheckBox_MouseHover(object sender, EventArgs e)
+        {
+            Main.HintToolTip.Show(ZenRecoveryReInitilizePatcher.TOOLTIP, ZenRecoveryReInitilizeFixCheckBox, 30, 0, 5000);
+        }
+
+        private void transcendSwordSpinningNeedleFixCheckBox_MouseHover(object sender, EventArgs e)
+        {
+            Main.HintToolTip.Show(Damage15vsGuardPatcher.TOOLTIP, transcendSwordSpinningNeedleFixCheckBox, 30, 0, 5000);
+        }
+
+        private void enemyBossConfusionCheckBox_MouseHover(object sender, EventArgs e)
+        {
+            Main.HintToolTip.Show(EnemyBossConfusionPatcher.TOOLTIP, enemyBossConfusionCheckBox, 30, 0, 5000);
+        }
+
+        private void enemyBossAffectionEnhanceCheckBox_MouseHover(object sender, EventArgs e)
+        {
+            Main.HintToolTip.Show(EnemyBossAffectionPatcher.TOOLTIP, enemyBossAffectionEnhanceCheckBox, 30, 0, 5000);
+        }
+
+        private void necroMagicEnhanceCheckBox_MouseHover(object sender, EventArgs e)
+        {
+            Main.HintToolTip.Show(NecroMagicPatcher.TOOLTIP, necroMagicEnhanceCheckBox, 30, 0, 5000);
+        }
+
+        private void poisonEffectEnhanceCheckBox_MouseHover(object sender, EventArgs e)
+        {
+            Main.HintToolTip.Show(PoisonEffectPatcher.TOOLTIP, poisonEffectEnhanceCheckBox, 30, 0, 5000);
+        }
+
+        private void evilTouchDemiDartEnhanceCheckBox_MouseHover(object sender, EventArgs e)
+        {
+            Main.HintToolTip.Show(EvilTouchDemiDartPatcher.TOOLTIP, evilTouchDemiDartEnhanceCheckBox, 30, 0, 5000);
+        }
+
+        private void subzeroIcePunchEnhanceCheckBox_MouseHover(object sender, EventArgs e)
+        {
+            Main.HintToolTip.Show(SubzeroIcePunchPatcher.TOOLTIP, subzeroIcePunchEnhanceCheckBox, 30, 0, 5000);
+        }
+
+        private void duoScissorClawEnhanceCheckBox_MouseHover(object sender, EventArgs e)
+        {
+            Main.HintToolTip.Show(DuoScissorClawPatcher.TOOLTIP, duoScissorClawEnhanceCheckBox, 30, 0, 5000);
+        }
+
+        private void mpOnGuardEnhanceCheckBox_MouseHover(object sender, EventArgs e)
+        {
+            Main.HintToolTip.Show(MpOnGaurdPatcher.TOOLTIP, mpOnGuardEnhanceCheckBox, 30, 0, 5000);
+        }
         #endregion
     }
-
 }
