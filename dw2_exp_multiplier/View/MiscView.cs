@@ -4,7 +4,11 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using dw2_exp_multiplier.Base;
-using dw2_exp_multiplier.Manager;
+using dw2_exp_multiplier.Patcher;
+using dw2_exp_multiplier.Patcher.BattleEnhancement;
+using dw2_exp_multiplier.Patcher.BattleFix;
+using dw2_exp_multiplier.Patcher.BattleFeature;
+using dw2_exp_multiplier.Patcher.Misc;
 
 
 namespace dw2_exp_multiplier.View
@@ -117,10 +121,10 @@ namespace dw2_exp_multiplier.View
                     patcherList.Add(new DigiLinePatcher());
 
                 if (beastKingFistEnhanceCheckBox.Checked)
-                    patcherList.Add(new BattleEnhancementPatcher());
+                    patcherList.Add(new BeastKingFistPatcher());
                                 
                 if (chronoBreakerFixCheckBox.Checked)
-                    patcherList.Add(new BattleFixPatcher());
+                    patcherList.Add(new ChronoBreakerPatcher());
 
                 if (nameExpansionPatcherCheckBox.Checked)
                     patcherList.Add(new NameExpansionPatcher());
@@ -354,12 +358,12 @@ namespace dw2_exp_multiplier.View
 
         private void beastKingFistEnhanceCheckBox_MouseHover(object sender, EventArgs e)
         {
-            Main.HintToolTip.Show(BattleEnhancementPatcher.TOOLTIP, beastKingFistEnhanceCheckBox, 30, 0, 5000);
+            Main.HintToolTip.Show(BeastKingFistPatcher.TOOLTIP, beastKingFistEnhanceCheckBox, 30, 0, 5000);
         }
 
         private void chronoBreakerFixCheckBox_MouseHover(object sender, EventArgs e)
         {
-            Main.HintToolTip.Show(BattleFixPatcher.TOOLTIP, chronoBreakerFixCheckBox, 30, 0, 5000);
+            Main.HintToolTip.Show(ChronoBreakerPatcher.TOOLTIP, chronoBreakerFixCheckBox, 30, 0, 5000);
         }
 
         private void dnaLabsPatcherCheckBox_MouseHover(object sender, EventArgs e)
