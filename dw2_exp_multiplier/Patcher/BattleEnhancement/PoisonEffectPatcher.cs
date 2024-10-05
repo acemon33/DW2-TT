@@ -7,7 +7,7 @@ namespace dw2_exp_multiplier.Patcher.BattleEnhancement
 {
     public class PoisonEffectPatcher : IPatcher
     {
-        public static readonly string TOOLTIP = "Poison damage increased.\n";
+        public static readonly string TOOLTIP = "Poison damage increased (17).\n";
 
         private byte[] data;
 

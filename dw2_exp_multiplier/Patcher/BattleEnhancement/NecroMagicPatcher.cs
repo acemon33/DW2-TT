@@ -7,7 +7,7 @@ namespace dw2_exp_multiplier.Patcher.BattleEnhancement
 {
     public class NecroMagicPatcher : IPatcher
     {
-        public static readonly string TOOLTIP = ".\n";
+        public static readonly string TOOLTIP = "Get 200 MP of Faint Digimon.\n";
 
         private byte[] data;
 

@@ -7,7 +7,7 @@ namespace dw2_exp_multiplier.Patcher.BattleEnhancement
 {
     public class EnemyBossConfusionPatcher : IPatcher
     {
-        public static readonly string TOOLTIP = ".\n";
+        public static readonly string TOOLTIP = "Enemy Boss can be affected by Confusion Effect.\n";
 
         private byte[] data;
 

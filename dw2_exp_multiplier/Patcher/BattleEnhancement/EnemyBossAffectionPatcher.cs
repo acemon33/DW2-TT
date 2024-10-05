@@ -7,7 +7,7 @@ namespace dw2_exp_multiplier.Patcher.BattleEnhancement
 {
     public class EnemyBossAffectionPatcher : IPatcher
     {
-        public static readonly string TOOLTIP = ".\n";
+        public static readonly string TOOLTIP = "Enemy Boss can be affected or taken damage by Venom Infusion, motivation down Techs, giga-scissor-claw.\n";
 
         private byte[] data;
 

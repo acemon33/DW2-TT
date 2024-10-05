@@ -7,7 +7,7 @@ namespace dw2_exp_multiplier.Patcher.BattleFeature
 {
     public class TurnSkippingPatcher : IPatcher
     {
-        public static readonly string TOOLTIP = ".\n";
+        public static readonly string TOOLTIP = "Skip animations & voice during battle combat.\nUsage:\n- Press a button on Main Menu (Give Orders / Cannon / Run Away) as the following:\n  - [] square: to enable Skip Turn (Skip Animation)\n  - /| triangle: to disable Skip Turn (Default Animation)";
 
         private byte[] slusData;
         private byte[] Stag3000Data;

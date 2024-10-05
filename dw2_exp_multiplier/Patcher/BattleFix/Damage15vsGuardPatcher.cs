@@ -7,7 +7,7 @@ namespace dw2_exp_multiplier.Patcher.BattleFix
 {
     public class Damage15vsGuardPatcher : IPatcher
     {
-        public static readonly string TOOLTIP = ".\n";
+        public static readonly string TOOLTIP = "Correct the behavior 1.5 damage vs guarding.\n";
 
         private byte[] data;
 

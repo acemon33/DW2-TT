@@ -7,7 +7,7 @@ namespace dw2_exp_multiplier.Patcher.BattleFix
 {
     public class ChronoBreakerPatcher : IPatcher
     {
-        public static readonly string TOOLTIP = ".\n";
+        public static readonly string TOOLTIP = "Correct the behavior when some (Attack / Assist / Counter-Attack) Techs following Chrono Breaker.\n";
 
         private byte[] data;
 

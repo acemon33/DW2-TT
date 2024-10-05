@@ -7,7 +7,7 @@ namespace dw2_exp_multiplier.Patcher.BattleFix
 {
     public class GigaByteWingPatcher : IPatcher
     {
-        public static readonly string TOOLTIP = ".\n";
+        public static readonly string TOOLTIP = "Target can't Recover Status even the random chance to cure the status.\n";
 
         private byte[] data;
 

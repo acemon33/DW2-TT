@@ -7,7 +7,7 @@ namespace dw2_exp_multiplier.Patcher.BattleFix
 {
     public class DarkSideAttackPatcher : IPatcher
     {
-        public static readonly string TOOLTIP = ".\n";
+        public static readonly string TOOLTIP = "Target can't recover HP (all healing Techs).\n";
 
         private byte[] data;
 
