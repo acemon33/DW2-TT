@@ -8,6 +8,7 @@ namespace dw2_exp_multiplier.Patcher
     public abstract class IPatcher
     {
         public abstract void Patch(ref FileStream fs);
+        public abstract string GetName();
     }
 
 }

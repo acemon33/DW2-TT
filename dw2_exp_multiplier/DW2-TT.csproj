@@ -91,7 +91,7 @@
     <Compile Include="Patcher\Misc\DigiLinePatcher.cs" />
     <Compile Include="Patcher\Misc\FloorSkippingPatcher.cs" />
     <Compile Include="Patcher\BattleFeature\TechOrderingPatcher.cs" />
-    <Compile Include="Patcher\Misc\NextLevelLimitPatcher.cs" />
+    <Compile Include="Patcher\BattleFeature\NextLevelLimitPatcher.cs" />
     <Compile Include="Patcher\BattleFeature\TurnSkippingPatcher.cs" />
     <Compile Include="Patcher\Misc\RBugRemovalPatcher.cs" />
     <Compile Include="Patcher\Misc\DomainFreeObstaclesPatcher.cs" />
@@ -101,7 +101,7 @@
     <Compile Include="Patcher\IPatcher.cs" />
     <Compile Include="Patcher\Misc\DialogFastForwardPatcher.cs" />
     <Compile Include="Patcher\Misc\ZudokornMonsPatcher.cs" />
-    <Compile Include="Patcher\BattleFeature\MaxLevelLimitPatcher.cs" />
+    <Compile Include="Patcher\Misc\MaxLevelLimitPatcher.cs" />
     <Compile Include="Patcher\Misc\NameExpansionPatcher.cs" />
     <Compile Include="Patcher\Enemyset\UnmoveableEnemy.cs" />
     <Compile Include="Patcher\Enemyset\ExtremeStatsMultiplier.cs" />

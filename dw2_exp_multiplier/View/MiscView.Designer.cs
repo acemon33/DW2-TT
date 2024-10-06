@@ -505,7 +505,7 @@ namespace dw2_exp_multiplier.View
             this.dialogFastForwardPatchercheckBox.Name = "dialogFastForwardPatchercheckBox";
             this.dialogFastForwardPatchercheckBox.Size = new System.Drawing.Size(125, 24);
             this.dialogFastForwardPatchercheckBox.TabIndex = 50;
-            this.dialogFastForwardPatchercheckBox.Text = "Dialog Fast Forward";
+            this.dialogFastForwardPatchercheckBox.Text = "Dialog Fast-Forward";
             this.dialogFastForwardPatchercheckBox.UseVisualStyleBackColor = true;
             this.dialogFastForwardPatchercheckBox.MouseHover += new System.EventHandler(this.dialogFastForwardPatchercheckBox_MouseHover);
             // 

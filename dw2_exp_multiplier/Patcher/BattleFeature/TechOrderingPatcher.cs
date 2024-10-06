@@ -11,10 +11,19 @@ namespace dw2_exp_multiplier.Patcher.BattleFeature
 
         private byte[] data;
 
+        public override string GetName() { return "Tech Ordering Patcher"; }
+
         public override void Patch(ref FileStream fs)
         {
             data = PsxSector.ReadSector(ref fs, DW2Slus.GetLba(FileIndex.STAG3000_PRO), DW2Slus.GetSize(FileIndex.STAG3000_PRO));
 
+            ValidateBytes();
+
+            patchBtyes(ref fs);
+        }
+
+        private void patchBtyes(ref FileStream fs)
+        {
             byte[] patchedPattern = { 0x00, 0x00, 0x59, 0x34 };
             Buffer.BlockCopy(patchedPattern, 0, data, 0x4680, patchedPattern.Length);
 
@@ -67,6 +76,54 @@ namespace dw2_exp_multiplier.Patcher.BattleFeature
             Buffer.BlockCopy(patchedPattern, 0, data, 0x10E38, patchedPattern.Length);
             
             PsxSector.WriteSector(ref fs, ref data, DW2Slus.GetLba(FileIndex.STAG3000_PRO), DW2Slus.GetSize(FileIndex.STAG3000_PRO));
+        }
+
+        private void ValidateBytes()
+        {
+            byte[] bytes =
+            {
+                0x00, 0x00, 0x00, 0x00
+            };
+
+            for (int i = 0, j = 0x4680; i < bytes.Length; i++)
+            {
+                if (bytes[i] != data[j + i])
+                    throw new Exception(GetName());
+            }
+            
+            bytes = new byte[]
+            {
+                0x73, 0x00, 0xC0, 0x13
+            };
+
+            for (int i = 0, j = 0x484C; i < bytes.Length; i++)
+            {
+                if (bytes[i] != data[j + i])
+                    throw new Exception(GetName());
+            }
+
+            bytes = new byte[]
+            {
+                0x00, 0x00, 0x00, 0x00,
+                0x03, 0x00, 0x40, 0x10
+            };
+
+            for (int i = 0, j = 0xE94C; i < bytes.Length; i++)
+            {
+                if (bytes[i] != data[j + i])
+                    throw new Exception(GetName());
+            }
+
+            bytes = new byte[]
+            {
+                0x9C, 0x00, 0xBF, 0x8F
+            };
+
+            for (int i = 0, j = 0x4A24; i < bytes.Length; i++)
+            {
+                if (bytes[i] != data[j + i])
+                    throw new Exception(GetName());
+            }
         }
     }
     

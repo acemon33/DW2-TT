@@ -12,11 +12,20 @@ namespace dw2_exp_multiplier.Patcher.BattleFeature
         private byte[] slusData;
         private byte[] Stag3000Data;
 
+        public override string GetName() { return "Turn Skipping Patcher"; }
+
         public override void Patch(ref FileStream fs)
         {
             slusData = PsxSector.ReadSector(ref fs, FileIndex.SLUS_011_93_INDEX, FileIndex.SLUS_011_93_SIZE);
             Stag3000Data = PsxSector.ReadSector(ref fs, DW2Slus.GetLba(FileIndex.STAG3000_PRO), DW2Slus.GetSize(FileIndex.STAG3000_PRO));
 
+            ValidateBytes();
+
+            patchBtyes(ref fs);
+        }
+
+        private void patchBtyes(ref FileStream fs)
+        {
             byte[] patchedPattern =
             {
                 0x07, 0x80, 0x10, 0x3C,
@@ -140,6 +149,44 @@ namespace dw2_exp_multiplier.Patcher.BattleFeature
 
             PsxSector.WriteSector(ref fs, ref slusData, FileIndex.SLUS_011_93_INDEX, FileIndex.SLUS_011_93_SIZE);
             PsxSector.WriteSector(ref fs, ref Stag3000Data, DW2Slus.GetLba(FileIndex.STAG3000_PRO), DW2Slus.GetSize(FileIndex.STAG3000_PRO));
+        }
+
+        private void ValidateBytes()
+        {
+            byte[] bytes =
+            {
+                0x60, 0x00, 0xBF, 0x8F
+            };
+
+            for (int i = 0, j = 0x1C38; i < bytes.Length; i++)
+            {
+                if (bytes[i] != Stag3000Data[j + i])
+                    throw new Exception(GetName());
+            }
+
+            bytes = new byte[]
+            {
+                0x9C, 0x00, 0xBF, 0x8F,
+                0x98, 0x00, 0xB6, 0x8F
+            };
+
+            for (int i = 0, j = 0x9F64; i < bytes.Length; i++)
+            {
+                if (bytes[i] != Stag3000Data[j + i])
+                    throw new Exception(GetName());
+            }
+
+            bytes = new byte[]
+            {
+                0x18, 0x00, 0x43, 0x8E,
+                0x00, 0x00, 0x00, 0x00
+            };
+
+            for (int i = 0, j = 0xBEF4; i < bytes.Length; i++)
+            {
+                if (bytes[i] != Stag3000Data[j + i])
+                    throw new Exception(GetName());
+            }
         }
     }
     

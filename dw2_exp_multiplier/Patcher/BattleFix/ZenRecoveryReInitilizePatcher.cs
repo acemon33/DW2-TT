@@ -11,6 +11,8 @@ namespace dw2_exp_multiplier.Patcher.BattleFix
 
         private byte[] data;
 
+        public override string GetName() { return ""; }
+
         public override void Patch(ref FileStream fs)
         {
             data = PsxSector.ReadSector(ref fs, DW2Slus.GetLba(FileIndex.STAG3000_PRO), DW2Slus.GetSize(FileIndex.STAG3000_PRO));

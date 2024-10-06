@@ -11,10 +11,19 @@ namespace dw2_exp_multiplier.Patcher.Misc
 
         private byte[] data;
 
+        public override string GetName() { return "R-Bug Removal Patcher"; }
+
         public override void Patch(ref FileStream fs)
         {
             data = PsxSector.ReadSector(ref fs, DW2Slus.GetLba(FileIndex.STAG4000_PRO), DW2Slus.GetSize(FileIndex.STAG4000_PRO));
 
+            ValidateBytes();
+
+            patchBtyes(ref fs);
+        }
+
+        private void patchBtyes(ref FileStream fs)
+        {
             byte[] patchedPattern = { 0xC8, 0xCA, 0x01, 0x08 };
             Buffer.BlockCopy(patchedPattern, 0, data, 0xA1F4, patchedPattern.Length);
             
@@ -30,6 +39,20 @@ namespace dw2_exp_multiplier.Patcher.Misc
             Buffer.BlockCopy(patchedPattern, 0, data, 0xF7C0, patchedPattern.Length);
             
             PsxSector.WriteSector(ref fs, ref data, DW2Slus.GetLba(FileIndex.STAG4000_PRO), DW2Slus.GetSize(FileIndex.STAG4000_PRO));
+        }
+
+        private void ValidateBytes()
+        {
+            byte[] bytes =
+            {
+                0x08, 0x00, 0x0B, 0xA1
+            };
+
+            for (int i = 0, j = 0xA1F4; i < bytes.Length; i++)
+            {
+                if (bytes[i] != data[j + i])
+                    throw new Exception(GetName());
+            }
         }
     }
     

@@ -12,11 +12,20 @@ namespace dw2_exp_multiplier.Patcher.Misc
         private byte[] slusData;
         private byte[] Stag4000Data;
 
+        public override string GetName() { return "Digi-Line Patcher"; }
+
         public override void Patch(ref FileStream fs)
         {
             slusData = PsxSector.ReadSector(ref fs, FileIndex.SLUS_011_93_INDEX, FileIndex.SLUS_011_93_SIZE);
             Stag4000Data = PsxSector.ReadSector(ref fs, DW2Slus.GetLba(FileIndex.STAG4000_PRO), DW2Slus.GetSize(FileIndex.STAG4000_PRO));
 
+            ValidateBytes();
+
+            patchBtyes(ref fs);
+        }
+
+        private void patchBtyes(ref FileStream fs)
+        {
             byte[] patchedPattern =
             {
                 0xB8, 0x26, 0x01, 0x08,
@@ -49,6 +58,32 @@ namespace dw2_exp_multiplier.Patcher.Misc
 
             PsxSector.WriteSector(ref fs, ref slusData, FileIndex.SLUS_011_93_INDEX, FileIndex.SLUS_011_93_SIZE);
             PsxSector.WriteSector(ref fs, ref Stag4000Data, DW2Slus.GetLba(FileIndex.STAG4000_PRO), DW2Slus.GetSize(FileIndex.STAG4000_PRO));
+        }
+
+        private void ValidateBytes()
+        {
+            byte[] bytes =
+            {
+                0x04, 0xF7, 0x63, 0x8C,
+                0x00, 0x00, 0x00, 0x00,
+            };
+
+            for (int i = 0, j = 0x7DCC; i < bytes.Length; i++)
+            {
+                if (bytes[i] != slusData[j + i])
+                    throw new Exception(GetName());
+            }
+
+            bytes = new byte[]
+            {
+                0xE4, 0x00, 0x62, 0xA0,
+            };
+
+            for (int i = 0, j = 0x678; i < bytes.Length; i++)
+            {
+                if (bytes[i] != Stag4000Data[j + i])
+                    throw new Exception(GetName());
+            }
         }
     }
     

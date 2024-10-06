@@ -11,10 +11,19 @@ namespace dw2_exp_multiplier.Patcher.Misc
 
         private byte[] data;
 
+        public override string GetName() { return "Floor Skipping Patcher"; }
+
         public override void Patch(ref FileStream fs)
         {
             data = PsxSector.ReadSector(ref fs, DW2Slus.GetLba(FileIndex.STAG4000_PRO), DW2Slus.GetSize(FileIndex.STAG4000_PRO));
 
+            ValidateBytes();
+
+            patchBtyes(ref fs);
+        }
+
+        private void patchBtyes(ref FileStream fs)
+        {
             byte[] patchedPattern = { 0xAC, 0xCA, 0x01, 0x08, 0x18, 0x00, 0xBF, 0x8F };
             Buffer.BlockCopy(patchedPattern, 0, data, 0x43DC, patchedPattern.Length);
             
@@ -52,6 +61,21 @@ namespace dw2_exp_multiplier.Patcher.Misc
             Buffer.BlockCopy(patchedPattern, 0, data, 0xF750, patchedPattern.Length);
             
             PsxSector.WriteSector(ref fs, ref data, DW2Slus.GetLba(FileIndex.STAG4000_PRO), DW2Slus.GetSize(FileIndex.STAG4000_PRO));
+        }
+
+        private void ValidateBytes()
+        {
+            byte[] bytes =
+            {
+                0x18, 0x00, 0xBF, 0x8F,
+                0x14, 0x00, 0xB1, 0x8F
+            };
+
+            for (int i = 0, j = 0x43DC; i < bytes.Length; i++)
+            {
+                if (bytes[i] != data[j + i])
+                    throw new Exception(GetName());
+            }
         }
     }
     

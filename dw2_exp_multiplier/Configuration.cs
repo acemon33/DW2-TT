@@ -44,7 +44,6 @@ namespace dw2_exp_multiplier
             FileIndex.STAG3000_PRO,
             FileIndex.STAG4000_PRO,
             FileIndex.ENEMYSET_BIN,
-            FileIndex.DATA4000_BIN,
         };
         
         public static void SetVanillaMode() { mode = "Vanilla"; }

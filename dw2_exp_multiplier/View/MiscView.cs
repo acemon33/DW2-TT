@@ -156,10 +156,27 @@ namespace dw2_exp_multiplier.View
                 if (nextLevelLimitCheckBox.Checked)
                     patcherList.Add(new NextLevelLimitPatcher());
 
+                String errorMsg = "";
+                String successMsg = "";
                 foreach (IPatcher patcher in patcherList)
-                    patcher.Patch(ref fs);
+                {
+                    try
+                    {
+                        patcher.Patch(ref fs);
+                        successMsg += " - " + patcher.GetName() + "\n";
+                    }
+                    catch(Exception ex)
+                    {
+                        errorMsg += " - " + ex.Message + "\n";
+                    }
+                }
 
-                MessageBox.Show("The file has been Saved Successfully", "Enjoy ^_^");
+                string finalMsg = "";
+                if (successMsg.Length > 0)
+                    finalMsg += "The file has been Saved Successfully\n\nThe following patchers:\n" + successMsg + "\n\n";
+                if (errorMsg.Length > 0)
+                    finalMsg += "Error the following patchers: (mismatch bytes or already patched)\n" + errorMsg + "\n\n";
+                MessageBox.Show(finalMsg, (errorMsg.Length < 1) ? "Enjoy ^_^" : "Some Errors Found");
             }
             catch (FileLoadException ex)
             {

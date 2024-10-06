@@ -11,10 +11,19 @@ namespace dw2_exp_multiplier.Patcher.Misc
 
         private byte[] data;
 
+        public override string GetName() { return "DNA DP Patcher";  }
+
         public override void Patch(ref FileStream fs)
         {
             data = PsxSector.ReadSector(ref fs, DW2Slus.GetLba(FileIndex.STAG2000_PRO), DW2Slus.GetSize(FileIndex.STAG2000_PRO));
 
+            ValidateBytes();
+
+            patchBtyes(ref fs);
+        }
+
+        private void patchBtyes(ref FileStream fs)
+        {
             byte[] patchedPattern =
             {
                 0x06, 0x80, 0x02, 0x3C,
@@ -50,6 +59,26 @@ namespace dw2_exp_multiplier.Patcher.Misc
             Buffer.BlockCopy(patchedPattern, 0, data, 0xD850, patchedPattern.Length);    // ram: 80070bb0
 
             PsxSector.WriteSector(ref fs, ref data, DW2Slus.GetLba(FileIndex.STAG2000_PRO), DW2Slus.GetSize(FileIndex.STAG2000_PRO));
+        }
+
+        private void ValidateBytes()
+        {
+            byte[] bytes =
+            {
+                0x0E, 0x00, 0xC4, 0x92,
+                0x0E, 0x00, 0xA3, 0x92,
+                0x00, 0x00, 0x00, 0x00,
+                0x2B, 0x10, 0x64, 0x00,
+                0x02, 0x00, 0x40, 0x14,
+                0x01, 0x00, 0x82, 0x24,
+                0x01, 0x00, 0x62, 0x24
+            };
+
+            for (int i = 0, j = 0x1508; i < bytes.Length; i++)
+            {
+                if (bytes[i] != data[j + i])
+                    throw new Exception(GetName());
+            }
         }
     }
     
