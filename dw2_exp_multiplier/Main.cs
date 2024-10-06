@@ -13,6 +13,7 @@ namespace dw2_exp_multiplier
         public static string Title;
         public static ToolTip HintToolTip;
         private static Main main;
+        private string CurrentDirectory;
         #endregion
 
         public Main()
@@ -23,6 +24,7 @@ namespace dw2_exp_multiplier
             HintToolTip = new ToolTip();
             this.tabControl1.TabPages.RemoveByKey("tabPage3");
             fileManagerToolStripMenuItem.Checked = false;
+            this.CurrentDirectory = Directory.GetCurrentDirectory();
         }
 
         public static Main GetMain() { return main; }
@@ -95,17 +97,21 @@ namespace dw2_exp_multiplier
             {
                 fs = new FileStream(this.miscView.GetDw2BinPath(), FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
                 DW2Slus.ValidImageFile(ref fs);
-                var fbd = new FolderBrowserDialog();
-                fbd.SelectedPath = Directory.GetCurrentDirectory();
-                if (fbd.ShowDialog() == DialogResult.OK)
+
+                FolderPicker fbd = new FolderPicker();
+                fbd.Title = "Open Folder";
+                fbd.InputPath = this.CurrentDirectory;
+
+                if (fbd.ShowDialog(this.Handle) == true)
                 {
+                    this.CurrentDirectory = fbd.ResultPath;
                     byte[] buffer = PsxSector.ReadSector(ref fs, FileIndex.SLUS_011_93_INDEX, FileIndex.SLUS_011_93_SIZE);
-                    File.WriteAllBytes($"{fbd.SelectedPath}\\{FileManagerView.SLUS_NAME}.BIN", buffer);
+                    File.WriteAllBytes($"{this.CurrentDirectory}\\{FileManagerView.SLUS_NAME}.BIN", buffer);
 
                     foreach (var fileIndex in Configuration.backupRestoreFileIndexes)
                     {
                         buffer = PsxSector.ReadSector(ref fs, DW2Slus.GetLba(fileIndex), DW2Slus.GetSize(fileIndex));
-                        File.WriteAllBytes($"{fbd.SelectedPath}\\{fileIndex}.BIN", buffer);
+                        File.WriteAllBytes($"{this.CurrentDirectory}\\{fileIndex}.BIN", buffer);
                     }
                 }
                 MessageBox.Show("Files have been Exported Successfully", "Success", MessageBoxButtons.OK);
@@ -131,18 +137,23 @@ namespace dw2_exp_multiplier
             {
                 fs = new FileStream(this.miscView.GetDw2BinPath(), FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
                 DW2Slus.ValidImageFile(ref fs);
-                var fbd = new FolderBrowserDialog();
-                fbd.SelectedPath = Directory.GetCurrentDirectory();
-                if (fbd.ShowDialog() == DialogResult.OK)
+
+                FolderPicker fbd = new FolderPicker();
+                fbd.Title = "Open Folder";
+                fbd.InputPath = this.CurrentDirectory;
+
+                if (fbd.ShowDialog(this.Handle) == true)
                 {
-                    string file = $"{fbd.SelectedPath}\\{FileManagerView.SLUS_NAME}.BIN";
+                    this.CurrentDirectory = fbd.ResultPath;
+
+                    string file = $"{this.CurrentDirectory}\\{FileManagerView.SLUS_NAME}.BIN";
                     if (!File.Exists(file)) throw new FileNotFoundException($"File: {file} Not Found");
                     byte[] buffer = File.ReadAllBytes(file);
                     PsxSector.WriteSector(ref fs, ref buffer, FileIndex.SLUS_011_93_INDEX, FileIndex.SLUS_011_93_SIZE);
 
                     foreach (var fileIndex in Configuration.backupRestoreFileIndexes)
                     {
-                        file = $"{fbd.SelectedPath}\\{fileIndex}.BIN";
+                        file = $"{this.CurrentDirectory}\\{fileIndex}.BIN";
                         if (!File.Exists(file)) throw new FileNotFoundException($"File: {file} Not Found");
                         buffer = File.ReadAllBytes(file);
                         PsxSector.WriteSector(ref fs, ref buffer, DW2Slus.GetLba(fileIndex), DW2Slus.GetSize(fileIndex));

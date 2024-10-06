@@ -60,6 +60,7 @@
     <Compile Include="Base\FileIndex.cs" />
     <Compile Include="Base\PsxSector.cs" />
     <Compile Include="Configuration.cs" />
+    <Compile Include="DigimonWorld2Tool\FolderPicker.cs" />
     <Compile Include="DigimonWorld2Tool\TextConversion.cs" />
     <Compile Include="Entity\Enemyset.cs" />
     <Compile Include="Entity\ISaveFile.cs" />

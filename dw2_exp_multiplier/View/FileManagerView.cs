@@ -11,19 +11,23 @@ namespace dw2_exp_multiplier.View
     {
         private static readonly int SLUS_INDEX = -1;
         public static readonly string SLUS_NAME = "SLUS";
+        private string CurrentDirectory;
 
         public FileManagerView()
         {
             InitializeComponent();
+            this.CurrentDirectory = Directory.GetCurrentDirectory();
         }
 
         #region Control Events Region
         private void importButton_Click(object sender, EventArgs e)
         {
-            var fbd = new FolderBrowserDialog();
-            fbd.SelectedPath = Directory.GetCurrentDirectory();
-            if (fbd.ShowDialog() == DialogResult.OK)
+            FolderPicker fbd = new FolderPicker();
+            fbd.Title = "Open Folder";
+            fbd.InputPath = this.CurrentDirectory;
+            if (fbd.ShowDialog(this.Handle) == true)
             {
+                this.CurrentDirectory = fbd.ResultPath;
                 string filename = dw2TextBox.Text;
                 FileStream fs = null;
                 try
@@ -31,7 +35,7 @@ namespace dw2_exp_multiplier.View
                     fs = new FileStream(filename, FileMode.Open, FileAccess.ReadWrite);
                     DW2Slus.ValidImageFile(ref fs);
 
-                    Dictionary<int, string> fileIndexes = this.ParseIndex(fbd.SelectedPath);
+                    Dictionary<int, string> fileIndexes = this.ParseIndex(this.CurrentDirectory);
 
                     foreach (var file in fileIndexes)
                     {
@@ -57,10 +61,12 @@ namespace dw2_exp_multiplier.View
 
         private void exportButton_Click(object sender, EventArgs e)
         {
-            var fbd = new FolderBrowserDialog();
-            fbd.SelectedPath = Directory.GetCurrentDirectory();
-            if (fbd.ShowDialog() == DialogResult.OK)
+            FolderPicker fbd = new FolderPicker();
+            fbd.Title = "Open Folder";
+            fbd.InputPath = this.CurrentDirectory;
+            if (fbd.ShowDialog(this.Handle) == true)
             {
+                this.CurrentDirectory = fbd.ResultPath;
                 string filename = dw2TextBox.Text;
                 FileStream fs = null;
                 try
@@ -68,7 +74,7 @@ namespace dw2_exp_multiplier.View
                     fs = new FileStream(filename, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
                     DW2Slus.ValidImageFile(ref fs);
      
-                    Dictionary<int, string> fileIndexes = this.ParseIndex(fbd.SelectedPath);
+                    Dictionary<int, string> fileIndexes = this.ParseIndex(this.CurrentDirectory);
      
                     foreach (var file in fileIndexes)
                     {
