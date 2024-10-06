@@ -209,14 +209,6 @@
             this.tabPage3.Text = "File Manager";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // fileManagerToolStripMenuItem
-            // 
-            this.fileManagerToolStripMenuItem.CheckOnClick = true;
-            this.fileManagerToolStripMenuItem.Name = "fileManagerToolStripMenuItem";
-            this.fileManagerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.fileManagerToolStripMenuItem.Text = "File Manager";
-            this.fileManagerToolStripMenuItem.Click += new System.EventHandler(this.fileManagerToolStripMenuItem_Click);
-            // 
             // miscView
             // 
             this.miscView.Location = new System.Drawing.Point(3, 3);
