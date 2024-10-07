@@ -11,11 +11,13 @@ namespace dw2_exp_multiplier.Patcher.Misc
 
         private byte[] data;
 
+        public RBugRemovalPatcher(DW2Image dw2Image) : base(dw2Image) { }
+
         public override string GetName() { return "R-Bug Removal Patcher"; }
 
         public override void Patch(ref FileStream fs)
         {
-            data = PsxSector.ReadSector(ref fs, DW2Slus.GetLba(FileIndex.STAG4000_PRO), DW2Slus.GetSize(FileIndex.STAG4000_PRO));
+            data = this.DW2Image.ReadFile(FileIndex.STAG4000_PRO);
 
             ValidateBytes();
 
@@ -38,7 +40,7 @@ namespace dw2_exp_multiplier.Patcher.Misc
             };
             Buffer.BlockCopy(patchedPattern, 0, data, 0xF7C0, patchedPattern.Length);
             
-            PsxSector.WriteSector(ref fs, ref data, DW2Slus.GetLba(FileIndex.STAG4000_PRO), DW2Slus.GetSize(FileIndex.STAG4000_PRO));
+            this.DW2Image.WriteFile(ref data, FileIndex.STAG4000_PRO);
         }
 
         private void ValidateBytes()

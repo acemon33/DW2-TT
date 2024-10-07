@@ -66,11 +66,11 @@ namespace dw2_exp_multiplier.View
             FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.ReadWrite);
             try
             {
-                DW2Slus.ValidImageFile(ref fs);
+                DW2Image dW2Image = new DW2Image(ref fs);
 
                 if (enemysetTextBox.Text.Length > 0)
                 {
-                    EnemysetManager enemysetManager = new EnemysetManager(enemysetTextBox.Text);
+                    EnemysetManager enemysetManager = new EnemysetManager(dW2Image, enemysetTextBox.Text);
                     
                     if (multiplier.Value.CompareTo(Decimal.One) != 0)
                         enemysetManager.AddModifier(new ExpBitsMultiplier(multiplier.Value));
@@ -109,52 +109,52 @@ namespace dw2_exp_multiplier.View
                 List<IPatcher> patcherList = new List<IPatcher>();
 
                 if (dnaLabsPatcherCheckBox.Checked)
-                    patcherList.Add(new DnaLabsPatcher());
+                    patcherList.Add(new DnaLabsPatcher(dW2Image));
 
                 if (DnaDpCheckBox.Checked)
-                    patcherList.Add(new DnaDpPatcher());
+                    patcherList.Add(new DnaDpPatcher(dW2Image));
 
                 if (digimonGiftPatcherCheckBox.Checked)
-                    patcherList.Add(new DigimonGiftPatcher());
+                    patcherList.Add(new DigimonGiftPatcher(dW2Image));
 
                 if (digiLinePatcherCheckBox.Checked)
-                    patcherList.Add(new DigiLinePatcher());
+                    patcherList.Add(new DigiLinePatcher(dW2Image));
 
                 if (beastKingFistEnhanceCheckBox.Checked)
-                    patcherList.Add(new BeastKingFistPatcher());
+                    patcherList.Add(new BeastKingFistPatcher(dW2Image));
                                 
                 if (chronoBreakerFixCheckBox.Checked)
-                    patcherList.Add(new ChronoBreakerPatcher());
+                    patcherList.Add(new ChronoBreakerPatcher(dW2Image));
 
                 if (nameExpansionPatcherCheckBox.Checked)
-                    patcherList.Add(new NameExpansionPatcher());
+                    patcherList.Add(new NameExpansionPatcher(dW2Image));
                 
                 if (maxLevelPatcherCheckBox.Checked)
-                    patcherList.Add(new MaxLevelLimitPatcher());
+                    patcherList.Add(new MaxLevelLimitPatcher(dW2Image));
 
                 if (dialogFastForwardPatchercheckBox.Checked)
-                    patcherList.Add(new DialogFastForwardPatcher());
+                    patcherList.Add(new DialogFastForwardPatcher(dW2Image));
 
                 if (zudokornMonsPatcherCheckBox.Checked)
-                    patcherList.Add(new ZudokornMonsPatchers());
+                    patcherList.Add(new ZudokornMonsPatchers(dW2Image));
 
                 if (domainFreeObstaclesCheckBox.Checked)
-                    patcherList.Add(new DomainFreeObstaclesPatcher());
+                    patcherList.Add(new DomainFreeObstaclesPatcher(dW2Image));
 
                 if (floorSkippingCheckBox.Checked)
-                    patcherList.Add(new FloorSkippingPatcher());
+                    patcherList.Add(new FloorSkippingPatcher(dW2Image));
 
                 if (RBugRemovalCheckBox.Checked)
-                    patcherList.Add(new RBugRemovalPatcher());
+                    patcherList.Add(new RBugRemovalPatcher(dW2Image));
 
                 if (turnSkippingCheckBox.Checked)
-                    patcherList.Add(new TurnSkippingPatcher());
+                    patcherList.Add(new TurnSkippingPatcher(dW2Image));
 
                 if (techOrderingCheckBox.Checked)
-                    patcherList.Add(new TechOrderingPatcher());
+                    patcherList.Add(new TechOrderingPatcher(dW2Image));
 
                 if (nextLevelLimitCheckBox.Checked)
-                    patcherList.Add(new NextLevelLimitPatcher());
+                    patcherList.Add(new NextLevelLimitPatcher(dW2Image));
 
                 String errorMsg = "";
                 String successMsg = "";

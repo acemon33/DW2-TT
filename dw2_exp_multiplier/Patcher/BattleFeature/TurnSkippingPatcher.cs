@@ -12,12 +12,14 @@ namespace dw2_exp_multiplier.Patcher.BattleFeature
         private byte[] slusData;
         private byte[] Stag3000Data;
 
+        public TurnSkippingPatcher(DW2Image dw2Image) : base(dw2Image) { }
+
         public override string GetName() { return "Turn Skipping Patcher"; }
 
         public override void Patch(ref FileStream fs)
         {
-            slusData = PsxSector.ReadSector(ref fs, FileIndex.SLUS_011_93_INDEX, FileIndex.SLUS_011_93_SIZE);
-            Stag3000Data = PsxSector.ReadSector(ref fs, DW2Slus.GetLba(FileIndex.STAG3000_PRO), DW2Slus.GetSize(FileIndex.STAG3000_PRO));
+            slusData = this.DW2Image.ReadMainFile();
+            Stag3000Data = this.DW2Image.ReadFile(FileIndex.STAG3000_PRO);
 
             ValidateBytes();
 
@@ -147,8 +149,8 @@ namespace dw2_exp_multiplier.Patcher.BattleFeature
             patchedPattern = new byte[] { 0x2D, 0x27, 0x01, 0x08, 0x07, 0x80, 0x03, 0x3C };
             Buffer.BlockCopy(patchedPattern, 0, Stag3000Data, 0xBEF4, patchedPattern.Length);
 
-            PsxSector.WriteSector(ref fs, ref slusData, FileIndex.SLUS_011_93_INDEX, FileIndex.SLUS_011_93_SIZE);
-            PsxSector.WriteSector(ref fs, ref Stag3000Data, DW2Slus.GetLba(FileIndex.STAG3000_PRO), DW2Slus.GetSize(FileIndex.STAG3000_PRO));
+            this.DW2Image.WriteMainFile(ref slusData);
+            this.DW2Image.WriteFile(ref Stag3000Data, FileIndex.STAG3000_PRO);
         }
 
         private void ValidateBytes()

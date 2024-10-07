@@ -11,11 +11,13 @@ namespace dw2_exp_multiplier.Patcher.BattleFeature
 
         private byte[] data;
 
+        public NextLevelLimitPatcher(DW2Image dw2Image) : base(dw2Image) { }
+
         public override string GetName() { return "Next Level Limit Patcher"; }
 
         public override void Patch(ref FileStream fs)
         {
-            data = PsxSector.ReadSector(ref fs, DW2Slus.GetLba(FileIndex.STAG3000_PRO), DW2Slus.GetSize(FileIndex.STAG3000_PRO));
+            data = this.DW2Image.ReadFile(FileIndex.STAG3000_PRO);
 
             ValidateBytes();
 
@@ -27,7 +29,7 @@ namespace dw2_exp_multiplier.Patcher.BattleFeature
             byte[] patchedPattern = { 0x6C, 0xC6, 0x01, 0x08 };
             Buffer.BlockCopy(patchedPattern, 0, data, 0xE688, patchedPattern.Length);
 
-            PsxSector.WriteSector(ref fs, ref data, DW2Slus.GetLba(FileIndex.STAG3000_PRO), DW2Slus.GetSize(FileIndex.STAG3000_PRO));
+            this.DW2Image.WriteFile(ref data, FileIndex.STAG3000_PRO);
         }
 
         private void ValidateBytes()

@@ -56,6 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\DW2Image.cs" />
     <Compile Include="Base\DW2Slus.cs" />
     <Compile Include="Base\FileIndex.cs" />
     <Compile Include="Base\PsxSector.cs" />

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.IO;
+using dw2_exp_multiplier.Base;
 using dw2_exp_multiplier.Entity;
 using dw2_exp_multiplier.Mapper;
 
@@ -10,15 +11,17 @@ namespace dw2_exp_multiplier.Patcher
     {
         private List<IEnemysetModifier> ModifierList = new List<IEnemysetModifier>();
         private List<Enemyset> EnemysetList = new List<Enemyset>();
+        private DW2Image dw2Image;
 
-        public EnemysetManager(string filepath)
+        public EnemysetManager(DW2Image dw2Image, string filepath)
         {
             EnemysetMapper.ReadFile(filepath, ref this.EnemysetList);
+            this.dw2Image = dw2Image;
         }
 
         public EnemysetManager(ref FileStream br)
         {
-            EnemysetMapper.ReadBin(ref br, ref this.EnemysetList);
+            EnemysetMapper.ReadBin(this.dw2Image, ref this.EnemysetList);
         }
 
         public void AddModifier(IEnemysetModifier enemysetModifier)
@@ -39,7 +42,7 @@ namespace dw2_exp_multiplier.Patcher
 
         public void WriteToBin(ref FileStream br)
         {
-            EnemysetMapper.WriteBin(ref br, ref this.EnemysetList);
+            EnemysetMapper.WriteBin(this.dw2Image, ref this.EnemysetList);
         }
     }
     

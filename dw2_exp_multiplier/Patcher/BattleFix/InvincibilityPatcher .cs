@@ -11,11 +11,13 @@ namespace dw2_exp_multiplier.Patcher.BattleFix
 
         private byte[] data;
 
+        public InvincibilityPatcher(DW2Image dw2Image) : base(dw2Image) { }
+
         public override string GetName() { return ""; }
 
         public override void Patch(ref FileStream fs)
         {
-            data = PsxSector.ReadSector(ref fs, DW2Slus.GetLba(FileIndex.STAG3000_PRO), DW2Slus.GetSize(FileIndex.STAG3000_PRO));
+            data = this.DW2Image.ReadFile(FileIndex.STAG3000_PRO);
 
             byte[] patchedPattern = { 0x91, 0xD0, 0x01, 0x08, 0x07, 0x80, 0x02, 0x3C };
             Buffer.BlockCopy(patchedPattern, 0, data, 0x7CB8, patchedPattern.Length);
@@ -36,7 +38,7 @@ namespace dw2_exp_multiplier.Patcher.BattleFix
             };
             Buffer.BlockCopy(patchedPattern, 0, data, 0x10EE4, patchedPattern.Length);
 
-            PsxSector.WriteSector(ref fs, ref data, DW2Slus.GetLba(FileIndex.STAG3000_PRO), DW2Slus.GetSize(FileIndex.STAG3000_PRO));
+            this.DW2Image.WriteFile(ref data, FileIndex.STAG3000_PRO);
         }
     }
     

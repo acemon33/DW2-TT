@@ -33,7 +33,7 @@ namespace dw2_exp_multiplier.View
                 try
                 {
                     fs = new FileStream(filename, FileMode.Open, FileAccess.ReadWrite);
-                    DW2Slus.ValidImageFile(ref fs);
+                    DW2Image dw2Image = new DW2Image(ref fs);
 
                     Dictionary<int, string> fileIndexes = this.ParseIndex(this.CurrentDirectory);
 
@@ -42,9 +42,9 @@ namespace dw2_exp_multiplier.View
                         if (!File.Exists(file.Value)) throw new FileNotFoundException("File: " + file.Value + " Not Found");
                         byte[] buffer = File.ReadAllBytes(file.Value);
                         if (file.Key == SLUS_INDEX)
-                            PsxSector.WriteSector(ref fs, ref buffer, FileIndex.SLUS_011_93_INDEX, FileIndex.SLUS_011_93_SIZE);
+                            dw2Image.WriteMainFile(ref buffer);
                         else
-                            PsxSector.WriteSector(ref fs, ref buffer, DW2Slus.GetLba(file.Key), DW2Slus.GetSize(file.Key));
+                            dw2Image.WriteFile(ref buffer, file.Key);
                     }
                     MessageBox.Show("File(s) Inserted Successfully");
                 }
@@ -72,7 +72,7 @@ namespace dw2_exp_multiplier.View
                 try
                 {
                     fs = new FileStream(filename, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
-                    DW2Slus.ValidImageFile(ref fs);
+                    DW2Image dw2Image = new DW2Image(ref fs);
      
                     Dictionary<int, string> fileIndexes = this.ParseIndex(this.CurrentDirectory);
      
@@ -80,9 +80,9 @@ namespace dw2_exp_multiplier.View
                     {
                         byte[] buffer = null;
                         if (file.Key == SLUS_INDEX)
-                            buffer = PsxSector.ReadSector(ref fs, FileIndex.SLUS_011_93_INDEX, FileIndex.SLUS_011_93_SIZE);
+                            buffer = dw2Image.ReadMainFile();
                         else
-                            buffer = PsxSector.ReadSector(ref fs, DW2Slus.GetLba(file.Key), DW2Slus.GetSize(file.Key));
+                            buffer = dw2Image.ReadFile(file.Key);
                         File.WriteAllBytes(file.Value, buffer);
                     }
                     

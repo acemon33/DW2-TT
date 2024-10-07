@@ -12,12 +12,14 @@ namespace dw2_exp_multiplier.Patcher.Misc
         private byte[] slusData;
         private byte[] Stag1100Data;
 
+        public NameExpansionPatcher(DW2Image dw2Image) : base(dw2Image) { }
+
         public override string GetName() { return "Name Extension Patcher"; }
 
         public override void Patch(ref FileStream fs)
         {
-            slusData = PsxSector.ReadSector(ref fs, FileIndex.SLUS_011_93_INDEX, FileIndex.SLUS_011_93_SIZE);
-            Stag1100Data = PsxSector.ReadSector(ref fs, DW2Slus.GetLba(FileIndex.STAG1100_PRO), DW2Slus.GetSize(FileIndex.STAG1100_PRO));
+            slusData = this.DW2Image.ReadMainFile();
+            Stag1100Data = this.DW2Image.ReadFile(FileIndex.STAG1100_PRO);
 
             ValidateBytes();
 
@@ -35,8 +37,8 @@ namespace dw2_exp_multiplier.Patcher.Misc
             patchedPattern = new byte[] { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
             Buffer.BlockCopy(patchedPattern, 0, Stag1100Data, 0x2144, patchedPattern.Length);    // ram: 800654a4
 
-            PsxSector.WriteSector(ref fs, ref slusData, FileIndex.SLUS_011_93_INDEX, FileIndex.SLUS_011_93_SIZE);
-            PsxSector.WriteSector(ref fs, ref Stag1100Data, DW2Slus.GetLba(FileIndex.STAG1100_PRO), DW2Slus.GetSize(FileIndex.STAG1100_PRO));
+            this.DW2Image.WriteMainFile(ref slusData);
+            this.DW2Image.WriteFile(ref Stag1100Data, FileIndex.STAG1100_PRO);
         }
 
         private void ValidateBytes()

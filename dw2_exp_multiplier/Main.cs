@@ -96,7 +96,7 @@ namespace dw2_exp_multiplier
             try
             {
                 fs = new FileStream(this.miscView.GetDw2BinPath(), FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-                DW2Slus.ValidImageFile(ref fs);
+                DW2Image dw2Image = new DW2Image(ref fs);
 
                 FolderPicker fbd = new FolderPicker();
                 fbd.Title = "Open Folder";
@@ -105,12 +105,12 @@ namespace dw2_exp_multiplier
                 if (fbd.ShowDialog(this.Handle) == true)
                 {
                     this.CurrentDirectory = fbd.ResultPath;
-                    byte[] buffer = PsxSector.ReadSector(ref fs, FileIndex.SLUS_011_93_INDEX, FileIndex.SLUS_011_93_SIZE);
+                    byte[] buffer = dw2Image.ReadMainFile();
                     File.WriteAllBytes($"{this.CurrentDirectory}\\{FileManagerView.SLUS_NAME}.BIN", buffer);
 
                     foreach (var fileIndex in Configuration.backupRestoreFileIndexes)
                     {
-                        buffer = PsxSector.ReadSector(ref fs, DW2Slus.GetLba(fileIndex), DW2Slus.GetSize(fileIndex));
+                        buffer = dw2Image.ReadFile(fileIndex);
                         File.WriteAllBytes($"{this.CurrentDirectory}\\{fileIndex}.BIN", buffer);
                     }
                 }
@@ -136,7 +136,7 @@ namespace dw2_exp_multiplier
             try
             {
                 fs = new FileStream(this.miscView.GetDw2BinPath(), FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
-                DW2Slus.ValidImageFile(ref fs);
+                DW2Image dw2Image = new DW2Image(ref fs);
 
                 FolderPicker fbd = new FolderPicker();
                 fbd.Title = "Open Folder";
@@ -149,14 +149,14 @@ namespace dw2_exp_multiplier
                     string file = $"{this.CurrentDirectory}\\{FileManagerView.SLUS_NAME}.BIN";
                     if (!File.Exists(file)) throw new FileNotFoundException($"File: {file} Not Found");
                     byte[] buffer = File.ReadAllBytes(file);
-                    PsxSector.WriteSector(ref fs, ref buffer, FileIndex.SLUS_011_93_INDEX, FileIndex.SLUS_011_93_SIZE);
+                    dw2Image.WriteMainFile(ref buffer);
 
                     foreach (var fileIndex in Configuration.backupRestoreFileIndexes)
                     {
                         file = $"{this.CurrentDirectory}\\{fileIndex}.BIN";
                         if (!File.Exists(file)) throw new FileNotFoundException($"File: {file} Not Found");
                         buffer = File.ReadAllBytes(file);
-                        PsxSector.WriteSector(ref fs, ref buffer, DW2Slus.GetLba(fileIndex), DW2Slus.GetSize(fileIndex));
+                        dw2Image.WriteFile(ref buffer, fileIndex);
                     }
                 }
                 MessageBox.Show("Files have been Imported Successfully", "Success", MessageBoxButtons.OK);

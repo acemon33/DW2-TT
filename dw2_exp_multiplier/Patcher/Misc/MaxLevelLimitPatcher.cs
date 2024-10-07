@@ -12,12 +12,14 @@ namespace dw2_exp_multiplier.Patcher.Misc
         private byte[] slusData;
         private byte[] Stag2000Data;
 
+        public MaxLevelLimitPatcher(DW2Image dw2Image) : base(dw2Image) { }
+
         public override string GetName() { return "Max Level Limit Patcher"; }
 
         public override void Patch(ref FileStream fs)
         {
-            slusData = PsxSector.ReadSector(ref fs, FileIndex.SLUS_011_93_INDEX, FileIndex.SLUS_011_93_SIZE);
-            Stag2000Data = PsxSector.ReadSector(ref fs, DW2Slus.GetLba(FileIndex.STAG2000_PRO), DW2Slus.GetSize(FileIndex.STAG2000_PRO));
+            slusData = this.DW2Image.ReadMainFile();
+            Stag2000Data = this.DW2Image.ReadFile(FileIndex.STAG2000_PRO);
 
             ValidateBytes();
 
@@ -32,8 +34,8 @@ namespace dw2_exp_multiplier.Patcher.Misc
             patchedPattern = new byte[] { 0x00, 0x00, 0x00, 0x00 };
             Buffer.BlockCopy(patchedPattern, 0, Stag2000Data, 0x1584, patchedPattern.Length);
 
-            PsxSector.WriteSector(ref fs, ref slusData, FileIndex.SLUS_011_93_INDEX, FileIndex.SLUS_011_93_SIZE);
-            PsxSector.WriteSector(ref fs, ref Stag2000Data, DW2Slus.GetLba(FileIndex.STAG2000_PRO), DW2Slus.GetSize(FileIndex.STAG2000_PRO));
+            this.DW2Image.WriteMainFile(ref slusData);
+            this.DW2Image.WriteFile(ref Stag2000Data, FileIndex.STAG2000_PRO);
         }
 
         private void ValidateBytes()

@@ -23,20 +23,20 @@ namespace dw2_exp_multiplier.Mapper
             return true;
         }
         
-        public static bool ReadBin(ref FileStream br, ref List<Enemyset> enemysetList)
+        public static bool ReadBin(DW2Image dw2Image, ref List<Enemyset> enemysetList)
         {
-            byte[] buffer = PsxSector.ReadSector(ref br, DW2Slus.GetLba(FileIndex.ENEMYSET_BIN), DW2Slus.GetSize(FileIndex.ENEMYSET_BIN));
+            byte[] buffer = dw2Image.ReadFile(FileIndex.ENEMYSET_BIN);
             
             EnemysetMapper.Read(ref buffer, ref enemysetList);
             
             return true;
         }
         
-        public static bool WriteBin(ref FileStream br, ref List<Enemyset> enemysetList)
+        public static bool WriteBin(DW2Image dw2Image, ref List<Enemyset> enemysetList)
         {
             byte[] buffer = EnemysetMapper.Write(PsxSector.SECTOR * DW2Slus.GetSize(FileIndex.ENEMYSET_BIN), ref enemysetList);
 
-            PsxSector.WriteSector(ref br, ref buffer, DW2Slus.GetLba(FileIndex.ENEMYSET_BIN), DW2Slus.GetSize(FileIndex.ENEMYSET_BIN));
+            dw2Image.WriteFile(ref buffer, FileIndex.ENEMYSET_BIN);
             
             return true;
         }

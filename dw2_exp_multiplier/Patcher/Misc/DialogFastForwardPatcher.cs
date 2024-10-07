@@ -11,11 +11,13 @@ namespace dw2_exp_multiplier.Patcher.Misc
 
         private byte[] data;
 
+        public DialogFastForwardPatcher(DW2Image dw2Image) : base(dw2Image) { }
+
         public override string GetName() { return "Dialog Fast-Forward Patcher"; }
 
         public override void Patch(ref FileStream fs)
         {
-            data = PsxSector.ReadSector(ref fs, FileIndex.SLUS_011_93_INDEX, FileIndex.SLUS_011_93_SIZE);
+            data = this.DW2Image.ReadMainFile();
 
             ValidateBytes();
 
@@ -27,7 +29,7 @@ namespace dw2_exp_multiplier.Patcher.Misc
             byte[] patchedPattern = { 0x14, 0x00, 0x42, 0x90 };
             Buffer.BlockCopy(patchedPattern, 0, data, 0xB4D4, patchedPattern.Length);
             
-            PsxSector.WriteSector(ref fs, ref data, FileIndex.SLUS_011_93_INDEX, FileIndex.SLUS_011_93_SIZE);
+            this.DW2Image.WriteMainFile(ref data);
         }
 
         private void ValidateBytes()
