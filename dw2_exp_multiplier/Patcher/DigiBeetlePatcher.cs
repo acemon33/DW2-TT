@@ -12,9 +12,9 @@ namespace dw2_exp_multiplier.Patcher
     {
         public static readonly string TOOLTIP = "Play with a Digi-Beetle for entire Game Walkthrough, can be restored to default.\n";
 
-        public static bool patch(ref FileStream fs, UInt16 digibeetleId)
+        public static bool patch(DW2Image dw2Image, UInt16 digibeetleId)
         {
-            byte[] data = this.DW2Image.ReadFile(FileIndex.STAG4000_PRO);
+            byte[] data = dw2Image.ReadFile(FileIndex.STAG4000_PRO);
             
             byte[] patchedPattern = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xF8, 0x01, 0x10, 0x24 };
             Buffer.BlockCopy(BitConverter.GetBytes(digibeetleId), 0, patchedPattern, 8, 2);
@@ -22,7 +22,7 @@ namespace dw2_exp_multiplier.Patcher
             byte[] currentPattern = (digibeetleId == 0) ? defaultPattern : patchedPattern;
             
             Buffer.BlockCopy(currentPattern, 0, data, 0x940, currentPattern.Length);
-            this.DW2Image.WriteFile(ref data, FileIndex.STAG4000_PRO);
+            dw2Image.WriteFile(ref data, FileIndex.STAG4000_PRO);
             
             return true;
         }

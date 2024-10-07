@@ -95,8 +95,9 @@ namespace dw2_exp_multiplier
             FileStream fs = null;
             try
             {
-                fs = new FileStream(this.miscView.GetDw2BinPath(), FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-                DW2Image dw2Image = new DW2Image(ref fs);
+                string filename = this.miscView.GetDw2BinPath();
+                fs = new FileStream(filename, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+                DW2Image dw2Image = new DW2Image(ref fs, filename.ToLower().EndsWith(".vcd"));
 
                 FolderPicker fbd = new FolderPicker();
                 fbd.Title = "Open Folder";
@@ -135,8 +136,9 @@ namespace dw2_exp_multiplier
             FileStream fs = null;
             try
             {
-                fs = new FileStream(this.miscView.GetDw2BinPath(), FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
-                DW2Image dw2Image = new DW2Image(ref fs);
+                string filename = this.miscView.GetDw2BinPath();
+                fs = new FileStream(filename, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
+                DW2Image dw2Image = new DW2Image(ref fs, filename.ToLower().EndsWith(".vcd"));
 
                 FolderPicker fbd = new FolderPicker();
                 fbd.Title = "Open Folder";

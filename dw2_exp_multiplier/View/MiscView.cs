@@ -66,7 +66,7 @@ namespace dw2_exp_multiplier.View
             FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.ReadWrite);
             try
             {
-                DW2Image dW2Image = new DW2Image(ref fs);
+                DW2Image dW2Image = new DW2Image(ref fs, filename.ToLower().EndsWith(".vcd"));
 
                 if (enemysetTextBox.Text.Length > 0)
                 {
@@ -103,7 +103,7 @@ namespace dw2_exp_multiplier.View
                 if (digibeetleComboBox.SelectedIndex > 0)
                 {
                     ushort id = Convert.ToUInt16(((KeyValuePair<string, string>)digibeetleComboBox.SelectedItem).Key, 16);
-                    DigiBeetlePatcher.patch(ref fs, id);
+                    DigiBeetlePatcher.patch(dW2Image, id);
                 }
 
                 List<IPatcher> patcherList = new List<IPatcher>();
@@ -210,9 +210,9 @@ namespace dw2_exp_multiplier.View
             FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
             try
             {
-                DW2Slus.ValidImageFile(ref fs);
+                DW2Image dw2Image = new DW2Image(ref fs, filename.ToLower().EndsWith(".vcd"));
 
-                EnemysetManager enemysetManager = new EnemysetManager(ref fs);
+                EnemysetManager enemysetManager = new EnemysetManager(dw2Image);
                 filename = Path.GetDirectoryName(dw2TextBox.Text) + "\\ENEMYSET_" + Path.GetFileNameWithoutExtension(dw2TextBox.Text) + ".BIN";
                 enemysetManager.WrtieToFile(filename);
                 enemysetTextBox.Text = filename;
@@ -247,9 +247,9 @@ namespace dw2_exp_multiplier.View
             FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.ReadWrite);
             try
             {
-                DW2Slus.ValidImageFile(ref fs);
+                DW2Image dw2Image = new DW2Image(ref fs, filename.ToLower().EndsWith(".vcd"));
 
-                EnemysetManager enemysetManager = new EnemysetManager(enemysetTextBox.Text);
+                EnemysetManager enemysetManager = new EnemysetManager(dw2Image, enemysetTextBox.Text);
                 enemysetManager.WriteToBin(ref fs);
                 
                 MessageBox.Show("ENEMYSET.BIN has been Imported Successfully");

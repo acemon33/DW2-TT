@@ -15,12 +15,13 @@ namespace dw2_exp_multiplier.Patcher
 
         public EnemysetManager(DW2Image dw2Image, string filepath)
         {
-            EnemysetMapper.ReadFile(filepath, ref this.EnemysetList);
             this.dw2Image = dw2Image;
+            EnemysetMapper.ReadFile(filepath, ref this.EnemysetList);
         }
 
-        public EnemysetManager(ref FileStream br)
+        public EnemysetManager(DW2Image dw2Image)
         {
+            this.dw2Image = dw2Image;
             EnemysetMapper.ReadBin(this.dw2Image, ref this.EnemysetList);
         }
 

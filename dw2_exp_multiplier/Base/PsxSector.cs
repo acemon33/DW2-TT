@@ -12,9 +12,9 @@ namespace dw2_exp_multiplier.Base
         public static readonly int SECTOR = 2352;
         public static readonly int DATA_SECTOR = 2048;
 
-        public static byte[] ReadSector(ref FileStream br, Int64 offset, int numberOfSector)
+        public static byte[] ReadSector(ref FileStream br, Int64 offset, int numberOfSector, int preOffset)
         {
-            br.Position = offset * PsxSector.SECTOR;
+            br.Position = (offset * PsxSector.SECTOR) + preOffset;
             byte[] data = new byte[PsxSector.DATA_SECTOR * numberOfSector];
             for (int i = 0; i < numberOfSector; i++)
             {
@@ -37,11 +37,11 @@ namespace dw2_exp_multiplier.Base
             return data;
         }
         
-        public static void WriteSector(ref FileStream bw, ref byte[] data, Int64 offset, int numberOfSector)
+        public static void WriteSector(ref FileStream bw, ref byte[] data, Int64 offset, int numberOfSector, int preOffset)
         {
+            bw.Position = (offset * PsxSector.SECTOR) + preOffset;
             byte[] temp = new byte[numberOfSector * PsxSector.SECTOR];      // guarantee to fit data into a sector
             Buffer.BlockCopy(data, 0, temp, 0, data.Length);
-            bw.Position = offset * PsxSector.SECTOR;
             for (int i = 0; i < numberOfSector; i++)
             {
                 bw.Position += 24;
