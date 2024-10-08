@@ -66,11 +66,11 @@ namespace dw2_exp_multiplier.View
             FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.ReadWrite);
             try
             {
-                DW2Image dW2Image = new DW2Image(ref fs, filename.ToLower().EndsWith(".vcd"));
+                DW2Image dw2Image = new DW2Image(ref fs, filename.ToLower().EndsWith(".vcd"));
 
                 if (enemysetTextBox.Text.Length > 0)
                 {
-                    EnemysetManager enemysetManager = new EnemysetManager(dW2Image, enemysetTextBox.Text);
+                    EnemysetManager enemysetManager = new EnemysetManager(dw2Image, enemysetTextBox.Text);
                     
                     if (multiplier.Value.CompareTo(Decimal.One) != 0)
                         enemysetManager.AddModifier(new ExpBitsMultiplier(multiplier.Value));
@@ -103,58 +103,103 @@ namespace dw2_exp_multiplier.View
                 if (digibeetleComboBox.SelectedIndex > 0)
                 {
                     ushort id = Convert.ToUInt16(((KeyValuePair<string, string>)digibeetleComboBox.SelectedItem).Key, 16);
-                    DigiBeetlePatcher.patch(dW2Image, id);
+                    DigiBeetlePatcher.patch(dw2Image, id);
                 }
 
                 List<IPatcher> patcherList = new List<IPatcher>();
 
                 if (dnaLabsPatcherCheckBox.Checked)
-                    patcherList.Add(new DnaLabsPatcher(dW2Image));
+                    patcherList.Add(new DnaLabsPatcher(dw2Image));
 
                 if (DnaDpCheckBox.Checked)
-                    patcherList.Add(new DnaDpPatcher(dW2Image));
+                    patcherList.Add(new DnaDpPatcher(dw2Image));
 
                 if (digimonGiftPatcherCheckBox.Checked)
-                    patcherList.Add(new DigimonGiftPatcher(dW2Image));
+                    patcherList.Add(new DigimonGiftPatcher(dw2Image));
 
                 if (digiLinePatcherCheckBox.Checked)
-                    patcherList.Add(new DigiLinePatcher(dW2Image));
-
-                if (beastKingFistEnhanceCheckBox.Checked)
-                    patcherList.Add(new BeastKingFistPatcher(dW2Image));
-                                
-                if (chronoBreakerFixCheckBox.Checked)
-                    patcherList.Add(new ChronoBreakerPatcher(dW2Image));
+                    patcherList.Add(new DigiLinePatcher(dw2Image));
 
                 if (nameExpansionPatcherCheckBox.Checked)
-                    patcherList.Add(new NameExpansionPatcher(dW2Image));
+                    patcherList.Add(new NameExpansionPatcher(dw2Image));
                 
                 if (maxLevelPatcherCheckBox.Checked)
-                    patcherList.Add(new MaxLevelLimitPatcher(dW2Image));
+                    patcherList.Add(new MaxLevelLimitPatcher(dw2Image));
 
                 if (dialogFastForwardPatchercheckBox.Checked)
-                    patcherList.Add(new DialogFastForwardPatcher(dW2Image));
+                    patcherList.Add(new DialogFastForwardPatcher(dw2Image));
 
                 if (zudokornMonsPatcherCheckBox.Checked)
-                    patcherList.Add(new ZudokornMonsPatchers(dW2Image));
+                    patcherList.Add(new ZudokornMonsPatchers(dw2Image));
 
                 if (domainFreeObstaclesCheckBox.Checked)
-                    patcherList.Add(new DomainFreeObstaclesPatcher(dW2Image));
+                    patcherList.Add(new DomainFreeObstaclesPatcher(dw2Image));
 
                 if (floorSkippingCheckBox.Checked)
-                    patcherList.Add(new FloorSkippingPatcher(dW2Image));
+                    patcherList.Add(new FloorSkippingPatcher(dw2Image));
 
                 if (RBugRemovalCheckBox.Checked)
-                    patcherList.Add(new RBugRemovalPatcher(dW2Image));
+                    patcherList.Add(new RBugRemovalPatcher(dw2Image));
 
                 if (turnSkippingCheckBox.Checked)
-                    patcherList.Add(new TurnSkippingPatcher(dW2Image));
+                    patcherList.Add(new TurnSkippingPatcher(dw2Image));
 
                 if (techOrderingCheckBox.Checked)
-                    patcherList.Add(new TechOrderingPatcher(dW2Image));
+                    patcherList.Add(new TechOrderingPatcher(dw2Image));
 
                 if (nextLevelLimitCheckBox.Checked)
-                    patcherList.Add(new NextLevelLimitPatcher(dW2Image));
+                    patcherList.Add(new NextLevelLimitPatcher(dw2Image));
+
+                if (chronoBreakerFixCheckBox.Checked)
+                    patcherList.Add(new ChronoBreakerPatcher(dw2Image));
+
+                if (darkSideAttackFixCheckBox.Checked)
+                    patcherList.Add(new DarkSideAttackPatcher(dw2Image));
+
+                if (gigaByteWingFixCheckBox.Checked)
+                    patcherList.Add(new GigaByteWingPatcher(dw2Image));
+
+                if (invincibilityFixCheckBox.Checked)
+                    patcherList.Add(new InvincibilityPatcher(dw2Image));
+
+                if (shadowScytheFixCheckBox.Checked)
+                    patcherList.Add(new ShadowScythePatcher(dw2Image));
+
+                if (venomInfusionFixCheckBox.Checked)
+                    patcherList.Add(new VenomInfusionPatcher(dw2Image));
+
+                if (ZenRecoveryReInitilizeFixCheckBox.Checked)
+                    patcherList.Add(new ZenRecoveryReInitilizePatcher(dw2Image));
+
+                if (transcendSwordSpinningNeedleFixCheckBox.Checked)
+                    patcherList.Add(new Damage15vsGuardPatcher(dw2Image));
+
+                if (beastKingFistEnhanceCheckBox.Checked)
+                    patcherList.Add(new BeastKingFistPatcher(dw2Image));
+
+                if (enemyBossConfusionCheckBox.Checked)
+                    patcherList.Add(new EnemyBossConfusionPatcher(dw2Image));
+
+                if (enemyBossAffectionEnhanceCheckBox.Checked)
+                    patcherList.Add(new EnemyBossAffectionPatcher(dw2Image));
+
+                if (necroMagicEnhanceCheckBox.Checked)
+                    patcherList.Add(new NecroMagicPatcher(dw2Image));
+
+                if (poisonEffectEnhanceCheckBox.Checked)
+                    patcherList.Add(new PoisonEffectPatcher(dw2Image));
+
+                if (evilTouchDemiDartEnhanceCheckBox.Checked)
+                    patcherList.Add(new EvilTouchDemiDartPatcher(dw2Image));
+
+                if (subzeroIcePunchEnhanceCheckBox.Checked)
+                    patcherList.Add(new SubzeroIcePunchPatcher(dw2Image));
+
+                if (duoScissorClawEnhanceCheckBox.Checked)
+                    patcherList.Add(new DuoScissorClawPatcher(dw2Image));
+
+                if (mpOnGuardEnhanceCheckBox.Checked)
+                    patcherList.Add(new MpOnGaurdPatcher(dw2Image));
 
                 String errorMsg = "";
                 String successMsg = "";
