@@ -34,8 +34,9 @@ namespace dw2_exp_multiplier.Patcher
                         i = enemy.Defence * (this.Multiplier * 2);
                         enemy.Defence = (i > UInt16.MaxValue) ? UInt16.MaxValue : Convert.ToUInt16(i);
 
-                        i = enemy.Speed * (this.Multiplier / 2);
-                        enemy.Speed = (i > byte.MaxValue) ? byte.MaxValue : Convert.ToByte(i);
+                        i = enemy.Speed * this.Multiplier * Convert.ToDecimal(0.75);
+                        if (i < enemy.Speed) i = enemy.Speed;
+                        enemy.Speed = Convert.ToByte(i);
                     }
                 }
             }
