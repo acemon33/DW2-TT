@@ -208,7 +208,8 @@ namespace dw2_exp_multiplier.View
                     try
                     {
                         patcher.Patch(ref fs);
-                        successMsg += " - " + patcher.GetName() + "\n";
+                        if (patcher.GetName().Length > 0)
+                            successMsg += " - " + patcher.GetName() + "\n";
                     }
                     catch(Exception ex)
                     {
