@@ -19,8 +19,18 @@ namespace dw2_exp_multiplier.Patcher.BattleFix
         {
             data = this.DW2Image.ReadFile(FileIndex.STAG3000_PRO);
 
-            byte[] patchedPattern = { 0xC8, 0xD0, 0x01, 0x08 };
+            byte[] patchedPattern = { 0x88, 0xD0, 0x01, 0x08 };
             Buffer.BlockCopy(patchedPattern, 0, data, 0x8EBC, patchedPattern.Length);
+
+            patchedPattern = new byte[]
+            {
+                0x20, 0x80, 0x03, 0x3C,
+                0x30, 0x01, 0x63, 0x24,
+                0x00, 0x00, 0x76, 0xA0,
+                0x88, 0xB0, 0x01, 0x08,
+                0x00, 0x14, 0x16, 0x00
+            };
+            Buffer.BlockCopy(patchedPattern, 0, data, 0x10EC0, patchedPattern.Length);
 
             patchedPattern = new byte[]
             {
