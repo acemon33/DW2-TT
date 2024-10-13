@@ -89,6 +89,7 @@ namespace dw2_exp_multiplier.View
             this.nextLevelLimitCheckBox = new System.Windows.Forms.CheckBox();
             this.techOrderingCheckBox = new System.Windows.Forms.CheckBox();
             this.turnSkippingCheckBox = new System.Windows.Forms.CheckBox();
+            this.pvpReimaginedCheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.multiplier)).BeginInit();
             this.EnemyBossGroupBox.SuspendLayout();
@@ -428,6 +429,7 @@ namespace dw2_exp_multiplier.View
             // 
             // miscTabPage
             // 
+            this.miscTabPage.Controls.Add(this.pvpReimaginedCheckBox);
             this.miscTabPage.Controls.Add(this.RBugRemovalCheckBox);
             this.miscTabPage.Controls.Add(this.floorSkippingCheckBox);
             this.miscTabPage.Controls.Add(this.domainFreeObstaclesCheckBox);
@@ -747,6 +749,16 @@ namespace dw2_exp_multiplier.View
             this.turnSkippingCheckBox.UseVisualStyleBackColor = true;
             this.turnSkippingCheckBox.MouseHover += new System.EventHandler(this.turnSkippingCheckBox_MouseHover);
             // 
+            // pvpReimaginedCheckBox
+            // 
+            this.pvpReimaginedCheckBox.Location = new System.Drawing.Point(287, 96);
+            this.pvpReimaginedCheckBox.Name = "pvpReimaginedCheckBox";
+            this.pvpReimaginedCheckBox.Size = new System.Drawing.Size(125, 24);
+            this.pvpReimaginedCheckBox.TabIndex = 56;
+            this.pvpReimaginedCheckBox.Text = "PvP Reimagined";
+            this.pvpReimaginedCheckBox.UseVisualStyleBackColor = true;
+            this.pvpReimaginedCheckBox.MouseHover += new System.EventHandler(this.pvpReimaginedCheckBox_MouseHover);
+            // 
             // MiscView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -845,5 +857,6 @@ namespace dw2_exp_multiplier.View
         private System.Windows.Forms.CheckBox invincibilityFixCheckBox;
         private System.Windows.Forms.CheckBox gigaByteWingFixCheckBox;
         private System.Windows.Forms.CheckBox darkSideAttackFixCheckBox;
+        private System.Windows.Forms.CheckBox pvpReimaginedCheckBox;
     }
 }

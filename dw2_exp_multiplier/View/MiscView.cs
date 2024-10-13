@@ -201,6 +201,9 @@ namespace dw2_exp_multiplier.View
                 if (mpOnGuardEnhanceCheckBox.Checked)
                     patcherList.Add(new MpOnGaurdPatcher(dw2Image));
 
+                if (pvpReimaginedCheckBox.Checked)
+                    patcherList.Add(new PvPReimaginedPatcher(dw2Image));
+
                 String errorMsg = "";
                 String successMsg = "";
                 foreach (IPatcher patcher in patcherList)
@@ -572,6 +575,11 @@ namespace dw2_exp_multiplier.View
         private void mpOnGuardEnhanceCheckBox_MouseHover(object sender, EventArgs e)
         {
             Main.HintToolTip.Show(MpOnGaurdPatcher.TOOLTIP, mpOnGuardEnhanceCheckBox, 30, 0, 5000);
+        }
+
+        private void pvpReimaginedCheckBox_MouseHover(object sender, EventArgs e)
+        {
+            Main.HintToolTip.Show(PvPReimaginedPatcher.TOOLTIP, pvpReimaginedCheckBox, 30, 0, 5000);
         }
         #endregion
     }
