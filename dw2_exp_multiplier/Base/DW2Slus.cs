@@ -9,39 +9,115 @@ namespace dw2_exp_multiplier.Base
 {
     public class DW2Slus
     {
-        public static readonly int LBA_OFFSET = 0xDC80;
-        public static readonly int NUMBER_OF_SECTOR = 318;
+        private static readonly int LBA_OFFSET = 0xDC80;
+        private static readonly int NUMBER_OF_SECTOR = 318;
 
-        private static byte[] slus;
-        private static UInt32[] lba = new UInt32[3675];
-        private static UInt16[] size = new UInt16[3675];
-        
-        public static bool ValidImageFile(ref FileStream br, int preOffset)
+        private static readonly int US_NUMBER_OF_INDEX = 3675;
+        private static readonly int US_LBA_OFFSET = 0x33F94;
+        private static readonly int US_LBA_LENGTH = 0x396B;
+        private static readonly int US_SIZE_OFFSET = 0x37900;
+        private static readonly int US_SIZE_LENGTH = 0x1CB5;
+
+        private static readonly int JAP_NUMBER_OF_INDEX = 3655;
+        private static readonly int JAP_LBA_OFFSET = 0x316A8;
+        private static readonly int JAP_LBA_LENGTH = 0x391B;
+        private static readonly int JAP_SIZE_OFFSET = 0x34FC4;
+        private static readonly int JAP_SIZE_LENGTH = 0x1C8D;
+
+        public static readonly int US_VERSION = 1;
+        public static readonly int JAP_VERSION = 2;
+
+        private byte[] slus;
+        private UInt32[] lba;
+        private UInt16[] size;
+
+        private int number_of_index;
+        private int lba_offset;
+        private int lba_length;
+        private int size_offset;
+        private int size_length;
+        private int version;
+
+        public DW2Slus(byte[] data, int version)
         {
-                // SLUS_011.93 in bytes
-            byte[] dw2Id = { 0x53, 0x4C, 0x55, 0x53, 0x5F, 0x30, 0x31, 0x31, 0x2E, 0x39, 0x33 };
-            byte[] buffer = new byte[dw2Id.Length];
-            
-            br.Position = 0xCAB9 + preOffset;
-            br.Read(buffer, 0, dw2Id.Length);
-            
-            for (int i = 0; i < dw2Id.Length; i++) if (buffer[i] != dw2Id[i]) throw new FileLoadException("The file: \"" + br.Name + "\" is not Digimon World 2 Image File!!", "DW2 invalid file");
-            
-            br.Position = DW2Slus.LBA_OFFSET + preOffset;
-            slus = PsxSector.ReadSector(ref br, DW2Slus.NUMBER_OF_SECTOR);
+            if (version == DW2Slus.US_VERSION)
+            {
+                this.version = US_VERSION;
+                this.lba = new UInt32[US_NUMBER_OF_INDEX];
+                this.size = new UInt16[US_NUMBER_OF_INDEX];
+                this.number_of_index = US_NUMBER_OF_INDEX;
+                this.lba_offset = US_LBA_OFFSET;
+                this.lba_length = US_LBA_LENGTH;
+                this.size_offset = US_SIZE_OFFSET;
+                this.size_length = US_SIZE_LENGTH;
+            }
+            else
+            {
+                this.version = JAP_VERSION;
+                this.lba = new UInt32[JAP_NUMBER_OF_INDEX];
+                this.size = new UInt16[JAP_NUMBER_OF_INDEX];
+                this.number_of_index = JAP_NUMBER_OF_INDEX;
+                this.lba_offset = JAP_LBA_OFFSET;
+                this.lba_length = JAP_LBA_LENGTH;
+                this.size_offset = JAP_SIZE_OFFSET;
+                this.size_length = JAP_SIZE_LENGTH;
+            }
 
-            Buffer.BlockCopy(slus, 0x33F94, lba, 0, 0x396B);
-            Buffer.BlockCopy(slus, 0x37900, size, 0, 0x1CB5);
-            
-            return true;
+            this.slus = data;
+
+            this.lba = new UInt32[this.number_of_index];
+            this.size = new UInt16[this.number_of_index];
+            Buffer.BlockCopy(this.slus, this.lba_offset, this.lba, 0, this.lba_length);
+            Buffer.BlockCopy(this.slus, this.size_offset, this.size, 0, this.size_length);
         }
 
-        public static UInt32 GetLba(int index)
+        public static DW2Slus ValidImageFile(ref FileStream br, int preOffset)
+        {
+            int version = DW2Slus.US_VERSION;
+
+            byte[] dw2Id = { 0x53, 0x4C, 0x55, 0x53, 0x5F, 0x30, 0x31, 0x31, 0x2E, 0x39, 0x33 }; // SLUS_011.93 in bytes
+            byte[] buffer = new byte[dw2Id.Length];
+
+            br.Position = 0xCAB9 + preOffset;
+            br.Read(buffer, 0, dw2Id.Length);
+            for (int i = 0; i < dw2Id.Length; i++)
+            {
+                if (buffer[i] != dw2Id[i])
+                {
+                    version = 0;
+                    break;
+                }
+            }
+
+            if (version == 0)
+            {
+                version = DW2Slus.JAP_VERSION;
+                dw2Id = new byte[] { 0x53, 0x4C, 0x50, 0x53, 0x5F, 0x30, 0x32, 0x38, 0x2E, 0x34, 0x34 }; // SLPS_028.44 in bytes
+                br.Position = 0xCBFF;
+                br.Read(buffer, 0, dw2Id.Length);
+                for (int i = 0; i < dw2Id.Length; i++)
+                {
+                    if (buffer[i] != dw2Id[i])
+                    {
+                        version = 0;
+                        break;
+                    }
+                }
+            }
+
+            if (version == 0)
+                throw new FileLoadException("The file: \"" + br.Name + "\" is not Digimon World 2 Image File!!", "DW2 invalid file");
+
+            br.Position = DW2Slus.LBA_OFFSET + preOffset;
+            return new(PsxSector.ReadSector(ref br, DW2Slus.NUMBER_OF_SECTOR), version);
+        }
+
+        public UInt32 GetLba(int index)
         {
             return lba[index]; 
         }
         
-        public static UInt16 GetSize(int index)
+        public UInt16 GetSize(int index)
         {
             return size[index]; 
         }
