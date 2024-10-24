@@ -26,7 +26,7 @@ namespace dw2_exp_multiplier.Patcher.Misc
 
         private void patchBtyes(ref FileStream fs)
         {
-            byte[] patchedPattern = { 0xC8, 0xCA, 0x01, 0x08 };
+            byte[] patchedPattern = { 0xD2, 0xCC, 0x01, 0x08 };
             Buffer.BlockCopy(patchedPattern, 0, data, 0xA1F4, patchedPattern.Length);
             
             patchedPattern = new byte[]
@@ -38,7 +38,7 @@ namespace dw2_exp_multiplier.Patcher.Misc
                 0x57, 0xB5, 0x01, 0x08,
                 0x08, 0x00, 0x0B, 0xA1
             };
-            Buffer.BlockCopy(patchedPattern, 0, data, 0xF7C0, patchedPattern.Length);
+            Buffer.BlockCopy(patchedPattern, 0, data, 0xFFE8, patchedPattern.Length);
             
             this.DW2Image.WriteFile(ref data, FileIndex.STAG4000_PRO);
         }
