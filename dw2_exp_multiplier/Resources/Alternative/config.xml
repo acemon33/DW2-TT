@@ -1186,6 +1186,9 @@
 			<engine name="Lion EG-2" value="7" />	
 			<engine name="Lion EG-3" value="8" />	
 			<engine name="Lion EG-4" value="9" />
+			<engine name="Tiger EG-1" value="0B" />
+			<engine name="Tiger EG-2" value="0C" />
+			<engine name="Tiger EG-3" value="0D" />
 			<engine name="Tiger EG-4" value="0E" />
 			<engine name="Tiger EG-5" value="0F" />
 			<engine name="PegasusEG1" value="10" />
@@ -1305,8 +1308,8 @@
 			<device name="BugSWEEP-1" value="6D" />
 			<device name="BugSWEEP-2" value="6E" />
 			<device name="BugSWEEP-3" value="6F" />
-			<device name="BugSWP-4" value="70" />
-			<device name="BugSWP-5" value="71" />
+			<device name="Gold Shard" value="70" />
+			<device name="Gold Bar" value="71" />
 			<device name="DMTransfer" value="72" />
 			<device name="Auto Pilot" value="73" />
 			<device name="PowerPilot" value="74" />
@@ -1317,120 +1320,6 @@
 	</digi-beetle-parts>
 	<items>
 		<item name="None" value="00" />
-		<item name="Junk Parts" value="D1" />
-		<item name="HP Disk-1" value="78" />
-		<item name="HP Disk-2" value="79" />
-		<item name="HP Disk-3" value="7A" />
-		<item name="MP Disk-1" value="7B" />
-		<item name="MP Disk-2" value="7C" />
-		<item name="MP Disk-3" value="7D" />
-		<item name="Bandage" value="7E" />
-		<item name="AntiFreeze" value="7F" />
-		<item name="Anti-Mixup" value="80" />
-		<item name="Power Disk" value="81" />
-		<item name="HPDriver-1" value="D9" />
-		<item name="HPDriver-2" value="DA" />
-		<item name="HPDriver-3" value="DB" />
-		<item name="MPDriver-1" value="DC" />
-		<item name="MPDriver-2" value="DD" />
-		<item name="MPDriver-3" value="DE" />
-		<item name="EX Driver" value="DF" />
-		<item name="Max Driver" value="E0" />
-		<item name="DAT-HP-ROM" value="E1" />
-		<item name="DAT-MP-ROM" value="E2" />
-		<item name="DAT-RV-ROM" value="E3" />
-		<item name="VAC-HP-ROM" value="E4" />
-		<item name="VAC-MP-ROM" value="E5" />
-		<item name="VAC-RV-ROM" value="E6" />
-		<item name="VIR-HP-ROM" value="E7" />
-		<item name="VIR-MP-ROM" value="E8" />
-		<item name="VIR-RV-ROM" value="E9" />
-		<item name="EP Pack" value="86" />
-		<item name="EP Core" value="87" />
-		<item name="Mech Fix" value="82" />
-		<item name="MechFix+" value="83" />
-		<item name="MechFix++" value="84" />
-		<item name="Parts Fix" value="85" />
-		<item name="HP Chip" value="D0" />
-		<item name="MP Chip" value="D2" />
-		<item name="Power Chip" value="D3" />
-		<item name="Armor Chip" value="D4" />
-		<item name="Speed Chip" value="D5" />
-		<item name="DNA-UpChip" value="D6" />
-		<item name="DNA-DnChip" value="D7" />
-		<item name="EXP Chip" value="D8" />
-		<item name="Toy Car" value="BC" />
-		<item name="Toy Truck" value="BD" />
-		<item name="Toy Tank" value="BE" />
-		<item name="Toy Boat" value="BF" />
-		<item name="Toy Plane" value="C0" />
-		<item name="Card Game" value="C1" />
-		<item name="Digivice" value="C2" />
-		<item name="CD Game" value="C3" />
-		<item name="DVD Game" value="C4" />
-		<item name="Laptop PC" value="C5" />
-		<item name="WristWatch" value="C6" />
-		<item name="CD Player" value="C7" />
-		<item name="Cell Phone" value="C8" />
-		<item name="DigiCamera" value="C9" />
-		<item name="DVD Player" value="CA" />
-		<item name="Kickboard" value="CB" />
-		<item name="Skateboard" value="CC" />
-		<item name="Skis" value="CD" />
-		<item name="Snowboard" value="CE" />
-		<item name="Surfboard" value="CF" />
-		<item name="DATA Steel" value="B0" />
-		<item name="DATA Candy" value="B1" />
-		<item name="DATA Macho" value="B2" />
-		<item name="DATA Weak" value="B3" />
-		<item name="VAC. Steel" value="B4" />
-		<item name="VAC. Candy" value="B5" />
-		<item name="VAC. Macho" value="B6" />
-		<item name="VAC. Weak" value="B7" />
-		<item name="VIR. Steel" value="B8" />
-		<item name="VIR. Candy" value="B9" />
-		<item name="VIR. Macho" value="BA" />
-		<item name="VIR. Weak" value="BB" />
-		<item name="Fire Blast" value="A6" />
-		<item name="WaterArrow" value="A7" />
-		<item name="Flash Bolt" value="A8" />
-		<item name="Iron Fist" value="A9" />
-		<item name="Dark Fear" value="AA" />
-		<item name="Inferno" value="AB" />
-		<item name="Blizzard" value="AC" />
-		<item name="Hurricane" value="AD" />
-		<item name="RustStorm" value="AE" />
-		<item name="Black Hole" value="AF" />
-		<item name="BitBugZap1" value="97" />
-		<item name="BitBugZap2" value="98" />
-		<item name="BitBugZap3" value="99" />
-		<item name="EP-BugZap1" value="9A" />
-		<item name="EP-BugZap2" value="9B" />
-		<item name="EP-BugZap3" value="9C" />
-		<item name="RetBugZap1" value="9D" />
-		<item name="RetBugZap2" value="9E" />
-		<item name="RetBugZap3" value="9F" />
-		<item name="MemBugZap1" value="A0" />
-		<item name="MemBugZap2" value="A1" />
-		<item name="MemBugZap3" value="A2" />
-		<item name="SupBugZap1" value="A3" />
-		<item name="SupBugZap2" value="A4" />
-		<item name="SupBugZap3" value="A5" />
-		<item name="Mag.Miss-1" value="88" />
-		<item name="Mag.Miss-2" value="89" />
-		<item name="Mag.Miss-3" value="8A" />
-		<item name="Mag.Miss-4" value="8B" />
-		<item name="Mag.Miss-5" value="8C" />
-		<item name="DrillMiss1" value="8D" />
-		<item name="DrillMiss2" value="8E" />
-		<item name="DrillMiss3" value="8F" />
-		<item name="DrillMiss4" value="90" />
-		<item name="DrillMiss5" value="91" />
-		<item name="WaveMiss-1" value="92" />
-		<item name="WaveMiss-2" value="93" />
-		<item name="WaveMiss-3" value="94" />
-		<item name="WaveMiss-4" value="95" />
-		<item name="WaveMiss-5" value="96" />
 		<item name="Wolf EG-1" value="1" />
 		<item name="Wolf EG-2" value="2" />
 		<item name="Wolf EG-3" value="3" />
@@ -1477,6 +1366,12 @@
 		<item name="MammothEG4" value="2C" />
 		<item name="MammothEG5" value="2D" />
 		<item name="Maximus EG" value="2E" />
+		<item name="Ant RAM" value="2F" />
+		<item name="Wasp RAM" value="30" />
+		<item name="Spider RAM" value="31" />
+		<item name="Mantis RAM" value="32" />
+		<item name="Hornet RAM" value="33" />
+		<item name="Beetle RAM" value="34" />
 		<item name="Crab BAT-1" value="35" />
 		<item name="Crab BAT-2" value="36" />
 		<item name="Crab BAT-3" value="37" />
@@ -1498,12 +1393,6 @@
 		<item name="Orca BAT-4" value="47" />
 		<item name="Orca BAT-5" value="48" />
 		<item name="Whale BAT" value="49" />
-		<item name="Ant RAM" value="2F" />
-		<item name="Wasp RAM" value="30" />
-		<item name="Spider RAM" value="31" />
-		<item name="Mantis RAM" value="32" />
-		<item name="Hornet RAM" value="33" />
-		<item name="Beetle RAM" value="34" />
 		<item name="Dodo BOX" value="4A" />
 		<item name="Crow BOX" value="4B" />
 		<item name="Crane BOX" value="4C" />
@@ -1526,14 +1415,14 @@
 		<item name="Super HAND" value="5D" />
 		<item name="Ultra HAND" value="5E" />
 		<item name="ShooterGun" value="5F" />
-		<item name="Bug Zapper" value="67" />
-		<item name="MissileGun" value="66" />
-		<item name="RCannon-1" value="63" />
-		<item name="RCannon-2" value="64" />
-		<item name="RCannon-3" value="65" />
 		<item name="ZCannon-1" value="60" />
 		<item name="ZCannon-2" value="61" />
 		<item name="ZCannon-3" value="62" />
+		<item name="RCannon-1" value="63" />
+		<item name="RCannon-2" value="64" />
+		<item name="RCannon-3" value="65" />
+		<item name="MissileGun" value="66" />
+		<item name="Bug Zapper" value="67" />
 		<item name="MineSWEEP1" value="68" />
 		<item name="MineSWEEP2" value="69" />
 		<item name="MineSWEEP3" value="6A" />
@@ -1545,14 +1434,128 @@
 		<item name="Gold Shard" value="70" />
 		<item name="Gold Bar" value="71" />
 		<item name="DMTransfer" value="72" />
-		<item name="Steel Body" value="EA" />
-		<item name="Titan Body" value="EB" />
-		<item name="AdmantBody" value="EC" />
 		<item name="Radar" value="75" />
 		<item name="PowerRadar" value="76" />
 		<item name="Map Radar" value="77" />
 		<item name="Auto Pilot" value="73" />
 		<item name="PowerPilot" value="74" />
+		<item name="HP Disk-1" value="78" />
+		<item name="HP Disk-2" value="79" />
+		<item name="HP Disk-3" value="7A" />
+		<item name="MP Disk-1" value="7B" />
+		<item name="MP Disk-2" value="7C" />
+		<item name="MP Disk-3" value="7D" />
+		<item name="Bandage" value="7E" />
+		<item name="AntiFreeze" value="7F" />
+		<item name="Anti-Mixup" value="80" />
+		<item name="Power Disk" value="81" />
+		<item name="Mech Fix" value="82" />
+		<item name="MechFix+" value="83" />
+		<item name="MechFix++" value="84" />
+		<item name="Parts Fix" value="85" />
+		<item name="EP Pack" value="86" />
+		<item name="EP Core" value="87" />
+		<item name="Mag.Miss-1" value="88" />
+		<item name="Mag.Miss-2" value="89" />
+		<item name="Mag.Miss-3" value="8A" />
+		<item name="Mag.Miss-4" value="8B" />
+		<item name="Mag.Miss-5" value="8C" />
+		<item name="DrillMiss1" value="8D" />
+		<item name="DrillMiss2" value="8E" />
+		<item name="DrillMiss3" value="8F" />
+		<item name="DrillMiss4" value="90" />
+		<item name="DrillMiss5" value="91" />
+		<item name="WaveMiss-1" value="92" />
+		<item name="WaveMiss-2" value="93" />
+		<item name="WaveMiss-3" value="94" />
+		<item name="WaveMiss-4" value="95" />
+		<item name="WaveMiss-5" value="96" />
+		<item name="BitBugZap1" value="97" />
+		<item name="BitBugZap2" value="98" />
+		<item name="BitBugZap3" value="99" />
+		<item name="EP-BugZap1" value="9A" />
+		<item name="EP-BugZap2" value="9B" />
+		<item name="EP-BugZap3" value="9C" />
+		<item name="RetBugZap1" value="9D" />
+		<item name="RetBugZap2" value="9E" />
+		<item name="RetBugZap3" value="9F" />
+		<item name="MemBugZap1" value="A0" />
+		<item name="MemBugZap2" value="A1" />
+		<item name="MemBugZap3" value="A2" />
+		<item name="SupBugZap1" value="A3" />
+		<item name="SupBugZap2" value="A4" />
+		<item name="SupBugZap3" value="A5" />
+		<item name="Sharp Bolt" value="A6" />
+		<item name="EM Missile" value="A7" />
+		<item name="Light Beam" value="A8" />
+		<item name="Arrow Rain" value="A9" />
+		<item name="Ripple Pod" value="AA" />
+		<item name="Sonic Boom" value="AB" />
+		<item name="Cold Scrap" value="AC" />
+		<item name="Wood Scrap" value="AD" />
+		<item name="Keen Scrap" value="AE" />
+		<item name="Dull Scrap" value="AF" />
+		<item name="DATA Steel" value="B0" />
+		<item name="DATA Candy" value="B1" />
+		<item name="DATA Macho" value="B2" />
+		<item name="DATA Weak" value="B3" />
+		<item name="VAC. Steel" value="B4" />
+		<item name="VAC. Candy" value="B5" />
+		<item name="VAC. Macho" value="B6" />
+		<item name="VAC. Weak" value="B7" />
+		<item name="VIR. Steel" value="B8" />
+		<item name="VIR. Candy" value="B9" />
+		<item name="VIR. Macho" value="BA" />
+		<item name="VIR. Weak" value="BB" />
+		<item name="Toy Car" value="BC" />
+		<item name="Toy Truck" value="BD" />
+		<item name="Toy Tank" value="BE" />
+		<item name="Toy Boat" value="BF" />
+		<item name="Toy Plane" value="C0" />
+		<item name="Card Game" value="C1" />
+		<item name="Digivice" value="C2" />
+		<item name="CD Game" value="C3" />
+		<item name="DVD Game" value="C4" />
+		<item name="Laptop PC" value="C5" />
+		<item name="WristWatch" value="C6" />
+		<item name="CD Player" value="C7" />
+		<item name="Cell Phone" value="C8" />
+		<item name="DigiCamera" value="C9" />
+		<item name="DVD Player" value="CA" />
+		<item name="Kickboard" value="CB" />
+		<item name="Skateboard" value="CC" />
+		<item name="Skis" value="CD" />
+		<item name="Snowboard" value="CE" />
+		<item name="Surfboard" value="CF" />
+		<item name="HP Chip" value="D0" />
+		<item name="Junk Parts" value="D1" />
+		<item name="MP Chip" value="D2" />
+		<item name="Power Chip" value="D3" />
+		<item name="Armor Chip" value="D4" />
+		<item name="Speed Chip" value="D5" />
+		<item name="DNA-UpChip" value="D6" />
+		<item name="DNA-DnChip" value="D7" />
+		<item name="EXP Chip" value="D8" />
+		<item name="HPDriver-1" value="D9" />
+		<item name="HPDriver-2" value="DA" />
+		<item name="HPDriver-3" value="DB" />
+		<item name="MPDriver-1" value="DC" />
+		<item name="MPDriver-2" value="DD" />
+		<item name="MPDriver-3" value="DE" />
+		<item name="EX Driver" value="DF" />
+		<item name="Max Driver" value="E0" />
+		<item name="DATA-HP-ROM" value="E1" />
+		<item name="DATA-MP-ROM" value="E2" />
+		<item name="DATA-RV-ROM" value="E3" />
+		<item name="VAC-HP-ROM" value="E4" />
+		<item name="VAC-MP-ROM" value="E5" />
+		<item name="VAC-RV-ROM" value="E6" />
+		<item name="VIR-HP-ROM" value="E7" />
+		<item name="VIR-MP-ROM" value="E8" />
+		<item name="VIR-RV-ROM" value="E9" />
+		<item name="Steel Body" value="EA" />
+		<item name="Titan Body" value="EB" />
+		<item name="AdmantBody" value="EC" />
 	</items>
 	<important-items>
 		<important-item name ="Tamer License" value="ED" />
