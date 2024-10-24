@@ -7,7 +7,7 @@ namespace dw2_exp_multiplier.Patcher.Misc
 {
     public class PvPReimaginedPatcher : IPatcher
     {
-        public static readonly string TOOLTIP = "PvP Battle System similar to Player 1 walkghrough.\n";
+        public static readonly string TOOLTIP = "PvP Battle System similar to Player 1 walkthrough.\n";
 
         private byte[] Stag3000Data;
         private byte[] Stag3500Data;
@@ -203,14 +203,21 @@ namespace dw2_exp_multiplier.Patcher.Misc
             Buffer.BlockCopy(PvPData, 0x1E34, Stag3000Data, 0xC2B8, 0x8);
             Buffer.BlockCopy(PvPData, 0x1E3C, Stag3000Data, 0xE580, 0x34);
 
+            Buffer.BlockCopy(PvPData, 0x1E70, Stag3000Data, 0x8648, 0x4);
+            Buffer.BlockCopy(PvPData, 0x1E74, Stag3000Data, 0x8328, 0x4);
+            Buffer.BlockCopy(PvPData, 0x1E78, Stag3000Data, 0x70DC, 0x4);
+            Buffer.BlockCopy(PvPData, 0x1E7C, Stag3000Data, 0x8D20, 0x18);
+
+                // Work-around: Softlock when toggling Wireframe with Necro-Magic
+            Buffer.BlockCopy(PvPData, 0x1E94, Stag3000Data, 0xC2B8, 0x8);
+            Buffer.BlockCopy(PvPData, 0x1E9C, Stag3000Data, 0xE580, 0x24);
+            Buffer.BlockCopy(PvPData, 0x1EC0, Stag3000Data, 0x3AA8, 0x4);
+            Buffer.BlockCopy(PvPData, 0x1EC4, Stag3000Data, 0xE5A4, 0x14);
+
             this.DW2Image.WriteFile(ref Stag3500Data, FileIndex.STAG3500_PRO);
             this.DW2Image.WriteFileAtOffset(ref Pgftwn00Data, 196218);
             this.DW2Image.WriteFileAtOffset(ref Fight000Data, 196265);
             this.DW2Image.WriteFileAtOffset(ref Stag3000Data, 196230);
-            //File.WriteAllBytes("..\\417.bin", Fight000Data);
-            //File.WriteAllBytes("..\\315.bin", Pgftwn00Data);
-            //File.WriteAllBytes("..\\3405.bin", Stag3500Data);
-            //File.WriteAllBytes("..\\403.bin", Stag3000Data);
         }
 
         private void ValidateBytes()
