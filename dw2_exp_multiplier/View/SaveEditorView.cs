@@ -643,6 +643,7 @@ namespace dw2_exp_multiplier.View
                 this.digimonAttackNumericUpDown.Value = currentSlot.digimon[i].attack;
                 this.digimonDefenseNumericUpDown.Value = currentSlot.digimon[i].defense;
                 this.digimonSpeedNumericUpDown.Value = currentSlot.digimon[i].speed;
+                this.digimonDPNumericUpDown.Value = currentSlot.digimon[i].dp;
 
                 for (int j = 0; j < this.digimonTechList.Count; j++)
                     this.digimonTechList[j].SelectedValue = (ushort) currentSlot.digimon[i].tech[j];
@@ -728,6 +729,13 @@ namespace dw2_exp_multiplier.View
             var i = this.slotComboBox.SelectedIndex;
             var j = this.digimonListBox.SelectedIndex;
             this.saveFile.saveSlot[i].digimon[j].exp = Convert.ToUInt32(digimonExpNumericUpDown.Value);
+        }
+
+        private void digimonDPNumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            var i = this.slotComboBox.SelectedIndex;
+            var j = this.digimonListBox.SelectedIndex;
+            this.saveFile.saveSlot[i].digimon[j].dp = Convert.ToByte(digimonDPNumericUpDown.Value);
         }
 
         private void digimonHpTextBox_TextChanged(object sender, EventArgs e)

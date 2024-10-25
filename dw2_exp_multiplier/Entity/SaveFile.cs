@@ -14,7 +14,7 @@ namespace dw2_exp_multiplier.Entity
         public byte padding0;
         public byte[] padding1 = new byte[10];
         public byte current_lvl;
-        public byte padding2;
+        public byte dp;
         public byte max_lvl;
         public UInt32 exp;
         public ushort max_hp;
@@ -39,7 +39,7 @@ namespace dw2_exp_multiplier.Entity
             this.padding0 = data[2];
             Buffer.BlockCopy(data, 3, this.padding1, 0, this.padding1.Length);
             this.current_lvl = data[13];
-            this.padding2 = data[14];
+            this.dp = data[14];
             this.max_lvl = data[15];
             this.exp = BitConverter.ToUInt32(data, 16);
             this.max_hp = BitConverter.ToUInt16(data, 20);
@@ -67,7 +67,7 @@ namespace dw2_exp_multiplier.Entity
             data[2] = this.padding0;
             Buffer.BlockCopy(this.padding1, 0, data, 3, this.padding1.Length);
             data[13] = this.current_lvl;
-            data[14] = this.padding2;
+            data[14] = this.dp;
             data[15] = this.max_lvl;
             Buffer.BlockCopy(BitConverter.GetBytes(this.exp), 0, data, 16, 4);
             Buffer.BlockCopy(BitConverter.GetBytes(this.max_hp), 0, data, 20, 2);
