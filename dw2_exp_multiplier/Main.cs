@@ -70,7 +70,7 @@ namespace dw2_exp_multiplier
 
         private void alternativeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            vanillaToolStripMenuItem.Checked = true;
+            vanillaToolStripMenuItem.Checked = false;
             improvementToolStripMenuItem.Checked = false;
             resurrectionToolStripMenuItem.Checked = false;
             alternativeToolStripMenuItem.Checked = true;
