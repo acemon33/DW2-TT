@@ -137,6 +137,27 @@ namespace dw2_exp_multiplier.Base
             
             br.Write(currentPattern, 0,currentPattern.Length);
         }
+
+        public static void UnhideAAAFolderJap(ref FileStream br, bool hid = false)
+        {
+            byte[] unHidPattern =
+            {
+                0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x32, 0x00, 0x2D, 0x50, 0x00, 0x00, 0x00, 0x00, 0x50, 0x2D,
+                0x00, 0x08, 0x00, 0x00, 0x00, 0x00, 0x08, 0x00, 0x64, 0x05, 0x0C, 0x17, 0x08, 0x26, 0x24, 0x02,
+                0x00, 0x00, 0x01, 0x00, 0x00, 0x01, 0x03, 0x41, 0x41, 0x41, 0x00, 0x00, 0x00, 0x00, 0x8D, 0x55,
+                0x58, 0x41
+            };
+            byte[] hidPattern = new byte[unHidPattern.Length];
+            byte[] currentPattern;
+            
+            br.Position = 0xCC82;
+
+            currentPattern = (!hid) ? unHidPattern : hidPattern;
+            
+            br.Write(currentPattern, 0,currentPattern.Length);
+        }
+
+        public int GetVersion() { return version; }
     }
     
 }

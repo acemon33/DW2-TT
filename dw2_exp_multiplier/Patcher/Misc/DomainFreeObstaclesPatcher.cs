@@ -11,6 +11,8 @@ namespace dw2_exp_multiplier.Patcher.Misc
 
         private byte[] data;
 
+        private int DataOffet;
+
         public DomainFreeObstaclesPatcher(DW2Image dw2Image) : base(dw2Image) { }
 
         public override string GetName() { return "Domain Free Obstacles Patcher"; }
@@ -18,6 +20,11 @@ namespace dw2_exp_multiplier.Patcher.Misc
         public override void Patch(ref FileStream fs)
         {
             data = this.DW2Image.ReadFile(FileIndex.STAG4000_PRO);
+
+            if (this.DW2Image.DW2Slus.GetVersion() == DW2Slus.US_VERSION)
+                this.DataOffet = 0xA858;
+            else
+                this.DataOffet = 0xE1A8;
 
             ValidateBytes();
 
@@ -27,19 +34,16 @@ namespace dw2_exp_multiplier.Patcher.Misc
         private void patchBtyes(ref FileStream fs)
         {
             byte[] patchedPattern = { 0x00, 0x00, 0x00, 0x00 };
-            Buffer.BlockCopy(patchedPattern, 0, data, 0xA858, patchedPattern.Length);
+            Buffer.BlockCopy(patchedPattern, 0, data, this.DataOffet, patchedPattern.Length);
             
             this.DW2Image.WriteFile(ref data, FileIndex.STAG4000_PRO);
         }
 
         private void ValidateBytes()
         {
-            byte[] bytes =
-            {
-                0x08, 0x00, 0x40, 0x00
-            };
+            byte[] bytes = { 0x08, 0x00, 0x40, 0x00 };
 
-            for (int i = 0, j = 0xA858; i < bytes.Length; i++)
+            for (int i = 0, j = this.DataOffet; i < bytes.Length; i++)
             {
                 if (bytes[i] != data[j + i])
                     throw new Exception(GetName());

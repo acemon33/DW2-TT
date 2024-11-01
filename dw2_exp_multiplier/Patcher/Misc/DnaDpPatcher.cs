@@ -19,12 +19,19 @@ namespace dw2_exp_multiplier.Patcher.Misc
         {
             data = this.DW2Image.ReadFile(FileIndex.STAG2000_PRO);
 
-            ValidateBytes();
-
-            patchBtyes(ref fs);
+            if (this.DW2Image.DW2Slus.GetVersion() == DW2Slus.US_VERSION)
+            {
+                ValidateBytesUS();
+                patchBtyesUS(ref fs);
+            }
+            else
+            {
+                ValidateBytesJAP();
+                patchBtyesJAP(ref fs);
+            }
         }
 
-        private void patchBtyes(ref FileStream fs)
+        private void patchBtyesUS(ref FileStream fs)
         {
             byte[] patchedPattern =
             {
@@ -63,7 +70,7 @@ namespace dw2_exp_multiplier.Patcher.Misc
             this.DW2Image.WriteFile(ref data, FileIndex.STAG2000_PRO);
         }
 
-        private void ValidateBytes()
+        private void ValidateBytesUS()
         {
             byte[] bytes =
             {
@@ -77,6 +84,52 @@ namespace dw2_exp_multiplier.Patcher.Misc
             };
 
             for (int i = 0, j = 0x1508; i < bytes.Length; i++)
+            {
+                if (bytes[i] != data[j + i])
+                    throw new Exception(GetName());
+            }
+        }
+
+        private void patchBtyesJAP(ref FileStream fs)
+        {
+            byte[] patchedPattern =
+            {
+                0x05, 0x80, 0x02, 0x3C,
+                0xF0, 0x1B, 0x49, 0x8C,
+                0x15, 0x03, 0x02, 0x24,
+                0x0E, 0x00, 0xC4, 0x92,
+                0xEC, 0xC2, 0x01, 0x08,
+                0x0E, 0x00, 0xA3, 0x92,
+                0x00, 0x00, 0x00, 0x00
+            };
+            Buffer.BlockCopy(patchedPattern, 0, data, 0x3BEC, patchedPattern.Length);
+
+            patchedPattern = new byte[]
+            {
+    0x01, 0x00, 0x82, 0x24, 0x01, 0x00, 0x62, 0x24, 0x50, 0x9B, 0x01, 0x08, 0x00, 0x00, 0x00, 0x00,
+    0x03, 0x00, 0x60, 0x14, 0x00, 0x00, 0x00, 0x00, 0x50, 0x9B, 0x01, 0x08, 0x01, 0x00, 0x82, 0x24,
+    0x02, 0x00, 0x80, 0x14, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x04, 0x24, 0x50, 0x9B, 0x01, 0x08,
+    0x21, 0x10, 0x83, 0x00
+            };
+            Buffer.BlockCopy(patchedPattern, 0, data, 0xD850, patchedPattern.Length);
+
+            this.DW2Image.WriteFile(ref data, FileIndex.STAG2000_PRO);
+        }
+
+        private void ValidateBytesJAP()
+        {
+            byte[] bytes =
+            {
+                0x0E, 0x00, 0xC4, 0x92,
+                0x0E, 0x00, 0xA3, 0x92,
+                0x00, 0x00, 0x00, 0x00,
+                0x2B, 0x10, 0x64, 0x00,
+                0x02, 0x00, 0x40, 0x14,
+                0x01, 0x00, 0x82, 0x24,
+                0x01, 0x00, 0x62, 0x24
+            };
+
+            for (int i = 0, j = 0x3BEC; i < bytes.Length; i++)
             {
                 if (bytes[i] != data[j + i])
                     throw new Exception(GetName());

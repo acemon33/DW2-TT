@@ -11,6 +11,9 @@ namespace dw2_exp_multiplier.Patcher.Misc
 
         private byte[] data;
 
+        private int DataOffset1;
+        private int DataOffset2;
+
         public DigimonGiftPatcher(DW2Image dw2Image) : base(dw2Image) { }
 
         public override string GetName() { return "Digimon Gift Patcher"; }
@@ -18,6 +21,17 @@ namespace dw2_exp_multiplier.Patcher.Misc
         public override void Patch(ref FileStream fs)
         {
             data = this.DW2Image.ReadFile(FileIndex.STAG4000_PRO);
+
+            if (this.DW2Image.DW2Slus.GetVersion() == DW2Slus.US_VERSION)
+            {
+                this.DataOffset1 = 0x7060;
+                this.DataOffset2 = 0x706C;
+            }
+            else
+            {
+                this.DataOffset1 = 0x5ED0;
+                this.DataOffset2 = 0x5EDC;
+            }
 
             ValidateBytes();
 
@@ -27,33 +41,27 @@ namespace dw2_exp_multiplier.Patcher.Misc
         private void patchBtyes(ref FileStream fs)
         {
             byte[] patchedPattern = { 0x03, 0x00, 0x06, 0x24 };
-            Buffer.BlockCopy(patchedPattern, 0, data, 0x7060, patchedPattern.Length);
+            Buffer.BlockCopy(patchedPattern, 0, data, this.DataOffset1, patchedPattern.Length);
             
             patchedPattern = new byte[] { 0x05, 0x00, 0x06, 0xA2 };
-            Buffer.BlockCopy(patchedPattern, 0, data, 0x706C, patchedPattern.Length);
+            Buffer.BlockCopy(patchedPattern, 0, data, this.DataOffset2, patchedPattern.Length);
             
             this.DW2Image.WriteFile(ref data, FileIndex.STAG4000_PRO);
         }
 
         private void ValidateBytes()
         {
-            byte[] bytes =
-            {
-                0x00, 0x00, 0x00, 0x00
-            };
+            byte[] bytes = { 0x00, 0x00, 0x00, 0x00 };
 
-            for (int i = 0, j = 0x7060; i < bytes.Length; i++)
+            for (int i = 0, j = this.DataOffset1; i < bytes.Length; i++)
             {
                 if (bytes[i] != data[j + i])
                     throw new Exception(GetName());
             }
             
-            bytes = new byte[]
-            {
-                0x00, 0x00, 0x00, 0x00
-            };
+            bytes = new byte[] { 0x00, 0x00, 0x00, 0x00 };
 
-            for (int i = 0, j = 0x706C; i < bytes.Length; i++)
+            for (int i = 0, j = this.DataOffset2; i < bytes.Length; i++)
             {
                 if (bytes[i] != data[j + i])
                     throw new Exception(GetName());

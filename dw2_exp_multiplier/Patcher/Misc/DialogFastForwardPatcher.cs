@@ -19,12 +19,19 @@ namespace dw2_exp_multiplier.Patcher.Misc
         {
             data = this.DW2Image.ReadMainFile();
 
-            ValidateBytes();
-
-            patchBtyes(ref fs);
+            if (this.DW2Image.DW2Slus.GetVersion() == DW2Slus.US_VERSION)
+            {
+                ValidateBytesUS();
+                patchBtyesUS(ref fs);
+            }
+            else
+            {
+                ValidateBytesJAP();
+                patchBtyesJAP(ref fs);
+            }
         }
 
-        private void patchBtyes(ref FileStream fs)
+        private void patchBtyesUS(ref FileStream fs)
         {
             byte[] patchedPattern = { 0x14, 0x00, 0x42, 0x90 };
             Buffer.BlockCopy(patchedPattern, 0, data, 0xB4D4, patchedPattern.Length);
@@ -32,7 +39,7 @@ namespace dw2_exp_multiplier.Patcher.Misc
             this.DW2Image.WriteMainFile(ref data);
         }
 
-        private void ValidateBytes()
+        private void ValidateBytesUS()
         {
             byte[] bytes =
             {
@@ -40,6 +47,25 @@ namespace dw2_exp_multiplier.Patcher.Misc
             };
 
             for (int i = 0, j = 0xB4D4; i < bytes.Length; i++)
+            {
+                if (bytes[i] != data[j + i])
+                    throw new Exception(GetName());
+            }
+        }
+
+        private void patchBtyesJAP(ref FileStream fs)
+        {
+            byte[] patchedPattern = { 0x10, 0x00, 0x42, 0x90 };
+            Buffer.BlockCopy(patchedPattern, 0, data, 0x857C, patchedPattern.Length);
+
+            this.DW2Image.WriteMainFile(ref data);
+        }
+
+        private void ValidateBytesJAP()
+        {
+            byte[] bytes = { 0x10, 0x00, 0x42, 0x8c };
+
+            for (int i = 0, j = 0x857C; i < bytes.Length; i++)
             {
                 if (bytes[i] != data[j + i])
                     throw new Exception(GetName());

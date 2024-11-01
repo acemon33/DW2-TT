@@ -97,7 +97,10 @@ namespace dw2_exp_multiplier.View
                 if (unHideAAA.Checked)
                 {
                     bool hide = (Control.ModifierKeys == Keys.Shift) ? true: false;
-                    DW2Slus.UnhideAAAFolder(ref fs, hide);
+                    if (dw2Image.DW2Slus.GetVersion() == DW2Slus.US_VERSION)
+                        DW2Slus.UnhideAAAFolder(ref fs, hide);
+                    else
+                        DW2Slus.UnhideAAAFolderJap(ref fs, hide);
                 }
 
                 if (digibeetleComboBox.SelectedIndex > 0)
