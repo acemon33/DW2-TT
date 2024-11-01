@@ -17,6 +17,9 @@ namespace dw2_exp_multiplier.Patcher.BattleEnhancement
 
         public override void Patch(ref FileStream fs)
         {
+            if (this.DW2Image.DW2Slus.GetVersion() == DW2Slus.JAP_VERSION)
+                throw new NotImplementedException(GetName() + " Not Supported in JAP version");
+
             data = this.DW2Image.ReadFile(FileIndex.STAG3000_PRO);
 
             byte[] patchedPattern = { 0x07, 0x00, 0x62, 0x24 };

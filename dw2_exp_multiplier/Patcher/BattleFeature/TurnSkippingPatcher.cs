@@ -18,6 +18,9 @@ namespace dw2_exp_multiplier.Patcher.BattleFeature
 
         public override void Patch(ref FileStream fs)
         {
+            if (this.DW2Image.DW2Slus.GetVersion() == DW2Slus.JAP_VERSION)
+                throw new NotImplementedException(GetName() + " Not Supported in JAP version");
+
             slusData = this.DW2Image.ReadMainFile();
             Stag3000Data = this.DW2Image.ReadFile(FileIndex.STAG3000_PRO);
 

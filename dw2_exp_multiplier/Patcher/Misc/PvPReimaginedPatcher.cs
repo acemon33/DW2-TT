@@ -21,6 +21,9 @@ namespace dw2_exp_multiplier.Patcher.Misc
 
         public override void Patch(ref FileStream fs)
         {
+            if (this.DW2Image.DW2Slus.GetVersion() == DW2Slus.JAP_VERSION)
+                throw new NotImplementedException(GetName() + " Not Supported in JAP version");
+
             Stag3500Data = this.DW2Image.ReadFile(FileIndex.STAG3500_PRO);
             Pgftwn00Data = this.DW2Image.ReadFile(FileIndex.PGFTWN00_BIN);
             byte[] temp = this.DW2Image.ReadFile(FileIndex.FIGHT000_BIN);
