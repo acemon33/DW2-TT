@@ -4,6 +4,50 @@
 
 
 
+v4.0-Final:
+-----
+ - Support Japanese version (Some Patches).
+ - Support VCD image (PS2 Pops images).
+ - Separate DNA Sum-up & DNA Labs Restriction patchers.
+ - Max Level Limit patcher: remove the max level limit from Digimon.
+ - Dialog Fast-Forward patcher: progressing Dialogs by holding X button.
+ - Zudokorn Mons patcher: obtain Zodukorn's Digimons after the training mission and get 30,000 Bits.
+ - Domain Free Obstacles patcher: prevent Bugs, Mines, Spores & Rocks to be spot on the Map.
+ - Floor Skipping patcher: Allow the Player to jump to the specified floor in the domain.
+ - R-Bug Removal patcher: prevent R-Bug to be spot on the Map.
+ - PvP Reimagined patcher: PvP Battle System similar to Player 1 walkthrough.
+ - Turn Skipping patcher: Skip animations & voice during battle combat.
+ - Tech Ordering patcher: Allow the Player to arrange Digimon's Techs by accessing the Learn Tech Menu after the battle.
+ - Next Level Limit patcher: Allow a Digimon to Level up more than once according to the experience during battle.
+ - Battle Enhancement:
+   - Enemy Boss Confusion: enemy Boss can be affected by Confusion Effect.
+   - Enemy Boss Affection: enemy boss can be affected or taken damage by Venom Infusion, motivation down Techs, giga-scissor-claw.
+   - Necro Magic Tech: get 200 MP of Faint Digimon.
+ - Battle Fix:
+   - Chrono Breaker Tech: correct the behavior when some (Attack / Assist / Counter-Attack) Techs following Chrono Breaker.
+   - Darkside Attack Tech: target can't recover HP (all healing Techs).
+   - Giga Byte Attack Tech: target can't Recover Status even the random chance to cure the status.
+   - 1.5 damage vs guard Effect: correct the behavior 1.5 damage vs guarding.
+   - Zen Recovery / Parameter Patch / Re-Initilize / Re-Format Tech: reset state changes permanently.
+ - Fix various minor issues.
+
+**Note:**
+- For Floor Skipping patcher:
+   - There is no boundary checking, exceeding will softlock the game (be very cautious)
+   - Usage:
+      - press x on the floor gate, when dialog appeares, don't close it, press as the following:
+      - R1 to increase floor
+      - L1 to decrease floor
+- For Turn Skipping patcher:
+   - Usage:
+      - Press a button on Main Menu (Give Orders / Cannon / Run Away) as the following:
+      - [] square: to enable Skip Turns (Skip Animation)
+      - /\ triangle: to disable Skip Turns (Default Animation)
+- For Tech Ordering patcher:
+   - Press R1 on Exp / Bits Earning Menu
+
+
+
 v3.0:
 -----
  - Backup and Restore Options.
@@ -20,6 +64,9 @@ v3.0:
    - Shadow Scythe Tech: correct the behavior when being Interrupted
    - Invincibility Tech: correct the behavior when being Attacked by Beast King Fist Tech.
    - Fix Zen Recovery Tech Patch of previous version.
+
+**Note:**
+ - Perform a backup from the Menu Bar before attempting anything, so you can restore later if anything goes wrong.
 
 
 
@@ -71,7 +118,7 @@ v2.0:
 **Note:**
  - For Digi-Beetle Patcher:
     - Setting the same NPC Digi-Beetle that will appear during the dialog will cause **Softlock**.
- - For Save Editor:
+ - For Save Editor when working with Raw Save-File:
     - Save the filename to "BASLUS-01193 DMW2" or rename it before importing to Memory Card File (.mcd / .mcr),
       because MemcardRex cannot import properly with different name (in case of Raw Save File).
 

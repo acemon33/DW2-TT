@@ -1,0 +1,1 @@
+Some assembly codes on these folders have been compiled by [PSIG](https://rgcorp.ucoz.net/load/console_soft/psig/2-1-0-6) (PlayStation instructions generator (MIPS R3000A Assembler)

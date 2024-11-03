@@ -1,0 +1,96 @@
+* Skip Animation:
+80064f98:
+j 0x741A8
+
+# Key Bindings
+800741A8:
+lui   $s0,0x8007
+lbu   s1,0x3cc8($s0)
+addiu $s2,$r0,0x6
+bne   $s1,$s2,9
+lui   $s2,0x8006
+lw    $s1,0xF708($s2)
+lw    $s3,0xf70c($s2)
+beq   $s1,$r0,2
+  addiu $s1,$r0,0x1
+  sb    $s1,0x41a4($s0)
+beq   $s3,$r0,2
+  nop
+  sb  $r0,0x41A4($s0)
+j 0x64fa0
+lw    $ra,0x60($sp)
+
+8006d2c4:
+j 0x741d8
+lui   $s0,0x8007
+
+# Logic
+800741d8:
+lui   $s0,0x8007
+lbu   $s2,0x41A4($s0)
+lbu   $s4,0x38a0($s0)
+
+# Check for skip activation
+beq   $s2,$r0,32
+  addiu $s6,$r0,0x18
+
+# Interrupt
+  bne   $s4,$r0,4
+	addiu $s3,$r0,0x13
+    sb    $s3,0x38a0($s0)
+	j 0x74254
+    sb    $s6,0x38a2($s0)
+  
+# How many Frames to Wait
+  lbu   $s7,0x41A5($s0)
+  addiu $s3,$r0,0x8
+  bne   $s7,$s3,18
+    addiu $s2,$r0,0x16
+    addiu $s5,$r0,0xb
+    sb    $s5,0x38da($s0)
+	addiu $s5,$r0,0x1
+    sb    $s5,0x38c2($s0)
+
+# Attack Counter Assist Commands
+  bne   $s4,$s2,0x6
+    addiu $s2,$r0,0xb4
+    addiu $s5,$r0,0xb6
+    sb    $s5,0x0($s1)
+    sb    $s5,0x38a0($s0)
+	addiu $s5,$r0,0xb
+    sb    $s5,0x38ce($s0)
+	
+# Missed
+  bne   $s4,$s2,0x2
+    addiu $s2,$r0,0x78
+	sb    $s6,0x389e($s0)
+
+# Guard
+  bne   $s4,$s2,0x2
+    nop
+    sb    $s6,0x389e($s0)
+
+# Reset Counter
+  slti  $s5,$s7,0x8
+  bne   $s5,$r0,2
+    addiu $s7,$s7,0x1
+    addiu $s7,$r0,0x0
+  sb    $s7,0x41A5($s0)
+
+# Finish
+lw    $ra, 0x9c($sp)
+j     0x6d2c8
+lw    $s6, 0x98($sp)
+
+8006f254:
+j 0x742f0
+lui   $v1,0x8007
+
+800742f0:
+lbu   $v1,0x41a4($v1)
+nop
+beq   $v1,$r0,3
+lw    $v1,0x18($s2)
+j 0x6f088
+nop
+j 0x6f25c

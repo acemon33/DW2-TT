@@ -1,0 +1,19 @@
+Insert:
+	VS Mode:
+		lba:196230 addr:1B826F20 sector:34 403_stag3000
+		lba:140792 sector:16 3405_stag3500
+	HUD:
+		lba:196265 sector:11 417_fight000
+		lba:196218 sector:12 315_pgftwn00
+
+
+- coming features
+Damage X2
+hud positions
+Winning Screen Accept Any Key
+Player Name
+	change camera
+Get space from:
+	advance_next_level_update_states = 80071538-8007191c s0x3E4
+									 = 80071c14-80071d70 s0x15C
+next patch: 80071c5c
