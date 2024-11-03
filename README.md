@@ -18,11 +18,12 @@ A Digimon World 2 Utility Tool with multiple features including an EXP & Bits Mu
 
 
 Check the [CHANGELOG](CHANGELOG.md) for complete Features.
+
 Check [here](Documentation/file-manager.md) for how to use the File-Manager.
 
 
 ***Note***:
-- After using this tool some emulators will not work due to EDC/ECC issues, use any EDC/ECC tools like [ECCRegen](http://web.tiscali.it/eccregen) after making any modification and before burning to a physical CD.
+- After using this tool some emulators may not work due to EDC/ECC issues, use any EDC/ECC tools like [ECCRegen](http://web.tiscali.it/eccregen) after making any modification and before burning to a physical CD.
 - The patches are *not* compaitable with previous version, use it on a clean (vanilla / mod) game image.
 
 
