@@ -9,7 +9,7 @@ The basic idea is to export the files, edit them and then import them back into 
 First let's extract Tech Data, it resides in WAZADATA file. Start by opening the DW2 Bin file on CDmage.
 All PSX games have the M2/2352 image type
 
-(File-Manager/e1.PNG)
+[![Discord](File-Manager/e1.PNG)](e1.PNG)
 
 All the game files are in the AAA folder which is initially hidden.
 
