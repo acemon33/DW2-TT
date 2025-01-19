@@ -19,13 +19,13 @@ namespace dw2_exp_multiplier.Base
 
         public DW2Slus DW2Slus { get { return slus; } }
 
-        public DW2Image(ref FileStream fs, bool isVcd)
+        public DW2Image(ref FileStream fs, bool isVcd, int version)
         {
             this.fs = fs;
             this.IsVcd = isVcd;
             if (this.IsVcd)
                 this.PreOffset = 0x100000;
-            this.slus = DW2Slus.ValidImageFile(ref fs, PreOffset);
+            this.slus = DW2Slus.ValidImageFile(ref fs, PreOffset, version);
         }
 
         public void WriteMainFile(ref byte[] data)

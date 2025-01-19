@@ -71,39 +71,12 @@ namespace dw2_exp_multiplier.Base
             Buffer.BlockCopy(this.slus, this.size_offset, this.size, 0, this.size_length);
         }
 
-        public static DW2Slus ValidImageFile(ref FileStream br, int preOffset)
+        public static DW2Slus ValidImageFile(ref FileStream br, int preOffset, int version)
         {
-            int version = DW2Slus.US_VERSION;
-
             byte[] dw2Id = { 0x53, 0x4C, 0x55, 0x53, 0x5F, 0x30, 0x31, 0x31, 0x2E, 0x39, 0x33 }; // SLUS_011.93 in bytes
             byte[] buffer = new byte[dw2Id.Length];
 
             br.Position = 0xCAB9 + preOffset;
-            br.Read(buffer, 0, dw2Id.Length);
-            for (int i = 0; i < dw2Id.Length; i++)
-            {
-                if (buffer[i] != dw2Id[i])
-                {
-                    version = 0;
-                    break;
-                }
-            }
-
-            if (version == 0)
-            {
-                version = DW2Slus.JAP_VERSION;
-                dw2Id = new byte[] { 0x53, 0x4C, 0x50, 0x53, 0x5F, 0x30, 0x32, 0x38, 0x2E, 0x34, 0x34 }; // SLPS_028.44 in bytes
-                br.Position = 0xCBFF;
-                br.Read(buffer, 0, dw2Id.Length);
-                for (int i = 0; i < dw2Id.Length; i++)
-                {
-                    if (buffer[i] != dw2Id[i])
-                    {
-                        version = 0;
-                        break;
-                    }
-                }
-            }
 
             if (version == 0)
                 throw new FileLoadException("The file: \"" + br.Name + "\" is not Digimon World 2 Image File!!", "DW2 invalid file");
