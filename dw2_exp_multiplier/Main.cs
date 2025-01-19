@@ -97,7 +97,7 @@ namespace dw2_exp_multiplier
             {
                 string filename = this.miscView.GetDw2BinPath();
                 fs = new FileStream(filename, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-                DW2Image dw2Image = new DW2Image(ref fs, filename.ToLower().EndsWith(".vcd"));
+                DW2Image dw2Image = new DW2Image(ref fs, filename.ToLower().EndsWith(".vcd"), (Main.GetMain().IsUSVersionChecked()) ? DW2Slus.US_VERSION : DW2Slus.JAP_VERSION);
 
                 FolderPicker fbd = new FolderPicker();
                 fbd.Title = "Open Folder";
@@ -138,7 +138,7 @@ namespace dw2_exp_multiplier
             {
                 string filename = this.miscView.GetDw2BinPath();
                 fs = new FileStream(filename, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
-                DW2Image dw2Image = new DW2Image(ref fs, filename.ToLower().EndsWith(".vcd"));
+                DW2Image dw2Image = new DW2Image(ref fs, filename.ToLower().EndsWith(".vcd"), (Main.GetMain().IsUSVersionChecked()) ? DW2Slus.US_VERSION : DW2Slus.JAP_VERSION);
 
                 FolderPicker fbd = new FolderPicker();
                 fbd.Title = "Open Folder";
@@ -200,6 +200,22 @@ namespace dw2_exp_multiplier
             {
                 this.tabControl1.TabPages.RemoveByKey("tabPage3");
             }
+        }
+        public bool IsUSVersionChecked()
+        {
+            return this.usVersionToolStripMenuItem.Checked;
+        }
+
+        private void usVersionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.usVersionToolStripMenuItem.Checked = true;
+            this.japVersionToolStripMenuItem.Checked = false;
+        }
+
+        private void japVersionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.usVersionToolStripMenuItem.Checked = false;
+            this.japVersionToolStripMenuItem.Checked = true;
         }
         #endregion
     }

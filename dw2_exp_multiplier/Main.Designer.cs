@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.menuBar = new System.Windows.Forms.ToolStrip();
+            this.VersionDropDownButton = new System.Windows.Forms.ToolStripDropDownButton();
+            this.usVersionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.japVersionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveEditorModeMenu = new System.Windows.Forms.ToolStripDropDownButton();
             this.vanillaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.improvementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,14 +42,14 @@
             this.optionsToolStripDropDownButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.backupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.restoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.about = new System.Windows.Forms.ToolStripButton();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.fileManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miscView = new dw2_exp_multiplier.View.MiscView();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.saveEditorView = new dw2_exp_multiplier.View.SaveEditorView();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.fileManagerView = new dw2_exp_multiplier.View.FileManagerView();
             this.menuBar.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -58,6 +61,7 @@
             // menuBar
             // 
             this.menuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.VersionDropDownButton,
             this.saveEditorModeMenu,
             this.optionsToolStripDropDownButton,
             this.about});
@@ -66,6 +70,34 @@
             this.menuBar.Size = new System.Drawing.Size(460, 25);
             this.menuBar.TabIndex = 11;
             this.menuBar.Text = "MenuBar";
+            // 
+            // VersionDropDownButton
+            // 
+            this.VersionDropDownButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.VersionDropDownButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.usVersionToolStripMenuItem,
+            this.japVersionToolStripMenuItem});
+            this.VersionDropDownButton.Image = ((System.Drawing.Image)(resources.GetObject("VersionDropDownButton.Image")));
+            this.VersionDropDownButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.VersionDropDownButton.Name = "VersionDropDownButton";
+            this.VersionDropDownButton.Size = new System.Drawing.Size(58, 22);
+            this.VersionDropDownButton.Text = "Version";
+            // 
+            // usVersionToolStripMenuItem
+            // 
+            this.usVersionToolStripMenuItem.Checked = true;
+            this.usVersionToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.usVersionToolStripMenuItem.Name = "usVersionToolStripMenuItem";
+            this.usVersionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.usVersionToolStripMenuItem.Text = "US Version";
+            this.usVersionToolStripMenuItem.Click += new System.EventHandler(this.usVersionToolStripMenuItem_Click);
+            // 
+            // japVersionToolStripMenuItem
+            // 
+            this.japVersionToolStripMenuItem.Name = "japVersionToolStripMenuItem";
+            this.japVersionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.japVersionToolStripMenuItem.Text = "JAP Version";
+            this.japVersionToolStripMenuItem.Click += new System.EventHandler(this.japVersionToolStripMenuItem_Click);
             // 
             // saveEditorModeMenu
             // 
@@ -187,6 +219,13 @@
             this.tabPage1.Text = "Misc.";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // miscView
+            // 
+            this.miscView.Location = new System.Drawing.Point(3, 3);
+            this.miscView.Name = "miscView";
+            this.miscView.Size = new System.Drawing.Size(447, 410);
+            this.miscView.TabIndex = 0;
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.saveEditorView);
@@ -198,6 +237,13 @@
             this.tabPage2.Text = "Save Editor";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // saveEditorView
+            // 
+            this.saveEditorView.Location = new System.Drawing.Point(3, 5);
+            this.saveEditorView.Name = "saveEditorView";
+            this.saveEditorView.Size = new System.Drawing.Size(444, 402);
+            this.saveEditorView.TabIndex = 0;
+            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.fileManagerView);
@@ -208,20 +254,6 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "File Manager";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // miscView
-            // 
-            this.miscView.Location = new System.Drawing.Point(3, 3);
-            this.miscView.Name = "miscView";
-            this.miscView.Size = new System.Drawing.Size(447, 410);
-            this.miscView.TabIndex = 0;
-            // 
-            // saveEditorView
-            // 
-            this.saveEditorView.Location = new System.Drawing.Point(3, 5);
-            this.saveEditorView.Name = "saveEditorView";
-            this.saveEditorView.Size = new System.Drawing.Size(444, 402);
-            this.saveEditorView.TabIndex = 0;
             // 
             // fileManagerView
             // 
@@ -275,6 +307,9 @@
         private System.Windows.Forms.ToolStripMenuItem backupToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem restoreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fileManagerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripDropDownButton VersionDropDownButton;
+        private System.Windows.Forms.ToolStripMenuItem usVersionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem japVersionToolStripMenuItem;
     }
 }
 

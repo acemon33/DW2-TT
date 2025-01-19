@@ -66,7 +66,7 @@ namespace dw2_exp_multiplier.View
             FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.ReadWrite);
             try
             {
-                DW2Image dw2Image = new DW2Image(ref fs, filename.ToLower().EndsWith(".vcd"));
+                DW2Image dw2Image = new DW2Image(ref fs, filename.ToLower().EndsWith(".vcd"), (Main.GetMain().IsUSVersionChecked()) ? DW2Slus.US_VERSION : DW2Slus.JAP_VERSION);
 
                 if (enemysetTextBox.Text.Length > 0)
                 {
@@ -262,7 +262,7 @@ namespace dw2_exp_multiplier.View
             FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
             try
             {
-                DW2Image dw2Image = new DW2Image(ref fs, filename.ToLower().EndsWith(".vcd"));
+                DW2Image dw2Image = new DW2Image(ref fs, filename.ToLower().EndsWith(".vcd"), (Main.GetMain().IsUSVersionChecked()) ? DW2Slus.US_VERSION : DW2Slus.JAP_VERSION);
 
                 EnemysetManager enemysetManager = new EnemysetManager(dw2Image);
                 filename = Path.GetDirectoryName(dw2TextBox.Text) + "\\ENEMYSET_" + Path.GetFileNameWithoutExtension(dw2TextBox.Text) + ".BIN";
@@ -299,7 +299,7 @@ namespace dw2_exp_multiplier.View
             FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.ReadWrite);
             try
             {
-                DW2Image dw2Image = new DW2Image(ref fs, filename.ToLower().EndsWith(".vcd"));
+                DW2Image dw2Image = new DW2Image(ref fs, filename.ToLower().EndsWith(".vcd"), (Main.GetMain().IsUSVersionChecked()) ? DW2Slus.US_VERSION : DW2Slus.JAP_VERSION);
 
                 EnemysetManager enemysetManager = new EnemysetManager(dw2Image, enemysetTextBox.Text);
                 enemysetManager.WriteToBin(ref fs);

@@ -33,7 +33,7 @@ namespace dw2_exp_multiplier.View
                 try
                 {
                     fs = new FileStream(filename, FileMode.Open, FileAccess.ReadWrite);
-                    DW2Image dw2Image = new DW2Image(ref fs, filename.ToLower().EndsWith(".vcd"));
+                    DW2Image dw2Image = new DW2Image(ref fs, filename.ToLower().EndsWith(".vcd"), (Main.GetMain().IsUSVersionChecked()) ? DW2Slus.US_VERSION : DW2Slus.JAP_VERSION);
 
                     Dictionary<int, string> fileIndexes = this.ParseIndex(this.CurrentDirectory);
 
@@ -72,7 +72,7 @@ namespace dw2_exp_multiplier.View
                 try
                 {
                     fs = new FileStream(filename, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
-                    DW2Image dw2Image = new DW2Image(ref fs, filename.ToLower().EndsWith(".vcd"));
+                    DW2Image dw2Image = new DW2Image(ref fs, filename.ToLower().EndsWith(".vcd"), (Main.GetMain().IsUSVersionChecked()) ? DW2Slus.US_VERSION : DW2Slus.JAP_VERSION);
      
                     Dictionary<int, string> fileIndexes = this.ParseIndex(this.CurrentDirectory);
      
