@@ -13,7 +13,7 @@ namespace dw2_exp_multiplier.Patcher.BattleFix
 
         public ShadowScythePatcher(DW2Image dw2Image) : base(dw2Image) { }
 
-        public override string GetName() { return ""; }
+        public override string GetName() { return "Shadow Scythe Patcher"; }
 
         public override void Patch(ref FileStream fs)
         {
@@ -22,11 +22,27 @@ namespace dw2_exp_multiplier.Patcher.BattleFix
 
             data = this.DW2Image.ReadFile(FileIndex.STAG3000_PRO);
 
+            ValidateBytesUS();
+            patchBtyesUS(ref fs);
+        }
+
+        private void patchBtyesUS(ref FileStream fs)
+        {
             byte[] patchedPattern = { 0x21, 0x30, 0x03, 0x00 };
             Buffer.BlockCopy(patchedPattern, 0, data, 0x9524, patchedPattern.Length);
 
             this.DW2Image.WriteFile(ref data, FileIndex.STAG3000_PRO);
         }
+
+        private void ValidateBytesUS()
+        {
+            byte[] bytes = { 0x21, 0x30, 0x60, 0x02 };
+            for (int i = 0, j = 0x9524; i < bytes.Length; i++)
+            {
+                if (bytes[i] != data[j + i])
+                    throw new Exception(GetName());
+            }
+        }
     }
-    
+
 }

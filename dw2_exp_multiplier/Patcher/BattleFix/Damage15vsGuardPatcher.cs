@@ -13,7 +13,7 @@ namespace dw2_exp_multiplier.Patcher.BattleFix
 
         public Damage15vsGuardPatcher(DW2Image dw2Image) : base(dw2Image) { }
 
-        public override string GetName() { return ""; }
+        public override string GetName() { return "1.5 Damage vs Guarding Patcher"; }
 
         public override void Patch(ref FileStream fs)
         {
@@ -22,11 +22,26 @@ namespace dw2_exp_multiplier.Patcher.BattleFix
 
             data = this.DW2Image.ReadFile(FileIndex.STAG3000_PRO);
 
+            ValidateBytesUS();
+            patchBtyesUS(ref fs);
+        }
+
+        private void patchBtyesUS(ref FileStream fs)
+        {
             byte[] patchedPattern = { 0x05, 0x00, 0x02, 0x24 };
             Buffer.BlockCopy(patchedPattern, 0, data, 0x7F04, patchedPattern.Length);
 
             this.DW2Image.WriteFile(ref data, FileIndex.STAG3000_PRO);
         }
+
+        private void ValidateBytesUS()
+        {
+            byte[] bytes = { 0x03, 0x00, 0x02, 0x24 };
+            for (int i = 0, j = 0x7F04; i < bytes.Length; i++)
+            {
+                if (bytes[i] != data[j + i])
+                    throw new Exception(GetName());
+            }
+        }
     }
-    
 }

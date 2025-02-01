@@ -13,7 +13,7 @@ namespace dw2_exp_multiplier.Patcher.BattleFix
 
         public VenomInfusionPatcher(DW2Image dw2Image) : base(dw2Image) { }
 
-        public override string GetName() { return ""; }
+        public override string GetName() { return "Venom Infusion Patcher"; }
 
         public override void Patch(ref FileStream fs)
         {
@@ -22,6 +22,12 @@ namespace dw2_exp_multiplier.Patcher.BattleFix
 
             data = this.DW2Image.ReadFile(FileIndex.STAG3000_PRO);
 
+            ValidateBytesUS();
+            patchBtyesUS(ref fs);
+        }
+
+        private void patchBtyesUS(ref FileStream fs)
+        {
             byte[] patchedPattern =
             {
                 0x00, 0x00, 0x00, 0x00,
@@ -33,6 +39,22 @@ namespace dw2_exp_multiplier.Patcher.BattleFix
 
             this.DW2Image.WriteFile(ref data, FileIndex.STAG3000_PRO);
         }
+
+        private void ValidateBytesUS()
+        {
+            byte[] bytes =
+            {
+                0x44, 0x8E, 0x00, 0x0C,
+                0x00, 0x00, 0x00, 0x00,
+                0x07, 0x00, 0x42, 0x30,
+                0x04, 0x00, 0x40, 0x10,
+            };
+            for (int i = 0, j = 0x8D38; i < bytes.Length; i++)
+            {
+                if (bytes[i] != data[j + i])
+                    throw new Exception(GetName());
+            }
+        }
     }
-    
+
 }

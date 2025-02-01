@@ -88,6 +88,19 @@ namespace dw2_exp_multiplier.Patcher.BattleFix
                 if (data[j + i] != 0)
                     throw new Exception(GetName());
             }
+
+            bytes = new byte[] { 0x2C, 0x00, 0x43, 0x94, 0x01, 0x00, 0x16, 0x24 };
+            for (int i = 0, j = 0x7550; i < bytes.Length; i++)
+            {
+                if (bytes[i] != data[j + i])
+                    throw new Exception(GetName());
+            }
+
+            for (int i = 0, j = 0x10F10; i < 0x20; i++)
+            {
+                if (data[j + i] != 0)
+                    throw new Exception(GetName());
+            }
         }
     }
     
