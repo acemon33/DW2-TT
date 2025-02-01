@@ -83,6 +83,12 @@ namespace dw2_exp_multiplier.Patcher.Misc
                     throw new Exception(GetName());
             }
 
+            for (int i = 0, j = 0x3A2E0; i < 0x3C; i++)
+            {
+                if (slusData[j + i] != 0)
+                    throw new Exception(GetName());
+            }
+
             bytes = new byte[]
             {
                 0xE4, 0x00, 0x62, 0xA0,
@@ -131,6 +137,12 @@ namespace dw2_exp_multiplier.Patcher.Misc
             for (int i = 0, j = 0x10760; i < bytes.Length; i++)
             {
                 if (bytes[i] != slusData[j + i])
+                    throw new Exception(GetName());
+            }
+
+            for (int i = 0, j = 0x3A0B4; i < 0x3C; i++)
+            {
+                if (slusData[j + i] != 0)
                     throw new Exception(GetName());
             }
 

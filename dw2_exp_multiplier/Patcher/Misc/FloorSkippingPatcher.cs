@@ -85,6 +85,12 @@ namespace dw2_exp_multiplier.Patcher.Misc
                 if (bytes[i] != data[j + i])
                     throw new Exception(GetName());
             }
+
+            for (int i = 0, j = 0xFF78; i < 0x70; i++)
+            {
+                if (data[j + i] != 0)
+                    throw new Exception(GetName());
+            }
         }
 
         private void patchBtyesJAP(ref FileStream fs)
@@ -118,6 +124,12 @@ namespace dw2_exp_multiplier.Patcher.Misc
             for (int i = 0, j = 0x324C; i < bytes.Length; i++)
             {
                 if (bytes[i] != data[j + i])
+                    throw new Exception(GetName());
+            }
+
+            for (int i = 0, j = 0xFF78; i < 0x70; i++)
+            {
+                if (data[j + i] != 0)
                     throw new Exception(GetName());
             }
         }
