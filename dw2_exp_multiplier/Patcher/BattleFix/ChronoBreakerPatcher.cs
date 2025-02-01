@@ -13,7 +13,7 @@ namespace dw2_exp_multiplier.Patcher.BattleFix
 
         public ChronoBreakerPatcher(DW2Image dw2Image) : base(dw2Image) { }
 
-        public override string GetName() { return ""; }
+        public override string GetName() { return "Chrono Breaker Patcher"; }
 
         public override void Patch(ref FileStream fs)
         {
@@ -22,6 +22,12 @@ namespace dw2_exp_multiplier.Patcher.BattleFix
 
             data = this.DW2Image.ReadFile(FileIndex.STAG3000_PRO);
 
+            ValidateBytesUS();
+            patchBtyesUS(ref fs);
+        }
+
+        private void patchBtyesUS(ref FileStream fs)
+        {
             byte[] patchedPattern = { 0x88, 0xD0, 0x01, 0x08 };
             Buffer.BlockCopy(patchedPattern, 0, data, 0x8EBC, patchedPattern.Length);
 
@@ -51,6 +57,35 @@ namespace dw2_exp_multiplier.Patcher.BattleFix
             Buffer.BlockCopy(patchedPattern, 0, data, 0x10FD4, patchedPattern.Length);
 
             this.DW2Image.WriteFile(ref data, FileIndex.STAG3000_PRO);
+        }
+
+        private void ValidateBytesUS()
+        {
+            byte[] bytes = { 0x00, 0x14, 0x16, 0x00 };
+            for (int i = 0, j = 0x8EBC; i < bytes.Length; i++)
+            {
+                if (bytes[i] != data[j + i])
+                    throw new Exception(GetName());
+            }
+
+            for (int i = 0, j = 0x10EC0; i < 0x14; i++)
+            {
+                if (data[j + i] != 0)
+                    throw new Exception(GetName());
+            }
+
+            bytes = new byte[] { 0x9D, 0xB9, 0x01, 0x0C, 0x21, 0x20, 0x00, 0x00  };
+            for (int i = 0, j = 0x678; i < bytes.Length; i++)
+            {
+                if (bytes[i] != data[j + i])
+                    throw new Exception(GetName());
+            }
+
+            for (int i = 0, j = 0x10FD4; i < 0x28; i++)
+            {
+                if (data[j + i] != 0)
+                    throw new Exception(GetName());
+            }
         }
     }
     

@@ -13,7 +13,7 @@ namespace dw2_exp_multiplier.Patcher.BattleFix
 
         public DarkSideAttackPatcher(DW2Image dw2Image) : base(dw2Image) { }
 
-        public override string GetName() { return ""; }
+        public override string GetName() { return "Darkside Attack Patcher"; }
 
         public override void Patch(ref FileStream fs)
         {
@@ -22,6 +22,12 @@ namespace dw2_exp_multiplier.Patcher.BattleFix
 
             data = this.DW2Image.ReadFile(FileIndex.STAG3000_PRO);
 
+            ValidateBytesUS();
+            patchBtyesUS(ref fs);
+        }
+
+        private void patchBtyesUS(ref FileStream fs)
+        {
             byte[] patchedPattern =
             {
                 0x07, 0x80, 0x02, 0x3C,
@@ -49,6 +55,28 @@ namespace dw2_exp_multiplier.Patcher.BattleFix
             Buffer.BlockCopy(patchedPattern, 0, data, 0x10F90, patchedPattern.Length);
 
             this.DW2Image.WriteFile(ref data, FileIndex.STAG3000_PRO);
+        }
+
+        private void ValidateBytesUS()
+        {
+            byte[] bytes =
+            {
+                0x14, 0x00, 0x83, 0x86,
+                0x14, 0x00, 0x82, 0x96,
+                0x25, 0xAC, 0x01, 0x08,
+                0x23, 0x90, 0x64, 0x00,
+            };
+            for (int i = 0, j = 0x843C; i < bytes.Length; i++)
+            {
+                if (bytes[i] != data[j + i])
+                    throw new Exception(GetName());
+            }
+
+            for (int i = 0, j = 0x10F90; i < 0x30; i++)
+            {
+                if (data[j + i] != 0)
+                    throw new Exception(GetName());
+            }
         }
     }
     

@@ -13,7 +13,7 @@ namespace dw2_exp_multiplier.Patcher.BattleFix
 
         public GigaByteWingPatcher(DW2Image dw2Image) : base(dw2Image) { }
 
-        public override string GetName() { return ""; }
+        public override string GetName() { return "Giga Byte Wing Patcher"; }
 
         public override void Patch(ref FileStream fs)
         {
@@ -22,6 +22,12 @@ namespace dw2_exp_multiplier.Patcher.BattleFix
 
             data = this.DW2Image.ReadFile(FileIndex.STAG3000_PRO);
 
+            ValidateBytesUS();
+            patchBtyesUS(ref fs);
+        }
+
+        private void patchBtyesUS(ref FileStream fs)
+        {
             byte[] patchedPattern =
             {
                 0x07, 0x80, 0x02, 0x3C,
@@ -66,6 +72,22 @@ namespace dw2_exp_multiplier.Patcher.BattleFix
             Buffer.BlockCopy(patchedPattern, 0, data, 0x10F10, patchedPattern.Length);
 
             this.DW2Image.WriteFile(ref data, FileIndex.STAG3000_PRO);
+        }
+
+        private void ValidateBytesUS()
+        {
+            byte[] bytes = { 0xB8, 0x31, 0x90, 0x24, 0x07, 0x80, 0x02, 0x3C, 0xC8, 0x31, 0x51, 0x24 };
+            for (int i = 0, j = 0x6730; i < bytes.Length; i++)
+            {
+                if (bytes[i] != data[j + i])
+                    throw new Exception(GetName());
+            }
+
+            for (int i = 0, j = 0x10F68; i < 0x28; i++)
+            {
+                if (data[j + i] != 0)
+                    throw new Exception(GetName());
+            }
         }
     }
     
