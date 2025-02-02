@@ -13,7 +13,7 @@ namespace dw2_exp_multiplier.Patcher.BattleEnhancement
 
         public BeastKingFistPatcher(DW2Image dw2Image) : base(dw2Image) { }
 
-        public override string GetName() { return ""; }
+        public override string GetName() { return "Beast King Fist Patcher"; }
 
         public override void Patch(ref FileStream fs)
         {
@@ -22,6 +22,12 @@ namespace dw2_exp_multiplier.Patcher.BattleEnhancement
 
             data = this.DW2Image.ReadFile(FileIndex.STAG3000_PRO);
 
+            ValidateBytesUS();
+            patchBtyesUS(ref fs);
+        }
+
+        private void patchBtyesUS(ref FileStream fs)
+        {
             byte[] patchedPattern =
             {
                 0x12, 0x00, 0x04, 0x34,
@@ -34,6 +40,20 @@ namespace dw2_exp_multiplier.Patcher.BattleEnhancement
             Buffer.BlockCopy(patchedPattern, 0, data, 0x7CC0, patchedPattern.Length);
 
             this.DW2Image.WriteFile(ref data, FileIndex.STAG3000_PRO);
+        }
+
+        private void ValidateBytesUS()
+        {
+            byte[] bytes =
+            {
+    0x00, 0x14, 0x02, 0x00, 0x03, 0x24, 0x02, 0x00, 0xC2, 0x17, 0x02, 0x00, 0x21, 0x10, 0x82, 0x00,
+    0x43, 0x10, 0x02, 0x00, 0x21, 0x90, 0x44, 0x00,
+};
+            for (int i = 0, j = 0x7CC0; i < bytes.Length; i++)
+            {
+                if (bytes[i] != data[j + i])
+                    throw new Exception(GetName());
+            }
         }
     }
     

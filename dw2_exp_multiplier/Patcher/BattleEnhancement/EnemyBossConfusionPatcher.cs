@@ -13,7 +13,7 @@ namespace dw2_exp_multiplier.Patcher.BattleEnhancement
 
         public EnemyBossConfusionPatcher(DW2Image dw2Image) : base(dw2Image) { }
 
-        public override string GetName() { return ""; }
+        public override string GetName() { return "Enemy Boss Confusion Patcher"; }
 
         public override void Patch(ref FileStream fs)
         {
@@ -22,6 +22,12 @@ namespace dw2_exp_multiplier.Patcher.BattleEnhancement
 
             data = this.DW2Image.ReadFile(FileIndex.STAG3000_PRO);
 
+            ValidateBytesUS();
+            patchBtyesUS(ref fs);
+        }
+
+        private void patchBtyesUS(ref FileStream fs)
+        {
             byte[] patchedPattern = { 0xA8, 0xAD, 0x01, 0x08 };
             Buffer.BlockCopy(patchedPattern, 0, data, 0x8328, patchedPattern.Length);
 
@@ -29,6 +35,23 @@ namespace dw2_exp_multiplier.Patcher.BattleEnhancement
             Buffer.BlockCopy(patchedPattern, 0, data, 0x70DC, patchedPattern.Length);
 
             this.DW2Image.WriteFile(ref data, FileIndex.STAG3000_PRO);
+        }
+
+        private void ValidateBytesUS()
+        {
+            byte[] bytes = { 0xDC, 0x03, 0xA2, 0x8C };
+            for (int i = 0, j = 0x8328; i < bytes.Length; i++)
+            {
+                if (bytes[i] != data[j + i])
+                    throw new Exception(GetName());
+            }
+
+            bytes = new byte[] { 0xDC, 0x03, 0x62, 0x8C };
+            for (int i = 0, j = 0x70DC; i < bytes.Length; i++)
+            {
+                if (bytes[i] != data[j + i])
+                    throw new Exception(GetName());
+            }
         }
     }
     
