@@ -89,7 +89,6 @@ namespace dw2_exp_multiplier.Patcher.BattleFeature
             {
                 0x00, 0x00, 0x00, 0x00
             };
-
             for (int i = 0, j = 0x4680; i < bytes.Length; i++)
             {
                 if (bytes[i] != data[j + i])
@@ -100,7 +99,6 @@ namespace dw2_exp_multiplier.Patcher.BattleFeature
             {
                 0x73, 0x00, 0xC0, 0x13
             };
-
             for (int i = 0, j = 0x484C; i < bytes.Length; i++)
             {
                 if (bytes[i] != data[j + i])
@@ -112,7 +110,6 @@ namespace dw2_exp_multiplier.Patcher.BattleFeature
                 0x00, 0x00, 0x00, 0x00,
                 0x03, 0x00, 0x40, 0x10
             };
-
             for (int i = 0, j = 0xE94C; i < bytes.Length; i++)
             {
                 if (bytes[i] != data[j + i])
@@ -123,10 +120,15 @@ namespace dw2_exp_multiplier.Patcher.BattleFeature
             {
                 0x9C, 0x00, 0xBF, 0x8F
             };
-
             for (int i = 0, j = 0x4A24; i < bytes.Length; i++)
             {
                 if (bytes[i] != data[j + i])
+                    throw new Exception(GetName());
+            }
+
+            for (int i = 0, j = 0x10EC0; i < 0x88; i++)
+            {
+                if (data[j + i] != 0)
                     throw new Exception(GetName());
             }
         }
