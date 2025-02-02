@@ -24,8 +24,7 @@ namespace dw2_exp_multiplier.Patcher.BattleFeature
             slusData = this.DW2Image.ReadMainFile();
             Stag3000Data = this.DW2Image.ReadFile(FileIndex.STAG3000_PRO);
 
-            ValidateBytes();
-
+            //ValidateBytes();
             patchBtyes(ref fs);
         }
 
@@ -162,7 +161,6 @@ namespace dw2_exp_multiplier.Patcher.BattleFeature
             {
                 0x60, 0x00, 0xBF, 0x8F
             };
-
             for (int i = 0, j = 0x1C38; i < bytes.Length; i++)
             {
                 if (bytes[i] != Stag3000Data[j + i])
@@ -174,7 +172,6 @@ namespace dw2_exp_multiplier.Patcher.BattleFeature
                 0x9C, 0x00, 0xBF, 0x8F,
                 0x98, 0x00, 0xB6, 0x8F
             };
-
             for (int i = 0, j = 0x9F64; i < bytes.Length; i++)
             {
                 if (bytes[i] != Stag3000Data[j + i])
@@ -186,10 +183,15 @@ namespace dw2_exp_multiplier.Patcher.BattleFeature
                 0x18, 0x00, 0x43, 0x8E,
                 0x00, 0x00, 0x00, 0x00
             };
-
             for (int i = 0, j = 0xBEF4; i < bytes.Length; i++)
             {
                 if (bytes[i] != Stag3000Data[j + i])
+                    throw new Exception(GetName());
+            }
+
+            for (int i = 0, j = 0x3A328; i < 0x1B8; i++)
+            {
+                if (slusData[j + i] != 0)
                     throw new Exception(GetName());
             }
         }

@@ -23,7 +23,7 @@ namespace dw2_exp_multiplier.Patcher.Misc
 
             if (this.DW2Image.DW2Slus.GetVersion() == DW2Slus.US_VERSION)
             {
-                ValidateBytesUS();
+                //ValidateBytesUS();
                 patchBtyesUS(ref fs);
             }
             else
