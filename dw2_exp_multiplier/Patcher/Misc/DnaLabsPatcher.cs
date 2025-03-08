@@ -19,16 +19,39 @@ namespace dw2_exp_multiplier.Patcher.Misc
 
         public override void Patch(ref FileStream fs)
         {
-            data = this.DW2Image.ReadFile(FileIndex.STAG2000_PRO);
+            if (data == null)
+            {
+                data = this.DW2Image.ReadFile(FileIndex.STAG2000_PRO);
 
-            if (this.DW2Image.DW2Slus.GetVersion() == DW2Slus.US_VERSION)
-                this.DataOffset = 0x60E0;
-            else
-                this.DataOffset = 0x6A14;
-
-            ValidateBytes();
+                if (this.DW2Image.DW2Slus.GetVersion() == DW2Slus.US_VERSION)
+                    this.DataOffset = 0x60E0;
+                else
+                    this.DataOffset = 0x6A14;
+            }
 
             patchBtyes(ref fs);
+        }
+
+        public override bool ValidateBytes()
+        {
+            if (data == null)
+            {
+                data = this.DW2Image.ReadFile(FileIndex.STAG2000_PRO);
+
+                if (this.DW2Image.DW2Slus.GetVersion() == DW2Slus.US_VERSION)
+                    this.DataOffset = 0x60E0;
+                else
+                    this.DataOffset = 0x6A14;
+            }
+
+            byte[] bytes = { 0x21, 0x90, 0x00, 0x00 };
+
+            for (int i = 0, j = this.DataOffset; i < bytes.Length; i++)
+            {
+                if (bytes[i] != data[j + i])
+                    return false;
+            }
+            return true;
         }
 
         private void patchBtyes(ref FileStream fs)
@@ -37,17 +60,6 @@ namespace dw2_exp_multiplier.Patcher.Misc
             Buffer.BlockCopy(patchedPattern, 0, data, this.DataOffset, patchedPattern.Length);    // ram: 80069440
 
             this.DW2Image.WriteFile(ref data, FileIndex.STAG2000_PRO);
-        }
-
-        private void ValidateBytes()
-        {
-            byte[] bytes = { 0x21, 0x90, 0x00, 0x00 };
-
-            for (int i = 0, j = this.DataOffset; i < bytes.Length; i++)
-            {
-                if (bytes[i] != data[j + i])
-                    throw new Exception(GetName());
-            }
         }
     }
     

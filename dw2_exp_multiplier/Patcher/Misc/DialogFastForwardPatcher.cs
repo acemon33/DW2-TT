@@ -17,18 +17,24 @@ namespace dw2_exp_multiplier.Patcher.Misc
 
         public override void Patch(ref FileStream fs)
         {
-            data = this.DW2Image.ReadMainFile();
+            if (data == null)
+                data = this.DW2Image.ReadMainFile();
 
             if (this.DW2Image.DW2Slus.GetVersion() == DW2Slus.US_VERSION)
-            {
-                ValidateBytesUS();
                 patchBtyesUS(ref fs);
-            }
             else
-            {
-                ValidateBytesJAP();
                 patchBtyesJAP(ref fs);
-            }
+        }
+
+        public override bool ValidateBytes()
+        {
+            if (data == null)
+                data = this.DW2Image.ReadMainFile();
+
+            if (this.DW2Image.DW2Slus.GetVersion() == DW2Slus.US_VERSION)
+                return ValidateBytesUS();
+            else
+                return ValidateBytesJAP();
         }
 
         private void patchBtyesUS(ref FileStream fs)
@@ -39,7 +45,7 @@ namespace dw2_exp_multiplier.Patcher.Misc
             this.DW2Image.WriteMainFile(ref data);
         }
 
-        private void ValidateBytesUS()
+        private bool ValidateBytesUS()
         {
             byte[] bytes =
             {
@@ -49,8 +55,9 @@ namespace dw2_exp_multiplier.Patcher.Misc
             for (int i = 0, j = 0xB4D4; i < bytes.Length; i++)
             {
                 if (bytes[i] != data[j + i])
-                    throw new Exception(GetName());
+                    return false;
             }
+            return true;
         }
 
         private void patchBtyesJAP(ref FileStream fs)
@@ -61,15 +68,16 @@ namespace dw2_exp_multiplier.Patcher.Misc
             this.DW2Image.WriteMainFile(ref data);
         }
 
-        private void ValidateBytesJAP()
+        private bool ValidateBytesJAP()
         {
             byte[] bytes = { 0x10, 0x00, 0x42, 0x8c };
 
             for (int i = 0, j = 0x857C; i < bytes.Length; i++)
             {
                 if (bytes[i] != data[j + i])
-                    throw new Exception(GetName());
+                    return false;
             }
+            return true;
         }
     }
     

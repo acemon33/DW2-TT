@@ -28,6 +28,11 @@ namespace dw2_exp_multiplier.Patcher.BattleFeature
             patchBtyes(ref fs);
         }
 
+        public override bool ValidateBytes()
+        {
+            return false;
+        }
+
         private void patchBtyes(ref FileStream fs)
         {
             byte[] patchedPattern =
@@ -155,7 +160,7 @@ namespace dw2_exp_multiplier.Patcher.BattleFeature
             this.DW2Image.WriteFile(ref Stag3000Data, FileIndex.STAG3000_PRO);
         }
 
-        private void ValidateBytes()
+        private void ValidateBytesUS()
         {
             byte[] bytes =
             {

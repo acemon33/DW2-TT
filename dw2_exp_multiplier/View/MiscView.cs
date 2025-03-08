@@ -207,21 +207,14 @@ namespace dw2_exp_multiplier.View
                 if (pvpReimaginedCheckBox.Checked)
                     patcherList.Add(new PvPReimaginedPatcher(dw2Image));
 
-                String errorMsg = "";
-                String successMsg = "";
-                foreach (IPatcher patcher in patcherList)
-                {
-                    try
-                    {
-                        patcher.Patch(ref fs);
-                        if (patcher.GetName().Length > 0)
-                            successMsg += " - " + patcher.GetName() + "\n";
-                    }
-                    catch(Exception ex)
-                    {
-                        errorMsg += " - " + ex.Message + "\n";
-                    }
-                }
+                List<String> msgList;
+                if (Main.GetMain().IsForcePatchingChecked())
+                    msgList = this.ForcePatching(ref fs, patcherList);
+                else
+                    msgList = this.SafePatching(ref fs, patcherList);
+
+                String successMsg = msgList[0];
+                String errorMsg = msgList[1];
 
                 string finalMsg = "";
                 if (successMsg.Length > 0)
@@ -254,6 +247,53 @@ namespace dw2_exp_multiplier.View
                     fs.Dispose();
                 }
             }
+        }
+
+        private List<String> ForcePatching(ref FileStream fs, List<IPatcher> patcherList)
+        {
+
+            String errorMsg = "";
+            String successMsg = "";
+            foreach (IPatcher patcher in patcherList)
+            {
+                try
+                {
+                    patcher.Patch(ref fs);
+                    if (patcher.GetName().Length > 0)
+                        successMsg += " - " + patcher.GetName() + "\n";
+                }
+                catch (Exception ex)
+                {
+                    errorMsg += " - " + ex.Message + "\n";
+                }
+            }
+
+            return new List<String>() { successMsg, errorMsg };
+        }
+
+        private List<String> SafePatching(ref FileStream fs, List<IPatcher> patcherList)
+        {
+
+            String errorMsg = "";
+            String successMsg = "";
+            foreach (IPatcher patcher in patcherList)
+            {
+                try
+                {
+                    if (!patcher.ValidateBytes())
+                        throw new Exception(patcher.GetName());
+
+                    patcher.Patch(ref fs);
+                    if (patcher.GetName().Length > 0)
+                        successMsg += " - " + patcher.GetName() + "\n";
+                }
+                catch (Exception ex)
+                {
+                    errorMsg += " - " + ex.Message + "\n";
+                }
+            }
+
+            return new List<String>() { successMsg, errorMsg };
         }
 
         private void exportButton_Click(object sender, EventArgs e)

@@ -17,7 +17,8 @@ namespace dw2_exp_multiplier.Patcher.Misc
 
         public override void Patch(ref FileStream fs)
         {
-            data = this.DW2Image.ReadFile(FileIndex.STAG4000_PRO);
+            if (data == null)
+                data = this.DW2Image.ReadFile(FileIndex.STAG4000_PRO);
 
             if (this.DW2Image.DW2Slus.GetVersion() == DW2Slus.US_VERSION)
             {
@@ -29,6 +30,17 @@ namespace dw2_exp_multiplier.Patcher.Misc
                 ValidateBytesJAP();
                 patchBtyesJAP(ref fs);
             }
+        }
+
+        public override bool ValidateBytes()
+        {
+            if (data == null)
+                data = this.DW2Image.ReadFile(FileIndex.STAG4000_PRO);
+
+            if (this.DW2Image.DW2Slus.GetVersion() == DW2Slus.US_VERSION)
+                return ValidateBytesUS();
+            else
+                return ValidateBytesJAP();
         }
 
         private void patchBtyesUS(ref FileStream fs)
@@ -50,7 +62,7 @@ namespace dw2_exp_multiplier.Patcher.Misc
             this.DW2Image.WriteFile(ref data, FileIndex.STAG4000_PRO);
         }
 
-        private void ValidateBytesUS()
+        private bool ValidateBytesUS()
         {
             byte[] bytes =
             {
@@ -60,14 +72,15 @@ namespace dw2_exp_multiplier.Patcher.Misc
             for (int i = 0, j = 0xA1F4; i < bytes.Length; i++)
             {
                 if (bytes[i] != data[j + i])
-                    throw new Exception(GetName());
+                    return false;
             }
 
             for (int i = 0, j = 0xFFE8; i < 0x18; i++)
             {
                 if (data[j + i] != 0)
-                    throw new Exception(GetName());
+                    return false;
             }
+            return true;
         }
 
         private void patchBtyesJAP(ref FileStream fs)
@@ -89,7 +102,7 @@ namespace dw2_exp_multiplier.Patcher.Misc
             this.DW2Image.WriteFile(ref data, FileIndex.STAG4000_PRO);
         }
 
-        private void ValidateBytesJAP()
+        private bool ValidateBytesJAP()
         {
             byte[] bytes =
             {
@@ -99,14 +112,15 @@ namespace dw2_exp_multiplier.Patcher.Misc
             for (int i = 0, j = 0xDB44; i < bytes.Length; i++)
             {
                 if (bytes[i] != data[j + i])
-                    throw new Exception(GetName());
+                    return false;
             }
 
             for (int i = 0, j = 0xFFE8; i < 0x18; i++)
             {
                 if (data[j + i] != 0)
-                    throw new Exception(GetName());
+                    return false;
             }
+            return true;
         }
     }
     

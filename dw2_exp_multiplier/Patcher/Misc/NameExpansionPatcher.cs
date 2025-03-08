@@ -18,19 +18,30 @@ namespace dw2_exp_multiplier.Patcher.Misc
 
         public override void Patch(ref FileStream fs)
         {
-            slusData = this.DW2Image.ReadMainFile();
-            Stag1100Data = this.DW2Image.ReadFile(FileIndex.STAG1100_PRO);
+            if (slusData == null)
+            {
+                slusData = this.DW2Image.ReadMainFile();
+                Stag1100Data = this.DW2Image.ReadFile(FileIndex.STAG1100_PRO);
+            }
 
             if (this.DW2Image.DW2Slus.GetVersion() == DW2Slus.US_VERSION)
-            {
-                ValidateBytesUS();
                 patchBtyesUS(ref fs);
-            }
             else
-            {
-                ValidateBytesJAP();
                 patchBtyesJAP(ref fs);
+        }
+
+        public override bool ValidateBytes()
+        {
+            if (slusData == null)
+            {
+                slusData = this.DW2Image.ReadMainFile();
+                Stag1100Data = this.DW2Image.ReadFile(FileIndex.STAG1100_PRO);
             }
+
+            if (this.DW2Image.DW2Slus.GetVersion() == DW2Slus.US_VERSION)
+                return ValidateBytesUS();
+            else
+                return ValidateBytesJAP();
         }
 
         private void patchBtyesUS(ref FileStream fs)
@@ -48,7 +59,7 @@ namespace dw2_exp_multiplier.Patcher.Misc
             this.DW2Image.WriteFile(ref Stag1100Data, FileIndex.STAG1100_PRO);
         }
 
-        private void ValidateBytesUS()
+        private bool ValidateBytesUS()
         {
             byte[] bytes =
             {
@@ -58,7 +69,7 @@ namespace dw2_exp_multiplier.Patcher.Misc
             for (int i = 0, j = 0x315C; i < bytes.Length; i++)
             {
                 if (bytes[i] != slusData[j + i])
-                    throw new Exception(GetName());
+                    return false;
             }
             
             bytes = new byte[]
@@ -69,7 +80,7 @@ namespace dw2_exp_multiplier.Patcher.Misc
             for (int i = 0, j = 0x3168; i < bytes.Length; i++)
             {
                 if (bytes[i] != slusData[j + i])
-                    throw new Exception(GetName());
+                    return false;
             }
             
             bytes = new byte[]
@@ -81,8 +92,9 @@ namespace dw2_exp_multiplier.Patcher.Misc
             for (int i = 0, j = 0x2144; i < bytes.Length; i++)
             {
                 if (bytes[i] != Stag1100Data[j + i])
-                    throw new Exception(GetName());
+                    return false;
             }
+            return true;
         }
 
         private void patchBtyesJAP(ref FileStream fs)
@@ -96,14 +108,14 @@ namespace dw2_exp_multiplier.Patcher.Misc
             this.DW2Image.WriteMainFile(ref slusData);
         }
 
-        private void ValidateBytesJAP()
+        private bool ValidateBytesJAP()
         {
             byte[] bytes = { 0x04, 0x00, 0x02, 0x24 };
 
             for (int i = 0, j = 0x130B4; i < bytes.Length; i++)
             {
                 if (bytes[i] != slusData[j + i])
-                    throw new Exception(GetName());
+                    return false;
             }
 
             bytes = new byte[] { 0x06, 0x00, 0x02, 0x24 };
@@ -111,8 +123,9 @@ namespace dw2_exp_multiplier.Patcher.Misc
             for (int i = 0, j = 0x130C0; i < bytes.Length; i++)
             {
                 if (bytes[i] != slusData[j + i])
-                    throw new Exception(GetName());
+                    return false;
             }
+            return true;
         }
     }
     

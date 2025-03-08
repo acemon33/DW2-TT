@@ -16,6 +16,7 @@ namespace dw2_exp_multiplier.Patcher
         }
 
         public abstract void Patch(ref FileStream fs);
+        public abstract bool ValidateBytes();
         public abstract string GetName();
     }
 

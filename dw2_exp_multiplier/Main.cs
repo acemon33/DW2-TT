@@ -217,6 +217,11 @@ namespace dw2_exp_multiplier
             this.usVersionToolStripMenuItem.Checked = false;
             this.japVersionToolStripMenuItem.Checked = true;
         }
+
+        public bool IsForcePatchingChecked()
+        {
+            return this.forcePatchingToolStripMenuItem.Checked;
+        }
         #endregion
     }
 

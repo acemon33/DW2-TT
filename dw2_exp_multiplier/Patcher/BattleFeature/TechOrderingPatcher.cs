@@ -22,9 +22,14 @@ namespace dw2_exp_multiplier.Patcher.BattleFeature
 
             data = this.DW2Image.ReadFile(FileIndex.STAG3000_PRO);
 
-            ValidateBytes();
+            ValidateBytesUS();
 
             patchBtyes(ref fs);
+        }
+
+        public override bool ValidateBytes()
+        {
+            return false;
         }
 
         private void patchBtyes(ref FileStream fs)
@@ -83,7 +88,7 @@ namespace dw2_exp_multiplier.Patcher.BattleFeature
             this.DW2Image.WriteFile(ref data, FileIndex.STAG3000_PRO);
         }
 
-        private void ValidateBytes()
+        private void ValidateBytesUS()
         {
             byte[] bytes =
             {

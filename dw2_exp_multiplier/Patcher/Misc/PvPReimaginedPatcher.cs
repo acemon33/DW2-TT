@@ -33,9 +33,12 @@ namespace dw2_exp_multiplier.Patcher.Misc
 
             PvPData = File.ReadAllBytes("Resources\\pvp data.bin");
 
-            ValidateBytes();
-
             patchBtyes(ref fs);
+        }
+
+        public override bool ValidateBytes()
+        {
+            return true;
         }
 
         private void patchBtyes(ref FileStream fs)
@@ -223,7 +226,7 @@ namespace dw2_exp_multiplier.Patcher.Misc
             this.DW2Image.WriteFileAtOffset(ref Stag3000Data, 196230);
         }
 
-        private void ValidateBytes()
+        private void ValidateBytesUS()
         {
             byte[] bytes = { 0xCC, 0x1A, 0x00, 0x00, 0xE0, 0x1A, 0x00, 0x00 };
             //for (int i = 0, j = 0x120; i < bytes.Length; i++)

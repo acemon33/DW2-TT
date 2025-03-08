@@ -26,6 +26,11 @@ namespace dw2_exp_multiplier.Patcher.BattleEnhancement
             patchBtyesUS(ref fs);
         }
 
+        public override bool ValidateBytes()
+        {
+            return false;
+        }
+
         private void patchBtyesUS(ref FileStream fs)
         {
             byte[] patchedPattern = { 0x07, 0x00, 0x62, 0x24 };

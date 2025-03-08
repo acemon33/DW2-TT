@@ -51,6 +51,7 @@
             this.saveEditorView = new dw2_exp_multiplier.View.SaveEditorView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.fileManagerView = new dw2_exp_multiplier.View.FileManagerView();
+            this.forcePatchingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBar.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -119,35 +120,35 @@
             this.vanillaToolStripMenuItem.Checked = true;
             this.vanillaToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.vanillaToolStripMenuItem.Name = "vanillaToolStripMenuItem";
-            this.vanillaToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.vanillaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.vanillaToolStripMenuItem.Text = "Vanilla / Hard";
             this.vanillaToolStripMenuItem.Click += new System.EventHandler(this.vanillaToolStripMenuItem_Click);
             // 
             // improvementToolStripMenuItem
             // 
             this.improvementToolStripMenuItem.Name = "improvementToolStripMenuItem";
-            this.improvementToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.improvementToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.improvementToolStripMenuItem.Text = "Improvement";
             this.improvementToolStripMenuItem.Click += new System.EventHandler(this.improvementToolStripMenuItem_Click);
             // 
             // resurrectionToolStripMenuItem
             // 
             this.resurrectionToolStripMenuItem.Name = "resurrectionToolStripMenuItem";
-            this.resurrectionToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.resurrectionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.resurrectionToolStripMenuItem.Text = "Resurrection";
             this.resurrectionToolStripMenuItem.Click += new System.EventHandler(this.resurrectionToolStripMenuItem_Click);
             // 
             // alternativeToolStripMenuItem
             // 
             this.alternativeToolStripMenuItem.Name = "alternativeToolStripMenuItem";
-            this.alternativeToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.alternativeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.alternativeToolStripMenuItem.Text = "Alternative";
             this.alternativeToolStripMenuItem.Click += new System.EventHandler(this.alternativeToolStripMenuItem_Click);
             // 
             // faithfulToolStripMenuItem
             // 
             this.faithfulToolStripMenuItem.Name = "faithfulToolStripMenuItem";
-            this.faithfulToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.faithfulToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.faithfulToolStripMenuItem.Text = "Faithful";
             this.faithfulToolStripMenuItem.Click += new System.EventHandler(this.faithfulToolStripMenuItem_Click);
             // 
@@ -157,7 +158,8 @@
             this.optionsToolStripDropDownButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.backupToolStripMenuItem,
             this.restoreToolStripMenuItem,
-            this.fileManagerToolStripMenuItem});
+            this.fileManagerToolStripMenuItem,
+            this.forcePatchingToolStripMenuItem});
             this.optionsToolStripDropDownButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.optionsToolStripDropDownButton.Name = "optionsToolStripDropDownButton";
             this.optionsToolStripDropDownButton.Size = new System.Drawing.Size(62, 22);
@@ -167,7 +169,7 @@
             // 
             this.backupToolStripMenuItem.Enabled = false;
             this.backupToolStripMenuItem.Name = "backupToolStripMenuItem";
-            this.backupToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.backupToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.backupToolStripMenuItem.Text = "Backup";
             this.backupToolStripMenuItem.Click += new System.EventHandler(this.backupToolStripMenuItem_Click);
             // 
@@ -175,7 +177,7 @@
             // 
             this.restoreToolStripMenuItem.Enabled = false;
             this.restoreToolStripMenuItem.Name = "restoreToolStripMenuItem";
-            this.restoreToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.restoreToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.restoreToolStripMenuItem.Text = "Restore";
             this.restoreToolStripMenuItem.Click += new System.EventHandler(this.restoreToolStripMenuItem_Click);
             // 
@@ -183,7 +185,7 @@
             // 
             this.fileManagerToolStripMenuItem.CheckOnClick = true;
             this.fileManagerToolStripMenuItem.Name = "fileManagerToolStripMenuItem";
-            this.fileManagerToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.fileManagerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.fileManagerToolStripMenuItem.Text = "File Manager";
             this.fileManagerToolStripMenuItem.Click += new System.EventHandler(this.fileManagerToolStripMenuItem_Click);
             // 
@@ -262,6 +264,13 @@
             this.fileManagerView.Size = new System.Drawing.Size(441, 401);
             this.fileManagerView.TabIndex = 0;
             // 
+            // forcePatchingToolStripMenuItem
+            // 
+            this.forcePatchingToolStripMenuItem.CheckOnClick = true;
+            this.forcePatchingToolStripMenuItem.Name = "forcePatchingToolStripMenuItem";
+            this.forcePatchingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.forcePatchingToolStripMenuItem.Text = "Force Patching";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -310,6 +319,7 @@
         private System.Windows.Forms.ToolStripDropDownButton VersionDropDownButton;
         private System.Windows.Forms.ToolStripMenuItem usVersionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem japVersionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem forcePatchingToolStripMenuItem;
     }
 }
 

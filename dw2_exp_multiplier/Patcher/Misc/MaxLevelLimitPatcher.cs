@@ -21,22 +21,66 @@ namespace dw2_exp_multiplier.Patcher.Misc
 
         public override void Patch(ref FileStream fs)
         {
-            slusData = this.DW2Image.ReadMainFile();
-            Stag2000Data = this.DW2Image.ReadFile(FileIndex.STAG2000_PRO);
-
-            if (this.DW2Image.DW2Slus.GetVersion() == DW2Slus.US_VERSION)
+            if (slusData == null)
             {
-                this.SlusOffset = 0xF358;
-                this.Stag2000Offset = 0x1584;
-            }
-            else
-            {
-                this.SlusOffset = 0x8118;
-                this.Stag2000Offset = 0x3C68;
-            }
+                slusData = this.DW2Image.ReadMainFile();
+                Stag2000Data = this.DW2Image.ReadFile(FileIndex.STAG2000_PRO);
 
+                if (this.DW2Image.DW2Slus.GetVersion() == DW2Slus.US_VERSION)
+                {
+                    this.SlusOffset = 0xF358;
+                    this.Stag2000Offset = 0x1584;
+                }
+                else
+                {
+                    this.SlusOffset = 0x8118;
+                    this.Stag2000Offset = 0x3C68;
+                }
+            }
+            
             ValidateBytes();
             patchBtyes(ref fs);
+        }
+
+        public override bool ValidateBytes()
+        {
+            if (slusData == null)
+            {
+                slusData = this.DW2Image.ReadMainFile();
+                Stag2000Data = this.DW2Image.ReadFile(FileIndex.STAG2000_PRO);
+
+                if (this.DW2Image.DW2Slus.GetVersion() == DW2Slus.US_VERSION)
+                {
+                    this.SlusOffset = 0xF358;
+                    this.Stag2000Offset = 0x1584;
+                }
+                else
+                {
+                    this.SlusOffset = 0x8118;
+                    this.Stag2000Offset = 0x3C68;
+                }
+            }
+
+            byte[] bytes =
+            {
+                0xE8, 0xFF, 0xBD, 0x27,
+                0x10, 0x00, 0xB0, 0xAF
+            };
+
+            for (int i = 0, j = this.SlusOffset; i < bytes.Length; i++)
+            {
+                if (bytes[i] != slusData[j + i])
+                    return false;
+            }
+
+            bytes = new byte[] { 0x02, 0x00, 0x40, 0x14 };
+
+            for (int i = 0, j = this.Stag2000Offset; i < bytes.Length; i++)
+            {
+                if (bytes[i] != Stag2000Data[j + i])
+                    return false;
+            }
+            return true;
         }
 
         private void patchBtyes(ref FileStream fs)
@@ -49,29 +93,6 @@ namespace dw2_exp_multiplier.Patcher.Misc
 
             this.DW2Image.WriteMainFile(ref slusData);
             this.DW2Image.WriteFile(ref Stag2000Data, FileIndex.STAG2000_PRO);
-        }
-
-        private void ValidateBytes()
-        {
-            byte[] bytes =
-            {
-                0xE8, 0xFF, 0xBD, 0x27,
-                0x10, 0x00, 0xB0, 0xAF
-            };
-
-            for (int i = 0, j = this.SlusOffset; i < bytes.Length; i++)
-            {
-                if (bytes[i] != slusData[j + i])
-                    throw new Exception(GetName());
-            }
-            
-            bytes = new byte[] { 0x02, 0x00, 0x40, 0x14 };
-
-            for (int i = 0, j = this.Stag2000Offset; i < bytes.Length; i++)
-            {
-                if (bytes[i] != Stag2000Data[j + i])
-                    throw new Exception(GetName());
-            }
         }
     }
     
