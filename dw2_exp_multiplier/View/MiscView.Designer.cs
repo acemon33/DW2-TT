@@ -61,6 +61,7 @@ namespace dw2_exp_multiplier.View
             this.enemysetBrowseButton = new System.Windows.Forms.Button();
             this.patchersTabControl = new System.Windows.Forms.TabControl();
             this.miscTabPage = new System.Windows.Forms.TabPage();
+            this.pvpReimaginedCheckBox = new System.Windows.Forms.CheckBox();
             this.RBugRemovalCheckBox = new System.Windows.Forms.CheckBox();
             this.floorSkippingCheckBox = new System.Windows.Forms.CheckBox();
             this.domainFreeObstaclesCheckBox = new System.Windows.Forms.CheckBox();
@@ -89,7 +90,6 @@ namespace dw2_exp_multiplier.View
             this.nextLevelLimitCheckBox = new System.Windows.Forms.CheckBox();
             this.techOrderingCheckBox = new System.Windows.Forms.CheckBox();
             this.turnSkippingCheckBox = new System.Windows.Forms.CheckBox();
-            this.pvpReimaginedCheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.multiplier)).BeginInit();
             this.EnemyBossGroupBox.SuspendLayout();
@@ -259,6 +259,11 @@ namespace dw2_exp_multiplier.View
             0,
             65536});
             this.bossMultiplier.Location = new System.Drawing.Point(96, 27);
+            this.bossMultiplier.Maximum = new decimal(new int[] {
+            40,
+            0,
+            0,
+            65536});
             this.bossMultiplier.Minimum = new decimal(new int[] {
             1,
             0,
@@ -450,6 +455,16 @@ namespace dw2_exp_multiplier.View
             this.miscTabPage.TabIndex = 0;
             this.miscTabPage.Text = "Misc. Patchers";
             this.miscTabPage.UseVisualStyleBackColor = true;
+            // 
+            // pvpReimaginedCheckBox
+            // 
+            this.pvpReimaginedCheckBox.Location = new System.Drawing.Point(287, 96);
+            this.pvpReimaginedCheckBox.Name = "pvpReimaginedCheckBox";
+            this.pvpReimaginedCheckBox.Size = new System.Drawing.Size(125, 24);
+            this.pvpReimaginedCheckBox.TabIndex = 56;
+            this.pvpReimaginedCheckBox.Text = "PvP Reimagined";
+            this.pvpReimaginedCheckBox.UseVisualStyleBackColor = true;
+            this.pvpReimaginedCheckBox.MouseHover += new System.EventHandler(this.pvpReimaginedCheckBox_MouseHover);
             // 
             // RBugRemovalCheckBox
             // 
@@ -748,16 +763,6 @@ namespace dw2_exp_multiplier.View
             this.turnSkippingCheckBox.Text = "Turn Skipping";
             this.turnSkippingCheckBox.UseVisualStyleBackColor = true;
             this.turnSkippingCheckBox.MouseHover += new System.EventHandler(this.turnSkippingCheckBox_MouseHover);
-            // 
-            // pvpReimaginedCheckBox
-            // 
-            this.pvpReimaginedCheckBox.Location = new System.Drawing.Point(287, 96);
-            this.pvpReimaginedCheckBox.Name = "pvpReimaginedCheckBox";
-            this.pvpReimaginedCheckBox.Size = new System.Drawing.Size(125, 24);
-            this.pvpReimaginedCheckBox.TabIndex = 56;
-            this.pvpReimaginedCheckBox.Text = "PvP Reimagined";
-            this.pvpReimaginedCheckBox.UseVisualStyleBackColor = true;
-            this.pvpReimaginedCheckBox.MouseHover += new System.EventHandler(this.pvpReimaginedCheckBox_MouseHover);
             // 
             // MiscView
             // 
