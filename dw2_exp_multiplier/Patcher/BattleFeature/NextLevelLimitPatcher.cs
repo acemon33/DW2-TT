@@ -37,7 +37,7 @@ namespace dw2_exp_multiplier.Patcher.BattleFeature
                 throw new NotImplementedException(GetName() + " Not Supported in JAP version");
         }
 
-        private void patchBtyes(ref FileStream fs)
+        private void patchBtyesUS(ref FileStream fs)
         {
             byte[] patchedPattern = { 0x6C, 0xC6, 0x01, 0x08 };
             Buffer.BlockCopy(patchedPattern, 0, data, 0xE688, patchedPattern.Length);
