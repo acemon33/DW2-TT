@@ -17,22 +17,27 @@ namespace dw2_exp_multiplier.Patcher.BattleFeature
 
         public override void Patch(ref FileStream fs)
         {
-            if (this.DW2Image.DW2Slus.GetVersion() == DW2Slus.JAP_VERSION)
+            if (data == null)
+                data = this.DW2Image.ReadFile(FileIndex.STAG3000_PRO);
+
+            if (this.DW2Image.DW2Slus.GetVersion() == DW2Slus.US_VERSION)
+                patchBtyesUS(ref fs);
+            else
                 throw new NotImplementedException(GetName() + " Not Supported in JAP version");
-
-            data = this.DW2Image.ReadFile(FileIndex.STAG3000_PRO);
-
-            ValidateBytesUS();
-
-            patchBtyes(ref fs);
         }
 
         public override bool ValidateBytes()
         {
-            return false;
+            if (data == null)
+                data = this.DW2Image.ReadFile(FileIndex.STAG3000_PRO);
+
+            if (this.DW2Image.DW2Slus.GetVersion() == DW2Slus.US_VERSION)
+                return ValidateBytesUS();
+            else
+                throw new NotImplementedException(GetName() + " Not Supported in JAP version");
         }
 
-        private void patchBtyes(ref FileStream fs)
+        private void patchBtyesUS(ref FileStream fs)
         {
             byte[] patchedPattern = { 0x00, 0x00, 0x59, 0x34 };
             Buffer.BlockCopy(patchedPattern, 0, data, 0x4680, patchedPattern.Length);
@@ -88,7 +93,7 @@ namespace dw2_exp_multiplier.Patcher.BattleFeature
             this.DW2Image.WriteFile(ref data, FileIndex.STAG3000_PRO);
         }
 
-        private void ValidateBytesUS()
+        private bool ValidateBytesUS()
         {
             byte[] bytes =
             {
@@ -97,7 +102,7 @@ namespace dw2_exp_multiplier.Patcher.BattleFeature
             for (int i = 0, j = 0x4680; i < bytes.Length; i++)
             {
                 if (bytes[i] != data[j + i])
-                    throw new Exception(GetName());
+                    return false;
             }
             
             bytes = new byte[]
@@ -107,7 +112,7 @@ namespace dw2_exp_multiplier.Patcher.BattleFeature
             for (int i = 0, j = 0x484C; i < bytes.Length; i++)
             {
                 if (bytes[i] != data[j + i])
-                    throw new Exception(GetName());
+                    return false;
             }
 
             bytes = new byte[]
@@ -118,7 +123,7 @@ namespace dw2_exp_multiplier.Patcher.BattleFeature
             for (int i = 0, j = 0xE94C; i < bytes.Length; i++)
             {
                 if (bytes[i] != data[j + i])
-                    throw new Exception(GetName());
+                    return false;
             }
 
             bytes = new byte[]
@@ -128,14 +133,15 @@ namespace dw2_exp_multiplier.Patcher.BattleFeature
             for (int i = 0, j = 0x4A24; i < bytes.Length; i++)
             {
                 if (bytes[i] != data[j + i])
-                    throw new Exception(GetName());
+                    return false;
             }
 
             for (int i = 0, j = 0x10EC0; i < 0x88; i++)
             {
                 if (data[j + i] != 0)
-                    throw new Exception(GetName());
+                    return false;
             }
+            return true;
         }
     }
     

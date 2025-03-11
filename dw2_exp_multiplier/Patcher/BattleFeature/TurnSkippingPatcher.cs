@@ -18,22 +18,33 @@ namespace dw2_exp_multiplier.Patcher.BattleFeature
 
         public override void Patch(ref FileStream fs)
         {
-            if (this.DW2Image.DW2Slus.GetVersion() == DW2Slus.JAP_VERSION)
+            if (slusData == null)
+            {
+                slusData = this.DW2Image.ReadMainFile();
+                Stag3000Data = this.DW2Image.ReadFile(FileIndex.STAG3000_PRO);
+            }
+
+            if (this.DW2Image.DW2Slus.GetVersion() == DW2Slus.US_VERSION)
+                patchBtyesUS(ref fs);
+            else
                 throw new NotImplementedException(GetName() + " Not Supported in JAP version");
-
-            slusData = this.DW2Image.ReadMainFile();
-            Stag3000Data = this.DW2Image.ReadFile(FileIndex.STAG3000_PRO);
-
-            //ValidateBytes();
-            patchBtyes(ref fs);
         }
 
         public override bool ValidateBytes()
         {
-            return false;
+            if (slusData == null)
+            {
+                slusData = this.DW2Image.ReadMainFile();
+                Stag3000Data = this.DW2Image.ReadFile(FileIndex.STAG3000_PRO);
+            }
+
+            if (this.DW2Image.DW2Slus.GetVersion() == DW2Slus.US_VERSION)
+                return ValidateBytesUS();
+            else
+                throw new NotImplementedException(GetName() + " Not Supported in JAP version");
         }
 
-        private void patchBtyes(ref FileStream fs)
+        private void patchBtyesUS(ref FileStream fs)
         {
             byte[] patchedPattern =
             {
@@ -160,7 +171,7 @@ namespace dw2_exp_multiplier.Patcher.BattleFeature
             this.DW2Image.WriteFile(ref Stag3000Data, FileIndex.STAG3000_PRO);
         }
 
-        private void ValidateBytesUS()
+        private bool ValidateBytesUS()
         {
             byte[] bytes =
             {
@@ -169,7 +180,7 @@ namespace dw2_exp_multiplier.Patcher.BattleFeature
             for (int i = 0, j = 0x1C38; i < bytes.Length; i++)
             {
                 if (bytes[i] != Stag3000Data[j + i])
-                    throw new Exception(GetName());
+                    return false;
             }
 
             bytes = new byte[]
@@ -180,7 +191,7 @@ namespace dw2_exp_multiplier.Patcher.BattleFeature
             for (int i = 0, j = 0x9F64; i < bytes.Length; i++)
             {
                 if (bytes[i] != Stag3000Data[j + i])
-                    throw new Exception(GetName());
+                    return false;
             }
 
             bytes = new byte[]
@@ -191,14 +202,15 @@ namespace dw2_exp_multiplier.Patcher.BattleFeature
             for (int i = 0, j = 0xBEF4; i < bytes.Length; i++)
             {
                 if (bytes[i] != Stag3000Data[j + i])
-                    throw new Exception(GetName());
+                    return false;
             }
 
             for (int i = 0, j = 0x3A328; i < 0x1B8; i++)
             {
                 if (slusData[j + i] != 0)
-                    throw new Exception(GetName());
+                    return false;
             }
+            return true;
         }
     }
     
