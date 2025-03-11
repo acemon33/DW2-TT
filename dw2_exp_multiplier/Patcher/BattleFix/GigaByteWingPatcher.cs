@@ -17,18 +17,24 @@ namespace dw2_exp_multiplier.Patcher.BattleFix
 
         public override void Patch(ref FileStream fs)
         {
-            if (this.DW2Image.DW2Slus.GetVersion() == DW2Slus.JAP_VERSION)
+            if (data == null)
+                data = this.DW2Image.ReadFile(FileIndex.STAG3000_PRO);
+
+            if (this.DW2Image.DW2Slus.GetVersion() == DW2Slus.US_VERSION)
+                patchBtyesUS(ref fs);
+            else
                 throw new NotImplementedException(GetName() + " Not Supported in JAP version");
-
-            data = this.DW2Image.ReadFile(FileIndex.STAG3000_PRO);
-
-            ValidateBytesUS();
-            patchBtyesUS(ref fs);
         }
 
         public override bool ValidateBytes()
         {
-            return false;
+            if (data == null)
+                data = this.DW2Image.ReadFile(FileIndex.STAG3000_PRO);
+
+            if (this.DW2Image.DW2Slus.GetVersion() == DW2Slus.US_VERSION)
+                return ValidateBytesUS();
+            else
+                throw new NotImplementedException(GetName() + " Not Supported in JAP version");
         }
 
         private void patchBtyesUS(ref FileStream fs)
@@ -79,33 +85,34 @@ namespace dw2_exp_multiplier.Patcher.BattleFix
             this.DW2Image.WriteFile(ref data, FileIndex.STAG3000_PRO);
         }
 
-        private void ValidateBytesUS()
+        private bool ValidateBytesUS()
         {
             byte[] bytes = { 0xB8, 0x31, 0x90, 0x24, 0x07, 0x80, 0x02, 0x3C, 0xC8, 0x31, 0x51, 0x24 };
             for (int i = 0, j = 0x6730; i < bytes.Length; i++)
             {
                 if (bytes[i] != data[j + i])
-                    throw new Exception(GetName());
+                    return false;
             }
 
             for (int i = 0, j = 0x10F68; i < 0x28; i++)
             {
                 if (data[j + i] != 0)
-                    throw new Exception(GetName());
+                    return false;
             }
 
             bytes = new byte[] { 0x2C, 0x00, 0x43, 0x94, 0x01, 0x00, 0x16, 0x24 };
             for (int i = 0, j = 0x7550; i < bytes.Length; i++)
             {
                 if (bytes[i] != data[j + i])
-                    throw new Exception(GetName());
+                    return false;
             }
 
             for (int i = 0, j = 0x10F10; i < 0x20; i++)
             {
                 if (data[j + i] != 0)
-                    throw new Exception(GetName());
+                    return false;
             }
+            return true;
         }
     }
     
