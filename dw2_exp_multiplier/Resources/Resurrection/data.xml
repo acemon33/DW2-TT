@@ -1,13 +1,13 @@
 <dw2-utility>
 	<digimons>
 		<digimon name="None" id="0" />
-		<digimon name="Agumon" id="3" />
-		<digimon name="Betamon" id="4" />
-		<digimon name="Greymon" id="5" />
-		<digimon name="Devimon" id="6" />
-		<digimon name="Airdramon" id="7" />
-		<digimon name="Tyrannomon" id="8" />
-		<digimon name="Meramon" id="9" />
+		<digimon name="Agumon" id="03" />
+		<digimon name="Betamon" id="04" />
+		<digimon name="Greymon" id="05" />
+		<digimon name="Devimon" id="06" />
+		<digimon name="Airdramon" id="07" />
+		<digimon name="Tyrannomon" id="08" />
+		<digimon name="Meramon" id="09" />
 		<digimon name="Seadramon" id="0A" />
 		<digimon name="Numemon" id="0B" />
 		<digimon name="MetalGreymon" id="0C" />
@@ -49,7 +49,7 @@
 		<digimon name="Megadramon" id="36" />
 		<digimon name="Piximon" id="37" />
 		<digimon name="Digitamamon" id="38" />
-		<digimon name="Penguinmon" id="39" />
+		<digimon name="Pengumon" id="39" />
 		<digimon name="Igamon" id="3A" />
 		<digimon name="Phoenixmon" id="3B" />
 		<digimon name="H-Kabuterimon" id="3C" />
@@ -63,7 +63,7 @@
 		<digimon name="FlareLizamon" id="45" />
 		<digimon name="WaruMonzaemon" id="46" />
 		<digimon name="SnowAgumon" id="47" />
-		<digimon name="Hyogamon" id="48" />
+		<digimon name="Hyougamon" id="48" />
 		<digimon name="Plat-Scumon" id="49" />
 		<digimon name="Dokunemon" id="4A" />
 		<digimon name="ShimaUnimon" id="4B" />
@@ -76,7 +76,7 @@
 		<digimon name="Psychemon" id="52" />
 		<digimon name="ModokiBetamon" id="53" />
 		<digimon name="ToyAgumon" id="54" />
-		<digimon name="Piddomon" id="55" />
+		<digimon name="Pidmon" id="55" />
 		<digimon name="Alraumon" id="56" />
 		<digimon name="Geremon" id="57" />
 		<digimon name="Vermilimon" id="58" />
@@ -111,11 +111,11 @@
 		<digimon name="Hagurumon" id="7A" />
 		<digimon name="Tinmon" id="7B" />
 		<digimon name="M-Tyrannomon" id="7C" />
-		<digimon name="Veedramon" id="80" />
+		<digimon name="V-dramon" id="80" />
 		<digimon name="Gazimon" id="83" />
 		<digimon name="Gizamon" id="84" />
 		<digimon name="D-Tyrannomon" id="85" />
-		<digimon name="Cyclonemon" id="86" />
+		<digimon name="Cyclomon" id="86" />
 		<digimon name="Devidramon" id="87" />
 		<digimon name="Tuskmon" id="88" />
 		<digimon name="Flymon" id="89" />
@@ -126,20 +126,20 @@
 		<digimon name="ExTyrannomon" id="8E" />
 		<digimon name="Clockmon" id="8F" />
 		<digimon name="Rosemon" id="90" />
-		<digimon name="Veemon" id="91" />
-		<digimon name="Flamedramon" id="92" />
-		<digimon name="Raidramon" id="93" />
+		<digimon name="V-mon" id="91" />
+		<digimon name="Fladramon" id="92" />
+		<digimon name="Lighdramon" id="93" />
 		<digimon name="I-dramon" id="94" />
 		<digimon name="Baihumon" id="95" />
 		<digimon name="Omegamon" id="96" />
 		<digimon name="Diablomon" id="97" />
-		<digimon name="AeroVeedramon" id="B4" />
-		<digimon name="M-Kabuterimon" id="B5" />
+		<digimon name="AeroV-dramon" id="B4" />
+		<digimon name="A-Kabuterimon" id="B5" />
 		<digimon name="Gomamon" id="B6" />
 		<digimon name="WereGarurumon" id="B7" />
 		<digimon name="Togemon" id="B8" />
 		<digimon name="Zudomon" id="B9" />
-		<digimon name="Lillymon" id="BA" />
+		<digimon name="Lilimon" id="BA" />
 		<digimon name="Garudamon" id="BB" />
 		<digimon name="Candlemon" id="BC" />
 		<digimon name="DeathMeramon" id="BD" />
@@ -154,8 +154,8 @@
 		<digimon name="Kiwimon" id="C6" />
 		<digimon name="Starmon" id="C7" />
 		<digimon name="Blossomon" id="C8" />
-		<digimon name="Pumpkinmon" id="C9" />
-		<digimon name="Scorpiomon" id="CA" />
+		<digimon name="Pumpkimon" id="C9" />
+		<digimon name="Anomalomon" id="CA" />
 		<digimon name="Triceramon" id="CB" />
 		<digimon name="M-Seadramon" id="CC" />
 		<digimon name="SaberLeomon" id="CD" />
@@ -165,10 +165,10 @@
 		<digimon name="Ikkakumon" id="D1" />
 		<digimon name="Dolphmon" id="D2" />
 		<digimon name="HolyAngemon" id="D3" />
-		<digimon name="Mammothmon" id="D4" />
+		<digimon name="Mammon" id="D4" />
 		<digimon name="WarGreymon" id="D5" />
 		<digimon name="Seraphimon" id="D6" />
-		<digimon name="S-Mammothmon" id="D7" />
+		<digimon name="SkullMammon" id="D7" />
 		<digimon name="MarineAngemon" id="D8" />
 		<digimon name="PicoDevimon" id="D9" />
 		<digimon name="Shakomon" id="DA" />
@@ -206,15 +206,15 @@
 	</digimons>
 	<techs>
 		<tech name="None" id="0" />
-		<tech name="Poison Ivy" id="1" />
-		<tech name="Allergy Shower" id="2" />
-		<tech name="Air Shot" id="3" />
-		<tech name="Bonfire" id="4" />
-		<tech name="Scissors Execution" id="5" />
-		<tech name="Angry Rock" id="6" />
-		<tech name="Sparkling Thunder" id="7" />
-		<tech name="Petit Fire" id="8" />
-		<tech name="Little Pecker" id="9" />
+		<tech name="Poison Ivy" id="01" />
+		<tech name="Allergy Shower" id="02" />
+		<tech name="Air Shot" id="03" />
+		<tech name="Bonfire" id="04" />
+		<tech name="Scissors Execution" id="05" />
+		<tech name="Angry Rock" id="06" />
+		<tech name="Sparkling Thunder" id="07" />
+		<tech name="Petit Fire" id="08" />
+		<tech name="Little Pecker" id="09" />
 		<tech name="Burning Fist" id="0A" />
 		<tech name="Variable Darts" id="0B" />
 		<tech name="Hydro Pressure" id="0C" />
@@ -285,7 +285,7 @@
 		<tech name="Soul Chopper" id="4D" />
 		<tech name="Guilty Black" id="4E" />
 		<tech name="Forbidden Trident" id="4F" />
-		<tech name="Samurai Tone" id="50" />
+		<tech name="Embellishing Tone" id="50" />
 		<tech name="Scissor Arms Omega" id="51" />
 		<tech name="Cherry Bomb" id="52" />
 		<tech name="Poop Bazooka" id="53" />
@@ -294,14 +294,14 @@
 		<tech name="Dimension Scissors" id="56" />
 		<tech name="Bullet Hammer" id="57" />
 		<tech name="Toy Flame" id="58" />
-		<tech name="Super Slap" id="59" />
+		<tech name="Eternal Slap" id="59" />
 		<tech name="White Hail" id="5A" />
 		<tech name="Ice Arrow" id="5B" />
 		<tech name="Hyper Cannon" id="5C" />
 		<tech name="Thunder Ray" id="5D" />
 		<tech name="Sorrow Blue" id="5E" />
 		<tech name="Rose Rapier" id="5F" />
-		<tech name="Absolute Zero Punch" id="60" />
+		<tech name="Absolute 0 Punch" id="60" />
 		<tech name="Cat Punch" id="61" />
 		<tech name="Holy Arrow" id="62" />
 		<tech name="Holy Flame" id="63" />
@@ -353,7 +353,7 @@
 		<tech name="Solid State" id="BD" />
 		<tech name="Neutralize" id="BE" />
 		<tech name="Turbo Rooster" id="BF" />
-		<tech name="Polymer Mist" id="C0" />
+		<tech name="Polymer Touch" id="C0" />
 		<tech name="Mud Coat" id="C1" />
 		<tech name="Implant" id="C2" />
 		<tech name="Flame Hitter" id="C3" />
@@ -367,7 +367,7 @@
 		<tech name="Mega Heal" id="CB" />
 		<tech name="Master Fire" id="CC" />
 		<tech name="Full Heal" id="CD" />
-		<tech name="Hang On Death" id="CE" />
+		<tech name="Hang on Death" id="CE" />
 		<tech name="Friendly Fire" id="CF" />
 		<tech name="Mimicry" id="D0" />
 		<tech name="Cold Blood" id="D1" />
@@ -383,7 +383,7 @@
 		<tech name="Mega Death" id="DB" />
 		<tech name="Chaos Cannon" id="DC" />
 		<tech name="Double Edge" id="DD" />
-		<tech name="Kongou" id="DE" />
+		<tech name="Vajra" id="DE" />
 		<tech name="Bronze Cannon" id="DF" />
 		<tech name="Iron Claws" id="E0" />
 		<tech name="Magna Mater" id="E1" />

@@ -1,13 +1,13 @@
 <dw2-utility>
 	<digimons>
 		<digimon name="None" id="0" />
-		<digimon name="Agumon" id="3" />
-		<digimon name="Betamon" id="4" />
-		<digimon name="Greymon" id="5" />
-		<digimon name="Devimon" id="6" />
-		<digimon name="Airdramon" id="7" />
-		<digimon name="Tyrannomon" id="8" />
-		<digimon name="Meramon" id="9" />
+		<digimon name="Agumon" id="03" />
+		<digimon name="Betamon" id="04" />
+		<digimon name="Greymon" id="05" />
+		<digimon name="Devimon" id="06" />
+		<digimon name="Airdramon" id="07" />
+		<digimon name="Tyrannomon" id="08" />
+		<digimon name="Meramon" id="09" />
 		<digimon name="Seadramon" id="0A" />
 		<digimon name="Numemon" id="0B" />
 		<digimon name="MetalGreymon" id="0C" />
@@ -64,12 +64,12 @@
 		<digimon name="WaruMonzaemon" id="46" />
 		<digimon name="YukiAgumon" id="47" />
 		<digimon name="Hyogamon" id="48" />
-		<digimon name="PlSukamon" id="49" />
+		<digimon name="PlatnmSukamon" id="49" />
 		<digimon name="Dokunemon" id="4A" />
 		<digimon name="ShimaUnimon" id="4B" />
 		<digimon name="Tankmon" id="4C" />
 		<digimon name="RedVegiemon" id="4D" />
-		<digimon name="JnMojyamon" id="4E" />
+		<digimon name="JunglMojyamon" id="4E" />
 		<digimon name="NsDrimogemon" id="4F" />
 		<digimon name="Goburimon" id="50" />
 		<digimon name="Tuchidarumon" id="51" />
@@ -140,7 +140,7 @@
 		<digimon name="Deramon" id="C0" />
 		<digimon name="Griffomon" id="C1" />
 		<digimon name="Wizarmon" id="C2" />
-		<digimon name="PrMamemon" id="C3" />
+		<digimon name="PrinceMamemon" id="C3" />
 		<digimon name="MtGarurumon" id="C4" />
 		<digimon name="Ganimon" id="C5" />
 		<digimon name="Kiwimon" id="C6" />
@@ -176,7 +176,7 @@
 		<digimon name="Piemon" id="E4" />
 		<digimon name="Pukumon" id="E5" />
 		<digimon name="GranKuwagamon" id="E6" />
-		<digimon name="inochimon" id="E7" />
+		<digimon name="Pinochimon" id="E7" />
 		<digimon name="Preciomon" id="E8" />
 		<digimon name="Tailmon" id="E9" />
 		<digimon name="Angewomon" id="EA" />
@@ -206,15 +206,15 @@
 	</digimons>
 	<techs>
 		<tech name="None" id="0" />
-		<tech name="Poison Ivy" id="1" />
-		<tech name="Allergy Shower" id="2" />
-		<tech name="Air Shot" id="3" />
-		<tech name="Bonfire" id="4" />
-		<tech name="Scissor Exec." id="5" />
-		<tech name="Angry Rock" id="6" />
-		<tech name="Sparkling Thunder" id="7" />
-		<tech name="Petit Fire" id="8" />
-		<tech name="Little Pecker" id="9" />
+		<tech name="Poison Ivy" id="01" />
+		<tech name="Allergy Shower" id="02" />
+		<tech name="Air Shot" id="03" />
+		<tech name="Bonfire" id="04" />
+		<tech name="Scissor Exec." id="05" />
+		<tech name="Angry Rock" id="06" />
+		<tech name="Sparkling Thunder" id="07" />
+		<tech name="Petit Fire" id="08" />
+		<tech name="Little Pecker" id="09" />
 		<tech name="Burning Fist" id="0A" />
 		<tech name="Variable Darts" id="0B" />
 		<tech name="Hydro Pressure" id="0C" />
