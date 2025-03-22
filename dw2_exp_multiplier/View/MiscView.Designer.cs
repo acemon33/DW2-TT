@@ -90,6 +90,7 @@ namespace dw2_exp_multiplier.View
             this.nextLevelLimitCheckBox = new System.Windows.Forms.CheckBox();
             this.techOrderingCheckBox = new System.Windows.Forms.CheckBox();
             this.turnSkippingCheckBox = new System.Windows.Forms.CheckBox();
+            this.fpsUnlockcheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.multiplier)).BeginInit();
             this.EnemyBossGroupBox.SuspendLayout();
@@ -434,6 +435,7 @@ namespace dw2_exp_multiplier.View
             // 
             // miscTabPage
             // 
+            this.miscTabPage.Controls.Add(this.fpsUnlockcheckBox);
             this.miscTabPage.Controls.Add(this.pvpReimaginedCheckBox);
             this.miscTabPage.Controls.Add(this.RBugRemovalCheckBox);
             this.miscTabPage.Controls.Add(this.floorSkippingCheckBox);
@@ -764,6 +766,16 @@ namespace dw2_exp_multiplier.View
             this.turnSkippingCheckBox.UseVisualStyleBackColor = true;
             this.turnSkippingCheckBox.MouseHover += new System.EventHandler(this.turnSkippingCheckBox_MouseHover);
             // 
+            // fpsUnlockcheckBox
+            // 
+            this.fpsUnlockcheckBox.Location = new System.Drawing.Point(287, 126);
+            this.fpsUnlockcheckBox.Name = "fpsUnlockcheckBox";
+            this.fpsUnlockcheckBox.Size = new System.Drawing.Size(125, 24);
+            this.fpsUnlockcheckBox.TabIndex = 57;
+            this.fpsUnlockcheckBox.Text = "FPS Unlock";
+            this.fpsUnlockcheckBox.UseVisualStyleBackColor = true;
+            this.fpsUnlockcheckBox.MouseHover += new System.EventHandler(this.fpsUnlockcheckBox_MouseHover);
+            // 
             // MiscView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -863,5 +875,6 @@ namespace dw2_exp_multiplier.View
         private System.Windows.Forms.CheckBox gigaByteWingFixCheckBox;
         private System.Windows.Forms.CheckBox darkSideAttackFixCheckBox;
         private System.Windows.Forms.CheckBox pvpReimaginedCheckBox;
+        private System.Windows.Forms.CheckBox fpsUnlockcheckBox;
     }
 }

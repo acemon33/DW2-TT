@@ -207,6 +207,9 @@ namespace dw2_exp_multiplier.View
                 if (pvpReimaginedCheckBox.Checked)
                     patcherList.Add(new PvPReimaginedPatcher(dw2Image));
 
+                if (fpsUnlockcheckBox.Checked)
+                    patcherList.Add(new FPSUnlockPatcher(dw2Image));
+
                 List<String> msgList;
                 if (Main.GetMain().IsForcePatchingChecked())
                     msgList = this.ForcePatching(ref fs, patcherList);
@@ -625,5 +628,10 @@ namespace dw2_exp_multiplier.View
             Main.HintToolTip.Show(PvPReimaginedPatcher.TOOLTIP, pvpReimaginedCheckBox, 30, 0, 5000);
         }
         #endregion
+
+        private void fpsUnlockcheckBox_MouseHover(object sender, EventArgs e)
+        {
+            Main.HintToolTip.Show(FPSUnlockPatcher.TOOLTIP, fpsUnlockcheckBox, 30, 0, 5000);
+        }
     }
 }

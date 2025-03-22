@@ -87,6 +87,7 @@
     <Compile Include="Patcher\BattleFix\ShadowScythePatcher.cs" />
     <Compile Include="Patcher\BattleFix\Damage15vsGuardPatcher.cs" />
     <Compile Include="Patcher\DigiBeetlePatcher.cs" />
+    <Compile Include="Patcher\Misc\FPSUnlockPatcher.cs" />
     <Compile Include="Patcher\Misc\PvPReimaginedPatcher.cs" />
     <Compile Include="Patcher\Misc\DigiLinePatcher.cs" />
     <Compile Include="Patcher\Misc\FloorSkippingPatcher.cs" />
