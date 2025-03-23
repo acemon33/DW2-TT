@@ -4,6 +4,23 @@
 
 
 
+v4.1:
+-----
+ - FPS Unlocker: run the game at 60 FPS (Experimental).
+ - Remove validation when opening the game file.
+ - Selection Options for US / Japanese versions.
+ - Update Faithful & Resurrection configuration data files.
+ - Add some patches for the Japanese version.
+ - Fix minor issues.
+
+**Note:**
+- For FPS Unlock patcher:
+   - Usage:
+      - FPS activate:   press L1 + R1 buttons at any time.
+      - FPS deactivate: press L2 + R2 buttons at any time.
+
+
+
 v4.0-Final:
 -----
  - Support Japanese version (Some Patches).
