@@ -23,7 +23,7 @@ namespace dw2_exp_multiplier.Patcher.BattleFix
             if (this.DW2Image.DW2Slus.GetVersion() == DW2Slus.US_VERSION)
                 patchBtyesUS(ref fs);
             else
-                throw new NotImplementedException(GetName() + " Not Supported in JAP version");
+                patchBtyesJAP(ref fs);
         }
 
         public override bool ValidateBytes()
@@ -34,7 +34,7 @@ namespace dw2_exp_multiplier.Patcher.BattleFix
             if (this.DW2Image.DW2Slus.GetVersion() == DW2Slus.US_VERSION)
                 return ValidateBytesUS();
             else
-                throw new NotImplementedException(GetName() + " Not Supported in JAP version");
+                return ValidateBytesJAP();
         }
 
         private void patchBtyesUS(ref FileStream fs)
@@ -61,6 +61,37 @@ namespace dw2_exp_multiplier.Patcher.BattleFix
                 0x04, 0x00, 0x40, 0x10,
             };
             for (int i = 0, j = 0x8D38; i < bytes.Length; i++)
+            {
+                if (bytes[i] != data[j + i])
+                    return false;
+            }
+            return true;
+        }
+
+        private void patchBtyesJAP(ref FileStream fs)
+        {
+            byte[] patchedPattern =
+            {
+                0x00, 0x00, 0x00, 0x00,
+                0x00, 0x00, 0x00, 0x00,
+                0x00, 0x00, 0x00, 0x00,
+                0x00, 0x00, 0x00, 0x00
+            };
+            Buffer.BlockCopy(patchedPattern, 0, data, 0xBFFC, patchedPattern.Length);
+
+            this.DW2Image.WriteFile(ref data, FileIndex.STAG3000_PRO);
+        }
+
+        private bool ValidateBytesJAP()
+        {
+            byte[] bytes =
+            {
+                0x6D, 0x4B, 0x00, 0x0C,
+                0x00, 0x00, 0x00, 0x00,
+                0x07, 0x00, 0x42, 0x30,
+                0x04, 0x00, 0x40, 0x10
+            };
+            for (int i = 0, j = 0xBFFC; i < bytes.Length; i++)
             {
                 if (bytes[i] != data[j + i])
                     return false;
