@@ -12,11 +12,13 @@ namespace dw2_exp_multiplier.View
         private static readonly int SLUS_INDEX = -1;
         public static readonly string SLUS_NAME = "SLUS";
         private string CurrentDirectory;
+        private string GameCurrentDirectory;
 
         public FileManagerView()
         {
             InitializeComponent();
             this.CurrentDirectory = Directory.GetCurrentDirectory();
+            this.GameCurrentDirectory = Directory.GetCurrentDirectory();
         }
 
         #region Control Events Region
@@ -104,13 +106,22 @@ namespace dw2_exp_multiplier.View
             var ofd = new OpenFileDialog();
             ofd.Title = "Open DW2 Bin File";
             ofd.Filter = "Digimon World 2 File|*.bin";
-            if (ofd.ShowDialog() == DialogResult.OK) dw2TextBox.Text = ofd.FileName;
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                dw2TextBox.Text = ofd.FileName;
+                this.GameCurrentDirectory = Directory.GetParent(dw2TextBox.Text).ToString();
+            }
         }
 
         private void dw2TextBox_DragDrop(object sender, DragEventArgs e)
         {
             dw2TextBox.Text = this.ValidateFilename(ref e);
+            if (dw2TextBox.Text.Length > 0)
+            {
+                this.GameCurrentDirectory = Directory.GetParent(dw2TextBox.Text).ToString();
+            }
         }
+
 
         private void dw2TextBox_DragOver(object sender, DragEventArgs e)
         {
