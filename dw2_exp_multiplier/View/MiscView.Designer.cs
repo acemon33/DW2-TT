@@ -723,7 +723,7 @@ namespace dw2_exp_multiplier.View
             // 
             this.enemyBossAffectionEnhanceCheckBox.Location = new System.Drawing.Point(7, 66);
             this.enemyBossAffectionEnhanceCheckBox.Name = "enemyBossAffectionEnhanceCheckBox";
-            this.enemyBossAffectionEnhanceCheckBox.Size = new System.Drawing.Size(129, 24);
+            this.enemyBossAffectionEnhanceCheckBox.Size = new System.Drawing.Size(134, 24);
             this.enemyBossAffectionEnhanceCheckBox.TabIndex = 25;
             this.enemyBossAffectionEnhanceCheckBox.Text = "Enemy Boss Affection";
             this.enemyBossAffectionEnhanceCheckBox.UseVisualStyleBackColor = true;
