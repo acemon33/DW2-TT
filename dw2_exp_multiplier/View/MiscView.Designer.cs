@@ -61,6 +61,7 @@ namespace dw2_exp_multiplier.View
             this.enemysetBrowseButton = new System.Windows.Forms.Button();
             this.patchersTabControl = new System.Windows.Forms.TabControl();
             this.miscTabPage = new System.Windows.Forms.TabPage();
+            this.fpsUnlockcheckBox = new System.Windows.Forms.CheckBox();
             this.pvpReimaginedCheckBox = new System.Windows.Forms.CheckBox();
             this.RBugRemovalCheckBox = new System.Windows.Forms.CheckBox();
             this.floorSkippingCheckBox = new System.Windows.Forms.CheckBox();
@@ -90,7 +91,6 @@ namespace dw2_exp_multiplier.View
             this.nextLevelLimitCheckBox = new System.Windows.Forms.CheckBox();
             this.techOrderingCheckBox = new System.Windows.Forms.CheckBox();
             this.turnSkippingCheckBox = new System.Windows.Forms.CheckBox();
-            this.fpsUnlockcheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.multiplier)).BeginInit();
             this.EnemyBossGroupBox.SuspendLayout();
@@ -191,7 +191,7 @@ namespace dw2_exp_multiplier.View
             this.multiplierLabel.AutoSize = true;
             this.multiplierLabel.Location = new System.Drawing.Point(10, 27);
             this.multiplierLabel.Name = "multiplierLabel";
-            this.multiplierLabel.Size = new System.Drawing.Size(83, 13);
+            this.multiplierLabel.Size = new System.Drawing.Size(85, 13);
             this.multiplierLabel.TabIndex = 10;
             this.multiplierLabel.Text = "Multiply By       x";
             // 
@@ -205,6 +205,11 @@ namespace dw2_exp_multiplier.View
             0,
             65536});
             this.multiplier.Location = new System.Drawing.Point(96, 25);
+            this.multiplier.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
             this.multiplier.Minimum = new decimal(new int[] {
             1,
             0,
@@ -236,7 +241,7 @@ namespace dw2_exp_multiplier.View
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(10, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 13);
+            this.label1.Size = new System.Drawing.Size(85, 13);
             this.label1.TabIndex = 22;
             this.label1.Text = "Multiply By       x";
             // 
@@ -255,13 +260,13 @@ namespace dw2_exp_multiplier.View
             this.bossMultiplier.DecimalPlaces = 1;
             this.bossMultiplier.Enabled = false;
             this.bossMultiplier.Increment = new decimal(new int[] {
-            5,
+            1,
             0,
             0,
             65536});
             this.bossMultiplier.Location = new System.Drawing.Point(96, 27);
             this.bossMultiplier.Maximum = new decimal(new int[] {
-            40,
+            20,
             0,
             0,
             65536});
@@ -284,7 +289,7 @@ namespace dw2_exp_multiplier.View
             this.dw2Label.AutoSize = true;
             this.dw2Label.Location = new System.Drawing.Point(3, 9);
             this.dw2Label.Name = "dw2Label";
-            this.dw2Label.Size = new System.Drawing.Size(50, 13);
+            this.dw2Label.Size = new System.Drawing.Size(47, 13);
             this.dw2Label.TabIndex = 31;
             this.dw2Label.Text = "DW2 Bin";
             // 
@@ -374,7 +379,7 @@ namespace dw2_exp_multiplier.View
             this.enemysetLabel.AutoSize = true;
             this.enemysetLabel.Location = new System.Drawing.Point(3, 38);
             this.enemysetLabel.Name = "enemysetLabel";
-            this.enemysetLabel.Size = new System.Drawing.Size(87, 13);
+            this.enemysetLabel.Size = new System.Drawing.Size(78, 13);
             this.enemysetLabel.TabIndex = 34;
             this.enemysetLabel.Text = "ENEMYSET BIN";
             // 
@@ -457,6 +462,16 @@ namespace dw2_exp_multiplier.View
             this.miscTabPage.TabIndex = 0;
             this.miscTabPage.Text = "Misc. Patchers";
             this.miscTabPage.UseVisualStyleBackColor = true;
+            // 
+            // fpsUnlockcheckBox
+            // 
+            this.fpsUnlockcheckBox.Location = new System.Drawing.Point(287, 126);
+            this.fpsUnlockcheckBox.Name = "fpsUnlockcheckBox";
+            this.fpsUnlockcheckBox.Size = new System.Drawing.Size(125, 24);
+            this.fpsUnlockcheckBox.TabIndex = 57;
+            this.fpsUnlockcheckBox.Text = "FPS Unlock";
+            this.fpsUnlockcheckBox.UseVisualStyleBackColor = true;
+            this.fpsUnlockcheckBox.MouseHover += new System.EventHandler(this.fpsUnlockcheckBox_MouseHover);
             // 
             // pvpReimaginedCheckBox
             // 
@@ -765,16 +780,6 @@ namespace dw2_exp_multiplier.View
             this.turnSkippingCheckBox.Text = "Turn Skipping";
             this.turnSkippingCheckBox.UseVisualStyleBackColor = true;
             this.turnSkippingCheckBox.MouseHover += new System.EventHandler(this.turnSkippingCheckBox_MouseHover);
-            // 
-            // fpsUnlockcheckBox
-            // 
-            this.fpsUnlockcheckBox.Location = new System.Drawing.Point(287, 126);
-            this.fpsUnlockcheckBox.Name = "fpsUnlockcheckBox";
-            this.fpsUnlockcheckBox.Size = new System.Drawing.Size(125, 24);
-            this.fpsUnlockcheckBox.TabIndex = 57;
-            this.fpsUnlockcheckBox.Text = "FPS Unlock";
-            this.fpsUnlockcheckBox.UseVisualStyleBackColor = true;
-            this.fpsUnlockcheckBox.MouseHover += new System.EventHandler(this.fpsUnlockcheckBox_MouseHover);
             // 
             // MiscView
             // 

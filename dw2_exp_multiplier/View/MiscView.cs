@@ -78,9 +78,9 @@ namespace dw2_exp_multiplier.View
                     if (bossMultiplier.Value.CompareTo(Decimal.One) != 0)
                     {
                         if (extremeModeCheckBox.Checked)
-                            enemysetManager.AddModifier(new ExtremeStatsMultiplier(multiplier.Value));
+                            enemysetManager.AddModifier(new ExtremeStatsMultiplier(bossMultiplier.Value));
                         else
-                            enemysetManager.AddModifier(new BossStatsMultiplier(multiplier.Value));
+                            enemysetManager.AddModifier(new BossStatsMultiplier(bossMultiplier.Value));
                     }
 
                     if (noEncounterPatcherCheckBox.Checked)
