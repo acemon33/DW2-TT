@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -40,7 +41,18 @@ namespace dw2_exp_multiplier.Base
         
         public void WriteFile(ref byte[] data, int index)
         {
-            PsxSector.WriteSector(ref this.fs, ref data, DW2Slus.GetLba(index), DW2Slus.GetSize(index), PreOffset);
+            ushort currentSize = (ushort) Math.Ceiling((double)data.Length / PsxSector.DATA_SECTOR);
+            if (DW2Slus.GetSize(index) < currentSize)
+            {
+                UInt32 newLBA = (UInt32) (PsxSector.WriteSectorAtEnd(ref this.fs, ref data, currentSize) - PreOffset);
+                this.slus.SetLba(index, newLBA);
+                this.slus.SetSize(index, currentSize);
+                this.slus.Update(ref this.fs, PreOffset);
+            }
+            else
+            {
+                PsxSector.WriteSector(ref this.fs, ref data, DW2Slus.GetLba(index), DW2Slus.GetSize(index), PreOffset);
+            }
         }
         
         public byte[] ReadFile(int index)

@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Reflection;
 
 /*
  * @author acemon33
@@ -95,6 +96,16 @@ namespace dw2_exp_multiplier.Base
             return size[index]; 
         }
         
+        public void SetLba(int index, UInt32 value)
+        {
+            lba[index] = value; 
+        }
+        
+        public void SetSize(int index, UInt16 value)
+        {
+            size[index] = value; 
+        }
+        
         public static void UnhideAAAFolder(ref FileStream br, bool hid = false)
         {
             byte[] unHidPattern = { 0x32, 0x00, 0x56, 0x01, 0x00, 0x00, 0x00, 0x00, 0x01,
@@ -131,6 +142,14 @@ namespace dw2_exp_multiplier.Base
         }
 
         public int GetVersion() { return version; }
+
+        public void Update(ref FileStream fs, int preOffset)
+        {
+            Buffer.BlockCopy(this.lba, 0, this.slus, this.lba_offset, this.lba_length);
+            Buffer.BlockCopy(this.size, 0, this.slus, this.size_offset, this.size_length);
+            fs.Position = DW2Slus.LBA_OFFSET + preOffset;
+            PsxSector.WriteSector(ref fs, ref this.slus, DW2Slus.NUMBER_OF_SECTOR);
+        }
     }
     
 }
