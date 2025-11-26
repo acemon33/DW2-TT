@@ -34,7 +34,7 @@ namespace dw2_exp_multiplier.Mapper
         
         public static bool WriteBin(DW2Image dw2Image, ref List<Enemyset> enemysetList)
         {
-            byte[] buffer = EnemysetMapper.Write(PsxSector.SECTOR * dw2Image.DW2Slus.GetSize(FileIndex.ENEMYSET_BIN), ref enemysetList);
+            byte[] buffer = EnemysetMapper.Write(PsxSector.DATA_SECTOR * dw2Image.DW2Slus.GetSize(FileIndex.ENEMYSET_BIN), ref enemysetList);
 
             dw2Image.WriteFile(ref buffer, FileIndex.ENEMYSET_BIN);
             
