@@ -4,6 +4,14 @@
 
 
 
+v4.5:
+-----
+ - File-Manager: supports importing files larger than the original
+ - Dialog-Fast-Forward extends Battle Menus
+ - Fix Enemy Boss State Multiplier
+ - Fix Turn Skipping when using Cannon shows random Text
+
+
 v4.1:
 -----
  - FPS Unlocker: run the game at 60 FPS (Experimental).
