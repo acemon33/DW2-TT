@@ -36,6 +36,7 @@ Check [here](Documentation/file-manager.md) for how to use the File-Manager.
     
     3.1 (Optional) Import "ENEMYSET.BIN" to restore to its original state.
 
+A [video tutorial](https://www.youtube.com/watch?v=6dJO_wGfP9c) how to use EXP Multiplier.
 
 The latest version can be downloaded [here](https://romhackplaza.org/utilities/dw2-tt-utility)
 
